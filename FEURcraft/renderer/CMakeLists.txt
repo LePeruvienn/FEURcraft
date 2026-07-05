@@ -23,4 +23,4 @@ target_sources(${LIB_NAME}
 )
 
 # On link les librarie nécessaire à la compilation de la lib
-target_link_libraries(${LIB_NAME} PUBLIC glad glfw m utils)
+target_link_libraries(${LIB_NAME} PUBLIC glad glfw cglm m utils)
