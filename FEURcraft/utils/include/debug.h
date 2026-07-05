@@ -16,7 +16,7 @@
 
 #if DEBUG_ENABLED
 
-	#include "utils/logger.h"
+	#include "logger.h"
 	#include "glad/glad.h"
 
 	#include <stdlib.h>

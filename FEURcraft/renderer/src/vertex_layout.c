@@ -1,8 +1,8 @@
-#include "visu/vertex_layout.h"
-#include "visu/vertex.h"
+#include "vertex_layout.h"
+#include "vertex.h"
 
-#include "utils/debug.h"
-#include "utils/logger.h"
+#include "debug.h"
+#include "logger.h"
 
 #include "glad/glad.h"
 
