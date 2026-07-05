@@ -1,3 +1,9 @@
+# Build
+.cache/
+build/
+bin/
+obj/
+
 # Prerequisites
 *.d
 
