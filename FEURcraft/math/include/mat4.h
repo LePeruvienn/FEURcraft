@@ -87,14 +87,11 @@ mat4 mat4_rotate(vec3 axis, float angle);
 
 void mat4_add_in (mat4* A, mat4 B);
 void mat4_sub_in (mat4* A, mat4 B);
-void mat4_mult_in(mat4* A, mat4 B);
 
 void mat4_add_scal_in (mat4* A, float l);
 void mat4_sub_scal_in (mat4* A, float l);
 void mat4_mult_scal_in(mat4* A, float l);
 
 void mat4_inv_in(mat4* A);
-
-void mat4_transpose_in(mat4* A);
 
 #endif // MAT4_H

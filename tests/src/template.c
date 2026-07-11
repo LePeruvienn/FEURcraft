@@ -2,7 +2,7 @@
 
 #include <stdlib.h>
 
-FEUR_Test_Result Test_Integer(void)
+FEUR_Test_Result Test_Integer()
 {
 	int value = 10;
 
@@ -13,7 +13,7 @@ FEUR_Test_Result Test_Integer(void)
 }
 
 
-FEUR_Test_Result Test_Pointer(void)
+FEUR_Test_Result Test_Pointer()
 {
 	int* ptr = NULL;
 
@@ -29,7 +29,7 @@ FEUR_Test_Result Test_Pointer(void)
 }
 
 
-FEUR_Test_Result Test_Float(void)
+FEUR_Test_Result Test_Float()
 {
 	float value = 0.333333f;
 
@@ -39,7 +39,7 @@ FEUR_Test_Result Test_Float(void)
 }
 
 
-FEUR_Test_Result Test_Failing(void)
+FEUR_Test_Result Test_Failing()
 {
 	int value = 5;
 
@@ -49,7 +49,7 @@ FEUR_Test_Result Test_Failing(void)
 }
 
 
-int main(void)
+int main()
 {
 	FEUR_Test_Init();
 
