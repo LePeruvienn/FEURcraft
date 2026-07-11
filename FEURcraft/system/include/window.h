@@ -1,49 +1,124 @@
-#ifndef VEC4_H
-#define VEC4_H
+#ifndef WINDOW_H
+#define WINDOW_H
 
-#define VEC4(_x, _y, _z, _w) ((vec4) {.x = _x, .y = _y, .z = _z, .w = _w})
+#include <stdbool.h>
 
-#define VEC4_ZERO VEC4(0.f, 0.f, 0.f, 0.f)
-#define VEC4_ONE  VEC4(1.f, 1.f, 1.f, 1.f)
+/**
+ * \file window.h
+ * \brief Abstraction de la gestion de la fenêtre et du contexte OpenGL.
+ *
+ * Ce fichier décrit une interface pour créer, manipuler et détruire
+ * une fenêtre d'affichage. Il encapsule les appels à la bibliothèque
+ * GLFW pour éviter d'exposer ces détails au reste du programme.
+ */
 
-typedef struct vec4 vec4;
+/**
+ * \brief Pointeur représentant la structure et l'état d'une fenêtre.
+ */
+typedef struct window* window;
 
-struct vec4
-{
-	union
-	{
-		struct { float x, y, z, w; };
-		struct { float r, g, b, a; };
+/**
+ * \brief Crée et initialise une nouvelle fenêtre d'affichage.
+ *
+ * Cette fonction crée la fenêtre avec les dimensions données et initialise 
+ * le contexte OpenGL associé.
+ *
+ * \param width Largeur logique initiale de la fenêtre en pixels.
+ * \param height Hauteur logique initiale de la fenêtre en pixels.
+ * \param title Chaîne de caractères affichée comme titre de la fenêtre.
+ * \return Un pointeur \a window vers la fenêtre créée, ou NULL en cas d'échec.
+ */
+window create_window(int width, int height, const char* title);
 
-		float data[4];
-	};
-};
+/**
+ * \brief Détruit la fenêtre et libère la mémoire associée.
+ *
+ * Ferme proprement la fenêtre et détruit le contexte OpenGL pour 
+ * éviter toute fuite de mémoire.
+ *
+ * \param w La fenêtre à détruire.
+ */
+void free_window(window w);
 
-vec4 vec4_add  (vec4 u, vec4 v);
-vec4 vec4_sub  (vec4 u, vec4 v);
-vec4 vec4_cross(vec4 u, vec4 v);
+/**
+ * \brief Vérifie si la fenêtre a reçu un signal de fermeture.
+ *
+ * Permet de savoir si l'utilisateur a cliqué sur la croix ou fait un 
+ * raccourci pour fermer l'application.
+ *
+ * \param w La fenêtre à vérifier.
+ * \return true si la fenêtre doit se fermer, false sinon.
+ */
+bool window_should_close(window w);
 
-vec4 vec4_add_scal (vec4 u, float l);
-vec4 vec4_sub_scal (vec4 u, float l);
-vec4 vec4_mult_scal(vec4 u, float l);
+/**
+ * \brief Met à jour l'affichage et traite les événements de la fenêtre.
+ *
+ * Cette fonction intervertit les buffers de rendu (swap buffers) et 
+ * dépile les événements en attente (clavier, souris, redimensionnement).
+ *
+ * \param w La fenêtre à mettre à jour.
+ */
+void window_update_events(window w);
 
-vec4 vec4_norm(vec4 u);
+/**
+ * \brief Met en pause le processus en attendant des événements.
+ *
+ * Utile pour limiter l'utilisation du processeur (limitation de FPS) 
+ * lorsqu'aucune mise à jour n'est requise immédiatement.
+ *
+ * \param timeout Temps d'attente maximum en secondes.
+ */
+void window_wait_events(double timeout);
 
-void vec4_add_in  (vec4* u, vec4 v);
-void vec4_sub_in  (vec4* u, vec4 v);
+/**
+ * \brief Récupère la largeur logique de la fenêtre.
+ *
+ * \param w La fenêtre concernée.
+ * \return La largeur en pixels logiques.
+ */
+int window_get_width(window w);
 
-void vec4_add_scal_in (vec4* u, float l);
-void vec4_sub_scal_in (vec4* u, float l);
-void vec4_mult_scal_in(vec4* u, float l);
+/**
+ * \brief Récupère la hauteur logique de la fenêtre.
+ *
+ * \param w La fenêtre concernée.
+ * \return La hauteur en pixels logiques.
+ */
+int window_get_height(window w);
 
-void vec4_norm_in(vec4* u);
+/**
+ * \brief Récupère le temps écoulé depuis l'initialisation de la fenêtre.
+ *
+ * \param w La fenêtre concernée.
+ * \return Le temps en secondes (float).
+ */
+float window_get_time(window w);
 
-float vec4_dot(vec4 u, vec4 v);
+/**
+ * \brief Récupère le pointeur natif de la fenêtre sous-jacente.
+ *
+ * \attention Cette fonction casse l'abstraction et ne doit être utilisée 
+ * que pour initialiser des bibliothèques externes.
+ *
+ * \param w La fenêtre concernée.
+ * \return Un pointeur `void*` correspondant au handle natif (ex: `GLFWwindow*`).
+ */
+void* window_get_native_handle(window w);
 
-float vec4_len (vec4 u);
-float vec4_len2(vec4 u);
+/**
+ * \brief Récupère la taille physique du framebuffer.
+ *
+ * Sur les écrans haute densité (2K, 4K...), la taille physique en pixels 
+ * peut différer de la taille logique de la fenêtre. Cette fonction est requise 
+ * pour mettre à jour correctement le glViewport.
+ *
+ * \param w La fenêtre concernée.
+ * \param width Pointeur où stocker la largeur physique en pixels.
+ * \param height Pointeur où stocker la hauteur physique en pixels.
+ */
+void window_get_framebuffer_size(window w, int* width, int* height);
 
-float vec4_dist (vec4 u, vec4 v);
-float vec4_dist2(vec4 u, vec4 v);
+bool window_get_key_pressed(window w, int key);
 
-#endif // VEC4_H
+#endif // WINDOW_H

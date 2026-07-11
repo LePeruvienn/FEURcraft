@@ -36,7 +36,6 @@ target_link_libraries(${LIB_NAME}
 	PUBLIC 
 		OpenGL::GL
 		glad
-		glfw
 		stb_image
 		utils
 		math
