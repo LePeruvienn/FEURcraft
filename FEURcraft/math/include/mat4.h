@@ -33,7 +33,20 @@ typedef struct mat4 mat4;
 
 struct mat4
 {
-	vec4 cols[4];
+	union
+	{
+		vec4 cols[4];
+
+		struct
+		{
+			float m00, m10, m20, m30;
+			float m01, m11, m21, m31;
+			float m02, m12, m22, m32;
+			float m03, m13, m23, m33;
+		};
+
+		float data[16];
+	};
 };
 
 vec4 mat4_get_row(mat4 A, unsigned int index);
