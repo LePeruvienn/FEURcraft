@@ -1,6 +1,31 @@
 #include "mat4.h"
 #include "vec4.h"
 
+#include <math.h>
+
+vec4 vec4_mult_mat4(vec4 u, mat4 A)
+{
+	return VEC4(
+		vec4_dot(A.cols[0], u),
+		vec4_dot(A.cols[1], u),
+		vec4_dot(A.cols[2], u),
+		vec4_dot(A.cols[3], u)
+	);
+}
+
+
+vec4 mat4_mult_vec4(mat4 A, vec4 u)
+{
+	mat4 At = mat4_transpose(A);
+
+	return VEC4(
+		vec4_dot(At.cols[0], u),
+		vec4_dot(At.cols[1], u),
+		vec4_dot(At.cols[2], u),
+		vec4_dot(At.cols[3], u)
+	);
+}
+
 vec4 mat4_get_row(mat4 A, unsigned int index)
 {
 	return VEC4(A.cols[0].data[index],
@@ -90,6 +115,107 @@ mat4 mat4_transpose(mat4 A)
 		A.cols[3].x, A.cols[3].y, A.cols[3].z, A.cols[3].w
 	);
 }
+
+
+mat4 mat4_scale_x(float s)
+{
+	return MAT4(  s, 0.f, 0.f, 0.f,
+	            0.f, 1.f, 0.f, 0.f,
+	            0.f, 0.f, 1.f, 0.f,
+	            0.f, 0.f, 0.f, 1.f);
+}
+
+mat4 mat4_scale_y(float s)
+{
+	return MAT4(1.f, 0.f, 0.f, 0.f,
+	            0.f,   s, 0.f, 0.f,
+	            0.f, 0.f, 1.f, 0.f,
+	            0.f, 0.f, 0.f, 1.f);
+}
+
+mat4 mat4_scale_z(float s)
+{
+	return MAT4(1.f, 0.f, 0.f, 0.f,
+	            0.f, 1.f, 0.f, 0.f,
+	            0.f, 0.f,   s, 0.f,
+	            0.f, 0.f, 0.f, 1.f);
+}
+
+mat4 mat4_scale(float s)
+{
+	return MAT4(  s, 0.f, 0.f, 0.f,
+	            0.f,   s, 0.f, 0.f,
+	            0.f, 0.f,   s, 0.f,
+	            0.f, 0.f, 0.f, 1.f);
+}
+
+mat4 mat4_translate_x(float t)
+{
+	return MAT4(1.f, 0.f, 0.f,   t,
+	            0.f, 1.f, 0.f, 0.f,
+	            0.f, 0.f, 1.f, 0.f,
+	            0.f, 0.f, 0.f, 1.f);
+}
+
+mat4 mat4_translate_y(float t)
+{
+	return MAT4(1.f, 0.f, 0.f, 0.f,
+	            0.f, 1.f, 0.f,   t,
+	            0.f, 0.f, 1.f, 0.f,
+	            0.f, 0.f, 0.f, 1.f);
+}
+
+mat4 mat4_translate_z(float t)
+{
+	return MAT4(1.f, 0.f, 0.f, 0.f,
+	            0.f, 1.f, 0.f, 0.f,
+	            0.f, 0.f, 1.f,   t,
+	            0.f, 0.f, 0.f, 1.f);
+}
+
+mat4 mat4_translate(vec3 t)
+{
+	return MAT4(1.f, 0.f, 0.f, t.z,
+	            0.f, 1.f, 0.f, t.y,
+	            0.f, 0.f, 1.f, t.z,
+	            0.f, 0.f, 0.f, 1.f);
+}
+
+mat4 mat4_rotate_x(float angle)
+{
+	float c = cosf(angle);
+	float s = sinf(angle);
+
+	return MAT4(1.f, 0.f, 0.f, 0.f,
+	            0.f,   c,  -s, 0.f,
+	            0.f,   s,   c, 0.f,
+	            0.f, 0.f, 0.f, 1.f);
+}
+
+mat4 mat4_rotate_y(float angle)
+{
+	float c = cosf(angle);
+	float s = sinf(angle);
+
+	return MAT4(  c, 0.f,   s, 0.f,
+	            0.f, 1.f, 0.f, 0.f,
+	             -s, 0.f,   c, 0.f,
+	            0.f, 0.f, 0.f, 1.f);
+}
+
+mat4 mat4_rotate_z(float angle)
+{
+	float c = cosf(angle);
+	float s = sinf(angle);
+
+	return MAT4(  c,  -s, 0.f, 0.f,
+	              s,   c, 0.f, 0.f,
+	            0.f, 0.f, 0.1, 0.f,
+	            0.f, 0.f, 0.f, 1.f);
+}
+
+// TODO !
+mat4 mat4_rotate(vec3 axis, float angle);
 
 void mat4_add_in(mat4* A, mat4 B)
 {
