@@ -207,6 +207,9 @@ void FEUR_Test_End(void)
 	{
 		printf("\n" ANSI_COLOR_BOLD ANSI_COLOR_GREEN "Juste le/la GOAT en fait B)" ANSI_COLOR_RESET "\n");
 	}
+
+	// We exit by the number of failed tests (0 == OK, else some FAILED !)
+	EXIT_PROGRAM(g_FEUR_tester.test_failed_amount);
 }
 #endif // FEUR_TEST_H
 
