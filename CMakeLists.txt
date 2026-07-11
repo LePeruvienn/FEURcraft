@@ -31,3 +31,5 @@ endif()
 add_subdirectory(deps)
 # Dossier du projet
 add_subdirectory(FEURcraft)
+# Dossiers des tests
+add_subdirectory(tests)
