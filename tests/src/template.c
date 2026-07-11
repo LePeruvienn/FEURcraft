@@ -55,10 +55,13 @@ int main(void)
 
 	FEUR_TEST_LOG("This is a example of log in a test!");
 
-	FEUR_Test_Add_Group("Basic Tests");
+	FEUR_Test_Add_Group("Easy Tests :)");
 
 	FEUR_Test_Add_Test("Integer Assert", Test_Integer);
 	FEUR_Test_Add_Test("Pointer Assert", Test_Pointer);
+
+	FEUR_Test_Add_Group("Hard Tests D:");
+
 	FEUR_Test_Add_Test("Float Assert", Test_Float);
 	FEUR_Test_Add_Test("Failing Assert", Test_Failing);
 
