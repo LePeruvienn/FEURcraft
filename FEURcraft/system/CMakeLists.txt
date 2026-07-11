@@ -1,7 +1,3 @@
-# ------------------------------#
-# CMAKE FILE FOR GRAPHIC MODULE #
-# ----------------------------- #
-
 # Get current dir name that is gonna be used as the current lib name
 get_filename_component(DIR_NAME ${CMAKE_CURRENT_SOURCE_DIR} NAME)
 
@@ -22,23 +18,8 @@ target_include_directories(${LIB_NAME}
 # Fichiers sources de la librairie
 target_sources(${LIB_NAME}
 	PRIVATE
-		src/vertex_layout.c
-		src/mesh.c
-		src/geometry.c
-		src/shader.c
+		src/read_file.c
 )
-
-
-find_package(OpenGL REQUIRED)
 
 # On link les librarie nécessaire à la compilation de la lib
-target_link_libraries(${LIB_NAME}
-	PUBLIC 
-		OpenGL::GL
-		glad
-		glfw
-		stb_image
-		utils
-		math
-		system
-)
+target_link_libraries(${LIB_NAME} PUBLIC utils)

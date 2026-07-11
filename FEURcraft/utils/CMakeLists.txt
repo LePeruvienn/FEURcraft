@@ -18,9 +18,8 @@ target_include_directories(${LIB_NAME}
 # Fichiers sources de la librairie
 target_sources(${LIB_NAME}
 	PRIVATE
-		src/read_file.c
 		src/c_str_helper.c
 )
 
 # On link les librarie nécessaire à la compilation de la lib
-target_link_libraries(${LIB_NAME} PUBLIC m)
+target_link_libraries(${LIB_NAME} PUBLIC)
