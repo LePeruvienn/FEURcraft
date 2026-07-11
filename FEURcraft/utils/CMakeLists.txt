@@ -4,7 +4,7 @@ get_filename_component(DIR_NAME ${CMAKE_CURRENT_SOURCE_DIR} NAME)
 set(LIB_NAME ${DIR_NAME})
 
 # Création de la librairie
-add_library(${LIB_NAME} STATIC)
+add_library(${LIB_NAME} SHARED)
 
 # Flag de compilation
 target_compile_options(${LIB_NAME} PRIVATE -Wall -Werror -Wextra)

@@ -3,7 +3,6 @@
 # Ajout des libarie présente en locale
 add_subdirectory(glad)
 add_subdirectory(stb)
-add_subdirectory(cglm)
 
 # Recherche des paquets nécessaire à la compilation du projet
 set(OpenGL_GL_PREFERENCE GLVND)

@@ -1,10 +1,14 @@
+# -------------------------- #
+# CMAKE FILE FOR MATH MODULE #
+# -------------------------- #
+
 # Get current dir name that is gonna be used as the current lib name
 get_filename_component(DIR_NAME ${CMAKE_CURRENT_SOURCE_DIR} NAME)
 
 set(LIB_NAME ${DIR_NAME})
 
 # Création de la librairie
-add_library(${LIB_NAME} STATIC)
+add_library(${LIB_NAME} SHARED)
 
 # Flag de compilation
 target_compile_options(${LIB_NAME} PRIVATE -Wall -Werror -Wextra)
@@ -18,9 +22,10 @@ target_include_directories(${LIB_NAME}
 # Fichiers sources de la librairie
 target_sources(${LIB_NAME}
 	PRIVATE
-		src/mesh.c
-		src/vertex_layout.c
+		src/vec2.c
+		src/vec3.c
+		src/vec4.c
+		src/mat4.c
 )
-
 # On link les librarie nécessaire à la compilation de la lib
-target_link_libraries(${LIB_NAME} PUBLIC glad glfw cglm m utils)
+target_link_libraries(${LIB_NAME} PUBLIC m)
