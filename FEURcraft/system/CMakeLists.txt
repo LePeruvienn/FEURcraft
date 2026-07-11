@@ -20,6 +20,7 @@ target_sources(${LIB_NAME}
 	PRIVATE
 		src/read_file.c
 		src/window.c
+		src/env_helper.c
 )
 
 # On link les librarie nécessaire à la compilation de la lib

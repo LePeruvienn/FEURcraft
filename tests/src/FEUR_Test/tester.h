@@ -6,9 +6,13 @@
 #include "logger.h"
 #include "ansi_colors.h"
 
+#include "env_helper.h"
+
 #include <stdint.h>
 #include <stdbool.h>
 #include <stdio.h>
+
+#define FEUR_TESTS_ENABLE_MINIMAL_OUTPUT_ENV "FEUR_Tests_Enable_Minimal_Output"
 
 #define FEUR_TEST_GROUP_MAX_AMOUNT 128
 
@@ -26,7 +30,7 @@ static FEUR_Tester g_FEUR_tester = { 0 };
 static bool g_FEUR_is_init = false;
 static bool g_FEUR_test_running = false;
 
-void FEUR_Test_Init(void)
+void FEUR_Test_Init()
 {
 	if(g_FEUR_is_init)
 	{
@@ -69,7 +73,7 @@ void FEUR_Test_Add_Group(const char* name)
 	++g_FEUR_tester.test_group_amount;
 }
 
-void FEUR_Test_Add_Test(const char* name, FEUR_Test_Result (*test_func)(void))
+void FEUR_Test_Add_Test(const char* name, FEUR_Test_Result (*test_func)())
 {
 	if(g_FEUR_is_init == false)
 	{
@@ -108,7 +112,7 @@ void FEUR_Test_Add_Test(const char* name, FEUR_Test_Result (*test_func)(void))
 	++test_group->test_amount;
 }
 
-void FEUR_Test_Run(void)
+void FEUR_Test_Run()
 {
 	g_FEUR_test_running = true;
 
@@ -139,22 +143,13 @@ void FEUR_Test_Run(void)
 	}
 }
 
-static void FEUR_PrintBar(void)
+static void FEUR_PrintBar()
 {
 	printf(ANSI_COLOR_BOLD ANSI_COLOR_CYAN "============================" ANSI_COLOR_RESET "\n");
 }
 
-static const char* FEUR_FailColor(uint32_t failed_count)
+static void FEUR_PrintHeader()
 {
-	return (failed_count > 0) ? ANSI_COLOR_RED : ANSI_COLOR_GREEN;
-}
-
-void FEUR_Test_End(void)
-{
-	g_FEUR_test_running = false;
-
-	uint32_t total_tests = 0;
-
 	printf("\n");
 	FEUR_PrintBar();
 
@@ -165,6 +160,25 @@ void FEUR_Test_End(void)
 	ANSI_COLOR_RESET);
 
 	FEUR_PrintBar();
+}
+
+static const char* FEUR_FailColor(uint32_t failed_count)
+{
+	return (failed_count > 0) ? ANSI_COLOR_RED : ANSI_COLOR_GREEN;
+}
+
+void FEUR_Test_End()
+{
+	bool minimal_output_enabled = env_get_bool(FEUR_TESTS_ENABLE_MINIMAL_OUTPUT_ENV);
+
+	g_FEUR_test_running = false;
+
+	uint32_t total_tests = 0;
+
+	if (minimal_output_enabled == false)
+	{
+		FEUR_PrintHeader();
+	}
 
 	for(uint32_t i = 0; i < g_FEUR_tester.test_group_amount; ++i)
 	{
@@ -185,6 +199,13 @@ void FEUR_Test_End(void)
 				printf("  " ANSI_COLOR_GREEN "[PASS]  " ANSI_COLOR_RESET " %s\n", test->name);
 			}
 		}
+	}
+
+	if (minimal_output_enabled )
+	{
+		// We exit by the number of failed tests (0 == OK, else some FAILED !)
+		EXIT_PROGRAM(g_FEUR_tester.test_failed_amount);
+		return;
 	}
 
 	uint32_t passed_tests = total_tests - g_FEUR_tester.test_failed_amount;
