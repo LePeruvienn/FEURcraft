@@ -175,7 +175,7 @@ mat4 mat4_translate_z(float t)
 
 mat4 mat4_translate(vec3 t)
 {
-	return MAT4(1.f, 0.f, 0.f, t.z,
+	return MAT4(1.f, 0.f, 0.f, t.x,
 	            0.f, 1.f, 0.f, t.y,
 	            0.f, 0.f, 1.f, t.z,
 	            0.f, 0.f, 0.f, 1.f);
@@ -210,7 +210,7 @@ mat4 mat4_rotate_z(float angle)
 
 	return MAT4(  c,  -s, 0.f, 0.f,
 	              s,   c, 0.f, 0.f,
-	            0.f, 0.f, 0.1, 0.f,
+	            0.f, 0.f, 1.f, 0.f,
 	            0.f, 0.f, 0.f, 1.f);
 }
 

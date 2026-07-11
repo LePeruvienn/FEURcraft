@@ -211,6 +211,8 @@ void FEUR_Test_End()
 	uint32_t passed_tests = total_tests - g_FEUR_tester.test_failed_amount;
 	float pass_rate = (total_tests > 0) ? (100.0f * (float)passed_tests / (float)total_tests) : 100.0f;
 
+	// OUI LE CODE EST DEGEULASS OUI MAIS MOI JE SUIS UN FOU MOI 🤯
+
 	printf("\n");
 	FEUR_PrintBar();
 	printf("Groups : %u total, %s%u failed" ANSI_COLOR_RESET "\n",

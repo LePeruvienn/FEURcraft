@@ -27,7 +27,7 @@ vec3 vec3_cross(vec3 u, vec3 v)
 	return (vec3)
 	{
 		.x = ((u.y * v.z) - (u.z * v.y)),
-		.y = ((u.x * v.z) - (u.z * v.x)),
+		.y = ((u.z * v.x) - (u.x * v.z)),
 		.z = ((u.x * v.y) - (u.y * v.x))
 	};
 }
