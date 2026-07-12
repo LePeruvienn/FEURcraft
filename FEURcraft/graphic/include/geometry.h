@@ -1,86 +1,69 @@
 #ifndef GEOMETRY_H
 #define GEOMETRY_H
 
-#include "mesh.h"
-#include "glad/glad.h"
+#include "vertex.h"
+#include "vertex_layout.h"
 
 /**
  * \file geometry.h
- * \brief Structure représentant les données d'un modèle 3D charger dans le GPU.
+ * \brief Structure représentant les données d'un modèle 3D
  *
- * Le type `geometry` permet de faire le lien entre l'espace mémoire alloué
- * d'un modèle 3D et le code C.
+ * Le type `geometry` représente les données de \ref vertex alloué sur la RAM.
+ * L'ensemble de ces vertex représente un modèle 3D.
  *
- * Lors de la création d'une géométrie à l'aide d'un type \ref mesh,
- * les données de l'objet 3D sont envoyer au GPU et les géométrie stock
- * les indices associées au buffer GPU du modèle.
- *
- * Ensuite à l'aide de la géométrie, nous pouvons alors lié le modèle au GPU
- * a tout moment afin de pouvoir en déssiner le modèle de différente façon,
- * mais aussi de pouvoir lui lié des shaders ou des textures.
+ * Chaque geometry peut avoir une structure de vertex différente (avec normal, sans normal).
  */
 
 /**
-* \brief Type représentant les données d'un modèle 3D sur le GPU
+* \brief Type représentant les données de vertex d'un modèle 3D.
 */
-typedef struct geometry* geometry;
+typedef struct Geometry Geometry;
+
+struct Geometry
+{
+	void* vertices; // Peut contenir différent type de vertex
+	size_t vertices_size;
+	unsigned int vertices_amount;
+
+	unsigned int* indices;
+	unsigned int indices_amount;
+
+	vertex_layout layout; // doit être corda avec les type de vertex dans le buffer
+};
 
 /**
-* \brief Créer une nouvelle géométrie à partir du modèle en paramêtre.
-* \param m mesh du modèle
-* \return nouvelle géométrie alloué
+* \brief Créer les données de vertex d'un cube
+* \return geometry vertex du cube
 */
-geometry create_geometry(mesh m);
+Geometry* create_cube();
 
 /**
-* \brief Créer une nouvelle géométrie de cube
-* \return nouvelle géométrie alloué
-*/
-geometry create_cube_geometry();
-
-/**
-* \brief Créer une nouvelle géométrie de sphère
+* \brief Créer les données de vertex d'une sphère
 * \param R rayon de la sphère
 * \param lat_amount nombre de sommet en latitude
 * \param long_amount nombre de sommet en longitude
-* \return nouvelle géométrie alloué
+* \return geometry vertex de la sphère
 */
-geometry create_sphere_geometry(float R, unsigned int lat_amount, unsigned int long_amount);
+Geometry* create_sphere(float R, unsigned int lat_amount, unsigned int long_amount);
 
 /**
-* \brief libère la mémoire de la géométrie en passer en paramêtre
-* \param g géométrie à libérer
+* \brief Créer les données de vertex pour un ensemble de lignes
+* \param vertices différent points des lignes
+* \param size nombre de point total
+* \return geometry vertex des lignes
 */
-void free_geometry(geometry g);
+Geometry* create_line(vertex* vertices, unsigned int size);
 
 /**
-* \brief Lie les données de la géométrie au GPU
-* \param g géométrie à lié
+* \brief libère la mémoire de la geometry passer en paramêtre
+* \param m geometry à libérer
 */
-void bind_geometry(geometry g);
+void free_geometry(Geometry* g);
 
 /**
-* \brief dé lie les données de la géométrie du GPU
-* \param g géométrie à dé-lié
+* \brief charge les données de la geometry dans le GPU
+* \param m geometry à charger
 */
-void unbind_geometry(geometry g);
-
-/**
-* \brief Déssine la géométrie actuelle en faisant un appel GPU
-* \param g géométrie à déssiner
-* \param mode mode de déssin
-*/
-void draw_geometry(geometry g, GLenum mode);
-
-/**
-* \brief fait un appel GPU pour déssiner plusieurs instance la géométrie
-*
-* \attention ne pas oublier de lié un buffer d'instance avant d'appeler cette méthode.
-*
-* \param g géométrie à déssiner
-* \param mode mode de déssin
-* \param amount nombre d'instance à déssiner
-*/
-void draw_geometry_instanced(geometry g, GLenum mode, unsigned int amount);
+void load_geometry_data(Geometry* g);
 
 #endif // GEOMETRY_H

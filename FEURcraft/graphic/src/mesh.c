@@ -1,225 +1,128 @@
 #include "mesh.h"
-#include "vertex.h"
-#include "vertex_layout.h"
 #include "logger.h"
+#include "mesh.h"
 #include "debug.h"
+#include "vertex_layout.h"
 
 #include "glad/glad.h"
-
 #include <stdlib.h>
-#include <string.h>
 #include <stddef.h>
-#include <math.h>
 
-#define M_PI 3.14159265358979323846
-
-#define CUBE_VERTICES_AMOUNT 8
-#define CUBE_INDICES_AMOUNT 36
-
-struct mesh
+Mesh* create_mesh(Geometry* g)
 {
-	void* vertices; // Peut contenir différent type de vertex
-	size_t vertices_size;
-	unsigned int vertices_amount;
+	Mesh* m = malloc(sizeof(struct Mesh));
 
-	unsigned int* indices;
-	unsigned int indices_amount;
+	m->indices_amount = g->indices_amount;
 
-	vertex_layout layout; // doit être corda avec les type de vertex dans le buffer
-};
+	glGenVertexArrays(1, &m->VAO);
+	glGenBuffers(1, &m->VBO);
+	glGenBuffers(1, &m->EBO);
 
-mesh create_cube()
-{
-	mesh m = malloc(sizeof(struct mesh));
+	glBindVertexArray(m->VAO);
+	glBindBuffer(GL_ARRAY_BUFFER, m->VBO);
+	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m->EBO);
 
-	m->vertices = NULL;
-	m->vertices_size = sizeof(vertex) * CUBE_VERTICES_AMOUNT;
-	m->vertices_amount = CUBE_VERTICES_AMOUNT;
-
-	m->indices = NULL;
-	m->indices_amount = CUBE_INDICES_AMOUNT;
-
-	vertex vertices[CUBE_VERTICES_AMOUNT] = {
-
-		// Front face
-		{ .pos = VEC3(-0.5, -0.5,  0.5) },
-		{ .pos = VEC3( 0.5, -0.5,  0.5) },
-		{ .pos = VEC3( 0.5,  0.5,  0.5) },
-		{ .pos = VEC3(-0.5,  0.5,  0.5) },
-
-		// Back face
-		{ .pos = VEC3(-0.5, -0.5, -0.5) },
-		{ .pos = VEC3( 0.5, -0.5, -0.5) },
-		{ .pos = VEC3( 0.5,  0.5, -0.5) },
-		{ .pos = VEC3(-0.5,  0.5, -0.5) }
-	};
-
-	unsigned int indices[CUBE_INDICES_AMOUNT] = {
-
-		// Front
-		0, 1, 2,
-		2, 3, 0,
-		// Right
-		1, 5, 6,
-		6, 2, 1,
-
-		// Back
-		5, 4, 7,
-		7, 6, 5,
-
-		// Left
-		4, 0, 3,
-		3, 7, 4,
-
-		// Top
-		3, 2, 6,
-		6, 7, 3,
-
-		// Bottom
-		4, 5, 1,
-		1, 0, 4
-	};
-
-	m->vertices = malloc(m->vertices_size);
-	memcpy(m->vertices, vertices, m->vertices_size);
-
-	m->indices = malloc(sizeof(unsigned int) * m->indices_amount);
-	memcpy(m->indices, indices, sizeof(unsigned int) * m->indices_amount);	
-
-	m->layout = create_vertex_layout();
-
-	return m;
-}
-
-mesh create_sphere(float R, unsigned int lat_amount, unsigned int long_amount)
-{
-	if (R <= 0.f)
-	{
-		LOG_ERROR("Sphere radius cannot equal to zero.");
-		return NULL;
-	}
-
-	unsigned int vertices_amount = (lat_amount + 1) * (long_amount + 1);
-	unsigned int indices_amount = lat_amount * long_amount * 6;
-
-	size_t vertices_size = sizeof(vertex) * vertices_amount;
+	vertex_layout layout = g->layout;
 	
-	vertex* vertices = malloc(vertices_size);
-	unsigned int* indices = malloc(sizeof(unsigned int) * indices_amount);
+	setup_vao_attributes(layout);
 
-	float step_lat = M_PI / lat_amount;
-	float step_long = (2.f * M_PI) / long_amount;
+	load_geometry_data(g);
 
-	unsigned int vertex_i = 0;
-
-	for (unsigned int i = 0; i <= lat_amount; ++i)
-	{
-		float lat_angle = i * step_lat;
-
-		for (unsigned int j = 0; j <= long_amount; ++j)
-		{
-			float long_angle = j * step_long;
-
-			float x = R * sinf(lat_angle) * cosf(long_angle);
-			float y = R * sinf(lat_angle) * sinf(long_angle);
-			float z = R * cosf(lat_angle);
-
-			vertices[vertex_i].pos.x = x;
-			vertices[vertex_i].pos.y = y;
-			vertices[vertex_i].pos.z = z;
-
-			++vertex_i;
-		}
-	}
-
-	unsigned int indice_i = 0;
-
-	for (unsigned int i = 0; i < lat_amount; ++i)
-	{
-		for (unsigned int j = 0; j < long_amount; ++j)
-		{
-			unsigned int k1 = i * (long_amount + 1) + j;
-			unsigned int k2 = k1 + long_amount + 1;
-
-			indices[indice_i++] = k1;
-			indices[indice_i++] = k2;
-			indices[indice_i++] = k1 + 1;
-
-			indices[indice_i++] = k1 + 1;
-			indices[indice_i++] = k2;
-			indices[indice_i++] = k2 + 1;
-		}
-	}
-
-	mesh m = malloc(sizeof(struct mesh));
-
-	m->vertices = vertices;
-	m->vertices_size = vertices_size;
-	m->vertices_amount = vertices_amount;
-
-	m->indices = indices;
-	m->indices_amount = indices_amount;
-
-	m->layout = create_vertex_layout();
+	glBindVertexArray(0);
+	glBindBuffer(GL_ARRAY_BUFFER, 0);
+	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
 
 	return m;
 }
 
-mesh create_line(vertex* vertices, unsigned int size)
+Mesh* create_cube_mesh()
 {
-	mesh m = malloc(sizeof(struct mesh));
+	Geometry* g = create_cube();
+	Mesh* m = create_mesh(g);
 
-	m->vertices = NULL;
-	m->vertices_size = sizeof(vertex) * size;
-	m->vertices_amount = size;
-
-	m->indices = NULL;
-	m->indices_amount = size;
-
-	m->vertices = malloc(m->vertices_size);
-	m->indices = malloc(sizeof(vertex) * m->indices_amount);
-
-	memcpy(m->vertices, vertices, size);
-
-	for (unsigned int i = 0; i < size; i++)
-	{
-		m->indices[i] = i;
-	}
-
-	m->layout = create_vertex_layout();
+	free_geometry(g);
 
 	return m;
 }
 
-void load_mesh_data(mesh m)
+Mesh* create_sphere_mesh(float R, unsigned int lat_amount, unsigned int long_amount)
 {
-	LOG_INFO("Loaded a mesh to GPU of %u vertices and %u indices", m->vertices_amount, m->indices_amount);
+	Geometry* g = create_sphere(R, lat_amount, long_amount);
+	Mesh* m = create_mesh(g);
 
-	GL_CALL(glBufferData(GL_ARRAY_BUFFER,
-	             m->vertices_size,
-	             m->vertices,
-	             GL_STATIC_DRAW));
+	free_geometry(g);
 
-	GL_CALL(glBufferData(GL_ELEMENT_ARRAY_BUFFER,
-	             sizeof(unsigned int) * m->indices_amount,
-	             m->indices,
-	             GL_STATIC_DRAW));
+	return m;
 }
 
-void free_mesh(mesh m)
+void free_mesh(Mesh* m)
 {
-	free_vertex_layout(m->layout);
-	free(m->vertices);
-	free(m->indices);
+	if (m == NULL)
+	{
+		LOG_ERROR("Tried to free a NULL mesh");
+		return;
+	}
+
+	glDeleteVertexArrays(1, &m->VAO);
+	glDeleteBuffers(1, &m->VBO);
+	glDeleteBuffers(1, &m->EBO);
+
 	free(m);
 }
 
-unsigned int get_mesh_indices_amount(mesh m)
+void bind_mesh(Mesh* m)
 {
-	return m->indices_amount;
+	if (m == NULL)
+	{
+		LOG_ERROR("Trying to bind a null mesh");
+	}
+
+	GL_CALL(glBindVertexArray(m->VAO));
+	GL_CALL(glBindBuffer(GL_ARRAY_BUFFER, m->VBO));
+	GL_CALL(glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m->EBO));
 }
 
-vertex_layout get_mesh_vertex_layout(mesh m)
+void unbind_mesh(Mesh* m)
 {
-	return m->layout;
+	if (m == NULL)
+	{
+		LOG_ERROR("Trying to unbind a null mesh");
+	}
+
+	glBindVertexArray(0);
+	glBindBuffer(GL_ARRAY_BUFFER, 0);
+	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
+}
+
+void draw_mesh(Mesh* m, GLenum mode)
+{
+	if (m == NULL)
+	{
+		LOG_ERROR("Cannot draw a NULL mesh.");
+		return;
+	}
+
+	GL_CALL(glDrawElements(
+		mode,
+		m->indices_amount,
+		GL_UNSIGNED_INT,
+		NULL
+	));
+}
+
+void draw_mesh_instanced(Mesh* m, GLenum mode, unsigned int amount)
+{
+	if (m == NULL)
+	{
+		LOG_ERROR("Cannot draw a NULL mesh.");
+		return;
+	}
+
+	GL_CALL(glDrawElementsInstanced(
+		mode,
+		m->indices_amount,
+		GL_UNSIGNED_INT,
+		NULL,
+		amount
+	));
 }

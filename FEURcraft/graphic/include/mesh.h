@@ -1,69 +1,97 @@
 #ifndef MESH_H
 #define MESH_H
 
-#include "vertex.h"
-#include "vertex_layout.h"
+#include "geometry.h"
+#include "glad/glad.h"
 
 /**
  * \file mesh.h
- * \brief Structure représentant les données d'un modèle 3D
+ * \brief Structure représentant les données d'un modèle 3D charger dans le GPU.
  *
- * Le type `mesh` représente les données de \ref vertex alloué sur la RAM.
- * L'ensemble de ces vertex représente un modèle 3D.
+ * Le type `mesh` permet de faire le lien entre l'espace mémoire alloué
+ * d'un modèle 3D et le code C.
  *
- * Chaque mesh peut avoir une structure de vertex différente (avec normal, sans normal).
+ * Lors de la création d'une géométrie à l'aide d'un type \ref mesh,
+ * les données de l'objet 3D sont envoyer au GPU et les géométrie stock
+ * les indices associées au buffer GPU du modèle.
+ *
+ * Ensuite à l'aide de la géométrie, nous pouvons alors lié le modèle au GPU
+ * a tout moment afin de pouvoir en déssiner le modèle de différente façon,
+ * mais aussi de pouvoir lui lié des shaders ou des textures.
  */
 
 /**
-* \brief Type représentant les données de vertex d'un modèle 3D.
+* \brief Type représentant les données d'un modèle 3D sur le GPU
 */
-typedef struct mesh* mesh;
+typedef struct Mesh Mesh;
+
+struct Mesh
+{
+	GLuint VAO;
+	GLuint VBO;
+	GLuint EBO;
+
+	GLenum type;
+	unsigned int indices_amount;
+
+};
 
 /**
-* \brief Créer les données de vertex d'un cube
-* \return mesh vertex du cube
+* \brief Créer une nouvelle géométrie à partir du modèle en paramêtre.
+* \param m mesh du modèle
+* \return nouvelle géométrie alloué
 */
-mesh create_cube();
+Mesh* create_mesh(Geometry* g);
 
 /**
-* \brief Créer les données de vertex d'une sphère
+* \brief Créer une nouvelle géométrie de cube
+* \return nouvelle géométrie alloué
+*/
+Mesh* create_cube_mesh();
+
+/**
+* \brief Créer une nouvelle géométrie de sphère
 * \param R rayon de la sphère
 * \param lat_amount nombre de sommet en latitude
 * \param long_amount nombre de sommet en longitude
-* \return mesh vertex de la sphère
+* \return nouvelle géométrie alloué
 */
-mesh create_sphere(float R, unsigned int lat_amount, unsigned int long_amount);
+Mesh* create_sphere_mesh(float R, unsigned int lat_amount, unsigned int long_amount);
 
 /**
-* \brief Créer les données de vertex pour un ensemble de lignes
-* \param vertices différent points des lignes
-* \param size nombre de point total
-* \return mesh vertex des lignes
+* \brief libère la mémoire de la géométrie en passer en paramêtre
+* \param g géométrie à libérer
 */
-mesh create_line(vertex* vertices, unsigned int size);
+void free_mesh(Mesh* m);
 
 /**
-* \brief libère la mémoire de la mesh passer en paramêtre
-* \param m mesh à libérer
+* \brief Lie les données de la géométrie au GPU
+* \param g géométrie à lié
 */
-void free_mesh(mesh m);
+void bind_mesh(Mesh* m);
 
 /**
-* \brief charge les données de la mesh dans le GPU
-* \param m mesh à charger
+* \brief dé lie les données de la géométrie du GPU
+* \param g géométrie à dé-lié
 */
-void load_mesh_data(mesh m);
+void unbind_mesh(Mesh* m);
 
 /**
-* \brief Donne le nombre d'indice total de la mesh en paramêtre
-* \param m mesh cible
+* \brief Déssine la géométrie actuelle en faisant un appel GPU
+* \param g géométrie à déssiner
+* \param mode mode de déssin
 */
-unsigned int get_mesh_indices_amount(mesh m);
+void draw_mesh(Mesh* m, GLenum mode);
 
 /**
-* \brief Récupère le \ref vertex_layout de la mesh en paramêtre
-* \param m mesh cible
+* \brief fait un appel GPU pour déssiner plusieurs instance la géométrie
+*
+* \attention ne pas oublier de lié un buffer d'instance avant d'appeler cette méthode.
+*
+* \param g géométrie à déssiner
+* \param mode mode de déssin
+* \param amount nombre d'instance à déssiner
 */
-vertex_layout get_mesh_vertex_layout(mesh m);
+void draw_mesh_instanced(Mesh* m, GLenum mode, unsigned int amount);
 
 #endif // MESH_H
