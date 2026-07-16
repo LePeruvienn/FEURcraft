@@ -26,6 +26,7 @@ target_sources(${LIB_NAME}
 		src/mesh.c
 		src/geometry.c
 		src/shader.c
+		src/shader_program.c
 )
 
 

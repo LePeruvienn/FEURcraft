@@ -1,6 +1,8 @@
 #ifndef WINDOW_H
 #define WINDOW_H
 
+#include <GLFW/glfw3.h>
+
 #include <stdbool.h>
 
 /**
@@ -15,7 +17,14 @@
 /**
  * \brief Pointeur représentant la structure et l'état d'une fenêtre.
  */
-typedef struct window* window;
+typedef struct Window Window;
+
+struct Window
+{
+	GLFWwindow* handle;
+	unsigned int width;
+	unsigned int height;
+};
 
 /**
  * \brief Crée et initialise une nouvelle fenêtre d'affichage.
@@ -28,7 +37,7 @@ typedef struct window* window;
  * \param title Chaîne de caractères affichée comme titre de la fenêtre.
  * \return Un pointeur \a window vers la fenêtre créée, ou NULL en cas d'échec.
  */
-window create_window(int width, int height, const char* title);
+Window* create_window(unsigned int width, unsigned int height, const char* title);
 
 /**
  * \brief Détruit la fenêtre et libère la mémoire associée.
@@ -38,7 +47,7 @@ window create_window(int width, int height, const char* title);
  *
  * \param w La fenêtre à détruire.
  */
-void free_window(window w);
+void free_window(Window* w);
 
 /**
  * \brief Vérifie si la fenêtre a reçu un signal de fermeture.
@@ -49,7 +58,7 @@ void free_window(window w);
  * \param w La fenêtre à vérifier.
  * \return true si la fenêtre doit se fermer, false sinon.
  */
-bool window_should_close(window w);
+bool window_should_close(Window* w);
 
 /**
  * \brief Met à jour l'affichage et traite les événements de la fenêtre.
@@ -59,7 +68,7 @@ bool window_should_close(window w);
  *
  * \param w La fenêtre à mettre à jour.
  */
-void window_update_events(window w);
+void window_update_events(Window* w);
 
 /**
  * \brief Met en pause le processus en attendant des événements.
@@ -72,39 +81,11 @@ void window_update_events(window w);
 void window_wait_events(double timeout);
 
 /**
- * \brief Récupère la largeur logique de la fenêtre.
- *
- * \param w La fenêtre concernée.
- * \return La largeur en pixels logiques.
- */
-int window_get_width(window w);
-
-/**
- * \brief Récupère la hauteur logique de la fenêtre.
- *
- * \param w La fenêtre concernée.
- * \return La hauteur en pixels logiques.
- */
-int window_get_height(window w);
-
-/**
  * \brief Récupère le temps écoulé depuis l'initialisation de la fenêtre.
  *
- * \param w La fenêtre concernée.
  * \return Le temps en secondes (float).
  */
-float window_get_time(window w);
-
-/**
- * \brief Récupère le pointeur natif de la fenêtre sous-jacente.
- *
- * \attention Cette fonction casse l'abstraction et ne doit être utilisée 
- * que pour initialiser des bibliothèques externes.
- *
- * \param w La fenêtre concernée.
- * \return Un pointeur `void*` correspondant au handle natif (ex: `GLFWwindow*`).
- */
-void* window_get_native_handle(window w);
+float window_get_time();
 
 /**
  * \brief Récupère la taille physique du framebuffer.
@@ -117,8 +98,8 @@ void* window_get_native_handle(window w);
  * \param width Pointeur où stocker la largeur physique en pixels.
  * \param height Pointeur où stocker la hauteur physique en pixels.
  */
-void window_get_framebuffer_size(window w, int* width, int* height);
+void window_get_framebuffer_size(Window* w, int* width, int* height);
 
-bool window_get_key_pressed(window w, int key);
+bool window_get_key_pressed(Window* w, int key);
 
 #endif // WINDOW_H

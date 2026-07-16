@@ -10,39 +10,7 @@
 
 #define _10e9 1000000000.0
 
-struct window
-{
-	GLFWwindow* handle;
-	int width;
-	int height;
-};
-
-/**
- * \brief Fonction de rappel appelée lors du redimensionnement de la fenêtre.
- *
- * Cette fonction est déclenchée automatiquement par GLFW chaque fois que 
- * l'utilisateur (ou le système d'exploitation) modifie la taille de la fenêtre. 
- * Elle se charge de mettre à jour la zone d'affichage OpenGL (Viewport) ainsi que 
- * les dimensions internes stockées dans la structure d'abstraction.
- *
- * \param handle Le pointeur natif de la fenêtre GLFW ayant déclenché l'événement.
- * \param width La nouvelle largeur physique (framebuffer) en pixels.
- * \param height La nouvelle hauteur physique (framebuffer) en pixels.
- */
-static void framebuffer_size_callback(GLFWwindow* handle, int width, int height)
-{
-	// glViewport(0, 0, width, height);
-	
-	window w = (window) glfwGetWindowUserPointer(handle);
-
-	if (w)
-	{
-		w->width = width;
-		w->height = height;
-	}
-}
-
-window create_window(int width, int height, const char* title)
+Window* create_window(unsigned int width, unsigned int height, const char* title)
 {
 	if (!glfwInit())
 	{
@@ -55,7 +23,7 @@ window create_window(int width, int height, const char* title)
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 	glfwWindowHint(GLFW_SAMPLES, 4); 
 
-	window w = malloc(sizeof(struct window));
+	Window* w = malloc(sizeof(struct Window));
 
 	if (w == NULL)
 	{
@@ -78,7 +46,6 @@ window create_window(int width, int height, const char* title)
 
 	glfwMakeContextCurrent(w->handle);
 	glfwSetWindowUserPointer(w->handle, w);
-	glfwSetFramebufferSizeCallback(w->handle, framebuffer_size_callback);
 
 	// On désactive le V-Sync
 	glfwSwapInterval(0);
@@ -86,7 +53,7 @@ window create_window(int width, int height, const char* title)
 	return w;
 }
 
-void free_window(window w)
+void free_window(Window* w)
 {
 	if (w == NULL)
 	{
@@ -103,12 +70,12 @@ void free_window(window w)
 	glfwTerminate();
 }
 
-bool window_should_close(window w) 
+bool window_should_close(Window* w) 
 { 
 	return glfwWindowShouldClose(w->handle); 
 }
 
-void window_update_events(window w) 
+void window_update_events(Window* w) 
 { 
 	glfwSwapBuffers(w->handle); 
 	glfwPollEvents(); 
@@ -123,28 +90,13 @@ void window_wait_events(double timeout)
 
 	thrd_sleep(&ts, NULL);
 }
-int window_get_width(window w) 
-{ 
-	return w->width; 
-}
 
-int window_get_height(window w) 
-{ 
-	return w->height; 
-}
-
-float window_get_time(window w) 
-{ 
-	(void) w; 
+float window_get_time() 
+{
 	return (float) glfwGetTime(); 
 }
 
-void* window_get_native_handle(window w) 
-{ 
-	return w->handle; 
-}
-
-void window_get_framebuffer_size(window w, int* width, int* height) 
+void window_get_framebuffer_size(Window* w, int* width, int* height) 
 {
 	if (w && w->handle)
 	{

@@ -1,183 +1,98 @@
 #include "shader.h"
-#include "debug.h"
+#include "shader_type.h"
 
-#include "logger.h"
 #include "read_file.h"
+
+#include "ptr_helper.h"
 
 #include "glad/glad.h"
 
-#include <stdlib.h>
-#include <stdio.h>
 #include <stdbool.h>
 
-#define CHECK_SHADER_IS_NULL(s, msg, ret) \
-	do { if (s == NULL) {                 \
-		LOG_ERROR(msg); return ret;       \
-	}} while(0)
-
-#define LOG_SHADER_IS_OK(s, n)                         \
-	do { if (s != NULL) LOG_INFO("[%s] : OK", n);      \
-	     else           LOG_ERROR("[%s] : FAILED", n); \
-	} while (0)
-
-struct shader
+void shader_init(Shader* shader, const char* file_path, ShaderType type)
 {
-	// ID du shader OpenGL 
-	GLuint program;
-};
+	CHECK_IS_NULL_RET(shader, "Tried init a NULL shader.", );
 
-static int get_shader_status(GLuint shader, GLenum pname, const char* shader_name)
+	GLenum gl_shader_type = shader_type_to_gl_type(type);
+
+	shader->id = glCreateShader(gl_shader_type);
+	shader->type = type;
+	shader->file_path = file_path;
+	shader->status = SHADER_STATUS_NOT_VALID;
+}
+
+void shader_deinit(Shader* shader)
+{
+	if(shader->status != SHADER_STATUS_VALID)
+		return;
+
+	glDeleteShader(shader->id);
+
+	shader->id = 0;
+	shader->status = SHADER_STATUS_NOT_INIT;
+	shader->type = SHADER_TYPE_UNKNOWN;
+}
+
+void shader_compile(Shader* shader)
+{
+	CHECK_IS_NULL_RET(shader, "Tried to compile a NULL shader.", );
+
+	if (shader->status == SHADER_STATUS_NOT_INIT)
+	{
+		LOG_ERROR("Cannot compille an un initialized shader.");
+		return;
+	}
+
+	const char* source = read_file_txt(shader->file_path);
+
+	CHECK_IS_NULL_RET(source, "Failed to read shader source", );
+
+	glShaderSource(shader->id, 1, &source, NULL);
+	glCompileShader(shader->id);
+
+	shader_update_status(shader);
+}
+
+void shader_init_and_compile(Shader* shader, const char* file_path, ShaderType type)
+{
+	CHECK_IS_NULL_RET(shader, "Tried to init and compile of a NULL shader.", );
+	shader_init(shader, file_path, type);
+	shader_compile(shader);
+}
+
+static int get_shader_status(GLuint id, GLenum pname, const char* name)
 {
 	int  success;
 	char infoLog[512];
 
-	glGetShaderiv(shader, pname, &success);
+	glGetShaderiv(id, pname, &success);
 
 	if(!success)
 	{
-		glGetShaderInfoLog(shader, 512, NULL, infoLog);
+		glGetShaderInfoLog(id, 512, NULL, infoLog);
 
-		if (shader_name != NULL)
-			LOG_ERROR("shader \"%s\" status failed :\n    %s", shader_name, infoLog);
+		if (name != NULL)
+			LOG_ERROR("shader \"%s\" status failed :\n %s", name, infoLog);
 		else
-			LOG_ERROR("shader status failed :\n    %s", infoLog);
+			LOG_ERROR("shader status failed :\n %s", infoLog);
 	}
 
 	return success;
 }
 
-static int get_program_status(GLuint program, GLenum pname)
+void shader_update_status(Shader* shader)
 {
-	int  success;
-	char infoLog[512];
+	CHECK_IS_NULL_RET(shader, "Tried to check status of a NULL shader.", );
 
-	glGetProgramiv(program, pname, &success);
+	int status = get_shader_status(shader->id, GL_COMPILE_STATUS, shader->file_path);
 
-	if(!success)
+	if (status == 0)
 	{
-		glGetProgramInfoLog(program, 512, NULL, infoLog);
-		LOG_ERROR("program status failed, %s", infoLog);
+		shader->status = SHADER_STATUS_VALID;
 	}
-
-	return success;
-}
-
-int compile_shader(const char* path, GLuint type, GLuint* out)
-{
-	GLuint shader = glCreateShader(type);
-
-	const char* source = read_file_txt(path);
-
-	if (source == NULL)
+	else
 	{
-		LOG_ERROR("Failed to read shader source file.");
-		return 1;
+		shader->status = SHADER_STATUS_LINK_FAILED;
 	}
-
-	glShaderSource(shader, 1, &source, NULL);
-	glCompileShader(shader);
-
-	if (!get_shader_status(shader, GL_COMPILE_STATUS, path))
-	{
-		LOG_ERROR("GL_COMPILE_STATUS failed");
-		return 2;
-	}
-
-	*out = shader;
-
-	return 0;
-}
-
-int compile_shader_program(GLuint* shaders, unsigned int size, GLuint* out)
-{
-	GLuint shader_program = glCreateProgram();
-
-	for (size_t i = 0; i < size; i++)
-	{
-		glAttachShader(shader_program, shaders[i]);
-	}
-
-	glLinkProgram(shader_program);
-
-	if (!get_program_status(shader_program, GL_LINK_STATUS))
-	{
-		LOG_ERROR("GL_LINK_STATUS failed");
-		return 1;
-	}
-
-	*out = shader_program;
-
-	return 0;
-}
-
-shader create_shader(const char* vert_shader_path, const char* frag_shader_path)
-{
-	shader s = malloc(sizeof(struct shader));
-
-	GLuint vert_shader;
-
-	if (compile_shader(vert_shader_path, GL_VERTEX_SHADER, &vert_shader) != 0)
-	{
-		free(s);
-
-		LOG_ERROR("Failed to compile vertex shader.");
-		return NULL;
-	}
-
-	GLuint frag_shader;
-
-	if (compile_shader(frag_shader_path, GL_FRAGMENT_SHADER, &frag_shader) != 0)
-	{
-		glDeleteShader(vert_shader);
-		free(s);
-
-		LOG_ERROR("Failed to compile fragment shader.");
-		return NULL;
-	}
-
-	GLuint shaders[2] = {vert_shader, frag_shader};
-
-	if (compile_shader_program(shaders, 2, &s->program) != 0)
-	{
-		glDeleteShader(vert_shader);
-		glDeleteShader(frag_shader);
-		free(s);
-
-		LOG_ERROR("Failed to compile shader program.");
-		return NULL;
-	}
-
-	glDeleteShader(vert_shader);
-	glDeleteShader(frag_shader);
-
-	return s;
-}
-
-void free_shader(shader s)
-{
-	if (s == NULL)
-	{
-		LOG_ERROR("Tried to free a NULL shader");
-		return;
-	}
-
-	glDeleteProgram(s->program);
-	free(s);
-}
-
-void bind_shader(shader s)
-{
-	if (s == NULL)
-	{
-		LOG_ERROR("Tried to bind a NULL shader.");
-		return;
-	}
-
-	GL_CALL(glUseProgram(s->program));
-}
-
-void unbind_shader()
-{
-	glUseProgram(0);
 }
 

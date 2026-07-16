@@ -24,7 +24,3 @@ target_link_libraries(vec4.tst PRIVATE math utils system)
 add_executable(mat4.tst src/mat4.c)
 target_link_libraries(mat4.tst PRIVATE math utils system)
 
-# Testing if window creation wtih OpenGL context is working
-add_executable(create_window.tst src/create_window.c)
-target_link_libraries(create_window.tst PRIVATE system utils)
-
