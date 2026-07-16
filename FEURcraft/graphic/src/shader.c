@@ -31,7 +31,7 @@ static int shader_get_status(GLuint id, GLenum pname, const char* name)
 
 Shader* shader_create(const char* file_path, ShaderType type)
 {
-	GLenum gl_shader_type = shader_type_to_gl_type(type);
+	GLenum gl_shader_type = shader_type_to_gl_enum(type);
 
 	if(gl_shader_type == 0)
 	{
@@ -110,7 +110,7 @@ void shader_compile(Shader* shader)
 		SHADER_STATUS_COMPILED : SHADER_STATUS_COMPILE_FAILED;
 }
 
-GLenum shader_type_to_GL(ShaderType type)
+GLenum shader_type_to_gl_enum(ShaderType type)
 {
 	GLenum gl_type = 0;
 

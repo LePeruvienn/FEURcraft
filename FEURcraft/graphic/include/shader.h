@@ -39,7 +39,7 @@ void shader_free(Shader* shader);
 
 void shader_compile(Shader* shader);
 
-GLenum shader_type_to_gl_type(ShaderType type);
+GLenum shader_type_to_gl_enum(ShaderType type);
 
 const char* shader_type_get_name(ShaderType type);
 
