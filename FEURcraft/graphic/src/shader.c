@@ -1,5 +1,4 @@
 #include "shader.h"
-#include "shader_type.h"
 
 #include "read_file.h"
 
@@ -8,59 +7,9 @@
 #include "glad/glad.h"
 
 #include <stdbool.h>
+#include <stdlib.h>
 
-void shader_init(Shader* shader, const char* file_path, ShaderType type)
-{
-	CHECK_IS_NULL_RET(shader, "Tried init a NULL shader.", );
-
-	GLenum gl_shader_type = shader_type_to_gl_type(type);
-
-	shader->id = glCreateShader(gl_shader_type);
-	shader->type = type;
-	shader->file_path = file_path;
-	shader->status = SHADER_STATUS_NOT_VALID;
-}
-
-void shader_deinit(Shader* shader)
-{
-	if(shader->status != SHADER_STATUS_VALID)
-		return;
-
-	glDeleteShader(shader->id);
-
-	shader->id = 0;
-	shader->status = SHADER_STATUS_NOT_INIT;
-	shader->type = SHADER_TYPE_UNKNOWN;
-}
-
-void shader_compile(Shader* shader)
-{
-	CHECK_IS_NULL_RET(shader, "Tried to compile a NULL shader.", );
-
-	if (shader->status == SHADER_STATUS_NOT_INIT)
-	{
-		LOG_ERROR("Cannot compille an un initialized shader.");
-		return;
-	}
-
-	const char* source = read_file_txt(shader->file_path);
-
-	CHECK_IS_NULL_RET(source, "Failed to read shader source", );
-
-	glShaderSource(shader->id, 1, &source, NULL);
-	glCompileShader(shader->id);
-
-	shader_update_status(shader);
-}
-
-void shader_init_and_compile(Shader* shader, const char* file_path, ShaderType type)
-{
-	CHECK_IS_NULL_RET(shader, "Tried to init and compile of a NULL shader.", );
-	shader_init(shader, file_path, type);
-	shader_compile(shader);
-}
-
-static int get_shader_status(GLuint id, GLenum pname, const char* name)
+static int shader_get_status(GLuint id, GLenum pname, const char* name)
 {
 	int  success;
 	char infoLog[512];
@@ -80,19 +29,128 @@ static int get_shader_status(GLuint id, GLenum pname, const char* name)
 	return success;
 }
 
-void shader_update_status(Shader* shader)
+Shader* shader_create(const char* file_path, ShaderType type)
 {
-	CHECK_IS_NULL_RET(shader, "Tried to check status of a NULL shader.", );
+	GLenum gl_shader_type = shader_type_to_gl_type(type);
 
-	int status = get_shader_status(shader->id, GL_COMPILE_STATUS, shader->file_path);
-
-	if (status == 0)
+	if(gl_shader_type == 0)
 	{
-		shader->status = SHADER_STATUS_VALID;
+		LOG_ERROR("Invalid shader type.");
+		return NULL;
+	}
+
+	GLuint id = glCreateShader(gl_shader_type);
+
+	if (id == 0)
+	{
+		LOG_ERROR("Failed to create OpenGL shader. Returning NULL");
+		return NULL;
+	}
+
+	Shader* shader = malloc(sizeof(Shader));
+
+	if (shader == NULL)
+	{
+		LOG_ERROR("malloc Shader failed.");
+		glDeleteShader(id);
+		return NULL;
+	}
+
+	shader->id = id;
+	shader->type = type;
+	shader->file_path = file_path;
+	shader->status = SHADER_STATUS_NOT_COMPILED;
+
+	return shader;
+}
+
+void shader_free(Shader* shader)
+{
+	CHECK_IS_NULL_RET(shader, "Tried to free a NULL Shader", );
+
+	if (shader->id != 0)
+	{
+		glDeleteShader(shader->id);
 	}
 	else
 	{
-		shader->status = SHADER_STATUS_LINK_FAILED;
+		LOG_WARNING("Freed a shader that shader id is 0.");
 	}
+
+	free(shader);
 }
 
+void shader_compile(Shader* shader)
+{
+	CHECK_IS_NULL_RET(shader, "Tried to compile a NULL shader.", );
+
+	if(shader->id == 0)
+	{
+		LOG_ERROR("Trying to compile invalid shader.");
+		return;
+	}
+
+	if (shader->status == SHADER_STATUS_COMPILED)
+	{
+		LOG_WARNING("Shader already compiled, recompiling shader.");
+	}
+
+	const char* source = read_file_txt(shader->file_path);
+
+	CHECK_IS_NULL_RET(source, "Failed to read shader source", );
+
+	glShaderSource(shader->id, 1, &source, NULL);
+	glCompileShader(shader->id);
+
+	free((void*) source);
+
+	int success = shader_get_status(shader->id, GL_COMPILE_STATUS, shader->file_path);
+
+	shader->status = (success != 0) ?
+		SHADER_STATUS_COMPILED : SHADER_STATUS_COMPILE_FAILED;
+}
+
+GLenum shader_type_to_GL(ShaderType type)
+{
+	GLenum gl_type = 0;
+
+	switch(type)
+	{
+		case SHADER_TYPE_VERT:
+			gl_type = GL_VERTEX_SHADER;
+			break;
+
+		case SHADER_TYPE_FRAG:
+			gl_type = GL_FRAGMENT_SHADER;
+			break;
+
+		case SHADER_TYPE_COUNT:
+			LOG_ERROR("Shader type is count ???");
+			break;
+	}
+
+	return gl_type;
+}
+
+
+const char* shader_type_get_name(ShaderType type)
+{
+	const char* str = "Unkown";
+
+	switch(type)
+	{
+		case SHADER_TYPE_VERT:
+			str = "Vertex";
+			break;
+
+		case SHADER_TYPE_FRAG:
+			str = "Fragment";
+			break;
+
+		case SHADER_TYPE_COUNT:
+			LOG_ERROR("Shader type is count ???");
+			break;
+	}
+
+	return str;
+}
