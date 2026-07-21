@@ -1,6 +1,10 @@
 #ifndef WINDOW_H
 #define WINDOW_H
 
+// glad should always be included before GLFW,
+// otherwise it will cause compile errors
+#include "glad/glad.h"
+
 #include <GLFW/glfw3.h>
 
 #include <stdbool.h>

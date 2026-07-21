@@ -27,3 +27,4 @@ target_link_libraries(mat4.tst PRIVATE math utils system)
 # Shader test
 add_executable(shader.tst src/shader.c)
 target_link_libraries(shader.tst PRIVATE utils graphic)
+

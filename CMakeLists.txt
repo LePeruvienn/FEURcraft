@@ -33,3 +33,6 @@ add_subdirectory(deps)
 add_subdirectory(FEURcraft)
 # Dossiers des tests
 add_subdirectory(tests)
+# Dossiers des exemples de code
+add_subdirectory(examples)
+

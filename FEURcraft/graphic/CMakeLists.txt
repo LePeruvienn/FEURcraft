@@ -34,7 +34,7 @@ find_package(OpenGL REQUIRED)
 
 # On link les librarie nécessaire à la compilation de la lib
 target_link_libraries(${LIB_NAME}
-	PUBLIC 
+	PUBLIC
 		OpenGL::GL
 		glad
 		stb_image

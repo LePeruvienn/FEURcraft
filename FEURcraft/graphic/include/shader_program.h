@@ -43,6 +43,10 @@ void shader_program_detach_all(ShaderProgram* program);
 
 void shader_program_link(ShaderProgram* program);
 
+void shader_program_use(ShaderProgram* program);
+
+void shader_program_unbind();
+
 void shader_program_set_bool(ShaderProgram* program, const char* uniform, bool value);
 void shader_program_set_float(ShaderProgram* program, const char* uniform, float value);
 

@@ -1,6 +1,8 @@
 #include "shader_program.h"
 #include "shader.h"
 
+#include "glad/glad.h"
+
 #include "gl_debug.h"
 #include "logger.h"
 #include "error_checker.h"
@@ -161,6 +163,21 @@ void shader_program_link(ShaderProgram* program)
 		PROGRAM_STATUS_LINK_FAILED : PROGRAM_STATUS_LINKED;
 }
 
+void shader_program_use(ShaderProgram* program)
+{
+	CHECK_IS_NULL_RET(program, "Canno use a NULL shader", );
+
+	CHECK_COND_RET(program->status == PROGRAM_STATUS_LINKED,
+	               "Cannot set a uniform of a not linked shader", );
+
+	GL_CALL(glUseProgram(program->id));
+}
+
+void shader_program_unbind()
+{
+	GL_CALL(glUseProgram(0));
+}
+
 void shader_program_set_bool(ShaderProgram* program, const char* uniform, bool value)
 {
 	CHECK_COND_RET(program->status == PROGRAM_STATUS_LINKED,
@@ -168,7 +185,7 @@ void shader_program_set_bool(ShaderProgram* program, const char* uniform, bool v
 
 	GLint location = glGetUniformLocation(program->id, uniform);
 
-	CHECK_COND_RET(location >= 0, "uniform location less than 0", );
+	CHECK_COND_RET(location > 0, "uniform location less or equal than 0", );
 
 	GL_CALL(glUniform1i(location, value));
 }
