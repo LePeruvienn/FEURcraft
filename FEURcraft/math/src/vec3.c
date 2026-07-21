@@ -2,9 +2,9 @@
 
 #include <math.h>
 
-vec3 vec3_add(vec3 u, vec3 v)
+Vec3 vec3_add(Vec3 u, Vec3 v)
 {
-	return (vec3)
+	return (Vec3)
 	{
 		.x = (u.x + v.x),
 		.y = (u.y + v.y),
@@ -12,9 +12,9 @@ vec3 vec3_add(vec3 u, vec3 v)
 	};
 }
 
-vec3 vec3_sub(vec3 u, vec3 v)
+Vec3 vec3_sub(Vec3 u, Vec3 v)
 {
-	return (vec3)
+	return (Vec3)
 	{
 		.x = (u.x - v.x),
 		.y = (u.y - v.y),
@@ -22,9 +22,9 @@ vec3 vec3_sub(vec3 u, vec3 v)
 	};
 }
 
-vec3 vec3_cross(vec3 u, vec3 v)
+Vec3 vec3_cross(Vec3 u, Vec3 v)
 {
-	return (vec3)
+	return (Vec3)
 	{
 		.x = ((u.y * v.z) - (u.z * v.y)),
 		.y = ((u.z * v.x) - (u.x * v.z)),
@@ -32,9 +32,9 @@ vec3 vec3_cross(vec3 u, vec3 v)
 	};
 }
 
-vec3 vec3_add_scal(vec3 u, float l)
+Vec3 vec3_add_scal(Vec3 u, float l)
 {
-	return (vec3)
+	return (Vec3)
 	{
 		.x = (u.x + l),
 		.y = (u.y + l),
@@ -42,9 +42,9 @@ vec3 vec3_add_scal(vec3 u, float l)
 	};
 }
 
-vec3 vec3_sub_scal(vec3 u, float l)
+Vec3 vec3_sub_scal(Vec3 u, float l)
 {
-	return (vec3)
+	return (Vec3)
 	{
 		.x = (u.x - l),
 		.y = (u.y - l),
@@ -52,9 +52,9 @@ vec3 vec3_sub_scal(vec3 u, float l)
 	};
 }
 
-vec3 vec3_mult_scal(vec3 u, float l)
+Vec3 vec3_mult_scal(Vec3 u, float l)
 {
-	return (vec3)
+	return (Vec3)
 	{
 		.x = (u.x * l),
 		.y = (u.y * l),
@@ -62,7 +62,7 @@ vec3 vec3_mult_scal(vec3 u, float l)
 	};
 }
 
-vec3 vec3_norm(vec3 u)
+Vec3 vec3_norm(Vec3 u)
 {
 	float len = vec3_len(u);
 
@@ -72,46 +72,46 @@ vec3 vec3_norm(vec3 u)
 	return vec3_mult_scal(u, 1 / len);
 }
 
-void vec3_add_in(vec3* u, vec3 v)
+void vec3_add_in(Vec3* u, Vec3 v)
 {
 	u->x += v.x;
 	u->y += v.y;
 	u->z += v.z;
 }
-void vec3_sub_in(vec3* u, vec3 v)
+void vec3_sub_in(Vec3* u, Vec3 v)
 {
 	u->x -= v.x;
 	u->y -= v.y;
 	u->z -= v.z;
 }
 
-void vec3_add_scal_in(vec3* u, float l)
+void vec3_add_scal_in(Vec3* u, float l)
 {
 	u->x += l;
 	u->y += l;
 	u->z += l;
 }
 
-void vec3_sub_scal_in(vec3* u, float l)
+void vec3_sub_scal_in(Vec3* u, float l)
 {
 	u->x -= l;
 	u->y -= l;
 	u->z -= l;
 }
 
-void vec3_mult_scal_in(vec3* u, float l)
+void vec3_mult_scal_in(Vec3* u, float l)
 {
 	u->x *= l;
 	u->y *= l;
 	u->z *= l;
 }
 
-float vec3_dot(vec3 u, vec3 v)
+float vec3_dot(Vec3 u, Vec3 v)
 {
 	return (u.x * v.x) + (u.y * v.y) + (u.z * v.z);
 }
 
-void vec3_norm_in(vec3* u)
+void vec3_norm_in(Vec3* u)
 {
 	float len = vec3_len(*u);
 
@@ -126,22 +126,22 @@ void vec3_norm_in(vec3* u)
 	vec3_mult_scal_in(u, 1 / len);
 }
 
-float vec3_len (vec3 u)
+float vec3_len (Vec3 u)
 {
 	return sqrtf((u.x * u.x) + (u.y * u.y) + (u.z * u.z));
 }
 
-float vec3_len2(vec3 u)
+float vec3_len2(Vec3 u)
 {
 	return (u.x * u.x) + (u.y * u.y) + (u.z * u.z);
 }
 
-float vec3_dist (vec3 u, vec3 v)
+float vec3_dist (Vec3 u, Vec3 v)
 {
 	return vec3_len(VEC3(u.x - v.x, u.y - v.y, u.z - v.z));
 }
 
-float vec3_dist2(vec3 u, vec3 v)
+float vec3_dist2(Vec3 u, Vec3 v)
 {
 	return vec3_len2(VEC3(u.x - v.x, u.y - v.y, u.z - v.z));
 }

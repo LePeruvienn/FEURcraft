@@ -28,7 +28,7 @@ struct Geometry
 	unsigned int* indices;
 	unsigned int indices_amount;
 
-	vertex_layout layout; // doit être corda avec les type de vertex dans le buffer
+	VertexLayout layout; // doit être corda avec les type de vertex dans le buffer
 };
 
 /**
@@ -52,7 +52,7 @@ Geometry* create_sphere(float R, unsigned int lat_amount, unsigned int long_amou
 * \param size nombre de point total
 * \return geometry vertex des lignes
 */
-Geometry* create_line(vertex* vertices, unsigned int size);
+Geometry* create_line(Vertex* vertices, unsigned int size);
 
 /**
 * \brief libère la mémoire de la geometry passer en paramêtre

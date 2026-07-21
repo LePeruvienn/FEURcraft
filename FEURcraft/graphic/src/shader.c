@@ -2,7 +2,7 @@
 
 #include "read_file.h"
 
-#include "ptr_helper.h"
+#include "error_checker.h"
 
 #include "glad/glad.h"
 

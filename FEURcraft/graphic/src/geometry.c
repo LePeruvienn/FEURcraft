@@ -2,7 +2,7 @@
 #include "vertex.h"
 #include "vertex_layout.h"
 #include "logger.h"
-#include "debug.h"
+#include "gl_debug.h"
 
 #include "glad/glad.h"
 
@@ -21,13 +21,13 @@ Geometry* create_cube()
 	Geometry* g = malloc(sizeof(struct Geometry));
 
 	g->vertices = NULL;
-	g->vertices_size = sizeof(vertex) * CUBE_VERTICES_AMOUNT;
+	g->vertices_size = sizeof(Vertex) * CUBE_VERTICES_AMOUNT;
 	g->vertices_amount = CUBE_VERTICES_AMOUNT;
 
 	g->indices = NULL;
 	g->indices_amount = CUBE_INDICES_AMOUNT;
 
-	vertex vertices[CUBE_VERTICES_AMOUNT] = {
+	Vertex vertices[CUBE_VERTICES_AMOUNT] = {
 
 		// Front face
 		{ .pos = VEC3(-0.5, -0.5,  0.5) },
@@ -74,7 +74,7 @@ Geometry* create_cube()
 	g->indices = malloc(sizeof(unsigned int) * g->indices_amount);
 	memcpy(g->indices, indices, sizeof(unsigned int) * g->indices_amount);	
 
-	g->layout = create_vertex_layout();
+	vertex_layout_init_default(&g->layout);
 
 	return g;
 }
@@ -90,9 +90,9 @@ Geometry* create_sphere(float R, unsigned int lat_amount, unsigned int long_amou
 	unsigned int vertices_amount = (lat_amount + 1) * (long_amount + 1);
 	unsigned int indices_amount = lat_amount * long_amount * 6;
 
-	size_t vertices_size = sizeof(vertex) * vertices_amount;
+	size_t vertices_size = sizeof(Vertex) * vertices_amount;
 	
-	vertex* vertices = malloc(vertices_size);
+	Vertex* vertices = malloc(vertices_size);
 	unsigned int* indices = malloc(sizeof(unsigned int) * indices_amount);
 
 	float step_lat = M_PI / lat_amount;
@@ -148,24 +148,24 @@ Geometry* create_sphere(float R, unsigned int lat_amount, unsigned int long_amou
 	g->indices = indices;
 	g->indices_amount = indices_amount;
 
-	g->layout = create_vertex_layout();
+	vertex_layout_init_default(&g->layout);
 
 	return g;
 }
 
-Geometry* create_line(vertex* vertices, unsigned int size)
+Geometry* create_line(Vertex* vertices, unsigned int size)
 {
 	Geometry* g = malloc(sizeof(struct Geometry));
 
 	g->vertices = NULL;
-	g->vertices_size = sizeof(vertex) * size;
+	g->vertices_size = sizeof(Vertex) * size;
 	g->vertices_amount = size;
 
 	g->indices = NULL;
 	g->indices_amount = size;
 
 	g->vertices = malloc(g->vertices_size);
-	g->indices = malloc(sizeof(vertex) * g->indices_amount);
+	g->indices = malloc(sizeof(Vertex) * g->indices_amount);
 
 	memcpy(g->vertices, vertices, size);
 
@@ -174,7 +174,7 @@ Geometry* create_line(vertex* vertices, unsigned int size)
 		g->indices[i] = i;
 	}
 
-	g->layout = create_vertex_layout();
+	vertex_layout_init_default(&g->layout);
 
 	return g;
 }
@@ -196,7 +196,6 @@ void load_geometry_data(Geometry* g)
 
 void free_geometry(Geometry* g)
 {
-	free_vertex_layout(g->layout);
 	free(g->vertices);
 	free(g->indices);
 	free(g);

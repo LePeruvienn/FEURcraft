@@ -7,7 +7,7 @@
 #include <stdint.h>
 
 
-#define MAT4V(u, v, w, z) ((mat4) { .cols = {u, v, w, z} })
+#define MAT4V(u, v, w, z) ((Mat4) { .cols = {u, v, w, z} })
 
 #define MAT4(u1, v1, w1, z1,  \
              u2, v2, w2, z2,  \
@@ -30,13 +30,13 @@
                        0.f, 0.f, 0.f, 0.f, \
                        0.f, 0.f, 0.f, 0.f)
 
-typedef struct mat4 mat4;
+typedef struct Mat4 Mat4;
 
-struct mat4
+struct Mat4
 {
 	union
 	{
-		vec4 cols[4];
+		Vec4 cols[4];
 
 		struct
 		{
@@ -50,48 +50,48 @@ struct mat4
 	};
 };
 
-vec4 vec4_mult_mat4(vec4 u, mat4 A);
-vec4 mat4_mult_vec4(mat4 A, vec4 u);
+Vec4 vec4_mult_mat4(Vec4 u, Mat4 A);
+Vec4 mat4_mult_vec4(Mat4 A, Vec4 u);
 
-vec4 mat4_get_row(mat4 A, unsigned int index);
+Vec4 mat4_get_row(Mat4 A, unsigned int index);
 
-mat4 mat4_add (mat4 A, mat4 B);
-mat4 mat4_sub (mat4 A, mat4 B);
-mat4 mat4_mult(mat4 A, mat4 B);
+Mat4 mat4_add (Mat4 A, Mat4 B);
+Mat4 mat4_sub (Mat4 A, Mat4 B);
+Mat4 mat4_mult(Mat4 A, Mat4 B);
 
-mat4 mat4_add_scal (mat4 A, float l);
-mat4 mat4_sub_scal (mat4 A, float l);
-mat4 mat4_mult_scal(mat4 A, float l);
+Mat4 mat4_add_scal (Mat4 A, float l);
+Mat4 mat4_sub_scal (Mat4 A, float l);
+Mat4 mat4_mult_scal(Mat4 A, float l);
 
-mat4 mat4_inv(mat4 A);
+Mat4 mat4_inv(Mat4 A);
 
-mat4 mat4_transpose(mat4 A);
+Mat4 mat4_transpose(Mat4 A);
 
-mat4 mat4_scale_x(float s);
-mat4 mat4_scale_y(float s);
-mat4 mat4_scale_z(float s);
+Mat4 mat4_scale_x(float s);
+Mat4 mat4_scale_y(float s);
+Mat4 mat4_scale_z(float s);
 
-mat4 mat4_scale(float s);
+Mat4 mat4_scale(float s);
 
-mat4 mat4_translate_x(float t);
-mat4 mat4_translate_y(float t);
-mat4 mat4_translate_z(float t);
+Mat4 mat4_translate_x(float t);
+Mat4 mat4_translate_y(float t);
+Mat4 mat4_translate_z(float t);
 
-mat4 mat4_translate(vec3 t);
+Mat4 mat4_translate(Vec3 t);
 
-mat4 mat4_rotate_x(float angle);
-mat4 mat4_rotate_y(float angle);
-mat4 mat4_rotate_z(float angle);
+Mat4 mat4_rotate_x(float angle);
+Mat4 mat4_rotate_y(float angle);
+Mat4 mat4_rotate_z(float angle);
 
-mat4 mat4_rotate(vec3 axis, float angle);
+Mat4 mat4_rotate(Vec3 axis, float angle);
 
-void mat4_add_in (mat4* A, mat4 B);
-void mat4_sub_in (mat4* A, mat4 B);
+void mat4_add_in (Mat4* A, Mat4 B);
+void mat4_sub_in (Mat4* A, Mat4 B);
 
-void mat4_add_scal_in (mat4* A, float l);
-void mat4_sub_scal_in (mat4* A, float l);
-void mat4_mult_scal_in(mat4* A, float l);
+void mat4_add_scal_in (Mat4* A, float l);
+void mat4_sub_scal_in (Mat4* A, float l);
+void mat4_mult_scal_in(Mat4* A, float l);
 
-void mat4_inv_in(mat4* A);
+void mat4_inv_in(Mat4* A);
 
 #endif // MAT4_H

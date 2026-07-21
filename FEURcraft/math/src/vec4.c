@@ -2,9 +2,9 @@
 
 #include <math.h>
 
-vec4 vec4_add(vec4 u, vec4 v)
+Vec4 vec4_add(Vec4 u, Vec4 v)
 {
-	return (vec4)
+	return (Vec4)
 	{
 		.x = (u.x + v.x),
 		.y = (u.y + v.y),
@@ -13,9 +13,9 @@ vec4 vec4_add(vec4 u, vec4 v)
 	};
 }
 
-vec4 vec4_sub(vec4 u, vec4 v)
+Vec4 vec4_sub(Vec4 u, Vec4 v)
 {
-	return (vec4)
+	return (Vec4)
 	{
 		.x = (u.x - v.x),
 		.y = (u.y - v.y),
@@ -24,9 +24,9 @@ vec4 vec4_sub(vec4 u, vec4 v)
 	};
 }
 
-vec4 vec4_add_scal(vec4 u, float l)
+Vec4 vec4_add_scal(Vec4 u, float l)
 {
-	return (vec4)
+	return (Vec4)
 	{
 		.x = (u.x + l),
 		.y = (u.y + l),
@@ -35,9 +35,9 @@ vec4 vec4_add_scal(vec4 u, float l)
 	};
 }
 
-vec4 vec4_sub_scal(vec4 u, float l)
+Vec4 vec4_sub_scal(Vec4 u, float l)
 {
-	return (vec4)
+	return (Vec4)
 	{
 		.x = (u.x - l),
 		.y = (u.y - l),
@@ -46,9 +46,9 @@ vec4 vec4_sub_scal(vec4 u, float l)
 	};
 }
 
-vec4 vec4_mult_scal(vec4 u, float l)
+Vec4 vec4_mult_scal(Vec4 u, float l)
 {
-	return (vec4)
+	return (Vec4)
 	{
 		.x = (u.x * l),
 		.y = (u.y * l),
@@ -57,7 +57,7 @@ vec4 vec4_mult_scal(vec4 u, float l)
 	};
 }
 
-vec4 vec4_norm(vec4 u)
+Vec4 vec4_norm(Vec4 u)
 {
 	float len = vec4_len(u);
 
@@ -67,7 +67,7 @@ vec4 vec4_norm(vec4 u)
 	return vec4_mult_scal(u, 1 / len);
 }
 
-void vec4_add_in(vec4* u, vec4 v)
+void vec4_add_in(Vec4* u, Vec4 v)
 {
 	u->x += v.x;
 	u->y += v.y;
@@ -75,7 +75,7 @@ void vec4_add_in(vec4* u, vec4 v)
 	u->w += v.w;
 }
 
-void vec4_sub_in(vec4* u, vec4 v)
+void vec4_sub_in(Vec4* u, Vec4 v)
 {
 	u->x -= v.x;
 	u->y -= v.y;
@@ -83,7 +83,7 @@ void vec4_sub_in(vec4* u, vec4 v)
 	u->w -= v.w;
 }
 
-void vec4_add_scal_in(vec4* u, float l)
+void vec4_add_scal_in(Vec4* u, float l)
 {
 	u->x += l;
 	u->y += l;
@@ -91,7 +91,7 @@ void vec4_add_scal_in(vec4* u, float l)
 	u->w += l;
 }
 
-void vec4_sub_scal_in(vec4* u, float l)
+void vec4_sub_scal_in(Vec4* u, float l)
 {
 	u->x -= l;
 	u->y -= l;
@@ -99,7 +99,7 @@ void vec4_sub_scal_in(vec4* u, float l)
 	u->w -= l;
 }
 
-void vec4_mult_scal_in(vec4* u, float l)
+void vec4_mult_scal_in(Vec4* u, float l)
 {
 	u->x *= l;
 	u->y *= l;
@@ -107,7 +107,7 @@ void vec4_mult_scal_in(vec4* u, float l)
 	u->w *= l;
 }
 
-void vec4_norm_in(vec4* u)
+void vec4_norm_in(Vec4* u)
 {
 	float len = vec4_len(*u);
 
@@ -123,7 +123,7 @@ void vec4_norm_in(vec4* u)
 	vec4_mult_scal_in(u, 1 / len);
 }
 
-float vec4_dot(vec4 u, vec4 v)
+float vec4_dot(Vec4 u, Vec4 v)
 {
 	return (u.x * v.x)
 	     + (u.y * v.y)
@@ -131,12 +131,12 @@ float vec4_dot(vec4 u, vec4 v)
 	     + (u.w * v.w);
 }
 
-float vec4_len(vec4 u)
+float vec4_len(Vec4 u)
 {
 	return sqrtf(vec4_len2(u));
 }
 
-float vec4_len2(vec4 u)
+float vec4_len2(Vec4 u)
 {
 	return (u.x * u.x)
 	     + (u.y * u.y)
@@ -144,12 +144,12 @@ float vec4_len2(vec4 u)
 	     + (u.w * u.w);
 }
 
-float vec4_dist(vec4 u, vec4 v)
+float vec4_dist(Vec4 u, Vec4 v)
 {
 	return vec4_len(VEC4(u.x - v.x, u.y - v.y, u.z - v.z, u.w - v.w));
 }
 
-float vec4_dist2(vec4 u, vec4 v)
+float vec4_dist2(Vec4 u, Vec4 v)
 {
 	return vec4_len2(VEC4(u.x - v.x, u.y - v.y, u.z - v.z, u.w - v.w));
 }

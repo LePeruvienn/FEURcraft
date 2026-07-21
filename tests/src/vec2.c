@@ -4,10 +4,10 @@
 
 FEUR_Test_Result Test_Vec2_Add()
 {
-	vec2 u = VEC2(1.f, 2.f);
-	vec2 v = VEC2(3.f, 4.f);
+	Vec2 u = VEC2(1.f, 2.f);
+	Vec2 v = VEC2(3.f, 4.f);
 
-	vec2 result = vec2_add(u, v);
+	Vec2 result = vec2_add(u, v);
 
 	FEUR_TEST_ASSERT_FLOAT(result.x, 4.f);
 	FEUR_TEST_ASSERT_FLOAT(result.y, 6.f);
@@ -18,10 +18,10 @@ FEUR_Test_Result Test_Vec2_Add()
 
 FEUR_Test_Result Test_Vec2_Sub()
 {
-	vec2 u = VEC2(5.f, 7.f);
-	vec2 v = VEC2(2.f, 3.f);
+	Vec2 u = VEC2(5.f, 7.f);
+	Vec2 v = VEC2(2.f, 3.f);
 
-	vec2 result = vec2_sub(u, v);
+	Vec2 result = vec2_sub(u, v);
 
 	FEUR_TEST_ASSERT_FLOAT(result.x, 3.f);
 	FEUR_TEST_ASSERT_FLOAT(result.y, 4.f);
@@ -32,9 +32,9 @@ FEUR_Test_Result Test_Vec2_Sub()
 
 FEUR_Test_Result Test_Vec2_Add_Scal()
 {
-	vec2 u = VEC2(1.f, 2.f);
+	Vec2 u = VEC2(1.f, 2.f);
 
-	vec2 result = vec2_add_scal(u, 3.f);
+	Vec2 result = vec2_add_scal(u, 3.f);
 
 	FEUR_TEST_ASSERT_FLOAT(result.x, 4.f);
 	FEUR_TEST_ASSERT_FLOAT(result.y, 5.f);
@@ -45,9 +45,9 @@ FEUR_Test_Result Test_Vec2_Add_Scal()
 
 FEUR_Test_Result Test_Vec2_Sub_Scal()
 {
-	vec2 u = VEC2(5.f, 7.f);
+	Vec2 u = VEC2(5.f, 7.f);
 
-	vec2 result = vec2_sub_scal(u, 2.f);
+	Vec2 result = vec2_sub_scal(u, 2.f);
 
 	FEUR_TEST_ASSERT_FLOAT(result.x, 3.f);
 	FEUR_TEST_ASSERT_FLOAT(result.y, 5.f);
@@ -58,9 +58,9 @@ FEUR_Test_Result Test_Vec2_Sub_Scal()
 
 FEUR_Test_Result Test_Vec2_Mult_Scal()
 {
-	vec2 u = VEC2(2.f, 3.f);
+	Vec2 u = VEC2(2.f, 3.f);
 
-	vec2 result = vec2_mult_scal(u, 4.f);
+	Vec2 result = vec2_mult_scal(u, 4.f);
 
 	FEUR_TEST_ASSERT_FLOAT(result.x, 8.f);
 	FEUR_TEST_ASSERT_FLOAT(result.y, 12.f);
@@ -71,8 +71,8 @@ FEUR_Test_Result Test_Vec2_Mult_Scal()
 
 FEUR_Test_Result Test_Vec2_Add_In()
 {
-	vec2 u = VEC2(1.f, 2.f);
-	vec2 v = VEC2(3.f, 4.f);
+	Vec2 u = VEC2(1.f, 2.f);
+	Vec2 v = VEC2(3.f, 4.f);
 
 	vec2_add_in(&u, v);
 
@@ -85,8 +85,8 @@ FEUR_Test_Result Test_Vec2_Add_In()
 
 FEUR_Test_Result Test_Vec2_Sub_In()
 {
-	vec2 u = VEC2(5.f, 7.f);
-	vec2 v = VEC2(2.f, 3.f);
+	Vec2 u = VEC2(5.f, 7.f);
+	Vec2 v = VEC2(2.f, 3.f);
 
 	vec2_sub_in(&u, v);
 
@@ -99,7 +99,7 @@ FEUR_Test_Result Test_Vec2_Sub_In()
 
 FEUR_Test_Result Test_Vec2_Add_Scal_In()
 {
-	vec2 u = VEC2(1.f, 2.f);
+	Vec2 u = VEC2(1.f, 2.f);
 
 	vec2_add_scal_in(&u, 3.f);
 
@@ -112,7 +112,7 @@ FEUR_Test_Result Test_Vec2_Add_Scal_In()
 
 FEUR_Test_Result Test_Vec2_Sub_Scal_In()
 {
-	vec2 u = VEC2(5.f, 7.f);
+	Vec2 u = VEC2(5.f, 7.f);
 
 	vec2_sub_scal_in(&u, 2.f);
 
@@ -125,7 +125,7 @@ FEUR_Test_Result Test_Vec2_Sub_Scal_In()
 
 FEUR_Test_Result Test_Vec2_Mult_Scal_In()
 {
-	vec2 u = VEC2(2.f, 3.f);
+	Vec2 u = VEC2(2.f, 3.f);
 
 	vec2_mult_scal_in(&u, 4.f);
 
@@ -138,8 +138,8 @@ FEUR_Test_Result Test_Vec2_Mult_Scal_In()
 
 FEUR_Test_Result Test_Vec2_Dot()
 {
-	vec2 u = VEC2(1.f, 2.f);
-	vec2 v = VEC2(3.f, 4.f);
+	Vec2 u = VEC2(1.f, 2.f);
+	Vec2 v = VEC2(3.f, 4.f);
 
 	float result = vec2_dot(u, v);
 
@@ -151,7 +151,7 @@ FEUR_Test_Result Test_Vec2_Dot()
 
 FEUR_Test_Result Test_Vec2_Len()
 {
-	vec2 u = VEC2(3.f, 4.f);
+	Vec2 u = VEC2(3.f, 4.f);
 
 	FEUR_TEST_ASSERT_FLOAT(vec2_len(u), 5.f);
 
@@ -161,7 +161,7 @@ FEUR_Test_Result Test_Vec2_Len()
 
 FEUR_Test_Result Test_Vec2_Len2()
 {
-	vec2 u = VEC2(3.f, 4.f);
+	Vec2 u = VEC2(3.f, 4.f);
 
 	FEUR_TEST_ASSERT_FLOAT(vec2_len2(u), 25.f);
 
@@ -171,8 +171,8 @@ FEUR_Test_Result Test_Vec2_Len2()
 
 FEUR_Test_Result Test_Vec2_Dist()
 {
-	vec2 u = VEC2(1.f, 1.f);
-	vec2 v = VEC2(4.f, 5.f);
+	Vec2 u = VEC2(1.f, 1.f);
+	Vec2 v = VEC2(4.f, 5.f);
 
 	FEUR_TEST_ASSERT_FLOAT(vec2_dist(u, v), 5.f);
 
@@ -182,8 +182,8 @@ FEUR_Test_Result Test_Vec2_Dist()
 
 FEUR_Test_Result Test_Vec2_Dist2()
 {
-	vec2 u = VEC2(1.f, 1.f);
-	vec2 v = VEC2(4.f, 5.f);
+	Vec2 u = VEC2(1.f, 1.f);
+	Vec2 v = VEC2(4.f, 5.f);
 
 	FEUR_TEST_ASSERT_FLOAT(vec2_dist2(u, v), 25.f);
 
@@ -193,9 +193,9 @@ FEUR_Test_Result Test_Vec2_Dist2()
 
 FEUR_Test_Result Test_Vec2_Norm()
 {
-	vec2 u = VEC2(3.f, 4.f);
+	Vec2 u = VEC2(3.f, 4.f);
 
-	vec2 result = vec2_norm(u);
+	Vec2 result = vec2_norm(u);
 
 	FEUR_TEST_ASSERT_FLOAT(result.x, 0.6f);
 	FEUR_TEST_ASSERT_FLOAT(result.y, 0.8f);
@@ -206,7 +206,7 @@ FEUR_Test_Result Test_Vec2_Norm()
 
 FEUR_Test_Result Test_Vec2_Norm_In()
 {
-	vec2 u = VEC2(3.f, 4.f);
+	Vec2 u = VEC2(3.f, 4.f);
 
 	vec2_norm_in(&u);
 

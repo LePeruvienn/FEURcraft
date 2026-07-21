@@ -1,7 +1,7 @@
 #include "mesh.h"
 #include "logger.h"
 #include "mesh.h"
-#include "debug.h"
+#include "gl_debug.h"
 #include "vertex_layout.h"
 
 #include "glad/glad.h"
@@ -22,9 +22,9 @@ Mesh* create_mesh(Geometry* g)
 	glBindBuffer(GL_ARRAY_BUFFER, m->VBO);
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m->EBO);
 
-	vertex_layout layout = g->layout;
+	VertexLayout* layout = &g->layout;
 	
-	setup_vao_attributes(layout);
+	vertex_layout_make_VAO(layout);
 
 	load_geometry_data(g);
 

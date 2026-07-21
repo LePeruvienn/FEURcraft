@@ -38,23 +38,31 @@
 /**
  * \brief Type représentant un attribut de vertex
  */
-typedef struct vertex_attr vertex_attr;
+typedef struct VertexAttribute VertexAttribute;
 
-/**
- * \brief Type opaque représentant la disposition des attributs pour un vertex
- */
-typedef struct vertex_layout* vertex_layout;
-
-struct vertex_attr
+struct VertexAttribute
 {
 	GLuint id;
 	GLint size;
 	GLenum type;
 	GLboolean normalized;
 	size_t offset;
-
 	GLuint divisor;
 };
+
+
+/**
+ * \brief Type opaque représentant la disposition des attributs pour un vertex
+ */
+typedef struct VertexLayout VertexLayout;
+
+struct VertexLayout
+{
+	GLsizei stride;
+	VertexAttribute attributes[MAX_VERTEX_ATTRIBUTE_AMOUNT];
+	unsigned int attribute_amount;
+};
+
 
 /**
  * \brief Créer une dispotion de vertex personnaliser
@@ -62,31 +70,24 @@ struct vertex_attr
  * Permet de créer une dispotion de vertex pour personnaliser 
  * en donnant une listes d'attribut.
  *
+ * \param layout VertexLayout cible
  * \param attributes listes des attributs personnalisés
  * \param attribute_amount nombre d'attribut total
  * \param stride taille en octet de l'ensemble des attribut combiner
- * \return vertex_layout alloué en mémoire
  */
-vertex_layout create_custom_layout(vertex_attr* attributes,
-                                   unsigned int attribute_amount,
-                                   GLsizei stride);
+void vertex_layout_init(VertexLayout* layout, VertexAttribute attributes[],
+                        unsigned int attribute_amount, GLsizei stride);
 
 /**
  * \brief Créer une dispotion pour la structure \ref vertex
- * \return vertex_layout alloué en mémoire
+ * \param layout VertexLayout cible
  */
-vertex_layout create_vertex_layout();
-
-/**
- * \brief Libéère la mémoire du vertex_layout en paramêtre
- * \param layout vertex_layout à libérer
- */
-void free_vertex_layout(vertex_layout layout);
+void vertex_layout_init_default(VertexLayout* layout);
 
 /**
  * \brief Envoie les données de dispotion des vertex au GPU
  * \param layout données de dispotion à envoyer
  */
-void setup_vao_attributes(vertex_layout layout);
+void vertex_layout_make_VAO(VertexLayout* layout);
 
 #endif // VERTEX_LAYOUT_H

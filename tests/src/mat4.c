@@ -4,17 +4,17 @@
 
 FEUR_Test_Result Test_Mat4_Add()
 {
-	mat4 A = MAT4(1.f,  2.f,  3.f,  4.f,
+	Mat4 A = MAT4(1.f,  2.f,  3.f,  4.f,
 	              5.f,  6.f,  7.f,  8.f,
 	              9.f, 10.f, 11.f, 12.f,
 	             13.f, 14.f, 15.f, 16.f);
 
-	mat4 B = MAT4(16.f, 15.f, 14.f, 13.f,
+	Mat4 B = MAT4(16.f, 15.f, 14.f, 13.f,
 	              12.f, 11.f, 10.f,  9.f,
 	               8.f,  7.f,  6.f,  5.f,
 	               4.f,  3.f,  2.f,  1.f);
 
-	mat4 result = mat4_add(A, B);
+	Mat4 result = mat4_add(A, B);
 
 	for(int i = 0; i < 16; ++i)
 	{
@@ -27,22 +27,22 @@ FEUR_Test_Result Test_Mat4_Add()
 
 FEUR_Test_Result Test_Mat4_Sub()
 {
-	mat4 A = MAT4(1.f,  2.f,  3.f,  4.f,
+	Mat4 A = MAT4(1.f,  2.f,  3.f,  4.f,
 	              5.f,  6.f,  7.f,  8.f,
 	              9.f, 10.f, 11.f, 12.f,
 	             13.f, 14.f, 15.f, 16.f);
 
-	mat4 B = MAT4(16.f, 15.f, 14.f, 13.f,
+	Mat4 B = MAT4(16.f, 15.f, 14.f, 13.f,
 	              12.f, 11.f, 10.f,  9.f,
 	               8.f,  7.f,  6.f,  5.f,
 	               4.f,  3.f,  2.f,  1.f);
 
-	mat4 expected = MAT4(-15.f, -13.f, -11.f, -9.f,
+	Mat4 expected = MAT4(-15.f, -13.f, -11.f, -9.f,
 	                       -7.f,  -5.f,  -3.f, -1.f,
 	                        1.f,   3.f,   5.f,  7.f,
 	                        9.f,  11.f,  13.f, 15.f);
 
-	mat4 result = mat4_sub(A, B);
+	Mat4 result = mat4_sub(A, B);
 
 	for(int i = 0; i < 16; ++i)
 	{
@@ -55,22 +55,22 @@ FEUR_Test_Result Test_Mat4_Sub()
 
 FEUR_Test_Result Test_Mat4_Mult()
 {
-	mat4 A = MAT4(1.f,  2.f,  3.f,  4.f,
+	Mat4 A = MAT4(1.f,  2.f,  3.f,  4.f,
 	              5.f,  6.f,  7.f,  8.f,
 	              9.f, 10.f, 11.f, 12.f,
 	             13.f, 14.f, 15.f, 16.f);
 
-	mat4 B = MAT4(16.f, 15.f, 14.f, 13.f,
+	Mat4 B = MAT4(16.f, 15.f, 14.f, 13.f,
 	              12.f, 11.f, 10.f,  9.f,
 	               8.f,  7.f,  6.f,  5.f,
 	               4.f,  3.f,  2.f,  1.f);
 
-	mat4 expected = MAT4( 80.f,  70.f,  60.f,  50.f,
+	Mat4 expected = MAT4( 80.f,  70.f,  60.f,  50.f,
 	                      240.f, 214.f, 188.f, 162.f,
 	                      400.f, 358.f, 316.f, 274.f,
 	                      560.f, 502.f, 444.f, 386.f);
 
-	mat4 result = mat4_mult(A, B);
+	Mat4 result = mat4_mult(A, B);
 
 	for(int i = 0; i < 16; ++i)
 	{
@@ -78,8 +78,8 @@ FEUR_Test_Result Test_Mat4_Mult()
 	}
 
 	/* multiplying by the identity should never change the matrix */
-	mat4 identity = MAT4_IDENTITY;
-	mat4 unchanged = mat4_mult(A, identity);
+	Mat4 identity = MAT4_IDENTITY;
+	Mat4 unchanged = mat4_mult(A, identity);
 
 	for(int i = 0; i < 16; ++i)
 	{
@@ -92,17 +92,17 @@ FEUR_Test_Result Test_Mat4_Mult()
 
 FEUR_Test_Result Test_Mat4_Add_Scal()
 {
-	mat4 A = MAT4(1.f,  2.f,  3.f,  4.f,
+	Mat4 A = MAT4(1.f,  2.f,  3.f,  4.f,
 	              5.f,  6.f,  7.f,  8.f,
 	              9.f, 10.f, 11.f, 12.f,
 	             13.f, 14.f, 15.f, 16.f);
 
-	mat4 expected = MAT4(11.f, 12.f, 13.f, 14.f,
+	Mat4 expected = MAT4(11.f, 12.f, 13.f, 14.f,
 	                      15.f, 16.f, 17.f, 18.f,
 	                      19.f, 20.f, 21.f, 22.f,
 	                      23.f, 24.f, 25.f, 26.f);
 
-	mat4 result = mat4_add_scal(A, 10.f);
+	Mat4 result = mat4_add_scal(A, 10.f);
 
 	for(int i = 0; i < 16; ++i)
 	{
@@ -115,17 +115,17 @@ FEUR_Test_Result Test_Mat4_Add_Scal()
 
 FEUR_Test_Result Test_Mat4_Sub_Scal()
 {
-	mat4 A = MAT4(1.f,  2.f,  3.f,  4.f,
+	Mat4 A = MAT4(1.f,  2.f,  3.f,  4.f,
 	              5.f,  6.f,  7.f,  8.f,
 	              9.f, 10.f, 11.f, 12.f,
 	             13.f, 14.f, 15.f, 16.f);
 
-	mat4 expected = MAT4(0.f, 1.f,  2.f,  3.f,
+	Mat4 expected = MAT4(0.f, 1.f,  2.f,  3.f,
 	                      4.f, 5.f,  6.f,  7.f,
 	                      8.f, 9.f, 10.f, 11.f,
 	                     12.f, 13.f, 14.f, 15.f);
 
-	mat4 result = mat4_sub_scal(A, 1.f);
+	Mat4 result = mat4_sub_scal(A, 1.f);
 
 	for(int i = 0; i < 16; ++i)
 	{
@@ -138,17 +138,17 @@ FEUR_Test_Result Test_Mat4_Sub_Scal()
 
 FEUR_Test_Result Test_Mat4_Mult_Scal()
 {
-	mat4 A = MAT4(1.f,  2.f,  3.f,  4.f,
+	Mat4 A = MAT4(1.f,  2.f,  3.f,  4.f,
 	              5.f,  6.f,  7.f,  8.f,
 	              9.f, 10.f, 11.f, 12.f,
 	             13.f, 14.f, 15.f, 16.f);
 
-	mat4 expected = MAT4(2.f,  4.f,  6.f,  8.f,
+	Mat4 expected = MAT4(2.f,  4.f,  6.f,  8.f,
 	                     10.f, 12.f, 14.f, 16.f,
 	                     18.f, 20.f, 22.f, 24.f,
 	                     26.f, 28.f, 30.f, 32.f);
 
-	mat4 result = mat4_mult_scal(A, 2.f);
+	Mat4 result = mat4_mult_scal(A, 2.f);
 
 	for(int i = 0; i < 16; ++i)
 	{
@@ -161,15 +161,15 @@ FEUR_Test_Result Test_Mat4_Mult_Scal()
 
 FEUR_Test_Result Test_Mat4_Mult_Vec4()
 {
-	mat4 A = MAT4(1.f,  2.f,  3.f,  4.f,
+	Mat4 A = MAT4(1.f,  2.f,  3.f,  4.f,
 	              5.f,  6.f,  7.f,  8.f,
 	              9.f, 10.f, 11.f, 12.f,
 	             13.f, 14.f, 15.f, 16.f);
 
-	vec4 u = VEC4(1.f, 1.f, 1.f, 1.f);
+	Vec4 u = VEC4(1.f, 1.f, 1.f, 1.f);
 
 	/* multiplying by an all-ones vector sums each row */
-	vec4 result = mat4_mult_vec4(A, u);
+	Vec4 result = mat4_mult_vec4(A, u);
 
 	FEUR_TEST_ASSERT_FLOAT(result.x, 10.f);
 	FEUR_TEST_ASSERT_FLOAT(result.y, 26.f);
@@ -182,15 +182,15 @@ FEUR_Test_Result Test_Mat4_Mult_Vec4()
 
 FEUR_Test_Result Test_Vec4_Mult_Mat4()
 {
-	mat4 A = MAT4(1.f,  2.f,  3.f,  4.f,
+	Mat4 A = MAT4(1.f,  2.f,  3.f,  4.f,
 	              5.f,  6.f,  7.f,  8.f,
 	              9.f, 10.f, 11.f, 12.f,
 	             13.f, 14.f, 15.f, 16.f);
 
-	vec4 u = VEC4(1.f, 1.f, 1.f, 1.f);
+	Vec4 u = VEC4(1.f, 1.f, 1.f, 1.f);
 
 	/* multiplying by an all-ones vector sums each column */
-	vec4 result = vec4_mult_mat4(u, A);
+	Vec4 result = vec4_mult_mat4(u, A);
 
 	FEUR_TEST_ASSERT_FLOAT(result.x, 28.f);
 	FEUR_TEST_ASSERT_FLOAT(result.y, 32.f);
@@ -203,15 +203,15 @@ FEUR_Test_Result Test_Vec4_Mult_Mat4()
 
 FEUR_Test_Result Test_Mat4_Get_Row()
 {
-	mat4 A = MAT4(1.f,  2.f,  3.f,  4.f,
+	Mat4 A = MAT4(1.f,  2.f,  3.f,  4.f,
 	              5.f,  6.f,  7.f,  8.f,
 	              9.f, 10.f, 11.f, 12.f,
 	             13.f, 14.f, 15.f, 16.f);
 
-	vec4 row0 = mat4_get_row(A, 0);
-	vec4 row1 = mat4_get_row(A, 1);
-	vec4 row2 = mat4_get_row(A, 2);
-	vec4 row3 = mat4_get_row(A, 3);
+	Vec4 row0 = mat4_get_row(A, 0);
+	Vec4 row1 = mat4_get_row(A, 1);
+	Vec4 row2 = mat4_get_row(A, 2);
+	Vec4 row3 = mat4_get_row(A, 3);
 
 	FEUR_TEST_ASSERT_FLOAT(row0.x, 1.f);
 	FEUR_TEST_ASSERT_FLOAT(row0.y, 2.f);
@@ -278,17 +278,17 @@ FEUR_Test_Result Test_Mat4_Inv()
 
 FEUR_Test_Result Test_Mat4_Transpose()
 {
-	mat4 A = MAT4(1.f,  2.f,  3.f,  4.f,
+	Mat4 A = MAT4(1.f,  2.f,  3.f,  4.f,
 	              5.f,  6.f,  7.f,  8.f,
 	              9.f, 10.f, 11.f, 12.f,
 	             13.f, 14.f, 15.f, 16.f);
 
-	mat4 expected = MAT4(1.f, 5.f,  9.f, 13.f,
+	Mat4 expected = MAT4(1.f, 5.f,  9.f, 13.f,
 	                      2.f, 6.f, 10.f, 14.f,
 	                      3.f, 7.f, 11.f, 15.f,
 	                      4.f, 8.f, 12.f, 16.f);
 
-	mat4 result = mat4_transpose(A);
+	Mat4 result = mat4_transpose(A);
 
 	for(int i = 0; i < 16; ++i)
 	{
@@ -301,11 +301,11 @@ FEUR_Test_Result Test_Mat4_Transpose()
 
 FEUR_Test_Result Test_Mat4_Scale_Axes()
 {
-	vec4 p = VEC4(2.f, 5.f, 7.f, 1.f);
+	Vec4 p = VEC4(2.f, 5.f, 7.f, 1.f);
 
-	vec4 scaled_x = mat4_mult_vec4(mat4_scale_x(3.f), p);
-	vec4 scaled_y = mat4_mult_vec4(mat4_scale_y(3.f), p);
-	vec4 scaled_z = mat4_mult_vec4(mat4_scale_z(3.f), p);
+	Vec4 scaled_x = mat4_mult_vec4(mat4_scale_x(3.f), p);
+	Vec4 scaled_y = mat4_mult_vec4(mat4_scale_y(3.f), p);
+	Vec4 scaled_z = mat4_mult_vec4(mat4_scale_z(3.f), p);
 
 	FEUR_TEST_ASSERT_FLOAT(scaled_x.x, 6.f);
 	FEUR_TEST_ASSERT_FLOAT(scaled_x.y, 5.f);
@@ -325,9 +325,9 @@ FEUR_Test_Result Test_Mat4_Scale_Axes()
 
 FEUR_Test_Result Test_Mat4_Scale()
 {
-	vec4 p = VEC4(2.f, 5.f, 7.f, 1.f);
+	Vec4 p = VEC4(2.f, 5.f, 7.f, 1.f);
 
-	vec4 result = mat4_mult_vec4(mat4_scale(3.f), p);
+	Vec4 result = mat4_mult_vec4(mat4_scale(3.f), p);
 
 	FEUR_TEST_ASSERT_FLOAT(result.x, 6.f);
 	FEUR_TEST_ASSERT_FLOAT(result.y, 15.f);
@@ -340,11 +340,11 @@ FEUR_Test_Result Test_Mat4_Scale()
 
 FEUR_Test_Result Test_Mat4_Translate_Axes()
 {
-	vec4 p = VEC4(2.f, 5.f, 7.f, 1.f);
+	Vec4 p = VEC4(2.f, 5.f, 7.f, 1.f);
 
-	vec4 translated_x = mat4_mult_vec4(mat4_translate_x(3.f), p);
-	vec4 translated_y = mat4_mult_vec4(mat4_translate_y(3.f), p);
-	vec4 translated_z = mat4_mult_vec4(mat4_translate_z(3.f), p);
+	Vec4 translated_x = mat4_mult_vec4(mat4_translate_x(3.f), p);
+	Vec4 translated_y = mat4_mult_vec4(mat4_translate_y(3.f), p);
+	Vec4 translated_z = mat4_mult_vec4(mat4_translate_z(3.f), p);
 
 	FEUR_TEST_ASSERT_FLOAT(translated_x.x, 5.f);
 	FEUR_TEST_ASSERT_FLOAT(translated_x.y, 5.f);
@@ -364,10 +364,10 @@ FEUR_Test_Result Test_Mat4_Translate_Axes()
 
 FEUR_Test_Result Test_Mat4_Translate()
 {
-	vec4 p = VEC4(2.f, 5.f, 7.f, 1.f);
-	vec3 t = VEC3(3.f, 4.f, 5.f);
+	Vec4 p = VEC4(2.f, 5.f, 7.f, 1.f);
+	Vec3 t = VEC3(3.f, 4.f, 5.f);
 
-	vec4 result = mat4_mult_vec4(mat4_translate(t), p);
+	Vec4 result = mat4_mult_vec4(mat4_translate(t), p);
 
 	FEUR_TEST_ASSERT_FLOAT(result.x, 5.f);
 	FEUR_TEST_ASSERT_FLOAT(result.y, 9.f);
@@ -381,16 +381,16 @@ FEUR_Test_Result Test_Mat4_Translate()
 FEUR_Test_Result Test_Mat4_Rotate_Axes()
 {
 	float angle = 0.5f;
-	mat4 identity = MAT4_IDENTITY;
+	Mat4 identity = MAT4_IDENTITY;
 
 	/* rotating around an axis leaves that axis unaffected */
-	vec4 x_dir = VEC4(1.f, 0.f, 0.f, 0.f);
-	vec4 y_dir = VEC4(0.f, 1.f, 0.f, 0.f);
-	vec4 z_dir = VEC4(0.f, 0.f, 1.f, 0.f);
+	Vec4 x_dir = VEC4(1.f, 0.f, 0.f, 0.f);
+	Vec4 y_dir = VEC4(0.f, 1.f, 0.f, 0.f);
+	Vec4 z_dir = VEC4(0.f, 0.f, 1.f, 0.f);
 
-	vec4 rx = mat4_mult_vec4(mat4_rotate_x(angle), x_dir);
-	vec4 ry = mat4_mult_vec4(mat4_rotate_y(angle), y_dir);
-	vec4 rz = mat4_mult_vec4(mat4_rotate_z(angle), z_dir);
+	Vec4 rx = mat4_mult_vec4(mat4_rotate_x(angle), x_dir);
+	Vec4 ry = mat4_mult_vec4(mat4_rotate_y(angle), y_dir);
+	Vec4 rz = mat4_mult_vec4(mat4_rotate_z(angle), z_dir);
 
 	FEUR_TEST_ASSERT_FLOAT(rx.x, x_dir.x);
 	FEUR_TEST_ASSERT_FLOAT(rx.y, x_dir.y);
@@ -405,9 +405,9 @@ FEUR_Test_Result Test_Mat4_Rotate_Axes()
 	FEUR_TEST_ASSERT_FLOAT(rz.z, z_dir.z);
 
 	/* rotating by angle then by -angle cancels out, whatever the sign convention */
-	mat4 x_roundtrip = mat4_mult(mat4_rotate_x(angle), mat4_rotate_x(-angle));
-	mat4 y_roundtrip = mat4_mult(mat4_rotate_y(angle), mat4_rotate_y(-angle));
-	mat4 z_roundtrip = mat4_mult(mat4_rotate_z(angle), mat4_rotate_z(-angle));
+	Mat4 x_roundtrip = mat4_mult(mat4_rotate_x(angle), mat4_rotate_x(-angle));
+	Mat4 y_roundtrip = mat4_mult(mat4_rotate_y(angle), mat4_rotate_y(-angle));
+	Mat4 z_roundtrip = mat4_mult(mat4_rotate_z(angle), mat4_rotate_z(-angle));
 
 	for(int i = 0; i < 16; ++i)
 	{
@@ -466,12 +466,12 @@ FEUR_Test_Result Test_Mat4_Rotate()
 
 FEUR_Test_Result Test_Mat4_Add_In()
 {
-	mat4 A = MAT4(1.f,  2.f,  3.f,  4.f,
+	Mat4 A = MAT4(1.f,  2.f,  3.f,  4.f,
 	              5.f,  6.f,  7.f,  8.f,
 	              9.f, 10.f, 11.f, 12.f,
 	             13.f, 14.f, 15.f, 16.f);
 
-	mat4 B = MAT4(16.f, 15.f, 14.f, 13.f,
+	Mat4 B = MAT4(16.f, 15.f, 14.f, 13.f,
 	              12.f, 11.f, 10.f,  9.f,
 	               8.f,  7.f,  6.f,  5.f,
 	               4.f,  3.f,  2.f,  1.f);
@@ -489,17 +489,17 @@ FEUR_Test_Result Test_Mat4_Add_In()
 
 FEUR_Test_Result Test_Mat4_Sub_In()
 {
-	mat4 A = MAT4(1.f,  2.f,  3.f,  4.f,
+	Mat4 A = MAT4(1.f,  2.f,  3.f,  4.f,
 	              5.f,  6.f,  7.f,  8.f,
 	              9.f, 10.f, 11.f, 12.f,
 	             13.f, 14.f, 15.f, 16.f);
 
-	mat4 B = MAT4(16.f, 15.f, 14.f, 13.f,
+	Mat4 B = MAT4(16.f, 15.f, 14.f, 13.f,
 	              12.f, 11.f, 10.f,  9.f,
 	               8.f,  7.f,  6.f,  5.f,
 	               4.f,  3.f,  2.f,  1.f);
 
-	mat4 expected = MAT4(-15.f, -13.f, -11.f, -9.f,
+	Mat4 expected = MAT4(-15.f, -13.f, -11.f, -9.f,
 	                       -7.f,  -5.f,  -3.f, -1.f,
 	                        1.f,   3.f,   5.f,  7.f,
 	                        9.f,  11.f,  13.f, 15.f);
@@ -517,12 +517,12 @@ FEUR_Test_Result Test_Mat4_Sub_In()
 
 FEUR_Test_Result Test_Mat4_Add_Scal_In()
 {
-	mat4 A = MAT4(1.f,  2.f,  3.f,  4.f,
+	Mat4 A = MAT4(1.f,  2.f,  3.f,  4.f,
 	              5.f,  6.f,  7.f,  8.f,
 	              9.f, 10.f, 11.f, 12.f,
 	             13.f, 14.f, 15.f, 16.f);
 
-	mat4 expected = MAT4(11.f, 12.f, 13.f, 14.f,
+	Mat4 expected = MAT4(11.f, 12.f, 13.f, 14.f,
 	                      15.f, 16.f, 17.f, 18.f,
 	                      19.f, 20.f, 21.f, 22.f,
 	                      23.f, 24.f, 25.f, 26.f);
@@ -540,12 +540,12 @@ FEUR_Test_Result Test_Mat4_Add_Scal_In()
 
 FEUR_Test_Result Test_Mat4_Sub_Scal_In()
 {
-	mat4 A = MAT4(1.f,  2.f,  3.f,  4.f,
+	Mat4 A = MAT4(1.f,  2.f,  3.f,  4.f,
 	              5.f,  6.f,  7.f,  8.f,
 	              9.f, 10.f, 11.f, 12.f,
 	             13.f, 14.f, 15.f, 16.f);
 
-	mat4 expected = MAT4(0.f, 1.f,  2.f,  3.f,
+	Mat4 expected = MAT4(0.f, 1.f,  2.f,  3.f,
 	                      4.f, 5.f,  6.f,  7.f,
 	                      8.f, 9.f, 10.f, 11.f,
 	                     12.f, 13.f, 14.f, 15.f);
@@ -563,12 +563,12 @@ FEUR_Test_Result Test_Mat4_Sub_Scal_In()
 
 FEUR_Test_Result Test_Mat4_Mult_Scal_In()
 {
-	mat4 A = MAT4(1.f,  2.f,  3.f,  4.f,
+	Mat4 A = MAT4(1.f,  2.f,  3.f,  4.f,
 	              5.f,  6.f,  7.f,  8.f,
 	              9.f, 10.f, 11.f, 12.f,
 	             13.f, 14.f, 15.f, 16.f);
 
-	mat4 expected = MAT4(2.f,  4.f,  6.f,  8.f,
+	Mat4 expected = MAT4(2.f,  4.f,  6.f,  8.f,
 	                     10.f, 12.f, 14.f, 16.f,
 	                     18.f, 20.f, 22.f, 24.f,
 	                     26.f, 28.f, 30.f, 32.f);

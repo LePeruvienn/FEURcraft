@@ -11,11 +11,11 @@
 /**
  * \brief Type pour les vertex avec position et couleur,
  */
-typedef struct vertex vertex;
+typedef struct Vertex Vertex;
 
-struct vertex
+struct Vertex
 {
-	vec3 pos;
+	Vec3 pos;
 };
 
 #endif // VERTEX_H

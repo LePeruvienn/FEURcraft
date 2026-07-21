@@ -1,30 +1,20 @@
 #include "vertex_layout.h"
 #include "vertex.h"
-#include "debug.h"
+#include "gl_debug.h"
 
 #include "glad/glad.h"
 
-#include <stdlib.h>
 #include <stddef.h>
+#include <stdbool.h>
 
-struct vertex_layout
-{
-	GLsizei stride;
-	vertex_attr attributes[MAX_VERTEX_ATTRIBUTE_AMOUNT];
-	unsigned int attribute_amount;
-};
-
-vertex_layout create_custom_layout(vertex_attr* attributes,
-                                   unsigned int attribute_amount,
-                                   GLsizei stride)
+void vertex_layout_init(VertexLayout* layout, VertexAttribute attributes[],
+                        unsigned int attribute_amount, GLsizei stride)
 {
 	if (attribute_amount > MAX_VERTEX_ATTRIBUTE_AMOUNT)
 	{
 		LOG_ERROR("To many vertex layout attributes for custom layout.");
-		return NULL;
+		return;
 	}
-
-	vertex_layout layout = malloc(sizeof(struct vertex_layout));
 
 	layout->attribute_amount = attribute_amount;
 	layout->stride = stride;
@@ -34,53 +24,55 @@ vertex_layout create_custom_layout(vertex_attr* attributes,
 		layout->attributes[i] = attributes[i];
 	}
 
-	return layout;
+	return;
 }
 
-vertex_layout create_vertex_layout()
+void vertex_layout_init_default(VertexLayout* layout)
 {
-	vertex_layout layout = malloc(sizeof(struct vertex_layout));
+	layout->stride = sizeof(Vertex);
+	layout->attribute_amount = 1;
 
-	layout->stride = sizeof(vertex);
-	layout->attribute_amount = 2;
-
-	vertex_attr* attr = layout->attributes;
+	VertexAttribute* attr = layout->attributes;
 
 	attr[0].id = VERTEX_ATTR_POSITION;
 	attr[0].size = 3;
 	attr[0].type = GL_FLOAT;
 	attr[0].normalized = GL_FALSE;
-	attr[0].offset = offsetof(vertex, pos);
+	attr[0].offset = offsetof(Vertex, pos);
 	attr[0].divisor = 0;
-
-	return layout;
 }
 
-void free_vertex_layout(vertex_layout layout)
-{
-	free(layout);
-}
-
-void setup_vao_attributes(vertex_layout layout)
+void vertex_layout_make_VAO(VertexLayout* layout)
 {
 	for (unsigned int i = 0; i < layout->attribute_amount; ++i)
 	{
-		vertex_attr* attr = &layout->attributes[i];
+		VertexAttribute* attr = &layout->attributes[i];
 
-		GL_CALL(glVertexAttribPointer(
-			attr->id,
-			attr->size,
-			attr->type,
-			attr->normalized,
-			layout->stride,
-			(void*) attr->offset
-		));
+		bool is_int_type = (attr->type == GL_INT   || attr->type == GL_UNSIGNED_INT   ||
+		                    attr->type == GL_SHORT || attr->type == GL_UNSIGNED_SHORT ||
+		                    attr->type == GL_BYTE  || attr->type == GL_UNSIGNED_BYTE  );
+
+		// Special attribute setter for integer types
+		if(is_int_type && attr->normalized == false)
+		{
+			GL_CALL(glVertexAttribIPointer(
+				attr->id, attr->size,
+				attr->type, layout->stride,
+				(void*)attr->offset));
+		}
+		else
+		{
+			GL_CALL(glVertexAttribPointer(
+				attr->id, attr->size,
+				attr->type, attr->normalized,
+				layout->stride, (void*)attr->offset));
+		}
 		
-		glEnableVertexAttribArray(attr->id);
+		GL_CALL(glEnableVertexAttribArray(attr->id));
 
 		if (attr->divisor != 0)
 		{
-			glVertexAttribDivisor(attr->id, attr->divisor);
+			GL_CALL(glVertexAttribDivisor(attr->id, attr->divisor));
 		}
 	}
 }
