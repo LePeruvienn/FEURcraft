@@ -2,29 +2,31 @@
 # FEUR TESTS BUILD #
 # ---------------- #
 
-# Addings tests to compile ...
+# Unit test with the FEUR_TEST lib 😎
 
-# Template test you can take example from
-add_executable(template.tst src/template.c)
-target_link_libraries(template.tst PRIVATE utils system)
+# Get all test source files in the src/ dir
+file(GLOB TEST_SOURCES "src/*.c")
 
-# Vec2 math test
-add_executable(vec2.tst src/vec2.c)
-target_link_libraries(vec2.tst PRIVATE math utils system)
+# compile all the tests
+foreach(SOURCE_FILE ${TEST_SOURCES})
 
-# Vec3 math test
-add_executable(vec3.tst src/vec3.c)
-target_link_libraries(vec3.tst PRIVATE math utils system)
+	# Exclude template
+	if(SOURCE_FILE MATCHES "template\\.c$")
+		continue()
+	endif()
 
-# Vec4 math test
-add_executable(vec4.tst src/vec4.c)
-target_link_libraries(vec4.tst PRIVATE math utils system)
+	get_filename_component(TEST_NAME ${SOURCE_FILE} NAME_WE)
 
-# Mat4 math test
-add_executable(mat4.tst src/mat4.c)
-target_link_libraries(mat4.tst PRIVATE math utils system)
+	set(EXEC_NAME "${TEST_NAME}.tst")
 
-# Shader test
-add_executable(shader.tst src/shader.c)
-target_link_libraries(shader.tst PRIVATE utils graphic)
+	add_executable(${EXEC_NAME} ${SOURCE_FILE})
 
+	# Link all libs
+	target_link_libraries(${EXEC_NAME} PRIVATE 
+		graphic 
+		math 
+		utils 
+		system
+	)
+
+endforeach()
