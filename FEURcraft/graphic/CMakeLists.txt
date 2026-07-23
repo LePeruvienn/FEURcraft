@@ -27,6 +27,7 @@ target_sources(${LIB_NAME}
 		src/geometry.c
 		src/shader.c
 		src/shader_program.c
+		src/camera.c
 )
 
 
