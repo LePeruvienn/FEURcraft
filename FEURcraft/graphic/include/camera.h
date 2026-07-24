@@ -3,6 +3,7 @@
 
 #include "vec3.h"
 #include "mat4.h"
+#include "window.h"
 
 /**
  * \file camera.h
@@ -34,6 +35,7 @@ struct Camera
 /**
  * \brief Crée une caméra positionnée en (px,py,pz), visant (tx,ty,tz).
  *
+ * \param c structure caméra cible
  * \param pos vecteur position de la caméra
  * \param target vecteur target de la caméra
  * \param fov champ de vision en degrés
@@ -45,6 +47,15 @@ struct Camera
 void camera_init(Camera* c, Vec3 pos, Vec3 target,
                  float fov, float near, float far,
                  unsigned int width, unsigned int height);
+
+/**
+ * \brief Créer une caméra et l'initalize
+ * avec ses valeurs par défaut par rapprot à la fenêtre donné
+ *
+ * \param c structure caméra cible
+ * \param w fenetre à partir de la quelle prendre les données
+ */
+void camera_init_default(Camera* c, Window* w);
 
 /**
  * \brief Translation de la caméra et de sa cible de (dx, dy, dz).

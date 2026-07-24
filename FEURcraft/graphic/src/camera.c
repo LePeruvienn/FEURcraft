@@ -2,6 +2,8 @@
 #include "vec3.h"
 #include "mat4.h"
 
+#include "error_checker.h"
+
 #include <math.h>
 
 #define M_PI 3.14159265358979323846
@@ -10,6 +12,8 @@ void camera_init(Camera* c, Vec3 pos, Vec3 target,
                  float fov, float near, float far,
                  unsigned int width, unsigned int height)
 {
+	CHECK_IS_NULL_RET(c, "Cannot init a null camera", );
+
 	c->pos = pos;
 	c->target = target;
 
@@ -28,8 +32,30 @@ void camera_init(Camera* c, Vec3 pos, Vec3 target,
 	c->pitch = atan2f(ddy, sqrtf(ddx*ddx + ddz*ddz));
 }
 
+void camera_init_default(Camera* c, Window* w)
+{
+	static Vec3 camera_default_pos = VEC3(0.f, 0.f, 0.f);
+	static Vec3 camera_default_target = VEC3(0.f, 0.f, 0.f);
+
+	static float camera_default_fov = 45.f;
+	static float camera_default_near = 0.1f;
+	static float camera_default_far = 100.f;
+
+	camera_init(c,
+		camera_default_pos,
+		camera_default_target,
+		camera_default_fov,
+		camera_default_near,
+		camera_default_far,
+		w->width,
+		w->height
+	);
+}
+
 void camera_translate(Camera* c, float dx, float dy, float dz)
 {
+	CHECK_IS_NULL_RET(c, "Cannot translate a null camera", );
+	
 	Vec3 forward_raw = vec3_sub(c->target, c->pos);
 	Vec3 forward = vec3_norm(forward_raw);
 
@@ -54,6 +80,8 @@ void camera_translate(Camera* c, float dx, float dy, float dz)
 
 void camera_rotate(Camera* c, float dyaw, float dpitch)
 {
+	CHECK_IS_NULL_RET(c, "Cannot rotate a null camera", );
+
 	c->yaw   += dyaw;
 	c->pitch += dpitch;
 
@@ -76,11 +104,15 @@ void camera_rotate(Camera* c, float dyaw, float dpitch)
 
 void set_camera_aspect(Camera* c, unsigned int width, unsigned int height)
 {
+	CHECK_IS_NULL_RET(c, "Cannot set aspect of a null camera", );
+
 	c->aspect = (float) width / (float) height;
 }
 
 Mat4 camera_compute_view(Camera* c)
 {
+	CHECK_IS_NULL_RET(c, "Cannot compute view of a null camera", MAT4_IDENTITY);
+
 	Vec3 forward = vec3_sub(c->target, c->pos);
 	vec3_norm_in(&forward);
 
@@ -103,6 +135,8 @@ Mat4 camera_compute_view(Camera* c)
 
 Mat4 camera_compute_project(Camera* c)
 {
+	CHECK_IS_NULL_RET(c, "Cannot compute project of a null camera", MAT4_IDENTITY);
+
 	float fov_rad = c->fov * (M_PI / 180.0f);
 	float f  = 1.0f / tanf(fov_rad * 0.5f);
 	float nf = 1.0f / (c->near - c->far);
