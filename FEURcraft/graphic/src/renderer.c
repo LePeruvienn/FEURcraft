@@ -39,7 +39,26 @@ bool renderer_init(Renderer* renderer, Window* window)
 	return true;
 }
 
+void renderer_update_viewport(Renderer* renderer)
+{
+	CHECK_IS_NULL_RET(renderer,
+		"Cannot update viewport of a NULL renderer", );
+
+	Window* w = renderer->window;
+
+	CHECK_IS_NULL_RET(w,
+		"Window of renderer is NULL", );
+
+	if (!window_has_resized(w))
+		return;
+
+	camera_update_aspect(&renderer->camera, w->width, w->height);
+
+	glViewport(0, 0, w->width, w->height);
+}
+
 void renderer_clear()
 {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 }
+

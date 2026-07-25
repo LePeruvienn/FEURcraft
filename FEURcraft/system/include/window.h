@@ -102,25 +102,11 @@ void window_swap_buffers(Window* w);
 void window_wait_events(double timeout);
 
 /**
- * \brief Récupère le temps écoulé depuis l'initialisation de la fenêtre.
+ * \brief Vérifie si la taille de la fenêtre à changer
+ * Si oui met la taille de la fenêtre à jour
  *
- * \return Le temps en secondes (float).
+ * \param w fenêtre cible
  */
-float window_get_time();
-
-/**
- * \brief Récupère la taille physique du framebuffer.
- *
- * Sur les écrans haute densité (2K, 4K...), la taille physique en pixels 
- * peut différer de la taille logique de la fenêtre. Cette fonction est requise 
- * pour mettre à jour correctement le glViewport.
- *
- * \param w La fenêtre concernée.
- * \param width Pointeur où stocker la largeur physique en pixels.
- * \param height Pointeur où stocker la hauteur physique en pixels.
- */
-void window_get_framebuffer_size(Window* w, int* width, int* height);
-
-bool window_get_key_pressed(Window* w, int key);
+bool window_has_resized(Window* w);
 
 #endif // WINDOW_H

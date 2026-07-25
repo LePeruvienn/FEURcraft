@@ -104,7 +104,7 @@ void camera_rotate(Camera* c, float dyaw, float dpitch)
 	c->target.z = c->pos.z + dz;
 }
 
-void set_camera_aspect(Camera* c, unsigned int width, unsigned int height)
+void camera_update_aspect(Camera* c, unsigned int width, unsigned int height)
 {
 	CHECK_IS_NULL_RET(c, "Cannot set aspect of a null camera", );
 

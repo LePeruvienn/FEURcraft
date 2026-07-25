@@ -16,6 +16,8 @@ struct Renderer
 
 bool renderer_init(Renderer* renderer, Window* window);
 
+void renderer_update_viewport(Renderer* renderer);
+
 void renderer_clear();
 
 #endif // RENDERER_H

@@ -124,16 +124,27 @@ void window_wait_events(double timeout)
 	thrd_sleep(&ts, NULL);
 }
 
-float window_get_time() 
+bool window_has_resized(Window* w)
 {
-	return (float) glfwGetTime(); 
-}
+	CHECK_IS_NULL_RET(w, "Cannot check resize of a NULL window", false);
 
-void window_get_framebuffer_size(Window* w, int* width, int* height) 
-{
-	if (w && w->handle)
+	int current_width  = (int) w->width;
+	int current_height = (int) w->height;
+
+	glfwGetFramebufferSize(w->handle, &current_width, &current_height);
+
+	if (current_width  == (int) w->width &&
+	    current_height == (int) w->height)
 	{
-		glfwGetFramebufferSize(w->handle, width, height);
+		return false;
 	}
+
+	CHECK_COND_RET(current_width > 0 && current_height > 0,
+		"Framebuffer size is less or equal than zero. returning", false)
+
+	w->width  = (unsigned int) current_width;
+	w->height = (unsigned int) current_height;
+
+	return true;
 }
 

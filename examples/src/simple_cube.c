@@ -54,13 +54,15 @@ int main()
 	{
 		window_pool_events();
 
+		renderer_update_viewport(&renderer);
+
 		renderer_clear();
 
 		shader_program_use(program);
 
 		float dt = window_get_delta_time(window);
 
-		rotation += 1.f * dt;
+		rotation += 0.5f * dt;
 
 		Mat4 view = camera_compute_view(&renderer.camera);
 		Mat4 model = mat4_mult(mat4_rotate_x(rotation), mat4_rotate_z(rotation));
