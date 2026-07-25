@@ -26,8 +26,11 @@ typedef struct Window Window;
 struct Window
 {
 	GLFWwindow* handle;
+
 	unsigned int width;
 	unsigned int height;
+
+	float last_frame_time;
 };
 
 /**
@@ -63,6 +66,14 @@ void free_window(Window* w);
  * \return true si la fenêtre doit se fermer, false sinon.
  */
 bool window_should_close(Window* w);
+
+/**
+ * \brief Permet de récupérer le temps passé entre deux frame
+ *
+ * \param w La fenêtre cible.
+ * \return le temps écouler entre deux frame
+ */
+float window_get_delta_time(Window* w);
 
 /**
  * \brief Traite les événements de la fenêtre.

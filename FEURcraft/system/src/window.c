@@ -48,6 +48,8 @@ Window* create_window(unsigned int width, unsigned int height, const char* title
 	w->width = width;
 	w->height = height;
 
+	w->last_frame_time = (float) glfwGetTime();
+
 	w->handle = glfwCreateWindow(width, height, title, NULL, NULL);
 
 	if (w->handle == NULL)
@@ -86,6 +88,18 @@ bool window_should_close(Window* w)
 	CHECK_IS_NULL_RET(w, "Window is NULL, returning false.", false);
 
 	return glfwWindowShouldClose(w->handle); 
+}
+
+float window_get_delta_time(Window* w)
+{
+	CHECK_IS_NULL_RET(w, "Cannot get delta time of NULL window.", 0.0f);
+
+	float current_time = (float) glfwGetTime();
+	float delta_time = current_time - w->last_frame_time;
+
+	w->last_frame_time = current_time;
+
+	return delta_time;
 }
 
 void window_pool_events()
