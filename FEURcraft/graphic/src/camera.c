@@ -34,7 +34,9 @@ void camera_init(Camera* c, Vec3 pos, Vec3 target,
 
 void camera_init_default(Camera* c, Window* w)
 {
-	static Vec3 camera_default_pos = VEC3(0.f, 0.f, 0.f);
+	// les deux valeurs ne doivent pas être égale,
+	// sinon la matrice vue peut être remplie de zéro !
+	static Vec3 camera_default_pos = VEC3(0.f, 0.f, 5.f);
 	static Vec3 camera_default_target = VEC3(0.f, 0.f, 0.f);
 
 	static float camera_default_fov = 45.f;
@@ -133,7 +135,7 @@ Mat4 camera_compute_view(Camera* c)
 	                 tx,    ty,         -tz,  1.f);
 }
 
-Mat4 camera_compute_project(Camera* c)
+Mat4 camera_compute_proj(Camera* c)
 {
 	CHECK_IS_NULL_RET(c, "Cannot compute project of a null camera", MAT4_IDENTITY);
 

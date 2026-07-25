@@ -114,7 +114,7 @@ Mat4 camera_compute_view(Camera* c);
  * \param c caméra
  * \return matrice 4x4 projection
  */
-Mat4 camera_compute_project(Camera* c);
+Mat4 camera_compute_proj(Camera* c);
 
 #endif // CAMERA_H
 

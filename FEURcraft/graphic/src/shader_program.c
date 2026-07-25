@@ -6,6 +6,7 @@
 #include "gl_debug.h"
 #include "logger.h"
 #include "error_checker.h"
+#include "call_once.h"
 
 static int get_program_status(GLuint program, GLenum pname)
 {
@@ -178,6 +179,18 @@ void shader_program_unbind()
 	GL_CALL(glUseProgram(0));
 }
 
+static bool shader_program_is_loc_valid(GLint loc)
+{
+	bool loc_valid = loc >= 0;
+
+	CALL_ONCE_UNIQUE(
+		CHECK_COND_WARN(loc_valid,
+			"Uniform location less than 0, some uniforms may be unused.")
+	);
+
+	return loc_valid;
+}
+
 void shader_program_set_bool(ShaderProgram* program, const char* uniform, bool value)
 {
 	CHECK_COND_RET(program->status == PROGRAM_STATUS_LINKED,
@@ -185,7 +198,13 @@ void shader_program_set_bool(ShaderProgram* program, const char* uniform, bool v
 
 	GLint location = glGetUniformLocation(program->id, uniform);
 
-	CHECK_COND_RET(location > 0, "uniform location less or equal than 0", );
+	if (shader_program_is_loc_valid(location) == false)
+	{
+		CALL_ONCE_UNIQUE(LOG_WARNING(
+			"Some uniforms are not valid for Shader Program %d.", 
+			program->id));
+		return;
+	}
 
 	GL_CALL(glUniform1i(location, value));
 }
@@ -197,7 +216,13 @@ void shader_program_set_float(ShaderProgram* program, const char* uniform, float
 
 	GLint location = glGetUniformLocation(program->id, uniform);
 
-	CHECK_COND_RET(location >= 0, "uniform location less than 0", );
+	if (shader_program_is_loc_valid(location) == false)
+	{
+		CALL_ONCE_UNIQUE(LOG_WARNING(
+			"Some uniforms are not valid for Shader Program %d.", 
+			program->id));
+		return;
+	}
 
 	GL_CALL(glUniform1f(location, value));
 }
@@ -209,7 +234,13 @@ void shader_program_set_vec2(ShaderProgram* program, const char* uniform, Vec2 v
 
 	GLint location = glGetUniformLocation(program->id, uniform);
 
-	CHECK_COND_RET(location >= 0, "uniform location less than 0", );
+	if (shader_program_is_loc_valid(location) == false)
+	{
+		CALL_ONCE_UNIQUE(LOG_WARNING(
+			"Some uniforms are not valid for Shader Program %d.", 
+			program->id));
+		return;
+	}
 
 	GL_CALL(glUniform2f(location, vec.x, vec.y));
 }
@@ -221,7 +252,13 @@ void shader_program_set_vec3(ShaderProgram* program, const char* uniform, Vec3 v
 
 	GLint location = glGetUniformLocation(program->id, uniform);
 
-	CHECK_COND_RET(location >= 0, "uniform location less than 0", );
+	if (shader_program_is_loc_valid(location) == false)
+	{
+		CALL_ONCE_UNIQUE(LOG_WARNING(
+			"Some uniforms are not valid for Shader Program %d.", 
+			program->id));
+		return;
+	}
 
 	GL_CALL(glUniform3f(location, vec.x, vec.y, vec.z));
 }
@@ -233,7 +270,13 @@ void shader_program_set_vec4(ShaderProgram* program, const char* uniform, Vec4 v
 
 	GLint location = glGetUniformLocation(program->id, uniform);
 
-	CHECK_COND_RET(location >= 0, "uniform location less than 0", );
+	if (shader_program_is_loc_valid(location) == false)
+	{
+		CALL_ONCE_UNIQUE(LOG_WARNING(
+			"Some uniforms are not valid for Shader Program %d.", 
+			program->id));
+		return;
+	}
 
 	GL_CALL(glUniform4f(location, vec.x, vec.y, vec.z, vec.w));
 }
@@ -245,8 +288,14 @@ void shader_program_set_mat4(ShaderProgram* program, const char* uniform, Mat4 m
 
 	GLint location = glGetUniformLocation(program->id, uniform);
 
-	CHECK_COND_RET(location >= 0, "uniform location less than 0", );
+	if (shader_program_is_loc_valid(location) == false)
+	{
+		CALL_ONCE_UNIQUE(LOG_WARNING(
+			"Some uniforms are not valid for Shader Program %d.", 
+			program->id));
+		return;
+	}
 
-	glUniformMatrix4fv(location, 1, GL_FALSE, mat.data);
+	GL_CALL(glUniformMatrix4fv(location, 1, GL_FALSE, mat.data));
 }
 

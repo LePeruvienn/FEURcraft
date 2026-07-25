@@ -2,6 +2,21 @@
 #include "vec4.h"
 
 #include <math.h>
+#include <stdio.h>
+
+void mat4_to_str(Mat4 m, char str[], unsigned int size)
+{
+	snprintf(str, size,
+		"[ %8.3f %8.3f %8.3f %8.3f ]\n"
+		"[ %8.3f %8.3f %8.3f %8.3f ]\n"
+		"[ %8.3f %8.3f %8.3f %8.3f ]\n"
+		"[ %8.3f %8.3f %8.3f %8.3f ]",
+		m.m00, m.m10, m.m20, m.m30,
+		m.m01, m.m11, m.m21, m.m31,
+		m.m02, m.m12, m.m22, m.m32,
+		m.m03, m.m13, m.m23, m.m33
+	);
+}
 
 Vec4 vec4_mult_mat4(Vec4 u, Mat4 A)
 {

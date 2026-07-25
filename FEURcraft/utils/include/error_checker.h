@@ -35,4 +35,32 @@
 		return ret; \
 	}
 
+#define CHECK_COND_WARN(cond, warn_msg) \
+	if (cond) {} \
+	else  \
+	{ \
+		LOG_WARNING(warn_msg); \
+	}
+
+#define CHECK_COND_RET_WARN(cond, warn_msg, ret) \
+	if (cond) {} \
+	else  \
+	{ \
+		LOG_WARNING(warn_msg); \
+		return ret; \
+	}
+
+#define CHECK_IS_NULL_WARN(ptr, warn_msg) \
+	if (ptr == NULL) \
+	{ \
+		LOG_WARNING(warn_msg); \
+	}
+
+#define CHECK_IS_NULL_RET_WARN(ptr, warn_msg, ret) \
+	if (ptr == NULL) \
+	{ \
+		LOG_WARNING(warn_msg); \
+		return ret; \
+	}
+
 #endif // UTILS_ERROR_CHECKER_H

@@ -65,14 +65,20 @@ void free_window(Window* w);
 bool window_should_close(Window* w);
 
 /**
- * \brief Met à jour l'affichage et traite les événements de la fenêtre.
+ * \brief Traite les événements de la fenêtre.
  *
- * Cette fonction intervertit les buffers de rendu (swap buffers) et 
  * dépile les événements en attente (clavier, souris, redimensionnement).
- *
- * \param w La fenêtre à mettre à jour.
  */
-void window_update_events(Window* w);
+void window_pool_events();
+
+/**
+ * \brief Met à jour l'affichage
+ *
+ * Cette fonction intervertit les buffers de rendu (swap buffers)
+ *
+ * \param w La fenêtre cible
+ */
+void window_swap_buffers(Window* w);
 
 /**
  * \brief Met en pause le processus en attendant des événements.

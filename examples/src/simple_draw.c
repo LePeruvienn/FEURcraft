@@ -1,21 +1,18 @@
 #include "window.h"
-#include "logger.h"
 #include "shader.h"
 #include "shader_program.h"
 #include "mesh.h"
+#include "renderer.h"
 
 int main()
 {
 	Window* window = create_window(960, 680, "FEURcraft");
 
-	if (!gladLoadGL())
-	{
-		LOG_ERROR("Failed to initialize glad.");
-		return 1;
-	}
+	Renderer renderer;
+	renderer_init(&renderer, window);
 
-	Shader* vert = shader_create("assets/shader/default.vert", SHADER_TYPE_VERT);
-	Shader* frag = shader_create("assets/shader/default.frag", SHADER_TYPE_FRAG);
+	Shader* vert = shader_create("assets/shader/empty.vert", SHADER_TYPE_VERT);
+	Shader* frag = shader_create("assets/shader/empty.frag", SHADER_TYPE_FRAG);
 
 	shader_compile(vert);
 	shader_compile(frag);
@@ -31,12 +28,16 @@ int main()
 
 	while(!window_should_close(window))
 	{
+		window_pool_events();
+
+		renderer_clear();
+
 		shader_program_use(program);
 		bind_mesh(mesh);
 
 		draw_mesh(mesh, GL_TRIANGLES);
 
-		window_update_events(window);
+		window_swap_buffers(window);
 	}
 
 	free_mesh(mesh);

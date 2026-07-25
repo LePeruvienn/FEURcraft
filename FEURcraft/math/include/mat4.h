@@ -50,6 +50,8 @@ struct Mat4
 	};
 };
 
+void mat4_to_str(Mat4 m, char str[], unsigned int size);
+
 Vec4 vec4_mult_mat4(Vec4 u, Mat4 A);
 Vec4 mat4_mult_vec4(Mat4 A, Vec4 u);
 

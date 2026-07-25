@@ -1,27 +1,41 @@
 #include "window.h"
 
 #include "logger.h"
+#include "error_checker.h"
+#include "call_once.h"
 
 #include <GLFW/glfw3.h>
 
 #include <stdlib.h>
 #include <time.h>
 #include <threads.h>
+#include <stdbool.h>
+
+// IMPORTANT: MUST BE ENABLED WHEN DEBUGGING WITH RENDERDOC!
+#define RENDER_DOC_DEBUG 1
 
 #define _10e9 1000000000.0
 
 Window* create_window(unsigned int width, unsigned int height, const char* title)
 {
-	if (!glfwInit())
-	{
-		LOG_ERROR("Failed to initialize GLFW.");
-		EXIT_PROGRAM(1);
-	}
+	static int is_glfw_init = false;
 
-	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
-	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
-	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
-	glfwWindowHint(GLFW_SAMPLES, 4); 
+	CALL_ONCE(1,
+		#if RENDER_DOC_DEBUG
+			CALL_ONCE(2,
+				glfwInitHint(GLFW_PLATFORM, GLFW_PLATFORM_X11));
+		#endif
+		is_glfw_init = glfwInit()
+	);
+
+	CHECK_COND_RET(is_glfw_init != 0, "Failed to initialize GLFW", NULL);
+
+	CALL_ONCE(3,
+		glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
+		glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
+		glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+		// glfwWindowHint(GLFW_SAMPLES, 4); 
+	);
 
 	Window* w = malloc(sizeof(struct Window));
 
@@ -55,10 +69,7 @@ Window* create_window(unsigned int width, unsigned int height, const char* title
 
 void free_window(Window* w)
 {
-	if (w == NULL)
-	{
-		return;
-	}
+	CHECK_IS_NULL_RET(w, "Cannot free a NULL window", );
 
 	if (w->handle)
 	{
@@ -71,14 +82,22 @@ void free_window(Window* w)
 }
 
 bool window_should_close(Window* w) 
-{ 
+{
+	CHECK_IS_NULL_RET(w, "Window is NULL, returning false.", false);
+
 	return glfwWindowShouldClose(w->handle); 
 }
 
-void window_update_events(Window* w) 
-{ 
-	glfwSwapBuffers(w->handle); 
-	glfwPollEvents(); 
+void window_pool_events()
+{
+	glfwPollEvents();
+}
+
+void window_swap_buffers(Window* w)
+{
+	CHECK_IS_NULL_RET(w, "Cannot swap buffers of a NULL window.", );
+
+	glfwSwapBuffers(w->handle);
 }
 
 void window_wait_events(double timeout)
