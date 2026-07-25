@@ -20,6 +20,9 @@
 SCRIPT_DIR=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &> /dev/null && pwd)
 BIN_DIR="$SCRIPT_DIR/../bin"
 
+ASSETS_DIR="$SCRIPT_DIR/assets"
+OUT_DIR="$SCRIPT_DIR/out"
+
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
@@ -92,6 +95,14 @@ for arg in "$@"; do
 			;;
 	esac
 done
+
+# Creating folders needed if they dont exists
+mkdir -p "$OUT_DIR"
+
+echo
+echo "     ▄▖▄▖▖▖▄▖  ▄▖    ▗ "
+echo "     ▙▖▙▖▌▌▙▘  ▐ █▌▛▘▜▘"
+echo "     ▌ ▙▖▙▌▌▌  ▐ ▙▖▄▌▐▖"
 
 echo
 echo -e "${BOLD}${CYAN}========== Running tests ==========${NC}"

@@ -1,14 +1,17 @@
 #include "image.h"
 
-#include "ptr_helper.h"
 #include "error_checker.h"
 
 #define STB_IMAGE_IMPLEMENTATION
 #include "stb_image.h"
 
-#include <stdlib.h>
+#define STB_IMAGE_WRITE_IMPLEMENTATION
+#include "stb_image_write.h"
 
-Image* image_create(char* filepath)
+#include <stdlib.h>
+#include <string.h>
+
+Image* image_create(const char* filepath)
 {
 	Image* img = malloc(sizeof(struct Image));
 
@@ -19,6 +22,24 @@ Image* image_create(char* filepath)
 	img->channels = 0;
 	img->width = 0;
 	img->height = 0;
+
+	return img;
+}
+
+Image* image_create_and_load(const char* filepath)
+{
+	Image* img = image_create(filepath);
+
+	CHECK_IS_NULL_RET(img, "Failed to create image", NULL);
+
+	image_load(img);
+
+	if (image_is_loaded(img) == false)
+	{
+		LOG_ERROR("Failed to load Image. Returing NULL");
+		image_free(img);
+		return NULL;
+	}
 
 	return img;
 }
@@ -67,6 +88,8 @@ void image_unload(Image* img)
 
 bool image_is_loaded(Image* img)
 {
+	CHECK_IS_NULL_RET(img, "Cannot check a NULL Image.", false);
+
 	return img->data != NULL;
 }
 
@@ -77,3 +100,50 @@ void image_free(Image* img)
 	image_unload(img);
 	free(img);
 }
+
+void image_write(Image* img, const char* file_path)
+{
+	image_write_from_data(file_path,
+	                       img->data,
+	                       img->width,
+	                       img->height,
+	                       img->channels);
+}
+
+void image_write_from_data(const char* file_path,
+                           unsigned char* data,
+                           unsigned int width,
+                           unsigned int height,
+                           unsigned int channels)
+{
+	stbi_flip_vertically_on_write(1);
+
+	stbi_write_png(
+		file_path,
+		width,
+		height,
+		channels,
+		data,
+		width * channels
+	);
+}
+
+bool image_are_equal(Image* img1, Image* img2)
+{
+	CHECK_COND_RET(image_is_loaded(img1) && image_is_loaded(img2),
+		"Cannot compare image if they are not laoded", false);
+
+	bool same_width = img1->width == img2->width;
+	bool same_height = img1->height == img2->height;
+	bool same_channels = img1->channels == img2->channels;
+
+	if (!same_width || !same_height || !same_channels)
+	{
+		return false;
+	}
+
+	size_t img_size = img1->width * img1->height * img1->channels;
+
+	return memcmp(img1->data, img2->data, img_size) == 0;
+}
+

@@ -26,7 +26,7 @@ Mesh* create_mesh(Geometry* g)
 	
 	vertex_layout_make_VAO(layout);
 
-	load_geometry_data(g);
+	geometry_load_to_gpu(g);
 
 	glBindVertexArray(0);
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
@@ -37,20 +37,20 @@ Mesh* create_mesh(Geometry* g)
 
 Mesh* create_cube_mesh()
 {
-	Geometry* g = create_cube();
+	Geometry* g = geometry_create_cube();
 	Mesh* m = create_mesh(g);
 
-	free_geometry(g);
+	geometry_free(g);
 
 	return m;
 }
 
 Mesh* create_sphere_mesh(float R, unsigned int lat_amount, unsigned int long_amount)
 {
-	Geometry* g = create_sphere(R, lat_amount, long_amount);
+	Geometry* g = geometry_create_sphere(R, lat_amount, long_amount);
 	Mesh* m = create_mesh(g);
 
-	free_geometry(g);
+	geometry_free(g);
 
 	return m;
 }

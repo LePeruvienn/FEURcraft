@@ -61,12 +61,12 @@
 
 #endif
 
+#include <stdlib.h>
+
 #define EXIT_PROGRAM(code) do { LOG("Program exited with code %d", code); exit(code); } while(0)
 #define EXIT_ERROR(code, fmt, ...) do { LOG_ERROR(fmt, ##__VA_ARGS__); EXIT_PROGRAM(code); } while(0)
 
 #if LOG_ENABLED && EXIT_ON_ERROR
-
-	#include <stdlib.h>
 
 	#define LOG_ERROR(fmt, ...)                                    \
 		do { LOG_HEADER_FILE(stderr, "ERROR", fmt, ##__VA_ARGS__); \

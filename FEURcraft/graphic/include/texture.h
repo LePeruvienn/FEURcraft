@@ -1,7 +1,12 @@
 #ifndef TEXTURE_H
 #define TEXTURE_H
 
+#include "image.h"
+#include "atlas.h"
+
 #include "glad/glad.h"
+
+#include <stddef.h>
 
 /**
  * \file texture.h
@@ -25,14 +30,42 @@ struct Texture
 };
 
 /**
-* \brief Créer une texture de type cube map avec les images données en paramêtre.
+* \brief Créer une texture à partir des données passer en paramêtre
 *
-* \attention il faut donner exactement 6 chemin de fichier valide !
+* \warning Doit être un buffer de données RGBA (4 octets) 
+* avec la taille du buffer est égale à width \times height
 *
-* \param faces_images_paths listes des chemin de fichier des images de la cube map
+* \param data pointeur vers le buffer de données
+* \param width largeur de la texture
+* \param height hateur de la texture
 * \return texture dont la mémoire à été alloué
 */
-Texture* create_texture(const char* path);
+Texture* create_texture(unsigned char* data,
+                        unsigned int width, unsigned int height);
+
+/**
+* \brief Créer une texture à partir de l'image passer en paramêtre
+*
+* \param img image à partir de laquelle créer la texture
+* \return texture dont la mémoire à été alloué
+*/
+Texture* create_texture_from_image(Image* img);
+
+/**
+* \brief Créer une texture à partir du fichier passer en paramêtre
+*
+* \param path chemin vers le fichier source
+* \return texture dont la mémoire à été alloué
+*/
+Texture* create_texture_from_file(const char* path);
+
+/**
+* \brief Créer une texture à partir d'un atlas
+*
+* \param atlas donnée de l'atlas
+* \return texture dont la mémoire à été alloué
+*/
+Texture* create_texture_from_atlas(Atlas* atlas);
 
 /**
 * \brief Libère la mémoire de la texture en paramêtre

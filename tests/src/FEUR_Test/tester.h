@@ -1,5 +1,5 @@
-#ifndef FEUR_TEST_H
-#define FEUR_TEST_H
+#ifndef FEUR_TEST_TESTER_H
+#define FEUR_TEST_TESTER_H
 
 #include "test_data.h"
 
@@ -234,5 +234,5 @@ void FEUR_Test_End()
 	// We exit by the number of failed tests (0 == OK, else some FAILED !)
 	EXIT_PROGRAM(g_FEUR_tester.test_failed_amount);
 }
-#endif // FEUR_TEST_H
+#endif // FEUR_TEST_TESTER_H
 

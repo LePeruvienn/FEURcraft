@@ -30,6 +30,7 @@ target_sources(${LIB_NAME}
 		src/camera.c
 		src/renderer.c
 		src/texture.c
+		src/atlas.c
 )
 
 
@@ -40,7 +41,6 @@ target_link_libraries(${LIB_NAME}
 	PUBLIC
 		OpenGL::GL
 		glad
-		stb_image
 		utils
 		math
 		system

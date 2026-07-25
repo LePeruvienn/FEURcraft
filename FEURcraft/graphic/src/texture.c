@@ -1,4 +1,5 @@
 #include "texture.h"
+#include "image.h"
 
 #include "logger.h"
 #include "gl_debug.h"
@@ -6,19 +7,15 @@
 
 #include "glad/glad.h"
 
-// L'import de stb_image.h fait crash le linter,
-// - Pas un soucis pour le programme juste pour l'IDE.
-#define STB_IMAGE_IMPLEMENTATION
-#include "stb_image.h"
-
 #include <stdlib.h>
 #include <stdbool.h>
 
-Texture* create_texture(const char* filepath)
+Texture* create_texture(unsigned char* data,
+                        unsigned int width, unsigned int height)
 {
-	CHECK_IS_NULL_RET(filepath, "Texture path is NULL.", NULL);
-
 	Texture* t = malloc(sizeof(struct Texture));
+
+	CHECK_IS_NULL_RET(t, "Failed to malloc Texture.", NULL);
 
 	t->id = 0;
 	t->type = GL_TEXTURE_2D;
@@ -31,25 +28,15 @@ Texture* create_texture(const char* filepath)
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
 
-	stbi_set_flip_vertically_on_load(1);
-
-	int width = 0;
-	int height = 0;
-	int channels = 0;
-	
-	unsigned char* data = stbi_load(filepath, &width, &height, &channels, STBI_rgb_alpha);
-
-	CHECK_IS_NULL_RET(data, "Failed to load image", NULL);
-
-	t->width = (unsigned int) width;
-	t->height = (unsigned int) height;
+	t->width = width;
+	t->height = height;
 
 	GL_CALL(glTexImage2D(
 		GL_TEXTURE_2D,
 		0,
 		GL_RGBA,
-		width,
-		height,
+		t->width,
+		t->height,
 		0,
 		GL_RGBA,
 		GL_UNSIGNED_BYTE,
@@ -61,6 +48,38 @@ Texture* create_texture(const char* filepath)
 	glBindTexture(t->type, 0);
 
 	return t;
+}
+
+Texture* create_texture_from_image(Image* img)
+{
+	CHECK_COND_RET(img->channels == 4,
+		"Image that are not RGBA (4 channels) are not supported.", NULL);
+
+	return create_texture(img->data, img->width, img->height);
+}
+
+Texture* create_texture_from_file(const char* filepath)
+{
+	Image* img = image_create(filepath);
+
+	CHECK_IS_NULL_RET(img, "Failed to load texture file.", NULL)
+
+	Texture* texture = create_texture_from_image(img);
+
+	image_free(img);
+
+	return texture;
+}
+
+Texture* create_texture_from_atlas(Atlas* atlas)
+{
+	CHECK_IS_NULL_RET(atlas,
+		"Cannot create texture from a NULL Atlas", NULL);
+
+	CHECK_COND_RET(atlas->channels == 4,
+			"Atlas that are not RGBA (4 channels) are not supported", NULL);
+
+	return create_texture(atlas->data, atlas->width, atlas->height);
 }
 
 void free_texture(Texture* t)

@@ -63,7 +63,7 @@ char* read_file_txt(const char* path)
 
 	if (file == NULL)
 	{
-		LOG_ERROR("Cannot read text file, path is NULL");
+		LOG_ERROR("Failed to open file : %s", path);
 		return NULL;
 	}
 
