@@ -35,7 +35,7 @@ struct Geometry
 * \brief Créer les données de vertex d'un cube
 * \return geometry vertex du cube
 */
-Geometry* create_cube();
+Geometry* geometry_create_cube();
 
 /**
 * \brief Créer les données de vertex d'une sphère
@@ -44,7 +44,7 @@ Geometry* create_cube();
 * \param long_amount nombre de sommet en longitude
 * \return geometry vertex de la sphère
 */
-Geometry* create_sphere(float R, unsigned int lat_amount, unsigned int long_amount);
+Geometry* geometry_create_sphere(float R, unsigned int lat_amount, unsigned int long_amount);
 
 /**
 * \brief Créer les données de vertex pour un ensemble de lignes
@@ -52,18 +52,18 @@ Geometry* create_sphere(float R, unsigned int lat_amount, unsigned int long_amou
 * \param size nombre de point total
 * \return geometry vertex des lignes
 */
-Geometry* create_line(Vertex* vertices, unsigned int size);
+Geometry* geometry_create_line(Vertex* vertices, unsigned int size);
 
 /**
 * \brief libère la mémoire de la geometry passer en paramêtre
 * \param m geometry à libérer
 */
-void free_geometry(Geometry* g);
+void geometry_free(Geometry* g);
 
 /**
 * \brief charge les données de la geometry dans le GPU
 * \param m geometry à charger
 */
-void load_geometry_data(Geometry* g);
+void geometry_load_to_gpu(Geometry* g);
 
 #endif // GEOMETRY_H

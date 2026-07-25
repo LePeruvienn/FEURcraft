@@ -16,7 +16,7 @@
 #define CUBE_VERTICES_AMOUNT 8
 #define CUBE_INDICES_AMOUNT 36
 
-Geometry* create_cube()
+Geometry* geometry_create_cube()
 {
 	Geometry* g = malloc(sizeof(struct Geometry));
 
@@ -79,7 +79,7 @@ Geometry* create_cube()
 	return g;
 }
 
-Geometry* create_sphere(float R, unsigned int lat_amount, unsigned int long_amount)
+Geometry* geometry_create_sphere(float R, unsigned int lat_amount, unsigned int long_amount)
 {
 	if (R <= 0.f)
 	{
@@ -153,7 +153,7 @@ Geometry* create_sphere(float R, unsigned int lat_amount, unsigned int long_amou
 	return g;
 }
 
-Geometry* create_line(Vertex* vertices, unsigned int size)
+Geometry* geometry_create_line(Vertex* vertices, unsigned int size)
 {
 	Geometry* g = malloc(sizeof(struct Geometry));
 
@@ -179,7 +179,7 @@ Geometry* create_line(Vertex* vertices, unsigned int size)
 	return g;
 }
 
-void load_geometry_data(Geometry* g)
+void geometry_load_to_gpu(Geometry* g)
 {
 	LOG_INFO("Loaded a geometry to GPU of %u vertices and %u indices", g->vertices_amount, g->indices_amount);
 
@@ -194,7 +194,7 @@ void load_geometry_data(Geometry* g)
 	             GL_STATIC_DRAW));
 }
 
-void free_geometry(Geometry* g)
+void geometry_free(Geometry* g)
 {
 	free(g->vertices);
 	free(g->indices);
