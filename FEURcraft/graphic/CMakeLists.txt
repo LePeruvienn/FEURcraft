@@ -29,6 +29,7 @@ target_sources(${LIB_NAME}
 		src/shader_program.c
 		src/camera.c
 		src/renderer.c
+		src/texture.c
 )
 
 
