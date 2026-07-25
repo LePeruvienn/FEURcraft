@@ -21,7 +21,8 @@ target_sources(${LIB_NAME}
 		src/read_file.c
 		src/window.c
 		src/env_helper.c
+		src/image.c
 )
 
 # On link les librarie nécessaire à la compilation de la lib
-target_link_libraries(${LIB_NAME} PUBLIC utils glfw glad)
+target_link_libraries(${LIB_NAME} PUBLIC utils glfw glad stb_image)
