@@ -50,6 +50,18 @@ Mesh* create_mesh(Geometry* g);
 Mesh* create_cube_mesh();
 
 /**
+* \brief Créer une nouvelle géométrie de cube avec UV
+* \return nouvelle géométrie alloué
+*/
+Mesh* create_cube_uv_mesh();
+
+/**
+* \brief Créer une nouvelle géométrie de block
+* \return nouvelle géométrie alloué
+*/
+Mesh* create_block_mesh();
+
+/**
 * \brief Créer une nouvelle géométrie de sphère
 * \param R rayon de la sphère
 * \param lat_amount nombre de sommet en latitude

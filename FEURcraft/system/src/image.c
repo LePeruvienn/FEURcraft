@@ -69,6 +69,8 @@ void image_load(Image* img)
 	img->width = (unsigned int) width;
 	img->height = (unsigned int) height;
 	img->channels = (unsigned int) channels;
+
+	LOG_INFO("Loaded an image of %dx%d with %d channels to RAM.", width, height, channels);
 }
 
 void image_unload(Image* img)

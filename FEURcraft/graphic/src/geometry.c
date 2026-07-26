@@ -16,6 +16,12 @@
 #define CUBE_VERTICES_AMOUNT 8
 #define CUBE_INDICES_AMOUNT 36
 
+#define CUBE_UV_VERTICES_AMOUNT 24
+#define CUBE_UV_INDICES_AMOUNT 36
+
+#define BLOCK_VERTICES_AMOUNT 24
+#define BLOCK_INDICES_AMOUNT 36
+
 Geometry* geometry_create_cube()
 {
 	Geometry* g = malloc(sizeof(struct Geometry));
@@ -75,6 +81,182 @@ Geometry* geometry_create_cube()
 	memcpy(g->indices, indices, sizeof(unsigned int) * g->indices_amount);	
 
 	vertex_layout_init_default(&g->layout);
+
+	return g;
+}
+
+Geometry* geometry_create_cube_UV()
+{
+	Geometry* g = malloc(sizeof(struct Geometry));
+
+	g->vertices = NULL;
+	g->vertices_size = sizeof(VertexUV) * CUBE_UV_VERTICES_AMOUNT;
+	g->vertices_amount = CUBE_UV_VERTICES_AMOUNT;
+
+	g->indices = NULL;
+	g->indices_amount = CUBE_UV_INDICES_AMOUNT;
+
+	VertexUV vertices[CUBE_UV_VERTICES_AMOUNT] =
+	{
+		// Front
+		{ .pos = VEC3(-0.5f, -0.5f,  0.5f), .uv = VEC2(0.0f, 0.0f) },
+		{ .pos = VEC3( 0.5f, -0.5f,  0.5f), .uv = VEC2(1.0f, 0.0f) },
+		{ .pos = VEC3( 0.5f,  0.5f,  0.5f), .uv = VEC2(1.0f, 1.0f) },
+		{ .pos = VEC3(-0.5f,  0.5f,  0.5f), .uv = VEC2(0.0f, 1.0f) },
+
+		// Back
+		{ .pos = VEC3( 0.5f, -0.5f, -0.5f), .uv = VEC2(0.0f, 0.0f) },
+		{ .pos = VEC3(-0.5f, -0.5f, -0.5f), .uv = VEC2(1.0f, 0.0f) },
+		{ .pos = VEC3(-0.5f,  0.5f, -0.5f), .uv = VEC2(1.0f, 1.0f) },
+		{ .pos = VEC3( 0.5f,  0.5f, -0.5f), .uv = VEC2(0.0f, 1.0f) },
+
+		// Top
+		{ .pos = VEC3(-0.5f,  0.5f,  0.5f), .uv = VEC2(0.0f, 0.0f) },
+		{ .pos = VEC3( 0.5f,  0.5f,  0.5f), .uv = VEC2(1.0f, 0.0f) },
+		{ .pos = VEC3( 0.5f,  0.5f, -0.5f), .uv = VEC2(1.0f, 1.0f) },
+		{ .pos = VEC3(-0.5f,  0.5f, -0.5f), .uv = VEC2(0.0f, 1.0f) },
+
+		// Bot
+		{ .pos = VEC3(-0.5f, -0.5f, -0.5f), .uv = VEC2(0.0f, 0.0f) },
+		{ .pos = VEC3( 0.5f, -0.5f, -0.5f), .uv = VEC2(1.0f, 0.0f) },
+		{ .pos = VEC3( 0.5f, -0.5f,  0.5f), .uv = VEC2(1.0f, 1.0f) },
+		{ .pos = VEC3(-0.5f, -0.5f,  0.5f), .uv = VEC2(0.0f, 1.0f) },
+
+		// Left
+		{ .pos = VEC3(-0.5f, -0.5f, -0.5f), .uv = VEC2(0.0f, 0.0f) },
+		{ .pos = VEC3(-0.5f, -0.5f,  0.5f), .uv = VEC2(1.0f, 0.0f) },
+		{ .pos = VEC3(-0.5f,  0.5f,  0.5f), .uv = VEC2(1.0f, 1.0f) },
+		{ .pos = VEC3(-0.5f,  0.5f, -0.5f), .uv = VEC2(0.0f, 1.0f) },
+
+		// Right
+		{ .pos = VEC3( 0.5f, -0.5f,  0.5f), .uv = VEC2(0.0f, 0.0f) },
+		{ .pos = VEC3( 0.5f, -0.5f, -0.5f), .uv = VEC2(1.0f, 0.0f) },
+		{ .pos = VEC3( 0.5f,  0.5f, -0.5f), .uv = VEC2(1.0f, 1.0f) },
+		{ .pos = VEC3( 0.5f,  0.5f,  0.5f), .uv = VEC2(0.0f, 1.0f) },
+	};
+
+	unsigned int indices[CUBE_UV_INDICES_AMOUNT] =
+	{
+		// Front
+		0, 1, 2,
+		2, 3, 0,
+
+		// Back
+		4, 5, 6,
+		6, 7, 4,
+
+		// Top
+		8, 9, 10,
+		10, 11, 8,
+
+		// Bot
+		12, 13, 14,
+		14, 15, 12,
+
+		// Left
+		16, 17, 18,
+		18, 19, 16,
+
+		// Right
+		20, 21, 22,
+		22, 23, 20
+	};
+
+	g->vertices = malloc(g->vertices_size);
+	memcpy(g->vertices, vertices, g->vertices_size);
+
+	g->indices = malloc(sizeof(unsigned int) * g->indices_amount);
+	memcpy(g->indices, indices, sizeof(unsigned int) * g->indices_amount);	
+
+	vertex_layout_init_default_UV(&g->layout);
+
+	return g;
+}
+
+Geometry* geometry_create_block()
+{
+	Geometry* g = malloc(sizeof(struct Geometry));
+
+	g->vertices = NULL;
+	g->vertices_size = sizeof(VertexBlock) * BLOCK_VERTICES_AMOUNT;
+	g->vertices_amount = BLOCK_VERTICES_AMOUNT;
+
+	g->indices = NULL;
+	g->indices_amount = BLOCK_INDICES_AMOUNT;
+
+	VertexBlock vertices[BLOCK_VERTICES_AMOUNT] =
+	{
+		// Front
+		{ .pos = VEC3(-0.5f, -0.5f,  0.5f), .uv = VEC2(0.0f, 0.0f), .face = BLOCK_FACE_FRONT },
+		{ .pos = VEC3( 0.5f, -0.5f,  0.5f), .uv = VEC2(1.0f, 0.0f), .face = BLOCK_FACE_FRONT },
+		{ .pos = VEC3( 0.5f,  0.5f,  0.5f), .uv = VEC2(1.0f, 1.0f), .face = BLOCK_FACE_FRONT },
+		{ .pos = VEC3(-0.5f,  0.5f,  0.5f), .uv = VEC2(0.0f, 1.0f), .face = BLOCK_FACE_FRONT },
+
+		// Back
+		{ .pos = VEC3( 0.5f, -0.5f, -0.5f), .uv = VEC2(0.0f, 0.0f), .face = BLOCK_FACE_BACK },
+		{ .pos = VEC3(-0.5f, -0.5f, -0.5f), .uv = VEC2(1.0f, 0.0f), .face = BLOCK_FACE_BACK },
+		{ .pos = VEC3(-0.5f,  0.5f, -0.5f), .uv = VEC2(1.0f, 1.0f), .face = BLOCK_FACE_BACK },
+		{ .pos = VEC3( 0.5f,  0.5f, -0.5f), .uv = VEC2(0.0f, 1.0f), .face = BLOCK_FACE_BACK },
+
+		// Top
+		{ .pos = VEC3(-0.5f,  0.5f,  0.5f), .uv = VEC2(0.0f, 0.0f), .face = BLOCK_FACE_TOP },
+		{ .pos = VEC3( 0.5f,  0.5f,  0.5f), .uv = VEC2(1.0f, 0.0f), .face = BLOCK_FACE_TOP },
+		{ .pos = VEC3( 0.5f,  0.5f, -0.5f), .uv = VEC2(1.0f, 1.0f), .face = BLOCK_FACE_TOP },
+		{ .pos = VEC3(-0.5f,  0.5f, -0.5f), .uv = VEC2(0.0f, 1.0f), .face = BLOCK_FACE_TOP },
+
+		// Bot
+		{ .pos = VEC3(-0.5f, -0.5f, -0.5f), .uv = VEC2(0.0f, 0.0f), .face = BLOCK_FACE_BOT },
+		{ .pos = VEC3( 0.5f, -0.5f, -0.5f), .uv = VEC2(1.0f, 0.0f), .face = BLOCK_FACE_BOT },
+		{ .pos = VEC3( 0.5f, -0.5f,  0.5f), .uv = VEC2(1.0f, 1.0f), .face = BLOCK_FACE_BOT },
+		{ .pos = VEC3(-0.5f, -0.5f,  0.5f), .uv = VEC2(0.0f, 1.0f), .face = BLOCK_FACE_BOT },
+
+		// Left
+		{ .pos = VEC3(-0.5f, -0.5f, -0.5f), .uv = VEC2(0.0f, 0.0f), .face = BLOCK_FACE_LEFT },
+		{ .pos = VEC3(-0.5f, -0.5f,  0.5f), .uv = VEC2(1.0f, 0.0f), .face = BLOCK_FACE_LEFT },
+		{ .pos = VEC3(-0.5f,  0.5f,  0.5f), .uv = VEC2(1.0f, 1.0f), .face = BLOCK_FACE_LEFT },
+		{ .pos = VEC3(-0.5f,  0.5f, -0.5f), .uv = VEC2(0.0f, 1.0f), .face = BLOCK_FACE_LEFT },
+
+		// Right
+		{ .pos = VEC3( 0.5f, -0.5f,  0.5f), .uv = VEC2(0.0f, 0.0f), .face = BLOCK_FACE_RIGHT },
+		{ .pos = VEC3( 0.5f, -0.5f, -0.5f), .uv = VEC2(1.0f, 0.0f), .face = BLOCK_FACE_RIGHT },
+		{ .pos = VEC3( 0.5f,  0.5f, -0.5f), .uv = VEC2(1.0f, 1.0f), .face = BLOCK_FACE_RIGHT },
+		{ .pos = VEC3( 0.5f,  0.5f,  0.5f), .uv = VEC2(0.0f, 1.0f), .face = BLOCK_FACE_RIGHT },
+	};
+
+	unsigned int indices[BLOCK_INDICES_AMOUNT] =
+	{
+		// Front
+		0, 1, 2,
+		2, 3, 0,
+
+		// Back
+		4, 5, 6,
+		6, 7, 4,
+
+		// Top
+		8, 9, 10,
+		10, 11, 8,
+
+		// Bot
+		12, 13, 14,
+		14, 15, 12,
+
+		// Left
+		16, 17, 18,
+		18, 19, 16,
+
+		// Right
+		20, 21, 22,
+		22, 23, 20
+	};
+
+	g->vertices = malloc(g->vertices_size);
+	memcpy(g->vertices, vertices, g->vertices_size);
+
+	g->indices = malloc(sizeof(unsigned int) * g->indices_amount);
+	memcpy(g->indices, indices, sizeof(unsigned int) * g->indices_amount);	
+
+	vertex_layout_init_default_block(&g->layout);
 
 	return g;
 }

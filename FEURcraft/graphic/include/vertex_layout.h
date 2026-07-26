@@ -25,12 +25,9 @@
  * \brief Disposition des index des attributs de vertex disponible
  * @{
  */
-#define VERTEX_ATTR_POSITION   0
-#define VERTEX_ATTR_COLOR      1
-#define VERTEX_ATTR_NORMAL     2
-#define INSTANCE_ATTR_POSITION 3
-#define INSTANCE_ATTR_SCALE    4
-#define INSTANCE_ATTR_COLOR    5
+#define VERTEX_ATTR_POSITION 0
+#define VERTEX_ATTR_UV       1
+#define VERTEX_ATTR_FACE     2
 /** @} */
 
 #define MAX_VERTEX_ATTRIBUTE_AMOUNT 5
@@ -79,10 +76,22 @@ void vertex_layout_init(VertexLayout* layout, VertexAttribute attributes[],
                         unsigned int attribute_amount, GLsizei stride);
 
 /**
- * \brief Créer une dispotion pour la structure \ref vertex
+ * \brief Créer une dispotion pour la structure \ref Vertex
  * \param layout VertexLayout cible
  */
 void vertex_layout_init_default(VertexLayout* layout);
+
+/**
+ * \brief Créer une dispotion pour la structure \ref VertexUV
+ * \param layout VertexLayout cible
+ */
+void vertex_layout_init_default_UV(VertexLayout* layout);
+
+/**
+ * \brief Créer une dispotion pour la structure \ref VertexBlock
+ * \param layout VertexLayout cible
+ */
+void vertex_layout_init_default_block(VertexLayout* layout);
 
 /**
  * \brief Envoie les données de dispotion des vertex au GPU

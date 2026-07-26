@@ -32,10 +32,28 @@ struct Geometry
 };
 
 /**
-* \brief Créer les données de vertex d'un cube
+* \brief Créer les données de géomotrie d'un cube
+* avec des vertices de \ref Vertex
+*
 * \return geometry vertex du cube
 */
 Geometry* geometry_create_cube();
+
+/**
+* \brief Créer les données de géomotrie d'un cube
+* avec des vertices de \ref VertexUV
+*
+* \return geometry vertex du cube
+*/
+Geometry* geometry_create_cube_UV();
+
+/**
+* \brief Créer les données de géomotrie d'un block
+* avec des vertices de \ref VertexBlock
+*
+* \return geometry vertex d'un block
+*/
+Geometry* geometry_create_block();
 
 /**
 * \brief Créer les données de vertex d'une sphère

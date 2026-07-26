@@ -2,13 +2,12 @@
 
 uniform sampler2D uTexture;
 
-in vec3 vVertexPosition;
+in vec2 vVertexUV;
 out vec4 fFragColor;
 
 void main()
 {
-	// ça c'est vraiment juste pour le test
-	vec4 texColor = texture(uTexture, vVertexPosition.xy);
+	vec4 texColor = texture(uTexture, vVertexUV);
 
 	fFragColor = texColor;
 }

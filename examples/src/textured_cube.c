@@ -26,7 +26,7 @@ int main()
 
 	shader_program_link(program);
 
-	Mesh* mesh = create_cube_mesh();
+	Mesh* mesh = create_cube_uv_mesh();
 
 	Texture* texture = create_texture_from_file("assets/textures/log_oak.png");
 

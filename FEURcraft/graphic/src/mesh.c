@@ -45,6 +45,26 @@ Mesh* create_cube_mesh()
 	return m;
 }
 
+Mesh* create_cube_uv_mesh()
+{
+	Geometry* g = geometry_create_cube_UV();
+	Mesh* m = create_mesh(g);
+
+	geometry_free(g);
+
+	return m;
+}
+
+Mesh* create_block_mesh()
+{
+	Geometry* g = geometry_create_block();
+	Mesh* m = create_mesh(g);
+
+	geometry_free(g);
+
+	return m;
+}
+
 Mesh* create_sphere_mesh(float R, unsigned int lat_amount, unsigned int long_amount)
 {
 	Geometry* g = geometry_create_sphere(R, lat_amount, long_amount);

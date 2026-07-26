@@ -31,6 +31,8 @@ target_sources(${LIB_NAME}
 		src/renderer.c
 		src/texture.c
 		src/atlas.c
+		src/image_array.c
+		src/texture_array.c
 )
 
 

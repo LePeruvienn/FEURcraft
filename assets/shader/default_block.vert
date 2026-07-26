@@ -2,16 +2,19 @@
 
 layout(location = 0) in vec3 aVertexPosition;
 layout(location = 1) in vec2 aVertexUV;
+layout(location = 2) in uint aVertexFace;
 
 uniform mat4 uModelMatrix;
 uniform mat4 uViewMatrix;
 uniform mat4 uProjMatrix;
 
 out vec2 vVertexUV;
+flat out uint vVertexFace;
 
 void main()
 {
 	vVertexUV = aVertexUV;
+	vVertexFace = aVertexFace;
 
 	// En fait j'ai un bug je crois dans le format de mes matrices,
 	// ce qui fait que je doit faire les multipliation à l'envers,

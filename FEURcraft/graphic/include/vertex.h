@@ -2,6 +2,11 @@
 #define VERTEX_H
 
 #include "vec3.h"
+#include "vec2.h"
+
+#include "block_face.h"
+
+#include <stdint.h>
 
 /**
  * \file vertex.h
@@ -12,10 +17,27 @@
  * \brief Type pour les vertex avec position et couleur,
  */
 typedef struct Vertex Vertex;
+typedef struct VertexUV VertexUV;
+typedef struct VertexBlock VertexBlock;
 
 struct Vertex
 {
 	Vec3 pos;
 };
+
+struct VertexUV
+{
+	Vec3 pos;
+	Vec2 uv;
+};
+
+struct VertexBlock
+{
+	Vec3 pos;
+	Vec2 uv;
+
+	BlockFace face;
+};
+
 
 #endif // VERTEX_H
