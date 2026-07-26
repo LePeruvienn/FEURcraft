@@ -56,4 +56,6 @@ void shader_program_set_vec4(ShaderProgram* program, const char* uniform, Vec4 v
 
 void shader_program_set_mat4(ShaderProgram* program, const char* uniform, Mat4 mat);
 
+void shader_program_set_texture_unit(ShaderProgram* program, const char* uniform, unsigned int unit);
+
 #endif // SHADER_PROGRAM_H

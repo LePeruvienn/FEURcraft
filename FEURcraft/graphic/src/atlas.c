@@ -1,6 +1,5 @@
 #include "atlas.h"
 
-#include "logger.h"
 #include "error_checker.h"
 
 #include <stdlib.h>

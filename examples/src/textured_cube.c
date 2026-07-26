@@ -4,8 +4,7 @@
 #include "shader_program.h"
 #include "mat4.h"
 #include "mesh.h"
-
-#include "logger.h"
+#include "texture.h"
 
 int main()
 {
@@ -14,8 +13,8 @@ int main()
 	Renderer renderer;
 	renderer_init(&renderer, window);
 
-	Shader* vert = shader_create("assets/shader/default.vert", SHADER_TYPE_VERT);
-	Shader* frag = shader_create("assets/shader/default.frag", SHADER_TYPE_FRAG);
+	Shader* vert = shader_create("assets/shader/default_texture.vert", SHADER_TYPE_VERT);
+	Shader* frag = shader_create("assets/shader/default_texture.frag", SHADER_TYPE_FRAG);
 
 	shader_compile(vert);
 	shader_compile(frag);
@@ -28,6 +27,8 @@ int main()
 	shader_program_link(program);
 
 	Mesh* mesh = create_cube_mesh();
+
+	Texture* texture = create_texture_from_file("assets/textures/log_oak.png");
 
 	float rotation = 0.f;
 
@@ -53,12 +54,18 @@ int main()
 		shader_program_set_mat4(program, "uProjMatrix", proj);
 		shader_program_set_mat4(program, "uModelMatrix", model);
 
+		unsigned int texture_unit = 0;
+		bind_texture(texture, texture_unit);
+		shader_program_set_texture_unit(program, "uTexture", texture_unit);
+
 		bind_mesh(mesh);
 
-		draw_mesh(mesh, GL_LINE_STRIP);
+		draw_mesh(mesh, GL_TRIANGLES);
 
 		window_swap_buffers(window);
 	}
+
+	free_texture(texture);
 
 	free_mesh(mesh);
 

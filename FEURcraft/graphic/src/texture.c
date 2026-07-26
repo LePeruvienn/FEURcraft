@@ -60,7 +60,7 @@ Texture* create_texture_from_image(Image* img)
 
 Texture* create_texture_from_file(const char* filepath)
 {
-	Image* img = image_create(filepath);
+	Image* img = image_create_and_load(filepath);
 
 	CHECK_IS_NULL_RET(img, "Failed to load texture file.", NULL)
 

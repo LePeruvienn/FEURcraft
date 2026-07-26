@@ -299,3 +299,21 @@ void shader_program_set_mat4(ShaderProgram* program, const char* uniform, Mat4 m
 	GL_CALL(glUniformMatrix4fv(location, 1, GL_FALSE, mat.data));
 }
 
+void shader_program_set_texture_unit(ShaderProgram* program, const char* uniform, unsigned int unit)
+{
+	CHECK_COND_RET(program->status == PROGRAM_STATUS_LINKED,
+	               "Cannot set a uniform of a not linked shader", );
+
+	GLint location = glGetUniformLocation(program->id, uniform);
+
+	if (shader_program_is_loc_valid(location) == false)
+	{
+		CALL_ONCE_UNIQUE(LOG_WARNING(
+			"Some uniforms are not valid for Shader Program %d.", 
+			program->id));
+		return;
+	}
+
+	GL_CALL(glUniform1i(location, unit));
+}
+
