@@ -121,6 +121,14 @@ fi
 
 passed=$((test_amount - ko_amount))
 
+if [ "$test_amount" -eq 0 ] ; then
+	
+	echo -e "${BOLD}Aucun test trouvé :(${NC}\n"
+	echo -e " - Aucun binaire ${CYAN}.tst${NC} trouver dans le dossier ${CYAN}${BIN_DIR}${NC}"
+	echo -e "${YELLOW} - Essaye de compiler d'abord.${NC} ${GREEN}-_-${NC}\n"
+	exit 0
+fi
+
 echo
 echo -e "${BOLD}============== Summary ==============${NC}"
 echo -e " ${GREEN}Passed${NC} : $passed"
