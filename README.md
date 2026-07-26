@@ -4,7 +4,7 @@ Small Voxel Engine.
 
 CUBE 👁️👄👁️
 
-![cube](assets/README/cube.gif)
+![cube](assets/README/cube_textured.gif)
 
 ---
 
