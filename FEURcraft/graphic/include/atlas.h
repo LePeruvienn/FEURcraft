@@ -6,6 +6,8 @@
 
 #include <stdbool.h>
 
+#define ATLAS_MAX_IMAGE_AMOUNT 32
+
 typedef struct Atlas Atlas;
 
 struct Atlas
@@ -20,7 +22,8 @@ struct Atlas
 
 	unsigned char* data;
 
-	bool is_empty;
+	unsigned int images_amount;
+	TextureCoords images_coords[ATLAS_MAX_IMAGE_AMOUNT];
 };
 
 Atlas* atlas_create(unsigned int width, unsigned int height,
@@ -28,7 +31,9 @@ Atlas* atlas_create(unsigned int width, unsigned int height,
 
 void atlas_free(Atlas* atlas);
 
-bool atlas_add_image(Atlas* atlas, Image* img, TextureCoord* uv_out);
+bool atlas_add_image(Atlas* atlas, Image* img, TextureCoords* uv_out);
+
+bool atlas_get_image_coords(Atlas* atlas, unsigned int index, TextureCoords* uv_out);
 
 void atlas_write_image(Atlas* atlas, const char* file_path);
 

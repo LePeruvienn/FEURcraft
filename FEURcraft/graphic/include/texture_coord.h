@@ -3,7 +3,7 @@
 
 #include "vec2.h"
 
-typedef struct TextureCoord TextureCoord;
+typedef struct TextureCoord TextureCoords;
 
 struct TextureCoord
 {

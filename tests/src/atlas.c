@@ -57,7 +57,7 @@ FEUR_Test_Result Test_Atlas_add_image()
 
 	for (unsigned int i = 0; i < total_texture_amount; ++i)
 	{
-		TextureCoord tmp;
+		TextureCoords tmp;
 
 		unsigned int index = i % IMAGES_SIZE;
 

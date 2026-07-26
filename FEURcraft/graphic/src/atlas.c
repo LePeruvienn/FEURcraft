@@ -30,7 +30,10 @@ Atlas* atlas_create(unsigned int width, unsigned int height,
 
 	atlas->row_height = 0;
 
-	atlas->is_empty = true;
+	atlas->images_amount = 0;
+
+	memset(atlas->images_coords, 0,
+		sizeof(TextureCoords) *  ATLAS_MAX_IMAGE_AMOUNT);
 
 	return atlas;
 }
@@ -43,34 +46,39 @@ void atlas_free(Atlas* atlas)
 	free(atlas);
 }
 
-bool atlas_add_image(Atlas* atlas, Image* img, TextureCoord* uv_out)
+bool atlas_add_image(Atlas* atlas, Image* img, TextureCoords* uv_out)
 {
 	CHECK_IS_NULL_RET(atlas, "Cannot Image to a NULL Atlas.", false);
 	CHECK_IS_NULL_RET(img, "Cannot add a NULL Image to Atlas.", false);
 
-	bool is_image_loaded = image_is_loaded(img);
+	CHECK_COND_RET(atlas->images_amount < ATLAS_MAX_IMAGE_AMOUNT,
+		"Atlas max image amount reached, cannot add image.", false);
 
-	bool not_same_channels = atlas->channels != img->channels;
+	CHECK_COND_RET(image_is_loaded(img),
+		"Cannot add to atlas an unloaded image", false);
+
+	CHECK_COND_RET(atlas->channels == img->channels,
+		"Cannot add an Image to Atlas that have not the same channels", false);
+
+	CHECK_COND_RET(atlas->width >= img->width && atlas->height >= atlas->height,
+		"Cannot add an Image that is begire than the entire Atlas", false);
 
 	bool not_enough_width = (atlas->cursor_x + img->width > atlas->width) || atlas->row_height < img->height;
 	bool not_enough_height = atlas->row_height + atlas->cursor_y + img->height > atlas->height;
 
 	bool not_enough_space = not_enough_width && not_enough_height;
 
-	if (!atlas->is_empty && (!is_image_loaded || not_same_channels || not_enough_space))
-	{
-		LOG_ERROR("Cannot add image to atlas :\n"
-		" [ Atlas Status ]\n"
-		" - atlas_is_empty : %b\n"
-		" - image_is_loaded : %b\n"
-		" - not_same_channels : %b\n"
-		" - not_enough_space : %b",
-		atlas->is_empty, is_image_loaded, not_same_channels, not_enough_space);
+	bool is_empty = atlas->images_amount == 0;
 
-		return false;
-	}
+	// Si c'est vide, alors on peut ajouter l'image.
+	// mais si ce n'est pas vide, et qu'il n'y a pllus de place,
+	// alors on ne peut pas ajouter l'image à l'atlas
+	CHECK_COND_RET(is_empty || !not_enough_space,
+		"There is not enough space in Atlas to add this Image", false);
 
-	if (!atlas->is_empty && not_enough_width)
+	// Si l'image n'est pas vide et qu'il faut déplacer le curseur en Y
+	// Et bas on le fait
+	if (!is_empty && not_enough_width)
 	{
 		atlas->cursor_x = 0;
 		atlas->cursor_y += atlas->row_height;
@@ -80,12 +88,6 @@ bool atlas_add_image(Atlas* atlas, Image* img, TextureCoord* uv_out)
 	int channels = atlas->channels;
 	unsigned int cursor_x = atlas->cursor_x;
 	unsigned int cursor_y = atlas->cursor_y;
-
-	uv_out->u.x = (float) cursor_x / (float) atlas->width;
-	uv_out->u.y = (float) cursor_y / (float) atlas->height;
-
-	uv_out->v.x = (float) (cursor_x + img->width)  / (float) atlas->width;
-	uv_out->v.y = (float) (cursor_y + img->height) / (float) atlas->height;
 
 	for (unsigned int img_y = 0; img_y < img->height; img_y++)
 	{
@@ -99,11 +101,30 @@ bool atlas_add_image(Atlas* atlas, Image* img, TextureCoord* uv_out)
 
 	atlas->cursor_x += img->width;
 
-	if (atlas->is_empty)
+	if (is_empty)
 	{
 		atlas->row_height = img->height;
-		atlas->is_empty = false;
 	}
+
+	uv_out->u.x = (float) cursor_x / (float) atlas->width;
+	uv_out->u.y = (float) cursor_y / (float) atlas->height;
+
+	uv_out->v.x = (float) (cursor_x + img->width)  / (float) atlas->width;
+	uv_out->v.y = (float) (cursor_y + img->height) / (float) atlas->height;
+
+	atlas->images_coords[atlas->images_amount++] = *uv_out;
+
+	return true;
+}
+
+bool atlas_get_image_coords(Atlas* atlas, unsigned int index, TextureCoords* uv_out)
+{
+	CHECK_IS_NULL_RET(atlas, "Cannot Image to a NULL Atlas.", false);
+
+	CHECK_COND_RET(index < atlas->images_amount,
+		"Atlas image index is not valid", false);
+	
+	*uv_out = atlas->images_coords[index];
 
 	return true;
 }
