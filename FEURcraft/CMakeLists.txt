@@ -1,6 +1,7 @@
 # Ajout des sous dossiers qui représente des modules C
 add_subdirectory(utils)
 add_subdirectory(math)
+add_subdirectory(data)
 add_subdirectory(system)
 add_subdirectory(world)
 add_subdirectory(graphic)

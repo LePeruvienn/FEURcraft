@@ -23,10 +23,11 @@ foreach(SOURCE_FILE ${TEST_SOURCES})
 
 	# Link all libs
 	target_link_libraries(${EXEC_NAME} PRIVATE 
-		graphic 
-		math 
-		utils 
+		graphic
+		math
+		utils
 		system
+		data
 	)
 
 endforeach()
