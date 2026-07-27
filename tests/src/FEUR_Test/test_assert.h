@@ -31,6 +31,9 @@
 #define FEUR_TEST_ASSERT_NOT_NULL(ptr) \
 	FEUR_TEST_ASSERT_NOT_NULL_MSG(ptr, "Point is NULL, Assertion Failed !")
 
+#define FEUR_TEST_ASSERT_EQUAL(a, b) \
+	FEUR_TEST_ASSERT_EQUAL_MSG(a, b, "Values are not equal. Assertion Failed !")
+
 #define FEUR_TEST_ASSERT_FLOAT(a, b) \
 	FEUR_TEST_ASSERT_FLOAT_MSG(a, b, "Float are not ~ equal, Assertion Failed !")
 
@@ -40,6 +43,13 @@
 
 #define FEUR_TEST_ASSERT_MSG(cond, msg) \
 	if(!(cond)) \
+	{ \
+		FEUR_TEST_LOG_ERROR_MSG(msg); \
+		return FEUR_Test_Failed; \
+	} else {}
+
+#define FEUR_TEST_ASSERT_EQUAL_MSG(a, b, msg) \
+	if((a) != (b)) \
 	{ \
 		FEUR_TEST_LOG_ERROR_MSG(msg); \
 		return FEUR_Test_Failed; \
