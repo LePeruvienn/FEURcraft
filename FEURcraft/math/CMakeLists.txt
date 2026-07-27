@@ -24,6 +24,7 @@ target_sources(${LIB_NAME}
 	PRIVATE
 		src/vec2.c
 		src/vec3.c
+		src/vec3i.c
 		src/vec4.c
 		src/mat4.c
 )
