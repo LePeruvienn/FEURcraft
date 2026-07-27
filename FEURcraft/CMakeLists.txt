@@ -2,6 +2,7 @@
 add_subdirectory(utils)
 add_subdirectory(math)
 add_subdirectory(system)
+add_subdirectory(world)
 add_subdirectory(graphic)
 
 # Sources seulement présente dans l'exec
