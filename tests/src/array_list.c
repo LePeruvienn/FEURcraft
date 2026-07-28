@@ -94,6 +94,38 @@ FEUR_Test_Result Test_ArrayList_AutoResize()
 	return FEUR_Test_Success;
 }
 
+FEUR_Test_Result Test_ArrayList_Push_Buffer()
+{
+	ArrayList* list = array_list_create(sizeof(int), 2);
+	
+	int buffer[5] = {10, 20, 30, 40, 50};
+	
+	array_list_push_buffer(list, buffer, 5);
+	
+	FEUR_TEST_ASSERT(list->count == 5);
+	
+	FEUR_TEST_ASSERT(list->capacity >= 5);
+	
+	int* get_first = (int*)array_list_get(list, 0);
+	int* get_last  = (int*)array_list_get(list, 4);
+	
+	FEUR_TEST_ASSERT_NOT_NULL(get_first);
+	FEUR_TEST_ASSERT_NOT_NULL(get_last);
+	
+	FEUR_TEST_ASSERT(*get_first == 10);
+	FEUR_TEST_ASSERT(*get_last == 50);
+
+	int buffer_2[2] = {60, 70};
+	array_list_push_buffer(list, buffer_2, 2);
+
+	FEUR_TEST_ASSERT(list->count == 7);
+	int* get_new_last = (int*)array_list_get(list, 6);
+	FEUR_TEST_ASSERT(*get_new_last == 70);
+	
+	array_list_free(list);
+
+	return FEUR_Test_Success;
+}
 
 int main()
 {
@@ -104,7 +136,9 @@ int main()
 	FEUR_Test_Add_Group("ArrayList - Opérations de base");
 	FEUR_Test_Add_Test("Création d'une liste", Test_ArrayList_Create);
 	FEUR_Test_Add_Test("Push et Get", Test_ArrayList_Push_Get);
+	FEUR_Test_Add_Test("Push de buffer", Test_ArrayList_Push_Buffer);
 	FEUR_Test_Add_Test("Clear de la liste", Test_ArrayList_Clear);
+
 
 	FEUR_Test_Add_Group("ArrayList - Gestion Mémoire");
 	FEUR_Test_Add_Test("Redimensionnement Auto", Test_ArrayList_AutoResize);

@@ -7,11 +7,10 @@
 #include <stdlib.h>
 #include <string.h>
 
+#define ARRAY_LIST_DEFAULT_CAPACITY 8
+
 ArrayList* array_list_create(size_t item_size, size_t capacity)
 {
-	CHECK_COND_RET(capacity > 0,
-		"Initila ArrayList capacity cannot be 0.", NULL);
-
 	ArrayList* list = malloc(sizeof(struct ArrayList));
 
 	CHECK_IS_NULL_RET(list, "Failed ArrayList malloc.", NULL);
@@ -22,6 +21,11 @@ ArrayList* array_list_create(size_t item_size, size_t capacity)
 
 	list->count = 0;
 	list->capacity = capacity;
+
+	if (capacity == 0)
+	{
+		return list;
+	}
 
 	array_list_resize(list, capacity);
 
@@ -110,6 +114,33 @@ void array_list_push(ArrayList* list, void* item)
 	memcpy(dest, item, list->item_size);
 
 	++list->count;
+}
+
+void array_list_push_buffer(ArrayList* list, void* items, size_t items_len)
+{
+	CHECK_IS_NULL_RET(list, "Cannot push to a NULL ArrayList.", );
+	CHECK_IS_NULL_RET(items, "Cannot push a NULL items ptr to ArrayList.", );
+	
+	size_t capacity_needed = (list->capacity == 0) ?
+		ARRAY_LIST_DEFAULT_CAPACITY : list->capacity;
+
+	while(list->count + items_len > capacity_needed)
+	{
+		capacity_needed += capacity_needed;
+	}
+
+	size_t capacity_to_reserve = capacity_needed - list->capacity;
+
+	if (capacity_to_reserve > 0)
+	{
+		array_list_reserve(list, capacity_to_reserve);
+	}
+
+	unsigned char* dest = array_list_get_unsafe(list, list->count);
+
+	memcpy(dest, items, list->item_size * items_len);
+
+	list->count += items_len;
 }
 
 void array_list_clear(ArrayList* list)

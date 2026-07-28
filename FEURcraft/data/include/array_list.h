@@ -27,6 +27,8 @@ void* array_list_get(ArrayList* list, size_t index);
 
 void array_list_push(ArrayList* list, void* item);
 
+void array_list_push_buffer(ArrayList* list, void* items, size_t items_len);
+
 void array_list_clear(ArrayList* list);
 
 #endif // ARRAY_LIST_H
