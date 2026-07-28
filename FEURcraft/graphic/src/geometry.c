@@ -6,6 +6,8 @@
 #include "gl_debug.h"
 #include "error_checker.h"
 
+#include "ptr_helper.h"
+
 #include "array_list.h"
 
 #include "glad/glad.h"
@@ -18,6 +20,31 @@
 #ifndef M_PI
 	#define M_PI 3.14159265358979323846
 #endif
+
+Geometry* geometry_create_empty(VertexLayout layout)
+{
+	ArrayList* vertices = array_list_create(layout.vertex_byte_size, 16);
+	ArrayList* indices = array_list_create(sizeof(unsigned int), 16);
+	
+	if (vertices == NULL || indices == NULL)
+	{
+		LOG_ERROR("Failed to create Geometry vertices or indices ArrayList.");
+
+		FREE_PTR_NOT_NULL(vertices, array_list_free);
+		FREE_PTR_NOT_NULL(indices, array_list_free);
+
+		return NULL;
+	}
+
+	Geometry* geometry = malloc(sizeof(struct Geometry));
+
+	geometry->vertices = vertices;
+	geometry->indices = indices;
+
+	geometry->layout = layout;
+
+	return geometry;
+}
 
 Geometry* geometry_create(const void* vertices_buffer, size_t vertices_amount,
                           const unsigned int* indices_buffer, size_t indices_amount,
@@ -169,8 +196,27 @@ void geometry_add_array(Geometry* g, const ArrayList* vertices, const ArrayList*
 	CHECK_IS_NULL_RET(vertices, "Cannot add NULL vertices ArrayList to Geometry.", );
 	CHECK_IS_NULL_RET(indices, "Cannot add NULL indices ArrayList to Geometry.", );
 
-	array_list_push_array(g->vertices, vertices);
+	size_t old_indices_count = g->indices->count;
+
 	array_list_push_array(g->indices, indices);
+
+	size_t new_indices_count = g->indices->count;
+
+	// Applying indices offset to new indices
+	for (size_t i = old_indices_count; i < new_indices_count; ++i)
+	{
+		unsigned int* indice = array_list_get(g->indices, i);
+
+		if (indice == NULL)
+		{
+			LOG_ERROR("Failed to get indices from Geometry indices buffer.");
+			continue;
+		}
+
+		*indice += g->vertices->count;
+	}
+
+	array_list_push_array(g->vertices, vertices);
 }
 
 void geometry_add_buffer(Geometry* g, const void* vertices_buffer, size_t vertices_amount,
@@ -184,8 +230,27 @@ void geometry_add_buffer(Geometry* g, const void* vertices_buffer, size_t vertic
 	CHECK_IS_NULL_RET(indices_buffer,
 		"Cannot add NULL indices buffer to Geometry.", );
 
-	array_list_push_buffer(g->vertices, vertices_buffer, vertices_amount);
+	size_t old_indices_count = g->indices->count;
+
 	array_list_push_buffer(g->indices, indices_buffer, indices_amount);
+
+	size_t new_indices_count = g->indices->count;
+
+	// Applying indices offset to new indices
+	for (size_t i = old_indices_count; i < new_indices_count; ++i)
+	{
+		unsigned int* indice = array_list_get(g->indices, i);
+
+		if (indice == NULL)
+		{
+			LOG_ERROR("Failed to get indices from Geometry indices buffer.");
+			continue;
+		}
+
+		*indice += g->vertices->count;
+	}
+
+	array_list_push_buffer(g->vertices, vertices_buffer, vertices_amount);
 }
 
 void geometry_load_to_gpu(Geometry* g)

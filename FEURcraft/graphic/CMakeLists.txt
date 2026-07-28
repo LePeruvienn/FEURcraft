@@ -33,6 +33,7 @@ target_sources(${LIB_NAME}
 		src/atlas.c
 		src/image_array.c
 		src/texture_array.c
+		src/chunk_geometry.c
 )
 
 
@@ -47,4 +48,5 @@ target_link_libraries(${LIB_NAME}
 		math
 		system
 		data
+		world
 )

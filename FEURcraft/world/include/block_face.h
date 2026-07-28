@@ -5,16 +5,16 @@
 
 #include <stdint.h>
 
-typedef uint8_t BlockFace;
+typedef enum BlockFace BlockFace;
 
-enum
+enum BlockFace
 {
 	BLOCK_FACE_FRONT = 0,
-	BLOCK_FACE_BACK  = 1,
-	BLOCK_FACE_TOP   = 2,
-	BLOCK_FACE_BOT   = 3,
-	BLOCK_FACE_LEFT  = 4,
-	BLOCK_FACE_RIGHT = 5,
+	BLOCK_FACE_BACK,
+	BLOCK_FACE_TOP,
+	BLOCK_FACE_BOT,
+	BLOCK_FACE_LEFT,
+	BLOCK_FACE_RIGHT,
 
 	BLOCK_FACE_COUNT
 };

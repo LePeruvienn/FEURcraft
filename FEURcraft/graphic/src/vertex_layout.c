@@ -85,11 +85,11 @@ void vertex_layout_init_default_block(VertexLayout* layout)
 	attr[1].offset = offsetof(VertexBlock, uv);
 	attr[1].divisor = 0;
 
-	attr[2].id = VERTEX_ATTR_FACE;
+	attr[2].id = VERTEX_ATTR_LAYER_INDEX;
 	attr[2].size = 1;
-	attr[2].type = GL_UNSIGNED_BYTE;
+	attr[2].type = GL_UNSIGNED_INT;
 	attr[2].normalized = GL_FALSE;
-	attr[2].offset = offsetof(VertexBlock, face);
+	attr[2].offset = offsetof(VertexBlock, layer_index);
 	attr[2].divisor = 0;
 }
 

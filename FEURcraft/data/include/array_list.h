@@ -27,6 +27,8 @@ struct ArrayList
 
 ArrayList* array_list_create(size_t item_size, size_t capacity);
 
+void array_list_copy(const ArrayList* source, ArrayList* dest);
+
 void array_list_free(ArrayList* list);
 
 void array_list_resize(ArrayList* list, size_t capacity);

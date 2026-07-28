@@ -124,40 +124,40 @@ const unsigned int CUBE_UV_INDICES[CUBE_UV_INDICES_AMOUNT] =
 const VertexBlock BLOCK_VERTICES[BLOCK_VERTICES_AMOUNT] =
 {
 	// Front
-	{ .pos = VEC3(-0.5f, -0.5f,  0.5f), .uv = VEC2(0.0f, 0.0f), .face = BLOCK_FACE_FRONT },
-	{ .pos = VEC3( 0.5f, -0.5f,  0.5f), .uv = VEC2(1.0f, 0.0f), .face = BLOCK_FACE_FRONT },
-	{ .pos = VEC3( 0.5f,  0.5f,  0.5f), .uv = VEC2(1.0f, 1.0f), .face = BLOCK_FACE_FRONT },
-	{ .pos = VEC3(-0.5f,  0.5f,  0.5f), .uv = VEC2(0.0f, 1.0f), .face = BLOCK_FACE_FRONT },
+	{ .pos = VEC3(-0.5f, -0.5f,  0.5f), .uv = VEC2(0.0f, 0.0f), .layer_index = BLOCK_FACE_FRONT },
+	{ .pos = VEC3( 0.5f, -0.5f,  0.5f), .uv = VEC2(1.0f, 0.0f), .layer_index = BLOCK_FACE_FRONT },
+	{ .pos = VEC3( 0.5f,  0.5f,  0.5f), .uv = VEC2(1.0f, 1.0f), .layer_index = BLOCK_FACE_FRONT },
+	{ .pos = VEC3(-0.5f,  0.5f,  0.5f), .uv = VEC2(0.0f, 1.0f), .layer_index = BLOCK_FACE_FRONT },
 
 	// Back
-	{ .pos = VEC3( 0.5f, -0.5f, -0.5f), .uv = VEC2(0.0f, 0.0f), .face = BLOCK_FACE_BACK },
-	{ .pos = VEC3(-0.5f, -0.5f, -0.5f), .uv = VEC2(1.0f, 0.0f), .face = BLOCK_FACE_BACK },
-	{ .pos = VEC3(-0.5f,  0.5f, -0.5f), .uv = VEC2(1.0f, 1.0f), .face = BLOCK_FACE_BACK },
-	{ .pos = VEC3( 0.5f,  0.5f, -0.5f), .uv = VEC2(0.0f, 1.0f), .face = BLOCK_FACE_BACK },
+	{ .pos = VEC3( 0.5f, -0.5f, -0.5f), .uv = VEC2(0.0f, 0.0f), .layer_index = BLOCK_FACE_BACK },
+	{ .pos = VEC3(-0.5f, -0.5f, -0.5f), .uv = VEC2(1.0f, 0.0f), .layer_index = BLOCK_FACE_BACK },
+	{ .pos = VEC3(-0.5f,  0.5f, -0.5f), .uv = VEC2(1.0f, 1.0f), .layer_index = BLOCK_FACE_BACK },
+	{ .pos = VEC3( 0.5f,  0.5f, -0.5f), .uv = VEC2(0.0f, 1.0f), .layer_index = BLOCK_FACE_BACK },
 
 	// Top
-	{ .pos = VEC3(-0.5f,  0.5f,  0.5f), .uv = VEC2(0.0f, 0.0f), .face = BLOCK_FACE_TOP },
-	{ .pos = VEC3( 0.5f,  0.5f,  0.5f), .uv = VEC2(1.0f, 0.0f), .face = BLOCK_FACE_TOP },
-	{ .pos = VEC3( 0.5f,  0.5f, -0.5f), .uv = VEC2(1.0f, 1.0f), .face = BLOCK_FACE_TOP },
-	{ .pos = VEC3(-0.5f,  0.5f, -0.5f), .uv = VEC2(0.0f, 1.0f), .face = BLOCK_FACE_TOP },
+	{ .pos = VEC3(-0.5f,  0.5f,  0.5f), .uv = VEC2(0.0f, 0.0f), .layer_index = BLOCK_FACE_TOP },
+	{ .pos = VEC3( 0.5f,  0.5f,  0.5f), .uv = VEC2(1.0f, 0.0f), .layer_index = BLOCK_FACE_TOP },
+	{ .pos = VEC3( 0.5f,  0.5f, -0.5f), .uv = VEC2(1.0f, 1.0f), .layer_index = BLOCK_FACE_TOP },
+	{ .pos = VEC3(-0.5f,  0.5f, -0.5f), .uv = VEC2(0.0f, 1.0f), .layer_index = BLOCK_FACE_TOP },
 
 	// Bot
-	{ .pos = VEC3(-0.5f, -0.5f, -0.5f), .uv = VEC2(0.0f, 0.0f), .face = BLOCK_FACE_BOT },
-	{ .pos = VEC3( 0.5f, -0.5f, -0.5f), .uv = VEC2(1.0f, 0.0f), .face = BLOCK_FACE_BOT },
-	{ .pos = VEC3( 0.5f, -0.5f,  0.5f), .uv = VEC2(1.0f, 1.0f), .face = BLOCK_FACE_BOT },
-	{ .pos = VEC3(-0.5f, -0.5f,  0.5f), .uv = VEC2(0.0f, 1.0f), .face = BLOCK_FACE_BOT },
+	{ .pos = VEC3(-0.5f, -0.5f, -0.5f), .uv = VEC2(0.0f, 0.0f), .layer_index = BLOCK_FACE_BOT },
+	{ .pos = VEC3( 0.5f, -0.5f, -0.5f), .uv = VEC2(1.0f, 0.0f), .layer_index = BLOCK_FACE_BOT },
+	{ .pos = VEC3( 0.5f, -0.5f,  0.5f), .uv = VEC2(1.0f, 1.0f), .layer_index = BLOCK_FACE_BOT },
+	{ .pos = VEC3(-0.5f, -0.5f,  0.5f), .uv = VEC2(0.0f, 1.0f), .layer_index = BLOCK_FACE_BOT },
 
 	// Left
-	{ .pos = VEC3(-0.5f, -0.5f, -0.5f), .uv = VEC2(0.0f, 0.0f), .face = BLOCK_FACE_LEFT },
-	{ .pos = VEC3(-0.5f, -0.5f,  0.5f), .uv = VEC2(1.0f, 0.0f), .face = BLOCK_FACE_LEFT },
-	{ .pos = VEC3(-0.5f,  0.5f,  0.5f), .uv = VEC2(1.0f, 1.0f), .face = BLOCK_FACE_LEFT },
-	{ .pos = VEC3(-0.5f,  0.5f, -0.5f), .uv = VEC2(0.0f, 1.0f), .face = BLOCK_FACE_LEFT },
+	{ .pos = VEC3(-0.5f, -0.5f, -0.5f), .uv = VEC2(0.0f, 0.0f), .layer_index = BLOCK_FACE_LEFT },
+	{ .pos = VEC3(-0.5f, -0.5f,  0.5f), .uv = VEC2(1.0f, 0.0f), .layer_index = BLOCK_FACE_LEFT },
+	{ .pos = VEC3(-0.5f,  0.5f,  0.5f), .uv = VEC2(1.0f, 1.0f), .layer_index = BLOCK_FACE_LEFT },
+	{ .pos = VEC3(-0.5f,  0.5f, -0.5f), .uv = VEC2(0.0f, 1.0f), .layer_index = BLOCK_FACE_LEFT },
 
 	// Right
-	{ .pos = VEC3( 0.5f, -0.5f,  0.5f), .uv = VEC2(0.0f, 0.0f), .face = BLOCK_FACE_RIGHT },
-	{ .pos = VEC3( 0.5f, -0.5f, -0.5f), .uv = VEC2(1.0f, 0.0f), .face = BLOCK_FACE_RIGHT },
-	{ .pos = VEC3( 0.5f,  0.5f, -0.5f), .uv = VEC2(1.0f, 1.0f), .face = BLOCK_FACE_RIGHT },
-	{ .pos = VEC3( 0.5f,  0.5f,  0.5f), .uv = VEC2(0.0f, 1.0f), .face = BLOCK_FACE_RIGHT },
+	{ .pos = VEC3( 0.5f, -0.5f,  0.5f), .uv = VEC2(0.0f, 0.0f), .layer_index = BLOCK_FACE_RIGHT },
+	{ .pos = VEC3( 0.5f, -0.5f, -0.5f), .uv = VEC2(1.0f, 0.0f), .layer_index = BLOCK_FACE_RIGHT },
+	{ .pos = VEC3( 0.5f,  0.5f, -0.5f), .uv = VEC2(1.0f, 1.0f), .layer_index = BLOCK_FACE_RIGHT },
+	{ .pos = VEC3( 0.5f,  0.5f,  0.5f), .uv = VEC2(0.0f, 1.0f), .layer_index = BLOCK_FACE_RIGHT },
 };
 
 const unsigned int BLOCK_INDICES[BLOCK_INDICES_AMOUNT] =

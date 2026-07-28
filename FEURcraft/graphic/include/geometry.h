@@ -31,6 +31,13 @@ struct Geometry
 };
 
 /**
+* \brief Créer une géometrie vide
+* \param layout vertex layout utilsé
+* \return geometry alloué
+*/
+Geometry* geometry_create_empty(VertexLayout layout);
+
+/**
 * \brief Créer les données géométrique d'un modèle pour
 * le type de Vertex du \ref VertexLayout
 *

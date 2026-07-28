@@ -23,6 +23,8 @@ foreach(SOURCE_FILE ${EXAMPLE_SOURCES})
 		math
 		utils
 		system
+		data
+		world
 	)
 
 endforeach()

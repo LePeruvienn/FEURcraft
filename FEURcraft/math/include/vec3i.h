@@ -1,7 +1,7 @@
 #ifndef VEC3I_H
 #define VEC3I_H
 
-#define VEC3I(_x, _y, _z) ((Vec3i) {.x = _x, .y = _y, .z = _z})
+#define VEC3I(_x, _y, _z) ((Vec3i) {.x = (_x), .y = (_y), .z = (_z)})
 
 #define VEC3I_ZERO VEC3I(0, 0, 0)
 #define VEC3I_ONE  VEC3I(1, 1, 1)

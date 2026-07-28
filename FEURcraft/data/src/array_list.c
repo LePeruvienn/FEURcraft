@@ -42,6 +42,30 @@ ArrayList* array_list_create(size_t item_size, size_t capacity)
 	return list;
 }
 
+void array_list_copy(const ArrayList* source, ArrayList* dest)
+{
+	CHECK_IS_NULL_RET(source, "Cannot copy from a NULL ArrayList.", );
+	CHECK_IS_NULL_RET(dest, "Cannot copy to a NULL ArrayList.", );
+
+	CHECK_COND_RET(source->item_size == dest->item_size,
+		"Cant copy array list to item that is not the same size.", );
+
+	if (source->count > dest->capacity)
+	{
+		CHECK_COND_RET(dest->is_static == false,
+			"Cannot copy: destination is a static ArrayList and capacity is too small.", );
+
+		array_list_reserve(dest, source->count - dest->capacity);
+	}
+
+	dest->count = source->count;
+
+	CHECK_COND_RET_WARN(dest->count > 0,
+		"Tried to copy a empty ArrayList.", );
+
+	memcpy(dest->data, source->data, source->count * source->item_size);
+}
+
 void array_list_free(ArrayList* list)
 {
 	CHECK_IS_NULL_RET(list, "Cannot free a NULL ArrayList.", );

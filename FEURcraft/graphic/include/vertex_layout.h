@@ -25,9 +25,9 @@
  * \brief Disposition des index des attributs de vertex disponible
  * @{
  */
-#define VERTEX_ATTR_POSITION 0
-#define VERTEX_ATTR_UV       1
-#define VERTEX_ATTR_FACE     2
+#define VERTEX_ATTR_POSITION    0
+#define VERTEX_ATTR_UV          1
+#define VERTEX_ATTR_LAYER_INDEX 2
 /** @} */
 
 #define MAX_VERTEX_ATTRIBUTE_AMOUNT 5

@@ -36,7 +36,7 @@ struct VertexBlock
 	Vec3 pos;
 	Vec2 uv;
 
-	BlockFace face;
+	unsigned int layer_index;
 };
 
 
