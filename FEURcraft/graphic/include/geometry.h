@@ -1,8 +1,11 @@
 #ifndef GEOMETRY_H
 #define GEOMETRY_H
 
-#include "vertex.h"
 #include "vertex_layout.h"
+
+#include "array_list.h"
+
+#include <stddef.h>
 
 /**
  * \file geometry.h
@@ -21,15 +24,21 @@ typedef struct Geometry Geometry;
 
 struct Geometry
 {
-	void* vertices; // Peut contenir différent type de vertex
-	size_t vertices_size;
-	unsigned int vertices_amount;
-
-	unsigned int* indices;
-	unsigned int indices_amount;
+	ArrayList* vertices;
+	ArrayList* indices;
 
 	VertexLayout layout; // doit être corda avec les type de vertex dans le buffer
 };
+
+/**
+* \brief Créer les données géométrique d'un modèle pour
+* le type de Vertex du \ref VertexLayout
+*
+* \return geometry vertex du cube
+*/
+Geometry* geometry_create(const void* vertices_buffer, size_t vertices_amount,
+                          const unsigned int* indices_buffer, size_t indices_amount,
+                          VertexLayout layout);
 
 /**
 * \brief Créer les données de géomotrie d'un cube
@@ -64,17 +73,15 @@ Geometry* geometry_create_block();
 */
 Geometry* geometry_create_sphere(float R, unsigned int lat_amount, unsigned int long_amount);
 
-/**
-* \brief Créer les données de vertex pour un ensemble de lignes
-* \param vertices différent points des lignes
-* \param size nombre de point total
-* \return geometry vertex des lignes
-*/
-Geometry* geometry_create_line(Vertex* vertices, unsigned int size);
+void geometry_add_array(Geometry* g, const ArrayList* vertices, const ArrayList* indices);
+
+
+void geometry_add_buffer(Geometry* g, const void* vertices_buffer, size_t vertices_amount,
+                         const unsigned int* indices_buffer, size_t indices_amount);
 
 /**
 * \brief libère la mémoire de la geometry passer en paramêtre
-* \param m geometry à libérer
+* \param g geometry à libérer
 */
 void geometry_free(Geometry* g);
 

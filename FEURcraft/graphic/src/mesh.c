@@ -12,7 +12,7 @@ Mesh* create_mesh(Geometry* g)
 {
 	Mesh* m = malloc(sizeof(struct Mesh));
 
-	m->indices_amount = g->indices_amount;
+	m->indices_amount = g->indices->count;
 
 	glGenVertexArrays(1, &m->VAO);
 	glGenBuffers(1, &m->VBO);

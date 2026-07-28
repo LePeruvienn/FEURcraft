@@ -8,7 +8,7 @@
 #include <stdbool.h>
 
 void vertex_layout_init(VertexLayout* layout, VertexAttribute attributes[],
-                        unsigned int attribute_amount, GLsizei stride)
+                        unsigned int attribute_amount, GLsizei vertex_byte_size)
 {
 	if (attribute_amount > MAX_VERTEX_ATTRIBUTE_AMOUNT)
 	{
@@ -17,7 +17,7 @@ void vertex_layout_init(VertexLayout* layout, VertexAttribute attributes[],
 	}
 
 	layout->attribute_amount = attribute_amount;
-	layout->stride = stride;
+	layout->vertex_byte_size = vertex_byte_size;
 
 	for (unsigned int i = 0; i < attribute_amount; ++i)
 	{
@@ -29,7 +29,7 @@ void vertex_layout_init(VertexLayout* layout, VertexAttribute attributes[],
 
 void vertex_layout_init_default(VertexLayout* layout)
 {
-	layout->stride = sizeof(Vertex);
+	layout->vertex_byte_size = sizeof(Vertex);
 	layout->attribute_amount = 1;
 
 	VertexAttribute* attr = layout->attributes;
@@ -44,7 +44,7 @@ void vertex_layout_init_default(VertexLayout* layout)
 
 void vertex_layout_init_default_UV(VertexLayout* layout)
 {
-	layout->stride = sizeof(VertexUV);
+	layout->vertex_byte_size = sizeof(VertexUV);
 	layout->attribute_amount = 2;
 
 	VertexAttribute* attr = layout->attributes;
@@ -66,7 +66,7 @@ void vertex_layout_init_default_UV(VertexLayout* layout)
 
 void vertex_layout_init_default_block(VertexLayout* layout)
 {
-	layout->stride = sizeof(VertexBlock);
+	layout->vertex_byte_size = sizeof(VertexBlock);
 	layout->attribute_amount = 3;
 
 	VertexAttribute* attr = layout->attributes;
@@ -108,7 +108,7 @@ void vertex_layout_make_VAO(VertexLayout* layout)
 		{
 			GL_CALL(glVertexAttribIPointer(
 				attr->id, attr->size,
-				attr->type, layout->stride,
+				attr->type, layout->vertex_byte_size,
 				(void*)attr->offset));
 		}
 		else
@@ -116,7 +116,7 @@ void vertex_layout_make_VAO(VertexLayout* layout)
 			GL_CALL(glVertexAttribPointer(
 				attr->id, attr->size,
 				attr->type, attr->normalized,
-				layout->stride, (void*)attr->offset));
+				layout->vertex_byte_size, (void*)attr->offset));
 		}
 		
 		GL_CALL(glEnableVertexAttribArray(attr->id));

@@ -1,8 +1,12 @@
 #include "geometry.h"
+#include "geometry_data.h"
 #include "vertex.h"
 #include "vertex_layout.h"
 #include "logger.h"
 #include "gl_debug.h"
+#include "error_checker.h"
+
+#include "array_list.h"
 
 #include "glad/glad.h"
 
@@ -11,254 +15,85 @@
 #include <stddef.h>
 #include <math.h>
 
-#define M_PI 3.14159265358979323846
+#ifndef M_PI
+	#define M_PI 3.14159265358979323846
+#endif
 
-#define CUBE_VERTICES_AMOUNT 8
-#define CUBE_INDICES_AMOUNT 36
+Geometry* geometry_create(const void* vertices_buffer, size_t vertices_amount,
+                          const unsigned int* indices_buffer, size_t indices_amount,
+                          VertexLayout layout)
+{
+	CHECK_IS_NULL_RET(vertices_buffer, "Cannot create a Geometry with NULL vertices.", NULL);
+	CHECK_IS_NULL_RET(indices_buffer, "Cannot create a Geometry with NULL indices.", NULL);
 
-#define CUBE_UV_VERTICES_AMOUNT 24
-#define CUBE_UV_INDICES_AMOUNT 36
+	CHECK_COND_RET(vertices_amount > 0,
+		"Cannot create a Geometry with 0 vertices amount.", NULL);
 
-#define BLOCK_VERTICES_AMOUNT 24
-#define BLOCK_INDICES_AMOUNT 36
+	CHECK_COND_RET(indices_amount >= vertices_amount,
+		"Cannot create a Geometry with less indices than vertices", NULL);
+
+	ArrayList* vertices = array_list_create(layout.vertex_byte_size, vertices_amount);
+	ArrayList* indices = array_list_create(sizeof(unsigned int), indices_amount);
+
+	CHECK_IS_NULL_RET(vertices,
+		"Cannot create Geometry failed to create vertices ArrayList.", NULL);
+
+	CHECK_IS_NULL_RET(indices,
+		"Cannot create Geometry failed to create indices ArrayList.", NULL);
+
+	array_list_push_buffer(vertices, vertices_buffer, vertices_amount);
+
+	if (vertices->count != vertices_amount)
+	{
+		LOG_ERROR("Failed to add vertices to vertices array.");
+		array_list_free(vertices);
+		return NULL;
+	}
+
+	array_list_push_buffer(indices, indices_buffer, indices_amount);
+
+	if (indices->count != indices_amount)
+	{
+		LOG_ERROR("Failed to add indices to indices array.");
+		array_list_free(vertices);
+		array_list_free(indices);
+		return NULL;
+	}
+
+	Geometry* geometry = malloc(sizeof(struct Geometry));
+
+	geometry->vertices = vertices;
+	geometry->indices = indices;
+	geometry->layout = layout;
+
+	return geometry;
+}
 
 Geometry* geometry_create_cube()
 {
-	Geometry* g = malloc(sizeof(struct Geometry));
+	VertexLayout layout;
+	vertex_layout_init_default(&layout);
 
-	g->vertices = NULL;
-	g->vertices_size = sizeof(Vertex) * CUBE_VERTICES_AMOUNT;
-	g->vertices_amount = CUBE_VERTICES_AMOUNT;
-
-	g->indices = NULL;
-	g->indices_amount = CUBE_INDICES_AMOUNT;
-
-	Vertex vertices[CUBE_VERTICES_AMOUNT] = {
-
-		// Front face
-		{ .pos = VEC3(-0.5, -0.5,  0.5) },
-		{ .pos = VEC3( 0.5, -0.5,  0.5) },
-		{ .pos = VEC3( 0.5,  0.5,  0.5) },
-		{ .pos = VEC3(-0.5,  0.5,  0.5) },
-
-		// Back face
-		{ .pos = VEC3(-0.5, -0.5, -0.5) },
-		{ .pos = VEC3( 0.5, -0.5, -0.5) },
-		{ .pos = VEC3( 0.5,  0.5, -0.5) },
-		{ .pos = VEC3(-0.5,  0.5, -0.5) }
-	};
-
-	unsigned int indices[CUBE_INDICES_AMOUNT] = {
-
-		// Front
-		0, 1, 2,
-		2, 3, 0,
-		// Right
-		1, 5, 6,
-		6, 2, 1,
-
-		// Back
-		5, 4, 7,
-		7, 6, 5,
-
-		// Left
-		4, 0, 3,
-		3, 7, 4,
-
-		// Top
-		3, 2, 6,
-		6, 7, 3,
-
-		// Bottom
-		4, 5, 1,
-		1, 0, 4
-	};
-
-	g->vertices = malloc(g->vertices_size);
-	memcpy(g->vertices, vertices, g->vertices_size);
-
-	g->indices = malloc(sizeof(unsigned int) * g->indices_amount);
-	memcpy(g->indices, indices, sizeof(unsigned int) * g->indices_amount);	
-
-	vertex_layout_init_default(&g->layout);
-
-	return g;
+	return geometry_create(CUBE_VERTICES, CUBE_VERTICES_AMOUNT,
+	                       CUBE_INDICES, CUBE_INDICES_AMOUNT, layout);
 }
 
 Geometry* geometry_create_cube_UV()
 {
-	Geometry* g = malloc(sizeof(struct Geometry));
+	VertexLayout layout;
+	vertex_layout_init_default_UV(&layout);
 
-	g->vertices = NULL;
-	g->vertices_size = sizeof(VertexUV) * CUBE_UV_VERTICES_AMOUNT;
-	g->vertices_amount = CUBE_UV_VERTICES_AMOUNT;
-
-	g->indices = NULL;
-	g->indices_amount = CUBE_UV_INDICES_AMOUNT;
-
-	VertexUV vertices[CUBE_UV_VERTICES_AMOUNT] =
-	{
-		// Front
-		{ .pos = VEC3(-0.5f, -0.5f,  0.5f), .uv = VEC2(0.0f, 0.0f) },
-		{ .pos = VEC3( 0.5f, -0.5f,  0.5f), .uv = VEC2(1.0f, 0.0f) },
-		{ .pos = VEC3( 0.5f,  0.5f,  0.5f), .uv = VEC2(1.0f, 1.0f) },
-		{ .pos = VEC3(-0.5f,  0.5f,  0.5f), .uv = VEC2(0.0f, 1.0f) },
-
-		// Back
-		{ .pos = VEC3( 0.5f, -0.5f, -0.5f), .uv = VEC2(0.0f, 0.0f) },
-		{ .pos = VEC3(-0.5f, -0.5f, -0.5f), .uv = VEC2(1.0f, 0.0f) },
-		{ .pos = VEC3(-0.5f,  0.5f, -0.5f), .uv = VEC2(1.0f, 1.0f) },
-		{ .pos = VEC3( 0.5f,  0.5f, -0.5f), .uv = VEC2(0.0f, 1.0f) },
-
-		// Top
-		{ .pos = VEC3(-0.5f,  0.5f,  0.5f), .uv = VEC2(0.0f, 0.0f) },
-		{ .pos = VEC3( 0.5f,  0.5f,  0.5f), .uv = VEC2(1.0f, 0.0f) },
-		{ .pos = VEC3( 0.5f,  0.5f, -0.5f), .uv = VEC2(1.0f, 1.0f) },
-		{ .pos = VEC3(-0.5f,  0.5f, -0.5f), .uv = VEC2(0.0f, 1.0f) },
-
-		// Bot
-		{ .pos = VEC3(-0.5f, -0.5f, -0.5f), .uv = VEC2(0.0f, 0.0f) },
-		{ .pos = VEC3( 0.5f, -0.5f, -0.5f), .uv = VEC2(1.0f, 0.0f) },
-		{ .pos = VEC3( 0.5f, -0.5f,  0.5f), .uv = VEC2(1.0f, 1.0f) },
-		{ .pos = VEC3(-0.5f, -0.5f,  0.5f), .uv = VEC2(0.0f, 1.0f) },
-
-		// Left
-		{ .pos = VEC3(-0.5f, -0.5f, -0.5f), .uv = VEC2(0.0f, 0.0f) },
-		{ .pos = VEC3(-0.5f, -0.5f,  0.5f), .uv = VEC2(1.0f, 0.0f) },
-		{ .pos = VEC3(-0.5f,  0.5f,  0.5f), .uv = VEC2(1.0f, 1.0f) },
-		{ .pos = VEC3(-0.5f,  0.5f, -0.5f), .uv = VEC2(0.0f, 1.0f) },
-
-		// Right
-		{ .pos = VEC3( 0.5f, -0.5f,  0.5f), .uv = VEC2(0.0f, 0.0f) },
-		{ .pos = VEC3( 0.5f, -0.5f, -0.5f), .uv = VEC2(1.0f, 0.0f) },
-		{ .pos = VEC3( 0.5f,  0.5f, -0.5f), .uv = VEC2(1.0f, 1.0f) },
-		{ .pos = VEC3( 0.5f,  0.5f,  0.5f), .uv = VEC2(0.0f, 1.0f) },
-	};
-
-	unsigned int indices[CUBE_UV_INDICES_AMOUNT] =
-	{
-		// Front
-		0, 1, 2,
-		2, 3, 0,
-
-		// Back
-		4, 5, 6,
-		6, 7, 4,
-
-		// Top
-		8, 9, 10,
-		10, 11, 8,
-
-		// Bot
-		12, 13, 14,
-		14, 15, 12,
-
-		// Left
-		16, 17, 18,
-		18, 19, 16,
-
-		// Right
-		20, 21, 22,
-		22, 23, 20
-	};
-
-	g->vertices = malloc(g->vertices_size);
-	memcpy(g->vertices, vertices, g->vertices_size);
-
-	g->indices = malloc(sizeof(unsigned int) * g->indices_amount);
-	memcpy(g->indices, indices, sizeof(unsigned int) * g->indices_amount);	
-
-	vertex_layout_init_default_UV(&g->layout);
-
-	return g;
+	return geometry_create(CUBE_UV_VERTICES, CUBE_UV_VERTICES_AMOUNT,
+	                       CUBE_UV_INDICES, CUBE_UV_INDICES_AMOUNT, layout);
 }
 
 Geometry* geometry_create_block()
 {
-	Geometry* g = malloc(sizeof(struct Geometry));
+	VertexLayout layout;
+	vertex_layout_init_default_block(&layout);
 
-	g->vertices = NULL;
-	g->vertices_size = sizeof(VertexBlock) * BLOCK_VERTICES_AMOUNT;
-	g->vertices_amount = BLOCK_VERTICES_AMOUNT;
-
-	g->indices = NULL;
-	g->indices_amount = BLOCK_INDICES_AMOUNT;
-
-	VertexBlock vertices[BLOCK_VERTICES_AMOUNT] =
-	{
-		// Front
-		{ .pos = VEC3(-0.5f, -0.5f,  0.5f), .uv = VEC2(0.0f, 0.0f), .face = BLOCK_FACE_FRONT },
-		{ .pos = VEC3( 0.5f, -0.5f,  0.5f), .uv = VEC2(1.0f, 0.0f), .face = BLOCK_FACE_FRONT },
-		{ .pos = VEC3( 0.5f,  0.5f,  0.5f), .uv = VEC2(1.0f, 1.0f), .face = BLOCK_FACE_FRONT },
-		{ .pos = VEC3(-0.5f,  0.5f,  0.5f), .uv = VEC2(0.0f, 1.0f), .face = BLOCK_FACE_FRONT },
-
-		// Back
-		{ .pos = VEC3( 0.5f, -0.5f, -0.5f), .uv = VEC2(0.0f, 0.0f), .face = BLOCK_FACE_BACK },
-		{ .pos = VEC3(-0.5f, -0.5f, -0.5f), .uv = VEC2(1.0f, 0.0f), .face = BLOCK_FACE_BACK },
-		{ .pos = VEC3(-0.5f,  0.5f, -0.5f), .uv = VEC2(1.0f, 1.0f), .face = BLOCK_FACE_BACK },
-		{ .pos = VEC3( 0.5f,  0.5f, -0.5f), .uv = VEC2(0.0f, 1.0f), .face = BLOCK_FACE_BACK },
-
-		// Top
-		{ .pos = VEC3(-0.5f,  0.5f,  0.5f), .uv = VEC2(0.0f, 0.0f), .face = BLOCK_FACE_TOP },
-		{ .pos = VEC3( 0.5f,  0.5f,  0.5f), .uv = VEC2(1.0f, 0.0f), .face = BLOCK_FACE_TOP },
-		{ .pos = VEC3( 0.5f,  0.5f, -0.5f), .uv = VEC2(1.0f, 1.0f), .face = BLOCK_FACE_TOP },
-		{ .pos = VEC3(-0.5f,  0.5f, -0.5f), .uv = VEC2(0.0f, 1.0f), .face = BLOCK_FACE_TOP },
-
-		// Bot
-		{ .pos = VEC3(-0.5f, -0.5f, -0.5f), .uv = VEC2(0.0f, 0.0f), .face = BLOCK_FACE_BOT },
-		{ .pos = VEC3( 0.5f, -0.5f, -0.5f), .uv = VEC2(1.0f, 0.0f), .face = BLOCK_FACE_BOT },
-		{ .pos = VEC3( 0.5f, -0.5f,  0.5f), .uv = VEC2(1.0f, 1.0f), .face = BLOCK_FACE_BOT },
-		{ .pos = VEC3(-0.5f, -0.5f,  0.5f), .uv = VEC2(0.0f, 1.0f), .face = BLOCK_FACE_BOT },
-
-		// Left
-		{ .pos = VEC3(-0.5f, -0.5f, -0.5f), .uv = VEC2(0.0f, 0.0f), .face = BLOCK_FACE_LEFT },
-		{ .pos = VEC3(-0.5f, -0.5f,  0.5f), .uv = VEC2(1.0f, 0.0f), .face = BLOCK_FACE_LEFT },
-		{ .pos = VEC3(-0.5f,  0.5f,  0.5f), .uv = VEC2(1.0f, 1.0f), .face = BLOCK_FACE_LEFT },
-		{ .pos = VEC3(-0.5f,  0.5f, -0.5f), .uv = VEC2(0.0f, 1.0f), .face = BLOCK_FACE_LEFT },
-
-		// Right
-		{ .pos = VEC3( 0.5f, -0.5f,  0.5f), .uv = VEC2(0.0f, 0.0f), .face = BLOCK_FACE_RIGHT },
-		{ .pos = VEC3( 0.5f, -0.5f, -0.5f), .uv = VEC2(1.0f, 0.0f), .face = BLOCK_FACE_RIGHT },
-		{ .pos = VEC3( 0.5f,  0.5f, -0.5f), .uv = VEC2(1.0f, 1.0f), .face = BLOCK_FACE_RIGHT },
-		{ .pos = VEC3( 0.5f,  0.5f,  0.5f), .uv = VEC2(0.0f, 1.0f), .face = BLOCK_FACE_RIGHT },
-	};
-
-	unsigned int indices[BLOCK_INDICES_AMOUNT] =
-	{
-		// Front
-		0, 1, 2,
-		2, 3, 0,
-
-		// Back
-		4, 5, 6,
-		6, 7, 4,
-
-		// Top
-		8, 9, 10,
-		10, 11, 8,
-
-		// Bot
-		12, 13, 14,
-		14, 15, 12,
-
-		// Left
-		16, 17, 18,
-		18, 19, 16,
-
-		// Right
-		20, 21, 22,
-		22, 23, 20
-	};
-
-	g->vertices = malloc(g->vertices_size);
-	memcpy(g->vertices, vertices, g->vertices_size);
-
-	g->indices = malloc(sizeof(unsigned int) * g->indices_amount);
-	memcpy(g->indices, indices, sizeof(unsigned int) * g->indices_amount);	
-
-	vertex_layout_init_default_block(&g->layout);
-
-	return g;
+	return geometry_create(BLOCK_VERTICES, BLOCK_VERTICES_AMOUNT,
+	                       BLOCK_INDICES, BLOCK_INDICES_AMOUNT, layout);
 }
 
 Geometry* geometry_create_sphere(float R, unsigned int lat_amount, unsigned int long_amount)
@@ -321,64 +156,56 @@ Geometry* geometry_create_sphere(float R, unsigned int lat_amount, unsigned int 
 		}
 	}
 
-	Geometry* g = malloc(sizeof(struct Geometry));
+	VertexLayout layout;
+	vertex_layout_init_default(&layout);
 
-	g->vertices = vertices;
-	g->vertices_size = vertices_size;
-	g->vertices_amount = vertices_amount;
-
-	g->indices = indices;
-	g->indices_amount = indices_amount;
-
-	vertex_layout_init_default(&g->layout);
-
-	return g;
+	return geometry_create(vertices, vertices_amount,
+	                       indices, indices_amount, layout);
 }
 
-Geometry* geometry_create_line(Vertex* vertices, unsigned int size)
+void geometry_add_array(Geometry* g, const ArrayList* vertices, const ArrayList* indices)
 {
-	Geometry* g = malloc(sizeof(struct Geometry));
+	CHECK_IS_NULL_RET(g, "Cannot add buffer to NULL Geometry.", );
+	CHECK_IS_NULL_RET(vertices, "Cannot add NULL vertices ArrayList to Geometry.", );
+	CHECK_IS_NULL_RET(indices, "Cannot add NULL indices ArrayList to Geometry.", );
 
-	g->vertices = NULL;
-	g->vertices_size = sizeof(Vertex) * size;
-	g->vertices_amount = size;
+	array_list_push_array(g->vertices, vertices);
+	array_list_push_array(g->indices, indices);
+}
 
-	g->indices = NULL;
-	g->indices_amount = size;
+void geometry_add_buffer(Geometry* g, const void* vertices_buffer, size_t vertices_amount,
+                         const unsigned int* indices_buffer, size_t indices_amount)
+{
+	CHECK_IS_NULL_RET(g, "Cannot add buffer to NULL Geometry.", );
 
-	g->vertices = malloc(g->vertices_size);
-	g->indices = malloc(sizeof(Vertex) * g->indices_amount);
+	CHECK_IS_NULL_RET(vertices_buffer,
+		"Cannot add NULL vertices buffer to Geometry.", );
 
-	memcpy(g->vertices, vertices, size);
+	CHECK_IS_NULL_RET(indices_buffer,
+		"Cannot add NULL indices buffer to Geometry.", );
 
-	for (unsigned int i = 0; i < size; i++)
-	{
-		g->indices[i] = i;
-	}
-
-	vertex_layout_init_default(&g->layout);
-
-	return g;
+	array_list_push_buffer(g->vertices, vertices_buffer, vertices_amount);
+	array_list_push_buffer(g->indices, indices_buffer, indices_amount);
 }
 
 void geometry_load_to_gpu(Geometry* g)
 {
-	LOG_INFO("Loaded a geometry to GPU of %u vertices and %u indices", g->vertices_amount, g->indices_amount);
+	LOG_INFO("Loaded a geometry to GPU of %zu vertices and %zu indices", g->vertices->count, g->indices->count);
 
 	GL_CALL(glBufferData(GL_ARRAY_BUFFER,
-	             g->vertices_size,
-	             g->vertices,
+	             g->vertices->item_size * g->vertices->count,
+	             g->vertices->data,
 	             GL_STATIC_DRAW));
 
 	GL_CALL(glBufferData(GL_ELEMENT_ARRAY_BUFFER,
-	             sizeof(unsigned int) * g->indices_amount,
-	             g->indices,
+	             sizeof(unsigned int) * g->indices->count,
+	             g->indices->data,
 	             GL_STATIC_DRAW));
 }
 
 void geometry_free(Geometry* g)
 {
-	free(g->vertices);
-	free(g->indices);
+	array_list_free(g->vertices);
+	array_list_free(g->indices);
 	free(g);
 }

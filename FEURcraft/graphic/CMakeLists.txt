@@ -46,4 +46,5 @@ target_link_libraries(${LIB_NAME}
 		utils
 		math
 		system
+		data
 )

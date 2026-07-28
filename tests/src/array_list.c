@@ -127,6 +127,76 @@ FEUR_Test_Result Test_ArrayList_Push_Buffer()
 	return FEUR_Test_Success;
 }
 
+FEUR_Test_Result Test_ArrayList_Push_Array()
+{
+	ArrayList* list_a = array_list_create(sizeof(int), 2);
+	ArrayList* list_b = array_list_create(sizeof(int), 3);
+
+	int a_vals[2] = {1, 2};
+	array_list_push_buffer(list_a, a_vals, 2);
+
+	int b_vals[3] = {3, 4, 5};
+	array_list_push_buffer(list_b, b_vals, 3);
+
+	array_list_push_array(list_a, list_b);
+
+	FEUR_TEST_ASSERT(list_a->count == 5);
+	FEUR_TEST_ASSERT(list_a->capacity >= 5);
+
+	int* val_0 = (int*) array_list_get(list_a, 0);
+	int* val_2 = (int*) array_list_get(list_a, 2);
+	int* val_4 = (int*) array_list_get(list_a, 4);
+
+	FEUR_TEST_ASSERT_NOT_NULL(val_0);
+	FEUR_TEST_ASSERT_NOT_NULL(val_2);
+	FEUR_TEST_ASSERT_NOT_NULL(val_4);
+
+	FEUR_TEST_ASSERT(*val_0 == 1);
+	FEUR_TEST_ASSERT(*val_2 == 3);
+	FEUR_TEST_ASSERT(*val_4 == 5);
+
+	FEUR_TEST_ASSERT(list_b->count == 3);
+	int* b_val_0 = (int*) array_list_get(list_b, 0);
+	FEUR_TEST_ASSERT(*b_val_0 == 3);
+
+	array_list_free(list_a);
+	array_list_free(list_b);
+
+	return FEUR_Test_Success;
+}
+
+FEUR_Test_Result Test_ArrayList_Static()
+{
+	// Buffer alloué sur la Stack
+	int stack_buffer[5];
+
+	ArrayList list = ARRAY_LIST_STATIC(stack_buffer, sizeof(int), 0, 5);
+
+	FEUR_TEST_ASSERT(list.is_static == true);
+	FEUR_TEST_ASSERT(list.count == 0);
+	FEUR_TEST_ASSERT(list.capacity == 5);
+
+	int v1 = 10, v2 = 20, v3 = 30;
+	array_list_push(&list, &v1);
+	array_list_push(&list, &v2);
+	array_list_push(&list, &v3);
+
+	FEUR_TEST_ASSERT(list.count == 3);
+
+	int* val_0 = (int*)array_list_get(&list, 0);
+	int* val_2 = (int*)array_list_get(&list, 2);
+
+	FEUR_TEST_ASSERT_NOT_NULL(val_0);
+	FEUR_TEST_ASSERT_NOT_NULL(val_2);
+	FEUR_TEST_ASSERT(*val_0 == 10);
+	FEUR_TEST_ASSERT(*val_2 == 30);
+
+	FEUR_TEST_ASSERT(stack_buffer[0] == 10);
+	FEUR_TEST_ASSERT(stack_buffer[2] == 30);
+
+	return FEUR_Test_Success;
+}
+
 int main()
 {
 	FEUR_Test_Init();
@@ -138,7 +208,8 @@ int main()
 	FEUR_Test_Add_Test("Push et Get", Test_ArrayList_Push_Get);
 	FEUR_Test_Add_Test("Push de buffer", Test_ArrayList_Push_Buffer);
 	FEUR_Test_Add_Test("Clear de la liste", Test_ArrayList_Clear);
-
+	FEUR_Test_Add_Test("Push Array", Test_ArrayList_Push_Array);
+	FEUR_Test_Add_Test("ArrayList static",Test_ArrayList_Static);
 
 	FEUR_Test_Add_Group("ArrayList - Gestion Mémoire");
 	FEUR_Test_Add_Test("Redimensionnement Auto", Test_ArrayList_AutoResize);

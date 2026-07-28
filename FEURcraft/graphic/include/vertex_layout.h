@@ -55,7 +55,7 @@ typedef struct VertexLayout VertexLayout;
 
 struct VertexLayout
 {
-	GLsizei stride;
+	GLsizei vertex_byte_size;
 	VertexAttribute attributes[MAX_VERTEX_ATTRIBUTE_AMOUNT];
 	unsigned int attribute_amount;
 };
@@ -73,7 +73,7 @@ struct VertexLayout
  * \param stride taille en octet de l'ensemble des attribut combiner
  */
 void vertex_layout_init(VertexLayout* layout, VertexAttribute attributes[],
-                        unsigned int attribute_amount, GLsizei stride);
+                        unsigned int attribute_amount, GLsizei byte_size);
 
 /**
  * \brief Créer une dispotion pour la structure \ref Vertex

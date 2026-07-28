@@ -33,7 +33,6 @@ struct Mesh
 
 	GLenum type;
 	unsigned int indices_amount;
-
 };
 
 /**
