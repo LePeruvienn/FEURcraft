@@ -13,6 +13,9 @@ static void set_default_gl_params()
 
 	glEnable(GL_CULL_FACE);
 	glEnable(GL_DEPTH_TEST);
+
+	// Activation du V-Sync
+	glfwSwapInterval(1);
 }
 
 bool renderer_init(Renderer* renderer, Window* window)

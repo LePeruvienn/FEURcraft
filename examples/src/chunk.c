@@ -67,8 +67,6 @@ int main()
 	Renderer renderer;
 	renderer_init(&renderer, window);
 
-	renderer.camera.pos = VEC3(0.f, 0.f, CHUNK_LENGTH * 2);
-
 	Shader* vert = shader_create("assets/shader/default_block.vert", SHADER_TYPE_VERT);
 	Shader* frag = shader_create("assets/shader/default_block.frag", SHADER_TYPE_FRAG);
 
@@ -102,6 +100,10 @@ int main()
 
 	float rotation = 0.f;
 
+	float camera_dist_max = - CHUNK_LENGTH;
+	float camera_dist_min = - (CHUNK_LENGTH  * 4);
+	float camera_sign = -1.f;
+
 	while(!window_should_close(window))
 	{
 		window_pool_events();
@@ -110,12 +112,26 @@ int main()
 
 		renderer_clear();
 
-		shader_program_use(program);
-
 		float dt = window_get_delta_time(window);
+
+		// Move camera
+
+		if ((camera_sign > 0 && camera_dist_max < renderer.camera.pos.z) ||
+		    (camera_sign < 0 && camera_dist_min > renderer.camera.pos.z))
+		{
+			camera_sign *= -1;
+		}
+
+		renderer.camera.pos.z += camera_sign * CHUNK_LENGTH * dt;
+
+
+		// Draw Chunk
+
+		shader_program_use(program);
 
 		rotation += 0.5f * dt;
 
+		// Center chunk
 		Vec3 center = VEC3(
 			- (CHUNK_LENGTH / 2),
 			- (CHUNK_HEIGHT / 2),
@@ -137,11 +153,13 @@ int main()
 		bind_mesh(mesh_world);
 		draw_mesh(mesh_world, GL_TRIANGLES);
 
+		// Draw debug lines
+
 		shader_program_use(program_debug);
 
-		shader_program_set_mat4(program, "uViewMatrix", view);
-		shader_program_set_mat4(program, "uProjMatrix", proj);
-		shader_program_set_mat4(program, "uModelMatrix", model);
+		shader_program_set_mat4(program_debug, "uViewMatrix", view);
+		shader_program_set_mat4(program_debug, "uProjMatrix", proj);
+		shader_program_set_mat4(program_debug, "uModelMatrix", model);
 
 		bind_mesh(mesh_debug);
 		draw_mesh(mesh_debug, GL_LINES);
