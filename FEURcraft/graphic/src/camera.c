@@ -118,7 +118,8 @@ Mat4 camera_compute_view(Camera* c)
 	Vec3 forward = vec3_sub(c->target, c->pos);
 	vec3_norm_in(&forward);
 
-	Vec3 world_up = VEC3(0.f, 1.f, 0.f);
+	Vec3 world_up = VEC3(0.f, 1.f, 0.f); // Y UP !!
+
 	Vec3 right = vec3_cross(forward, world_up);
 	vec3_norm_in(&right);
 
@@ -128,11 +129,10 @@ Mat4 camera_compute_view(Camera* c)
 	float ty = -vec3_dot(up,      c->pos);
 	float tz = -vec3_dot(forward, c->pos);
 
-	// Déjà bien en column order ! Pas besoin de transpose 
-	return MAT4(right.x,  up.x,  -forward.x,  0.f,
-	            right.y,  up.y,  -forward.y,  0.f,
-	            right.z,  up.z,  -forward.z,  0.f,
-	                 tx,    ty,         -tz,  1.f);
+	return MAT4(   right.x,    right.y,    right.z,   tx,
+	                  up.x,       up.y,       up.z,   ty,
+	            -forward.x, -forward.y, -forward.z,  -tz,
+	                   0.f,        0.f,        0.f,  1.f);
 }
 
 Mat4 camera_compute_proj(Camera* c)
@@ -143,11 +143,9 @@ Mat4 camera_compute_proj(Camera* c)
 	float f  = 1.0f / tanf(fov_rad * 0.5f);
 	float nf = 1.0f / (c->near - c->far);
 
-	// Déjà bien en column order ! Pas besoin de transpose 
-	return MAT4(f / c->aspect,  0.f,  0.f,                            0.f,
-	            0.f,            f,    0.f,                            0.f,
-	            0.f,            0.f,  (c->far + c->near) * nf,       -1.f,
-	            0.f,            0.f,  (2.f * c->far * c->near) * nf,  0.f
-	);
+	return MAT4(f / c->aspect,  0.f,                     0.f,                           0.f,
+	                      0.f,    f,                     0.f,                           0.f,
+	                      0.f,  0.f, (c->far + c->near) * nf, (2.f * c->far * c->near) * nf,
+	                      0.f,  0.f,                    -1.f,                           0.f);
 }
 

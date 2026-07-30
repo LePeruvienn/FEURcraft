@@ -1,6 +1,7 @@
 #include "chunk_geometry.h"
 
 #include "geometry.h"
+#include "geometry_data.h"
 #include "vertex.h"
 #include "vertex_layout.h"
 
@@ -13,28 +14,36 @@
 #include "vec3i.h"
 
 #include "logger.h"
+#include "error_checker.h"
 
-#define FACE_VERTICES_AMOUNT 4
-#define FACE_INDICES_AMOUNT 6
+#include <string.h>
 
-// TODO !!
 static void chunk_geometry_add_block_face(Geometry* geometry,
-                                          Block /* block */, BlockFace /*face*/,
-                                          Vec3i /* pos*/)
+                                          Block block, BlockFace face,
+                                          Vec3i pos)
 {
-	VertexBlock vertices_buffer[FACE_VERTICES_AMOUNT] = { 0 };
+	CHECK_COND_RET_WARN(block != BLOCK_AIR, "Cannot add a BLOCK_AIR face.", );
 
-	
-	unsigned int indices_buffer[FACE_INDICES_AMOUNT] = 
+	VertexBlock vertices_buffer[BLOCK_FACE_VERTICES_AMOUNT] = { 0 };
+
+	geometry_data_get_block_face_vertices(face, vertices_buffer);
+
+	unsigned int layer_index = (block - 1) * BLOCK_FACE_COUNT;
+
+	// Applying chunk pos, and layer_index to vertices
+	for(unsigned int i = 0; i < BLOCK_FACE_VERTICES_AMOUNT; ++i)
 	{
-		0, 1, 2,
-		2, 3, 0
-	};
+		// vertices_buffer already contain the face id value
+		// TextureArray index = (block * BLOCK_FACE_COUNT) + BlockFace id;
+		vertices_buffer[i].layer_index += layer_index;
+
+		// apply chunk_pos offset
+		vec3_add_in(&vertices_buffer[i].pos, VEC3(pos.x, pos.y, pos.z));
+	}
 
 	// Add face to buffer
-	geometry_add_buffer(geometry,
-	                    vertices_buffer, FACE_VERTICES_AMOUNT,
-	                    indices_buffer, FACE_INDICES_AMOUNT);
+	geometry_add_buffer(geometry,    vertices_buffer, BLOCK_FACE_VERTICES_AMOUNT,
+	                              BLOCK_FACE_INDICES, BLOCK_FACE_INDICES_AMOUNT);
 }
 
 Geometry* chunk_geometry_create(const Chunk* chunk)
@@ -55,34 +64,36 @@ Geometry* chunk_geometry_create(const Chunk* chunk)
 
 		Vec3i pos = chunk_block_pos(i);
 
-		Vec3i pos_top   = VEC3I(pos.x,     pos.y,     pos.z + 1);
-		Vec3i pos_bot   = VEC3I(pos.x,     pos.y,     pos.z - 1);
-		Vec3i pos_front = VEC3I(pos.x,     pos.y + 1, pos.z    );
-		Vec3i pos_back  = VEC3I(pos.x,     pos.y - 1, pos.z    );
+		// Y UP !!!
+		Vec3i pos_top   = VEC3I(pos.x,     pos.y + 1, pos.z    );
+		Vec3i pos_bot   = VEC3I(pos.x,     pos.y - 1, pos.z    );
+		Vec3i pos_front = VEC3I(pos.x,     pos.y,     pos.z + 1);
+		Vec3i pos_back  = VEC3I(pos.x,     pos.y,     pos.z - 1);
 		Vec3i pos_left  = VEC3I(pos.x - 1, pos.y,     pos.z    );
 		Vec3i pos_right = VEC3I(pos.x + 1, pos.y,     pos.z    );
 
-		if (chunk_get_block_from_pos(chunk, pos_top) == BLOCK_AIR)
+		// very very very naive chunk meshing for the moment
+		if (!chunk_is_pos_valid(pos_top) || chunk_get_block_from_pos(chunk, pos_top) == BLOCK_AIR)
 		{
 			chunk_geometry_add_block_face(chunk_geometry, block, BLOCK_FACE_TOP, pos);
 		}
-		if (chunk_get_block_from_pos(chunk, pos_bot) == BLOCK_AIR)
+		if (!chunk_is_pos_valid(pos_bot) || chunk_get_block_from_pos(chunk, pos_bot) == BLOCK_AIR)
 		{
 			chunk_geometry_add_block_face(chunk_geometry, block, BLOCK_FACE_BOT, pos);
 		}
-		if (chunk_get_block_from_pos(chunk, pos_front) == BLOCK_AIR)
+		if (!chunk_is_pos_valid(pos_front) || chunk_get_block_from_pos(chunk, pos_front) == BLOCK_AIR)
 		{
 			chunk_geometry_add_block_face(chunk_geometry, block, BLOCK_FACE_FRONT, pos);
 		}
-		if (chunk_get_block_from_pos(chunk, pos_back) == BLOCK_AIR)
+		if (!chunk_is_pos_valid(pos_back) || chunk_get_block_from_pos(chunk, pos_back) == BLOCK_AIR)
 		{
 			chunk_geometry_add_block_face(chunk_geometry, block, BLOCK_FACE_BACK, pos);
 		}
-		if (chunk_get_block_from_pos(chunk, pos_left) == BLOCK_AIR)
+		if (!chunk_is_pos_valid(pos_left) || chunk_get_block_from_pos(chunk, pos_left) == BLOCK_AIR)
 		{
 			chunk_geometry_add_block_face(chunk_geometry, block, BLOCK_FACE_LEFT, pos);
 		}
-		if (chunk_get_block_from_pos(chunk, pos_right) == BLOCK_AIR)
+		if (!chunk_is_pos_valid(pos_right) || chunk_get_block_from_pos(chunk, pos_right) == BLOCK_AIR)
 		{
 			chunk_geometry_add_block_face(chunk_geometry, block, BLOCK_FACE_RIGHT, pos);
 		}

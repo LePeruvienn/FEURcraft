@@ -34,6 +34,7 @@ target_sources(${LIB_NAME}
 		src/image_array.c
 		src/texture_array.c
 		src/chunk_geometry.c
+		src/geometry_data.c
 )
 
 
