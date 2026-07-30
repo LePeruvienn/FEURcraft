@@ -2,9 +2,9 @@
 
 Small Voxel Engine.
 
-CUBE 👁️👄👁️
+PUMPKIN CHUNK 👁️👄👁️
 
-![cube](assets/README/block.gif)
+![cube](assets/README/chunk.gif)
 
 ---
 
