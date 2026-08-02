@@ -11,6 +11,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Get doxygen-awesome
+        run: git submodule update --init doxygen/doxygen-awesome
+
       - name: Generate and Deploy Doxygen Docs
         uses: AgarwalSaurav/ghaction-doxygen-ghpages@release/v2
         with:
@@ -19,3 +23,4 @@ jobs:
           doxyfile-path: Doxyfile
           html-output-folder: doxygen/html
           branch: gh-pages
+
