@@ -1,9 +1,11 @@
 <map id="FEURcraft/graphic/include/mesh.h" name="FEURcraft/graphic/include/mesh.h">
-<area shape="rect" id="Node000001" title="Structure représentant les données d&#39;un modèle 3D charger dans le GPU." alt="" coords="134,5,309,44"/>
+<area shape="rect" id="Node000001" title="Structure représentant les données d&#39;un modèle 3D charger dans le GPU." alt="" coords="226,5,401,44"/>
 <area shape="rect" id="Node000002" href="$geometry_8h.html" title="Structure représentant les données d&#39;un modèle 3D." alt="" coords="133,92,219,117"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="212,46,193,80,188,77,208,43"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="281,47,211,86,208,82,279,42"/>
 <area shape="rect" id="Node000004" title=" " alt="" coords="232,237,317,262"/>
-<area shape="poly" id="edge9_Node000001_Node000004" title=" " alt="" coords="236,43,265,96,280,129,290,164,292,195,286,223,281,222,287,194,285,165,275,131,260,98,231,46"/>
+<area shape="poly" id="edge10_Node000001_Node000004" title=" " alt="" coords="313,45,290,190,283,223,278,222,285,189,308,44"/>
+<area shape="rect" id="Node000008" href="$draw__mode_8h.html" title=" " alt="" coords="350,92,450,117"/>
+<area shape="poly" id="edge9_Node000001_Node000008" title=" " alt="" coords="336,43,377,79,374,83,332,47"/>
 <area shape="rect" id="Node000003" href="$vertex__layout_8h.html" title="Fichier contenant les structure de spécification de la disposition des attributs des vertex." alt="" coords="167,165,275,189"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="186,116,208,150,203,153,181,119"/>
 <area shape="rect" id="Node000005" title=" " alt="" coords="104,237,171,262"/>
