@@ -60,7 +60,7 @@ int main()
 
 		bind_mesh(mesh);
 
-		draw_mesh(mesh, GL_TRIANGLES);
+		draw_mesh(mesh, DRAW_TRIANGLES);
 
 		window_swap_buffers(window);
 	}

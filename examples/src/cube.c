@@ -76,7 +76,7 @@ int main()
 
 		bind_mesh(mesh);
 
-		draw_mesh(mesh, GL_LINE_STRIP);
+		draw_mesh(mesh, DRAW_LINES_STRIP);
 
 		window_swap_buffers(window);
 	}

@@ -2,6 +2,8 @@
 #define MESH_H
 
 #include "geometry.h"
+#include "draw_mode.h"
+
 #include "glad/glad.h"
 
 /**
@@ -31,7 +33,6 @@ struct Mesh
 	GLuint VBO;
 	GLuint EBO;
 
-	GLenum type;
 	unsigned int indices_amount;
 };
 
@@ -92,7 +93,7 @@ void unbind_mesh(Mesh* m);
 * \param g géométrie à déssiner
 * \param mode mode de déssin
 */
-void draw_mesh(Mesh* m, GLenum mode);
+void draw_mesh(Mesh* m, DrawMode mode);
 
 /**
 * \brief fait un appel GPU pour déssiner plusieurs instance la géométrie
@@ -103,6 +104,6 @@ void draw_mesh(Mesh* m, GLenum mode);
 * \param mode mode de déssin
 * \param amount nombre d'instance à déssiner
 */
-void draw_mesh_instanced(Mesh* m, GLenum mode, unsigned int amount);
+void draw_mesh_instanced(Mesh* m, DrawMode mode, unsigned int amount);
 
 #endif // MESH_H
