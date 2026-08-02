@@ -1,6 +1,15 @@
 #ifndef ATLAS_H
 #define ATLAS_H
 
+/**
+ * \file atlas.h
+ * \brief Atlas pour stocker plusieurs images sur la même images.
+ *
+ * Atlas représente les données CPU d'un texture atlas,
+ * elle permet d'ajouter des images de tailles différents sur la même image.
+ * On peut ensuite récupérer les UVs de ces images facilement.
+ */
+
 #include "image.h"
 #include "texture_coord.h"
 

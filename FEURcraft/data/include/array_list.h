@@ -1,6 +1,15 @@
 #ifndef ARRAY_LIST_H
 #define ARRAY_LIST_H
 
+/**
+ * \file array_list.h
+ * \brief Liste dynamique
+ *
+ * \ref ArrayList est une structure permmettant de manipuler des listes d'élément 
+ * peut importe leurs type. Elle peut être alloué sur le tas ou sur la pile via un buffer 
+ * en variable local via la macro \ref ARRAY_LIST_STATIC
+ */
+
 #include <stddef.h>
 #include <stdbool.h>
 
