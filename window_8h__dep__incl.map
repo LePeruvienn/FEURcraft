@@ -1,0 +1,15 @@
+<map id="FEURcraft/system/include/window.h" name="FEURcraft/system/include/window.h">
+<area shape="rect" id="Node000001" title="Abstraction de la gestion de la fenêtre et du contexte OpenGL." alt="" coords="131,5,306,44"/>
+<area shape="rect" id="Node000002" href="$camera_8h.html" title="Structure et fonctions pour la caméra 3D." alt="" coords="131,92,306,131"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="221,60,221,91,216,91,216,60"/>
+<area shape="rect" id="Node000003" href="$renderer_8h.html" title=" " alt="" coords="5,179,181,217"/>
+<area shape="poly" id="edge6_Node000001_Node000003" title=" " alt="" coords="165,54,141,72,121,94,109,114,102,137,96,179,91,178,97,136,104,112,116,90,137,68,162,50"/>
+<area shape="rect" id="Node000006" href="$window_8c.html" title=" " alt="" coords="331,92,482,131"/>
+<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="275,48,366,89,364,94,273,53"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="180,142,122,180,119,176,177,137"/>
+<area shape="rect" id="Node000004" href="$renderer_8c.html" title=" " alt="" coords="80,265,232,304"/>
+<area shape="poly" id="edge5_Node000002_Node000004" title=" " alt="" coords="215,147,195,218,170,266,166,264,191,216,210,145"/>
+<area shape="rect" id="Node000005" href="$camera_8c.html" title=" " alt="" coords="256,179,408,217"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="257,138,308,176,305,180,254,142"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="118,228,144,263,140,266,114,232"/>
+</map>

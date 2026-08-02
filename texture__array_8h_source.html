@@ -1,0 +1,155 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>FEURcraft:  Fichier source de FEURcraft/graphic/include/texture_array.h</title>
+<link rel="icon" href="FEURcraft.png" type="image/x-icon" />
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="FEURcraft.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">FEURcraft<span id="projectnumber">&#160;0.0.1</span>
+   </div>
+   <div id="projectbrief">Moteur Voxel.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Recherche',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('texture__array_8h_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Chargement...</div>
+<div class="SRStatus" id="Searching">Recherche...</div>
+<div class="SRStatus" id="NoMatches">Aucune correspondance</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">texture_array.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="texture__array_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef TEXTURE_ARRAY_H</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define TEXTURE_ARRAY_H</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="image__array_8h.html">image_array.h</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;glad/glad.h&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="texture__array_8h.html#a4a55fb05c9cf187e8d2c6f376dbe5149">    8</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="structTextureArray.html">TextureArray</a> <a class="code hl_struct" href="structTextureArray.html">TextureArray</a>;</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="foldopen" id="foldopen00010" data-start="{" data-end="};">
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="structTextureArray.html">   10</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structTextureArray.html">TextureArray</a></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>{</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="structTextureArray.html#af09668b3076abc129a82a54c8a2b07ec">   12</a></span>    GLuint <a class="code hl_variable" href="structTextureArray.html#af09668b3076abc129a82a54c8a2b07ec">id</a>;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="structTextureArray.html#add0f11969c7fd165a8fa54a9f0e3b637">   14</a></span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="structTextureArray.html#add0f11969c7fd165a8fa54a9f0e3b637">width</a>;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="structTextureArray.html#a6be5d78642e9b94889a6ed1c6e524296">   15</a></span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="structTextureArray.html#a6be5d78642e9b94889a6ed1c6e524296">height</a>;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="structTextureArray.html#a3da988417a8129baad2a718906847948">   16</a></span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="structTextureArray.html#a3da988417a8129baad2a718906847948">layer_count</a>;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>};</div>
+</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><a class="code hl_struct" href="structTextureArray.html">TextureArray</a>* <a class="code hl_function" href="texture__array_8h.html#a025f1ad8f3688a49305422e9cbda51f8">texture_array_create</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>* data,</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>                                   <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> width,</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>                                   <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> height,</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>                                   <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> channels,</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>                                   <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> layer_count);</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><a class="code hl_struct" href="structTextureArray.html">TextureArray</a>* <a class="code hl_function" href="texture__array_8h.html#aa151c7bace315c24b3b4ab940e7d5563">texture_array_create_from_img_array</a>(<a class="code hl_struct" href="structImageArray.html">ImageArray</a>* img_array);</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="keywordtype">void</span> <a class="code hl_function" href="texture__array_8h.html#a1b1fec4230d53b8f695db80a3ca94287">texture_array_free</a>(<a class="code hl_struct" href="structTextureArray.html">TextureArray</a>* tex_array);</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="keywordtype">void</span> <a class="code hl_function" href="texture__array_8h.html#a71303db3bdf7c9953c5449910a1a640a">texture_array_bind</a>(<a class="code hl_struct" href="structTextureArray.html">TextureArray</a>* tex_array, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> unit);</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="keywordtype">void</span> <a class="code hl_function" href="texture__array_8h.html#a09113a2fed528a03637491ae62df55df">texture_array_unbind</a>();</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="preprocessor">#endif </span><span class="comment">// TEXTURE_ARRAY_H</span></div>
+<div class="ttc" id="aimage__array_8h_html"><div class="ttname"><a href="image__array_8h.html">image_array.h</a></div></div>
+<div class="ttc" id="astructImageArray_html"><div class="ttname"><a href="structImageArray.html">ImageArray</a></div><div class="ttdef"><b>Definition</b> <a href="image__array_8h_source.html#l00011">image_array.h:12</a></div></div>
+<div class="ttc" id="astructTextureArray_html"><div class="ttname"><a href="structTextureArray.html">TextureArray</a></div><div class="ttdef"><b>Definition</b> <a href="#l00010">texture_array.h:11</a></div></div>
+<div class="ttc" id="astructTextureArray_html_a3da988417a8129baad2a718906847948"><div class="ttname"><a href="structTextureArray.html#a3da988417a8129baad2a718906847948">TextureArray::layer_count</a></div><div class="ttdeci">unsigned int layer_count</div><div class="ttdef"><b>Definition</b> <a href="#l00016">texture_array.h:16</a></div></div>
+<div class="ttc" id="astructTextureArray_html_a6be5d78642e9b94889a6ed1c6e524296"><div class="ttname"><a href="structTextureArray.html#a6be5d78642e9b94889a6ed1c6e524296">TextureArray::height</a></div><div class="ttdeci">unsigned int height</div><div class="ttdef"><b>Definition</b> <a href="#l00015">texture_array.h:15</a></div></div>
+<div class="ttc" id="astructTextureArray_html_add0f11969c7fd165a8fa54a9f0e3b637"><div class="ttname"><a href="structTextureArray.html#add0f11969c7fd165a8fa54a9f0e3b637">TextureArray::width</a></div><div class="ttdeci">unsigned int width</div><div class="ttdef"><b>Definition</b> <a href="#l00014">texture_array.h:14</a></div></div>
+<div class="ttc" id="astructTextureArray_html_af09668b3076abc129a82a54c8a2b07ec"><div class="ttname"><a href="structTextureArray.html#af09668b3076abc129a82a54c8a2b07ec">TextureArray::id</a></div><div class="ttdeci">GLuint id</div><div class="ttdef"><b>Definition</b> <a href="#l00012">texture_array.h:12</a></div></div>
+<div class="ttc" id="atexture__array_8h_html_a025f1ad8f3688a49305422e9cbda51f8"><div class="ttname"><a href="texture__array_8h.html#a025f1ad8f3688a49305422e9cbda51f8">texture_array_create</a></div><div class="ttdeci">TextureArray * texture_array_create(unsigned char *data, unsigned int width, unsigned int height, unsigned int channels, unsigned int layer_count)</div><div class="ttdef"><b>Definition</b> <a href="texture__array_8c_source.html#l00007">texture_array.c:7</a></div></div>
+<div class="ttc" id="atexture__array_8h_html_a09113a2fed528a03637491ae62df55df"><div class="ttname"><a href="texture__array_8h.html#a09113a2fed528a03637491ae62df55df">texture_array_unbind</a></div><div class="ttdeci">void texture_array_unbind()</div><div class="ttdef"><b>Definition</b> <a href="texture__array_8c_source.html#l00091">texture_array.c:91</a></div></div>
+<div class="ttc" id="atexture__array_8h_html_a1b1fec4230d53b8f695db80a3ca94287"><div class="ttname"><a href="texture__array_8h.html#a1b1fec4230d53b8f695db80a3ca94287">texture_array_free</a></div><div class="ttdeci">void texture_array_free(TextureArray *tex_array)</div><div class="ttdef"><b>Definition</b> <a href="texture__array_8c_source.html#l00067">texture_array.c:67</a></div></div>
+<div class="ttc" id="atexture__array_8h_html_a71303db3bdf7c9953c5449910a1a640a"><div class="ttname"><a href="texture__array_8h.html#a71303db3bdf7c9953c5449910a1a640a">texture_array_bind</a></div><div class="ttdeci">void texture_array_bind(TextureArray *tex_array, unsigned int unit)</div><div class="ttdef"><b>Definition</b> <a href="texture__array_8c_source.html#l00083">texture_array.c:83</a></div></div>
+<div class="ttc" id="atexture__array_8h_html_aa151c7bace315c24b3b4ab940e7d5563"><div class="ttname"><a href="texture__array_8h.html#aa151c7bace315c24b3b4ab940e7d5563">texture_array_create_from_img_array</a></div><div class="ttdeci">TextureArray * texture_array_create_from_img_array(ImageArray *img_array)</div><div class="ttdef"><b>Definition</b> <a href="texture__array_8c_source.html#l00055">texture_array.c:55</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_758d8e9166e39e682af4fe71d4574a53.html">FEURcraft</a></li><li class="navelem"><a href="dir_d563573f48eefcd0f66954300c445435.html">graphic</a></li><li class="navelem"><a href="dir_70cb0612fe78639fcdf942bf945e5531.html">include</a></li><li class="navelem"><a href="texture__array_8h.html">texture_array.h</a></li>
+    <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

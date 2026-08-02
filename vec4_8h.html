@@ -1,0 +1,665 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>FEURcraft: Référence du fichier FEURcraft/math/include/vec4.h</title>
+<link rel="icon" href="FEURcraft.png" type="image/x-icon" />
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="FEURcraft.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">FEURcraft<span id="projectnumber">&#160;0.0.1</span>
+   </div>
+   <div id="projectbrief">Moteur Voxel.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Recherche',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('vec4_8h.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Chargement...</div>
+<div class="SRStatus" id="Searching">Recherche...</div>
+<div class="SRStatus" id="NoMatches">Aucune correspondance</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Référence du fichier vec4.h</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><div class="dynheader">
+Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier :</div>
+<div class="dyncontent">
+<div class="center"><img src="vec4_8h__dep__incl.png" border="0" usemap="#aFEURcraft_2math_2include_2vec4_8hdep" loading="lazy" alt=""/></div>
+<map name="aFEURcraft_2math_2include_2vec4_8hdep" id="aFEURcraft_2math_2include_2vec4_8hdep">
+<area shape="rect" title=" " alt="" coords="416,5,579,44"/>
+<area shape="rect" href="shader__program_8h.html" title=" " alt="" coords="95,179,270,217"/>
+<area shape="poly" title=" " alt="" coords="436,53,347,94,271,139,210,180,207,176,268,135,344,90,434,48"/>
+<area shape="rect" href="mat4_8h.html" title=" " alt="" coords="358,92,520,131"/>
+<area shape="poly" title=" " alt="" coords="478,59,454,93,450,90,474,55"/>
+<area shape="rect" href="mat4_8c.html" title=" " alt="" coords="545,179,684,217"/>
+<area shape="poly" title=" " alt="" coords="521,55,604,177,600,180,516,58"/>
+<area shape="rect" href="vec4_8c.html" title=" " alt="" coords="594,92,734,131"/>
+<area shape="poly" title=" " alt="" coords="549,49,628,89,626,94,547,54"/>
+<area shape="rect" href="shader__program_8c.html" title=" " alt="" coords="5,265,158,304"/>
+<area shape="poly" title=" " alt="" coords="150,230,106,267,102,263,147,226"/>
+<area shape="poly" title=" " alt="" coords="368,139,240,181,239,176,367,134"/>
+<area shape="rect" href="camera_8h.html" title="Structure et fonctions pour la caméra 3D." alt="" coords="295,179,470,217"/>
+<area shape="poly" title=" " alt="" coords="420,146,397,180,393,177,416,143"/>
+<area shape="rect" href="camera_8c.html" title=" " alt="" coords="432,265,584,304"/>
+<area shape="poly" title=" " alt="" coords="465,142,485,178,500,224,508,264,503,265,495,225,480,180,460,145"/>
+<area shape="poly" title=" " alt="" coords="493,135,577,176,575,180,490,140"/>
+<area shape="rect" href="renderer_8h.html" title=" " alt="" coords="182,265,357,304"/>
+<area shape="poly" title=" " alt="" coords="347,229,296,267,293,263,344,225"/>
+<area shape="rect" href="renderer_8c.html" title=" " alt="" coords="256,352,408,391"/>
+<area shape="poly" title=" " alt="" coords="384,233,381,268,372,305,361,331,347,353,343,350,356,328,367,303,375,267,379,233"/>
+<area shape="poly" title=" " alt="" coords="425,224,482,263,479,267,422,228"/>
+<area shape="poly" title=" " alt="" coords="294,315,320,350,316,353,290,318"/>
+</map>
+</div>
+</div>
+<p><a href="vec4_8h_source.html">Aller au code source de ce fichier.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Structures de données</h2></td></tr>
+<tr class="memitem:Vec4" id="r_Vec4"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structVec4.html">Vec4</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-define-members" class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a0f62e58bffbb2111e46cdfd0c30e7b70" id="r_a0f62e58bffbb2111e46cdfd0c30e7b70"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0f62e58bffbb2111e46cdfd0c30e7b70">VEC4</a>(_x,  _y,  _z,  _w)</td></tr>
+<tr class="memitem:a498dc8347b8be284a9413ddea01d00ff" id="r_a498dc8347b8be284a9413ddea01d00ff"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a498dc8347b8be284a9413ddea01d00ff">VEC4_ZERO</a>&#160;&#160;&#160;<a class="el" href="#a0f62e58bffbb2111e46cdfd0c30e7b70">VEC4</a>(0.f, 0.f, 0.f, 0.f)</td></tr>
+<tr class="memitem:a99878969251eb96b30be97558879ec69" id="r_a99878969251eb96b30be97558879ec69"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a99878969251eb96b30be97558879ec69">VEC4_ONE</a>&#160;&#160;&#160;<a class="el" href="#a0f62e58bffbb2111e46cdfd0c30e7b70">VEC4</a>(1.f, 1.f, 1.f, 1.f)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-typedef-members" class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+Définitions de type</h2></td></tr>
+<tr class="memitem:abd438584811431d451e07e5600aab8e7" id="r_abd438584811431d451e07e5600aab8e7"><td class="memItemLeft" align="right" valign="top">typedef struct Vec4&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abd438584811431d451e07e5600aab8e7">Vec4</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr class="memitem:a5797a52c76a1fc01b53c30edbd81face" id="r_a5797a52c76a1fc01b53c30edbd81face"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structVec4.html">Vec4</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5797a52c76a1fc01b53c30edbd81face">vec4_add</a> (<a class="el" href="structVec4.html">Vec4</a> u, <a class="el" href="structVec4.html">Vec4</a> v)</td></tr>
+<tr class="memitem:ae4230fd86f9ee4681ed17fa3378cd01a" id="r_ae4230fd86f9ee4681ed17fa3378cd01a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structVec4.html">Vec4</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae4230fd86f9ee4681ed17fa3378cd01a">vec4_sub</a> (<a class="el" href="structVec4.html">Vec4</a> u, <a class="el" href="structVec4.html">Vec4</a> v)</td></tr>
+<tr class="memitem:a4c0df36547fb4c3e5b75967bab5f4353" id="r_a4c0df36547fb4c3e5b75967bab5f4353"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structVec4.html">Vec4</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4c0df36547fb4c3e5b75967bab5f4353">vec4_cross</a> (<a class="el" href="structVec4.html">Vec4</a> u, <a class="el" href="structVec4.html">Vec4</a> v)</td></tr>
+<tr class="memitem:a2e4cbd88e8136f93531e9e0348c51e1f" id="r_a2e4cbd88e8136f93531e9e0348c51e1f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structVec4.html">Vec4</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2e4cbd88e8136f93531e9e0348c51e1f">vec4_add_scal</a> (<a class="el" href="structVec4.html">Vec4</a> u, float l)</td></tr>
+<tr class="memitem:a4482b48ae808cb5b06f3cb44fd7ad860" id="r_a4482b48ae808cb5b06f3cb44fd7ad860"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structVec4.html">Vec4</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4482b48ae808cb5b06f3cb44fd7ad860">vec4_sub_scal</a> (<a class="el" href="structVec4.html">Vec4</a> u, float l)</td></tr>
+<tr class="memitem:a875ec32c5f101da224cb973856adfe9a" id="r_a875ec32c5f101da224cb973856adfe9a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structVec4.html">Vec4</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a875ec32c5f101da224cb973856adfe9a">vec4_mult_scal</a> (<a class="el" href="structVec4.html">Vec4</a> u, float l)</td></tr>
+<tr class="memitem:a2b1fdfd908349a5508b83208c63079cc" id="r_a2b1fdfd908349a5508b83208c63079cc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structVec4.html">Vec4</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2b1fdfd908349a5508b83208c63079cc">vec4_norm</a> (<a class="el" href="structVec4.html">Vec4</a> u)</td></tr>
+<tr class="memitem:afcf321823958a985bd4021fb37343157" id="r_afcf321823958a985bd4021fb37343157"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afcf321823958a985bd4021fb37343157">vec4_add_in</a> (<a class="el" href="structVec4.html">Vec4</a> *u, <a class="el" href="structVec4.html">Vec4</a> v)</td></tr>
+<tr class="memitem:a510d02802e7b7d4b843d1a06b78d1edd" id="r_a510d02802e7b7d4b843d1a06b78d1edd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a510d02802e7b7d4b843d1a06b78d1edd">vec4_sub_in</a> (<a class="el" href="structVec4.html">Vec4</a> *u, <a class="el" href="structVec4.html">Vec4</a> v)</td></tr>
+<tr class="memitem:a7873e4308363cc10ef0690bbc38d2b85" id="r_a7873e4308363cc10ef0690bbc38d2b85"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7873e4308363cc10ef0690bbc38d2b85">vec4_add_scal_in</a> (<a class="el" href="structVec4.html">Vec4</a> *u, float l)</td></tr>
+<tr class="memitem:a45d058cbecb5e37ac770b3a69ce62ca8" id="r_a45d058cbecb5e37ac770b3a69ce62ca8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a45d058cbecb5e37ac770b3a69ce62ca8">vec4_sub_scal_in</a> (<a class="el" href="structVec4.html">Vec4</a> *u, float l)</td></tr>
+<tr class="memitem:a463f0b1c6d90675ccc1f2bb513f10abc" id="r_a463f0b1c6d90675ccc1f2bb513f10abc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a463f0b1c6d90675ccc1f2bb513f10abc">vec4_mult_scal_in</a> (<a class="el" href="structVec4.html">Vec4</a> *u, float l)</td></tr>
+<tr class="memitem:aa7ca52edf96409e3b8da79f70e088021" id="r_aa7ca52edf96409e3b8da79f70e088021"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa7ca52edf96409e3b8da79f70e088021">vec4_norm_in</a> (<a class="el" href="structVec4.html">Vec4</a> *u)</td></tr>
+<tr class="memitem:a936585707b7d3e3bd992530ed96c6759" id="r_a936585707b7d3e3bd992530ed96c6759"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a936585707b7d3e3bd992530ed96c6759">vec4_dot</a> (<a class="el" href="structVec4.html">Vec4</a> u, <a class="el" href="structVec4.html">Vec4</a> v)</td></tr>
+<tr class="memitem:aec571b20a4ed683fba9447984871376f" id="r_aec571b20a4ed683fba9447984871376f"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aec571b20a4ed683fba9447984871376f">vec4_len</a> (<a class="el" href="structVec4.html">Vec4</a> u)</td></tr>
+<tr class="memitem:ad6719ea836cbd971ac68b8bcca07b8bb" id="r_ad6719ea836cbd971ac68b8bcca07b8bb"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad6719ea836cbd971ac68b8bcca07b8bb">vec4_len2</a> (<a class="el" href="structVec4.html">Vec4</a> u)</td></tr>
+<tr class="memitem:af8d3e43092732faeac6f1598283bd03b" id="r_af8d3e43092732faeac6f1598283bd03b"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af8d3e43092732faeac6f1598283bd03b">vec4_dist</a> (<a class="el" href="structVec4.html">Vec4</a> u, <a class="el" href="structVec4.html">Vec4</a> v)</td></tr>
+<tr class="memitem:a791acd72c4ce3831a47af191dfb01812" id="r_a791acd72c4ce3831a47af191dfb01812"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a791acd72c4ce3831a47af191dfb01812">vec4_dist2</a> (<a class="el" href="structVec4.html">Vec4</a> u, <a class="el" href="structVec4.html">Vec4</a> v)</td></tr>
+</table>
+<a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="groupheader">Documentation des macros</h2>
+<a id="a0f62e58bffbb2111e46cdfd0c30e7b70" name="a0f62e58bffbb2111e46cdfd0c30e7b70"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f62e58bffbb2111e46cdfd0c30e7b70">&#9670;&#160;</a></span>VEC4</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define VEC4</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>_x</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>_y</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>_z</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>_w</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Valeur :</b><div class="fragment"><div class="line">((<a class="code hl_struct" href="structVec4.html">Vec4</a>) {.x = _x, .y = _y, .z = _z, .w = _w})</div>
+<div class="ttc" id="astructVec4_html"><div class="ttname"><a href="structVec4.html">Vec4</a></div><div class="ttdef"><b>Definition</b> <a href="vec4_8h_source.html#l00011">vec4.h:12</a></div></div>
+</div><!-- fragment -->
+<p class="definition">Définition à la ligne <a class="el" href="vec4_8h_source.html#l00004">4</a> du fichier <a class="el" href="vec4_8h_source.html">vec4.h</a>.</p>
+
+</div>
+</div>
+<a id="a99878969251eb96b30be97558879ec69" name="a99878969251eb96b30be97558879ec69"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a99878969251eb96b30be97558879ec69">&#9670;&#160;</a></span>VEC4_ONE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define VEC4_ONE&#160;&#160;&#160;<a class="el" href="#a0f62e58bffbb2111e46cdfd0c30e7b70">VEC4</a>(1.f, 1.f, 1.f, 1.f)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="vec4_8h_source.html#l00007">7</a> du fichier <a class="el" href="vec4_8h_source.html">vec4.h</a>.</p>
+
+</div>
+</div>
+<a id="a498dc8347b8be284a9413ddea01d00ff" name="a498dc8347b8be284a9413ddea01d00ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a498dc8347b8be284a9413ddea01d00ff">&#9670;&#160;</a></span>VEC4_ZERO</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define VEC4_ZERO&#160;&#160;&#160;<a class="el" href="#a0f62e58bffbb2111e46cdfd0c30e7b70">VEC4</a>(0.f, 0.f, 0.f, 0.f)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="vec4_8h_source.html#l00006">6</a> du fichier <a class="el" href="vec4_8h_source.html">vec4.h</a>.</p>
+
+</div>
+</div>
+<a name="doc-typedef-members" id="doc-typedef-members"></a><h2 id="header-doc-typedef-members" class="groupheader">Documentation des définitions de type</h2>
+<a id="abd438584811431d451e07e5600aab8e7" name="abd438584811431d451e07e5600aab8e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd438584811431d451e07e5600aab8e7">&#9670;&#160;</a></span>Vec4</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct Vec4 Vec4</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="vec4_8h_source.html#l00009">9</a> du fichier <a class="el" href="vec4_8h_source.html">vec4.h</a>.</p>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentation des fonctions</h2>
+<a id="a5797a52c76a1fc01b53c30edbd81face" name="a5797a52c76a1fc01b53c30edbd81face"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5797a52c76a1fc01b53c30edbd81face">&#9670;&#160;</a></span>vec4_add()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structVec4.html">Vec4</a> vec4_add </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structVec4.html">Vec4</a></td>          <td class="paramname"><span class="paramname"><em>u</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structVec4.html">Vec4</a></td>          <td class="paramname"><span class="paramname"><em>v</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="vec4_8c_source.html#l00005">5</a> du fichier <a class="el" href="vec4_8c_source.html">vec4.c</a>.</p>
+
+</div>
+</div>
+<a id="afcf321823958a985bd4021fb37343157" name="afcf321823958a985bd4021fb37343157"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afcf321823958a985bd4021fb37343157">&#9670;&#160;</a></span>vec4_add_in()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void vec4_add_in </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structVec4.html">Vec4</a> *</td>          <td class="paramname"><span class="paramname"><em>u</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structVec4.html">Vec4</a></td>          <td class="paramname"><span class="paramname"><em>v</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="vec4_8c_source.html#l00070">70</a> du fichier <a class="el" href="vec4_8c_source.html">vec4.c</a>.</p>
+
+</div>
+</div>
+<a id="a2e4cbd88e8136f93531e9e0348c51e1f" name="a2e4cbd88e8136f93531e9e0348c51e1f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e4cbd88e8136f93531e9e0348c51e1f">&#9670;&#160;</a></span>vec4_add_scal()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structVec4.html">Vec4</a> vec4_add_scal </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structVec4.html">Vec4</a></td>          <td class="paramname"><span class="paramname"><em>u</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>l</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="vec4_8c_source.html#l00027">27</a> du fichier <a class="el" href="vec4_8c_source.html">vec4.c</a>.</p>
+
+</div>
+</div>
+<a id="a7873e4308363cc10ef0690bbc38d2b85" name="a7873e4308363cc10ef0690bbc38d2b85"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7873e4308363cc10ef0690bbc38d2b85">&#9670;&#160;</a></span>vec4_add_scal_in()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void vec4_add_scal_in </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structVec4.html">Vec4</a> *</td>          <td class="paramname"><span class="paramname"><em>u</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>l</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="vec4_8c_source.html#l00086">86</a> du fichier <a class="el" href="vec4_8c_source.html">vec4.c</a>.</p>
+
+</div>
+</div>
+<a id="a4c0df36547fb4c3e5b75967bab5f4353" name="a4c0df36547fb4c3e5b75967bab5f4353"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c0df36547fb4c3e5b75967bab5f4353">&#9670;&#160;</a></span>vec4_cross()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structVec4.html">Vec4</a> vec4_cross </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structVec4.html">Vec4</a></td>          <td class="paramname"><span class="paramname"><em>u</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structVec4.html">Vec4</a></td>          <td class="paramname"><span class="paramname"><em>v</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af8d3e43092732faeac6f1598283bd03b" name="af8d3e43092732faeac6f1598283bd03b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af8d3e43092732faeac6f1598283bd03b">&#9670;&#160;</a></span>vec4_dist()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float vec4_dist </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structVec4.html">Vec4</a></td>          <td class="paramname"><span class="paramname"><em>u</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structVec4.html">Vec4</a></td>          <td class="paramname"><span class="paramname"><em>v</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="vec4_8c_source.html#l00147">147</a> du fichier <a class="el" href="vec4_8c_source.html">vec4.c</a>.</p>
+
+</div>
+</div>
+<a id="a791acd72c4ce3831a47af191dfb01812" name="a791acd72c4ce3831a47af191dfb01812"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a791acd72c4ce3831a47af191dfb01812">&#9670;&#160;</a></span>vec4_dist2()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float vec4_dist2 </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structVec4.html">Vec4</a></td>          <td class="paramname"><span class="paramname"><em>u</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structVec4.html">Vec4</a></td>          <td class="paramname"><span class="paramname"><em>v</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="vec4_8c_source.html#l00152">152</a> du fichier <a class="el" href="vec4_8c_source.html">vec4.c</a>.</p>
+
+</div>
+</div>
+<a id="a936585707b7d3e3bd992530ed96c6759" name="a936585707b7d3e3bd992530ed96c6759"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a936585707b7d3e3bd992530ed96c6759">&#9670;&#160;</a></span>vec4_dot()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float vec4_dot </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structVec4.html">Vec4</a></td>          <td class="paramname"><span class="paramname"><em>u</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structVec4.html">Vec4</a></td>          <td class="paramname"><span class="paramname"><em>v</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="vec4_8c_source.html#l00126">126</a> du fichier <a class="el" href="vec4_8c_source.html">vec4.c</a>.</p>
+
+</div>
+</div>
+<a id="aec571b20a4ed683fba9447984871376f" name="aec571b20a4ed683fba9447984871376f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec571b20a4ed683fba9447984871376f">&#9670;&#160;</a></span>vec4_len()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float vec4_len </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structVec4.html">Vec4</a></td>          <td class="paramname"><span class="paramname"><em>u</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="vec4_8c_source.html#l00134">134</a> du fichier <a class="el" href="vec4_8c_source.html">vec4.c</a>.</p>
+
+</div>
+</div>
+<a id="ad6719ea836cbd971ac68b8bcca07b8bb" name="ad6719ea836cbd971ac68b8bcca07b8bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6719ea836cbd971ac68b8bcca07b8bb">&#9670;&#160;</a></span>vec4_len2()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float vec4_len2 </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structVec4.html">Vec4</a></td>          <td class="paramname"><span class="paramname"><em>u</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="vec4_8c_source.html#l00139">139</a> du fichier <a class="el" href="vec4_8c_source.html">vec4.c</a>.</p>
+
+</div>
+</div>
+<a id="a875ec32c5f101da224cb973856adfe9a" name="a875ec32c5f101da224cb973856adfe9a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a875ec32c5f101da224cb973856adfe9a">&#9670;&#160;</a></span>vec4_mult_scal()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structVec4.html">Vec4</a> vec4_mult_scal </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structVec4.html">Vec4</a></td>          <td class="paramname"><span class="paramname"><em>u</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>l</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="vec4_8c_source.html#l00049">49</a> du fichier <a class="el" href="vec4_8c_source.html">vec4.c</a>.</p>
+
+</div>
+</div>
+<a id="a463f0b1c6d90675ccc1f2bb513f10abc" name="a463f0b1c6d90675ccc1f2bb513f10abc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a463f0b1c6d90675ccc1f2bb513f10abc">&#9670;&#160;</a></span>vec4_mult_scal_in()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void vec4_mult_scal_in </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structVec4.html">Vec4</a> *</td>          <td class="paramname"><span class="paramname"><em>u</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>l</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="vec4_8c_source.html#l00102">102</a> du fichier <a class="el" href="vec4_8c_source.html">vec4.c</a>.</p>
+
+</div>
+</div>
+<a id="a2b1fdfd908349a5508b83208c63079cc" name="a2b1fdfd908349a5508b83208c63079cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b1fdfd908349a5508b83208c63079cc">&#9670;&#160;</a></span>vec4_norm()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structVec4.html">Vec4</a> vec4_norm </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structVec4.html">Vec4</a></td>          <td class="paramname"><span class="paramname"><em>u</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="vec4_8c_source.html#l00060">60</a> du fichier <a class="el" href="vec4_8c_source.html">vec4.c</a>.</p>
+
+</div>
+</div>
+<a id="aa7ca52edf96409e3b8da79f70e088021" name="aa7ca52edf96409e3b8da79f70e088021"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7ca52edf96409e3b8da79f70e088021">&#9670;&#160;</a></span>vec4_norm_in()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void vec4_norm_in </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structVec4.html">Vec4</a> *</td>          <td class="paramname"><span class="paramname"><em>u</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="vec4_8c_source.html#l00110">110</a> du fichier <a class="el" href="vec4_8c_source.html">vec4.c</a>.</p>
+
+</div>
+</div>
+<a id="ae4230fd86f9ee4681ed17fa3378cd01a" name="ae4230fd86f9ee4681ed17fa3378cd01a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4230fd86f9ee4681ed17fa3378cd01a">&#9670;&#160;</a></span>vec4_sub()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structVec4.html">Vec4</a> vec4_sub </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structVec4.html">Vec4</a></td>          <td class="paramname"><span class="paramname"><em>u</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structVec4.html">Vec4</a></td>          <td class="paramname"><span class="paramname"><em>v</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="vec4_8c_source.html#l00016">16</a> du fichier <a class="el" href="vec4_8c_source.html">vec4.c</a>.</p>
+
+</div>
+</div>
+<a id="a510d02802e7b7d4b843d1a06b78d1edd" name="a510d02802e7b7d4b843d1a06b78d1edd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a510d02802e7b7d4b843d1a06b78d1edd">&#9670;&#160;</a></span>vec4_sub_in()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void vec4_sub_in </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structVec4.html">Vec4</a> *</td>          <td class="paramname"><span class="paramname"><em>u</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structVec4.html">Vec4</a></td>          <td class="paramname"><span class="paramname"><em>v</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="vec4_8c_source.html#l00078">78</a> du fichier <a class="el" href="vec4_8c_source.html">vec4.c</a>.</p>
+
+</div>
+</div>
+<a id="a4482b48ae808cb5b06f3cb44fd7ad860" name="a4482b48ae808cb5b06f3cb44fd7ad860"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4482b48ae808cb5b06f3cb44fd7ad860">&#9670;&#160;</a></span>vec4_sub_scal()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structVec4.html">Vec4</a> vec4_sub_scal </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structVec4.html">Vec4</a></td>          <td class="paramname"><span class="paramname"><em>u</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>l</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="vec4_8c_source.html#l00038">38</a> du fichier <a class="el" href="vec4_8c_source.html">vec4.c</a>.</p>
+
+</div>
+</div>
+<a id="a45d058cbecb5e37ac770b3a69ce62ca8" name="a45d058cbecb5e37ac770b3a69ce62ca8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45d058cbecb5e37ac770b3a69ce62ca8">&#9670;&#160;</a></span>vec4_sub_scal_in()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void vec4_sub_scal_in </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structVec4.html">Vec4</a> *</td>          <td class="paramname"><span class="paramname"><em>u</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>l</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="vec4_8c_source.html#l00094">94</a> du fichier <a class="el" href="vec4_8c_source.html">vec4.c</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_758d8e9166e39e682af4fe71d4574a53.html">FEURcraft</a></li><li class="navelem"><a href="dir_10b468d1c052a6ef64c2aa4aa778b09b.html">math</a></li><li class="navelem"><a href="dir_a4599a2edce88d11bff3d12b5f401d5d.html">include</a></li><li class="navelem"><a href="vec4_8h.html">vec4.h</a></li>
+    <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

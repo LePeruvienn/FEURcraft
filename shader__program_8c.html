@@ -1,0 +1,551 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>FEURcraft: Référence du fichier FEURcraft/graphic/src/shader_program.c</title>
+<link rel="icon" href="FEURcraft.png" type="image/x-icon" />
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="FEURcraft.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">FEURcraft<span id="projectnumber">&#160;0.0.1</span>
+   </div>
+   <div id="projectbrief">Moteur Voxel.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Recherche',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('shader__program_8c.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Chargement...</div>
+<div class="SRStatus" id="Searching">Recherche...</div>
+<div class="SRStatus" id="NoMatches">Aucune correspondance</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Référence du fichier shader_program.c</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="shader__program_8h_source.html">shader_program.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="shader_8h_source.html">shader.h</a>&quot;</code><br />
+<code>#include &quot;glad/glad.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="gl__debug_8h_source.html">gl_debug.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="logger_8h_source.html">logger.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="error__checker_8h_source.html">error_checker.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="call__once_8h_source.html">call_once.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Graphe des dépendances par inclusion de shader_program.c:</div>
+<div class="dyncontent">
+<div class="center"><img src="shader__program_8c__incl.png" border="0" usemap="#aFEURcraft_2graphic_2src_2shader__program_8c" loading="lazy" alt=""/></div>
+<map name="aFEURcraft_2graphic_2src_2shader__program_8c" id="aFEURcraft_2graphic_2src_2shader__program_8c">
+<area shape="rect" title=" " alt="" coords="583,5,735,44"/>
+<area shape="rect" href="shader__program_8h.html" title=" " alt="" coords="284,92,410,117"/>
+<area shape="poly" title=" " alt="" coords="584,47,410,90,408,85,583,42"/>
+<area shape="rect" href="shader_8h.html" title=" " alt="" coords="451,165,523,189"/>
+<area shape="poly" title=" " alt="" coords="598,47,559,66,524,94,506,121,495,151,490,149,501,119,520,90,556,62,596,42"/>
+<area shape="rect" title=" " alt="" coords="530,237,614,262"/>
+<area shape="poly" title=" " alt="" coords="663,44,659,111,651,152,636,191,621,212,603,229,599,226,617,208,631,188,646,150,654,110,657,44"/>
+<area shape="rect" href="gl__debug_8h.html" title=" " alt="" coords="697,92,781,117"/>
+<area shape="poly" title=" " alt="" coords="680,43,718,79,714,83,677,47"/>
+<area shape="rect" href="logger_8h.html" title="Ficher fournissant des macro de log afin d&#39;afficher des messages de déboggage dans la console." alt="" coords="848,165,915,189"/>
+<area shape="poly" title=" " alt="" coords="736,32,793,41,850,53,898,69,916,79,929,90,935,107,932,125,909,155,905,152,927,122,930,107,925,94,913,84,896,74,848,58,792,46,735,37"/>
+<area shape="rect" href="error__checker_8h.html" title=" " alt="" coords="805,92,916,117"/>
+<area shape="poly" title=" " alt="" coords="709,42,817,84,815,88,707,47"/>
+<area shape="rect" href="call__once_8h.html" title=" " alt="" coords="534,92,621,117"/>
+<area shape="poly" title=" " alt="" coords="641,47,603,83,599,79,637,43"/>
+<area shape="poly" title=" " alt="" coords="371,115,451,155,449,160,369,120"/>
+<area shape="poly" title=" " alt="" coords="359,115,394,150,440,187,483,211,525,229,523,234,481,215,438,192,390,154,355,119"/>
+<area shape="rect" href="vec2_8h.html" title=" " alt="" coords="317,165,377,189"/>
+<area shape="poly" title=" " alt="" coords="350,117,350,149,344,149,344,117"/>
+<area shape="rect" href="vec3_8h.html" title=" " alt="" coords="176,237,235,262"/>
+<area shape="poly" title=" " alt="" coords="290,120,249,137,231,150,216,166,205,193,204,222,199,222,200,192,211,163,227,146,246,133,287,115"/>
+<area shape="rect" href="vec4_8h.html" title=" " alt="" coords="5,237,65,262"/>
+<area shape="poly" title=" " alt="" coords="285,116,167,136,115,150,79,167,57,193,44,224,39,221,53,190,76,163,113,145,166,131,284,111"/>
+<area shape="rect" href="mat4_8h.html" title=" " alt="" coords="90,165,151,189"/>
+<area shape="poly" title=" " alt="" coords="310,120,167,164,165,159,309,115"/>
+<area shape="rect" title=" " alt="" coords="225,165,293,189"/>
+<area shape="poly" title=" " alt="" coords="334,119,287,157,284,153,331,115"/>
+<area shape="rect" title=" " alt="" coords="547,165,622,189"/>
+<area shape="poly" title=" " alt="" coords="387,115,533,158,532,163,385,120"/>
+<area shape="poly" title=" " alt="" coords="503,188,549,225,545,230,499,192"/>
+<area shape="poly" title=" " alt="" coords="136,188,182,225,179,230,133,192"/>
+<area shape="poly" title=" " alt="" coords="108,192,62,230,59,225,105,188"/>
+<area shape="rect" title=" " alt="" coords="89,237,152,262"/>
+<area shape="poly" title=" " alt="" coords="123,190,123,222,118,222,118,190"/>
+<area shape="poly" title=" " alt="" coords="735,119,713,153,679,191,648,214,615,233,613,228,645,210,676,187,709,150,730,116"/>
+<area shape="poly" title=" " alt="" coords="764,115,846,155,843,160,761,120"/>
+<area shape="rect" title=" " alt="" coords="771,237,835,262"/>
+<area shape="poly" title=" " alt="" coords="746,116,794,222,789,224,742,118"/>
+<area shape="rect" title=" " alt="" coords="858,237,918,262"/>
+<area shape="poly" title=" " alt="" coords="885,190,888,222,883,222,880,190"/>
+<area shape="poly" title=" " alt="" coords="870,192,829,229,825,225,867,188"/>
+<area shape="poly" title=" " alt="" coords="866,116,876,149,871,151,861,118"/>
+<area shape="poly" title=" " alt="" coords="858,118,839,166,816,224,811,222,834,164,853,116"/>
+<area shape="poly" title=" " alt="" coords="581,117,584,149,579,149,576,117"/>
+</map>
+</div>
+</div>
+<p><a href="shader__program_8c_source.html">Aller au code source de ce fichier.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr class="memitem:af0a5ba829a58f6fcbcfd4f39f2148e98" id="r_af0a5ba829a58f6fcbcfd4f39f2148e98"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structShaderProgram.html">ShaderProgram</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af0a5ba829a58f6fcbcfd4f39f2148e98">shader_program_create</a> ()</td></tr>
+<tr class="memitem:ada576ac950681675e10260b8cabbcdad" id="r_ada576ac950681675e10260b8cabbcdad"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ada576ac950681675e10260b8cabbcdad">shader_program_free</a> (<a class="el" href="structShaderProgram.html">ShaderProgram</a> *program)</td></tr>
+<tr class="memitem:a4a0584229238d95a556691f701e1d843" id="r_a4a0584229238d95a556691f701e1d843"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4a0584229238d95a556691f701e1d843">shader_program_attach</a> (<a class="el" href="structShaderProgram.html">ShaderProgram</a> *program, <a class="el" href="structShader.html">Shader</a> *shader)</td></tr>
+<tr class="memitem:aa0592c18da7a453499758c0f801e6889" id="r_aa0592c18da7a453499758c0f801e6889"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa0592c18da7a453499758c0f801e6889">shader_program_detach</a> (<a class="el" href="structShaderProgram.html">ShaderProgram</a> *program, <a class="el" href="structShader.html">Shader</a> *shader)</td></tr>
+<tr class="memitem:ac32d14e8aff31a15b9f571737d237393" id="r_ac32d14e8aff31a15b9f571737d237393"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac32d14e8aff31a15b9f571737d237393">shader_program_detach_all</a> (<a class="el" href="structShaderProgram.html">ShaderProgram</a> *program)</td></tr>
+<tr class="memitem:aabf77df0e415fa7cfa619923aaa51481" id="r_aabf77df0e415fa7cfa619923aaa51481"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aabf77df0e415fa7cfa619923aaa51481">shader_program_link</a> (<a class="el" href="structShaderProgram.html">ShaderProgram</a> *program)</td></tr>
+<tr class="memitem:ab4f62b77add6a9fed854e334c676a17f" id="r_ab4f62b77add6a9fed854e334c676a17f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab4f62b77add6a9fed854e334c676a17f">shader_program_use</a> (<a class="el" href="structShaderProgram.html">ShaderProgram</a> *program)</td></tr>
+<tr class="memitem:a1d0b0838aae704d7f4a4280f46054914" id="r_a1d0b0838aae704d7f4a4280f46054914"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1d0b0838aae704d7f4a4280f46054914">shader_program_unbind</a> ()</td></tr>
+<tr class="memitem:a6bb76c42ce4b849dfdb2f52a1a27ad77" id="r_a6bb76c42ce4b849dfdb2f52a1a27ad77"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6bb76c42ce4b849dfdb2f52a1a27ad77">shader_program_set_bool</a> (<a class="el" href="structShaderProgram.html">ShaderProgram</a> *program, const char *uniform, bool value)</td></tr>
+<tr class="memitem:a9add432e41cc2049bfff99eea0338d6c" id="r_a9add432e41cc2049bfff99eea0338d6c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9add432e41cc2049bfff99eea0338d6c">shader_program_set_float</a> (<a class="el" href="structShaderProgram.html">ShaderProgram</a> *program, const char *uniform, float value)</td></tr>
+<tr class="memitem:a0c01ffb93234eabee4e1128ac803f68f" id="r_a0c01ffb93234eabee4e1128ac803f68f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0c01ffb93234eabee4e1128ac803f68f">shader_program_set_vec2</a> (<a class="el" href="structShaderProgram.html">ShaderProgram</a> *program, const char *uniform, <a class="el" href="structVec2.html">Vec2</a> vec)</td></tr>
+<tr class="memitem:a8c8887f7e9fbb465fb122701dfdf47ae" id="r_a8c8887f7e9fbb465fb122701dfdf47ae"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8c8887f7e9fbb465fb122701dfdf47ae">shader_program_set_vec3</a> (<a class="el" href="structShaderProgram.html">ShaderProgram</a> *program, const char *uniform, <a class="el" href="structVec3.html">Vec3</a> vec)</td></tr>
+<tr class="memitem:a312853e0bc185062c4e868cda3495cad" id="r_a312853e0bc185062c4e868cda3495cad"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a312853e0bc185062c4e868cda3495cad">shader_program_set_vec4</a> (<a class="el" href="structShaderProgram.html">ShaderProgram</a> *program, const char *uniform, <a class="el" href="structVec4.html">Vec4</a> vec)</td></tr>
+<tr class="memitem:a1e95af8be73386317aa6d32bab053192" id="r_a1e95af8be73386317aa6d32bab053192"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1e95af8be73386317aa6d32bab053192">shader_program_set_mat4</a> (<a class="el" href="structShaderProgram.html">ShaderProgram</a> *program, const char *uniform, <a class="el" href="structMat4.html">Mat4</a> mat)</td></tr>
+<tr class="memitem:a225534c16af0f1e13eb9ed298cfc44e7" id="r_a225534c16af0f1e13eb9ed298cfc44e7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a225534c16af0f1e13eb9ed298cfc44e7">shader_program_set_texture_unit</a> (<a class="el" href="structShaderProgram.html">ShaderProgram</a> *program, const char *uniform, unsigned int unit)</td></tr>
+</table>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentation des fonctions</h2>
+<a id="a4a0584229238d95a556691f701e1d843" name="a4a0584229238d95a556691f701e1d843"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a0584229238d95a556691f701e1d843">&#9670;&#160;</a></span>shader_program_attach()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void shader_program_attach </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structShaderProgram.html">ShaderProgram</a> *</td>          <td class="paramname"><span class="paramname"><em>program</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structShader.html">Shader</a> *</td>          <td class="paramname"><span class="paramname"><em>shader</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="shader__program_8c_source.html#l00075">75</a> du fichier <a class="el" href="shader__program_8c_source.html">shader_program.c</a>.</p>
+
+</div>
+</div>
+<a id="af0a5ba829a58f6fcbcfd4f39f2148e98" name="af0a5ba829a58f6fcbcfd4f39f2148e98"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af0a5ba829a58f6fcbcfd4f39f2148e98">&#9670;&#160;</a></span>shader_program_create()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structShaderProgram.html">ShaderProgram</a> * shader_program_create </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="shader__program_8c_source.html#l00027">27</a> du fichier <a class="el" href="shader__program_8c_source.html">shader_program.c</a>.</p>
+
+</div>
+</div>
+<a id="aa0592c18da7a453499758c0f801e6889" name="aa0592c18da7a453499758c0f801e6889"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa0592c18da7a453499758c0f801e6889">&#9670;&#160;</a></span>shader_program_detach()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void shader_program_detach </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structShaderProgram.html">ShaderProgram</a> *</td>          <td class="paramname"><span class="paramname"><em>program</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structShader.html">Shader</a> *</td>          <td class="paramname"><span class="paramname"><em>shader</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="shader__program_8c_source.html#l00106">106</a> du fichier <a class="el" href="shader__program_8c_source.html">shader_program.c</a>.</p>
+
+</div>
+</div>
+<a id="ac32d14e8aff31a15b9f571737d237393" name="ac32d14e8aff31a15b9f571737d237393"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac32d14e8aff31a15b9f571737d237393">&#9670;&#160;</a></span>shader_program_detach_all()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void shader_program_detach_all </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structShaderProgram.html">ShaderProgram</a> *</td>          <td class="paramname"><span class="paramname"><em>program</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="shader__program_8c_source.html#l00130">130</a> du fichier <a class="el" href="shader__program_8c_source.html">shader_program.c</a>.</p>
+
+</div>
+</div>
+<a id="ada576ac950681675e10260b8cabbcdad" name="ada576ac950681675e10260b8cabbcdad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada576ac950681675e10260b8cabbcdad">&#9670;&#160;</a></span>shader_program_free()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void shader_program_free </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structShaderProgram.html">ShaderProgram</a> *</td>          <td class="paramname"><span class="paramname"><em>program</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="shader__program_8c_source.html#l00057">57</a> du fichier <a class="el" href="shader__program_8c_source.html">shader_program.c</a>.</p>
+
+</div>
+</div>
+<a id="aabf77df0e415fa7cfa619923aaa51481" name="aabf77df0e415fa7cfa619923aaa51481"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aabf77df0e415fa7cfa619923aaa51481">&#9670;&#160;</a></span>shader_program_link()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void shader_program_link </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structShaderProgram.html">ShaderProgram</a> *</td>          <td class="paramname"><span class="paramname"><em>program</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="shader__program_8c_source.html#l00144">144</a> du fichier <a class="el" href="shader__program_8c_source.html">shader_program.c</a>.</p>
+
+</div>
+</div>
+<a id="a6bb76c42ce4b849dfdb2f52a1a27ad77" name="a6bb76c42ce4b849dfdb2f52a1a27ad77"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6bb76c42ce4b849dfdb2f52a1a27ad77">&#9670;&#160;</a></span>shader_program_set_bool()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void shader_program_set_bool </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structShaderProgram.html">ShaderProgram</a> *</td>          <td class="paramname"><span class="paramname"><em>program</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>uniform</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>value</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="shader__program_8c_source.html#l00194">194</a> du fichier <a class="el" href="shader__program_8c_source.html">shader_program.c</a>.</p>
+
+</div>
+</div>
+<a id="a9add432e41cc2049bfff99eea0338d6c" name="a9add432e41cc2049bfff99eea0338d6c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9add432e41cc2049bfff99eea0338d6c">&#9670;&#160;</a></span>shader_program_set_float()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void shader_program_set_float </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structShaderProgram.html">ShaderProgram</a> *</td>          <td class="paramname"><span class="paramname"><em>program</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>uniform</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>value</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="shader__program_8c_source.html#l00212">212</a> du fichier <a class="el" href="shader__program_8c_source.html">shader_program.c</a>.</p>
+
+</div>
+</div>
+<a id="a1e95af8be73386317aa6d32bab053192" name="a1e95af8be73386317aa6d32bab053192"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e95af8be73386317aa6d32bab053192">&#9670;&#160;</a></span>shader_program_set_mat4()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void shader_program_set_mat4 </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structShaderProgram.html">ShaderProgram</a> *</td>          <td class="paramname"><span class="paramname"><em>program</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>uniform</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structMat4.html">Mat4</a></td>          <td class="paramname"><span class="paramname"><em>mat</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="shader__program_8c_source.html#l00284">284</a> du fichier <a class="el" href="shader__program_8c_source.html">shader_program.c</a>.</p>
+
+</div>
+</div>
+<a id="a225534c16af0f1e13eb9ed298cfc44e7" name="a225534c16af0f1e13eb9ed298cfc44e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a225534c16af0f1e13eb9ed298cfc44e7">&#9670;&#160;</a></span>shader_program_set_texture_unit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void shader_program_set_texture_unit </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structShaderProgram.html">ShaderProgram</a> *</td>          <td class="paramname"><span class="paramname"><em>program</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>uniform</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int</td>          <td class="paramname"><span class="paramname"><em>unit</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="shader__program_8c_source.html#l00302">302</a> du fichier <a class="el" href="shader__program_8c_source.html">shader_program.c</a>.</p>
+
+</div>
+</div>
+<a id="a0c01ffb93234eabee4e1128ac803f68f" name="a0c01ffb93234eabee4e1128ac803f68f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c01ffb93234eabee4e1128ac803f68f">&#9670;&#160;</a></span>shader_program_set_vec2()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void shader_program_set_vec2 </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structShaderProgram.html">ShaderProgram</a> *</td>          <td class="paramname"><span class="paramname"><em>program</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>uniform</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structVec2.html">Vec2</a></td>          <td class="paramname"><span class="paramname"><em>vec</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="shader__program_8c_source.html#l00230">230</a> du fichier <a class="el" href="shader__program_8c_source.html">shader_program.c</a>.</p>
+
+</div>
+</div>
+<a id="a8c8887f7e9fbb465fb122701dfdf47ae" name="a8c8887f7e9fbb465fb122701dfdf47ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c8887f7e9fbb465fb122701dfdf47ae">&#9670;&#160;</a></span>shader_program_set_vec3()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void shader_program_set_vec3 </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structShaderProgram.html">ShaderProgram</a> *</td>          <td class="paramname"><span class="paramname"><em>program</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>uniform</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structVec3.html">Vec3</a></td>          <td class="paramname"><span class="paramname"><em>vec</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="shader__program_8c_source.html#l00248">248</a> du fichier <a class="el" href="shader__program_8c_source.html">shader_program.c</a>.</p>
+
+</div>
+</div>
+<a id="a312853e0bc185062c4e868cda3495cad" name="a312853e0bc185062c4e868cda3495cad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a312853e0bc185062c4e868cda3495cad">&#9670;&#160;</a></span>shader_program_set_vec4()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void shader_program_set_vec4 </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structShaderProgram.html">ShaderProgram</a> *</td>          <td class="paramname"><span class="paramname"><em>program</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>uniform</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structVec4.html">Vec4</a></td>          <td class="paramname"><span class="paramname"><em>vec</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="shader__program_8c_source.html#l00266">266</a> du fichier <a class="el" href="shader__program_8c_source.html">shader_program.c</a>.</p>
+
+</div>
+</div>
+<a id="a1d0b0838aae704d7f4a4280f46054914" name="a1d0b0838aae704d7f4a4280f46054914"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d0b0838aae704d7f4a4280f46054914">&#9670;&#160;</a></span>shader_program_unbind()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void shader_program_unbind </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="shader__program_8c_source.html#l00177">177</a> du fichier <a class="el" href="shader__program_8c_source.html">shader_program.c</a>.</p>
+
+</div>
+</div>
+<a id="ab4f62b77add6a9fed854e334c676a17f" name="ab4f62b77add6a9fed854e334c676a17f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab4f62b77add6a9fed854e334c676a17f">&#9670;&#160;</a></span>shader_program_use()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void shader_program_use </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structShaderProgram.html">ShaderProgram</a> *</td>          <td class="paramname"><span class="paramname"><em>program</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="shader__program_8c_source.html#l00167">167</a> du fichier <a class="el" href="shader__program_8c_source.html">shader_program.c</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_758d8e9166e39e682af4fe71d4574a53.html">FEURcraft</a></li><li class="navelem"><a href="dir_d563573f48eefcd0f66954300c445435.html">graphic</a></li><li class="navelem"><a href="dir_aa28f9dfa0290fc45f1ab57c4462e698.html">src</a></li><li class="navelem"><a href="shader__program_8c.html">shader_program.c</a></li>
+    <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

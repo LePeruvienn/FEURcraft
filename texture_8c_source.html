@@ -1,0 +1,267 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>FEURcraft:  Fichier source de FEURcraft/graphic/src/texture.c</title>
+<link rel="icon" href="FEURcraft.png" type="image/x-icon" />
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="FEURcraft.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">FEURcraft<span id="projectnumber">&#160;0.0.1</span>
+   </div>
+   <div id="projectbrief">Moteur Voxel.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Recherche',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('texture_8c_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Chargement...</div>
+<div class="SRStatus" id="Searching">Recherche...</div>
+<div class="SRStatus" id="NoMatches">Aucune correspondance</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">texture.c</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="texture_8c.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="texture_8h.html">texture.h</a>&quot;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;<a class="code" href="image_8h.html">image.h</a>&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="logger_8h.html">logger.h</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="gl__debug_8h.html">gl_debug.h</a>&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="error__checker_8h.html">error_checker.h</a>&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;glad/glad.h&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;stdbool.h&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="foldopen" id="foldopen00013" data-start="{" data-end="}">
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="texture_8h.html#a0fcb309ad9f79b49446995dfbc7fc29d">   13</a></span><a class="code hl_struct" href="structTexture.html">Texture</a>* <a class="code hl_function" href="texture_8c.html#a0fcb309ad9f79b49446995dfbc7fc29d">create_texture</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>* data,</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>                        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> width, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> height)</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>{</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <a class="code hl_struct" href="structTexture.html">Texture</a>* t = malloc(<span class="keyword">sizeof</span>(<span class="keyword">struct</span> <a class="code hl_struct" href="structTexture.html">Texture</a>));</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <a class="code hl_define" href="error__checker_8h.html#a9a28c258acba3d6d25cd59ca7f98f256">CHECK_IS_NULL_RET</a>(t, <span class="stringliteral">&quot;Failed to malloc Texture.&quot;</span>, NULL);</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    t-&gt;<a class="code hl_variable" href="structTexture.html#af848138d72c1fc995ab414a71ab10d47">id</a> = 0;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    t-&gt;<a class="code hl_variable" href="structTexture.html#a3088e4128006adb188c020741079afe7">type</a> = GL_TEXTURE_2D;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    t-&gt;<a class="code hl_variable" href="structTexture.html#a5d81cb05821b158ded3d5a46a4cd8f5a">width</a> = 0;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    t-&gt;<a class="code hl_variable" href="structTexture.html#ab4b01ae73439cbcc210a5977e227a880">height</a> = 0;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <a class="code hl_define" href="gl__debug_8h.html#a36f52f88cf6af370013ffedb8df4c884">GL_CALL</a>(glGenTextures(1, &amp;t-&gt;<a class="code hl_variable" href="structTexture.html#af848138d72c1fc995ab414a71ab10d47">id</a>));</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <a class="code hl_define" href="gl__debug_8h.html#a36f52f88cf6af370013ffedb8df4c884">GL_CALL</a>(glBindTexture(t-&gt;<a class="code hl_variable" href="structTexture.html#a3088e4128006adb188c020741079afe7">type</a>, t-&gt;<a class="code hl_variable" href="structTexture.html#af848138d72c1fc995ab414a71ab10d47">id</a>));</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    t-&gt;<a class="code hl_variable" href="structTexture.html#a5d81cb05821b158ded3d5a46a4cd8f5a">width</a> = width;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    t-&gt;<a class="code hl_variable" href="structTexture.html#ab4b01ae73439cbcc210a5977e227a880">height</a> = height;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <a class="code hl_define" href="gl__debug_8h.html#a36f52f88cf6af370013ffedb8df4c884">GL_CALL</a>(glTexImage2D(</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        GL_TEXTURE_2D,</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        0,</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        GL_RGBA,</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        t-&gt;<a class="code hl_variable" href="structTexture.html#a5d81cb05821b158ded3d5a46a4cd8f5a">width</a>,</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        t-&gt;<a class="code hl_variable" href="structTexture.html#ab4b01ae73439cbcc210a5977e227a880">height</a>,</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        0,</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        GL_RGBA,</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        GL_UNSIGNED_BYTE,</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        data</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    ));</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <a class="code hl_define" href="logger_8h.html#ae69d735f8291bd2aff230fe6ffb4d4b3">LOG_INFO</a>(<span class="stringliteral">&quot;Loaded an image of %dx%d pixels.&quot;</span>, t-&gt;<a class="code hl_variable" href="structTexture.html#a5d81cb05821b158ded3d5a46a4cd8f5a">width</a>, t-&gt;<a class="code hl_variable" href="structTexture.html#ab4b01ae73439cbcc210a5977e227a880">height</a>);</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    glBindTexture(t-&gt;<a class="code hl_variable" href="structTexture.html#a3088e4128006adb188c020741079afe7">type</a>, 0);</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keywordflow">return</span> t;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>}</div>
+</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="foldopen" id="foldopen00053" data-start="{" data-end="}">
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="texture_8h.html#a6b1bd7b1c338c1a6cc0fe76a59a028f9">   53</a></span><a class="code hl_struct" href="structTexture.html">Texture</a>* <a class="code hl_function" href="texture_8c.html#a6b1bd7b1c338c1a6cc0fe76a59a028f9">create_texture_from_image</a>(<a class="code hl_struct" href="structImage.html">Image</a>* img)</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>{</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <a class="code hl_define" href="error__checker_8h.html#af9c773904085696d7fc49315b0cb4276">CHECK_COND_RET</a>(img-&gt;<a class="code hl_variable" href="structImage.html#a70bfff5d2e3f8ab6537bb032290fde99">channels</a> == 4,</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        <span class="stringliteral">&quot;Image that are not RGBA (4 channels) are not supported.&quot;</span>, NULL);</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="texture_8c.html#a0fcb309ad9f79b49446995dfbc7fc29d">create_texture</a>(img-&gt;<a class="code hl_variable" href="structImage.html#a22b726c8306f78b5022e0670ddb0937f">data</a>, img-&gt;<a class="code hl_variable" href="structImage.html#aaa2cc744ff3969ac6cb63ca05a40e5f6">width</a>, img-&gt;<a class="code hl_variable" href="structImage.html#a9f4e463326771ddb955ee17032a78d77">height</a>);</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>}</div>
+</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="foldopen" id="foldopen00061" data-start="{" data-end="}">
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="texture_8h.html#a9930de07a8f8eb02aeb1bbbdc3daa871">   61</a></span><a class="code hl_struct" href="structTexture.html">Texture</a>* <a class="code hl_function" href="texture_8c.html#a561df14d6eb5268465c7a824cc7cc22e">create_texture_from_file</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* filepath)</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>{</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <a class="code hl_struct" href="structImage.html">Image</a>* img = <a class="code hl_function" href="image_8h.html#a1388b72beeeb4b9b0a6f267ac05d0139">image_create_and_load</a>(filepath);</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <a class="code hl_define" href="error__checker_8h.html#a9a28c258acba3d6d25cd59ca7f98f256">CHECK_IS_NULL_RET</a>(img, <span class="stringliteral">&quot;Failed to load texture file.&quot;</span>, NULL)</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <a class="code hl_struct" href="structTexture.html">Texture</a>* texture = <a class="code hl_function" href="texture_8c.html#a6b1bd7b1c338c1a6cc0fe76a59a028f9">create_texture_from_image</a>(img);</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <a class="code hl_function" href="image_8h.html#a712dc87c6c9fed0f3bf082bce38b40fb">image_free</a>(img);</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="keywordflow">return</span> texture;</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>}</div>
+</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
+<div class="foldopen" id="foldopen00074" data-start="{" data-end="}">
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno"><a class="line" href="texture_8h.html#ab9054d91a4a2d902554354dfa636fdda">   74</a></span><a class="code hl_struct" href="structTexture.html">Texture</a>* <a class="code hl_function" href="texture_8c.html#ab9054d91a4a2d902554354dfa636fdda">create_texture_from_atlas</a>(<a class="code hl_struct" href="structAtlas.html">Atlas</a>* atlas)</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>{</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <a class="code hl_define" href="error__checker_8h.html#a9a28c258acba3d6d25cd59ca7f98f256">CHECK_IS_NULL_RET</a>(atlas,</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        <span class="stringliteral">&quot;Cannot create texture from a NULL Atlas&quot;</span>, NULL);</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    <a class="code hl_define" href="error__checker_8h.html#af9c773904085696d7fc49315b0cb4276">CHECK_COND_RET</a>(atlas-&gt;<a class="code hl_variable" href="structAtlas.html#a6c108a01f90dabb30ca05db4afbd1df2">channels</a> == 4,</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>            <span class="stringliteral">&quot;Atlas that are not RGBA (4 channels) are not supported&quot;</span>, NULL);</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="texture_8c.html#a0fcb309ad9f79b49446995dfbc7fc29d">create_texture</a>(atlas-&gt;<a class="code hl_variable" href="structAtlas.html#aeb428364a157c34d406bbd084f229958">data</a>, atlas-&gt;<a class="code hl_variable" href="structAtlas.html#a34e1714c38816d402b1181a61ea86683">width</a>, atlas-&gt;<a class="code hl_variable" href="structAtlas.html#a2d77e92eb40c1b330575e9ac46eedad0">height</a>);</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>}</div>
+</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
+<div class="foldopen" id="foldopen00085" data-start="{" data-end="}">
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno"><a class="line" href="texture_8h.html#a11c997359bd8e1942c8fcb4acffa7971">   85</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="texture_8c.html#a11c997359bd8e1942c8fcb4acffa7971">free_texture</a>(<a class="code hl_struct" href="structTexture.html">Texture</a>* t)</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>{</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    <a class="code hl_define" href="error__checker_8h.html#a9a28c258acba3d6d25cd59ca7f98f256">CHECK_IS_NULL_RET</a>(t, <span class="stringliteral">&quot;Cannot free a NULL texture.&quot;</span>, );</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    glDeleteTextures(1, &amp;t-&gt;<a class="code hl_variable" href="structTexture.html#af848138d72c1fc995ab414a71ab10d47">id</a>);</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    free(t);</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>}</div>
+</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
+<div class="foldopen" id="foldopen00093" data-start="{" data-end="}">
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno"><a class="line" href="texture_8h.html#a7fcb3693c1cc5a243227c428a453a2f2">   93</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="texture_8c.html#a7fcb3693c1cc5a243227c428a453a2f2">bind_texture</a>(<a class="code hl_struct" href="structTexture.html">Texture</a>* t, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> unit)</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>{</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    <a class="code hl_define" href="error__checker_8h.html#a9a28c258acba3d6d25cd59ca7f98f256">CHECK_IS_NULL_RET</a>(t, <span class="stringliteral">&quot;Cannot bind a NULL texture.&quot;</span>, );</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    glActiveTexture(GL_TEXTURE0 + unit);</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    <a class="code hl_define" href="gl__debug_8h.html#a36f52f88cf6af370013ffedb8df4c884">GL_CALL</a>(glBindTexture(t-&gt;<a class="code hl_variable" href="structTexture.html#a3088e4128006adb188c020741079afe7">type</a>, t-&gt;<a class="code hl_variable" href="structTexture.html#af848138d72c1fc995ab414a71ab10d47">id</a>));</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    glActiveTexture(GL_TEXTURE0);</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>}</div>
+</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
+<div class="foldopen" id="foldopen00103" data-start="{" data-end="}">
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno"><a class="line" href="texture_8h.html#a4a2590dd6f65352eb85ff1280db38f72">  103</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="texture_8c.html#a4a2590dd6f65352eb85ff1280db38f72">unbind_texture</a>(<a class="code hl_struct" href="structTexture.html">Texture</a>* t, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> unit)</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>{</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    <a class="code hl_define" href="error__checker_8h.html#a9a28c258acba3d6d25cd59ca7f98f256">CHECK_IS_NULL_RET</a>(t, <span class="stringliteral">&quot;Cannot unbind a NULL texture.&quot;</span>, );</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    glActiveTexture(GL_TEXTURE0 + unit);</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    <a class="code hl_define" href="gl__debug_8h.html#a36f52f88cf6af370013ffedb8df4c884">GL_CALL</a>(glBindTexture(t-&gt;<a class="code hl_variable" href="structTexture.html#a3088e4128006adb188c020741079afe7">type</a>, 0));</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    glActiveTexture(GL_TEXTURE0);</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>}</div>
+</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
+<div class="ttc" id="aerror__checker_8h_html"><div class="ttname"><a href="error__checker_8h.html">error_checker.h</a></div></div>
+<div class="ttc" id="aerror__checker_8h_html_a9a28c258acba3d6d25cd59ca7f98f256"><div class="ttname"><a href="error__checker_8h.html#a9a28c258acba3d6d25cd59ca7f98f256">CHECK_IS_NULL_RET</a></div><div class="ttdeci">#define CHECK_IS_NULL_RET(ptr, error_msg, ret)</div><div class="ttdef"><b>Definition</b> <a href="error__checker_8h_source.html#l00031">error_checker.h:31</a></div></div>
+<div class="ttc" id="aerror__checker_8h_html_af9c773904085696d7fc49315b0cb4276"><div class="ttname"><a href="error__checker_8h.html#af9c773904085696d7fc49315b0cb4276">CHECK_COND_RET</a></div><div class="ttdeci">#define CHECK_COND_RET(cond, error_msg, ret)</div><div class="ttdef"><b>Definition</b> <a href="error__checker_8h_source.html#l00017">error_checker.h:17</a></div></div>
+<div class="ttc" id="agl__debug_8h_html"><div class="ttname"><a href="gl__debug_8h.html">gl_debug.h</a></div></div>
+<div class="ttc" id="agl__debug_8h_html_a36f52f88cf6af370013ffedb8df4c884"><div class="ttname"><a href="gl__debug_8h.html#a36f52f88cf6af370013ffedb8df4c884">GL_CALL</a></div><div class="ttdeci">#define GL_CALL(func)</div><div class="ttdef"><b>Definition</b> <a href="gl__debug_8h_source.html#l00024">gl_debug.h:24</a></div></div>
+<div class="ttc" id="aimage_8h_html"><div class="ttname"><a href="image_8h.html">image.h</a></div></div>
+<div class="ttc" id="aimage_8h_html_a1388b72beeeb4b9b0a6f267ac05d0139"><div class="ttname"><a href="image_8h.html#a1388b72beeeb4b9b0a6f267ac05d0139">image_create_and_load</a></div><div class="ttdeci">Image * image_create_and_load(const char *filepath)</div><div class="ttdef"><b>Definition</b> <a href="image_8c_source.html#l00029">image.c:29</a></div></div>
+<div class="ttc" id="aimage_8h_html_a712dc87c6c9fed0f3bf082bce38b40fb"><div class="ttname"><a href="image_8h.html#a712dc87c6c9fed0f3bf082bce38b40fb">image_free</a></div><div class="ttdeci">void image_free(Image *img)</div><div class="ttdef"><b>Definition</b> <a href="image_8c_source.html#l00098">image.c:98</a></div></div>
+<div class="ttc" id="alogger_8h_html"><div class="ttname"><a href="logger_8h.html">logger.h</a></div><div class="ttdoc">Ficher fournissant des macro de log afin d&#39;afficher des messages de déboggage dans la console.</div></div>
+<div class="ttc" id="alogger_8h_html_ae69d735f8291bd2aff230fe6ffb4d4b3"><div class="ttname"><a href="logger_8h.html#ae69d735f8291bd2aff230fe6ffb4d4b3">LOG_INFO</a></div><div class="ttdeci">#define LOG_INFO(fmt,...)</div><div class="ttdef"><b>Definition</b> <a href="logger_8h_source.html#l00050">logger.h:50</a></div></div>
+<div class="ttc" id="astructAtlas_html"><div class="ttname"><a href="structAtlas.html">Atlas</a></div><div class="ttdef"><b>Definition</b> <a href="atlas_8h_source.html#l00022">atlas.h:23</a></div></div>
+<div class="ttc" id="astructAtlas_html_a2d77e92eb40c1b330575e9ac46eedad0"><div class="ttname"><a href="structAtlas.html#a2d77e92eb40c1b330575e9ac46eedad0">Atlas::height</a></div><div class="ttdeci">unsigned int height</div><div class="ttdef"><b>Definition</b> <a href="atlas_8h_source.html#l00025">atlas.h:25</a></div></div>
+<div class="ttc" id="astructAtlas_html_a34e1714c38816d402b1181a61ea86683"><div class="ttname"><a href="structAtlas.html#a34e1714c38816d402b1181a61ea86683">Atlas::width</a></div><div class="ttdeci">unsigned int width</div><div class="ttdef"><b>Definition</b> <a href="atlas_8h_source.html#l00024">atlas.h:24</a></div></div>
+<div class="ttc" id="astructAtlas_html_a6c108a01f90dabb30ca05db4afbd1df2"><div class="ttname"><a href="structAtlas.html#a6c108a01f90dabb30ca05db4afbd1df2">Atlas::channels</a></div><div class="ttdeci">unsigned int channels</div><div class="ttdef"><b>Definition</b> <a href="atlas_8h_source.html#l00026">atlas.h:26</a></div></div>
+<div class="ttc" id="astructAtlas_html_aeb428364a157c34d406bbd084f229958"><div class="ttname"><a href="structAtlas.html#aeb428364a157c34d406bbd084f229958">Atlas::data</a></div><div class="ttdeci">unsigned char * data</div><div class="ttdef"><b>Definition</b> <a href="atlas_8h_source.html#l00032">atlas.h:32</a></div></div>
+<div class="ttc" id="astructImage_html"><div class="ttname"><a href="structImage.html">Image</a></div><div class="ttdef"><b>Definition</b> <a href="image_8h_source.html#l00008">image.h:9</a></div></div>
+<div class="ttc" id="astructImage_html_a22b726c8306f78b5022e0670ddb0937f"><div class="ttname"><a href="structImage.html#a22b726c8306f78b5022e0670ddb0937f">Image::data</a></div><div class="ttdeci">unsigned char * data</div><div class="ttdef"><b>Definition</b> <a href="image_8h_source.html#l00012">image.h:12</a></div></div>
+<div class="ttc" id="astructImage_html_a70bfff5d2e3f8ab6537bb032290fde99"><div class="ttname"><a href="structImage.html#a70bfff5d2e3f8ab6537bb032290fde99">Image::channels</a></div><div class="ttdeci">unsigned int channels</div><div class="ttdef"><b>Definition</b> <a href="image_8h_source.html#l00014">image.h:14</a></div></div>
+<div class="ttc" id="astructImage_html_a9f4e463326771ddb955ee17032a78d77"><div class="ttname"><a href="structImage.html#a9f4e463326771ddb955ee17032a78d77">Image::height</a></div><div class="ttdeci">unsigned int height</div><div class="ttdef"><b>Definition</b> <a href="image_8h_source.html#l00016">image.h:16</a></div></div>
+<div class="ttc" id="astructImage_html_aaa2cc744ff3969ac6cb63ca05a40e5f6"><div class="ttname"><a href="structImage.html#aaa2cc744ff3969ac6cb63ca05a40e5f6">Image::width</a></div><div class="ttdeci">unsigned int width</div><div class="ttdef"><b>Definition</b> <a href="image_8h_source.html#l00015">image.h:15</a></div></div>
+<div class="ttc" id="astructTexture_html"><div class="ttname"><a href="structTexture.html">Texture</a></div><div class="ttdef"><b>Definition</b> <a href="texture_8h_source.html#l00023">texture.h:24</a></div></div>
+<div class="ttc" id="astructTexture_html_a3088e4128006adb188c020741079afe7"><div class="ttname"><a href="structTexture.html#a3088e4128006adb188c020741079afe7">Texture::type</a></div><div class="ttdeci">GLuint type</div><div class="ttdef"><b>Definition</b> <a href="texture_8h_source.html#l00026">texture.h:26</a></div></div>
+<div class="ttc" id="astructTexture_html_a5d81cb05821b158ded3d5a46a4cd8f5a"><div class="ttname"><a href="structTexture.html#a5d81cb05821b158ded3d5a46a4cd8f5a">Texture::width</a></div><div class="ttdeci">unsigned int width</div><div class="ttdef"><b>Definition</b> <a href="texture_8h_source.html#l00028">texture.h:28</a></div></div>
+<div class="ttc" id="astructTexture_html_ab4b01ae73439cbcc210a5977e227a880"><div class="ttname"><a href="structTexture.html#ab4b01ae73439cbcc210a5977e227a880">Texture::height</a></div><div class="ttdeci">unsigned int height</div><div class="ttdef"><b>Definition</b> <a href="texture_8h_source.html#l00029">texture.h:29</a></div></div>
+<div class="ttc" id="astructTexture_html_af848138d72c1fc995ab414a71ab10d47"><div class="ttname"><a href="structTexture.html#af848138d72c1fc995ab414a71ab10d47">Texture::id</a></div><div class="ttdeci">GLuint id</div><div class="ttdef"><b>Definition</b> <a href="texture_8h_source.html#l00025">texture.h:25</a></div></div>
+<div class="ttc" id="atexture_8c_html_a0fcb309ad9f79b49446995dfbc7fc29d"><div class="ttname"><a href="texture_8c.html#a0fcb309ad9f79b49446995dfbc7fc29d">create_texture</a></div><div class="ttdeci">Texture * create_texture(unsigned char *data, unsigned int width, unsigned int height)</div><div class="ttdoc">Créer une texture à partir des données passer en paramêtre.</div><div class="ttdef"><b>Definition</b> <a href="#l00013">texture.c:13</a></div></div>
+<div class="ttc" id="atexture_8c_html_a11c997359bd8e1942c8fcb4acffa7971"><div class="ttname"><a href="texture_8c.html#a11c997359bd8e1942c8fcb4acffa7971">free_texture</a></div><div class="ttdeci">void free_texture(Texture *t)</div><div class="ttdoc">Libère la mémoire de la texture en paramêtre.</div><div class="ttdef"><b>Definition</b> <a href="#l00085">texture.c:85</a></div></div>
+<div class="ttc" id="atexture_8c_html_a4a2590dd6f65352eb85ff1280db38f72"><div class="ttname"><a href="texture_8c.html#a4a2590dd6f65352eb85ff1280db38f72">unbind_texture</a></div><div class="ttdeci">void unbind_texture(Texture *t, unsigned int unit)</div><div class="ttdoc">Dé-lie la texture passer en paramêtre du GPU.</div><div class="ttdef"><b>Definition</b> <a href="#l00103">texture.c:103</a></div></div>
+<div class="ttc" id="atexture_8c_html_a561df14d6eb5268465c7a824cc7cc22e"><div class="ttname"><a href="texture_8c.html#a561df14d6eb5268465c7a824cc7cc22e">create_texture_from_file</a></div><div class="ttdeci">Texture * create_texture_from_file(const char *filepath)</div><div class="ttdoc">Créer une texture à partir du fichier passer en paramêtre.</div><div class="ttdef"><b>Definition</b> <a href="#l00061">texture.c:61</a></div></div>
+<div class="ttc" id="atexture_8c_html_a6b1bd7b1c338c1a6cc0fe76a59a028f9"><div class="ttname"><a href="texture_8c.html#a6b1bd7b1c338c1a6cc0fe76a59a028f9">create_texture_from_image</a></div><div class="ttdeci">Texture * create_texture_from_image(Image *img)</div><div class="ttdoc">Créer une texture à partir de l&#39;image passer en paramêtre.</div><div class="ttdef"><b>Definition</b> <a href="#l00053">texture.c:53</a></div></div>
+<div class="ttc" id="atexture_8c_html_a7fcb3693c1cc5a243227c428a453a2f2"><div class="ttname"><a href="texture_8c.html#a7fcb3693c1cc5a243227c428a453a2f2">bind_texture</a></div><div class="ttdeci">void bind_texture(Texture *t, unsigned int unit)</div><div class="ttdoc">Lie au GPU la texture passer en paramêtre.</div><div class="ttdef"><b>Definition</b> <a href="#l00093">texture.c:93</a></div></div>
+<div class="ttc" id="atexture_8c_html_ab9054d91a4a2d902554354dfa636fdda"><div class="ttname"><a href="texture_8c.html#ab9054d91a4a2d902554354dfa636fdda">create_texture_from_atlas</a></div><div class="ttdeci">Texture * create_texture_from_atlas(Atlas *atlas)</div><div class="ttdoc">Créer une texture à partir d&#39;un atlas.</div><div class="ttdef"><b>Definition</b> <a href="#l00074">texture.c:74</a></div></div>
+<div class="ttc" id="atexture_8h_html"><div class="ttname"><a href="texture_8h.html">texture.h</a></div><div class="ttdoc">Structure représentant les données d&#39;une texture charger dans le GPU.</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_758d8e9166e39e682af4fe71d4574a53.html">FEURcraft</a></li><li class="navelem"><a href="dir_d563573f48eefcd0f66954300c445435.html">graphic</a></li><li class="navelem"><a href="dir_aa28f9dfa0290fc45f1ab57c4462e698.html">src</a></li><li class="navelem"><a href="texture_8c.html">texture.c</a></li>
+    <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

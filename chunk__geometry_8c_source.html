@@ -1,0 +1,274 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>FEURcraft:  Fichier source de FEURcraft/graphic/src/chunk_geometry.c</title>
+<link rel="icon" href="FEURcraft.png" type="image/x-icon" />
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="FEURcraft.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">FEURcraft<span id="projectnumber">&#160;0.0.1</span>
+   </div>
+   <div id="projectbrief">Moteur Voxel.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Recherche',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('chunk__geometry_8c_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Chargement...</div>
+<div class="SRStatus" id="Searching">Recherche...</div>
+<div class="SRStatus" id="NoMatches">Aucune correspondance</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">chunk_geometry.c</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="chunk__geometry_8c.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="chunk__geometry_8h.html">chunk_geometry.h</a>&quot;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;<a class="code" href="geometry_8h.html">geometry.h</a>&quot;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="geometry__data_8h.html">geometry_data.h</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="vertex_8h.html">vertex.h</a>&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="vertex__layout_8h.html">vertex_layout.h</a>&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;<a class="code" href="block_8h.html">block.h</a>&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;<a class="code" href="block__face_8h.html">block_face.h</a>&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;<a class="code" href="chunk_8h.html">chunk.h</a>&quot;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="array__list_8h.html">array_list.h</a>&quot;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;<a class="code" href="vec3i_8h.html">vec3i.h</a>&quot;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &quot;<a class="code" href="logger_8h.html">logger.h</a>&quot;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &quot;<a class="code" href="error__checker_8h.html">error_checker.h</a>&quot;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &lt;string.h&gt;</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">static</span> <span class="keywordtype">void</span> chunk_geometry_add_block_face(<a class="code hl_struct" href="structGeometry.html">Geometry</a>* geometry,</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>                                          <a class="code hl_enumeration" href="block_8h.html#ae91cb3afd79e6de887cf19fcca7a8c4a">Block</a> block, <a class="code hl_enumeration" href="block__face_8h.html#a67a0b86beeb7045a9d529c432c71a745">BlockFace</a> face,</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>                                          <a class="code hl_struct" href="structVec3i.html">Vec3i</a> pos)</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>{</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <a class="code hl_define" href="error__checker_8h.html#a48c45f2070cc397b5cf95b49662ad6a3">CHECK_COND_RET_WARN</a>(block != <a class="code hl_enumvalue" href="block_8h.html#ae91cb3afd79e6de887cf19fcca7a8c4aa8118427faa4471cdd2b0a55dcd2da946">BLOCK_AIR</a>, <span class="stringliteral">&quot;Cannot add a BLOCK_AIR face.&quot;</span>, );</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <a class="code hl_struct" href="structVertexBlock.html">VertexBlock</a> vertices_buffer[<a class="code hl_define" href="geometry__data_8h.html#ab721cdf7d3bd8c0b944ee63b6810bea7">BLOCK_FACE_VERTICES_AMOUNT</a>] = { 0 };</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <a class="code hl_function" href="geometry__data_8h.html#a36530454fe7066f08f3726ebadfe4734">geometry_data_get_block_face_vertices</a>(face, vertices_buffer);</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> layer_index = (block - 1) * <a class="code hl_enumvalue" href="block__face_8h.html#a67a0b86beeb7045a9d529c432c71a745aab03804c2dfab131b808955ea8e476d8">BLOCK_FACE_COUNT</a>;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="comment">// Applying chunk pos, and layer_index to vertices</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i = 0; i &lt; <a class="code hl_define" href="geometry__data_8h.html#ab721cdf7d3bd8c0b944ee63b6810bea7">BLOCK_FACE_VERTICES_AMOUNT</a>; ++i)</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    {</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        <span class="comment">// vertices_buffer already contain the face id value</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        <span class="comment">// TextureArray index = (block * BLOCK_FACE_COUNT) + BlockFace id;</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        vertices_buffer[i].<a class="code hl_variable" href="structVertexBlock.html#aa73d09318c77c9fe8c2a7fcd89acd1f5">layer_index</a> += layer_index;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        <span class="comment">// apply chunk_pos offset</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        <a class="code hl_function" href="vec3_8h.html#ae8ab11845031ae6cfc905d74335002ef">vec3_add_in</a>(&amp;vertices_buffer[i].pos, <a class="code hl_define" href="vec3_8h.html#ab602d18b7292bc5b5eaf3840cbbad311">VEC3</a>(pos.x, pos.y, pos.z));</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    }</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="comment">// Add face to buffer</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <a class="code hl_function" href="geometry_8h.html#aab0ed854bfde7e7d27b9abbb5094fb50">geometry_add_buffer</a>(geometry,    vertices_buffer, <a class="code hl_define" href="geometry__data_8h.html#ab721cdf7d3bd8c0b944ee63b6810bea7">BLOCK_FACE_VERTICES_AMOUNT</a>,</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>                                  <a class="code hl_variable" href="geometry__data_8h.html#a846f732a4f068ce9c08592bc3f237fbb">BLOCK_FACE_INDICES</a>, <a class="code hl_define" href="geometry__data_8h.html#a219750cb31d33777df828b3047fffc75">BLOCK_FACE_INDICES_AMOUNT</a>);</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>}</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="foldopen" id="foldopen00049" data-start="{" data-end="}">
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="chunk__geometry_8h.html#a128344b0c5cf5ed634a3def31010feed">   49</a></span><a class="code hl_struct" href="structGeometry.html">Geometry</a>* <a class="code hl_function" href="chunk__geometry_8c.html#a128344b0c5cf5ed634a3def31010feed">chunk_geometry_create</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structChunk.html">Chunk</a>* chunk)</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>{</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <a class="code hl_struct" href="structVertexLayout.html">VertexLayout</a> vertex_layout;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <a class="code hl_function" href="vertex__layout_8h.html#ac22ba8e210ba8f3e6a203b193e3139e0">vertex_layout_init_default_block</a>(&amp;vertex_layout);</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <a class="code hl_struct" href="structGeometry.html">Geometry</a>* chunk_geometry = <a class="code hl_function" href="geometry_8h.html#aa14d6fdac4b2d89d76678630ec96f9f9">geometry_create_empty</a>(vertex_layout);</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; <a class="code hl_define" href="chunk_8h.html#aea3cfda4f3a9f978ec759f206cf186fe">CHUNK_SIZE</a>; ++i)</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    {</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        <a class="code hl_enumeration" href="block_8h.html#ae91cb3afd79e6de887cf19fcca7a8c4a">Block</a> block = <a class="code hl_function" href="chunk_8h.html#ab6e23607223b4cbf732f4de448845143">chunk_get_block_from_index</a>(chunk, i);</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        <span class="keywordflow">if</span> (block == <a class="code hl_enumvalue" href="block_8h.html#ae91cb3afd79e6de887cf19fcca7a8c4aa8118427faa4471cdd2b0a55dcd2da946">BLOCK_AIR</a>)</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        {</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>            <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        }</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        <a class="code hl_struct" href="structVec3i.html">Vec3i</a> pos = <a class="code hl_function" href="chunk_8h.html#a4df707a0b5fae0e6f6f7264d009f7bef">chunk_block_pos</a>(i);</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        <span class="comment">// Y UP !!!</span></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        <a class="code hl_struct" href="structVec3i.html">Vec3i</a> pos_top   = <a class="code hl_define" href="vec3i_8h.html#a33b5bd8264fbe88d7b020d81924c6667">VEC3I</a>(pos.<a class="code hl_variable" href="structVec3i.html#a00db3692921caac03a0e0fd3d8f619c9">x</a>,     pos.<a class="code hl_variable" href="structVec3i.html#a2d63847534d5ae0829f5e0e69d93d02c">y</a> + 1, pos.<a class="code hl_variable" href="structVec3i.html#a5b773400513d24edae3f7e806651a21c">z</a>    );</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        <a class="code hl_struct" href="structVec3i.html">Vec3i</a> pos_bot   = <a class="code hl_define" href="vec3i_8h.html#a33b5bd8264fbe88d7b020d81924c6667">VEC3I</a>(pos.<a class="code hl_variable" href="structVec3i.html#a00db3692921caac03a0e0fd3d8f619c9">x</a>,     pos.<a class="code hl_variable" href="structVec3i.html#a2d63847534d5ae0829f5e0e69d93d02c">y</a> - 1, pos.<a class="code hl_variable" href="structVec3i.html#a5b773400513d24edae3f7e806651a21c">z</a>    );</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        <a class="code hl_struct" href="structVec3i.html">Vec3i</a> pos_front = <a class="code hl_define" href="vec3i_8h.html#a33b5bd8264fbe88d7b020d81924c6667">VEC3I</a>(pos.<a class="code hl_variable" href="structVec3i.html#a00db3692921caac03a0e0fd3d8f619c9">x</a>,     pos.<a class="code hl_variable" href="structVec3i.html#a2d63847534d5ae0829f5e0e69d93d02c">y</a>,     pos.<a class="code hl_variable" href="structVec3i.html#a5b773400513d24edae3f7e806651a21c">z</a> + 1);</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        <a class="code hl_struct" href="structVec3i.html">Vec3i</a> pos_back  = <a class="code hl_define" href="vec3i_8h.html#a33b5bd8264fbe88d7b020d81924c6667">VEC3I</a>(pos.<a class="code hl_variable" href="structVec3i.html#a00db3692921caac03a0e0fd3d8f619c9">x</a>,     pos.<a class="code hl_variable" href="structVec3i.html#a2d63847534d5ae0829f5e0e69d93d02c">y</a>,     pos.<a class="code hl_variable" href="structVec3i.html#a5b773400513d24edae3f7e806651a21c">z</a> - 1);</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        <a class="code hl_struct" href="structVec3i.html">Vec3i</a> pos_left  = <a class="code hl_define" href="vec3i_8h.html#a33b5bd8264fbe88d7b020d81924c6667">VEC3I</a>(pos.<a class="code hl_variable" href="structVec3i.html#a00db3692921caac03a0e0fd3d8f619c9">x</a> - 1, pos.<a class="code hl_variable" href="structVec3i.html#a2d63847534d5ae0829f5e0e69d93d02c">y</a>,     pos.<a class="code hl_variable" href="structVec3i.html#a5b773400513d24edae3f7e806651a21c">z</a>    );</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        <a class="code hl_struct" href="structVec3i.html">Vec3i</a> pos_right = <a class="code hl_define" href="vec3i_8h.html#a33b5bd8264fbe88d7b020d81924c6667">VEC3I</a>(pos.<a class="code hl_variable" href="structVec3i.html#a00db3692921caac03a0e0fd3d8f619c9">x</a> + 1, pos.<a class="code hl_variable" href="structVec3i.html#a2d63847534d5ae0829f5e0e69d93d02c">y</a>,     pos.<a class="code hl_variable" href="structVec3i.html#a5b773400513d24edae3f7e806651a21c">z</a>    );</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        <span class="comment">// very very very naive chunk meshing for the moment</span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        <span class="keywordflow">if</span> (!<a class="code hl_function" href="chunk_8h.html#a1634a8773d9c2267434ff47420fe6eab">chunk_is_pos_valid</a>(pos_top) || <a class="code hl_function" href="chunk_8h.html#a7cc6c6a1bb6c8650c66fe63b9e142e55">chunk_get_block_from_pos</a>(chunk, pos_top) == <a class="code hl_enumvalue" href="block_8h.html#ae91cb3afd79e6de887cf19fcca7a8c4aa8118427faa4471cdd2b0a55dcd2da946">BLOCK_AIR</a>)</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        {</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>            chunk_geometry_add_block_face(chunk_geometry, block, <a class="code hl_enumvalue" href="block__face_8h.html#a67a0b86beeb7045a9d529c432c71a745a7521b364e68cda8896889e4d9be2b629">BLOCK_FACE_TOP</a>, pos);</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        }</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        <span class="keywordflow">if</span> (!<a class="code hl_function" href="chunk_8h.html#a1634a8773d9c2267434ff47420fe6eab">chunk_is_pos_valid</a>(pos_bot) || <a class="code hl_function" href="chunk_8h.html#a7cc6c6a1bb6c8650c66fe63b9e142e55">chunk_get_block_from_pos</a>(chunk, pos_bot) == <a class="code hl_enumvalue" href="block_8h.html#ae91cb3afd79e6de887cf19fcca7a8c4aa8118427faa4471cdd2b0a55dcd2da946">BLOCK_AIR</a>)</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        {</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>            chunk_geometry_add_block_face(chunk_geometry, block, <a class="code hl_enumvalue" href="block__face_8h.html#a67a0b86beeb7045a9d529c432c71a745a2d16f061fb2e42a5ea4e2938a5dc5c02">BLOCK_FACE_BOT</a>, pos);</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        }</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        <span class="keywordflow">if</span> (!<a class="code hl_function" href="chunk_8h.html#a1634a8773d9c2267434ff47420fe6eab">chunk_is_pos_valid</a>(pos_front) || <a class="code hl_function" href="chunk_8h.html#a7cc6c6a1bb6c8650c66fe63b9e142e55">chunk_get_block_from_pos</a>(chunk, pos_front) == <a class="code hl_enumvalue" href="block_8h.html#ae91cb3afd79e6de887cf19fcca7a8c4aa8118427faa4471cdd2b0a55dcd2da946">BLOCK_AIR</a>)</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        {</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>            chunk_geometry_add_block_face(chunk_geometry, block, <a class="code hl_enumvalue" href="block__face_8h.html#a67a0b86beeb7045a9d529c432c71a745a7232b605916cacc7dafdd1906fe58254">BLOCK_FACE_FRONT</a>, pos);</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        }</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        <span class="keywordflow">if</span> (!<a class="code hl_function" href="chunk_8h.html#a1634a8773d9c2267434ff47420fe6eab">chunk_is_pos_valid</a>(pos_back) || <a class="code hl_function" href="chunk_8h.html#a7cc6c6a1bb6c8650c66fe63b9e142e55">chunk_get_block_from_pos</a>(chunk, pos_back) == <a class="code hl_enumvalue" href="block_8h.html#ae91cb3afd79e6de887cf19fcca7a8c4aa8118427faa4471cdd2b0a55dcd2da946">BLOCK_AIR</a>)</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        {</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>            chunk_geometry_add_block_face(chunk_geometry, block, <a class="code hl_enumvalue" href="block__face_8h.html#a67a0b86beeb7045a9d529c432c71a745aa3d0f8574f6575d9a0d1fd67f71ae697">BLOCK_FACE_BACK</a>, pos);</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        }</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        <span class="keywordflow">if</span> (!<a class="code hl_function" href="chunk_8h.html#a1634a8773d9c2267434ff47420fe6eab">chunk_is_pos_valid</a>(pos_left) || <a class="code hl_function" href="chunk_8h.html#a7cc6c6a1bb6c8650c66fe63b9e142e55">chunk_get_block_from_pos</a>(chunk, pos_left) == <a class="code hl_enumvalue" href="block_8h.html#ae91cb3afd79e6de887cf19fcca7a8c4aa8118427faa4471cdd2b0a55dcd2da946">BLOCK_AIR</a>)</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>        {</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>            chunk_geometry_add_block_face(chunk_geometry, block, <a class="code hl_enumvalue" href="block__face_8h.html#a67a0b86beeb7045a9d529c432c71a745a111cf9295de22ee4c0187fcd922fa76a">BLOCK_FACE_LEFT</a>, pos);</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        }</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        <span class="keywordflow">if</span> (!<a class="code hl_function" href="chunk_8h.html#a1634a8773d9c2267434ff47420fe6eab">chunk_is_pos_valid</a>(pos_right) || <a class="code hl_function" href="chunk_8h.html#a7cc6c6a1bb6c8650c66fe63b9e142e55">chunk_get_block_from_pos</a>(chunk, pos_right) == <a class="code hl_enumvalue" href="block_8h.html#ae91cb3afd79e6de887cf19fcca7a8c4aa8118427faa4471cdd2b0a55dcd2da946">BLOCK_AIR</a>)</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        {</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>            chunk_geometry_add_block_face(chunk_geometry, block, <a class="code hl_enumvalue" href="block__face_8h.html#a67a0b86beeb7045a9d529c432c71a745a2c21f2536d738ca67f49a0cf10a1c114">BLOCK_FACE_RIGHT</a>, pos);</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        }</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    }</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    <span class="comment">// If chunk is empty dont return a geometry.</span></div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    <span class="keywordflow">if</span> (chunk_geometry-&gt;<a class="code hl_variable" href="structGeometry.html#a1f96d6457c95f7d427f2ddb1613a2b8e">vertices</a>-&gt;<a class="code hl_variable" href="structArrayList.html#aedd83f72e2d9eb8688575ce5417f5424">count</a> == 0)</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    {</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        <a class="code hl_define" href="logger_8h.html#afde44945335adc0c0ae2986fea13438f">LOG_WARNING</a>(<span class="stringliteral">&quot;Not returning geometry cause chunk has no vertices&quot;</span>);</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>        <a class="code hl_function" href="geometry_8h.html#a4cc0860cc218307101509c3893739f84">geometry_free</a>(chunk_geometry);</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    }</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    <span class="keywordflow">return</span> chunk_geometry;</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>}</div>
+</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
+<div class="ttc" id="aarray__list_8h_html"><div class="ttname"><a href="array__list_8h.html">array_list.h</a></div><div class="ttdoc">Liste dynamique.</div></div>
+<div class="ttc" id="ablock_8h_html"><div class="ttname"><a href="block_8h.html">block.h</a></div></div>
+<div class="ttc" id="ablock_8h_html_ae91cb3afd79e6de887cf19fcca7a8c4a"><div class="ttname"><a href="block_8h.html#ae91cb3afd79e6de887cf19fcca7a8c4a">Block</a></div><div class="ttdeci">Block</div><div class="ttdef"><b>Definition</b> <a href="block_8h_source.html#l00006">block.h:7</a></div></div>
+<div class="ttc" id="ablock_8h_html_ae91cb3afd79e6de887cf19fcca7a8c4aa8118427faa4471cdd2b0a55dcd2da946"><div class="ttname"><a href="block_8h.html#ae91cb3afd79e6de887cf19fcca7a8c4aa8118427faa4471cdd2b0a55dcd2da946">BLOCK_AIR</a></div><div class="ttdeci">@ BLOCK_AIR</div><div class="ttdef"><b>Definition</b> <a href="block_8h_source.html#l00008">block.h:8</a></div></div>
+<div class="ttc" id="ablock__face_8h_html"><div class="ttname"><a href="block__face_8h.html">block_face.h</a></div></div>
+<div class="ttc" id="ablock__face_8h_html_a67a0b86beeb7045a9d529c432c71a745"><div class="ttname"><a href="block__face_8h.html#a67a0b86beeb7045a9d529c432c71a745">BlockFace</a></div><div class="ttdeci">BlockFace</div><div class="ttdef"><b>Definition</b> <a href="block__face_8h_source.html#l00010">block_face.h:11</a></div></div>
+<div class="ttc" id="ablock__face_8h_html_a67a0b86beeb7045a9d529c432c71a745a111cf9295de22ee4c0187fcd922fa76a"><div class="ttname"><a href="block__face_8h.html#a67a0b86beeb7045a9d529c432c71a745a111cf9295de22ee4c0187fcd922fa76a">BLOCK_FACE_LEFT</a></div><div class="ttdeci">@ BLOCK_FACE_LEFT</div><div class="ttdef"><b>Definition</b> <a href="block__face_8h_source.html#l00016">block_face.h:16</a></div></div>
+<div class="ttc" id="ablock__face_8h_html_a67a0b86beeb7045a9d529c432c71a745a2c21f2536d738ca67f49a0cf10a1c114"><div class="ttname"><a href="block__face_8h.html#a67a0b86beeb7045a9d529c432c71a745a2c21f2536d738ca67f49a0cf10a1c114">BLOCK_FACE_RIGHT</a></div><div class="ttdeci">@ BLOCK_FACE_RIGHT</div><div class="ttdef"><b>Definition</b> <a href="block__face_8h_source.html#l00017">block_face.h:17</a></div></div>
+<div class="ttc" id="ablock__face_8h_html_a67a0b86beeb7045a9d529c432c71a745a2d16f061fb2e42a5ea4e2938a5dc5c02"><div class="ttname"><a href="block__face_8h.html#a67a0b86beeb7045a9d529c432c71a745a2d16f061fb2e42a5ea4e2938a5dc5c02">BLOCK_FACE_BOT</a></div><div class="ttdeci">@ BLOCK_FACE_BOT</div><div class="ttdef"><b>Definition</b> <a href="block__face_8h_source.html#l00015">block_face.h:15</a></div></div>
+<div class="ttc" id="ablock__face_8h_html_a67a0b86beeb7045a9d529c432c71a745a7232b605916cacc7dafdd1906fe58254"><div class="ttname"><a href="block__face_8h.html#a67a0b86beeb7045a9d529c432c71a745a7232b605916cacc7dafdd1906fe58254">BLOCK_FACE_FRONT</a></div><div class="ttdeci">@ BLOCK_FACE_FRONT</div><div class="ttdef"><b>Definition</b> <a href="block__face_8h_source.html#l00012">block_face.h:12</a></div></div>
+<div class="ttc" id="ablock__face_8h_html_a67a0b86beeb7045a9d529c432c71a745a7521b364e68cda8896889e4d9be2b629"><div class="ttname"><a href="block__face_8h.html#a67a0b86beeb7045a9d529c432c71a745a7521b364e68cda8896889e4d9be2b629">BLOCK_FACE_TOP</a></div><div class="ttdeci">@ BLOCK_FACE_TOP</div><div class="ttdef"><b>Definition</b> <a href="block__face_8h_source.html#l00014">block_face.h:14</a></div></div>
+<div class="ttc" id="ablock__face_8h_html_a67a0b86beeb7045a9d529c432c71a745aa3d0f8574f6575d9a0d1fd67f71ae697"><div class="ttname"><a href="block__face_8h.html#a67a0b86beeb7045a9d529c432c71a745aa3d0f8574f6575d9a0d1fd67f71ae697">BLOCK_FACE_BACK</a></div><div class="ttdeci">@ BLOCK_FACE_BACK</div><div class="ttdef"><b>Definition</b> <a href="block__face_8h_source.html#l00013">block_face.h:13</a></div></div>
+<div class="ttc" id="ablock__face_8h_html_a67a0b86beeb7045a9d529c432c71a745aab03804c2dfab131b808955ea8e476d8"><div class="ttname"><a href="block__face_8h.html#a67a0b86beeb7045a9d529c432c71a745aab03804c2dfab131b808955ea8e476d8">BLOCK_FACE_COUNT</a></div><div class="ttdeci">@ BLOCK_FACE_COUNT</div><div class="ttdef"><b>Definition</b> <a href="block__face_8h_source.html#l00019">block_face.h:19</a></div></div>
+<div class="ttc" id="achunk_8h_html"><div class="ttname"><a href="chunk_8h.html">chunk.h</a></div></div>
+<div class="ttc" id="achunk_8h_html_a1634a8773d9c2267434ff47420fe6eab"><div class="ttname"><a href="chunk_8h.html#a1634a8773d9c2267434ff47420fe6eab">chunk_is_pos_valid</a></div><div class="ttdeci">bool chunk_is_pos_valid(Vec3i pos)</div><div class="ttdef"><b>Definition</b> <a href="chunk_8c_source.html#l00075">chunk.c:75</a></div></div>
+<div class="ttc" id="achunk_8h_html_a4df707a0b5fae0e6f6f7264d009f7bef"><div class="ttname"><a href="chunk_8h.html#a4df707a0b5fae0e6f6f7264d009f7bef">chunk_block_pos</a></div><div class="ttdeci">Vec3i chunk_block_pos(size_t index)</div><div class="ttdef"><b>Definition</b> <a href="chunk_8c_source.html#l00022">chunk.c:22</a></div></div>
+<div class="ttc" id="achunk_8h_html_a7cc6c6a1bb6c8650c66fe63b9e142e55"><div class="ttname"><a href="chunk_8h.html#a7cc6c6a1bb6c8650c66fe63b9e142e55">chunk_get_block_from_pos</a></div><div class="ttdeci">Block chunk_get_block_from_pos(const Chunk *chunk, Vec3i pos)</div><div class="ttdef"><b>Definition</b> <a href="chunk_8c_source.html#l00034">chunk.c:34</a></div></div>
+<div class="ttc" id="achunk_8h_html_ab6e23607223b4cbf732f4de448845143"><div class="ttname"><a href="chunk_8h.html#ab6e23607223b4cbf732f4de448845143">chunk_get_block_from_index</a></div><div class="ttdeci">Block chunk_get_block_from_index(const Chunk *chunk, size_t index)</div><div class="ttdef"><b>Definition</b> <a href="chunk_8c_source.html#l00045">chunk.c:45</a></div></div>
+<div class="ttc" id="achunk_8h_html_aea3cfda4f3a9f978ec759f206cf186fe"><div class="ttname"><a href="chunk_8h.html#aea3cfda4f3a9f978ec759f206cf186fe">CHUNK_SIZE</a></div><div class="ttdeci">#define CHUNK_SIZE</div><div class="ttdef"><b>Definition</b> <a href="chunk_8h_source.html#l00013">chunk.h:13</a></div></div>
+<div class="ttc" id="achunk__geometry_8c_html_a128344b0c5cf5ed634a3def31010feed"><div class="ttname"><a href="chunk__geometry_8c.html#a128344b0c5cf5ed634a3def31010feed">chunk_geometry_create</a></div><div class="ttdeci">Geometry * chunk_geometry_create(const Chunk *chunk)</div><div class="ttdef"><b>Definition</b> <a href="#l00049">chunk_geometry.c:49</a></div></div>
+<div class="ttc" id="achunk__geometry_8h_html"><div class="ttname"><a href="chunk__geometry_8h.html">chunk_geometry.h</a></div></div>
+<div class="ttc" id="aerror__checker_8h_html"><div class="ttname"><a href="error__checker_8h.html">error_checker.h</a></div></div>
+<div class="ttc" id="aerror__checker_8h_html_a48c45f2070cc397b5cf95b49662ad6a3"><div class="ttname"><a href="error__checker_8h.html#a48c45f2070cc397b5cf95b49662ad6a3">CHECK_COND_RET_WARN</a></div><div class="ttdeci">#define CHECK_COND_RET_WARN(cond, warn_msg, ret)</div><div class="ttdef"><b>Definition</b> <a href="error__checker_8h_source.html#l00045">error_checker.h:45</a></div></div>
+<div class="ttc" id="ageometry_8h_html"><div class="ttname"><a href="geometry_8h.html">geometry.h</a></div><div class="ttdoc">Structure représentant les données d&#39;un modèle 3D.</div></div>
+<div class="ttc" id="ageometry_8h_html_a4cc0860cc218307101509c3893739f84"><div class="ttname"><a href="geometry_8h.html#a4cc0860cc218307101509c3893739f84">geometry_free</a></div><div class="ttdeci">void geometry_free(Geometry *g)</div><div class="ttdoc">libère la mémoire de la geometry passer en paramêtre</div><div class="ttdef"><b>Definition</b> <a href="geometry_8c_source.html#l00271">geometry.c:271</a></div></div>
+<div class="ttc" id="ageometry_8h_html_aa14d6fdac4b2d89d76678630ec96f9f9"><div class="ttname"><a href="geometry_8h.html#aa14d6fdac4b2d89d76678630ec96f9f9">geometry_create_empty</a></div><div class="ttdeci">Geometry * geometry_create_empty(VertexLayout layout)</div><div class="ttdoc">Créer une géometrie vide.</div><div class="ttdef"><b>Definition</b> <a href="geometry_8c_source.html#l00024">geometry.c:24</a></div></div>
+<div class="ttc" id="ageometry_8h_html_aab0ed854bfde7e7d27b9abbb5094fb50"><div class="ttname"><a href="geometry_8h.html#aab0ed854bfde7e7d27b9abbb5094fb50">geometry_add_buffer</a></div><div class="ttdeci">void geometry_add_buffer(Geometry *g, const void *vertices_buffer, size_t vertices_amount, const unsigned int *indices_buffer, size_t indices_amount)</div><div class="ttdef"><b>Definition</b> <a href="geometry_8c_source.html#l00222">geometry.c:222</a></div></div>
+<div class="ttc" id="ageometry__data_8h_html"><div class="ttname"><a href="geometry__data_8h.html">geometry_data.h</a></div></div>
+<div class="ttc" id="ageometry__data_8h_html_a219750cb31d33777df828b3047fffc75"><div class="ttname"><a href="geometry__data_8h.html#a219750cb31d33777df828b3047fffc75">BLOCK_FACE_INDICES_AMOUNT</a></div><div class="ttdeci">#define BLOCK_FACE_INDICES_AMOUNT</div><div class="ttdef"><b>Definition</b> <a href="geometry__data_8h_source.html#l00026">geometry_data.h:26</a></div></div>
+<div class="ttc" id="ageometry__data_8h_html_a36530454fe7066f08f3726ebadfe4734"><div class="ttname"><a href="geometry__data_8h.html#a36530454fe7066f08f3726ebadfe4734">geometry_data_get_block_face_vertices</a></div><div class="ttdeci">void geometry_data_get_block_face_vertices(BlockFace face, VertexBlock *out_vertices_buffer)</div><div class="ttdef"><b>Definition</b> <a href="geometry__data_8c_source.html#l00244">geometry_data.c:244</a></div></div>
+<div class="ttc" id="ageometry__data_8h_html_a846f732a4f068ce9c08592bc3f237fbb"><div class="ttname"><a href="geometry__data_8h.html#a846f732a4f068ce9c08592bc3f237fbb">BLOCK_FACE_INDICES</a></div><div class="ttdeci">const unsigned int BLOCK_FACE_INDICES[BLOCK_FACE_INDICES_AMOUNT]</div><div class="ttdef"><b>Definition</b> <a href="geometry__data_8c_source.html#l00238">geometry_data.c:238</a></div></div>
+<div class="ttc" id="ageometry__data_8h_html_ab721cdf7d3bd8c0b944ee63b6810bea7"><div class="ttname"><a href="geometry__data_8h.html#ab721cdf7d3bd8c0b944ee63b6810bea7">BLOCK_FACE_VERTICES_AMOUNT</a></div><div class="ttdeci">#define BLOCK_FACE_VERTICES_AMOUNT</div><div class="ttdef"><b>Definition</b> <a href="geometry__data_8h_source.html#l00025">geometry_data.h:25</a></div></div>
+<div class="ttc" id="alogger_8h_html"><div class="ttname"><a href="logger_8h.html">logger.h</a></div><div class="ttdoc">Ficher fournissant des macro de log afin d&#39;afficher des messages de déboggage dans la console.</div></div>
+<div class="ttc" id="alogger_8h_html_afde44945335adc0c0ae2986fea13438f"><div class="ttname"><a href="logger_8h.html#afde44945335adc0c0ae2986fea13438f">LOG_WARNING</a></div><div class="ttdeci">#define LOG_WARNING(fmt,...)</div><div class="ttdef"><b>Definition</b> <a href="logger_8h_source.html#l00049">logger.h:49</a></div></div>
+<div class="ttc" id="astructArrayList_html_aedd83f72e2d9eb8688575ce5417f5424"><div class="ttname"><a href="structArrayList.html#aedd83f72e2d9eb8688575ce5417f5424">ArrayList::count</a></div><div class="ttdeci">size_t count</div><div class="ttdef"><b>Definition</b> <a href="array__list_8h_source.html#l00031">array_list.h:31</a></div></div>
+<div class="ttc" id="astructChunk_html"><div class="ttname"><a href="structChunk.html">Chunk</a></div><div class="ttdef"><b>Definition</b> <a href="chunk_8h_source.html#l00019">chunk.h:20</a></div></div>
+<div class="ttc" id="astructGeometry_html"><div class="ttname"><a href="structGeometry.html">Geometry</a></div><div class="ttdef"><b>Definition</b> <a href="geometry_8h_source.html#l00025">geometry.h:26</a></div></div>
+<div class="ttc" id="astructGeometry_html_a1f96d6457c95f7d427f2ddb1613a2b8e"><div class="ttname"><a href="structGeometry.html#a1f96d6457c95f7d427f2ddb1613a2b8e">Geometry::vertices</a></div><div class="ttdeci">ArrayList * vertices</div><div class="ttdef"><b>Definition</b> <a href="geometry_8h_source.html#l00027">geometry.h:27</a></div></div>
+<div class="ttc" id="astructVec3i_html"><div class="ttname"><a href="structVec3i.html">Vec3i</a></div><div class="ttdef"><b>Definition</b> <a href="vec3i_8h_source.html#l00011">vec3i.h:12</a></div></div>
+<div class="ttc" id="astructVec3i_html_a00db3692921caac03a0e0fd3d8f619c9"><div class="ttname"><a href="structVec3i.html#a00db3692921caac03a0e0fd3d8f619c9">Vec3i::x</a></div><div class="ttdeci">int x</div><div class="ttdef"><b>Definition</b> <a href="vec3i_8h_source.html#l00015">vec3i.h:15</a></div></div>
+<div class="ttc" id="astructVec3i_html_a2d63847534d5ae0829f5e0e69d93d02c"><div class="ttname"><a href="structVec3i.html#a2d63847534d5ae0829f5e0e69d93d02c">Vec3i::y</a></div><div class="ttdeci">int y</div><div class="ttdef"><b>Definition</b> <a href="vec3i_8h_source.html#l00015">vec3i.h:15</a></div></div>
+<div class="ttc" id="astructVec3i_html_a5b773400513d24edae3f7e806651a21c"><div class="ttname"><a href="structVec3i.html#a5b773400513d24edae3f7e806651a21c">Vec3i::z</a></div><div class="ttdeci">int z</div><div class="ttdef"><b>Definition</b> <a href="vec3i_8h_source.html#l00015">vec3i.h:15</a></div></div>
+<div class="ttc" id="astructVertexBlock_html"><div class="ttname"><a href="structVertexBlock.html">VertexBlock</a></div><div class="ttdef"><b>Definition</b> <a href="vertex_8h_source.html#l00034">vertex.h:35</a></div></div>
+<div class="ttc" id="astructVertexBlock_html_aa73d09318c77c9fe8c2a7fcd89acd1f5"><div class="ttname"><a href="structVertexBlock.html#aa73d09318c77c9fe8c2a7fcd89acd1f5">VertexBlock::layer_index</a></div><div class="ttdeci">unsigned int layer_index</div><div class="ttdef"><b>Definition</b> <a href="vertex_8h_source.html#l00039">vertex.h:39</a></div></div>
+<div class="ttc" id="astructVertexLayout_html"><div class="ttname"><a href="structVertexLayout.html">VertexLayout</a></div><div class="ttdef"><b>Definition</b> <a href="vertex__layout_8h_source.html#l00056">vertex_layout.h:57</a></div></div>
+<div class="ttc" id="avec3_8h_html_ab602d18b7292bc5b5eaf3840cbbad311"><div class="ttname"><a href="vec3_8h.html#ab602d18b7292bc5b5eaf3840cbbad311">VEC3</a></div><div class="ttdeci">#define VEC3(_x, _y, _z)</div><div class="ttdef"><b>Definition</b> <a href="vec3_8h_source.html#l00004">vec3.h:4</a></div></div>
+<div class="ttc" id="avec3_8h_html_ae8ab11845031ae6cfc905d74335002ef"><div class="ttname"><a href="vec3_8h.html#ae8ab11845031ae6cfc905d74335002ef">vec3_add_in</a></div><div class="ttdeci">void vec3_add_in(Vec3 *u, Vec3 v)</div><div class="ttdef"><b>Definition</b> <a href="vec3_8c_source.html#l00075">vec3.c:75</a></div></div>
+<div class="ttc" id="avec3i_8h_html"><div class="ttname"><a href="vec3i_8h.html">vec3i.h</a></div></div>
+<div class="ttc" id="avec3i_8h_html_a33b5bd8264fbe88d7b020d81924c6667"><div class="ttname"><a href="vec3i_8h.html#a33b5bd8264fbe88d7b020d81924c6667">VEC3I</a></div><div class="ttdeci">#define VEC3I(_x, _y, _z)</div><div class="ttdef"><b>Definition</b> <a href="vec3i_8h_source.html#l00004">vec3i.h:4</a></div></div>
+<div class="ttc" id="avertex_8h_html"><div class="ttname"><a href="vertex_8h.html">vertex.h</a></div><div class="ttdoc">Fichier contenant les différent structure de vertex utilisable.</div></div>
+<div class="ttc" id="avertex__layout_8h_html"><div class="ttname"><a href="vertex__layout_8h.html">vertex_layout.h</a></div><div class="ttdoc">Fichier contenant les structure de spécification de la disposition des attributs des vertex.</div></div>
+<div class="ttc" id="avertex__layout_8h_html_ac22ba8e210ba8f3e6a203b193e3139e0"><div class="ttname"><a href="vertex__layout_8h.html#ac22ba8e210ba8f3e6a203b193e3139e0">vertex_layout_init_default_block</a></div><div class="ttdeci">void vertex_layout_init_default_block(VertexLayout *layout)</div><div class="ttdoc">Créer une dispotion pour la structure VertexBlock.</div><div class="ttdef"><b>Definition</b> <a href="vertex__layout_8c_source.html#l00067">vertex_layout.c:67</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_758d8e9166e39e682af4fe71d4574a53.html">FEURcraft</a></li><li class="navelem"><a href="dir_d563573f48eefcd0f66954300c445435.html">graphic</a></li><li class="navelem"><a href="dir_aa28f9dfa0290fc45f1ab57c4462e698.html">src</a></li><li class="navelem"><a href="chunk__geometry_8c.html">chunk_geometry.c</a></li>
+    <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

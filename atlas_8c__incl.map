@@ -1,0 +1,29 @@
+<map id="FEURcraft/graphic/src/atlas.c" name="FEURcraft/graphic/src/atlas.c">
+<area shape="rect" id="Node000001" title=" " alt="" coords="365,5,517,44"/>
+<area shape="rect" id="Node000002" href="$atlas_8h.html" title="Atlas pour stocker plusieurs images sur la même images." alt="" coords="160,92,220,117"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="381,47,236,92,235,87,380,42"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="188,237,262,262"/>
+<area shape="poly" id="edge15_Node000001_Node000004" title=" " alt="" coords="400,47,364,67,331,94,311,118,299,140,289,163,273,191,246,227,242,224,268,188,284,160,294,137,306,115,327,90,361,63,397,42"/>
+<area shape="rect" id="Node000007" href="$error__checker_8h.html" title=" " alt="" coords="340,92,451,117"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="432,46,412,80,408,77,428,43"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="412,237,475,262"/>
+<area shape="poly" id="edge12_Node000001_Node000010" title=" " alt="" coords="451,43,465,92,467,127,465,163,454,223,449,222,460,162,462,127,460,92,446,45"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="525,92,589,117"/>
+<area shape="poly" id="edge13_Node000001_Node000011" title=" " alt="" coords="471,42,528,81,526,85,468,47"/>
+<area shape="rect" id="Node000012" title=" " alt="" coords="613,92,680,117"/>
+<area shape="poly" id="edge14_Node000001_Node000012" title=" " alt="" coords="492,42,602,84,601,89,490,47"/>
+<area shape="rect" id="Node000003" href="$image_8h.html" title=" " alt="" coords="191,165,259,189"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="198,116,215,149,210,152,194,118"/>
+<area shape="poly" id="edge6_Node000002_Node000004" title=" " alt="" coords="188,117,180,150,179,170,182,189,191,207,204,224,200,227,187,210,177,190,174,170,175,149,183,116"/>
+<area shape="rect" id="Node000005" href="$texture__coord_8h.html" title=" " alt="" coords="5,165,117,189"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="170,120,97,159,94,155,168,115"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="228,190,228,222,222,222,222,190"/>
+<area shape="rect" id="Node000006" href="$vec2_8h.html" title=" " alt="" coords="31,237,91,262"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="64,190,64,222,58,222,58,190"/>
+<area shape="rect" id="Node000008" href="$logger_8h.html" title="Ficher fournissant des macro de log afin d&#39;afficher des messages de déboggage dans la console." alt="" coords="333,165,400,189"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="393,118,379,151,375,149,388,116"/>
+<area shape="poly" id="edge11_Node000007_Node000010" title=" " alt="" coords="402,116,437,222,432,223,397,118"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="328,237,388,262"/>
+<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="368,190,364,222,359,221,362,190"/>
+<area shape="poly" id="edge10_Node000008_Node000010" title=" " alt="" coords="381,188,422,225,418,229,377,192"/>
+</map>

@@ -1,0 +1,16 @@
+<map id="FEURcraft/math/include/vec3i.h" name="FEURcraft/math/include/vec3i.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="106,5,269,44"/>
+<area shape="rect" id="Node000002" href="$chunk__geometry_8c.html" title=" " alt="" coords="11,265,164,304"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="93,44,52,63,35,77,20,93,11,115,8,138,12,162,21,185,46,229,73,263,68,267,42,232,16,187,7,163,3,138,5,114,16,91,31,73,49,59,90,39"/>
+<area shape="rect" id="Node000003" href="$vec3i_8c.html" title=" " alt="" coords="30,92,169,131"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="159,57,121,93,117,89,155,53"/>
+<area shape="rect" id="Node000004" href="$chunk_8h.html" title=" " alt="" coords="194,92,357,131"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="220,53,258,89,254,93,216,57"/>
+<area shape="rect" id="Node000006" href="$chunk_8c.html" title=" " alt="" coords="324,179,464,217"/>
+<area shape="poly" id="edge8_Node000001_Node000006" title=" " alt="" coords="285,40,331,59,352,73,371,90,384,111,392,135,397,178,392,179,387,136,380,114,367,94,349,77,328,64,283,45"/>
+<area shape="poly" id="edge6_Node000004_Node000002" title=" " alt="" coords="181,137,145,155,115,180,102,200,95,223,90,265,84,264,90,222,98,198,111,177,142,151,178,132"/>
+<area shape="rect" id="Node000005" href="$chunk__geometry_8h.html" title=" " alt="" coords="125,179,301,217"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="255,145,229,180,225,176,251,142"/>
+<area shape="poly" id="edge7_Node000004_Node000006" title=" " alt="" coords="316,138,369,176,366,180,313,142"/>
+<area shape="poly" id="edge5_Node000005_Node000002" title=" " alt="" coords="174,228,117,267,114,263,171,224"/>
+</map>

@@ -1,0 +1,309 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>FEURcraft:  Fichier source de FEURcraft/graphic/src/mesh.c</title>
+<link rel="icon" href="FEURcraft.png" type="image/x-icon" />
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="FEURcraft.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">FEURcraft<span id="projectnumber">&#160;0.0.1</span>
+   </div>
+   <div id="projectbrief">Moteur Voxel.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Recherche',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('mesh_8c_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Chargement...</div>
+<div class="SRStatus" id="Searching">Recherche...</div>
+<div class="SRStatus" id="NoMatches">Aucune correspondance</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">mesh.c</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="mesh_8c.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="mesh_8h.html">mesh.h</a>&quot;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;<a class="code" href="logger_8h.html">logger.h</a>&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;<a class="code" href="mesh_8h.html">mesh.h</a>&quot;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="gl__debug_8h.html">gl_debug.h</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="vertex__layout_8h.html">vertex_layout.h</a>&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;glad/glad.h&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;stddef.h&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="foldopen" id="foldopen00011" data-start="{" data-end="}">
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="mesh_8h.html#ad20fee6acdafe0427a94e0a60eba8086">   11</a></span><a class="code hl_struct" href="structMesh.html">Mesh</a>* <a class="code hl_function" href="mesh_8c.html#ad20fee6acdafe0427a94e0a60eba8086">create_mesh</a>(<a class="code hl_struct" href="structGeometry.html">Geometry</a>* g)</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>{</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <a class="code hl_struct" href="structMesh.html">Mesh</a>* m = malloc(<span class="keyword">sizeof</span>(<span class="keyword">struct</span> <a class="code hl_struct" href="structMesh.html">Mesh</a>));</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    m-&gt;<a class="code hl_variable" href="structMesh.html#abab0b2c19c0eef6c60eb64d7b118c3a2">indices_amount</a> = g-&gt;<a class="code hl_variable" href="structGeometry.html#aaf19b6fc4cb028eab28ca95b29bb05d8">indices</a>-&gt;<a class="code hl_variable" href="structArrayList.html#aedd83f72e2d9eb8688575ce5417f5424">count</a>;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    glGenVertexArrays(1, &amp;m-&gt;<a class="code hl_variable" href="structMesh.html#a09b989b9d4df8ae595d7e80e091a4a5b">VAO</a>);</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    glGenBuffers(1, &amp;m-&gt;<a class="code hl_variable" href="structMesh.html#a0d28b2c6fee628a13f43cae3f858569b">VBO</a>);</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    glGenBuffers(1, &amp;m-&gt;<a class="code hl_variable" href="structMesh.html#a894c6723c0172f4e38b2509582abfa6c">EBO</a>);</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    glBindVertexArray(m-&gt;<a class="code hl_variable" href="structMesh.html#a09b989b9d4df8ae595d7e80e091a4a5b">VAO</a>);</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    glBindBuffer(GL_ARRAY_BUFFER, m-&gt;<a class="code hl_variable" href="structMesh.html#a0d28b2c6fee628a13f43cae3f858569b">VBO</a>);</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m-&gt;<a class="code hl_variable" href="structMesh.html#a894c6723c0172f4e38b2509582abfa6c">EBO</a>);</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <a class="code hl_struct" href="structVertexLayout.html">VertexLayout</a>* layout = &amp;g-&gt;<a class="code hl_variable" href="structGeometry.html#aefe68b9d992b6e9852d8f9f0cd47e756">layout</a>;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <a class="code hl_function" href="vertex__layout_8h.html#ac2203536338ae15b11166ff583de9bdd">vertex_layout_make_VAO</a>(layout);</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <a class="code hl_function" href="geometry_8h.html#a04f396ba56a29e4dd8489afd3975bac0">geometry_load_to_gpu</a>(g);</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    glBindVertexArray(0);</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    glBindBuffer(GL_ARRAY_BUFFER, 0);</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keywordflow">return</span> m;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>}</div>
+</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="foldopen" id="foldopen00038" data-start="{" data-end="}">
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="mesh_8h.html#abb59808459ab79134bb8e615f55229de">   38</a></span><a class="code hl_struct" href="structMesh.html">Mesh</a>* <a class="code hl_function" href="mesh_8c.html#abb59808459ab79134bb8e615f55229de">create_cube_mesh</a>()</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>{</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <a class="code hl_struct" href="structGeometry.html">Geometry</a>* g = <a class="code hl_function" href="geometry_8h.html#af386d6f00f08874f69f6949029bac432">geometry_create_cube</a>();</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <a class="code hl_struct" href="structMesh.html">Mesh</a>* m = <a class="code hl_function" href="mesh_8c.html#ad20fee6acdafe0427a94e0a60eba8086">create_mesh</a>(g);</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <a class="code hl_function" href="geometry_8h.html#a4cc0860cc218307101509c3893739f84">geometry_free</a>(g);</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keywordflow">return</span> m;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>}</div>
+</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="foldopen" id="foldopen00048" data-start="{" data-end="}">
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="mesh_8h.html#aecd1461a3cd08ea754e799e462a943a7">   48</a></span><a class="code hl_struct" href="structMesh.html">Mesh</a>* <a class="code hl_function" href="mesh_8c.html#aecd1461a3cd08ea754e799e462a943a7">create_cube_uv_mesh</a>()</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>{</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <a class="code hl_struct" href="structGeometry.html">Geometry</a>* g = <a class="code hl_function" href="geometry_8h.html#ab3f32e44ecb06bdd0184c0562354fdf2">geometry_create_cube_UV</a>();</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <a class="code hl_struct" href="structMesh.html">Mesh</a>* m = <a class="code hl_function" href="mesh_8c.html#ad20fee6acdafe0427a94e0a60eba8086">create_mesh</a>(g);</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <a class="code hl_function" href="geometry_8h.html#a4cc0860cc218307101509c3893739f84">geometry_free</a>(g);</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="keywordflow">return</span> m;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>}</div>
+</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="foldopen" id="foldopen00058" data-start="{" data-end="}">
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="mesh_8h.html#ad176a7fba154dd6c331ed669c0910a2f">   58</a></span><a class="code hl_struct" href="structMesh.html">Mesh</a>* <a class="code hl_function" href="mesh_8c.html#ad176a7fba154dd6c331ed669c0910a2f">create_block_mesh</a>()</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>{</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <a class="code hl_struct" href="structGeometry.html">Geometry</a>* g = <a class="code hl_function" href="geometry_8h.html#a6496e643e28bd293c1f4d6cb0d53a9b3">geometry_create_block</a>();</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <a class="code hl_struct" href="structMesh.html">Mesh</a>* m = <a class="code hl_function" href="mesh_8c.html#ad20fee6acdafe0427a94e0a60eba8086">create_mesh</a>(g);</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <a class="code hl_function" href="geometry_8h.html#a4cc0860cc218307101509c3893739f84">geometry_free</a>(g);</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="keywordflow">return</span> m;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>}</div>
+</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="foldopen" id="foldopen00068" data-start="{" data-end="}">
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="mesh_8h.html#adb9d08fa8bd99ec95a04e1164c4b47e8">   68</a></span><a class="code hl_struct" href="structMesh.html">Mesh</a>* <a class="code hl_function" href="mesh_8c.html#adb9d08fa8bd99ec95a04e1164c4b47e8">create_sphere_mesh</a>(<span class="keywordtype">float</span> R, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> lat_amount, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> long_amount)</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>{</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <a class="code hl_struct" href="structGeometry.html">Geometry</a>* g = <a class="code hl_function" href="geometry_8h.html#a368965c6bda621e7b5d07d82c4047dfc">geometry_create_sphere</a>(R, lat_amount, long_amount);</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <a class="code hl_struct" href="structMesh.html">Mesh</a>* m = <a class="code hl_function" href="mesh_8c.html#ad20fee6acdafe0427a94e0a60eba8086">create_mesh</a>(g);</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <a class="code hl_function" href="geometry_8h.html#a4cc0860cc218307101509c3893739f84">geometry_free</a>(g);</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <span class="keywordflow">return</span> m;</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>}</div>
+</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
+<div class="foldopen" id="foldopen00078" data-start="{" data-end="}">
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="mesh_8h.html#a11d3f38dca8673ae5ded549f2426f779">   78</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="mesh_8c.html#a11d3f38dca8673ae5ded549f2426f779">free_mesh</a>(<a class="code hl_struct" href="structMesh.html">Mesh</a>* m)</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>{</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <span class="keywordflow">if</span> (m == NULL)</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    {</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        <a class="code hl_define" href="logger_8h.html#ae6fc70e87e424e7083c63696b8fb9e78">LOG_ERROR</a>(<span class="stringliteral">&quot;Tried to free a NULL mesh&quot;</span>);</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    }</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    glDeleteVertexArrays(1, &amp;m-&gt;<a class="code hl_variable" href="structMesh.html#a09b989b9d4df8ae595d7e80e091a4a5b">VAO</a>);</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    glDeleteBuffers(1, &amp;m-&gt;<a class="code hl_variable" href="structMesh.html#a0d28b2c6fee628a13f43cae3f858569b">VBO</a>);</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    glDeleteBuffers(1, &amp;m-&gt;<a class="code hl_variable" href="structMesh.html#a894c6723c0172f4e38b2509582abfa6c">EBO</a>);</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    free(m);</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>}</div>
+</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
+<div class="foldopen" id="foldopen00093" data-start="{" data-end="}">
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno"><a class="line" href="mesh_8h.html#a9b979d7f4d62651bd60ebe01b94b08b2">   93</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="mesh_8c.html#a9b979d7f4d62651bd60ebe01b94b08b2">bind_mesh</a>(<a class="code hl_struct" href="structMesh.html">Mesh</a>* m)</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>{</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    <span class="keywordflow">if</span> (m == NULL)</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    {</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        <a class="code hl_define" href="logger_8h.html#ae6fc70e87e424e7083c63696b8fb9e78">LOG_ERROR</a>(<span class="stringliteral">&quot;Trying to bind a null mesh&quot;</span>);</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    }</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    <a class="code hl_define" href="gl__debug_8h.html#a36f52f88cf6af370013ffedb8df4c884">GL_CALL</a>(glBindVertexArray(m-&gt;<a class="code hl_variable" href="structMesh.html#a09b989b9d4df8ae595d7e80e091a4a5b">VAO</a>));</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    <a class="code hl_define" href="gl__debug_8h.html#a36f52f88cf6af370013ffedb8df4c884">GL_CALL</a>(glBindBuffer(GL_ARRAY_BUFFER, m-&gt;<a class="code hl_variable" href="structMesh.html#a0d28b2c6fee628a13f43cae3f858569b">VBO</a>));</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    <a class="code hl_define" href="gl__debug_8h.html#a36f52f88cf6af370013ffedb8df4c884">GL_CALL</a>(glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m-&gt;<a class="code hl_variable" href="structMesh.html#a894c6723c0172f4e38b2509582abfa6c">EBO</a>));</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>}</div>
+</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
+<div class="foldopen" id="foldopen00105" data-start="{" data-end="}">
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno"><a class="line" href="mesh_8h.html#a21948ef730bd24893eac626b7ff2552f">  105</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="mesh_8c.html#a21948ef730bd24893eac626b7ff2552f">unbind_mesh</a>(<a class="code hl_struct" href="structMesh.html">Mesh</a>* m)</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>{</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    <span class="keywordflow">if</span> (m == NULL)</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    {</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        <a class="code hl_define" href="logger_8h.html#ae6fc70e87e424e7083c63696b8fb9e78">LOG_ERROR</a>(<span class="stringliteral">&quot;Trying to unbind a null mesh&quot;</span>);</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    }</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    glBindVertexArray(0);</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    glBindBuffer(GL_ARRAY_BUFFER, 0);</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>}</div>
+</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span> </div>
+<div class="foldopen" id="foldopen00117" data-start="{" data-end="}">
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno"><a class="line" href="mesh_8h.html#a186b0b1142b4f009868d2d0c2a788511">  117</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="mesh_8c.html#a186b0b1142b4f009868d2d0c2a788511">draw_mesh</a>(<a class="code hl_struct" href="structMesh.html">Mesh</a>* m, GLenum mode)</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>{</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    <span class="keywordflow">if</span> (m == NULL)</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    {</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>        <a class="code hl_define" href="logger_8h.html#ae6fc70e87e424e7083c63696b8fb9e78">LOG_ERROR</a>(<span class="stringliteral">&quot;Cannot draw a NULL mesh.&quot;</span>);</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    }</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span> </div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    <a class="code hl_define" href="gl__debug_8h.html#a36f52f88cf6af370013ffedb8df4c884">GL_CALL</a>(glDrawElements(</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>        mode,</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>        m-&gt;<a class="code hl_variable" href="structMesh.html#abab0b2c19c0eef6c60eb64d7b118c3a2">indices_amount</a>,</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>        GL_UNSIGNED_INT,</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>        NULL</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    ));</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>}</div>
+</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span> </div>
+<div class="foldopen" id="foldopen00133" data-start="{" data-end="}">
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno"><a class="line" href="mesh_8h.html#aa028d951125ef12acf57344df04b0f1d">  133</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="mesh_8c.html#aa028d951125ef12acf57344df04b0f1d">draw_mesh_instanced</a>(<a class="code hl_struct" href="structMesh.html">Mesh</a>* m, GLenum mode, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> amount)</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>{</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    <span class="keywordflow">if</span> (m == NULL)</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    {</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>        <a class="code hl_define" href="logger_8h.html#ae6fc70e87e424e7083c63696b8fb9e78">LOG_ERROR</a>(<span class="stringliteral">&quot;Cannot draw a NULL mesh.&quot;</span>);</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    }</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span> </div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>    <a class="code hl_define" href="gl__debug_8h.html#a36f52f88cf6af370013ffedb8df4c884">GL_CALL</a>(glDrawElementsInstanced(</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>        mode,</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>        m-&gt;<a class="code hl_variable" href="structMesh.html#abab0b2c19c0eef6c60eb64d7b118c3a2">indices_amount</a>,</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>        GL_UNSIGNED_INT,</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>        NULL,</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>        amount</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>    ));</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>}</div>
+</div>
+<div class="ttc" id="ageometry_8h_html_a04f396ba56a29e4dd8489afd3975bac0"><div class="ttname"><a href="geometry_8h.html#a04f396ba56a29e4dd8489afd3975bac0">geometry_load_to_gpu</a></div><div class="ttdeci">void geometry_load_to_gpu(Geometry *g)</div><div class="ttdoc">charge les données de la geometry dans le GPU</div><div class="ttdef"><b>Definition</b> <a href="geometry_8c_source.html#l00256">geometry.c:256</a></div></div>
+<div class="ttc" id="ageometry_8h_html_a368965c6bda621e7b5d07d82c4047dfc"><div class="ttname"><a href="geometry_8h.html#a368965c6bda621e7b5d07d82c4047dfc">geometry_create_sphere</a></div><div class="ttdeci">Geometry * geometry_create_sphere(float R, unsigned int lat_amount, unsigned int long_amount)</div><div class="ttdoc">Créer les données de vertex d&#39;une sphère.</div><div class="ttdef"><b>Definition</b> <a href="geometry_8c_source.html#l00126">geometry.c:126</a></div></div>
+<div class="ttc" id="ageometry_8h_html_a4cc0860cc218307101509c3893739f84"><div class="ttname"><a href="geometry_8h.html#a4cc0860cc218307101509c3893739f84">geometry_free</a></div><div class="ttdeci">void geometry_free(Geometry *g)</div><div class="ttdoc">libère la mémoire de la geometry passer en paramêtre</div><div class="ttdef"><b>Definition</b> <a href="geometry_8c_source.html#l00271">geometry.c:271</a></div></div>
+<div class="ttc" id="ageometry_8h_html_a6496e643e28bd293c1f4d6cb0d53a9b3"><div class="ttname"><a href="geometry_8h.html#a6496e643e28bd293c1f4d6cb0d53a9b3">geometry_create_block</a></div><div class="ttdeci">Geometry * geometry_create_block()</div><div class="ttdoc">Créer les données de géomotrie d&#39;un block avec des vertices de VertexBlock.</div><div class="ttdef"><b>Definition</b> <a href="geometry_8c_source.html#l00117">geometry.c:117</a></div></div>
+<div class="ttc" id="ageometry_8h_html_ab3f32e44ecb06bdd0184c0562354fdf2"><div class="ttname"><a href="geometry_8h.html#ab3f32e44ecb06bdd0184c0562354fdf2">geometry_create_cube_UV</a></div><div class="ttdeci">Geometry * geometry_create_cube_UV()</div><div class="ttdoc">Créer les données de géomotrie d&#39;un cube avec des vertices de VertexUV.</div><div class="ttdef"><b>Definition</b> <a href="geometry_8c_source.html#l00108">geometry.c:108</a></div></div>
+<div class="ttc" id="ageometry_8h_html_af386d6f00f08874f69f6949029bac432"><div class="ttname"><a href="geometry_8h.html#af386d6f00f08874f69f6949029bac432">geometry_create_cube</a></div><div class="ttdeci">Geometry * geometry_create_cube()</div><div class="ttdoc">Créer les données de géomotrie d&#39;un cube avec des vertices de Vertex.</div><div class="ttdef"><b>Definition</b> <a href="geometry_8c_source.html#l00099">geometry.c:99</a></div></div>
+<div class="ttc" id="agl__debug_8h_html"><div class="ttname"><a href="gl__debug_8h.html">gl_debug.h</a></div></div>
+<div class="ttc" id="agl__debug_8h_html_a36f52f88cf6af370013ffedb8df4c884"><div class="ttname"><a href="gl__debug_8h.html#a36f52f88cf6af370013ffedb8df4c884">GL_CALL</a></div><div class="ttdeci">#define GL_CALL(func)</div><div class="ttdef"><b>Definition</b> <a href="gl__debug_8h_source.html#l00024">gl_debug.h:24</a></div></div>
+<div class="ttc" id="alogger_8h_html"><div class="ttname"><a href="logger_8h.html">logger.h</a></div><div class="ttdoc">Ficher fournissant des macro de log afin d&#39;afficher des messages de déboggage dans la console.</div></div>
+<div class="ttc" id="alogger_8h_html_ae6fc70e87e424e7083c63696b8fb9e78"><div class="ttname"><a href="logger_8h.html#ae6fc70e87e424e7083c63696b8fb9e78">LOG_ERROR</a></div><div class="ttdeci">#define LOG_ERROR(fmt,...)</div><div class="ttdef"><b>Definition</b> <a href="logger_8h_source.html#l00071">logger.h:71</a></div></div>
+<div class="ttc" id="amesh_8c_html_a11d3f38dca8673ae5ded549f2426f779"><div class="ttname"><a href="mesh_8c.html#a11d3f38dca8673ae5ded549f2426f779">free_mesh</a></div><div class="ttdeci">void free_mesh(Mesh *m)</div><div class="ttdoc">libère la mémoire de la géométrie en passer en paramêtre</div><div class="ttdef"><b>Definition</b> <a href="#l00078">mesh.c:78</a></div></div>
+<div class="ttc" id="amesh_8c_html_a186b0b1142b4f009868d2d0c2a788511"><div class="ttname"><a href="mesh_8c.html#a186b0b1142b4f009868d2d0c2a788511">draw_mesh</a></div><div class="ttdeci">void draw_mesh(Mesh *m, GLenum mode)</div><div class="ttdoc">Déssine la géométrie actuelle en faisant un appel GPU.</div><div class="ttdef"><b>Definition</b> <a href="#l00117">mesh.c:117</a></div></div>
+<div class="ttc" id="amesh_8c_html_a21948ef730bd24893eac626b7ff2552f"><div class="ttname"><a href="mesh_8c.html#a21948ef730bd24893eac626b7ff2552f">unbind_mesh</a></div><div class="ttdeci">void unbind_mesh(Mesh *m)</div><div class="ttdoc">dé lie les données de la géométrie du GPU</div><div class="ttdef"><b>Definition</b> <a href="#l00105">mesh.c:105</a></div></div>
+<div class="ttc" id="amesh_8c_html_a9b979d7f4d62651bd60ebe01b94b08b2"><div class="ttname"><a href="mesh_8c.html#a9b979d7f4d62651bd60ebe01b94b08b2">bind_mesh</a></div><div class="ttdeci">void bind_mesh(Mesh *m)</div><div class="ttdoc">Lie les données de la géométrie au GPU.</div><div class="ttdef"><b>Definition</b> <a href="#l00093">mesh.c:93</a></div></div>
+<div class="ttc" id="amesh_8c_html_aa028d951125ef12acf57344df04b0f1d"><div class="ttname"><a href="mesh_8c.html#aa028d951125ef12acf57344df04b0f1d">draw_mesh_instanced</a></div><div class="ttdeci">void draw_mesh_instanced(Mesh *m, GLenum mode, unsigned int amount)</div><div class="ttdoc">fait un appel GPU pour déssiner plusieurs instance la géométrie</div><div class="ttdef"><b>Definition</b> <a href="#l00133">mesh.c:133</a></div></div>
+<div class="ttc" id="amesh_8c_html_abb59808459ab79134bb8e615f55229de"><div class="ttname"><a href="mesh_8c.html#abb59808459ab79134bb8e615f55229de">create_cube_mesh</a></div><div class="ttdeci">Mesh * create_cube_mesh()</div><div class="ttdoc">Créer une nouvelle géométrie de cube.</div><div class="ttdef"><b>Definition</b> <a href="#l00038">mesh.c:38</a></div></div>
+<div class="ttc" id="amesh_8c_html_ad176a7fba154dd6c331ed669c0910a2f"><div class="ttname"><a href="mesh_8c.html#ad176a7fba154dd6c331ed669c0910a2f">create_block_mesh</a></div><div class="ttdeci">Mesh * create_block_mesh()</div><div class="ttdoc">Créer une nouvelle géométrie de block.</div><div class="ttdef"><b>Definition</b> <a href="#l00058">mesh.c:58</a></div></div>
+<div class="ttc" id="amesh_8c_html_ad20fee6acdafe0427a94e0a60eba8086"><div class="ttname"><a href="mesh_8c.html#ad20fee6acdafe0427a94e0a60eba8086">create_mesh</a></div><div class="ttdeci">Mesh * create_mesh(Geometry *g)</div><div class="ttdoc">Créer une nouvelle géométrie à partir du modèle en paramêtre.</div><div class="ttdef"><b>Definition</b> <a href="#l00011">mesh.c:11</a></div></div>
+<div class="ttc" id="amesh_8c_html_adb9d08fa8bd99ec95a04e1164c4b47e8"><div class="ttname"><a href="mesh_8c.html#adb9d08fa8bd99ec95a04e1164c4b47e8">create_sphere_mesh</a></div><div class="ttdeci">Mesh * create_sphere_mesh(float R, unsigned int lat_amount, unsigned int long_amount)</div><div class="ttdoc">Créer une nouvelle géométrie de sphère.</div><div class="ttdef"><b>Definition</b> <a href="#l00068">mesh.c:68</a></div></div>
+<div class="ttc" id="amesh_8c_html_aecd1461a3cd08ea754e799e462a943a7"><div class="ttname"><a href="mesh_8c.html#aecd1461a3cd08ea754e799e462a943a7">create_cube_uv_mesh</a></div><div class="ttdeci">Mesh * create_cube_uv_mesh()</div><div class="ttdoc">Créer une nouvelle géométrie de cube avec UV.</div><div class="ttdef"><b>Definition</b> <a href="#l00048">mesh.c:48</a></div></div>
+<div class="ttc" id="amesh_8h_html"><div class="ttname"><a href="mesh_8h.html">mesh.h</a></div><div class="ttdoc">Structure représentant les données d&#39;un modèle 3D charger dans le GPU.</div></div>
+<div class="ttc" id="astructArrayList_html_aedd83f72e2d9eb8688575ce5417f5424"><div class="ttname"><a href="structArrayList.html#aedd83f72e2d9eb8688575ce5417f5424">ArrayList::count</a></div><div class="ttdeci">size_t count</div><div class="ttdef"><b>Definition</b> <a href="array__list_8h_source.html#l00031">array_list.h:31</a></div></div>
+<div class="ttc" id="astructGeometry_html"><div class="ttname"><a href="structGeometry.html">Geometry</a></div><div class="ttdef"><b>Definition</b> <a href="geometry_8h_source.html#l00025">geometry.h:26</a></div></div>
+<div class="ttc" id="astructGeometry_html_aaf19b6fc4cb028eab28ca95b29bb05d8"><div class="ttname"><a href="structGeometry.html#aaf19b6fc4cb028eab28ca95b29bb05d8">Geometry::indices</a></div><div class="ttdeci">ArrayList * indices</div><div class="ttdef"><b>Definition</b> <a href="geometry_8h_source.html#l00028">geometry.h:28</a></div></div>
+<div class="ttc" id="astructGeometry_html_aefe68b9d992b6e9852d8f9f0cd47e756"><div class="ttname"><a href="structGeometry.html#aefe68b9d992b6e9852d8f9f0cd47e756">Geometry::layout</a></div><div class="ttdeci">VertexLayout layout</div><div class="ttdef"><b>Definition</b> <a href="geometry_8h_source.html#l00030">geometry.h:30</a></div></div>
+<div class="ttc" id="astructMesh_html"><div class="ttname"><a href="structMesh.html">Mesh</a></div><div class="ttdef"><b>Definition</b> <a href="mesh_8h_source.html#l00028">mesh.h:29</a></div></div>
+<div class="ttc" id="astructMesh_html_a09b989b9d4df8ae595d7e80e091a4a5b"><div class="ttname"><a href="structMesh.html#a09b989b9d4df8ae595d7e80e091a4a5b">Mesh::VAO</a></div><div class="ttdeci">GLuint VAO</div><div class="ttdef"><b>Definition</b> <a href="mesh_8h_source.html#l00030">mesh.h:30</a></div></div>
+<div class="ttc" id="astructMesh_html_a0d28b2c6fee628a13f43cae3f858569b"><div class="ttname"><a href="structMesh.html#a0d28b2c6fee628a13f43cae3f858569b">Mesh::VBO</a></div><div class="ttdeci">GLuint VBO</div><div class="ttdef"><b>Definition</b> <a href="mesh_8h_source.html#l00031">mesh.h:31</a></div></div>
+<div class="ttc" id="astructMesh_html_a894c6723c0172f4e38b2509582abfa6c"><div class="ttname"><a href="structMesh.html#a894c6723c0172f4e38b2509582abfa6c">Mesh::EBO</a></div><div class="ttdeci">GLuint EBO</div><div class="ttdef"><b>Definition</b> <a href="mesh_8h_source.html#l00032">mesh.h:32</a></div></div>
+<div class="ttc" id="astructMesh_html_abab0b2c19c0eef6c60eb64d7b118c3a2"><div class="ttname"><a href="structMesh.html#abab0b2c19c0eef6c60eb64d7b118c3a2">Mesh::indices_amount</a></div><div class="ttdeci">unsigned int indices_amount</div><div class="ttdef"><b>Definition</b> <a href="mesh_8h_source.html#l00035">mesh.h:35</a></div></div>
+<div class="ttc" id="astructVertexLayout_html"><div class="ttname"><a href="structVertexLayout.html">VertexLayout</a></div><div class="ttdef"><b>Definition</b> <a href="vertex__layout_8h_source.html#l00056">vertex_layout.h:57</a></div></div>
+<div class="ttc" id="avertex__layout_8h_html"><div class="ttname"><a href="vertex__layout_8h.html">vertex_layout.h</a></div><div class="ttdoc">Fichier contenant les structure de spécification de la disposition des attributs des vertex.</div></div>
+<div class="ttc" id="avertex__layout_8h_html_ac2203536338ae15b11166ff583de9bdd"><div class="ttname"><a href="vertex__layout_8h.html#ac2203536338ae15b11166ff583de9bdd">vertex_layout_make_VAO</a></div><div class="ttdeci">void vertex_layout_make_VAO(VertexLayout *layout)</div><div class="ttdoc">Envoie les données de dispotion des vertex au GPU.</div><div class="ttdef"><b>Definition</b> <a href="vertex__layout_8c_source.html#l00096">vertex_layout.c:96</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_758d8e9166e39e682af4fe71d4574a53.html">FEURcraft</a></li><li class="navelem"><a href="dir_d563573f48eefcd0f66954300c445435.html">graphic</a></li><li class="navelem"><a href="dir_aa28f9dfa0290fc45f1ab57c4462e698.html">src</a></li><li class="navelem"><a href="mesh_8c.html">mesh.c</a></li>
+    <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

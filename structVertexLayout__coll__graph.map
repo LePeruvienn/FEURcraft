@@ -1,0 +1,5 @@
+<map id="VertexLayout" name="VertexLayout">
+<area shape="rect" id="Node000001" title=" " alt="" coords="11,100,108,125"/>
+<area shape="rect" id="Node000002" href="$structVertexAttribute.html" title=" " alt="" coords="5,5,114,30"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="62,46,62,100,57,100,57,46"/>
+</map>

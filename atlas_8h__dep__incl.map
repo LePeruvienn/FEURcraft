@@ -1,0 +1,9 @@
+<map id="FEURcraft/graphic/include/atlas.h" name="FEURcraft/graphic/include/atlas.h">
+<area shape="rect" id="Node000001" title="Atlas pour stocker plusieurs images sur la même images." alt="" coords="99,5,274,44"/>
+<area shape="rect" id="Node000002" href="$texture_8h.html" title="Structure représentant les données d&#39;une texture charger dans le GPU." alt="" coords="5,92,181,131"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="156,57,115,93,112,89,153,53"/>
+<area shape="rect" id="Node000004" href="$atlas_8c.html" title=" " alt="" coords="205,92,357,131"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="221,53,262,89,258,93,217,57"/>
+<area shape="rect" id="Node000003" href="$texture_8c.html" title=" " alt="" coords="17,179,169,217"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="96,147,96,178,90,178,90,147"/>
+</map>

@@ -1,0 +1,165 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>FEURcraft:  Fichier source de FEURcraft/graphic/include/texture.h</title>
+<link rel="icon" href="FEURcraft.png" type="image/x-icon" />
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="FEURcraft.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">FEURcraft<span id="projectnumber">&#160;0.0.1</span>
+   </div>
+   <div id="projectbrief">Moteur Voxel.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Recherche',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('texture_8h_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Chargement...</div>
+<div class="SRStatus" id="Searching">Recherche...</div>
+<div class="SRStatus" id="NoMatches">Aucune correspondance</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">texture.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="texture_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef TEXTURE_H</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define TEXTURE_H</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="image_8h.html">image.h</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="atlas_8h.html">atlas.h</a>&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;glad/glad.h&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;stddef.h&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="texture_8h.html#a9862149b4afb78441c9ac01b07535975">   21</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="structTexture.html">Texture</a> <a class="code hl_struct" href="structTexture.html">Texture</a>;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="foldopen" id="foldopen00023" data-start="{" data-end="};">
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="structTexture.html">   23</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structTexture.html">Texture</a></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>{</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="structTexture.html#af848138d72c1fc995ab414a71ab10d47">   25</a></span>    GLuint <a class="code hl_variable" href="structTexture.html#af848138d72c1fc995ab414a71ab10d47">id</a>;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="structTexture.html#a3088e4128006adb188c020741079afe7">   26</a></span>    GLuint <a class="code hl_variable" href="structTexture.html#a3088e4128006adb188c020741079afe7">type</a>;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="structTexture.html#a5d81cb05821b158ded3d5a46a4cd8f5a">   28</a></span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="structTexture.html#a5d81cb05821b158ded3d5a46a4cd8f5a">width</a>;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="structTexture.html#ab4b01ae73439cbcc210a5977e227a880">   29</a></span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="structTexture.html#ab4b01ae73439cbcc210a5977e227a880">height</a>;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>};</div>
+</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><a class="code hl_struct" href="structTexture.html">Texture</a>* <a class="code hl_function" href="texture_8h.html#a0fcb309ad9f79b49446995dfbc7fc29d">create_texture</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>* data,</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>                        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> width, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> height);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><a class="code hl_struct" href="structTexture.html">Texture</a>* <a class="code hl_function" href="texture_8h.html#a6b1bd7b1c338c1a6cc0fe76a59a028f9">create_texture_from_image</a>(<a class="code hl_struct" href="structImage.html">Image</a>* img);</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><a class="code hl_struct" href="structTexture.html">Texture</a>* <a class="code hl_function" href="texture_8h.html#a9930de07a8f8eb02aeb1bbbdc3daa871">create_texture_from_file</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* path);</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span><a class="code hl_struct" href="structTexture.html">Texture</a>* <a class="code hl_function" href="texture_8h.html#ab9054d91a4a2d902554354dfa636fdda">create_texture_from_atlas</a>(<a class="code hl_struct" href="structAtlas.html">Atlas</a>* atlas);</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span></div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="keywordtype">void</span> <a class="code hl_function" href="texture_8h.html#a11c997359bd8e1942c8fcb4acffa7971">free_texture</a>(<a class="code hl_struct" href="structTexture.html">Texture</a>* t);</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span></div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span><span class="keywordtype">void</span> <a class="code hl_function" href="texture_8h.html#a7fcb3693c1cc5a243227c428a453a2f2">bind_texture</a>(<a class="code hl_struct" href="structTexture.html">Texture</a>* t, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> unit);</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span></div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span><span class="keywordtype">void</span> <a class="code hl_function" href="texture_8h.html#a4a2590dd6f65352eb85ff1280db38f72">unbind_texture</a>(<a class="code hl_struct" href="structTexture.html">Texture</a>* t, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> unit);</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span><span class="preprocessor">#endif </span><span class="comment">// TEXTURE_H</span></div>
+<div class="ttc" id="aatlas_8h_html"><div class="ttname"><a href="atlas_8h.html">atlas.h</a></div><div class="ttdoc">Atlas pour stocker plusieurs images sur la même images.</div></div>
+<div class="ttc" id="aimage_8h_html"><div class="ttname"><a href="image_8h.html">image.h</a></div></div>
+<div class="ttc" id="astructAtlas_html"><div class="ttname"><a href="structAtlas.html">Atlas</a></div><div class="ttdef"><b>Definition</b> <a href="atlas_8h_source.html#l00022">atlas.h:23</a></div></div>
+<div class="ttc" id="astructImage_html"><div class="ttname"><a href="structImage.html">Image</a></div><div class="ttdef"><b>Definition</b> <a href="image_8h_source.html#l00008">image.h:9</a></div></div>
+<div class="ttc" id="astructTexture_html"><div class="ttname"><a href="structTexture.html">Texture</a></div><div class="ttdef"><b>Definition</b> <a href="#l00023">texture.h:24</a></div></div>
+<div class="ttc" id="astructTexture_html_a3088e4128006adb188c020741079afe7"><div class="ttname"><a href="structTexture.html#a3088e4128006adb188c020741079afe7">Texture::type</a></div><div class="ttdeci">GLuint type</div><div class="ttdef"><b>Definition</b> <a href="#l00026">texture.h:26</a></div></div>
+<div class="ttc" id="astructTexture_html_a5d81cb05821b158ded3d5a46a4cd8f5a"><div class="ttname"><a href="structTexture.html#a5d81cb05821b158ded3d5a46a4cd8f5a">Texture::width</a></div><div class="ttdeci">unsigned int width</div><div class="ttdef"><b>Definition</b> <a href="#l00028">texture.h:28</a></div></div>
+<div class="ttc" id="astructTexture_html_ab4b01ae73439cbcc210a5977e227a880"><div class="ttname"><a href="structTexture.html#ab4b01ae73439cbcc210a5977e227a880">Texture::height</a></div><div class="ttdeci">unsigned int height</div><div class="ttdef"><b>Definition</b> <a href="#l00029">texture.h:29</a></div></div>
+<div class="ttc" id="astructTexture_html_af848138d72c1fc995ab414a71ab10d47"><div class="ttname"><a href="structTexture.html#af848138d72c1fc995ab414a71ab10d47">Texture::id</a></div><div class="ttdeci">GLuint id</div><div class="ttdef"><b>Definition</b> <a href="#l00025">texture.h:25</a></div></div>
+<div class="ttc" id="atexture_8h_html_a0fcb309ad9f79b49446995dfbc7fc29d"><div class="ttname"><a href="texture_8h.html#a0fcb309ad9f79b49446995dfbc7fc29d">create_texture</a></div><div class="ttdeci">Texture * create_texture(unsigned char *data, unsigned int width, unsigned int height)</div><div class="ttdoc">Créer une texture à partir des données passer en paramêtre.</div><div class="ttdef"><b>Definition</b> <a href="texture_8c_source.html#l00013">texture.c:13</a></div></div>
+<div class="ttc" id="atexture_8h_html_a11c997359bd8e1942c8fcb4acffa7971"><div class="ttname"><a href="texture_8h.html#a11c997359bd8e1942c8fcb4acffa7971">free_texture</a></div><div class="ttdeci">void free_texture(Texture *t)</div><div class="ttdoc">Libère la mémoire de la texture en paramêtre.</div><div class="ttdef"><b>Definition</b> <a href="texture_8c_source.html#l00085">texture.c:85</a></div></div>
+<div class="ttc" id="atexture_8h_html_a4a2590dd6f65352eb85ff1280db38f72"><div class="ttname"><a href="texture_8h.html#a4a2590dd6f65352eb85ff1280db38f72">unbind_texture</a></div><div class="ttdeci">void unbind_texture(Texture *t, unsigned int unit)</div><div class="ttdoc">Dé-lie la texture passer en paramêtre du GPU.</div><div class="ttdef"><b>Definition</b> <a href="texture_8c_source.html#l00103">texture.c:103</a></div></div>
+<div class="ttc" id="atexture_8h_html_a6b1bd7b1c338c1a6cc0fe76a59a028f9"><div class="ttname"><a href="texture_8h.html#a6b1bd7b1c338c1a6cc0fe76a59a028f9">create_texture_from_image</a></div><div class="ttdeci">Texture * create_texture_from_image(Image *img)</div><div class="ttdoc">Créer une texture à partir de l&#39;image passer en paramêtre.</div><div class="ttdef"><b>Definition</b> <a href="texture_8c_source.html#l00053">texture.c:53</a></div></div>
+<div class="ttc" id="atexture_8h_html_a7fcb3693c1cc5a243227c428a453a2f2"><div class="ttname"><a href="texture_8h.html#a7fcb3693c1cc5a243227c428a453a2f2">bind_texture</a></div><div class="ttdeci">void bind_texture(Texture *t, unsigned int unit)</div><div class="ttdoc">Lie au GPU la texture passer en paramêtre.</div><div class="ttdef"><b>Definition</b> <a href="texture_8c_source.html#l00093">texture.c:93</a></div></div>
+<div class="ttc" id="atexture_8h_html_a9930de07a8f8eb02aeb1bbbdc3daa871"><div class="ttname"><a href="texture_8h.html#a9930de07a8f8eb02aeb1bbbdc3daa871">create_texture_from_file</a></div><div class="ttdeci">Texture * create_texture_from_file(const char *path)</div><div class="ttdoc">Créer une texture à partir du fichier passer en paramêtre.</div><div class="ttdef"><b>Definition</b> <a href="texture_8c_source.html#l00061">texture.c:61</a></div></div>
+<div class="ttc" id="atexture_8h_html_ab9054d91a4a2d902554354dfa636fdda"><div class="ttname"><a href="texture_8h.html#ab9054d91a4a2d902554354dfa636fdda">create_texture_from_atlas</a></div><div class="ttdeci">Texture * create_texture_from_atlas(Atlas *atlas)</div><div class="ttdoc">Créer une texture à partir d&#39;un atlas.</div><div class="ttdef"><b>Definition</b> <a href="texture_8c_source.html#l00074">texture.c:74</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_758d8e9166e39e682af4fe71d4574a53.html">FEURcraft</a></li><li class="navelem"><a href="dir_d563573f48eefcd0f66954300c445435.html">graphic</a></li><li class="navelem"><a href="dir_70cb0612fe78639fcdf942bf945e5531.html">include</a></li><li class="navelem"><a href="texture_8h.html">texture.h</a></li>
+    <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

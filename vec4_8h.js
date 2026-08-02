@@ -1,0 +1,26 @@
+var vec4_8h =
+[
+    [ "Vec4", "structVec4.html", "structVec4" ],
+    [ "VEC4", "vec4_8h.html#a0f62e58bffbb2111e46cdfd0c30e7b70", null ],
+    [ "VEC4_ONE", "vec4_8h.html#a99878969251eb96b30be97558879ec69", null ],
+    [ "VEC4_ZERO", "vec4_8h.html#a498dc8347b8be284a9413ddea01d00ff", null ],
+    [ "Vec4", "vec4_8h.html#abd438584811431d451e07e5600aab8e7", null ],
+    [ "vec4_add", "vec4_8h.html#a5797a52c76a1fc01b53c30edbd81face", null ],
+    [ "vec4_add_in", "vec4_8h.html#afcf321823958a985bd4021fb37343157", null ],
+    [ "vec4_add_scal", "vec4_8h.html#a2e4cbd88e8136f93531e9e0348c51e1f", null ],
+    [ "vec4_add_scal_in", "vec4_8h.html#a7873e4308363cc10ef0690bbc38d2b85", null ],
+    [ "vec4_cross", "vec4_8h.html#a4c0df36547fb4c3e5b75967bab5f4353", null ],
+    [ "vec4_dist", "vec4_8h.html#af8d3e43092732faeac6f1598283bd03b", null ],
+    [ "vec4_dist2", "vec4_8h.html#a791acd72c4ce3831a47af191dfb01812", null ],
+    [ "vec4_dot", "vec4_8h.html#a936585707b7d3e3bd992530ed96c6759", null ],
+    [ "vec4_len", "vec4_8h.html#aec571b20a4ed683fba9447984871376f", null ],
+    [ "vec4_len2", "vec4_8h.html#ad6719ea836cbd971ac68b8bcca07b8bb", null ],
+    [ "vec4_mult_scal", "vec4_8h.html#a875ec32c5f101da224cb973856adfe9a", null ],
+    [ "vec4_mult_scal_in", "vec4_8h.html#a463f0b1c6d90675ccc1f2bb513f10abc", null ],
+    [ "vec4_norm", "vec4_8h.html#a2b1fdfd908349a5508b83208c63079cc", null ],
+    [ "vec4_norm_in", "vec4_8h.html#aa7ca52edf96409e3b8da79f70e088021", null ],
+    [ "vec4_sub", "vec4_8h.html#ae4230fd86f9ee4681ed17fa3378cd01a", null ],
+    [ "vec4_sub_in", "vec4_8h.html#a510d02802e7b7d4b843d1a06b78d1edd", null ],
+    [ "vec4_sub_scal", "vec4_8h.html#a4482b48ae808cb5b06f3cb44fd7ad860", null ],
+    [ "vec4_sub_scal_in", "vec4_8h.html#a45d058cbecb5e37ac770b3a69ce62ca8", null ]
+];

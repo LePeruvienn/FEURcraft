@@ -1,0 +1,26 @@
+<map id="FEURcraft/world/src/chunk.c" name="FEURcraft/world/src/chunk.c">
+<area shape="rect" id="Node000001" title=" " alt="" coords="151,5,291,44"/>
+<area shape="rect" id="Node000002" href="$chunk_8h.html" title=" " alt="" coords="153,92,220,117"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="215,46,200,79,195,77,210,44"/>
+<area shape="rect" id="Node000003" href="$block_8h.html" title=" " alt="" coords="5,165,69,189"/>
+<area shape="poly" id="edge6_Node000001_Node000003" title=" " alt="" coords="193,47,127,94,60,155,57,151,123,90,190,42"/>
+<area shape="rect" id="Node000004" href="$vec3i_8h.html" title=" " alt="" coords="92,165,155,189"/>
+<area shape="poly" id="edge7_Node000001_Node000004" title=" " alt="" coords="191,47,165,67,143,93,132,121,127,150,122,149,127,120,139,91,161,63,188,42"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="179,165,247,189"/>
+<area shape="poly" id="edge13_Node000001_Node000005" title=" " alt="" coords="229,44,235,78,234,117,226,151,220,149,229,116,229,78,223,45"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="270,165,345,189"/>
+<area shape="poly" id="edge14_Node000001_Node000006" title=" " alt="" coords="234,43,296,150,291,152,229,46"/>
+<area shape="rect" id="Node000007" href="$error__checker_8h.html" title=" " alt="" coords="347,92,458,117"/>
+<area shape="poly" id="edge8_Node000001_Node000007" title=" " alt="" coords="266,42,362,83,360,88,264,47"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="163,120,77,160,74,155,161,115"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="178,119,146,155,142,151,174,115"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="193,116,206,149,201,151,188,118"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="208,115,276,154,274,159,205,120"/>
+<area shape="rect" id="Node000008" href="$logger_8h.html" title="Ficher fournissant des macro de log afin d&#39;afficher des messages de déboggage dans la console." alt="" coords="369,165,436,189"/>
+<area shape="poly" id="edge9_Node000007_Node000008" title=" " alt="" coords="405,117,405,149,400,149,400,117"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="441,237,505,262"/>
+<area shape="poly" id="edge12_Node000007_Node000010" title=" " alt="" coords="415,115,433,137,450,163,462,193,470,221,465,223,457,195,445,166,429,140,411,119"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="358,237,418,262"/>
+<area shape="poly" id="edge10_Node000008_Node000009" title=" " alt="" coords="403,190,396,223,391,222,397,189"/>
+<area shape="poly" id="edge11_Node000008_Node000010" title=" " alt="" coords="416,188,453,224,449,228,412,192"/>
+</map>

@@ -1,0 +1,271 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>FEURcraft: FEURcraft</title>
+<link rel="icon" href="FEURcraft.png" type="image/x-icon" />
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="FEURcraft.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">FEURcraft<span id="projectnumber">&#160;0.0.1</span>
+   </div>
+   <div id="projectbrief">Moteur Voxel.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Recherche',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('index.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Chargement...</div>
+<div class="SRStatus" id="Searching">Recherche...</div>
+<div class="SRStatus" id="NoMatches">Aucune correspondance</div>
+</div>
+</div>
+</div>
+</div>
+
+<div><div class="header">
+  <div class="headertitle"><div class="title">FEURcraft </div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><div class="image">
+<img src="FEURcraft.png" alt=""/>
+<div class="caption">
+Logo FEURcraft</div></div>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md0"></a>
+Introduction</h1>
+<p>Salut en ce moment je travaille sur un clone de Minecraft en C et je me demande si ça intéresserait des gens de travailler sur ce projet avec moi pendant le moi d'août ?</p>
+<p>Le but c'est d'en fait créer notre propre version du jeu, avec le moins de dépendance possible et rendant la contribution accessible a tout le monde, notamment aux 1A.</p>
+<p>Le projet est volontairement en C afin que des la première année les nouveau puisse directement appliquer ce qu'ils font en cours sur su développement de jeux vidéo,</p>
+<p>Et je pense qu'un projet comme celui-ci peut être vraiment très enrichissant pour tout le monde, et voir tout les aspect du game dev.</p>
+<p>Le projet est en C11 avec OpenGL 3.3 pour parler au GPU.</p>
+<p>les dépendances sont GLFW (abstraction OS pour la fenetre et les inputs) et stb pour lire et écrire des PNG/jpg. et c'est tout !</p>
+<p>J'ai implémenter une petite couche d'abstraction sur OpenGL et une petite lib de calcul matriciel et vectoriel et d'autres choses aussi, la base est la</p>
+<p>Est ce que vous pensez que je projet est une bonne idée ? est ce que ça intéresse des gens? je suis ouvert au retours!</p>
+<p><a href="https://github.com/LePeruvienn/FEURcraft">Lien vers le repo github</a></p>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md1"></a>
+Architechure tu projet</h1>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md2"></a>
+Vue d'ensemble</h3>
+<div class="fragment"><div class="line">. Racine du projet</div>
+<div class="line">│</div>
+<div class="line">├── FEURcraft           // Dossier contenant le code source</div>
+<div class="line">│   ├── CMakeLists.txt  // Règle de compulilations</div>
+<div class="line">│   ├── main.c          // point d&#39;entrée du programme</div>
+<div class="line">│   │</div>
+<div class="line">│   │ // Modules</div>
+<div class="line">│   ├── data     // Structures de données</div>
+<div class="line">│   ├── graphic  // Abstraction OpenGL / moteur de rendu</div>
+<div class="line">│   ├── math     // Mathématiques</div>
+<div class="line">│   ├── system   // Gestion entrée/sortie système</div>
+<div class="line">│   ├── world    // Représentation du monde voxel</div>
+<div class="line">│   └── utils    // Trucs utile que je sais pas ou mettre</div>
+</div><!-- fragment --><h3 class="doxsection"><a class="anchor" id="autotoc_md3"></a>
+Modules</h3>
+<p>Chaque module est compilé en une librarie partager (<span class="tt">.so</span> ou <span class="tt">.dll</span> en fonction de la plateforme), cela permet qu'elle peut être lié facilement à n'importe quelle executable (jeu, tests, exemples).</p>
+<p>Chaque module possèdle la même organisation de fichiers.</p>
+<div class="fragment"><div class="line"> Mon Module</div>
+<div class="line">├── CMakeLists.txt  // Régèle de compilation du module</div>
+<div class="line">├── include         // Fichier d&#39;en-tête publique .h</div>
+<div class="line">├── private         // Fichier d&#39;en-tête privé .h</div>
+<div class="line">└── src             // Fichiers source du module .c</div>
+</div><!-- fragment --><ul>
+<li>Fichier d'en-tête <b>publique</b> : Ils peut être inclu par tout les autres modules.</li>
+<li>Fichier d'en-tête <b>privé</b> : Ils peut être inclu uniquement par son propre module.</li>
+</ul>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md4"></a>
+Technologie</h1>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Technologie  </th><th class="markdownTableHeadNone">Rôle  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">OpenGL 3.3  </td><td class="markdownTableBodyNone">API graphique afin de communiquer au GPU pour le rendu du jeu  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">stb_image  </td><td class="markdownTableBodyNone">Lecture et écriture d'image (png, jpeg, ...)  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">GLFW  </td><td class="markdownTableBodyNone">Abstraction entrée système et gestion de la fenêtre  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">OpenAL ?  </td><td class="markdownTableBodyNone">Audio 3D (Pas encore implémenter)  </td></tr>
+</table>
+<p>Notre moteur voxel implémente ces technologie et les expose avec une couche d'abstraction pour faciliter leurs utilisateion. (ex: module <span class="tt">graphic</span> est une abstraction d'OpenGL).</p>
+<p><b>Documentations</b> :</p><ul>
+<li><a href="https://registry.khronos.org/OpenGL-Refpages/gl4//">Documentation d'OpenGL</a></li>
+<li><a href="https://www.glfw.org/docs/latest/">Documentatioon GLFW</a></li>
+</ul>
+<p><b>Liens utiles</b></p><ul>
+<li><a href="https://learnopengl.com/">Apprendre OpenGL</a></li>
+<li><a href="https://github.com/glfw/glfw">Repo de GLFW</a></li>
+<li><a href="https://github.com/nothings/stb">Repo de STB</a></li>
+</ul>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md5"></a>
+Compilation</h1>
+<p>La compilation se fait avec <a href="https://learnopengl.com/">CMake</a> qui permet d'avoir un seul système de build pour plusieurs plateforme (ici on vise Linux et Windows).</p>
+<p>Pour compilé le projet il ya deux manière de faire :</p>
+<p>1) Via le Makefile qui est un wrapper de CMake</p>
+<div class="fragment"><div class="line">make clean</div>
+<div class="line">make</div>
+</div><!-- fragment --><p>2) Executant directement les commandes de compilation CMake</p>
+<div class="fragment"><div class="line">rm -rf build/</div>
+<div class="line">cmake --build build</div>
+<div class="line">cmake -B build</div>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md6"></a>
+Exécutables</h1>
+<p>Tout les executable générer par la compilation se trouve dans le dossier <span class="tt">bin/</span>.</p>
+<p>Il ya 3 type d'écutable dans le projet :</p>
+<ul>
+<li><b>Excutable principal</b> : nommé <span class="tt">FEURcraft</span> c'est le résultat du fichier <span class="tt">main.c</span></li>
+<li><b>Tests</b> : se termine tous pas <span class="tt">.tst</span> c'est tout les fichiers <span class="tt">.c</span> qui sont dans le dossiers <span class="tt">tests/src/</span>.</li>
+<li><b>Exemples</b> : Ce sont des petit programme d'exemple d'utilisation de nos modules. Ils se termine par <span class="tt">.c</span> ce sont tout les fichiers <span class="tt">.c</span> dans le dossier <span class="tt">examples/src</span>.</li>
+</ul>
+<p>⚠️ <b>CHAQUE EXECUTABLE DOIT ÊTRE LANCER DEPUIS LA RACINE DU PROJET</b></p>
+<p>Pour lancer un executable placer vous à la racine du projet, et vous pouvez ensuite l'executer comme ceci :</p>
+<div class="fragment"><div class="line">./bin/mon_exe</div>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md7"></a>
+Tests</h1>
+<p>Le projet possède une petite bibliothèque de tests unitaires nommée <b>FEUR_Test</b>.</p>
+<p>Chaque fichier source situé dans <span class="tt">tests/src/</span> est compilé en un exécutable de test indépendant.</p>
+<p>Par exemple :</p>
+<div class="fragment"><div class="line">tests/src/math_test.c</div>
+</div><!-- fragment --><p>génère l'exécutable :</p>
+<div class="fragment"><div class="line">bin/math_test.tst</div>
+</div><!-- fragment --><p>Il est possible de lancer un test individuellement :</p>
+<div class="fragment"><div class="line">./bin/math_test.tst</div>
+</div><!-- fragment --><p>ou via le script fourni :</p>
+<div class="fragment"><div class="line">./tests/run.sh math_test</div>
+</div><!-- fragment --><p>Pour exécuter tout les tests du projet</p>
+<div class="fragment"><div class="line">./tests/run.sh</div>
+</div><!-- fragment --><p>Voci un exemple de tests unitaire :</p>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="FEUR__Test_8h.html">FEUR_Test/FEUR_Test.h</a>&quot;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><a class="code hl_enumeration" href="test__data_8h.html#aa94862fe5682452e8aea21843fc12c76">FEUR_Test_Result</a> Test_1()</div>
+<div class="line">{</div>
+<div class="line">    <span class="keywordtype">int</span> value = 10;</div>
+<div class="line"> </div>
+<div class="line">    <a class="code hl_define" href="test__assert_8h.html#a8e122d8dcb0beaa0c708b36a95595f24">FEUR_TEST_ASSERT</a>(value == 10);</div>
+<div class="line">    <a class="code hl_define" href="test__assert_8h.html#a8e122d8dcb0beaa0c708b36a95595f24">FEUR_TEST_ASSERT</a>(value != 5);</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="test__data_8h.html#aa94862fe5682452e8aea21843fc12c76a71d9dc57bfd4c19f3ab4657d0518fb21">FEUR_Test_Success</a>;</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><a class="code hl_enumeration" href="test__data_8h.html#aa94862fe5682452e8aea21843fc12c76">FEUR_Test_Result</a> Test_2()</div>
+<div class="line">{</div>
+<div class="line">    <span class="keywordtype">float</span> value = 0.333333f;</div>
+<div class="line"> </div>
+<div class="line">    <a class="code hl_define" href="test__assert_8h.html#ab49f770f61251c543e41bf94d50c67d8">FEUR_TEST_ASSERT_FLOAT</a>(value, 0.333333f);</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="test__data_8h.html#aa94862fe5682452e8aea21843fc12c76a71d9dc57bfd4c19f3ab4657d0518fb21">FEUR_Test_Success</a>;</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">int</span> <a class="code hl_function" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>()</div>
+<div class="line">{</div>
+<div class="line">    <a class="code hl_function" href="tester_8h.html#a67f50cb35612071c5ace642a913b724d">FEUR_Test_Init</a>();</div>
+<div class="line"> </div>
+<div class="line">    <a class="code hl_define" href="test__logger_8h.html#a4f927b7dc5ef44165848e13a00cfaa7a">FEUR_TEST_LOG</a>(<span class="stringliteral">&quot;This is a example of log in a test!&quot;</span>);</div>
+<div class="line"> </div>
+<div class="line">    <a class="code hl_function" href="tester_8h.html#a8bc032e75866d9e3ba035fb9ed4360c4">FEUR_Test_Add_Group</a>(<span class="stringliteral">&quot;Easy Tests :)&quot;</span>);</div>
+<div class="line"> </div>
+<div class="line">    <a class="code hl_function" href="tester_8h.html#a4f189b08365fb1c8aa8cf232d023f5d4">FEUR_Test_Add_Test</a>(<span class="stringliteral">&quot;Test 1&quot;</span>, Test_1);</div>
+<div class="line"> </div>
+<div class="line">    <a class="code hl_function" href="tester_8h.html#a8bc032e75866d9e3ba035fb9ed4360c4">FEUR_Test_Add_Group</a>(<span class="stringliteral">&quot;Hard Tests D:&quot;</span>);</div>
+<div class="line"> </div>
+<div class="line">    <a class="code hl_function" href="tester_8h.html#a4f189b08365fb1c8aa8cf232d023f5d4">FEUR_Test_Add_Test</a>(<span class="stringliteral">&quot;Test 2&quot;</span>, Test_2);</div>
+<div class="line"> </div>
+<div class="line">    <a class="code hl_function" href="tester_8h.html#a1b8f49126671fd90bddeb69c61642523">FEUR_Test_Run</a>();</div>
+<div class="line"> </div>
+<div class="line">    <a class="code hl_function" href="tester_8h.html#ad203ae5f71383ae571eb4a28e2a93f5f">FEUR_Test_End</a>();</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">return</span> 0;</div>
+<div class="line">}</div>
+<div class="ttc" id="aFEUR__Test_8h_html"><div class="ttname"><a href="FEUR__Test_8h.html">FEUR_Test.h</a></div></div>
+<div class="ttc" id="amain_8c_html_ae66f6b31b5ad750f1fe042a706a4e3d4"><div class="ttname"><a href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a></div><div class="ttdeci">int main()</div><div class="ttdef"><b>Definition</b> <a href="main_8c_source.html#l00003">main.c:3</a></div></div>
+<div class="ttc" id="atest__assert_8h_html_a8e122d8dcb0beaa0c708b36a95595f24"><div class="ttname"><a href="test__assert_8h.html#a8e122d8dcb0beaa0c708b36a95595f24">FEUR_TEST_ASSERT</a></div><div class="ttdeci">#define FEUR_TEST_ASSERT(cond)</div><div class="ttdef"><b>Definition</b> <a href="test__assert_8h_source.html#l00025">test_assert.h:25</a></div></div>
+<div class="ttc" id="atest__assert_8h_html_ab49f770f61251c543e41bf94d50c67d8"><div class="ttname"><a href="test__assert_8h.html#ab49f770f61251c543e41bf94d50c67d8">FEUR_TEST_ASSERT_FLOAT</a></div><div class="ttdeci">#define FEUR_TEST_ASSERT_FLOAT(a, b)</div><div class="ttdef"><b>Definition</b> <a href="test__assert_8h_source.html#l00037">test_assert.h:37</a></div></div>
+<div class="ttc" id="atest__data_8h_html_aa94862fe5682452e8aea21843fc12c76"><div class="ttname"><a href="test__data_8h.html#aa94862fe5682452e8aea21843fc12c76">FEUR_Test_Result</a></div><div class="ttdeci">FEUR_Test_Result</div><div class="ttdef"><b>Definition</b> <a href="test__data_8h_source.html#l00015">test_data.h:16</a></div></div>
+<div class="ttc" id="atest__data_8h_html_aa94862fe5682452e8aea21843fc12c76a71d9dc57bfd4c19f3ab4657d0518fb21"><div class="ttname"><a href="test__data_8h.html#aa94862fe5682452e8aea21843fc12c76a71d9dc57bfd4c19f3ab4657d0518fb21">FEUR_Test_Success</a></div><div class="ttdeci">@ FEUR_Test_Success</div><div class="ttdef"><b>Definition</b> <a href="test__data_8h_source.html#l00017">test_data.h:17</a></div></div>
+<div class="ttc" id="atest__logger_8h_html_a4f927b7dc5ef44165848e13a00cfaa7a"><div class="ttname"><a href="test__logger_8h.html#a4f927b7dc5ef44165848e13a00cfaa7a">FEUR_TEST_LOG</a></div><div class="ttdeci">#define FEUR_TEST_LOG(fmt,...)</div><div class="ttdef"><b>Definition</b> <a href="test__logger_8h_source.html#l00015">test_logger.h:15</a></div></div>
+<div class="ttc" id="atester_8h_html_a1b8f49126671fd90bddeb69c61642523"><div class="ttname"><a href="tester_8h.html#a1b8f49126671fd90bddeb69c61642523">FEUR_Test_Run</a></div><div class="ttdeci">void FEUR_Test_Run()</div><div class="ttdef"><b>Definition</b> <a href="tester_8h_source.html#l00115">tester.h:115</a></div></div>
+<div class="ttc" id="atester_8h_html_a4f189b08365fb1c8aa8cf232d023f5d4"><div class="ttname"><a href="tester_8h.html#a4f189b08365fb1c8aa8cf232d023f5d4">FEUR_Test_Add_Test</a></div><div class="ttdeci">void FEUR_Test_Add_Test(const char *name, FEUR_Test_Result(*test_func)())</div><div class="ttdef"><b>Definition</b> <a href="tester_8h_source.html#l00076">tester.h:76</a></div></div>
+<div class="ttc" id="atester_8h_html_a67f50cb35612071c5ace642a913b724d"><div class="ttname"><a href="tester_8h.html#a67f50cb35612071c5ace642a913b724d">FEUR_Test_Init</a></div><div class="ttdeci">void FEUR_Test_Init()</div><div class="ttdef"><b>Definition</b> <a href="tester_8h_source.html#l00033">tester.h:33</a></div></div>
+<div class="ttc" id="atester_8h_html_a8bc032e75866d9e3ba035fb9ed4360c4"><div class="ttname"><a href="tester_8h.html#a8bc032e75866d9e3ba035fb9ed4360c4">FEUR_Test_Add_Group</a></div><div class="ttdeci">void FEUR_Test_Add_Group(const char *name)</div><div class="ttdef"><b>Definition</b> <a href="tester_8h_source.html#l00048">tester.h:48</a></div></div>
+<div class="ttc" id="atester_8h_html_ad203ae5f71383ae571eb4a28e2a93f5f"><div class="ttname"><a href="tester_8h.html#ad203ae5f71383ae571eb4a28e2a93f5f">FEUR_Test_End</a></div><div class="ttdeci">void FEUR_Test_End()</div><div class="ttdef"><b>Definition</b> <a href="tester_8h_source.html#l00170">tester.h:170</a></div></div>
+</div><!-- fragment --> </div></div><!-- PageDoc -->
+<a href="doxygen_crawl.html"></a>
+</div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

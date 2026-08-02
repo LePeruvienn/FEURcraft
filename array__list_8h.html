@@ -1,0 +1,475 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>FEURcraft: Référence du fichier FEURcraft/data/include/array_list.h</title>
+<link rel="icon" href="FEURcraft.png" type="image/x-icon" />
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="FEURcraft.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">FEURcraft<span id="projectnumber">&#160;0.0.1</span>
+   </div>
+   <div id="projectbrief">Moteur Voxel.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Recherche',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('array__list_8h.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Chargement...</div>
+<div class="SRStatus" id="Searching">Recherche...</div>
+<div class="SRStatus" id="NoMatches">Aucune correspondance</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Référence du fichier array_list.h</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Liste dynamique.  
+<a href="#details">Plus de détails...</a></p>
+<div class="textblock"><code>#include &lt;stddef.h&gt;</code><br />
+<code>#include &lt;stdbool.h&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Graphe des dépendances par inclusion de array_list.h:</div>
+<div class="dyncontent">
+<div class="center"><img src="array__list_8h__incl.png" border="0" usemap="#aFEURcraft_2data_2include_2array__list_8h" loading="lazy" alt=""/></div>
+<map name="aFEURcraft_2data_2include_2array__list_8h" id="aFEURcraft_2data_2include_2array__list_8h">
+<area shape="rect" title="Liste dynamique." alt="" coords="6,5,165,44"/>
+<area shape="rect" title=" " alt="" coords="5,92,73,117"/>
+<area shape="poly" title=" " alt="" coords="77,46,56,80,52,77,72,43"/>
+<area shape="rect" title=" " alt="" coords="96,92,171,117"/>
+<area shape="poly" title=" " alt="" coords="100,43,121,77,116,80,95,46"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier :</div>
+<div class="dyncontent">
+<div class="center"><img src="array__list_8h__dep__incl.png" border="0" usemap="#aFEURcraft_2data_2include_2array__list_8hdep" loading="lazy" alt=""/></div>
+<map name="aFEURcraft_2data_2include_2array__list_8hdep" id="aFEURcraft_2data_2include_2array__list_8hdep">
+<area shape="rect" title="Liste dynamique." alt="" coords="395,5,554,44"/>
+<area shape="rect" href="array__list_8c.html" title=" " alt="" coords="164,92,299,131"/>
+<area shape="poly" title=" " alt="" coords="407,52,286,94,284,89,405,47"/>
+<area shape="rect" href="geometry_8h.html" title="Structure représentant les données d&#39;un modèle 3D." alt="" coords="324,92,499,131"/>
+<area shape="poly" title=" " alt="" coords="454,58,428,93,423,90,449,55"/>
+<area shape="rect" href="chunk__geometry_8c.html" title=" " alt="" coords="342,265,494,304"/>
+<area shape="poly" title=" " alt="" coords="522,50,567,83,610,125,625,147,633,171,633,195,622,219,596,245,564,263,530,275,495,282,494,277,528,270,562,258,593,241,617,216,628,194,628,172,620,150,605,128,564,87,518,55"/>
+<area shape="rect" href="geometry_8c.html" title=" " alt="" coords="456,179,608,217"/>
+<area shape="poly" title=" " alt="" coords="497,56,514,91,527,137,533,178,527,178,521,138,509,93,492,58"/>
+<area shape="rect" href="chunk__geometry_8h.html" title=" " alt="" coords="205,179,381,217"/>
+<area shape="poly" title=" " alt="" coords="375,142,321,180,318,176,372,138"/>
+<area shape="poly" title=" " alt="" coords="416,146,420,265,415,265,410,146"/>
+<area shape="rect" href="mesh_8h.html" title="Structure représentant les données d&#39;un modèle 3D charger dans le GPU." alt="" coords="5,179,181,217"/>
+<area shape="poly" title=" " alt="" coords="327,138,164,181,163,175,326,133"/>
+<area shape="poly" title=" " alt="" coords="452,138,507,176,504,180,449,142"/>
+<area shape="poly" title=" " alt="" coords="335,224,392,263,389,267,332,228"/>
+<area shape="rect" href="mesh_8c.html" title=" " alt="" coords="17,265,169,304"/>
+<area shape="poly" title=" " alt="" coords="96,233,96,265,90,265,90,233"/>
+</map>
+</div>
+</div>
+<p><a href="array__list_8h_source.html">Aller au code source de ce fichier.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Structures de données</h2></td></tr>
+<tr class="memitem:ArrayList" id="r_ArrayList"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structArrayList.html">ArrayList</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-define-members" class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:af4d12c696b483eb3a1f456b2cc206275" id="r_af4d12c696b483eb3a1f456b2cc206275"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af4d12c696b483eb3a1f456b2cc206275">ARRAY_LIST_STATIC</a>(_data,  _item_size,  _count,  _capacity)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-typedef-members" class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+Définitions de type</h2></td></tr>
+<tr class="memitem:aedaee9c5f484e36b3dbfef008f954edb" id="r_aedaee9c5f484e36b3dbfef008f954edb"><td class="memItemLeft" align="right" valign="top">typedef struct ArrayList&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aedaee9c5f484e36b3dbfef008f954edb">ArrayList</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr class="memitem:a6b9c9717ba2edfa7723b4750acccea48" id="r_a6b9c9717ba2edfa7723b4750acccea48"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structArrayList.html">ArrayList</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6b9c9717ba2edfa7723b4750acccea48">array_list_create</a> (size_t item_size, size_t capacity)</td></tr>
+<tr class="memitem:a92491465ad3119001acd55b29d7634ae" id="r_a92491465ad3119001acd55b29d7634ae"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a92491465ad3119001acd55b29d7634ae">array_list_copy</a> (const <a class="el" href="structArrayList.html">ArrayList</a> *source, <a class="el" href="structArrayList.html">ArrayList</a> *dest)</td></tr>
+<tr class="memitem:a7c190087570c263f3ba3acb82c4fbbc3" id="r_a7c190087570c263f3ba3acb82c4fbbc3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7c190087570c263f3ba3acb82c4fbbc3">array_list_free</a> (<a class="el" href="structArrayList.html">ArrayList</a> *list)</td></tr>
+<tr class="memitem:a1bc94392afdc6e0f2129638849a5b7ab" id="r_a1bc94392afdc6e0f2129638849a5b7ab"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1bc94392afdc6e0f2129638849a5b7ab">array_list_resize</a> (<a class="el" href="structArrayList.html">ArrayList</a> *list, size_t capacity)</td></tr>
+<tr class="memitem:a3b6306784dbfbea42bf053eaab23d0d9" id="r_a3b6306784dbfbea42bf053eaab23d0d9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3b6306784dbfbea42bf053eaab23d0d9">array_list_reserve</a> (<a class="el" href="structArrayList.html">ArrayList</a> *list, size_t capacity)</td></tr>
+<tr class="memitem:afb242bcb995e14ec1e3059820bee3eb3" id="r_afb242bcb995e14ec1e3059820bee3eb3"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afb242bcb995e14ec1e3059820bee3eb3">array_list_get</a> (const <a class="el" href="structArrayList.html">ArrayList</a> *list, size_t index)</td></tr>
+<tr class="memitem:a6d45549d2fc28b0c7617ef4267c41f0c" id="r_a6d45549d2fc28b0c7617ef4267c41f0c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6d45549d2fc28b0c7617ef4267c41f0c">array_list_push</a> (<a class="el" href="structArrayList.html">ArrayList</a> *list, const void *item)</td></tr>
+<tr class="memitem:a34c98bfb37987b998c3c7f9201c66913" id="r_a34c98bfb37987b998c3c7f9201c66913"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a34c98bfb37987b998c3c7f9201c66913">array_list_push_buffer</a> (<a class="el" href="structArrayList.html">ArrayList</a> *list, const void *items, size_t items_len)</td></tr>
+<tr class="memitem:a75176badbbb9d1f129d30229278d4926" id="r_a75176badbbb9d1f129d30229278d4926"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a75176badbbb9d1f129d30229278d4926">array_list_push_array</a> (<a class="el" href="structArrayList.html">ArrayList</a> *list, const <a class="el" href="structArrayList.html">ArrayList</a> *list_to_add)</td></tr>
+<tr class="memitem:a90c2ea164e7cf0fed2b41e0966300034" id="r_a90c2ea164e7cf0fed2b41e0966300034"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a90c2ea164e7cf0fed2b41e0966300034">array_list_clear</a> (<a class="el" href="structArrayList.html">ArrayList</a> *list)</td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Description détaillée</h2>
+<div class="textblock"><p>Liste dynamique. </p>
+<p><a class="el" href="structArrayList.html">ArrayList</a> est une structure permmettant de manipuler des listes d'élément peut importe leurs type. Elle peut être alloué sur le tas ou sur la pile via un buffer en variable local via la macro <a class="el" href="#af4d12c696b483eb3a1f456b2cc206275">ARRAY_LIST_STATIC</a> </p>
+
+<p class="definition">Définition dans le fichier <a class="el" href="array__list_8h_source.html">array_list.h</a>.</p>
+</div><a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="groupheader">Documentation des macros</h2>
+<a id="af4d12c696b483eb3a1f456b2cc206275" name="af4d12c696b483eb3a1f456b2cc206275"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af4d12c696b483eb3a1f456b2cc206275">&#9670;&#160;</a></span>ARRAY_LIST_STATIC</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ARRAY_LIST_STATIC</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>_data</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>_item_size</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>_count</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>_capacity</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Valeur :</b><div class="fragment"><div class="line">    ((<a class="code hl_struct" href="structArrayList.html">ArrayList</a>) { .data = (_data), \</div>
+<div class="line">                   .item_size = (_item_size), \</div>
+<div class="line">                   .count = (_count), \</div>
+<div class="line">                   .capacity = (_capacity), \</div>
+<div class="line">                   .is_static = <span class="keyword">true</span> })</div>
+<div class="ttc" id="astructArrayList_html"><div class="ttname"><a href="structArrayList.html">ArrayList</a></div><div class="ttdef"><b>Definition</b> <a href="array__list_8h_source.html#l00025">array_list.h:26</a></div></div>
+</div><!-- fragment -->
+<p class="definition">Définition à la ligne <a class="el" href="array__list_8h_source.html#l00016">16</a> du fichier <a class="el" href="array__list_8h_source.html">array_list.h</a>.</p>
+
+</div>
+</div>
+<a name="doc-typedef-members" id="doc-typedef-members"></a><h2 id="header-doc-typedef-members" class="groupheader">Documentation des définitions de type</h2>
+<a id="aedaee9c5f484e36b3dbfef008f954edb" name="aedaee9c5f484e36b3dbfef008f954edb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aedaee9c5f484e36b3dbfef008f954edb">&#9670;&#160;</a></span>ArrayList</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct ArrayList ArrayList</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="array__list_8h_source.html#l00023">23</a> du fichier <a class="el" href="array__list_8h_source.html">array_list.h</a>.</p>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentation des fonctions</h2>
+<a id="a90c2ea164e7cf0fed2b41e0966300034" name="a90c2ea164e7cf0fed2b41e0966300034"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90c2ea164e7cf0fed2b41e0966300034">&#9670;&#160;</a></span>array_list_clear()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void array_list_clear </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structArrayList.html">ArrayList</a> *</td>          <td class="paramname"><span class="paramname"><em>list</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="array__list_8c_source.html#l00208">208</a> du fichier <a class="el" href="array__list_8c_source.html">array_list.c</a>.</p>
+
+</div>
+</div>
+<a id="a92491465ad3119001acd55b29d7634ae" name="a92491465ad3119001acd55b29d7634ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92491465ad3119001acd55b29d7634ae">&#9670;&#160;</a></span>array_list_copy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void array_list_copy </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structArrayList.html">ArrayList</a> *</td>          <td class="paramname"><span class="paramname"><em>source</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structArrayList.html">ArrayList</a> *</td>          <td class="paramname"><span class="paramname"><em>dest</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="array__list_8c_source.html#l00045">45</a> du fichier <a class="el" href="array__list_8c_source.html">array_list.c</a>.</p>
+
+</div>
+</div>
+<a id="a6b9c9717ba2edfa7723b4750acccea48" name="a6b9c9717ba2edfa7723b4750acccea48"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b9c9717ba2edfa7723b4750acccea48">&#9670;&#160;</a></span>array_list_create()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structArrayList.html">ArrayList</a> * array_list_create </td>
+          <td>(</td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>item_size</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>capacity</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="array__list_8c_source.html#l00012">12</a> du fichier <a class="el" href="array__list_8c_source.html">array_list.c</a>.</p>
+
+</div>
+</div>
+<a id="a7c190087570c263f3ba3acb82c4fbbc3" name="a7c190087570c263f3ba3acb82c4fbbc3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c190087570c263f3ba3acb82c4fbbc3">&#9670;&#160;</a></span>array_list_free()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void array_list_free </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structArrayList.html">ArrayList</a> *</td>          <td class="paramname"><span class="paramname"><em>list</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="array__list_8c_source.html#l00069">69</a> du fichier <a class="el" href="array__list_8c_source.html">array_list.c</a>.</p>
+
+</div>
+</div>
+<a id="afb242bcb995e14ec1e3059820bee3eb3" name="afb242bcb995e14ec1e3059820bee3eb3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb242bcb995e14ec1e3059820bee3eb3">&#9670;&#160;</a></span>array_list_get()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void * array_list_get </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structArrayList.html">ArrayList</a> *</td>          <td class="paramname"><span class="paramname"><em>list</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>index</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="array__list_8c_source.html#l00121">121</a> du fichier <a class="el" href="array__list_8c_source.html">array_list.c</a>.</p>
+
+</div>
+</div>
+<a id="a6d45549d2fc28b0c7617ef4267c41f0c" name="a6d45549d2fc28b0c7617ef4267c41f0c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d45549d2fc28b0c7617ef4267c41f0c">&#9670;&#160;</a></span>array_list_push()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void array_list_push </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structArrayList.html">ArrayList</a> *</td>          <td class="paramname"><span class="paramname"><em>list</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *</td>          <td class="paramname"><span class="paramname"><em>item</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="array__list_8c_source.html#l00129">129</a> du fichier <a class="el" href="array__list_8c_source.html">array_list.c</a>.</p>
+
+</div>
+</div>
+<a id="a75176badbbb9d1f129d30229278d4926" name="a75176badbbb9d1f129d30229278d4926"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75176badbbb9d1f129d30229278d4926">&#9670;&#160;</a></span>array_list_push_array()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void array_list_push_array </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structArrayList.html">ArrayList</a> *</td>          <td class="paramname"><span class="paramname"><em>list</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structArrayList.html">ArrayList</a> *</td>          <td class="paramname"><span class="paramname"><em>list_to_add</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="array__list_8c_source.html#l00185">185</a> du fichier <a class="el" href="array__list_8c_source.html">array_list.c</a>.</p>
+
+</div>
+</div>
+<a id="a34c98bfb37987b998c3c7f9201c66913" name="a34c98bfb37987b998c3c7f9201c66913"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a34c98bfb37987b998c3c7f9201c66913">&#9670;&#160;</a></span>array_list_push_buffer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void array_list_push_buffer </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structArrayList.html">ArrayList</a> *</td>          <td class="paramname"><span class="paramname"><em>list</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *</td>          <td class="paramname"><span class="paramname"><em>items</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>items_len</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="array__list_8c_source.html#l00155">155</a> du fichier <a class="el" href="array__list_8c_source.html">array_list.c</a>.</p>
+
+</div>
+</div>
+<a id="a3b6306784dbfbea42bf053eaab23d0d9" name="a3b6306784dbfbea42bf053eaab23d0d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b6306784dbfbea42bf053eaab23d0d9">&#9670;&#160;</a></span>array_list_reserve()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void array_list_reserve </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structArrayList.html">ArrayList</a> *</td>          <td class="paramname"><span class="paramname"><em>list</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>capacity</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="array__list_8c_source.html#l00104">104</a> du fichier <a class="el" href="array__list_8c_source.html">array_list.c</a>.</p>
+
+</div>
+</div>
+<a id="a1bc94392afdc6e0f2129638849a5b7ab" name="a1bc94392afdc6e0f2129638849a5b7ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1bc94392afdc6e0f2129638849a5b7ab">&#9670;&#160;</a></span>array_list_resize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void array_list_resize </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structArrayList.html">ArrayList</a> *</td>          <td class="paramname"><span class="paramname"><em>list</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>capacity</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="array__list_8c_source.html#l00079">79</a> du fichier <a class="el" href="array__list_8c_source.html">array_list.c</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_758d8e9166e39e682af4fe71d4574a53.html">FEURcraft</a></li><li class="navelem"><a href="dir_c5cd876b6a57c3637930715ae1537019.html">data</a></li><li class="navelem"><a href="dir_469acc7c1e724c49faecb702f275eda8.html">include</a></li><li class="navelem"><a href="array__list_8h.html">array_list.h</a></li>
+    <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

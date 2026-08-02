@@ -1,0 +1,16 @@
+<map id="FEURcraft/graphic/include/vertex.h" name="FEURcraft/graphic/include/vertex.h">
+<area shape="rect" id="Node000001" title="Fichier contenant les différent structure de vertex utilisable." alt="" coords="195,5,370,44"/>
+<area shape="rect" id="Node000002" href="$geometry__data_8h.html" title=" " alt="" coords="197,92,369,131"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="286,60,286,91,280,91,280,60"/>
+<area shape="rect" id="Node000003" href="$chunk__geometry_8c.html" title=" " alt="" coords="5,179,158,217"/>
+<area shape="poly" id="edge5_Node000001_Node000003" title=" " alt="" coords="235,54,175,94,131,138,97,180,93,176,127,135,172,90,232,50"/>
+<area shape="rect" id="Node000004" href="$geometry_8c.html" title=" " alt="" coords="181,179,334,217"/>
+<area shape="poly" id="edge6_Node000001_Node000004" title=" " alt="" coords="226,54,204,71,187,93,181,111,187,130,205,156,229,176,225,180,201,159,182,132,176,111,182,91,200,68,223,50"/>
+<area shape="rect" id="Node000005" href="$geometry__data_8c.html" title=" " alt="" coords="357,179,510,217"/>
+<area shape="poly" id="edge7_Node000001_Node000005" title=" " alt="" coords="334,50,360,68,384,90,413,135,430,177,425,179,408,138,379,94,356,72,331,54"/>
+<area shape="rect" id="Node000006" href="$vertex__layout_8c.html" title=" " alt="" coords="444,92,596,131"/>
+<area shape="poly" id="edge8_Node000001_Node000006" title=" " alt="" coords="351,47,469,89,467,94,349,52"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="225,140,127,181,125,176,223,135"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="275,147,266,179,261,177,270,145"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="331,136,401,176,399,180,328,141"/>
+</map>

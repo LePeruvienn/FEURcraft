@@ -1,0 +1,9 @@
+<map id="FEURcraft/system/include/window.h" name="FEURcraft/system/include/window.h">
+<area shape="rect" id="Node000001" title="Abstraction de la gestion de la fenêtre et du contexte OpenGL." alt="" coords="79,5,253,44"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,92,90,117"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="139,47,79,86,76,81,136,42"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="114,92,219,117"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="169,45,169,76,164,76,164,45"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="242,92,317,117"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="195,42,252,81,249,85,192,47"/>
+</map>

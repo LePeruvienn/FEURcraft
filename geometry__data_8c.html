@@ -1,0 +1,561 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>FEURcraft: Référence du fichier FEURcraft/graphic/src/geometry_data.c</title>
+<link rel="icon" href="FEURcraft.png" type="image/x-icon" />
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="FEURcraft.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">FEURcraft<span id="projectnumber">&#160;0.0.1</span>
+   </div>
+   <div id="projectbrief">Moteur Voxel.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Recherche',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('geometry__data_8c.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Chargement...</div>
+<div class="SRStatus" id="Searching">Recherche...</div>
+<div class="SRStatus" id="NoMatches">Aucune correspondance</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Référence du fichier geometry_data.c</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="geometry__data_8h_source.html">geometry_data.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="vertex_8h_source.html">vertex.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="vec3_8h_source.html">vec3.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="block__face_8h_source.html">block_face.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="logger_8h_source.html">logger.h</a>&quot;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Graphe des dépendances par inclusion de geometry_data.c:</div>
+<div class="dyncontent">
+<div class="center"><img src="geometry__data_8c__incl.png" border="0" usemap="#aFEURcraft_2graphic_2src_2geometry__data_8c" loading="lazy" alt=""/></div>
+<map name="aFEURcraft_2graphic_2src_2geometry__data_8c" id="aFEURcraft_2graphic_2src_2geometry__data_8c">
+<area shape="rect" title=" " alt="" coords="176,5,328,44"/>
+<area shape="rect" href="geometry__data_8h.html" title=" " alt="" coords="70,92,189,117"/>
+<area shape="poly" title=" " alt="" coords="224,47,162,86,159,81,221,42"/>
+<area shape="rect" href="vertex_8h.html" title="Fichier contenant les différent structure de vertex utilisable." alt="" coords="127,165,194,189"/>
+<area shape="poly" title=" " alt="" coords="245,46,204,118,180,154,175,151,199,115,240,43"/>
+<area shape="rect" href="vec3_8h.html" title=" " alt="" coords="5,237,65,262"/>
+<area shape="poly" title=" " alt="" coords="177,35,145,43,113,55,84,71,60,94,43,124,34,158,32,193,34,222,28,222,27,193,29,158,38,122,56,90,81,67,111,50,143,38,175,30"/>
+<area shape="rect" href="block__face_8h.html" title=" " alt="" coords="227,237,323,262"/>
+<area shape="poly" title=" " alt="" coords="257,44,275,222,270,222,252,45"/>
+<area shape="rect" href="logger_8h.html" title="Ficher fournissant des macro de log afin d&#39;afficher des messages de déboggage dans la console." alt="" coords="315,92,382,117"/>
+<area shape="poly" title=" " alt="" coords="277,43,324,80,321,84,274,47"/>
+<area shape="rect" title=" " alt="" coords="406,92,470,117"/>
+<area shape="poly" title=" " alt="" coords="298,42,397,83,395,88,296,47"/>
+<area shape="poly" title=" " alt="" coords="137,116,152,149,147,151,132,118"/>
+<area shape="poly" title=" " alt="" coords="141,192,70,232,68,227,138,188"/>
+<area shape="rect" href="vec2_8h.html" title=" " alt="" coords="93,237,153,262"/>
+<area shape="poly" title=" " alt="" coords="157,191,138,225,134,222,152,189"/>
+<area shape="poly" title=" " alt="" coords="181,188,245,227,242,231,178,192"/>
+<area shape="rect" title=" " alt="" coords="201,310,264,335"/>
+<area shape="poly" title=" " alt="" coords="168,188,222,295,217,297,164,191"/>
+<area shape="poly" title=" " alt="" coords="270,264,249,298,245,295,266,261"/>
+<area shape="rect" title=" " alt="" coords="317,165,377,189"/>
+<area shape="poly" title=" " alt="" coords="351,117,350,149,345,149,345,117"/>
+<area shape="rect" title=" " alt="" coords="401,165,464,189"/>
+<area shape="poly" title=" " alt="" coords="364,115,409,153,406,157,360,119"/>
+</map>
+</div>
+</div>
+<p><a href="geometry__data_8c_source.html">Aller au code source de ce fichier.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr class="memitem:a36530454fe7066f08f3726ebadfe4734" id="r_a36530454fe7066f08f3726ebadfe4734"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a36530454fe7066f08f3726ebadfe4734">geometry_data_get_block_face_vertices</a> (<a class="el" href="block__face_8h.html#a67a0b86beeb7045a9d529c432c71a745">BlockFace</a> face, <a class="el" href="structVertexBlock.html">VertexBlock</a> *out_vertices_buffer)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:ad70ba83b20752719624c31c75be037d5" id="r_ad70ba83b20752719624c31c75be037d5"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structVertex.html">Vertex</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad70ba83b20752719624c31c75be037d5">CUBE_VERTICES</a> [<a class="el" href="geometry__data_8h.html#a50196723fab64821b2f6eb5a1a448e7f">CUBE_VERTICES_AMOUNT</a>]</td></tr>
+<tr class="memitem:a1868a367e81d440bce37f8a249267c79" id="r_a1868a367e81d440bce37f8a249267c79"><td class="memItemLeft" align="right" valign="top">const unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1868a367e81d440bce37f8a249267c79">CUBE_INDICES</a> [<a class="el" href="geometry__data_8h.html#aa62418cd5e8a465a328d3c2ca0ce530c">CUBE_INDICES_AMOUNT</a>]</td></tr>
+<tr class="memitem:a72d2fa5b5115717750fe94b812c796b3" id="r_a72d2fa5b5115717750fe94b812c796b3"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structVertexUV.html">VertexUV</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a72d2fa5b5115717750fe94b812c796b3">CUBE_UV_VERTICES</a> [<a class="el" href="geometry__data_8h.html#ace2225b8c4b265352876ad119f1157d8">CUBE_UV_VERTICES_AMOUNT</a>]</td></tr>
+<tr class="memitem:a1f00b9aa0fa616dca239560d4c7f3381" id="r_a1f00b9aa0fa616dca239560d4c7f3381"><td class="memItemLeft" align="right" valign="top">const unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1f00b9aa0fa616dca239560d4c7f3381">CUBE_UV_INDICES</a> [<a class="el" href="geometry__data_8h.html#ac23eb3ddd29076fde8c9ffc3344feeed">CUBE_UV_INDICES_AMOUNT</a>]</td></tr>
+<tr class="memitem:a28979c613f8f2da4cb7c31f47186a48d" id="r_a28979c613f8f2da4cb7c31f47186a48d"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structVertexBlock.html">VertexBlock</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a28979c613f8f2da4cb7c31f47186a48d">BLOCK_VERTICES</a> [<a class="el" href="geometry__data_8h.html#a1e2e849ccd90f210321734f180d32af8">BLOCK_VERTICES_AMOUNT</a>]</td></tr>
+<tr class="memitem:a941d9988ac2682a01941d500888e3d13" id="r_a941d9988ac2682a01941d500888e3d13"><td class="memItemLeft" align="right" valign="top">const unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a941d9988ac2682a01941d500888e3d13">BLOCK_INDICES</a> [<a class="el" href="geometry__data_8h.html#af6092aa3884c234808ecf02e418e9aca">BLOCK_INDICES_AMOUNT</a>]</td></tr>
+<tr class="memitem:a4a20ca3f41970cb2802404bbeb1b5285" id="r_a4a20ca3f41970cb2802404bbeb1b5285"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structVertexBlock.html">VertexBlock</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4a20ca3f41970cb2802404bbeb1b5285">BLOCK_FACE_FRONT_VERTICES</a> [<a class="el" href="geometry__data_8h.html#ab721cdf7d3bd8c0b944ee63b6810bea7">BLOCK_FACE_VERTICES_AMOUNT</a>]</td></tr>
+<tr class="memitem:a1992d83e613b93147132aa99381b2663" id="r_a1992d83e613b93147132aa99381b2663"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structVertexBlock.html">VertexBlock</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1992d83e613b93147132aa99381b2663">BLOCK_FACE_BACK_VERTICES</a> [<a class="el" href="geometry__data_8h.html#ab721cdf7d3bd8c0b944ee63b6810bea7">BLOCK_FACE_VERTICES_AMOUNT</a>]</td></tr>
+<tr class="memitem:a77e2273cccb6d64752dc393b70b9a814" id="r_a77e2273cccb6d64752dc393b70b9a814"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structVertexBlock.html">VertexBlock</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a77e2273cccb6d64752dc393b70b9a814">BLOCK_FACE_TOP_VERTICES</a> [<a class="el" href="geometry__data_8h.html#ab721cdf7d3bd8c0b944ee63b6810bea7">BLOCK_FACE_VERTICES_AMOUNT</a>]</td></tr>
+<tr class="memitem:a84bb49a83d7c2fc3585cbfc6c651b9fc" id="r_a84bb49a83d7c2fc3585cbfc6c651b9fc"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structVertexBlock.html">VertexBlock</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a84bb49a83d7c2fc3585cbfc6c651b9fc">BLOCK_FACE_BOT_VERTICES</a> [<a class="el" href="geometry__data_8h.html#ab721cdf7d3bd8c0b944ee63b6810bea7">BLOCK_FACE_VERTICES_AMOUNT</a>]</td></tr>
+<tr class="memitem:a97ee6284e7ead0dc0cce37c6b3719ecd" id="r_a97ee6284e7ead0dc0cce37c6b3719ecd"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structVertexBlock.html">VertexBlock</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a97ee6284e7ead0dc0cce37c6b3719ecd">BLOCK_FACE_LEFT_VERTICES</a> [<a class="el" href="geometry__data_8h.html#ab721cdf7d3bd8c0b944ee63b6810bea7">BLOCK_FACE_VERTICES_AMOUNT</a>]</td></tr>
+<tr class="memitem:a76717d04795e211ae862d293ff24a6c7" id="r_a76717d04795e211ae862d293ff24a6c7"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structVertexBlock.html">VertexBlock</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a76717d04795e211ae862d293ff24a6c7">BLOCK_FACE_RIGHT_VERTICES</a> [<a class="el" href="geometry__data_8h.html#ab721cdf7d3bd8c0b944ee63b6810bea7">BLOCK_FACE_VERTICES_AMOUNT</a>]</td></tr>
+<tr class="memitem:a846f732a4f068ce9c08592bc3f237fbb" id="r_a846f732a4f068ce9c08592bc3f237fbb"><td class="memItemLeft" align="right" valign="top">const unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a846f732a4f068ce9c08592bc3f237fbb">BLOCK_FACE_INDICES</a> [<a class="el" href="geometry__data_8h.html#a219750cb31d33777df828b3047fffc75">BLOCK_FACE_INDICES_AMOUNT</a>]</td></tr>
+</table>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentation des fonctions</h2>
+<a id="a36530454fe7066f08f3726ebadfe4734" name="a36530454fe7066f08f3726ebadfe4734"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36530454fe7066f08f3726ebadfe4734">&#9670;&#160;</a></span>geometry_data_get_block_face_vertices()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void geometry_data_get_block_face_vertices </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="block__face_8h.html#a67a0b86beeb7045a9d529c432c71a745">BlockFace</a></td>          <td class="paramname"><span class="paramname"><em>face</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structVertexBlock.html">VertexBlock</a> *</td>          <td class="paramname"><span class="paramname"><em>out_vertices_buffer</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="geometry__data_8c_source.html#l00244">244</a> du fichier <a class="el" href="geometry__data_8c_source.html">geometry_data.c</a>.</p>
+
+</div>
+</div>
+<a name="doc-var-members" id="doc-var-members"></a><h2 id="header-doc-var-members" class="groupheader">Documentation des variables</h2>
+<a id="a1992d83e613b93147132aa99381b2663" name="a1992d83e613b93147132aa99381b2663"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1992d83e613b93147132aa99381b2663">&#9670;&#160;</a></span>BLOCK_FACE_BACK_VERTICES</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="structVertexBlock.html">VertexBlock</a> BLOCK_FACE_BACK_VERTICES[<a class="el" href="geometry__data_8h.html#ab721cdf7d3bd8c0b944ee63b6810bea7">BLOCK_FACE_VERTICES_AMOUNT</a>]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Valeur initiale :</b><div class="fragment"><div class="line">=</div>
+<div class="line">{</div>
+<div class="line">    </div>
+<div class="line">    { .pos = <a class="code hl_define" href="vec3_8h.html#ab602d18b7292bc5b5eaf3840cbbad311">VEC3</a>( 0.5f, -0.5f, -0.5f), .uv = <a class="code hl_define" href="vec2_8h.html#a139b81c936cdd2e0edecbeb84ae9326f">VEC2</a>(0.0f, 0.0f), .layer_index = <a class="code hl_enumvalue" href="block__face_8h.html#a67a0b86beeb7045a9d529c432c71a745aa3d0f8574f6575d9a0d1fd67f71ae697">BLOCK_FACE_BACK</a> },</div>
+<div class="line">    { .pos = <a class="code hl_define" href="vec3_8h.html#ab602d18b7292bc5b5eaf3840cbbad311">VEC3</a>(-0.5f, -0.5f, -0.5f), .uv = <a class="code hl_define" href="vec2_8h.html#a139b81c936cdd2e0edecbeb84ae9326f">VEC2</a>(1.0f, 0.0f), .layer_index = <a class="code hl_enumvalue" href="block__face_8h.html#a67a0b86beeb7045a9d529c432c71a745aa3d0f8574f6575d9a0d1fd67f71ae697">BLOCK_FACE_BACK</a> },</div>
+<div class="line">    { .pos = <a class="code hl_define" href="vec3_8h.html#ab602d18b7292bc5b5eaf3840cbbad311">VEC3</a>(-0.5f,  0.5f, -0.5f), .uv = <a class="code hl_define" href="vec2_8h.html#a139b81c936cdd2e0edecbeb84ae9326f">VEC2</a>(1.0f, 1.0f), .layer_index = <a class="code hl_enumvalue" href="block__face_8h.html#a67a0b86beeb7045a9d529c432c71a745aa3d0f8574f6575d9a0d1fd67f71ae697">BLOCK_FACE_BACK</a> },</div>
+<div class="line">    { .pos = <a class="code hl_define" href="vec3_8h.html#ab602d18b7292bc5b5eaf3840cbbad311">VEC3</a>( 0.5f,  0.5f, -0.5f), .uv = <a class="code hl_define" href="vec2_8h.html#a139b81c936cdd2e0edecbeb84ae9326f">VEC2</a>(0.0f, 1.0f), .layer_index = <a class="code hl_enumvalue" href="block__face_8h.html#a67a0b86beeb7045a9d529c432c71a745aa3d0f8574f6575d9a0d1fd67f71ae697">BLOCK_FACE_BACK</a> }</div>
+<div class="line">}</div>
+<div class="ttc" id="ablock__face_8h_html_a67a0b86beeb7045a9d529c432c71a745aa3d0f8574f6575d9a0d1fd67f71ae697"><div class="ttname"><a href="block__face_8h.html#a67a0b86beeb7045a9d529c432c71a745aa3d0f8574f6575d9a0d1fd67f71ae697">BLOCK_FACE_BACK</a></div><div class="ttdeci">@ BLOCK_FACE_BACK</div><div class="ttdef"><b>Definition</b> <a href="block__face_8h_source.html#l00013">block_face.h:13</a></div></div>
+<div class="ttc" id="avec2_8h_html_a139b81c936cdd2e0edecbeb84ae9326f"><div class="ttname"><a href="vec2_8h.html#a139b81c936cdd2e0edecbeb84ae9326f">VEC2</a></div><div class="ttdeci">#define VEC2(_x, _y)</div><div class="ttdef"><b>Definition</b> <a href="vec2_8h_source.html#l00004">vec2.h:4</a></div></div>
+<div class="ttc" id="avec3_8h_html_ab602d18b7292bc5b5eaf3840cbbad311"><div class="ttname"><a href="vec3_8h.html#ab602d18b7292bc5b5eaf3840cbbad311">VEC3</a></div><div class="ttdeci">#define VEC3(_x, _y, _z)</div><div class="ttdef"><b>Definition</b> <a href="vec3_8h_source.html#l00004">vec3.h:4</a></div></div>
+</div><!-- fragment -->
+<p class="definition">Définition à la ligne <a class="el" href="geometry__data_8c_source.html#l00193">193</a> du fichier <a class="el" href="geometry__data_8c_source.html">geometry_data.c</a>.</p>
+
+</div>
+</div>
+<a id="a84bb49a83d7c2fc3585cbfc6c651b9fc" name="a84bb49a83d7c2fc3585cbfc6c651b9fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a84bb49a83d7c2fc3585cbfc6c651b9fc">&#9670;&#160;</a></span>BLOCK_FACE_BOT_VERTICES</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="structVertexBlock.html">VertexBlock</a> BLOCK_FACE_BOT_VERTICES[<a class="el" href="geometry__data_8h.html#ab721cdf7d3bd8c0b944ee63b6810bea7">BLOCK_FACE_VERTICES_AMOUNT</a>]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Valeur initiale :</b><div class="fragment"><div class="line">=</div>
+<div class="line">{</div>
+<div class="line">    </div>
+<div class="line">    { .pos = <a class="code hl_define" href="vec3_8h.html#ab602d18b7292bc5b5eaf3840cbbad311">VEC3</a>(-0.5f, -0.5f, -0.5f), .uv = <a class="code hl_define" href="vec2_8h.html#a139b81c936cdd2e0edecbeb84ae9326f">VEC2</a>(0.0f, 0.0f), .layer_index = <a class="code hl_enumvalue" href="block__face_8h.html#a67a0b86beeb7045a9d529c432c71a745a2d16f061fb2e42a5ea4e2938a5dc5c02">BLOCK_FACE_BOT</a> },</div>
+<div class="line">    { .pos = <a class="code hl_define" href="vec3_8h.html#ab602d18b7292bc5b5eaf3840cbbad311">VEC3</a>( 0.5f, -0.5f, -0.5f), .uv = <a class="code hl_define" href="vec2_8h.html#a139b81c936cdd2e0edecbeb84ae9326f">VEC2</a>(1.0f, 0.0f), .layer_index = <a class="code hl_enumvalue" href="block__face_8h.html#a67a0b86beeb7045a9d529c432c71a745a2d16f061fb2e42a5ea4e2938a5dc5c02">BLOCK_FACE_BOT</a> },</div>
+<div class="line">    { .pos = <a class="code hl_define" href="vec3_8h.html#ab602d18b7292bc5b5eaf3840cbbad311">VEC3</a>( 0.5f, -0.5f,  0.5f), .uv = <a class="code hl_define" href="vec2_8h.html#a139b81c936cdd2e0edecbeb84ae9326f">VEC2</a>(1.0f, 1.0f), .layer_index = <a class="code hl_enumvalue" href="block__face_8h.html#a67a0b86beeb7045a9d529c432c71a745a2d16f061fb2e42a5ea4e2938a5dc5c02">BLOCK_FACE_BOT</a> },</div>
+<div class="line">    { .pos = <a class="code hl_define" href="vec3_8h.html#ab602d18b7292bc5b5eaf3840cbbad311">VEC3</a>(-0.5f, -0.5f,  0.5f), .uv = <a class="code hl_define" href="vec2_8h.html#a139b81c936cdd2e0edecbeb84ae9326f">VEC2</a>(0.0f, 1.0f), .layer_index = <a class="code hl_enumvalue" href="block__face_8h.html#a67a0b86beeb7045a9d529c432c71a745a2d16f061fb2e42a5ea4e2938a5dc5c02">BLOCK_FACE_BOT</a> }</div>
+<div class="line">}</div>
+<div class="ttc" id="ablock__face_8h_html_a67a0b86beeb7045a9d529c432c71a745a2d16f061fb2e42a5ea4e2938a5dc5c02"><div class="ttname"><a href="block__face_8h.html#a67a0b86beeb7045a9d529c432c71a745a2d16f061fb2e42a5ea4e2938a5dc5c02">BLOCK_FACE_BOT</a></div><div class="ttdeci">@ BLOCK_FACE_BOT</div><div class="ttdef"><b>Definition</b> <a href="block__face_8h_source.html#l00015">block_face.h:15</a></div></div>
+</div><!-- fragment -->
+<p class="definition">Définition à la ligne <a class="el" href="geometry__data_8c_source.html#l00211">211</a> du fichier <a class="el" href="geometry__data_8c_source.html">geometry_data.c</a>.</p>
+
+</div>
+</div>
+<a id="a4a20ca3f41970cb2802404bbeb1b5285" name="a4a20ca3f41970cb2802404bbeb1b5285"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a20ca3f41970cb2802404bbeb1b5285">&#9670;&#160;</a></span>BLOCK_FACE_FRONT_VERTICES</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="structVertexBlock.html">VertexBlock</a> BLOCK_FACE_FRONT_VERTICES[<a class="el" href="geometry__data_8h.html#ab721cdf7d3bd8c0b944ee63b6810bea7">BLOCK_FACE_VERTICES_AMOUNT</a>]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Valeur initiale :</b><div class="fragment"><div class="line">=</div>
+<div class="line">{</div>
+<div class="line">    </div>
+<div class="line">    { .pos = <a class="code hl_define" href="vec3_8h.html#ab602d18b7292bc5b5eaf3840cbbad311">VEC3</a>(-0.5f, -0.5f,  0.5f), .uv = <a class="code hl_define" href="vec2_8h.html#a139b81c936cdd2e0edecbeb84ae9326f">VEC2</a>(0.0f, 0.0f), .layer_index = <a class="code hl_enumvalue" href="block__face_8h.html#a67a0b86beeb7045a9d529c432c71a745a7232b605916cacc7dafdd1906fe58254">BLOCK_FACE_FRONT</a> },</div>
+<div class="line">    { .pos = <a class="code hl_define" href="vec3_8h.html#ab602d18b7292bc5b5eaf3840cbbad311">VEC3</a>( 0.5f, -0.5f,  0.5f), .uv = <a class="code hl_define" href="vec2_8h.html#a139b81c936cdd2e0edecbeb84ae9326f">VEC2</a>(1.0f, 0.0f), .layer_index = <a class="code hl_enumvalue" href="block__face_8h.html#a67a0b86beeb7045a9d529c432c71a745a7232b605916cacc7dafdd1906fe58254">BLOCK_FACE_FRONT</a> },</div>
+<div class="line">    { .pos = <a class="code hl_define" href="vec3_8h.html#ab602d18b7292bc5b5eaf3840cbbad311">VEC3</a>( 0.5f,  0.5f,  0.5f), .uv = <a class="code hl_define" href="vec2_8h.html#a139b81c936cdd2e0edecbeb84ae9326f">VEC2</a>(1.0f, 1.0f), .layer_index = <a class="code hl_enumvalue" href="block__face_8h.html#a67a0b86beeb7045a9d529c432c71a745a7232b605916cacc7dafdd1906fe58254">BLOCK_FACE_FRONT</a> },</div>
+<div class="line">    { .pos = <a class="code hl_define" href="vec3_8h.html#ab602d18b7292bc5b5eaf3840cbbad311">VEC3</a>(-0.5f,  0.5f,  0.5f), .uv = <a class="code hl_define" href="vec2_8h.html#a139b81c936cdd2e0edecbeb84ae9326f">VEC2</a>(0.0f, 1.0f), .layer_index = <a class="code hl_enumvalue" href="block__face_8h.html#a67a0b86beeb7045a9d529c432c71a745a7232b605916cacc7dafdd1906fe58254">BLOCK_FACE_FRONT</a> }</div>
+<div class="line">}</div>
+<div class="ttc" id="ablock__face_8h_html_a67a0b86beeb7045a9d529c432c71a745a7232b605916cacc7dafdd1906fe58254"><div class="ttname"><a href="block__face_8h.html#a67a0b86beeb7045a9d529c432c71a745a7232b605916cacc7dafdd1906fe58254">BLOCK_FACE_FRONT</a></div><div class="ttdeci">@ BLOCK_FACE_FRONT</div><div class="ttdef"><b>Definition</b> <a href="block__face_8h_source.html#l00012">block_face.h:12</a></div></div>
+</div><!-- fragment -->
+<p class="definition">Définition à la ligne <a class="el" href="geometry__data_8c_source.html#l00184">184</a> du fichier <a class="el" href="geometry__data_8c_source.html">geometry_data.c</a>.</p>
+
+</div>
+</div>
+<a id="a846f732a4f068ce9c08592bc3f237fbb" name="a846f732a4f068ce9c08592bc3f237fbb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a846f732a4f068ce9c08592bc3f237fbb">&#9670;&#160;</a></span>BLOCK_FACE_INDICES</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const unsigned int BLOCK_FACE_INDICES[<a class="el" href="geometry__data_8h.html#a219750cb31d33777df828b3047fffc75">BLOCK_FACE_INDICES_AMOUNT</a>]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Valeur initiale :</b><div class="fragment"><div class="line">=</div>
+<div class="line">{</div>
+<div class="line">    0, 1, 2,</div>
+<div class="line">    2, 3, 0</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p class="definition">Définition à la ligne <a class="el" href="geometry__data_8c_source.html#l00238">238</a> du fichier <a class="el" href="geometry__data_8c_source.html">geometry_data.c</a>.</p>
+
+</div>
+</div>
+<a id="a97ee6284e7ead0dc0cce37c6b3719ecd" name="a97ee6284e7ead0dc0cce37c6b3719ecd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a97ee6284e7ead0dc0cce37c6b3719ecd">&#9670;&#160;</a></span>BLOCK_FACE_LEFT_VERTICES</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="structVertexBlock.html">VertexBlock</a> BLOCK_FACE_LEFT_VERTICES[<a class="el" href="geometry__data_8h.html#ab721cdf7d3bd8c0b944ee63b6810bea7">BLOCK_FACE_VERTICES_AMOUNT</a>]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Valeur initiale :</b><div class="fragment"><div class="line">=</div>
+<div class="line">{</div>
+<div class="line">    </div>
+<div class="line">    { .pos = <a class="code hl_define" href="vec3_8h.html#ab602d18b7292bc5b5eaf3840cbbad311">VEC3</a>(-0.5f, -0.5f, -0.5f), .uv = <a class="code hl_define" href="vec2_8h.html#a139b81c936cdd2e0edecbeb84ae9326f">VEC2</a>(0.0f, 0.0f), .layer_index = <a class="code hl_enumvalue" href="block__face_8h.html#a67a0b86beeb7045a9d529c432c71a745a111cf9295de22ee4c0187fcd922fa76a">BLOCK_FACE_LEFT</a> },</div>
+<div class="line">    { .pos = <a class="code hl_define" href="vec3_8h.html#ab602d18b7292bc5b5eaf3840cbbad311">VEC3</a>(-0.5f, -0.5f,  0.5f), .uv = <a class="code hl_define" href="vec2_8h.html#a139b81c936cdd2e0edecbeb84ae9326f">VEC2</a>(1.0f, 0.0f), .layer_index = <a class="code hl_enumvalue" href="block__face_8h.html#a67a0b86beeb7045a9d529c432c71a745a111cf9295de22ee4c0187fcd922fa76a">BLOCK_FACE_LEFT</a> },</div>
+<div class="line">    { .pos = <a class="code hl_define" href="vec3_8h.html#ab602d18b7292bc5b5eaf3840cbbad311">VEC3</a>(-0.5f,  0.5f,  0.5f), .uv = <a class="code hl_define" href="vec2_8h.html#a139b81c936cdd2e0edecbeb84ae9326f">VEC2</a>(1.0f, 1.0f), .layer_index = <a class="code hl_enumvalue" href="block__face_8h.html#a67a0b86beeb7045a9d529c432c71a745a111cf9295de22ee4c0187fcd922fa76a">BLOCK_FACE_LEFT</a> },</div>
+<div class="line">    { .pos = <a class="code hl_define" href="vec3_8h.html#ab602d18b7292bc5b5eaf3840cbbad311">VEC3</a>(-0.5f,  0.5f, -0.5f), .uv = <a class="code hl_define" href="vec2_8h.html#a139b81c936cdd2e0edecbeb84ae9326f">VEC2</a>(0.0f, 1.0f), .layer_index = <a class="code hl_enumvalue" href="block__face_8h.html#a67a0b86beeb7045a9d529c432c71a745a111cf9295de22ee4c0187fcd922fa76a">BLOCK_FACE_LEFT</a> }</div>
+<div class="line">}</div>
+<div class="ttc" id="ablock__face_8h_html_a67a0b86beeb7045a9d529c432c71a745a111cf9295de22ee4c0187fcd922fa76a"><div class="ttname"><a href="block__face_8h.html#a67a0b86beeb7045a9d529c432c71a745a111cf9295de22ee4c0187fcd922fa76a">BLOCK_FACE_LEFT</a></div><div class="ttdeci">@ BLOCK_FACE_LEFT</div><div class="ttdef"><b>Definition</b> <a href="block__face_8h_source.html#l00016">block_face.h:16</a></div></div>
+</div><!-- fragment -->
+<p class="definition">Définition à la ligne <a class="el" href="geometry__data_8c_source.html#l00220">220</a> du fichier <a class="el" href="geometry__data_8c_source.html">geometry_data.c</a>.</p>
+
+</div>
+</div>
+<a id="a76717d04795e211ae862d293ff24a6c7" name="a76717d04795e211ae862d293ff24a6c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76717d04795e211ae862d293ff24a6c7">&#9670;&#160;</a></span>BLOCK_FACE_RIGHT_VERTICES</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="structVertexBlock.html">VertexBlock</a> BLOCK_FACE_RIGHT_VERTICES[<a class="el" href="geometry__data_8h.html#ab721cdf7d3bd8c0b944ee63b6810bea7">BLOCK_FACE_VERTICES_AMOUNT</a>]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Valeur initiale :</b><div class="fragment"><div class="line">=</div>
+<div class="line">{</div>
+<div class="line">    </div>
+<div class="line">    { .pos = <a class="code hl_define" href="vec3_8h.html#ab602d18b7292bc5b5eaf3840cbbad311">VEC3</a>( 0.5f, -0.5f,  0.5f), .uv = <a class="code hl_define" href="vec2_8h.html#a139b81c936cdd2e0edecbeb84ae9326f">VEC2</a>(0.0f, 0.0f), .layer_index = <a class="code hl_enumvalue" href="block__face_8h.html#a67a0b86beeb7045a9d529c432c71a745a2c21f2536d738ca67f49a0cf10a1c114">BLOCK_FACE_RIGHT</a> },</div>
+<div class="line">    { .pos = <a class="code hl_define" href="vec3_8h.html#ab602d18b7292bc5b5eaf3840cbbad311">VEC3</a>( 0.5f, -0.5f, -0.5f), .uv = <a class="code hl_define" href="vec2_8h.html#a139b81c936cdd2e0edecbeb84ae9326f">VEC2</a>(1.0f, 0.0f), .layer_index = <a class="code hl_enumvalue" href="block__face_8h.html#a67a0b86beeb7045a9d529c432c71a745a2c21f2536d738ca67f49a0cf10a1c114">BLOCK_FACE_RIGHT</a> },</div>
+<div class="line">    { .pos = <a class="code hl_define" href="vec3_8h.html#ab602d18b7292bc5b5eaf3840cbbad311">VEC3</a>( 0.5f,  0.5f, -0.5f), .uv = <a class="code hl_define" href="vec2_8h.html#a139b81c936cdd2e0edecbeb84ae9326f">VEC2</a>(1.0f, 1.0f), .layer_index = <a class="code hl_enumvalue" href="block__face_8h.html#a67a0b86beeb7045a9d529c432c71a745a2c21f2536d738ca67f49a0cf10a1c114">BLOCK_FACE_RIGHT</a> },</div>
+<div class="line">    { .pos = <a class="code hl_define" href="vec3_8h.html#ab602d18b7292bc5b5eaf3840cbbad311">VEC3</a>( 0.5f,  0.5f,  0.5f), .uv = <a class="code hl_define" href="vec2_8h.html#a139b81c936cdd2e0edecbeb84ae9326f">VEC2</a>(0.0f, 1.0f), .layer_index = <a class="code hl_enumvalue" href="block__face_8h.html#a67a0b86beeb7045a9d529c432c71a745a2c21f2536d738ca67f49a0cf10a1c114">BLOCK_FACE_RIGHT</a> }</div>
+<div class="line">}</div>
+<div class="ttc" id="ablock__face_8h_html_a67a0b86beeb7045a9d529c432c71a745a2c21f2536d738ca67f49a0cf10a1c114"><div class="ttname"><a href="block__face_8h.html#a67a0b86beeb7045a9d529c432c71a745a2c21f2536d738ca67f49a0cf10a1c114">BLOCK_FACE_RIGHT</a></div><div class="ttdeci">@ BLOCK_FACE_RIGHT</div><div class="ttdef"><b>Definition</b> <a href="block__face_8h_source.html#l00017">block_face.h:17</a></div></div>
+</div><!-- fragment -->
+<p class="definition">Définition à la ligne <a class="el" href="geometry__data_8c_source.html#l00229">229</a> du fichier <a class="el" href="geometry__data_8c_source.html">geometry_data.c</a>.</p>
+
+</div>
+</div>
+<a id="a77e2273cccb6d64752dc393b70b9a814" name="a77e2273cccb6d64752dc393b70b9a814"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a77e2273cccb6d64752dc393b70b9a814">&#9670;&#160;</a></span>BLOCK_FACE_TOP_VERTICES</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="structVertexBlock.html">VertexBlock</a> BLOCK_FACE_TOP_VERTICES[<a class="el" href="geometry__data_8h.html#ab721cdf7d3bd8c0b944ee63b6810bea7">BLOCK_FACE_VERTICES_AMOUNT</a>]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Valeur initiale :</b><div class="fragment"><div class="line">=</div>
+<div class="line">{</div>
+<div class="line">    </div>
+<div class="line">    { .pos = <a class="code hl_define" href="vec3_8h.html#ab602d18b7292bc5b5eaf3840cbbad311">VEC3</a>(-0.5f,  0.5f,  0.5f), .uv = <a class="code hl_define" href="vec2_8h.html#a139b81c936cdd2e0edecbeb84ae9326f">VEC2</a>(0.0f, 0.0f), .layer_index = <a class="code hl_enumvalue" href="block__face_8h.html#a67a0b86beeb7045a9d529c432c71a745a7521b364e68cda8896889e4d9be2b629">BLOCK_FACE_TOP</a> },</div>
+<div class="line">    { .pos = <a class="code hl_define" href="vec3_8h.html#ab602d18b7292bc5b5eaf3840cbbad311">VEC3</a>( 0.5f,  0.5f,  0.5f), .uv = <a class="code hl_define" href="vec2_8h.html#a139b81c936cdd2e0edecbeb84ae9326f">VEC2</a>(1.0f, 0.0f), .layer_index = <a class="code hl_enumvalue" href="block__face_8h.html#a67a0b86beeb7045a9d529c432c71a745a7521b364e68cda8896889e4d9be2b629">BLOCK_FACE_TOP</a> },</div>
+<div class="line">    { .pos = <a class="code hl_define" href="vec3_8h.html#ab602d18b7292bc5b5eaf3840cbbad311">VEC3</a>( 0.5f,  0.5f, -0.5f), .uv = <a class="code hl_define" href="vec2_8h.html#a139b81c936cdd2e0edecbeb84ae9326f">VEC2</a>(1.0f, 1.0f), .layer_index = <a class="code hl_enumvalue" href="block__face_8h.html#a67a0b86beeb7045a9d529c432c71a745a7521b364e68cda8896889e4d9be2b629">BLOCK_FACE_TOP</a> },</div>
+<div class="line">    { .pos = <a class="code hl_define" href="vec3_8h.html#ab602d18b7292bc5b5eaf3840cbbad311">VEC3</a>(-0.5f,  0.5f, -0.5f), .uv = <a class="code hl_define" href="vec2_8h.html#a139b81c936cdd2e0edecbeb84ae9326f">VEC2</a>(0.0f, 1.0f), .layer_index = <a class="code hl_enumvalue" href="block__face_8h.html#a67a0b86beeb7045a9d529c432c71a745a7521b364e68cda8896889e4d9be2b629">BLOCK_FACE_TOP</a> }</div>
+<div class="line">}</div>
+<div class="ttc" id="ablock__face_8h_html_a67a0b86beeb7045a9d529c432c71a745a7521b364e68cda8896889e4d9be2b629"><div class="ttname"><a href="block__face_8h.html#a67a0b86beeb7045a9d529c432c71a745a7521b364e68cda8896889e4d9be2b629">BLOCK_FACE_TOP</a></div><div class="ttdeci">@ BLOCK_FACE_TOP</div><div class="ttdef"><b>Definition</b> <a href="block__face_8h_source.html#l00014">block_face.h:14</a></div></div>
+</div><!-- fragment -->
+<p class="definition">Définition à la ligne <a class="el" href="geometry__data_8c_source.html#l00202">202</a> du fichier <a class="el" href="geometry__data_8c_source.html">geometry_data.c</a>.</p>
+
+</div>
+</div>
+<a id="a941d9988ac2682a01941d500888e3d13" name="a941d9988ac2682a01941d500888e3d13"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a941d9988ac2682a01941d500888e3d13">&#9670;&#160;</a></span>BLOCK_INDICES</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const unsigned int BLOCK_INDICES[<a class="el" href="geometry__data_8h.html#af6092aa3884c234808ecf02e418e9aca">BLOCK_INDICES_AMOUNT</a>]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Valeur initiale :</b><div class="fragment"><div class="line">=</div>
+<div class="line">{</div>
+<div class="line">    </div>
+<div class="line">    0, 1, 2,</div>
+<div class="line">    2, 3, 0,</div>
+<div class="line"> </div>
+<div class="line">    </div>
+<div class="line">    4, 5, 6,</div>
+<div class="line">    6, 7, 4,</div>
+<div class="line"> </div>
+<div class="line">    </div>
+<div class="line">    8, 9, 10,</div>
+<div class="line">    10, 11, 8,</div>
+<div class="line"> </div>
+<div class="line">    </div>
+<div class="line">    12, 13, 14,</div>
+<div class="line">    14, 15, 12,</div>
+<div class="line"> </div>
+<div class="line">    </div>
+<div class="line">    16, 17, 18,</div>
+<div class="line">    18, 19, 16,</div>
+<div class="line"> </div>
+<div class="line">    </div>
+<div class="line">    20, 21, 22,</div>
+<div class="line">    22, 23, 20</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p class="definition">Définition à la ligne <a class="el" href="geometry__data_8c_source.html#l00157">157</a> du fichier <a class="el" href="geometry__data_8c_source.html">geometry_data.c</a>.</p>
+
+</div>
+</div>
+<a id="a28979c613f8f2da4cb7c31f47186a48d" name="a28979c613f8f2da4cb7c31f47186a48d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a28979c613f8f2da4cb7c31f47186a48d">&#9670;&#160;</a></span>BLOCK_VERTICES</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="structVertexBlock.html">VertexBlock</a> BLOCK_VERTICES[<a class="el" href="geometry__data_8h.html#a1e2e849ccd90f210321734f180d32af8">BLOCK_VERTICES_AMOUNT</a>]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="geometry__data_8c_source.html#l00118">118</a> du fichier <a class="el" href="geometry__data_8c_source.html">geometry_data.c</a>.</p>
+
+</div>
+</div>
+<a id="a1868a367e81d440bce37f8a249267c79" name="a1868a367e81d440bce37f8a249267c79"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1868a367e81d440bce37f8a249267c79">&#9670;&#160;</a></span>CUBE_INDICES</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const unsigned int CUBE_INDICES[<a class="el" href="geometry__data_8h.html#aa62418cd5e8a465a328d3c2ca0ce530c">CUBE_INDICES_AMOUNT</a>]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Valeur initiale :</b><div class="fragment"><div class="line">=</div>
+<div class="line">{</div>
+<div class="line">    </div>
+<div class="line">    0, 1, 2,</div>
+<div class="line">    2, 3, 0,</div>
+<div class="line">    </div>
+<div class="line">    1, 5, 6,</div>
+<div class="line">    6, 2, 1,</div>
+<div class="line"> </div>
+<div class="line">    </div>
+<div class="line">    5, 4, 7,</div>
+<div class="line">    7, 6, 5,</div>
+<div class="line"> </div>
+<div class="line">    </div>
+<div class="line">    4, 0, 3,</div>
+<div class="line">    3, 7, 4,</div>
+<div class="line"> </div>
+<div class="line">    </div>
+<div class="line">    3, 2, 6,</div>
+<div class="line">    6, 7, 3,</div>
+<div class="line"> </div>
+<div class="line">    </div>
+<div class="line">    4, 5, 1,</div>
+<div class="line">    1, 0, 4</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p class="definition">Définition à la ligne <a class="el" href="geometry__data_8c_source.html#l00026">26</a> du fichier <a class="el" href="geometry__data_8c_source.html">geometry_data.c</a>.</p>
+
+</div>
+</div>
+<a id="a1f00b9aa0fa616dca239560d4c7f3381" name="a1f00b9aa0fa616dca239560d4c7f3381"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f00b9aa0fa616dca239560d4c7f3381">&#9670;&#160;</a></span>CUBE_UV_INDICES</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const unsigned int CUBE_UV_INDICES[<a class="el" href="geometry__data_8h.html#ac23eb3ddd29076fde8c9ffc3344feeed">CUBE_UV_INDICES_AMOUNT</a>]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Valeur initiale :</b><div class="fragment"><div class="line">=</div>
+<div class="line">{</div>
+<div class="line">    </div>
+<div class="line">    0, 1, 2,</div>
+<div class="line">    2, 3, 0,</div>
+<div class="line"> </div>
+<div class="line">    </div>
+<div class="line">    4, 5, 6,</div>
+<div class="line">    6, 7, 4,</div>
+<div class="line"> </div>
+<div class="line">    </div>
+<div class="line">    8, 9, 10,</div>
+<div class="line">    10, 11, 8,</div>
+<div class="line"> </div>
+<div class="line">    </div>
+<div class="line">    12, 13, 14,</div>
+<div class="line">    14, 15, 12,</div>
+<div class="line"> </div>
+<div class="line">    </div>
+<div class="line">    16, 17, 18,</div>
+<div class="line">    18, 19, 16,</div>
+<div class="line"> </div>
+<div class="line">    </div>
+<div class="line">    20, 21, 22,</div>
+<div class="line">    22, 23, 20</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p class="definition">Définition à la ligne <a class="el" href="geometry__data_8c_source.html#l00091">91</a> du fichier <a class="el" href="geometry__data_8c_source.html">geometry_data.c</a>.</p>
+
+</div>
+</div>
+<a id="a72d2fa5b5115717750fe94b812c796b3" name="a72d2fa5b5115717750fe94b812c796b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a72d2fa5b5115717750fe94b812c796b3">&#9670;&#160;</a></span>CUBE_UV_VERTICES</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="structVertexUV.html">VertexUV</a> CUBE_UV_VERTICES[<a class="el" href="geometry__data_8h.html#ace2225b8c4b265352876ad119f1157d8">CUBE_UV_VERTICES_AMOUNT</a>]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="geometry__data_8c_source.html#l00052">52</a> du fichier <a class="el" href="geometry__data_8c_source.html">geometry_data.c</a>.</p>
+
+</div>
+</div>
+<a id="ad70ba83b20752719624c31c75be037d5" name="ad70ba83b20752719624c31c75be037d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad70ba83b20752719624c31c75be037d5">&#9670;&#160;</a></span>CUBE_VERTICES</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="structVertex.html">Vertex</a> CUBE_VERTICES[<a class="el" href="geometry__data_8h.html#a50196723fab64821b2f6eb5a1a448e7f">CUBE_VERTICES_AMOUNT</a>]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Valeur initiale :</b><div class="fragment"><div class="line">=</div>
+<div class="line">{</div>
+<div class="line">    </div>
+<div class="line">    { .pos = <a class="code hl_define" href="vec3_8h.html#ab602d18b7292bc5b5eaf3840cbbad311">VEC3</a>(-0.5, -0.5,  0.5) },</div>
+<div class="line">    { .pos = <a class="code hl_define" href="vec3_8h.html#ab602d18b7292bc5b5eaf3840cbbad311">VEC3</a>( 0.5, -0.5,  0.5) },</div>
+<div class="line">    { .pos = <a class="code hl_define" href="vec3_8h.html#ab602d18b7292bc5b5eaf3840cbbad311">VEC3</a>( 0.5,  0.5,  0.5) },</div>
+<div class="line">    { .pos = <a class="code hl_define" href="vec3_8h.html#ab602d18b7292bc5b5eaf3840cbbad311">VEC3</a>(-0.5,  0.5,  0.5) },</div>
+<div class="line"> </div>
+<div class="line">    </div>
+<div class="line">    { .pos = <a class="code hl_define" href="vec3_8h.html#ab602d18b7292bc5b5eaf3840cbbad311">VEC3</a>(-0.5, -0.5, -0.5) },</div>
+<div class="line">    { .pos = <a class="code hl_define" href="vec3_8h.html#ab602d18b7292bc5b5eaf3840cbbad311">VEC3</a>( 0.5, -0.5, -0.5) },</div>
+<div class="line">    { .pos = <a class="code hl_define" href="vec3_8h.html#ab602d18b7292bc5b5eaf3840cbbad311">VEC3</a>( 0.5,  0.5, -0.5) },</div>
+<div class="line">    { .pos = <a class="code hl_define" href="vec3_8h.html#ab602d18b7292bc5b5eaf3840cbbad311">VEC3</a>(-0.5,  0.5, -0.5) }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p class="definition">Définition à la ligne <a class="el" href="geometry__data_8c_source.html#l00011">11</a> du fichier <a class="el" href="geometry__data_8c_source.html">geometry_data.c</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_758d8e9166e39e682af4fe71d4574a53.html">FEURcraft</a></li><li class="navelem"><a href="dir_d563573f48eefcd0f66954300c445435.html">graphic</a></li><li class="navelem"><a href="dir_aa28f9dfa0290fc45f1ab57c4462e698.html">src</a></li><li class="navelem"><a href="geometry__data_8c.html">geometry_data.c</a></li>
+    <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,405 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>FEURcraft: Référence du fichier FEURcraft/graphic/src/texture.c</title>
+<link rel="icon" href="FEURcraft.png" type="image/x-icon" />
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="FEURcraft.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">FEURcraft<span id="projectnumber">&#160;0.0.1</span>
+   </div>
+   <div id="projectbrief">Moteur Voxel.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Recherche',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('texture_8c.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Chargement...</div>
+<div class="SRStatus" id="Searching">Recherche...</div>
+<div class="SRStatus" id="NoMatches">Aucune correspondance</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Référence du fichier texture.c</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="texture_8h_source.html">texture.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="image_8h_source.html">image.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="logger_8h_source.html">logger.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="gl__debug_8h_source.html">gl_debug.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="error__checker_8h_source.html">error_checker.h</a>&quot;</code><br />
+<code>#include &quot;glad/glad.h&quot;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;stdbool.h&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Graphe des dépendances par inclusion de texture.c:</div>
+<div class="dyncontent">
+<div class="center"><img src="texture_8c__incl.png" border="0" usemap="#aFEURcraft_2graphic_2src_2texture_8c" loading="lazy" alt=""/></div>
+<map name="aFEURcraft_2graphic_2src_2texture_8c" id="aFEURcraft_2graphic_2src_2texture_8c">
+<area shape="rect" title=" " alt="" coords="238,5,391,44"/>
+<area shape="rect" href="texture_8h.html" title="Structure représentant les données d&#39;une texture charger dans le GPU." alt="" coords="165,92,237,117"/>
+<area shape="poly" title=" " alt="" coords="289,47,232,85,229,81,286,42"/>
+<area shape="rect" href="image_8h.html" title=" " alt="" coords="20,237,87,262"/>
+<area shape="poly" title=" " alt="" coords="246,47,200,65,152,90,108,124,90,144,74,166,63,194,58,222,52,221,58,192,70,163,86,140,105,120,150,86,198,60,244,42"/>
+<area shape="rect" title=" " alt="" coords="16,310,90,335"/>
+<area shape="poly" title=" " alt="" coords="239,41,173,61,140,76,109,94,71,126,45,155,27,190,10,238,8,250,10,261,20,280,32,297,28,300,15,283,5,263,3,250,5,237,22,188,40,152,67,122,106,90,137,71,171,56,237,36"/>
+<area shape="rect" title=" " alt="" coords="284,165,369,189"/>
+<area shape="poly" title=" " alt="" coords="310,45,302,78,303,116,315,150,310,152,297,117,297,78,305,44"/>
+<area shape="rect" href="logger_8h.html" title="Ficher fournissant des macro de log afin d&#39;afficher des messages de déboggage dans la console." alt="" coords="444,165,511,189"/>
+<area shape="poly" title=" " alt="" coords="347,42,379,64,411,90,440,121,463,151,459,154,436,124,407,94,376,68,344,47"/>
+<area shape="rect" title=" " alt="" coords="516,237,580,262"/>
+<area shape="poly" title=" " alt="" coords="392,31,451,40,511,52,563,68,582,79,595,90,605,107,608,125,603,162,587,197,569,226,564,223,583,194,598,160,603,125,600,109,591,94,579,83,561,73,510,57,450,45,391,36"/>
+<area shape="rect" href="gl__debug_8h.html" title=" " alt="" coords="312,92,397,117"/>
+<area shape="poly" title=" " alt="" coords="327,43,344,77,339,79,322,46"/>
+<area shape="rect" href="error__checker_8h.html" title=" " alt="" coords="471,92,582,117"/>
+<area shape="poly" title=" " alt="" coords="367,42,482,84,480,89,365,47"/>
+<area shape="poly" title=" " alt="" coords="172,120,134,139,98,167,78,195,64,224,59,222,73,192,94,163,131,134,169,115"/>
+<area shape="rect" href="atlas_8h.html" title="Atlas pour stocker plusieurs images sur la même images." alt="" coords="108,165,169,189"/>
+<area shape="poly" title=" " alt="" coords="193,119,161,155,157,151,189,115"/>
+<area shape="poly" title=" " alt="" coords="223,115,294,154,291,159,221,120"/>
+<area shape="rect" title=" " alt="" coords="193,165,260,189"/>
+<area shape="poly" title=" " alt="" coords="208,116,220,149,215,151,203,118"/>
+<area shape="poly" title=" " alt="" coords="56,263,56,294,51,294,51,263"/>
+<area shape="poly" title=" " alt="" coords="126,192,80,230,77,225,123,188"/>
+<area shape="poly" title=" " alt="" coords="137,191,122,224,101,263,75,300,70,297,96,261,117,222,132,188"/>
+<area shape="rect" href="texture__coord_8h.html" title=" " alt="" coords="162,237,273,262"/>
+<area shape="poly" title=" " alt="" coords="153,188,195,225,192,229,150,192"/>
+<area shape="rect" href="vec2_8h.html" title=" " alt="" coords="188,310,247,335"/>
+<area shape="poly" title=" " alt="" coords="220,263,220,294,215,294,215,263"/>
+<area shape="rect" title=" " alt="" coords="432,237,493,262"/>
+<area shape="poly" title=" " alt="" coords="477,190,471,223,465,222,472,189"/>
+<area shape="poly" title=" " alt="" coords="491,188,528,224,524,228,487,192"/>
+<area shape="poly" title=" " alt="" coords="352,118,339,151,334,149,347,116"/>
+<area shape="poly" title=" " alt="" coords="376,115,445,154,443,159,373,120"/>
+<area shape="poly" title=" " alt="" coords="365,115,394,150,434,187,469,210,506,228,503,233,467,215,430,191,390,153,361,119"/>
+<area shape="poly" title=" " alt="" coords="521,119,496,153,492,150,516,116"/>
+<area shape="poly" title=" " alt="" coords="531,116,547,222,541,222,526,117"/>
+</map>
+</div>
+</div>
+<p><a href="texture_8c_source.html">Aller au code source de ce fichier.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr class="memitem:a0fcb309ad9f79b49446995dfbc7fc29d" id="r_a0fcb309ad9f79b49446995dfbc7fc29d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structTexture.html">Texture</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0fcb309ad9f79b49446995dfbc7fc29d">create_texture</a> (unsigned char *data, unsigned int width, unsigned int height)</td></tr>
+<tr class="memdesc:a0fcb309ad9f79b49446995dfbc7fc29d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Créer une texture à partir des données passer en paramêtre.  <br /></td></tr>
+<tr class="memitem:a6b1bd7b1c338c1a6cc0fe76a59a028f9" id="r_a6b1bd7b1c338c1a6cc0fe76a59a028f9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structTexture.html">Texture</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6b1bd7b1c338c1a6cc0fe76a59a028f9">create_texture_from_image</a> (<a class="el" href="structImage.html">Image</a> *img)</td></tr>
+<tr class="memdesc:a6b1bd7b1c338c1a6cc0fe76a59a028f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Créer une texture à partir de l'image passer en paramêtre.  <br /></td></tr>
+<tr class="memitem:a561df14d6eb5268465c7a824cc7cc22e" id="r_a561df14d6eb5268465c7a824cc7cc22e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structTexture.html">Texture</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a561df14d6eb5268465c7a824cc7cc22e">create_texture_from_file</a> (const char *filepath)</td></tr>
+<tr class="memdesc:a561df14d6eb5268465c7a824cc7cc22e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Créer une texture à partir du fichier passer en paramêtre.  <br /></td></tr>
+<tr class="memitem:ab9054d91a4a2d902554354dfa636fdda" id="r_ab9054d91a4a2d902554354dfa636fdda"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structTexture.html">Texture</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab9054d91a4a2d902554354dfa636fdda">create_texture_from_atlas</a> (<a class="el" href="structAtlas.html">Atlas</a> *atlas)</td></tr>
+<tr class="memdesc:ab9054d91a4a2d902554354dfa636fdda"><td class="mdescLeft">&#160;</td><td class="mdescRight">Créer une texture à partir d'un atlas.  <br /></td></tr>
+<tr class="memitem:a11c997359bd8e1942c8fcb4acffa7971" id="r_a11c997359bd8e1942c8fcb4acffa7971"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a11c997359bd8e1942c8fcb4acffa7971">free_texture</a> (<a class="el" href="structTexture.html">Texture</a> *t)</td></tr>
+<tr class="memdesc:a11c997359bd8e1942c8fcb4acffa7971"><td class="mdescLeft">&#160;</td><td class="mdescRight">Libère la mémoire de la texture en paramêtre.  <br /></td></tr>
+<tr class="memitem:a7fcb3693c1cc5a243227c428a453a2f2" id="r_a7fcb3693c1cc5a243227c428a453a2f2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7fcb3693c1cc5a243227c428a453a2f2">bind_texture</a> (<a class="el" href="structTexture.html">Texture</a> *t, unsigned int unit)</td></tr>
+<tr class="memdesc:a7fcb3693c1cc5a243227c428a453a2f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lie au GPU la texture passer en paramêtre.  <br /></td></tr>
+<tr class="memitem:a4a2590dd6f65352eb85ff1280db38f72" id="r_a4a2590dd6f65352eb85ff1280db38f72"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4a2590dd6f65352eb85ff1280db38f72">unbind_texture</a> (<a class="el" href="structTexture.html">Texture</a> *t, unsigned int unit)</td></tr>
+<tr class="memdesc:a4a2590dd6f65352eb85ff1280db38f72"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dé-lie la texture passer en paramêtre du GPU.  <br /></td></tr>
+</table>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentation des fonctions</h2>
+<a id="a7fcb3693c1cc5a243227c428a453a2f2" name="a7fcb3693c1cc5a243227c428a453a2f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7fcb3693c1cc5a243227c428a453a2f2">&#9670;&#160;</a></span>bind_texture()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bind_texture </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structTexture.html">Texture</a> *</td>          <td class="paramname"><span class="paramname"><em>t</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int</td>          <td class="paramname"><span class="paramname"><em>unit</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Lie au GPU la texture passer en paramêtre. </p>
+<p>Lie la texture au GPU et l'active à l'index <em class="arg">unit</em> donné en paramêtre.</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">t</td><td>texture à lier </td></tr>
+    <tr><td class="paramname">unit</td><td>index ou placer la texture </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="texture_8c_source.html#l00093">93</a> du fichier <a class="el" href="texture_8c_source.html">texture.c</a>.</p>
+
+</div>
+</div>
+<a id="a0fcb309ad9f79b49446995dfbc7fc29d" name="a0fcb309ad9f79b49446995dfbc7fc29d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0fcb309ad9f79b49446995dfbc7fc29d">&#9670;&#160;</a></span>create_texture()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structTexture.html">Texture</a> * create_texture </td>
+          <td>(</td>
+          <td class="paramtype">unsigned char *</td>          <td class="paramname"><span class="paramname"><em>data</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int</td>          <td class="paramname"><span class="paramname"><em>width</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int</td>          <td class="paramname"><span class="paramname"><em>height</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Créer une texture à partir des données passer en paramêtre. </p>
+<dl class="section warning"><dt>Avertissement</dt><dd>Doit être un buffer de données RGBA (4 octets) avec la taille du buffer est égale à width \times height</dd></dl>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>pointeur vers le buffer de données </td></tr>
+    <tr><td class="paramname">width</td><td>largeur de la texture </td></tr>
+    <tr><td class="paramname">height</td><td>hateur de la texture </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>texture dont la mémoire à été alloué </dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="texture_8c_source.html#l00013">13</a> du fichier <a class="el" href="texture_8c_source.html">texture.c</a>.</p>
+
+</div>
+</div>
+<a id="ab9054d91a4a2d902554354dfa636fdda" name="ab9054d91a4a2d902554354dfa636fdda"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab9054d91a4a2d902554354dfa636fdda">&#9670;&#160;</a></span>create_texture_from_atlas()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structTexture.html">Texture</a> * create_texture_from_atlas </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structAtlas.html">Atlas</a> *</td>          <td class="paramname"><span class="paramname"><em>atlas</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Créer une texture à partir d'un atlas. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">atlas</td><td>donnée de l'atlas </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>texture dont la mémoire à été alloué </dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="texture_8c_source.html#l00074">74</a> du fichier <a class="el" href="texture_8c_source.html">texture.c</a>.</p>
+
+</div>
+</div>
+<a id="a561df14d6eb5268465c7a824cc7cc22e" name="a561df14d6eb5268465c7a824cc7cc22e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a561df14d6eb5268465c7a824cc7cc22e">&#9670;&#160;</a></span>create_texture_from_file()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structTexture.html">Texture</a> * create_texture_from_file </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>path</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Créer une texture à partir du fichier passer en paramêtre. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>chemin vers le fichier source </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>texture dont la mémoire à été alloué </dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="texture_8c_source.html#l00061">61</a> du fichier <a class="el" href="texture_8c_source.html">texture.c</a>.</p>
+
+</div>
+</div>
+<a id="a6b1bd7b1c338c1a6cc0fe76a59a028f9" name="a6b1bd7b1c338c1a6cc0fe76a59a028f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b1bd7b1c338c1a6cc0fe76a59a028f9">&#9670;&#160;</a></span>create_texture_from_image()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structTexture.html">Texture</a> * create_texture_from_image </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structImage.html">Image</a> *</td>          <td class="paramname"><span class="paramname"><em>img</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Créer une texture à partir de l'image passer en paramêtre. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">img</td><td>image à partir de laquelle créer la texture </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>texture dont la mémoire à été alloué </dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="texture_8c_source.html#l00053">53</a> du fichier <a class="el" href="texture_8c_source.html">texture.c</a>.</p>
+
+</div>
+</div>
+<a id="a11c997359bd8e1942c8fcb4acffa7971" name="a11c997359bd8e1942c8fcb4acffa7971"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a11c997359bd8e1942c8fcb4acffa7971">&#9670;&#160;</a></span>free_texture()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void free_texture </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structTexture.html">Texture</a> *</td>          <td class="paramname"><span class="paramname"><em>t</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Libère la mémoire de la texture en paramêtre. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">t</td><td>texture à libérer </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="texture_8c_source.html#l00085">85</a> du fichier <a class="el" href="texture_8c_source.html">texture.c</a>.</p>
+
+</div>
+</div>
+<a id="a4a2590dd6f65352eb85ff1280db38f72" name="a4a2590dd6f65352eb85ff1280db38f72"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a2590dd6f65352eb85ff1280db38f72">&#9670;&#160;</a></span>unbind_texture()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void unbind_texture </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structTexture.html">Texture</a> *</td>          <td class="paramname"><span class="paramname"><em>t</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int</td>          <td class="paramname"><span class="paramname"><em>unit</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Dé-lie la texture passer en paramêtre du GPU. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">t</td><td>texture à dé-lier </td></tr>
+    <tr><td class="paramname">unit</td><td>index de la texture à délier </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="texture_8c_source.html#l00103">103</a> du fichier <a class="el" href="texture_8c_source.html">texture.c</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_758d8e9166e39e682af4fe71d4574a53.html">FEURcraft</a></li><li class="navelem"><a href="dir_d563573f48eefcd0f66954300c445435.html">graphic</a></li><li class="navelem"><a href="dir_aa28f9dfa0290fc45f1ab57c4462e698.html">src</a></li><li class="navelem"><a href="texture_8c.html">texture.c</a></li>
+    <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

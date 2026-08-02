@@ -1,0 +1,171 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>FEURcraft:  Fichier source de FEURcraft/graphic/include/atlas.h</title>
+<link rel="icon" href="FEURcraft.png" type="image/x-icon" />
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="FEURcraft.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">FEURcraft<span id="projectnumber">&#160;0.0.1</span>
+   </div>
+   <div id="projectbrief">Moteur Voxel.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Recherche',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('atlas_8h_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Chargement...</div>
+<div class="SRStatus" id="Searching">Recherche...</div>
+<div class="SRStatus" id="NoMatches">Aucune correspondance</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">atlas.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="atlas_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef ATLAS_H</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define ATLAS_H</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;<a class="code" href="image_8h.html">image.h</a>&quot;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;<a class="code" href="texture__coord_8h.html">texture_coord.h</a>&quot;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;stdbool.h&gt;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="atlas_8h.html#a271250c3c3e9ed4dc86a623b9bccbb58">   18</a></span><span class="preprocessor">#define ATLAS_MAX_IMAGE_AMOUNT 32</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="atlas_8h.html#a51879a1bba866bc42726ab1714ef7335">   20</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="structAtlas.html">Atlas</a> <a class="code hl_struct" href="structAtlas.html">Atlas</a>;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="foldopen" id="foldopen00022" data-start="{" data-end="};">
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="structAtlas.html">   22</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structAtlas.html">Atlas</a></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>{</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="structAtlas.html#a34e1714c38816d402b1181a61ea86683">   24</a></span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="structAtlas.html#a34e1714c38816d402b1181a61ea86683">width</a>;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="structAtlas.html#a2d77e92eb40c1b330575e9ac46eedad0">   25</a></span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="structAtlas.html#a2d77e92eb40c1b330575e9ac46eedad0">height</a>;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="structAtlas.html#a6c108a01f90dabb30ca05db4afbd1df2">   26</a></span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="structAtlas.html#a6c108a01f90dabb30ca05db4afbd1df2">channels</a>;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="structAtlas.html#aafb3210d452ea1de00945c039897885f">   28</a></span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="structAtlas.html#aafb3210d452ea1de00945c039897885f">cursor_x</a>;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="structAtlas.html#aef6a2cd5bd2754c27b9903175325afaa">   29</a></span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="structAtlas.html#aef6a2cd5bd2754c27b9903175325afaa">cursor_y</a>;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="structAtlas.html#acdc827364801a96e5c6f90f44ea7c628">   30</a></span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="structAtlas.html#acdc827364801a96e5c6f90f44ea7c628">row_height</a>;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="structAtlas.html#aeb428364a157c34d406bbd084f229958">   32</a></span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>* <a class="code hl_variable" href="structAtlas.html#aeb428364a157c34d406bbd084f229958">data</a>;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="structAtlas.html#a42596d136fa6a79bd1123cf5a746c263">   34</a></span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="structAtlas.html#a42596d136fa6a79bd1123cf5a746c263">images_amount</a>;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="structAtlas.html#ab9d50ee736eac2c1c58de7747d3f0903">   35</a></span>    <a class="code hl_typedef" href="texture__coord_8h.html#a76118e348ad0b82dadecca0b09c911a5">TextureCoords</a> <a class="code hl_variable" href="structAtlas.html#ab9d50ee736eac2c1c58de7747d3f0903">images_coords</a>[<a class="code hl_define" href="atlas_8h.html#a271250c3c3e9ed4dc86a623b9bccbb58">ATLAS_MAX_IMAGE_AMOUNT</a>];</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>};</div>
+</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><a class="code hl_struct" href="structAtlas.html">Atlas</a>* <a class="code hl_function" href="atlas_8h.html#a393a9b3ba38a83859b599053fb7d68f7">atlas_create</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> width, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> height,</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>                    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> channels);</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="keywordtype">void</span> <a class="code hl_function" href="atlas_8h.html#ae438305a6143e251125b67cd9d9ee868">atlas_free</a>(<a class="code hl_struct" href="structAtlas.html">Atlas</a>* atlas);</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="keywordtype">bool</span> <a class="code hl_function" href="atlas_8h.html#a0759bc1191570b18eaad0af5f923ab98">atlas_add_image</a>(<a class="code hl_struct" href="structAtlas.html">Atlas</a>* atlas, <a class="code hl_struct" href="structImage.html">Image</a>* img, <a class="code hl_typedef" href="texture__coord_8h.html#a76118e348ad0b82dadecca0b09c911a5">TextureCoords</a>* uv_out);</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="keywordtype">bool</span> <a class="code hl_function" href="atlas_8h.html#a8be0301cc77fc18ccf70384815678eb0">atlas_get_image_coords</a>(<a class="code hl_struct" href="structAtlas.html">Atlas</a>* atlas, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> index, <a class="code hl_typedef" href="texture__coord_8h.html#a76118e348ad0b82dadecca0b09c911a5">TextureCoords</a>* uv_out);</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="keywordtype">void</span> <a class="code hl_function" href="atlas_8h.html#ab86c2a062d69e110c103c739e0cee41a">atlas_write_image</a>(<a class="code hl_struct" href="structAtlas.html">Atlas</a>* atlas, <span class="keyword">const</span> <span class="keywordtype">char</span>* file_path);</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="preprocessor">#endif </span><span class="comment">// ATLAS_H</span></div>
+<div class="ttc" id="aatlas_8h_html_a0759bc1191570b18eaad0af5f923ab98"><div class="ttname"><a href="atlas_8h.html#a0759bc1191570b18eaad0af5f923ab98">atlas_add_image</a></div><div class="ttdeci">bool atlas_add_image(Atlas *atlas, Image *img, TextureCoords *uv_out)</div><div class="ttdef"><b>Definition</b> <a href="atlas_8c_source.html#l00048">atlas.c:48</a></div></div>
+<div class="ttc" id="aatlas_8h_html_a271250c3c3e9ed4dc86a623b9bccbb58"><div class="ttname"><a href="atlas_8h.html#a271250c3c3e9ed4dc86a623b9bccbb58">ATLAS_MAX_IMAGE_AMOUNT</a></div><div class="ttdeci">#define ATLAS_MAX_IMAGE_AMOUNT</div><div class="ttdef"><b>Definition</b> <a href="#l00018">atlas.h:18</a></div></div>
+<div class="ttc" id="aatlas_8h_html_a393a9b3ba38a83859b599053fb7d68f7"><div class="ttname"><a href="atlas_8h.html#a393a9b3ba38a83859b599053fb7d68f7">atlas_create</a></div><div class="ttdeci">Atlas * atlas_create(unsigned int width, unsigned int height, unsigned int channels)</div><div class="ttdef"><b>Definition</b> <a href="atlas_8c_source.html#l00010">atlas.c:10</a></div></div>
+<div class="ttc" id="aatlas_8h_html_a8be0301cc77fc18ccf70384815678eb0"><div class="ttname"><a href="atlas_8h.html#a8be0301cc77fc18ccf70384815678eb0">atlas_get_image_coords</a></div><div class="ttdeci">bool atlas_get_image_coords(Atlas *atlas, unsigned int index, TextureCoords *uv_out)</div><div class="ttdef"><b>Definition</b> <a href="atlas_8c_source.html#l00119">atlas.c:119</a></div></div>
+<div class="ttc" id="aatlas_8h_html_ab86c2a062d69e110c103c739e0cee41a"><div class="ttname"><a href="atlas_8h.html#ab86c2a062d69e110c103c739e0cee41a">atlas_write_image</a></div><div class="ttdeci">void atlas_write_image(Atlas *atlas, const char *file_path)</div><div class="ttdef"><b>Definition</b> <a href="atlas_8c_source.html#l00131">atlas.c:131</a></div></div>
+<div class="ttc" id="aatlas_8h_html_ae438305a6143e251125b67cd9d9ee868"><div class="ttname"><a href="atlas_8h.html#ae438305a6143e251125b67cd9d9ee868">atlas_free</a></div><div class="ttdeci">void atlas_free(Atlas *atlas)</div><div class="ttdef"><b>Definition</b> <a href="atlas_8c_source.html#l00040">atlas.c:40</a></div></div>
+<div class="ttc" id="aimage_8h_html"><div class="ttname"><a href="image_8h.html">image.h</a></div></div>
+<div class="ttc" id="astructAtlas_html"><div class="ttname"><a href="structAtlas.html">Atlas</a></div><div class="ttdef"><b>Definition</b> <a href="#l00022">atlas.h:23</a></div></div>
+<div class="ttc" id="astructAtlas_html_a2d77e92eb40c1b330575e9ac46eedad0"><div class="ttname"><a href="structAtlas.html#a2d77e92eb40c1b330575e9ac46eedad0">Atlas::height</a></div><div class="ttdeci">unsigned int height</div><div class="ttdef"><b>Definition</b> <a href="#l00025">atlas.h:25</a></div></div>
+<div class="ttc" id="astructAtlas_html_a34e1714c38816d402b1181a61ea86683"><div class="ttname"><a href="structAtlas.html#a34e1714c38816d402b1181a61ea86683">Atlas::width</a></div><div class="ttdeci">unsigned int width</div><div class="ttdef"><b>Definition</b> <a href="#l00024">atlas.h:24</a></div></div>
+<div class="ttc" id="astructAtlas_html_a42596d136fa6a79bd1123cf5a746c263"><div class="ttname"><a href="structAtlas.html#a42596d136fa6a79bd1123cf5a746c263">Atlas::images_amount</a></div><div class="ttdeci">unsigned int images_amount</div><div class="ttdef"><b>Definition</b> <a href="#l00034">atlas.h:34</a></div></div>
+<div class="ttc" id="astructAtlas_html_a6c108a01f90dabb30ca05db4afbd1df2"><div class="ttname"><a href="structAtlas.html#a6c108a01f90dabb30ca05db4afbd1df2">Atlas::channels</a></div><div class="ttdeci">unsigned int channels</div><div class="ttdef"><b>Definition</b> <a href="#l00026">atlas.h:26</a></div></div>
+<div class="ttc" id="astructAtlas_html_aafb3210d452ea1de00945c039897885f"><div class="ttname"><a href="structAtlas.html#aafb3210d452ea1de00945c039897885f">Atlas::cursor_x</a></div><div class="ttdeci">unsigned int cursor_x</div><div class="ttdef"><b>Definition</b> <a href="#l00028">atlas.h:28</a></div></div>
+<div class="ttc" id="astructAtlas_html_ab9d50ee736eac2c1c58de7747d3f0903"><div class="ttname"><a href="structAtlas.html#ab9d50ee736eac2c1c58de7747d3f0903">Atlas::images_coords</a></div><div class="ttdeci">TextureCoords images_coords[ATLAS_MAX_IMAGE_AMOUNT]</div><div class="ttdef"><b>Definition</b> <a href="#l00035">atlas.h:35</a></div></div>
+<div class="ttc" id="astructAtlas_html_acdc827364801a96e5c6f90f44ea7c628"><div class="ttname"><a href="structAtlas.html#acdc827364801a96e5c6f90f44ea7c628">Atlas::row_height</a></div><div class="ttdeci">unsigned int row_height</div><div class="ttdef"><b>Definition</b> <a href="#l00030">atlas.h:30</a></div></div>
+<div class="ttc" id="astructAtlas_html_aeb428364a157c34d406bbd084f229958"><div class="ttname"><a href="structAtlas.html#aeb428364a157c34d406bbd084f229958">Atlas::data</a></div><div class="ttdeci">unsigned char * data</div><div class="ttdef"><b>Definition</b> <a href="#l00032">atlas.h:32</a></div></div>
+<div class="ttc" id="astructAtlas_html_aef6a2cd5bd2754c27b9903175325afaa"><div class="ttname"><a href="structAtlas.html#aef6a2cd5bd2754c27b9903175325afaa">Atlas::cursor_y</a></div><div class="ttdeci">unsigned int cursor_y</div><div class="ttdef"><b>Definition</b> <a href="#l00029">atlas.h:29</a></div></div>
+<div class="ttc" id="astructImage_html"><div class="ttname"><a href="structImage.html">Image</a></div><div class="ttdef"><b>Definition</b> <a href="image_8h_source.html#l00008">image.h:9</a></div></div>
+<div class="ttc" id="atexture__coord_8h_html"><div class="ttname"><a href="texture__coord_8h.html">texture_coord.h</a></div></div>
+<div class="ttc" id="atexture__coord_8h_html_a76118e348ad0b82dadecca0b09c911a5"><div class="ttname"><a href="texture__coord_8h.html#a76118e348ad0b82dadecca0b09c911a5">TextureCoords</a></div><div class="ttdeci">struct TextureCoord TextureCoords</div><div class="ttdef"><b>Definition</b> <a href="texture__coord_8h_source.html#l00006">texture_coord.h:6</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_758d8e9166e39e682af4fe71d4574a53.html">FEURcraft</a></li><li class="navelem"><a href="dir_d563573f48eefcd0f66954300c445435.html">graphic</a></li><li class="navelem"><a href="dir_70cb0612fe78639fcdf942bf945e5531.html">include</a></li><li class="navelem"><a href="atlas_8h.html">atlas.h</a></li>
+    <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

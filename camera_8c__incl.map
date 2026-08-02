@@ -1,0 +1,35 @@
+<map id="FEURcraft/graphic/src/camera.c" name="FEURcraft/graphic/src/camera.c">
+<area shape="rect" id="Node000001" title=" " alt="" coords="426,5,578,44"/>
+<area shape="rect" id="Node000002" href="$camera_8h.html" title="Structure et fonctions pour la caméra 3D." alt="" coords="390,92,465,117"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="486,46,451,82,447,79,482,43"/>
+<area shape="rect" id="Node000003" href="$vec3_8h.html" title=" " alt="" coords="340,237,400,262"/>
+<area shape="poly" id="edge11_Node000001_Node000003" title=" " alt="" coords="441,47,407,66,380,93,367,125,362,160,363,193,367,222,362,222,358,194,357,159,362,124,376,91,404,62,439,42"/>
+<area shape="rect" id="Node000004" href="$mat4_8h.html" title=" " alt="" coords="441,165,502,189"/>
+<area shape="poly" id="edge12_Node000001_Node000004" title=" " alt="" coords="501,45,480,150,474,149,496,44"/>
+<area shape="rect" id="Node000011" href="$error__checker_8h.html" title=" " alt="" coords="555,92,665,117"/>
+<area shape="poly" id="edge13_Node000001_Node000011" title=" " alt="" coords="530,42,583,81,580,85,527,47"/>
+<area shape="rect" id="Node000015" title=" " alt="" coords="689,92,750,117"/>
+<area shape="poly" id="edge18_Node000001_Node000015" title=" " alt="" coords="556,42,675,84,673,89,554,47"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="425,118,383,224,378,222,421,116"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="437,116,459,150,454,153,433,119"/>
+<area shape="rect" id="Node000007" href="$window_8h.html" title="Abstraction de la gestion de la fenêtre et du contexte OpenGL." alt="" coords="194,165,269,189"/>
+<area shape="poly" id="edge7_Node000002_Node000007" title=" " alt="" coords="396,120,279,162,277,157,394,115"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="456,192,401,231,398,226,453,188"/>
+<area shape="rect" id="Node000005" href="$vec4_8h.html" title=" " alt="" coords="424,237,484,262"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="471,191,463,223,458,222,466,189"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="508,237,571,262"/>
+<area shape="poly" id="edge6_Node000004_Node000006" title=" " alt="" coords="485,188,520,224,516,228,481,192"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="5,237,90,262"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="202,192,93,234,91,229,200,187"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="114,237,219,262"/>
+<area shape="poly" id="edge9_Node000007_Node000009" title=" " alt="" coords="223,192,189,228,185,224,219,188"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="242,237,317,262"/>
+<area shape="poly" id="edge10_Node000007_Node000010" title=" " alt="" coords="242,188,265,223,261,226,237,191"/>
+<area shape="rect" id="Node000012" href="$logger_8h.html" title="Ficher fournissant des macro de log afin d&#39;afficher des messages de déboggage dans la console." alt="" coords="591,165,658,189"/>
+<area shape="poly" id="edge14_Node000011_Node000012" title=" " alt="" coords="615,117,622,149,617,150,610,118"/>
+<area shape="rect" id="Node000014" title=" " alt="" coords="678,237,742,262"/>
+<area shape="poly" id="edge17_Node000011_Node000014" title=" " alt="" coords="626,115,649,136,672,163,690,193,703,222,698,224,685,195,668,166,645,140,623,119"/>
+<area shape="rect" id="Node000013" title=" " alt="" coords="595,237,655,262"/>
+<area shape="poly" id="edge15_Node000012_Node000013" title=" " alt="" coords="628,190,628,222,622,222,622,190"/>
+<area shape="poly" id="edge16_Node000012_Node000014" title=" " alt="" coords="641,188,686,225,683,230,637,192"/>
+</map>

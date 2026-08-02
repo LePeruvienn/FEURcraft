@@ -1,0 +1,25 @@
+var geometry__data_8h =
+[
+    [ "BLOCK_FACE_INDICES_AMOUNT", "geometry__data_8h.html#a219750cb31d33777df828b3047fffc75", null ],
+    [ "BLOCK_FACE_VERTICES_AMOUNT", "geometry__data_8h.html#ab721cdf7d3bd8c0b944ee63b6810bea7", null ],
+    [ "BLOCK_INDICES_AMOUNT", "geometry__data_8h.html#af6092aa3884c234808ecf02e418e9aca", null ],
+    [ "BLOCK_VERTICES_AMOUNT", "geometry__data_8h.html#a1e2e849ccd90f210321734f180d32af8", null ],
+    [ "CUBE_INDICES_AMOUNT", "geometry__data_8h.html#aa62418cd5e8a465a328d3c2ca0ce530c", null ],
+    [ "CUBE_UV_INDICES_AMOUNT", "geometry__data_8h.html#ac23eb3ddd29076fde8c9ffc3344feeed", null ],
+    [ "CUBE_UV_VERTICES_AMOUNT", "geometry__data_8h.html#ace2225b8c4b265352876ad119f1157d8", null ],
+    [ "CUBE_VERTICES_AMOUNT", "geometry__data_8h.html#a50196723fab64821b2f6eb5a1a448e7f", null ],
+    [ "geometry_data_get_block_face_vertices", "geometry__data_8h.html#a36530454fe7066f08f3726ebadfe4734", null ],
+    [ "BLOCK_FACE_BACK_VERTICES", "geometry__data_8h.html#a1992d83e613b93147132aa99381b2663", null ],
+    [ "BLOCK_FACE_BOT_VERTICES", "geometry__data_8h.html#a84bb49a83d7c2fc3585cbfc6c651b9fc", null ],
+    [ "BLOCK_FACE_FRONT_VERTICES", "geometry__data_8h.html#a4a20ca3f41970cb2802404bbeb1b5285", null ],
+    [ "BLOCK_FACE_INDICES", "geometry__data_8h.html#a846f732a4f068ce9c08592bc3f237fbb", null ],
+    [ "BLOCK_FACE_LEFT_VERTICES", "geometry__data_8h.html#a97ee6284e7ead0dc0cce37c6b3719ecd", null ],
+    [ "BLOCK_FACE_RIGHT_VERTICES", "geometry__data_8h.html#a76717d04795e211ae862d293ff24a6c7", null ],
+    [ "BLOCK_FACE_TOP_VERTICES", "geometry__data_8h.html#a77e2273cccb6d64752dc393b70b9a814", null ],
+    [ "BLOCK_INDICES", "geometry__data_8h.html#a941d9988ac2682a01941d500888e3d13", null ],
+    [ "BLOCK_VERTICES", "geometry__data_8h.html#a28979c613f8f2da4cb7c31f47186a48d", null ],
+    [ "CUBE_INDICES", "geometry__data_8h.html#a1868a367e81d440bce37f8a249267c79", null ],
+    [ "CUBE_UV_INDICES", "geometry__data_8h.html#a1f00b9aa0fa616dca239560d4c7f3381", null ],
+    [ "CUBE_UV_VERTICES", "geometry__data_8h.html#a72d2fa5b5115717750fe94b812c796b3", null ],
+    [ "CUBE_VERTICES", "geometry__data_8h.html#ad70ba83b20752719624c31c75be037d5", null ]
+];

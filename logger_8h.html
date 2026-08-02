@@ -1,0 +1,496 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>FEURcraft: Référence du fichier FEURcraft/utils/include/logger.h</title>
+<link rel="icon" href="FEURcraft.png" type="image/x-icon" />
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="FEURcraft.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">FEURcraft<span id="projectnumber">&#160;0.0.1</span>
+   </div>
+   <div id="projectbrief">Moteur Voxel.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Recherche',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('logger_8h.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Chargement...</div>
+<div class="SRStatus" id="Searching">Recherche...</div>
+<div class="SRStatus" id="NoMatches">Aucune correspondance</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Référence du fichier logger.h</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Ficher fournissant des macro de <em class="arg">log</em> afin d'afficher des messages de déboggage dans la console.  
+<a href="#details">Plus de détails...</a></p>
+<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Graphe des dépendances par inclusion de logger.h:</div>
+<div class="dyncontent">
+<div class="center"><img src="logger_8h__incl.png" border="0" usemap="#aFEURcraft_2utils_2include_2logger_8h" loading="lazy" alt=""/></div>
+<map name="aFEURcraft_2utils_2include_2logger_8h" id="aFEURcraft_2utils_2include_2logger_8h">
+<area shape="rect" title="Ficher fournissant des macro de log afin d&#39;afficher des messages de déboggage dans la console." alt="" coords="5,5,163,44"/>
+<area shape="rect" title=" " alt="" coords="11,92,72,117"/>
+<area shape="poly" title=" " alt="" coords="76,46,57,79,53,77,71,43"/>
+<area shape="rect" title=" " alt="" coords="95,92,158,117"/>
+<area shape="poly" title=" " alt="" coords="97,43,115,77,111,79,92,46"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier :</div>
+<div class="dyncontent">
+<div class="center"><img src="logger_8h__dep__incl.png" border="0" usemap="#aFEURcraft_2utils_2include_2logger_8hdep" loading="lazy" alt=""/></div>
+<map name="aFEURcraft_2utils_2include_2logger_8hdep" id="aFEURcraft_2utils_2include_2logger_8hdep">
+<area shape="rect" title="Ficher fournissant des macro de log afin d&#39;afficher des messages de déboggage dans la console." alt="" coords="1119,5,1276,44"/>
+<area shape="rect" href="array__list_8c.html" title=" " alt="" coords="886,179,1021,217"/>
+<area shape="poly" title=" " alt="" coords="1160,56,982,180,979,176,1157,51"/>
+<area shape="rect" href="gl__debug_8h.html" title=" " alt="" coords="391,92,564,131"/>
+<area shape="poly" title=" " alt="" coords="1104,39,628,95,564,102,564,97,628,89,1103,34"/>
+<area shape="rect" href="geometry_8c.html" title=" " alt="" coords="357,179,510,217"/>
+<area shape="poly" title=" " alt="" coords="1104,43,971,65,823,95,645,139,497,181,495,176,644,134,822,89,970,60,1103,38"/>
+<area shape="rect" href="mesh_8c.html" title=" " alt="" coords="5,179,158,217"/>
+<area shape="poly" title=" " alt="" coords="1103,28,962,32,781,41,580,61,478,76,379,95,308,113,238,136,124,181,122,176,236,131,307,108,378,89,477,71,579,56,780,36,962,26,1103,23"/>
+<area shape="rect" href="shader__program_8c.html" title=" " alt="" coords="533,179,686,217"/>
+<area shape="poly" title=" " alt="" coords="1111,51,950,95,668,181,667,175,949,89,1110,46"/>
+<area shape="rect" href="texture_8c.html" title=" " alt="" coords="709,179,862,217"/>
+<area shape="poly" title=" " alt="" coords="1140,53,831,181,829,176,1138,48"/>
+<area shape="rect" href="chunk__geometry_8c.html" title=" " alt="" coords="1045,179,1198,217"/>
+<area shape="poly" title=" " alt="" coords="1177,58,1156,93,1139,139,1128,179,1123,178,1134,137,1151,91,1172,55"/>
+<area shape="rect" href="geometry__data_8c.html" title=" " alt="" coords="1441,92,1594,131"/>
+<area shape="poly" title=" " alt="" coords="1284,46,1447,89,1446,94,1283,51"/>
+<area shape="rect" href="texture__array_8c.html" title=" " alt="" coords="1221,179,1374,217"/>
+<area shape="poly" title=" " alt="" coords="1195,59,1196,95,1207,129,1229,156,1258,176,1255,180,1226,160,1202,132,1191,96,1190,59"/>
+<area shape="rect" href="main_8c.html" title=" " alt="" coords="1618,99,1745,124"/>
+<area shape="poly" title=" " alt="" coords="1292,37,1440,60,1606,89,1636,96,1634,101,1605,95,1439,65,1291,42"/>
+<area shape="rect" href="read__file_8c.html" title=" " alt="" coords="1770,92,1921,131"/>
+<area shape="poly" title=" " alt="" coords="1292,32,1506,55,1758,89,1770,91,1769,97,1757,95,1505,60,1292,37"/>
+<area shape="rect" href="window_8c.html" title=" " alt="" coords="1398,179,1549,217"/>
+<area shape="poly" title=" " alt="" coords="1208,58,1224,95,1235,113,1250,129,1274,143,1311,156,1398,179,1397,184,1310,161,1272,147,1247,133,1231,117,1219,98,1203,60"/>
+<area shape="rect" href="error__checker_8h.html" title=" " alt="" coords="1260,92,1418,131"/>
+<area shape="poly" title=" " alt="" coords="1243,50,1309,89,1306,94,1240,55"/>
+<area shape="rect" href="c__str__helper_8c.html" title=" " alt="" coords="1945,92,2079,131"/>
+<area shape="poly" title=" " alt="" coords="1292,28,1580,48,1757,65,1934,89,1945,91,1944,97,1933,95,1756,71,1579,53,1291,33"/>
+<area shape="rect" href="test__logger_8h.html" title=" " alt="" coords="2734,92,2880,131"/>
+<area shape="poly" title=" " alt="" coords="1292,28,2734,104,2734,109,1292,34"/>
+<area shape="rect" href="tester_8h.html" title=" " alt="" coords="2929,92,3074,131"/>
+<area shape="poly" title=" " alt="" coords="1292,23,1565,25,1961,33,2422,53,2660,69,2892,89,2929,94,2928,99,2892,95,2659,74,2422,58,1961,38,1565,30,1292,28"/>
+<area shape="poly" title=" " alt="" coords="463,146,446,179,441,177,458,144"/>
+<area shape="poly" title=" " alt="" coords="377,137,158,183,157,178,376,131"/>
+<area shape="poly" title=" " alt="" coords="521,137,582,176,579,180,518,141"/>
+<area shape="poly" title=" " alt="" coords="561,133,718,176,717,181,560,138"/>
+<area shape="rect" href="vertex__layout_8c.html" title=" " alt="" coords="181,179,334,217"/>
+<area shape="poly" title=" " alt="" coords="415,139,307,181,305,176,413,134"/>
+<area shape="poly" title=" " alt="" coords="1245,135,1034,181,1022,184,1021,179,1033,176,1244,130"/>
+<area shape="poly" title=" " alt="" coords="1245,119,924,139,723,157,522,181,511,183,510,178,521,176,723,152,923,134,1244,114"/>
+<area shape="poly" title=" " alt="" coords="1245,122,997,144,847,161,698,181,687,183,686,178,697,176,847,156,996,139,1244,117"/>
+<area shape="poly" title=" " alt="" coords="1245,127,1072,150,874,181,863,183,862,178,873,176,1071,145,1244,122"/>
+<area shape="poly" title=" " alt="" coords="1277,139,1171,181,1169,176,1276,134"/>
+<area shape="poly" title=" " alt="" coords="1325,146,1309,179,1304,177,1321,144"/>
+<area shape="poly" title=" " alt="" coords="1383,137,1445,176,1442,180,1380,142"/>
+<area shape="rect" href="atlas_8c.html" title=" " alt="" coords="2617,179,2770,217"/>
+<area shape="poly" title=" " alt="" coords="1433,128,1611,145,1763,152,1896,153,2021,151,2145,149,2278,151,2429,158,2606,176,2617,178,2616,183,2605,181,2429,164,2278,156,2145,155,2021,156,1896,159,1763,158,1611,150,1433,134"/>
+<area shape="rect" href="camera_8c.html" title=" " alt="" coords="1573,179,1726,217"/>
+<area shape="poly" title=" " alt="" coords="1423,133,1581,176,1580,181,1421,138"/>
+<area shape="rect" href="image__array_8c.html" title=" " alt="" coords="1749,179,1902,217"/>
+<area shape="poly" title=" " alt="" coords="1433,129,1587,152,1738,176,1749,178,1748,183,1737,181,1586,158,1432,134"/>
+<area shape="rect" href="renderer_8c.html" title=" " alt="" coords="1925,179,2078,217"/>
+<area shape="poly" title=" " alt="" coords="1433,128,1569,144,1675,152,1780,160,1914,176,1925,178,1924,183,1913,181,1780,165,1675,157,1568,150,1433,134"/>
+<area shape="rect" href="shader_8c.html" title=" " alt="" coords="2101,179,2254,217"/>
+<area shape="poly" title=" " alt="" coords="1433,128,1618,146,1763,152,1907,157,2090,176,2101,178,2100,183,2089,181,1907,163,1763,157,1618,152,1433,134"/>
+<area shape="rect" href="image_8c.html" title=" " alt="" coords="2278,179,2429,217"/>
+<area shape="poly" title=" " alt="" coords="1433,128,1560,141,1667,148,1851,151,2034,155,2141,162,2266,176,2278,178,2277,183,2265,181,2140,168,2033,160,1851,157,1667,154,1559,147,1432,134"/>
+<area shape="rect" href="chunk_8c.html" title=" " alt="" coords="2453,179,2593,217"/>
+<area shape="poly" title=" " alt="" coords="1433,128,1586,143,1717,150,1939,150,2160,151,2290,159,2442,176,2453,178,2452,183,2441,181,2289,165,2160,156,1939,155,1716,155,1586,148,1432,133"/>
+<area shape="rect" href="FEUR__Test_8h.html" title=" " alt="" coords="2845,265,2990,304"/>
+<area shape="poly" title=" " alt="" coords="2812,146,2820,181,2836,216,2859,242,2886,263,2883,267,2855,246,2831,219,2815,183,2807,147"/>
+<area shape="rect" href="test__assert_8h.html" title=" " alt="" coords="2845,179,2990,217"/>
+<area shape="poly" title=" " alt="" coords="2845,138,2895,176,2891,180,2842,142"/>
+<area shape="rect" href="template_8c.html" title=" " alt="" coords="2849,352,2986,377"/>
+<area shape="poly" title=" " alt="" coords="2920,320,2920,351,2915,351,2915,320"/>
+<area shape="poly" title=" " alt="" coords="2920,233,2920,265,2915,265,2915,233"/>
+<area shape="poly" title=" " alt="" coords="3012,146,3014,182,3011,201,3005,219,2984,247,2956,267,2953,263,2980,243,3000,216,3006,199,3009,181,3007,146"/>
+</map>
+</div>
+</div>
+<p><a href="logger_8h_source.html">Aller au code source de ce fichier.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-define-members" class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a370d64f5c8688d8cbe9f87acc0273e9f" id="r_a370d64f5c8688d8cbe9f87acc0273e9f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a370d64f5c8688d8cbe9f87acc0273e9f">LOG_ENABLED</a>&#160;&#160;&#160;1</td></tr>
+<tr class="memdesc:a370d64f5c8688d8cbe9f87acc0273e9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permet d'activer (<span class="tt">0</span>) ou désactiver (<span class="tt">1</span>) l'affichage des messages de déboggages.  <br /></td></tr>
+<tr class="memitem:aac1d7bb7abb0c7f2494d2f49ff486e85" id="r_aac1d7bb7abb0c7f2494d2f49ff486e85"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aac1d7bb7abb0c7f2494d2f49ff486e85">EXIT_ON_ERROR</a>&#160;&#160;&#160;1</td></tr>
+<tr class="memdesc:aac1d7bb7abb0c7f2494d2f49ff486e85"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permet d'activer (<span class="tt">0</span>) ou désactiver (<span class="tt">1</span>) la terminaison du programme après la détection d'une erreur.  <br /></td></tr>
+<tr class="memitem:a4e9d9a7362dd635b558d4ad76ac939ff" id="r_a4e9d9a7362dd635b558d4ad76ac939ff"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4e9d9a7362dd635b558d4ad76ac939ff">LOG_HEADER</a>(fd,  header,  fmt, ...)</td></tr>
+<tr class="memitem:a8733a23ae124d87e0e17c04958b28e75" id="r_a8733a23ae124d87e0e17c04958b28e75"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8733a23ae124d87e0e17c04958b28e75">LOG_HEADER_FILE</a>(fd,  header,  fmt, ...)</td></tr>
+<tr class="memitem:a388edf12256bf73c3a8ee9734c3bd841" id="r_a388edf12256bf73c3a8ee9734c3bd841"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a388edf12256bf73c3a8ee9734c3bd841">LOG</a>(fmt, ...)</td></tr>
+<tr class="memitem:afde44945335adc0c0ae2986fea13438f" id="r_afde44945335adc0c0ae2986fea13438f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afde44945335adc0c0ae2986fea13438f">LOG_WARNING</a>(fmt, ...)</td></tr>
+<tr class="memitem:ae69d735f8291bd2aff230fe6ffb4d4b3" id="r_ae69d735f8291bd2aff230fe6ffb4d4b3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae69d735f8291bd2aff230fe6ffb4d4b3">LOG_INFO</a>(fmt, ...)</td></tr>
+<tr class="memitem:a45701bae2fd25cd75d47a4f9fd84e38a" id="r_a45701bae2fd25cd75d47a4f9fd84e38a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a45701bae2fd25cd75d47a4f9fd84e38a">EXIT_PROGRAM</a>(code)</td></tr>
+<tr class="memitem:a2b06e72323be9f5500c25924ac6fa5b6" id="r_a2b06e72323be9f5500c25924ac6fa5b6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2b06e72323be9f5500c25924ac6fa5b6">EXIT_ERROR</a>(code,  fmt, ...)</td></tr>
+<tr class="memitem:ae6fc70e87e424e7083c63696b8fb9e78" id="r_ae6fc70e87e424e7083c63696b8fb9e78"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae6fc70e87e424e7083c63696b8fb9e78">LOG_ERROR</a>(fmt, ...)</td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Description détaillée</h2>
+<div class="textblock"><p>Ficher fournissant des macro de <em class="arg">log</em> afin d'afficher des messages de déboggage dans la console. </p>
+<p>Ce fichier des macros de <em class="arg">log</em> afin de faciliter l'affichage de message de déboggage dans la console.</p>
+<p>Il ya plusiurs niveau de message :</p><ul>
+<li><b>INFO</b> message à titre informatif</li>
+<li><b>WARNING</b> message signifant quelque chose d'anormal ou suspect</li>
+<li><b>ERROR</b> message indicant une érreur du programme, si <span class="tt">EXIT_ON_ERROR</span> est acitivé, alors le programme s'arrêtera.</li>
+</ul>
+<p>Cette outils est très utile notamment en programmation C afin de comprendre les érreurs plus facilement en ayant des message d'érreur explicite plutot qu'un <em class="arg">seg_fault</em> ou <em class="arg">core_dump</em>.</p>
+<p>Si le define <span class="tt">LOG_ENABLED</span> est à 0 alors aucun message ne sera afficher.</p>
+<p>Si le define <span class="tt">EXIT_ON_ERROR</span> alors le programme ne se fermera pas automatiquement après l'affichage d'un message d'érreur </p>
+
+<p class="definition">Définition dans le fichier <a class="el" href="logger_8h_source.html">logger.h</a>.</p>
+</div><a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="groupheader">Documentation des macros</h2>
+<a id="a2b06e72323be9f5500c25924ac6fa5b6" name="a2b06e72323be9f5500c25924ac6fa5b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b06e72323be9f5500c25924ac6fa5b6">&#9670;&#160;</a></span>EXIT_ERROR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EXIT_ERROR</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>code</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>fmt</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em></em></span>...&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Valeur :</b><div class="fragment"><div class="line"><span class="keywordflow">do</span> { <a class="code hl_define" href="#ae6fc70e87e424e7083c63696b8fb9e78">LOG_ERROR</a>(fmt, ##__VA_ARGS__); <a class="code hl_define" href="#a45701bae2fd25cd75d47a4f9fd84e38a">EXIT_PROGRAM</a>(code); } <span class="keywordflow">while</span>(0)</div>
+<div class="ttc" id="alogger_8h_html_a45701bae2fd25cd75d47a4f9fd84e38a"><div class="ttname"><a href="#a45701bae2fd25cd75d47a4f9fd84e38a">EXIT_PROGRAM</a></div><div class="ttdeci">#define EXIT_PROGRAM(code)</div><div class="ttdef"><b>Definition</b> <a href="logger_8h_source.html#l00066">logger.h:66</a></div></div>
+<div class="ttc" id="alogger_8h_html_ae6fc70e87e424e7083c63696b8fb9e78"><div class="ttname"><a href="#ae6fc70e87e424e7083c63696b8fb9e78">LOG_ERROR</a></div><div class="ttdeci">#define LOG_ERROR(fmt,...)</div><div class="ttdef"><b>Definition</b> <a href="logger_8h_source.html#l00071">logger.h:71</a></div></div>
+</div><!-- fragment -->
+<p class="definition">Définition à la ligne <a class="el" href="logger_8h_source.html#l00067">67</a> du fichier <a class="el" href="logger_8h_source.html">logger.h</a>.</p>
+
+</div>
+</div>
+<a id="aac1d7bb7abb0c7f2494d2f49ff486e85" name="aac1d7bb7abb0c7f2494d2f49ff486e85"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac1d7bb7abb0c7f2494d2f49ff486e85">&#9670;&#160;</a></span>EXIT_ON_ERROR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EXIT_ON_ERROR&#160;&#160;&#160;1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Permet d'activer (<span class="tt">0</span>) ou désactiver (<span class="tt">1</span>) la terminaison du programme après la détection d'une erreur. </p>
+
+<p class="definition">Définition à la ligne <a class="el" href="logger_8h_source.html#l00038">38</a> du fichier <a class="el" href="logger_8h_source.html">logger.h</a>.</p>
+
+</div>
+</div>
+<a id="a45701bae2fd25cd75d47a4f9fd84e38a" name="a45701bae2fd25cd75d47a4f9fd84e38a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45701bae2fd25cd75d47a4f9fd84e38a">&#9670;&#160;</a></span>EXIT_PROGRAM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EXIT_PROGRAM</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>code</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Valeur :</b><div class="fragment"><div class="line"><span class="keywordflow">do</span> { <a class="code hl_define" href="#a388edf12256bf73c3a8ee9734c3bd841">LOG</a>(<span class="stringliteral">&quot;Program exited with code %d&quot;</span>, code); exit(code); } <span class="keywordflow">while</span>(0)</div>
+<div class="ttc" id="alogger_8h_html_a388edf12256bf73c3a8ee9734c3bd841"><div class="ttname"><a href="#a388edf12256bf73c3a8ee9734c3bd841">LOG</a></div><div class="ttdeci">#define LOG(fmt,...)</div><div class="ttdef"><b>Definition</b> <a href="logger_8h_source.html#l00048">logger.h:48</a></div></div>
+</div><!-- fragment -->
+<p class="definition">Définition à la ligne <a class="el" href="logger_8h_source.html#l00066">66</a> du fichier <a class="el" href="logger_8h_source.html">logger.h</a>.</p>
+
+</div>
+</div>
+<a id="a388edf12256bf73c3a8ee9734c3bd841" name="a388edf12256bf73c3a8ee9734c3bd841"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a388edf12256bf73c3a8ee9734c3bd841">&#9670;&#160;</a></span>LOG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LOG</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>fmt</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em></em></span>...&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Valeur :</b><div class="fragment"><div class="line">printf(fmt <span class="stringliteral">&quot;\n&quot;</span>, ##__VA_ARGS__)</div>
+</div><!-- fragment -->
+<p class="definition">Définition à la ligne <a class="el" href="logger_8h_source.html#l00048">48</a> du fichier <a class="el" href="logger_8h_source.html">logger.h</a>.</p>
+
+</div>
+</div>
+<a id="a370d64f5c8688d8cbe9f87acc0273e9f" name="a370d64f5c8688d8cbe9f87acc0273e9f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a370d64f5c8688d8cbe9f87acc0273e9f">&#9670;&#160;</a></span>LOG_ENABLED</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LOG_ENABLED&#160;&#160;&#160;1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Permet d'activer (<span class="tt">0</span>) ou désactiver (<span class="tt">1</span>) l'affichage des messages de déboggages. </p>
+
+<p class="definition">Définition à la ligne <a class="el" href="logger_8h_source.html#l00030">30</a> du fichier <a class="el" href="logger_8h_source.html">logger.h</a>.</p>
+
+</div>
+</div>
+<a id="ae6fc70e87e424e7083c63696b8fb9e78" name="ae6fc70e87e424e7083c63696b8fb9e78"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae6fc70e87e424e7083c63696b8fb9e78">&#9670;&#160;</a></span>LOG_ERROR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LOG_ERROR</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>fmt</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em></em></span>...&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Valeur :</b><div class="fragment"><div class="line">        <span class="keywordflow">do</span> { <a class="code hl_define" href="#a8733a23ae124d87e0e17c04958b28e75">LOG_HEADER_FILE</a>(stderr, <span class="stringliteral">&quot;ERROR&quot;</span>, fmt, ##__VA_ARGS__); \</div>
+<div class="line">             LOG_INFO(<span class="stringliteral">&quot;Exit on error is active exiting ...&quot;</span>);      \</div>
+<div class="line">             EXIT_PROGRAM(EXIT_FAILURE);                           \</div>
+<div class="line">        } <span class="keywordflow">while</span>(0)</div>
+<div class="ttc" id="alogger_8h_html_a8733a23ae124d87e0e17c04958b28e75"><div class="ttname"><a href="#a8733a23ae124d87e0e17c04958b28e75">LOG_HEADER_FILE</a></div><div class="ttdeci">#define LOG_HEADER_FILE(fd, header, fmt,...)</div><div class="ttdef"><b>Definition</b> <a href="logger_8h_source.html#l00046">logger.h:46</a></div></div>
+</div><!-- fragment -->
+<p class="definition">Définition à la ligne <a class="el" href="logger_8h_source.html#l00071">71</a> du fichier <a class="el" href="logger_8h_source.html">logger.h</a>.</p>
+
+</div>
+</div>
+<a id="a4e9d9a7362dd635b558d4ad76ac939ff" name="a4e9d9a7362dd635b558d4ad76ac939ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e9d9a7362dd635b558d4ad76ac939ff">&#9670;&#160;</a></span>LOG_HEADER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LOG_HEADER</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>fd</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>header</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>fmt</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em></em></span>...&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Valeur :</b><div class="fragment"><div class="line">fprintf(fd, <span class="stringliteral">&quot;[%s]: &quot;</span> fmt <span class="stringliteral">&quot;\n&quot;</span>, header, ##__VA_ARGS__)</div>
+</div><!-- fragment -->
+<p class="definition">Définition à la ligne <a class="el" href="logger_8h_source.html#l00045">45</a> du fichier <a class="el" href="logger_8h_source.html">logger.h</a>.</p>
+
+</div>
+</div>
+<a id="a8733a23ae124d87e0e17c04958b28e75" name="a8733a23ae124d87e0e17c04958b28e75"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8733a23ae124d87e0e17c04958b28e75">&#9670;&#160;</a></span>LOG_HEADER_FILE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LOG_HEADER_FILE</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>fd</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>header</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>fmt</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em></em></span>...&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Valeur :</b><div class="fragment"><div class="line">fprintf(fd, <span class="stringliteral">&quot;[%s] %s:%d: &quot;</span> fmt <span class="stringliteral">&quot;\n&quot;</span>, header, __FILE__, __LINE__, ##__VA_ARGS__)</div>
+</div><!-- fragment -->
+<p class="definition">Définition à la ligne <a class="el" href="logger_8h_source.html#l00046">46</a> du fichier <a class="el" href="logger_8h_source.html">logger.h</a>.</p>
+
+</div>
+</div>
+<a id="ae69d735f8291bd2aff230fe6ffb4d4b3" name="ae69d735f8291bd2aff230fe6ffb4d4b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae69d735f8291bd2aff230fe6ffb4d4b3">&#9670;&#160;</a></span>LOG_INFO</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LOG_INFO</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>fmt</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em></em></span>...&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Valeur :</b><div class="fragment"><div class="line"><a class="code hl_define" href="#a4e9d9a7362dd635b558d4ad76ac939ff">LOG_HEADER</a>(stdout, <span class="stringliteral">&quot;INFO&quot;</span>, fmt, ##__VA_ARGS__)</div>
+<div class="ttc" id="alogger_8h_html_a4e9d9a7362dd635b558d4ad76ac939ff"><div class="ttname"><a href="#a4e9d9a7362dd635b558d4ad76ac939ff">LOG_HEADER</a></div><div class="ttdeci">#define LOG_HEADER(fd, header, fmt,...)</div><div class="ttdef"><b>Definition</b> <a href="logger_8h_source.html#l00045">logger.h:45</a></div></div>
+</div><!-- fragment -->
+<p class="definition">Définition à la ligne <a class="el" href="logger_8h_source.html#l00050">50</a> du fichier <a class="el" href="logger_8h_source.html">logger.h</a>.</p>
+
+</div>
+</div>
+<a id="afde44945335adc0c0ae2986fea13438f" name="afde44945335adc0c0ae2986fea13438f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afde44945335adc0c0ae2986fea13438f">&#9670;&#160;</a></span>LOG_WARNING</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LOG_WARNING</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>fmt</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em></em></span>...&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Valeur :</b><div class="fragment"><div class="line"><a class="code hl_define" href="#a4e9d9a7362dd635b558d4ad76ac939ff">LOG_HEADER</a>(stdout, <span class="stringliteral">&quot;WARNING&quot;</span>, fmt, ##__VA_ARGS__)</div>
+</div><!-- fragment -->
+<p class="definition">Définition à la ligne <a class="el" href="logger_8h_source.html#l00049">49</a> du fichier <a class="el" href="logger_8h_source.html">logger.h</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_758d8e9166e39e682af4fe71d4574a53.html">FEURcraft</a></li><li class="navelem"><a href="dir_a359e578c71601500fd7ca04818a85da.html">utils</a></li><li class="navelem"><a href="dir_fff55801cf97b51d7f96e1569882b7ce.html">include</a></li><li class="navelem"><a href="logger_8h.html">logger.h</a></li>
+    <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

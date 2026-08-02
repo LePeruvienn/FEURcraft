@@ -1,0 +1,500 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>FEURcraft: Référence du fichier FEURcraft/graphic/include/mesh.h</title>
+<link rel="icon" href="FEURcraft.png" type="image/x-icon" />
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="FEURcraft.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">FEURcraft<span id="projectnumber">&#160;0.0.1</span>
+   </div>
+   <div id="projectbrief">Moteur Voxel.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Recherche',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('mesh_8h.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Chargement...</div>
+<div class="SRStatus" id="Searching">Recherche...</div>
+<div class="SRStatus" id="NoMatches">Aucune correspondance</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Référence du fichier mesh.h</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Structure représentant les données d'un modèle 3D charger dans le GPU.  
+<a href="#details">Plus de détails...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="geometry_8h_source.html">geometry.h</a>&quot;</code><br />
+<code>#include &quot;glad/glad.h&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Graphe des dépendances par inclusion de mesh.h:</div>
+<div class="dyncontent">
+<div class="center"><img src="mesh_8h__incl.png" border="0" usemap="#aFEURcraft_2graphic_2include_2mesh_8h" loading="lazy" alt=""/></div>
+<map name="aFEURcraft_2graphic_2include_2mesh_8h" id="aFEURcraft_2graphic_2include_2mesh_8h">
+<area shape="rect" title="Structure représentant les données d&#39;un modèle 3D charger dans le GPU." alt="" coords="134,5,309,44"/>
+<area shape="rect" href="geometry_8h.html" title="Structure représentant les données d&#39;un modèle 3D." alt="" coords="133,92,219,117"/>
+<area shape="poly" title=" " alt="" coords="212,46,193,80,188,77,208,43"/>
+<area shape="rect" title=" " alt="" coords="232,237,317,262"/>
+<area shape="poly" title=" " alt="" coords="236,43,265,96,280,129,290,164,292,195,286,223,281,222,287,194,285,165,275,131,260,98,231,46"/>
+<area shape="rect" href="vertex__layout_8h.html" title="Fichier contenant les structure de spécification de la disposition des attributs des vertex." alt="" coords="167,165,275,189"/>
+<area shape="poly" title=" " alt="" coords="186,116,208,150,203,153,181,119"/>
+<area shape="rect" title=" " alt="" coords="104,237,171,262"/>
+<area shape="poly" title=" " alt="" coords="174,118,157,165,144,222,139,221,152,164,169,116"/>
+<area shape="rect" href="array__list_8h.html" title="Liste dynamique." alt="" coords="7,165,91,189"/>
+<area shape="poly" title=" " alt="" coords="156,120,85,159,82,154,154,115"/>
+<area shape="poly" title=" " alt="" coords="232,188,259,223,254,226,228,192"/>
+<area shape="poly" title=" " alt="" coords="209,192,164,230,160,225,206,188"/>
+<area shape="poly" title=" " alt="" coords="65,188,113,225,109,230,62,192"/>
+<area shape="rect" title=" " alt="" coords="5,237,80,262"/>
+<area shape="poly" title=" " alt="" coords="51,190,48,222,42,222,45,190"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier :</div>
+<div class="dyncontent">
+<div class="center"><img src="mesh_8h__dep__incl.png" border="0" usemap="#aFEURcraft_2graphic_2include_2mesh_8hdep" loading="lazy" alt=""/></div>
+<map name="aFEURcraft_2graphic_2include_2mesh_8hdep" id="aFEURcraft_2graphic_2include_2mesh_8hdep">
+<area shape="rect" title="Structure représentant les données d&#39;un modèle 3D charger dans le GPU." alt="" coords="5,5,181,44"/>
+<area shape="rect" href="mesh_8c.html" title=" " alt="" coords="17,92,169,131"/>
+<area shape="poly" title=" " alt="" coords="96,60,96,91,90,91,90,60"/>
+</map>
+</div>
+</div>
+<p><a href="mesh_8h_source.html">Aller au code source de ce fichier.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Structures de données</h2></td></tr>
+<tr class="memitem:Mesh" id="r_Mesh"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMesh.html">Mesh</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-typedef-members" class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+Définitions de type</h2></td></tr>
+<tr class="memitem:a2abca57ece005663a4df39aed5463027" id="r_a2abca57ece005663a4df39aed5463027"><td class="memItemLeft" align="right" valign="top">typedef struct Mesh&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2abca57ece005663a4df39aed5463027">Mesh</a></td></tr>
+<tr class="memdesc:a2abca57ece005663a4df39aed5463027"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type représentant les données d'un modèle 3D sur le GPU.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr class="memitem:ad20fee6acdafe0427a94e0a60eba8086" id="r_ad20fee6acdafe0427a94e0a60eba8086"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structMesh.html">Mesh</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad20fee6acdafe0427a94e0a60eba8086">create_mesh</a> (<a class="el" href="structGeometry.html">Geometry</a> *g)</td></tr>
+<tr class="memdesc:ad20fee6acdafe0427a94e0a60eba8086"><td class="mdescLeft">&#160;</td><td class="mdescRight">Créer une nouvelle géométrie à partir du modèle en paramêtre.  <br /></td></tr>
+<tr class="memitem:abb59808459ab79134bb8e615f55229de" id="r_abb59808459ab79134bb8e615f55229de"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structMesh.html">Mesh</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abb59808459ab79134bb8e615f55229de">create_cube_mesh</a> ()</td></tr>
+<tr class="memdesc:abb59808459ab79134bb8e615f55229de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Créer une nouvelle géométrie de cube.  <br /></td></tr>
+<tr class="memitem:aecd1461a3cd08ea754e799e462a943a7" id="r_aecd1461a3cd08ea754e799e462a943a7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structMesh.html">Mesh</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aecd1461a3cd08ea754e799e462a943a7">create_cube_uv_mesh</a> ()</td></tr>
+<tr class="memdesc:aecd1461a3cd08ea754e799e462a943a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Créer une nouvelle géométrie de cube avec UV.  <br /></td></tr>
+<tr class="memitem:ad176a7fba154dd6c331ed669c0910a2f" id="r_ad176a7fba154dd6c331ed669c0910a2f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structMesh.html">Mesh</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad176a7fba154dd6c331ed669c0910a2f">create_block_mesh</a> ()</td></tr>
+<tr class="memdesc:ad176a7fba154dd6c331ed669c0910a2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Créer une nouvelle géométrie de block.  <br /></td></tr>
+<tr class="memitem:adb9d08fa8bd99ec95a04e1164c4b47e8" id="r_adb9d08fa8bd99ec95a04e1164c4b47e8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structMesh.html">Mesh</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adb9d08fa8bd99ec95a04e1164c4b47e8">create_sphere_mesh</a> (float R, unsigned int lat_amount, unsigned int long_amount)</td></tr>
+<tr class="memdesc:adb9d08fa8bd99ec95a04e1164c4b47e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Créer une nouvelle géométrie de sphère.  <br /></td></tr>
+<tr class="memitem:a11d3f38dca8673ae5ded549f2426f779" id="r_a11d3f38dca8673ae5ded549f2426f779"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a11d3f38dca8673ae5ded549f2426f779">free_mesh</a> (<a class="el" href="structMesh.html">Mesh</a> *m)</td></tr>
+<tr class="memdesc:a11d3f38dca8673ae5ded549f2426f779"><td class="mdescLeft">&#160;</td><td class="mdescRight">libère la mémoire de la géométrie en passer en paramêtre  <br /></td></tr>
+<tr class="memitem:a9b979d7f4d62651bd60ebe01b94b08b2" id="r_a9b979d7f4d62651bd60ebe01b94b08b2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9b979d7f4d62651bd60ebe01b94b08b2">bind_mesh</a> (<a class="el" href="structMesh.html">Mesh</a> *m)</td></tr>
+<tr class="memdesc:a9b979d7f4d62651bd60ebe01b94b08b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lie les données de la géométrie au GPU.  <br /></td></tr>
+<tr class="memitem:a21948ef730bd24893eac626b7ff2552f" id="r_a21948ef730bd24893eac626b7ff2552f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a21948ef730bd24893eac626b7ff2552f">unbind_mesh</a> (<a class="el" href="structMesh.html">Mesh</a> *m)</td></tr>
+<tr class="memdesc:a21948ef730bd24893eac626b7ff2552f"><td class="mdescLeft">&#160;</td><td class="mdescRight">dé lie les données de la géométrie du GPU  <br /></td></tr>
+<tr class="memitem:a186b0b1142b4f009868d2d0c2a788511" id="r_a186b0b1142b4f009868d2d0c2a788511"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a186b0b1142b4f009868d2d0c2a788511">draw_mesh</a> (<a class="el" href="structMesh.html">Mesh</a> *m, GLenum mode)</td></tr>
+<tr class="memdesc:a186b0b1142b4f009868d2d0c2a788511"><td class="mdescLeft">&#160;</td><td class="mdescRight">Déssine la géométrie actuelle en faisant un appel GPU.  <br /></td></tr>
+<tr class="memitem:aa028d951125ef12acf57344df04b0f1d" id="r_aa028d951125ef12acf57344df04b0f1d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa028d951125ef12acf57344df04b0f1d">draw_mesh_instanced</a> (<a class="el" href="structMesh.html">Mesh</a> *m, GLenum mode, unsigned int amount)</td></tr>
+<tr class="memdesc:aa028d951125ef12acf57344df04b0f1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">fait un appel GPU pour déssiner plusieurs instance la géométrie  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Description détaillée</h2>
+<div class="textblock"><p>Structure représentant les données d'un modèle 3D charger dans le GPU. </p>
+<p>Le type <span class="tt">mesh</span> permet de faire le lien entre l'espace mémoire alloué d'un modèle 3D et le code C.</p>
+<p>Lors de la création d'une géométrie à l'aide d'un type mesh, les données de l'objet 3D sont envoyer au GPU et les géométrie stock les indices associées au buffer GPU du modèle.</p>
+<p>Ensuite à l'aide de la géométrie, nous pouvons alors lié le modèle au GPU a tout moment afin de pouvoir en déssiner le modèle de différente façon, mais aussi de pouvoir lui lié des shaders ou des textures. </p>
+
+<p class="definition">Définition dans le fichier <a class="el" href="mesh_8h_source.html">mesh.h</a>.</p>
+</div><a name="doc-typedef-members" id="doc-typedef-members"></a><h2 id="header-doc-typedef-members" class="groupheader">Documentation des définitions de type</h2>
+<a id="a2abca57ece005663a4df39aed5463027" name="a2abca57ece005663a4df39aed5463027"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2abca57ece005663a4df39aed5463027">&#9670;&#160;</a></span>Mesh</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct Mesh Mesh</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Type représentant les données d'un modèle 3D sur le GPU. </p>
+
+<p class="definition">Définition à la ligne <a class="el" href="mesh_8h_source.html#l00026">26</a> du fichier <a class="el" href="mesh_8h_source.html">mesh.h</a>.</p>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentation des fonctions</h2>
+<a id="a9b979d7f4d62651bd60ebe01b94b08b2" name="a9b979d7f4d62651bd60ebe01b94b08b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b979d7f4d62651bd60ebe01b94b08b2">&#9670;&#160;</a></span>bind_mesh()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bind_mesh </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structMesh.html">Mesh</a> *</td>          <td class="paramname"><span class="paramname"><em>m</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Lie les données de la géométrie au GPU. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">g</td><td>géométrie à lié </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="mesh_8c_source.html#l00093">93</a> du fichier <a class="el" href="mesh_8c_source.html">mesh.c</a>.</p>
+
+</div>
+</div>
+<a id="ad176a7fba154dd6c331ed669c0910a2f" name="ad176a7fba154dd6c331ed669c0910a2f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad176a7fba154dd6c331ed669c0910a2f">&#9670;&#160;</a></span>create_block_mesh()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structMesh.html">Mesh</a> * create_block_mesh </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Créer une nouvelle géométrie de block. </p>
+<dl class="section return"><dt>Renvoie</dt><dd>nouvelle géométrie alloué </dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="mesh_8c_source.html#l00058">58</a> du fichier <a class="el" href="mesh_8c_source.html">mesh.c</a>.</p>
+
+</div>
+</div>
+<a id="abb59808459ab79134bb8e615f55229de" name="abb59808459ab79134bb8e615f55229de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abb59808459ab79134bb8e615f55229de">&#9670;&#160;</a></span>create_cube_mesh()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structMesh.html">Mesh</a> * create_cube_mesh </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Créer une nouvelle géométrie de cube. </p>
+<dl class="section return"><dt>Renvoie</dt><dd>nouvelle géométrie alloué </dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="mesh_8c_source.html#l00038">38</a> du fichier <a class="el" href="mesh_8c_source.html">mesh.c</a>.</p>
+
+</div>
+</div>
+<a id="aecd1461a3cd08ea754e799e462a943a7" name="aecd1461a3cd08ea754e799e462a943a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aecd1461a3cd08ea754e799e462a943a7">&#9670;&#160;</a></span>create_cube_uv_mesh()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structMesh.html">Mesh</a> * create_cube_uv_mesh </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Créer une nouvelle géométrie de cube avec UV. </p>
+<dl class="section return"><dt>Renvoie</dt><dd>nouvelle géométrie alloué </dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="mesh_8c_source.html#l00048">48</a> du fichier <a class="el" href="mesh_8c_source.html">mesh.c</a>.</p>
+
+</div>
+</div>
+<a id="ad20fee6acdafe0427a94e0a60eba8086" name="ad20fee6acdafe0427a94e0a60eba8086"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad20fee6acdafe0427a94e0a60eba8086">&#9670;&#160;</a></span>create_mesh()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structMesh.html">Mesh</a> * create_mesh </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structGeometry.html">Geometry</a> *</td>          <td class="paramname"><span class="paramname"><em>g</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Créer une nouvelle géométrie à partir du modèle en paramêtre. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">m</td><td>mesh du modèle </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>nouvelle géométrie alloué </dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="mesh_8c_source.html#l00011">11</a> du fichier <a class="el" href="mesh_8c_source.html">mesh.c</a>.</p>
+
+</div>
+</div>
+<a id="adb9d08fa8bd99ec95a04e1164c4b47e8" name="adb9d08fa8bd99ec95a04e1164c4b47e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb9d08fa8bd99ec95a04e1164c4b47e8">&#9670;&#160;</a></span>create_sphere_mesh()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structMesh.html">Mesh</a> * create_sphere_mesh </td>
+          <td>(</td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>R</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int</td>          <td class="paramname"><span class="paramname"><em>lat_amount</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int</td>          <td class="paramname"><span class="paramname"><em>long_amount</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Créer une nouvelle géométrie de sphère. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">R</td><td>rayon de la sphère </td></tr>
+    <tr><td class="paramname">lat_amount</td><td>nombre de sommet en latitude </td></tr>
+    <tr><td class="paramname">long_amount</td><td>nombre de sommet en longitude </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>nouvelle géométrie alloué </dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="mesh_8c_source.html#l00068">68</a> du fichier <a class="el" href="mesh_8c_source.html">mesh.c</a>.</p>
+
+</div>
+</div>
+<a id="a186b0b1142b4f009868d2d0c2a788511" name="a186b0b1142b4f009868d2d0c2a788511"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a186b0b1142b4f009868d2d0c2a788511">&#9670;&#160;</a></span>draw_mesh()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void draw_mesh </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structMesh.html">Mesh</a> *</td>          <td class="paramname"><span class="paramname"><em>m</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">GLenum</td>          <td class="paramname"><span class="paramname"><em>mode</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Déssine la géométrie actuelle en faisant un appel GPU. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">g</td><td>géométrie à déssiner </td></tr>
+    <tr><td class="paramname">mode</td><td>mode de déssin </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="mesh_8c_source.html#l00117">117</a> du fichier <a class="el" href="mesh_8c_source.html">mesh.c</a>.</p>
+
+</div>
+</div>
+<a id="aa028d951125ef12acf57344df04b0f1d" name="aa028d951125ef12acf57344df04b0f1d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa028d951125ef12acf57344df04b0f1d">&#9670;&#160;</a></span>draw_mesh_instanced()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void draw_mesh_instanced </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structMesh.html">Mesh</a> *</td>          <td class="paramname"><span class="paramname"><em>m</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">GLenum</td>          <td class="paramname"><span class="paramname"><em>mode</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int</td>          <td class="paramname"><span class="paramname"><em>amount</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>fait un appel GPU pour déssiner plusieurs instance la géométrie </p>
+<dl class="section attention"><dt>Attention</dt><dd>ne pas oublier de lié un buffer d'instance avant d'appeler cette méthode.</dd></dl>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">g</td><td>géométrie à déssiner </td></tr>
+    <tr><td class="paramname">mode</td><td>mode de déssin </td></tr>
+    <tr><td class="paramname">amount</td><td>nombre d'instance à déssiner </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="mesh_8c_source.html#l00133">133</a> du fichier <a class="el" href="mesh_8c_source.html">mesh.c</a>.</p>
+
+</div>
+</div>
+<a id="a11d3f38dca8673ae5ded549f2426f779" name="a11d3f38dca8673ae5ded549f2426f779"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a11d3f38dca8673ae5ded549f2426f779">&#9670;&#160;</a></span>free_mesh()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void free_mesh </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structMesh.html">Mesh</a> *</td>          <td class="paramname"><span class="paramname"><em>m</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>libère la mémoire de la géométrie en passer en paramêtre </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">g</td><td>géométrie à libérer </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="mesh_8c_source.html#l00078">78</a> du fichier <a class="el" href="mesh_8c_source.html">mesh.c</a>.</p>
+
+</div>
+</div>
+<a id="a21948ef730bd24893eac626b7ff2552f" name="a21948ef730bd24893eac626b7ff2552f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21948ef730bd24893eac626b7ff2552f">&#9670;&#160;</a></span>unbind_mesh()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void unbind_mesh </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structMesh.html">Mesh</a> *</td>          <td class="paramname"><span class="paramname"><em>m</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>dé lie les données de la géométrie du GPU </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">g</td><td>géométrie à dé-lié </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="mesh_8c_source.html#l00105">105</a> du fichier <a class="el" href="mesh_8c_source.html">mesh.c</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_758d8e9166e39e682af4fe71d4574a53.html">FEURcraft</a></li><li class="navelem"><a href="dir_d563573f48eefcd0f66954300c445435.html">graphic</a></li><li class="navelem"><a href="dir_70cb0612fe78639fcdf942bf945e5531.html">include</a></li><li class="navelem"><a href="mesh_8h.html">mesh.h</a></li>
+    <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>
