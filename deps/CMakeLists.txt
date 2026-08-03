@@ -11,7 +11,7 @@ find_package(OpenGL REQUIRED)
 find_package(glfw3 CONFIG QUIET)
 
 if(NOT glfw3_FOUND)
-	if(NOT EXISTS "${CMAKE_SOURCE_DIR}/libs/GLFW/CMakeLists.txt")
+	if(NOT EXISTS "${CMAKE_SOURCE_DIR}/deps/GLFW/CMakeLists.txt")
 		message(FATAL_ERROR "GLFW submodule missing, run : git submodule update --init --recursive")
 	endif()
 
