@@ -12,7 +12,8 @@
  * \file texture.h
  * \brief Structure représentant les données d'une texture charger dans le GPU
  *
- * Texture utiliser notamment pour chager les images de la skybox dans le GPU.
+ * Contrairement à la structure \ref Image ici une texture représente des données de type "image" 
+ * charger dans le GPU. Ces données peuvent ensuite être utilisé dans les shaders durant le rendu
  */
 
 /**
