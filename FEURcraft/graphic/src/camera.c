@@ -36,8 +36,8 @@ void camera_init_default(Camera* c, Window* w)
 {
 	// les deux valeurs ne doivent pas être égale,
 	// sinon la matrice vue peut être remplie de zéro !
-	static Vec3 camera_default_pos = VEC3(0.f, 0.f, 5.f);
-	static Vec3 camera_default_target = VEC3(0.f, 0.f, 0.f);
+	Vec3 camera_default_pos = VEC3(0.f, 0.f, 5.f);
+	Vec3 camera_default_target = VEC3(0.f, 0.f, 0.f);
 
 	static float camera_default_fov = 45.f;
 	static float camera_default_near = 0.1f;

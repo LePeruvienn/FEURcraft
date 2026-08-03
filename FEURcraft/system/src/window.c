@@ -11,6 +11,8 @@
 #include <threads.h>
 #include <stdbool.h>
 
+
+
 // IMPORTANT: MUST BE ENABLED WHEN DEBUGGING WITH RENDERDOC!
 #define RENDER_DOC_DEBUG 1
 
@@ -18,15 +20,12 @@
 
 Window* create_window(unsigned int width, unsigned int height, const char* title)
 {
-	static int is_glfw_init = false;
+	static int is_glfw_init = 0;
 
-	CALL_ONCE(1,
-		#if RENDER_DOC_DEBUG
-			CALL_ONCE(2,
-				glfwInitHint(GLFW_PLATFORM, GLFW_PLATFORM_X11));
-		#endif
-		is_glfw_init = glfwInit()
-	);
+	if (is_glfw_init == 0) 
+	{
+		is_glfw_init = glfwInit();
+	}	
 
 	CHECK_COND_RET(is_glfw_init != 0, "Failed to initialize GLFW", NULL);
 
