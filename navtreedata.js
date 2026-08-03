@@ -59,8 +59,8 @@ var NAVTREEINDEX =
 "FEUR__Test_8h.html",
 "geometry__data_8h.html#a1e2e849ccd90f210321734f180d32af8",
 "mesh_8h.html#ad20fee6acdafe0427a94e0a60eba8086",
-"structVertexUV.html#a35c2b632984472c278396cd30cf7e088",
-"vec4_8h.html#a99878969251eb96b30be97558879ec69"
+"structVertexLayout.html#a4966348b40f78d4e6b4f0259e4f618d0",
+"vec4_8h.html#a2e4cbd88e8136f93531e9e0348c51e1f"
 ];
 
 var SYNCONMSG = 'cliquez pour désactiver la synchronisation du panel';

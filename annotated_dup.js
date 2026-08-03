@@ -19,6 +19,7 @@ var annotated_dup =
     [ "Texture", "structTexture.html", "structTexture" ],
     [ "TextureArray", "structTextureArray.html", "structTextureArray" ],
     [ "TextureCoord", "structTextureCoord.html", "structTextureCoord" ],
+    [ "Transform", "structTransform.html", "structTransform" ],
     [ "Vec2", "structVec2.html", "structVec2" ],
     [ "Vec3", "structVec3.html", "structVec3" ],
     [ "Vec3i", "structVec3i.html", "structVec3i" ],

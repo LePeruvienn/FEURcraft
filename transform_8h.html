@@ -1,0 +1,251 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>FEURcraft: Référence du fichier FEURcraft/world/include/transform.h</title>
+<link rel="icon" href="FEURcraft.png" type="image/x-icon" />
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="FEURcraft.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">FEURcraft<span id="projectnumber">&#160;0.0.1</span>
+   </div>
+   <div id="projectbrief">Moteur Voxel.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Recherche',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('transform_8h.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Chargement...</div>
+<div class="SRStatus" id="Searching">Recherche...</div>
+<div class="SRStatus" id="NoMatches">Aucune correspondance</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Référence du fichier transform.h</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="vec3_8h_source.html">vec3.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="mat4_8h_source.html">mat4.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Graphe des dépendances par inclusion de transform.h:</div>
+<div class="dyncontent">
+<div class="center"><img src="transform_8h__incl.png" border="0" usemap="#aFEURcraft_2world_2include_2transform_8h" loading="lazy" alt=""/></div>
+<map name="aFEURcraft_2world_2include_2transform_8h" id="aFEURcraft_2world_2include_2transform_8h">
+<area shape="rect" title=" " alt="" coords="5,5,169,44"/>
+<area shape="rect" href="vec3_8h.html" title=" " alt="" coords="16,165,75,189"/>
+<area shape="poly" title=" " alt="" coords="85,45,55,150,50,149,79,44"/>
+<area shape="rect" href="mat4_8h.html" title=" " alt="" coords="95,92,156,117"/>
+<area shape="poly" title=" " alt="" coords="99,43,116,77,111,79,94,46"/>
+<area shape="poly" title=" " alt="" coords="114,119,72,156,68,152,111,115"/>
+<area shape="rect" href="vec4_8h.html" title=" " alt="" coords="100,165,159,189"/>
+<area shape="poly" title=" " alt="" coords="129,117,131,149,125,149,124,117"/>
+<area shape="rect" title=" " alt="" coords="183,165,247,189"/>
+<area shape="poly" title=" " alt="" coords="142,115,191,153,187,157,139,119"/>
+</map>
+</div>
+</div>
+<p><a href="transform_8h_source.html">Aller au code source de ce fichier.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Structures de données</h2></td></tr>
+<tr class="memitem:Transform" id="r_Transform"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTransform.html">Transform</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-typedef-members" class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+Définitions de type</h2></td></tr>
+<tr class="memitem:a512254f7ee8948f0323992006331503c" id="r_a512254f7ee8948f0323992006331503c"><td class="memItemLeft" align="right" valign="top">typedef struct Transform&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a512254f7ee8948f0323992006331503c">Transform</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr class="memitem:a729592456023f8f56ffb6b55fa716a44" id="r_a729592456023f8f56ffb6b55fa716a44"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a729592456023f8f56ffb6b55fa716a44">transform_translate</a> (<a class="el" href="structTransform.html">Transform</a> *transform, <a class="el" href="structVec3.html">Vec3</a> translate)</td></tr>
+<tr class="memitem:a6f1e0354c7a5b008717634502288f5df" id="r_a6f1e0354c7a5b008717634502288f5df"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6f1e0354c7a5b008717634502288f5df">transform_rotate</a> (<a class="el" href="structTransform.html">Transform</a> *transform, <a class="el" href="structVec3.html">Vec3</a> rotate)</td></tr>
+<tr class="memitem:a74f2db659b8949e221dc9c63c8fe79c6" id="r_a74f2db659b8949e221dc9c63c8fe79c6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a74f2db659b8949e221dc9c63c8fe79c6">transform_scale</a> (<a class="el" href="structTransform.html">Transform</a> *transformn, <a class="el" href="structVec3.html">Vec3</a> scale)</td></tr>
+<tr class="memitem:a3405c5f7e5843562bca5515d1099d76a" id="r_a3405c5f7e5843562bca5515d1099d76a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structMat4.html">Mat4</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3405c5f7e5843562bca5515d1099d76a">transform_compute_model</a> (<a class="el" href="structTransform.html">Transform</a> *transform)</td></tr>
+</table>
+<a name="doc-typedef-members" id="doc-typedef-members"></a><h2 id="header-doc-typedef-members" class="groupheader">Documentation des définitions de type</h2>
+<a id="a512254f7ee8948f0323992006331503c" name="a512254f7ee8948f0323992006331503c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a512254f7ee8948f0323992006331503c">&#9670;&#160;</a></span>Transform</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct Transform Transform</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="transform_8h_source.html#l00007">7</a> du fichier <a class="el" href="transform_8h_source.html">transform.h</a>.</p>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentation des fonctions</h2>
+<a id="a3405c5f7e5843562bca5515d1099d76a" name="a3405c5f7e5843562bca5515d1099d76a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3405c5f7e5843562bca5515d1099d76a">&#9670;&#160;</a></span>transform_compute_model()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structMat4.html">Mat4</a> transform_compute_model </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structTransform.html">Transform</a> *</td>          <td class="paramname"><span class="paramname"><em>transform</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6f1e0354c7a5b008717634502288f5df" name="a6f1e0354c7a5b008717634502288f5df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f1e0354c7a5b008717634502288f5df">&#9670;&#160;</a></span>transform_rotate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void transform_rotate </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structTransform.html">Transform</a> *</td>          <td class="paramname"><span class="paramname"><em>transform</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structVec3.html">Vec3</a></td>          <td class="paramname"><span class="paramname"><em>rotate</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a74f2db659b8949e221dc9c63c8fe79c6" name="a74f2db659b8949e221dc9c63c8fe79c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74f2db659b8949e221dc9c63c8fe79c6">&#9670;&#160;</a></span>transform_scale()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void transform_scale </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structTransform.html">Transform</a> *</td>          <td class="paramname"><span class="paramname"><em>transformn</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structVec3.html">Vec3</a></td>          <td class="paramname"><span class="paramname"><em>scale</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a729592456023f8f56ffb6b55fa716a44" name="a729592456023f8f56ffb6b55fa716a44"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a729592456023f8f56ffb6b55fa716a44">&#9670;&#160;</a></span>transform_translate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void transform_translate </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structTransform.html">Transform</a> *</td>          <td class="paramname"><span class="paramname"><em>transform</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structVec3.html">Vec3</a></td>          <td class="paramname"><span class="paramname"><em>translate</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_758d8e9166e39e682af4fe71d4574a53.html">FEURcraft</a></li><li class="navelem"><a href="dir_49e1aeef74c48005ded1a420e4bd69c5.html">world</a></li><li class="navelem"><a href="dir_0c9ffa712343ec22aae66ea23ff09635.html">include</a></li><li class="navelem"><a href="transform_8h.html">transform.h</a></li>
+    <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

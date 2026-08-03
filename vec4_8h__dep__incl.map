@@ -1,21 +1,23 @@
 <map id="FEURcraft/math/include/vec4.h" name="FEURcraft/math/include/vec4.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="416,5,579,44"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="486,5,648,44"/>
 <area shape="rect" id="Node000002" href="$shader__program_8h.html" title=" " alt="" coords="95,179,270,217"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="436,53,347,94,271,139,210,180,207,176,268,135,344,90,434,48"/>
-<area shape="rect" id="Node000004" href="$mat4_8h.html" title=" " alt="" coords="358,92,520,131"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="478,59,454,93,450,90,474,55"/>
-<area shape="rect" id="Node000009" href="$mat4_8c.html" title=" " alt="" coords="545,179,684,217"/>
-<area shape="poly" id="edge12_Node000001_Node000009" title=" " alt="" coords="521,55,604,177,600,180,516,58"/>
-<area shape="rect" id="Node000010" href="$vec4_8c.html" title=" " alt="" coords="594,92,734,131"/>
-<area shape="poly" id="edge13_Node000001_Node000010" title=" " alt="" coords="549,49,628,89,626,94,547,54"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="511,53,416,94,225,181,222,176,414,90,509,48"/>
+<area shape="rect" id="Node000004" href="$mat4_8h.html" title=" " alt="" coords="427,92,589,131"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="547,59,523,93,519,90,543,55"/>
+<area shape="rect" id="Node000009" href="$mat4_8c.html" title=" " alt="" coords="733,179,872,217"/>
+<area shape="poly" id="edge13_Node000001_Node000009" title=" " alt="" coords="588,55,617,93,654,129,698,156,745,176,742,181,696,160,651,133,613,96,584,59"/>
+<area shape="rect" id="Node000011" href="$vec4_8c.html" title=" " alt="" coords="664,92,803,131"/>
+<area shape="poly" id="edge14_Node000001_Node000011" title=" " alt="" coords="619,49,698,89,695,94,616,54"/>
 <area shape="rect" id="Node000003" href="$shader__program_8c.html" title=" " alt="" coords="5,265,158,304"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="150,230,106,267,102,263,147,226"/>
-<area shape="poly" id="edge9_Node000004_Node000002" title=" " alt="" coords="368,139,240,181,239,176,367,134"/>
+<area shape="poly" id="edge9_Node000004_Node000002" title=" " alt="" coords="422,138,256,181,254,175,421,133"/>
 <area shape="rect" id="Node000005" href="$camera_8h.html" title="Structure et fonctions pour la caméra 3D." alt="" coords="295,179,470,217"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="420,146,397,180,393,177,416,143"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="469,142,412,180,409,176,466,137"/>
 <area shape="rect" id="Node000008" href="$camera_8c.html" title=" " alt="" coords="432,265,584,304"/>
-<area shape="poly" id="edge10_Node000004_Node000008" title=" " alt="" coords="465,142,485,178,500,224,508,264,503,265,495,225,480,180,460,145"/>
-<area shape="poly" id="edge11_Node000004_Node000009" title=" " alt="" coords="493,135,577,176,575,180,490,140"/>
+<area shape="poly" id="edge10_Node000004_Node000008" title=" " alt="" coords="511,146,511,265,506,265,506,146"/>
+<area shape="poly" id="edge11_Node000004_Node000009" title=" " alt="" coords="588,133,738,176,737,181,587,138"/>
+<area shape="rect" id="Node000010" href="$transform_8h.html" title=" " alt="" coords="545,179,708,217"/>
+<area shape="poly" id="edge12_Node000004_Node000010" title=" " alt="" coords="548,138,602,176,599,180,545,142"/>
 <area shape="rect" id="Node000006" href="$renderer_8h.html" title="Intiliase le moteur de rendu et son contexte." alt="" coords="182,265,357,304"/>
 <area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="347,229,296,267,293,263,344,225"/>
 <area shape="rect" id="Node000007" href="$renderer_8c.html" title=" " alt="" coords="256,352,408,391"/>

@@ -32,6 +32,12 @@ var searchData=
   ['texturearray_29',['TextureArray',['../structTextureArray.html',1,'TextureArray'],['../texture__array_8h.html#a4a55fb05c9cf187e8d2c6f376dbe5149',1,'TextureArray:&#160;texture_array.h']]],
   ['texturecoord_30',['TextureCoord',['../structTextureCoord.html',1,'']]],
   ['texturecoords_31',['TextureCoords',['../texture__coord_8h.html#a76118e348ad0b82dadecca0b09c911a5',1,'texture_coord.h']]],
-  ['tu_20projet_32',['Architechure tu projet',['../index.html#autotoc_md1',1,'']]],
-  ['type_33',['type',['../structShader.html#a70945c8104b658b6910f98382b080d24',1,'Shader::type'],['../structTexture.html#a3088e4128006adb188c020741079afe7',1,'Texture::type'],['../structVertexAttribute.html#a6e2ca22d0d513db8e40f930f34b39406',1,'VertexAttribute::type']]]
+  ['transform_32',['Transform',['../structTransform.html',1,'Transform'],['../transform_8h.html#a512254f7ee8948f0323992006331503c',1,'Transform:&#160;transform.h']]],
+  ['transform_2eh_33',['transform.h',['../transform_8h.html',1,'']]],
+  ['transform_5fcompute_5fmodel_34',['transform_compute_model',['../transform_8h.html#a3405c5f7e5843562bca5515d1099d76a',1,'transform.h']]],
+  ['transform_5frotate_35',['transform_rotate',['../transform_8h.html#a6f1e0354c7a5b008717634502288f5df',1,'transform.h']]],
+  ['transform_5fscale_36',['transform_scale',['../transform_8h.html#a74f2db659b8949e221dc9c63c8fe79c6',1,'transform.h']]],
+  ['transform_5ftranslate_37',['transform_translate',['../transform_8h.html#a729592456023f8f56ffb6b55fa716a44',1,'transform.h']]],
+  ['tu_20projet_38',['Architechure tu projet',['../index.html#autotoc_md1',1,'']]],
+  ['type_39',['type',['../structShader.html#a70945c8104b658b6910f98382b080d24',1,'Shader::type'],['../structTexture.html#a3088e4128006adb188c020741079afe7',1,'Texture::type'],['../structVertexAttribute.html#a6e2ca22d0d513db8e40f930f34b39406',1,'VertexAttribute::type']]]
 ];
