@@ -11,7 +11,12 @@ set(LIB_NAME ${DIR_NAME})
 add_library(${LIB_NAME} SHARED)
 
 # Flag de compilation
-target_compile_options(${LIB_NAME} PRIVATE -Wall -Werror -Wextra)
+if(MSVC)
+	# Windows est chiant
+	# target_compile_options(${LIB_NAME} PRIVATE /W4 /WX)
+else()
+	target_compile_options(${LIB_NAME} PRIVATE -Wall -Werror -Wextra)
+endif()
 
 # Ajout des includes de la librairie
 target_include_directories(${LIB_NAME}
