@@ -22,6 +22,8 @@ target_sources(${LIB_NAME}
 		src/window.c
 		src/env_helper.c
 		src/image.c
+		src/keyboard.c
+		src/keyboard_key.c
 )
 
 # On link les librarie nécessaire à la compilation de la lib
