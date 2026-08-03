@@ -1,6 +1,8 @@
 var searchData=
 [
-  ['w_0',['w',['../structVec4.html#a37bee38ceffb78ccd3875ebf82bd84b2',1,'Vec4']]],
-  ['width_1',['width',['../structAtlas.html#a34e1714c38816d402b1181a61ea86683',1,'Atlas::width'],['../structImageArray.html#ac749d2555eeb2621d3828049249eda7f',1,'ImageArray::width'],['../structTexture.html#a5d81cb05821b158ded3d5a46a4cd8f5a',1,'Texture::width'],['../structTextureArray.html#add0f11969c7fd165a8fa54a9f0e3b637',1,'TextureArray::width'],['../structImage.html#aaa2cc744ff3969ac6cb63ca05a40e5f6',1,'Image::width'],['../structWindow.html#a4ddb6696a90ca8db80c4d12c7142da5e',1,'Window::width']]],
-  ['window_2',['window',['../structRenderer.html#a4c8383f65586fb2a84de20b41be5ec54',1,'Renderer']]]
+  ['v_0',['v',['../structTextureCoord.html#a67b3d8e958aab428212c45618b9ee3af',1,'TextureCoord']]],
+  ['vao_1',['VAO',['../structMesh.html#a09b989b9d4df8ae595d7e80e091a4a5b',1,'Mesh']]],
+  ['vbo_2',['VBO',['../structMesh.html#a0d28b2c6fee628a13f43cae3f858569b',1,'Mesh']]],
+  ['vertex_5fbyte_5fsize_3',['vertex_byte_size',['../structVertexLayout.html#ac89342fb63577e1d577116588800ee50',1,'VertexLayout']]],
+  ['vertices_4',['vertices',['../structGeometry.html#a1f96d6457c95f7d427f2ddb1613a2b8e',1,'Geometry']]]
 ];

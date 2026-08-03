@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['r_0',['r',['../structVec3.html#a88b99c08343ebb9782ced649f141bdfa',1,'Vec3::r'],['../structVec4.html#ae39a587e0599f96d96bc0bbf356e10a9',1,'Vec4::r']]],
-  ['result_1',['result',['../structFEUR__Test.html#ab103d400f8ed74a45ff2bad230f71fcf',1,'FEUR_Test']]],
-  ['row_5fheight_2',['row_height',['../structAtlas.html#acdc827364801a96e5c6f90f44ea7c628',1,'Atlas']]]
+  ['pitch_0',['pitch',['../structCamera.html#ab56fcb39f580e8d2159cf2c9c6d9a65a',1,'Camera']]],
+  ['pos_1',['pos',['../structCamera.html#aebc8759cc76fc7fd6c094a55ae3b8df1',1,'Camera::pos'],['../structVertex.html#a30295542f79b0f77a6707a0518f10bbf',1,'Vertex::pos'],['../structVertexUV.html#a1c7f771f66fd4a62e441314d17ad024c',1,'VertexUV::pos'],['../structVertexBlock.html#a69b691cd472a99c1bf93d9d06c352ce1',1,'VertexBlock::pos']]]
 ];

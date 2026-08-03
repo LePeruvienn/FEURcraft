@@ -1,17 +1,11 @@
 var searchData=
 [
-  ['r_0',['r',['../structVec3.html#a88b99c08343ebb9782ced649f141bdfa',1,'Vec3::r'],['../structVec4.html#ae39a587e0599f96d96bc0bbf356e10a9',1,'Vec4::r']]],
-  ['read_5ffile_2ec_1',['read_file.c',['../read__file_8c.html',1,'']]],
-  ['read_5ffile_2eh_2',['read_file.h',['../read__file_8h.html',1,'']]],
-  ['read_5ffile_5fbin_3',['read_file_bin',['../read__file_8h.html#aad82a0ce8f5b630708cb154d273ea947',1,'read_file_bin(const char *path, size_t *out_size):&#160;read_file.c'],['../read__file_8c.html#aad82a0ce8f5b630708cb154d273ea947',1,'read_file_bin(const char *path, size_t *out_size):&#160;read_file.c']]],
-  ['read_5ffile_5ftxt_4',['read_file_txt',['../read__file_8h.html#a5d3d8eaffc85910c12c33539595db58a',1,'read_file_txt(const char *path):&#160;read_file.c'],['../read__file_8c.html#a5d3d8eaffc85910c12c33539595db58a',1,'read_file_txt(const char *path):&#160;read_file.c']]],
-  ['render_5fdoc_5fdebug_5',['RENDER_DOC_DEBUG',['../window_8c.html#a8b4cf2a5e3a624510116c1570109bd43',1,'window.c']]],
-  ['renderer_6',['Renderer',['../structRenderer.html',1,'Renderer'],['../renderer_8h.html#af686c50c81f04a4a2a1b42e2ced91c97',1,'Renderer:&#160;renderer.h']]],
-  ['renderer_2ec_7',['renderer.c',['../renderer_8c.html',1,'']]],
-  ['renderer_2eh_8',['renderer.h',['../renderer_8h.html',1,'']]],
-  ['renderer_5fclear_9',['renderer_clear',['../renderer_8h.html#ad9eda0a7fe977e8bed1aff4af45fa369',1,'renderer_clear():&#160;renderer.c'],['../renderer_8c.html#ad9eda0a7fe977e8bed1aff4af45fa369',1,'renderer_clear():&#160;renderer.c']]],
-  ['renderer_5finit_10',['renderer_init',['../renderer_8h.html#a5646c148237d19d619e84e9cf37a61b3',1,'renderer_init(Renderer *renderer, Window *window):&#160;renderer.c'],['../renderer_8c.html#a5646c148237d19d619e84e9cf37a61b3',1,'renderer_init(Renderer *renderer, Window *window):&#160;renderer.c']]],
-  ['renderer_5fupdate_5fviewport_11',['renderer_update_viewport',['../renderer_8h.html#a693e15a2c90d10a2ad9be72fc933154f',1,'renderer_update_viewport(Renderer *renderer):&#160;renderer.c'],['../renderer_8c.html#a693e15a2c90d10a2ad9be72fc933154f',1,'renderer_update_viewport(Renderer *renderer):&#160;renderer.c']]],
-  ['result_12',['result',['../structFEUR__Test.html#ab103d400f8ed74a45ff2bad230f71fcf',1,'FEUR_Test']]],
-  ['row_5fheight_13',['row_height',['../structAtlas.html#acdc827364801a96e5c6f90f44ea7c628',1,'Atlas']]]
+  ['pitch_0',['pitch',['../structCamera.html#ab56fcb39f580e8d2159cf2c9c6d9a65a',1,'Camera']]],
+  ['pos_1',['pos',['../structCamera.html#aebc8759cc76fc7fd6c094a55ae3b8df1',1,'Camera::pos'],['../structVertex.html#a30295542f79b0f77a6707a0518f10bbf',1,'Vertex::pos'],['../structVertexUV.html#a1c7f771f66fd4a62e441314d17ad024c',1,'VertexUV::pos'],['../structVertexBlock.html#a69b691cd472a99c1bf93d9d06c352ce1',1,'VertexBlock::pos']]],
+  ['program_5fstatus_5flink_5ffailed_2',['PROGRAM_STATUS_LINK_FAILED',['../shader__program_8h.html#aec714a9bd49923728e56b8347a077a3fafacf7cd30f2492d7b873380ed15eb077',1,'shader_program.h']]],
+  ['program_5fstatus_5flinked_3',['PROGRAM_STATUS_LINKED',['../shader__program_8h.html#aec714a9bd49923728e56b8347a077a3fa3c39fe0b25396ee4d32fb74546b15fcb',1,'shader_program.h']]],
+  ['program_5fstatus_5fnot_5flinked_4',['PROGRAM_STATUS_NOT_LINKED',['../shader__program_8h.html#aec714a9bd49923728e56b8347a077a3fa46a3a98e4a28cbd52dae0d729d3701b7',1,'shader_program.h']]],
+  ['programstatus_5',['ProgramStatus',['../shader__program_8h.html#aec714a9bd49923728e56b8347a077a3f',1,'ProgramStatus:&#160;shader_program.h'],['../shader__program_8h.html#a3a597afeee7cdcb7e11631ab97c1d69e',1,'ProgramStatus:&#160;shader_program.h']]],
+  ['projet_6',['Architechure tu projet',['../index.html#autotoc_md1',1,'']]],
+  ['ptr_5fhelper_2eh_7',['ptr_helper.h',['../ptr__helper_8h.html',1,'']]]
 ];

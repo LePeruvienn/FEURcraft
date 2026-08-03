@@ -10,6 +10,7 @@ var annotated_dup =
     [ "Geometry", "structGeometry.html", "structGeometry" ],
     [ "Image", "structImage.html", "structImage" ],
     [ "ImageArray", "structImageArray.html", "structImageArray" ],
+    [ "Keyboard", "structKeyboard.html", "structKeyboard" ],
     [ "Mat4", "structMat4.html", "structMat4" ],
     [ "Mesh", "structMesh.html", "structMesh" ],
     [ "Renderer", "structRenderer.html", "structRenderer" ],

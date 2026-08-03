@@ -1,0 +1,13 @@
+<map id="FEURcraft/system/include/keyboard.h" name="FEURcraft/system/include/keyboard.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="138,5,312,44"/>
+<area shape="rect" id="Node000002" href="$window_8h.html" title="Abstraction de la gestion de la fenêtre et du contexte OpenGL." alt="" coords="128,92,204,117"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="213,46,186,81,182,78,209,43"/>
+<area shape="rect" id="Node000006" href="$keyboard__key_8h.html" title=" " alt="" coords="228,92,339,117"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="241,43,268,78,263,81,237,46"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,165,90,189"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="148,120,81,159,79,154,145,115"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="114,165,219,189"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="169,117,169,149,164,149,164,117"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="242,165,317,189"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="186,115,249,154,246,158,183,119"/>
+</map>

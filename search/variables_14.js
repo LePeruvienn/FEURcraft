@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['x_0',['x',['../structVec2.html#adf8ee322d4b4bcc04146762c018d731f',1,'Vec2::x'],['../structVec3.html#a2814580e9b9372738c0a61197ea46b51',1,'Vec3::x'],['../structVec3i.html#a00db3692921caac03a0e0fd3d8f619c9',1,'Vec3i::x'],['../structVec4.html#a3d9a7d18ac661965798b0c5bc32c56df',1,'Vec4::x']]]
+  ['w_0',['w',['../structVec4.html#a37bee38ceffb78ccd3875ebf82bd84b2',1,'Vec4']]],
+  ['width_1',['width',['../structAtlas.html#a34e1714c38816d402b1181a61ea86683',1,'Atlas::width'],['../structImageArray.html#ac749d2555eeb2621d3828049249eda7f',1,'ImageArray::width'],['../structTexture.html#a5d81cb05821b158ded3d5a46a4cd8f5a',1,'Texture::width'],['../structTextureArray.html#add0f11969c7fd165a8fa54a9f0e3b637',1,'TextureArray::width'],['../structImage.html#aaa2cc744ff3969ac6cb63ca05a40e5f6',1,'Image::width'],['../structWindow.html#a4ddb6696a90ca8db80c4d12c7142da5e',1,'Window::width']]],
+  ['window_2',['window',['../structRenderer.html#a4c8383f65586fb2a84de20b41be5ec54',1,'Renderer::window'],['../structKeyboard.html#ae507da7484a6eea7fbff466aefe13368',1,'Keyboard::window']]]
 ];

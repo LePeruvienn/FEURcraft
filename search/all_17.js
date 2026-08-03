@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['z_0',['z',['../structVec3.html#a64f3f00cd2dd9076999eeb2f05210388',1,'Vec3::z'],['../structVec3i.html#a5b773400513d24edae3f7e806651a21c',1,'Vec3i::z'],['../structVec4.html#a60d0b599c7104dd0c6e2ae0cc4cd0310',1,'Vec4::z']]]
+  ['y_0',['y',['../structVec2.html#a30543787e62f6d915543cf1dfb04c094',1,'Vec2::y'],['../structVec3.html#abc1d241232cb04aa98217a942402ae68',1,'Vec3::y'],['../structVec3i.html#a2d63847534d5ae0829f5e0e69d93d02c',1,'Vec3i::y'],['../structVec4.html#a21c69aa0ef01a4ea985966c5527bbd69',1,'Vec4::y']]],
+  ['yaw_1',['yaw',['../structCamera.html#ad76701b22630f2df28a0ae15f0497a3a',1,'Camera']]]
 ];
