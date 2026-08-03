@@ -25,6 +25,8 @@ foreach(SOURCE_FILE ${EXAMPLE_SOURCES})
 		system
 		data
 		world
+		audio
+		math
 	)
 
 endforeach()
