@@ -107,7 +107,7 @@ Graphe des dépendances par inclusion de shader.c:</div>
 <div class="center"><img src="shader_8c__incl.png" border="0" usemap="#aFEURcraft_2graphic_2src_2shader_8c" loading="lazy" alt=""/></div>
 <map name="aFEURcraft_2graphic_2src_2shader_8c" id="aFEURcraft_2graphic_2src_2shader_8c">
 <area shape="rect" title=" " alt="" coords="177,5,329,44"/>
-<area shape="rect" href="shader_8h.html" title=" " alt="" coords="5,92,77,117"/>
+<area shape="rect" href="shader_8h.html" title="Gestion et compilation des shaders." alt="" coords="5,92,77,117"/>
 <area shape="poly" title=" " alt="" coords="203,47,88,89,86,84,201,42"/>
 <area shape="rect" title=" " alt="" coords="24,165,108,189"/>
 <area shape="poly" title=" " alt="" coords="216,47,178,68,141,94,111,124,86,154,81,150,107,120,138,90,176,63,213,42"/>
@@ -136,10 +136,14 @@ Graphe des dépendances par inclusion de shader.c:</div>
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Fonctions</h2></td></tr>
 <tr class="memitem:a5a9333cfb4cc911bc5de5b3f55f284d9" id="r_a5a9333cfb4cc911bc5de5b3f55f284d9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structShader.html">Shader</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5a9333cfb4cc911bc5de5b3f55f284d9">shader_create</a> (const char *file_path, <a class="el" href="shader_8h.html#a6230e1b9ecbf2d82d10856fd7e1fde46">ShaderType</a> type)</td></tr>
+<tr class="memdesc:a5a9333cfb4cc911bc5de5b3f55f284d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Créer un <a class="el" href="structShader.html">Shader</a> à partir d'un fichier <code></code>.glsl.  <br /></td></tr>
 <tr class="memitem:a74428bb9c133c0ebc36487e9c69e641c" id="r_a74428bb9c133c0ebc36487e9c69e641c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a74428bb9c133c0ebc36487e9c69e641c">shader_free</a> (<a class="el" href="structShader.html">Shader</a> *shader)</td></tr>
+<tr class="memdesc:a74428bb9c133c0ebc36487e9c69e641c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Libèer la mémoier du <a class="el" href="structShader.html">Shader</a> en paramêtre.  <br /></td></tr>
 <tr class="memitem:a6d94c8c50b822514935b17f5ad677ddb" id="r_a6d94c8c50b822514935b17f5ad677ddb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6d94c8c50b822514935b17f5ad677ddb">shader_compile</a> (<a class="el" href="structShader.html">Shader</a> *shader)</td></tr>
+<tr class="memdesc:a6d94c8c50b822514935b17f5ad677ddb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compile le <a class="el" href="structShader.html">Shader</a> en paramêtre.  <br /></td></tr>
 <tr class="memitem:a94c547bf60071820bff66e4d3800cede" id="r_a94c547bf60071820bff66e4d3800cede"><td class="memItemLeft" align="right" valign="top">GLenum&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a94c547bf60071820bff66e4d3800cede">shader_type_to_gl_enum</a> (<a class="el" href="shader_8h.html#a6230e1b9ecbf2d82d10856fd7e1fde46">ShaderType</a> type)</td></tr>
 <tr class="memitem:a31c32b9d915b2e83cf141bff74d2b96e" id="r_a31c32b9d915b2e83cf141bff74d2b96e"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a31c32b9d915b2e83cf141bff74d2b96e">shader_type_get_name</a> (<a class="el" href="shader_8h.html#a6230e1b9ecbf2d82d10856fd7e1fde46">ShaderType</a> type)</td></tr>
+<tr class="memdesc:a31c32b9d915b2e83cf141bff74d2b96e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permet de récupérer le chaine de caractère du type de <a class="el" href="structShader.html">Shader</a> en paramêtre.  <br /></td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentation des fonctions</h2>
 <a id="a6d94c8c50b822514935b17f5ad677ddb" name="a6d94c8c50b822514935b17f5ad677ddb"></a>
@@ -156,6 +160,15 @@ Fonctions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Compile le <a class="el" href="structShader.html">Shader</a> en paramêtre. </p>
+<dl class="section note"><dt>Note</dt><dd>Après la compilaton, son status peut être consulter via son attribut <code>status</code> </dd></dl>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">shader</td><td><a class="el" href="structShader.html">Shader</a> à compiler </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p class="definition">Définition à la ligne <a class="el" href="shader_8c_source.html#l00083">83</a> du fichier <a class="el" href="shader_8c_source.html">shader.c</a>.</p>
 
@@ -180,6 +193,16 @@ Fonctions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Créer un <a class="el" href="structShader.html">Shader</a> à partir d'un fichier <code></code>.glsl. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">file_path</td><td>chemin vers le fichier <code></code>.glsl </td></tr>
+    <tr><td class="paramname">type</td><td>type du shader </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd><a class="el" href="structShader.html">Shader</a> alloué sur le tas et le GPU </dd></dl>
+
 <p class="definition">Définition à la ligne <a class="el" href="shader_8c_source.html#l00032">32</a> du fichier <a class="el" href="shader_8c_source.html">shader.c</a>.</p>
 
 </div>
@@ -199,6 +222,14 @@ Fonctions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Libèer la mémoier du <a class="el" href="structShader.html">Shader</a> en paramêtre. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">shader</td><td><a class="el" href="structShader.html">Shader</a> à libérer </td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p class="definition">Définition à la ligne <a class="el" href="shader_8c_source.html#l00067">67</a> du fichier <a class="el" href="shader_8c_source.html">shader.c</a>.</p>
 
 </div>
@@ -217,6 +248,15 @@ Fonctions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Permet de récupérer le chaine de caractère du type de <a class="el" href="structShader.html">Shader</a> en paramêtre. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">type</td><td>le type de <a class="el" href="structShader.html">Shader</a> dont on veut récupérer le nom </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>chaine de caractère immutable du nom du type </dd></dl>
 
 <p class="definition">Définition à la ligne <a class="el" href="shader_8c_source.html#l00136">136</a> du fichier <a class="el" href="shader_8c_source.html">shader.c</a>.</p>
 

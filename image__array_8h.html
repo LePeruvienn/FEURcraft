@@ -95,6 +95,9 @@ $(function(){initNavTree('image__array_8h.html','',''); });
   <div class="headertitle"><div class="title">Référence du fichier image_array.h</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Permet de stocker une liste d'image de même taille et cannaux.  
+<a href="#details">Plus de détails...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="image_8h_source.html">image.h</a>&quot;</code><br />
 <code>#include &lt;stdbool.h&gt;</code><br />
 <code>#include &lt;stddef.h&gt;</code><br />
@@ -103,7 +106,7 @@ Graphe des dépendances par inclusion de image_array.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="image__array_8h__incl.png" border="0" usemap="#aFEURcraft_2graphic_2include_2image__array_8h" loading="lazy" alt=""/></div>
 <map name="aFEURcraft_2graphic_2include_2image__array_8h" id="aFEURcraft_2graphic_2include_2image__array_8h">
-<area shape="rect" title=" " alt="" coords="22,5,197,44"/>
+<area shape="rect" title="Permet de stocker une liste d&#39;image de même taille et cannaux." alt="" coords="22,5,197,44"/>
 <area shape="rect" href="image_8h.html" title=" " alt="" coords="5,92,73,117"/>
 <area shape="poly" title=" " alt="" coords="95,46,62,82,58,78,91,43"/>
 <area shape="rect" title=" " alt="" coords="36,165,111,189"/>
@@ -118,8 +121,8 @@ Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier
 <div class="dyncontent">
 <div class="center"><img src="image__array_8h__dep__incl.png" border="0" usemap="#aFEURcraft_2graphic_2include_2image__array_8hdep" loading="lazy" alt=""/></div>
 <map name="aFEURcraft_2graphic_2include_2image__array_8hdep" id="aFEURcraft_2graphic_2include_2image__array_8hdep">
-<area shape="rect" title=" " alt="" coords="131,5,306,44"/>
-<area shape="rect" href="texture__array_8h.html" title=" " alt="" coords="5,92,181,131"/>
+<area shape="rect" title="Permet de stocker une liste d&#39;image de même taille et cannaux." alt="" coords="131,5,306,44"/>
+<area shape="rect" href="texture__array_8h.html" title="Structure représentant les données d&#39;une list ed texture charger dans le GPU." alt="" coords="5,92,181,131"/>
 <area shape="poly" title=" " alt="" coords="180,55,122,94,119,89,177,51"/>
 <area shape="rect" href="texture__array_8c.html" title=" " alt="" coords="80,179,232,217"/>
 <area shape="poly" title=" " alt="" coords="215,60,195,132,170,180,166,177,191,130,210,59"/>
@@ -138,14 +141,23 @@ Structures de données</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 id="header-typedef-members" class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Définitions de type</h2></td></tr>
 <tr class="memitem:a748df57b930d92d13ca7b41128347a64" id="r_a748df57b930d92d13ca7b41128347a64"><td class="memItemLeft" align="right" valign="top">typedef struct ImageArray&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a748df57b930d92d13ca7b41128347a64">ImageArray</a></td></tr>
+<tr class="memdesc:a748df57b930d92d13ca7b41128347a64"><td class="mdescLeft">&#160;</td><td class="mdescRight">Liste d'image de même taille et canneaux.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Fonctions</h2></td></tr>
 <tr class="memitem:a29d3c353999ab8556026b8f31695ea1e" id="r_a29d3c353999ab8556026b8f31695ea1e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structImageArray.html">ImageArray</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a29d3c353999ab8556026b8f31695ea1e">image_array_create</a> (unsigned int width, unsigned int height, unsigned int channels)</td></tr>
+<tr class="memdesc:a29d3c353999ab8556026b8f31695ea1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Créer une liste d'image vide.  <br /></td></tr>
 <tr class="memitem:ac8b3d5204d7c25c14b5971919dfb2e4d" id="r_ac8b3d5204d7c25c14b5971919dfb2e4d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac8b3d5204d7c25c14b5971919dfb2e4d">image_array_free</a> (<a class="el" href="structImageArray.html">ImageArray</a> *tex_array)</td></tr>
+<tr class="memdesc:ac8b3d5204d7c25c14b5971919dfb2e4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Libère la mémoire de l' <a class="el" href="structImageArray.html">ImageArray</a> en paramêtre.  <br /></td></tr>
 <tr class="memitem:a32ca2f3a6ea75e50c0d8adb475132a0f" id="r_a32ca2f3a6ea75e50c0d8adb475132a0f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a32ca2f3a6ea75e50c0d8adb475132a0f">image_array_add_image</a> (<a class="el" href="structImageArray.html">ImageArray</a> *tex_array, <a class="el" href="structImage.html">Image</a> *img)</td></tr>
+<tr class="memdesc:a32ca2f3a6ea75e50c0d8adb475132a0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ajoute une image à l' <a class="el" href="structImageArray.html">ImageArray</a>.  <br /></td></tr>
 </table>
-<a name="doc-typedef-members" id="doc-typedef-members"></a><h2 id="header-doc-typedef-members" class="groupheader">Documentation des définitions de type</h2>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Description détaillée</h2>
+<div class="textblock"><p>Permet de stocker une liste d'image de même taille et cannaux. </p>
+<p>Structure de données représetant une list d'image de même taille et de même canneaux. Elle est surtout utilisé pour représenter les donnes CPU/RAM d'une <a class="el" href="structTextureArray.html">TextureArray</a> </p>
+
+<p class="definition">Définition dans le fichier <a class="el" href="image__array_8h_source.html">image_array.h</a>.</p>
+</div><a name="doc-typedef-members" id="doc-typedef-members"></a><h2 id="header-doc-typedef-members" class="groupheader">Documentation des définitions de type</h2>
 <a id="a748df57b930d92d13ca7b41128347a64" name="a748df57b930d92d13ca7b41128347a64"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a748df57b930d92d13ca7b41128347a64">&#9670;&#160;</a></span>ImageArray</h2>
 
@@ -158,7 +170,9 @@ Fonctions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="image__array_8h_source.html#l00009">9</a> du fichier <a class="el" href="image__array_8h_source.html">image_array.h</a>.</p>
+<p>Liste d'image de même taille et canneaux. </p>
+
+<p class="definition">Définition à la ligne <a class="el" href="image__array_8h_source.html#l00020">20</a> du fichier <a class="el" href="image__array_8h_source.html">image_array.h</a>.</p>
 
 </div>
 </div>
@@ -181,6 +195,17 @@ Fonctions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Ajoute une image à l' <a class="el" href="structImageArray.html">ImageArray</a>. </p>
+<dl class="section warning"><dt>Avertissement</dt><dd>L'image ajouter doit avoir les même dimension et le même nombre de canneaux que la <a class="el" href="structImageArray.html">ImageArray</a>. </dd></dl>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tex_array</td><td><a class="el" href="structImageArray.html">ImageArray</a> cible </td></tr>
+    <tr><td class="paramname">img</td><td><a class="el" href="structImage.html">Image</a> à ajouter </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd><code>-1</code> si l'image n'as pas pu être ajouter, sinon l'index de l'image. </dd></dl>
 
 <p class="definition">Définition à la ligne <a class="el" href="image__array_8c_source.html#l00041">41</a> du fichier <a class="el" href="image__array_8c_source.html">image_array.c</a>.</p>
 
@@ -210,6 +235,17 @@ Fonctions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Créer une liste d'image vide. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">width</td><td>largeur <b>des</b> <b>images</b> de la liste </td></tr>
+    <tr><td class="paramname">height</td><td>longeur <b>des</b> <b>images</b> de la liste </td></tr>
+    <tr><td class="paramname">channels</td><td>nombre de canneaux <b>des</b> <b>images</b> de la liste </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Pointeur vers une <a class="el" href="structImageArray.html">ImageArray</a> alloué sur le tas </dd></dl>
+
 <p class="definition">Définition à la ligne <a class="el" href="image__array_8c_source.html#l00011">11</a> du fichier <a class="el" href="image__array_8c_source.html">image_array.c</a>.</p>
 
 </div>
@@ -228,6 +264,14 @@ Fonctions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Libère la mémoire de l' <a class="el" href="structImageArray.html">ImageArray</a> en paramêtre. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tex_array</td><td><a class="el" href="structImageArray.html">ImageArray</a> cible </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p class="definition">Définition à la ligne <a class="el" href="image__array_8c_source.html#l00033">33</a> du fichier <a class="el" href="image__array_8c_source.html">image_array.c</a>.</p>
 

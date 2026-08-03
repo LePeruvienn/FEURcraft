@@ -141,10 +141,15 @@ Graphe des dépendances par inclusion de atlas.c:</div>
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Fonctions</h2></td></tr>
 <tr class="memitem:a393a9b3ba38a83859b599053fb7d68f7" id="r_a393a9b3ba38a83859b599053fb7d68f7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structAtlas.html">Atlas</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a393a9b3ba38a83859b599053fb7d68f7">atlas_create</a> (unsigned int width, unsigned int height, unsigned int channels)</td></tr>
+<tr class="memdesc:a393a9b3ba38a83859b599053fb7d68f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Créer un <a class="el" href="structAtlas.html">Atlas</a> alloué sur le tas.  <br /></td></tr>
 <tr class="memitem:ae438305a6143e251125b67cd9d9ee868" id="r_ae438305a6143e251125b67cd9d9ee868"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae438305a6143e251125b67cd9d9ee868">atlas_free</a> (<a class="el" href="structAtlas.html">Atlas</a> *atlas)</td></tr>
+<tr class="memdesc:ae438305a6143e251125b67cd9d9ee868"><td class="mdescLeft">&#160;</td><td class="mdescRight">Libére la mémoire de l'atlas en paramêtre.  <br /></td></tr>
 <tr class="memitem:a0759bc1191570b18eaad0af5f923ab98" id="r_a0759bc1191570b18eaad0af5f923ab98"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0759bc1191570b18eaad0af5f923ab98">atlas_add_image</a> (<a class="el" href="structAtlas.html">Atlas</a> *atlas, <a class="el" href="structImage.html">Image</a> *img, <a class="el" href="texture__coord_8h.html#a76118e348ad0b82dadecca0b09c911a5">TextureCoords</a> *uv_out)</td></tr>
+<tr class="memdesc:a0759bc1191570b18eaad0af5f923ab98"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ajoute une image à l'atlas.  <br /></td></tr>
 <tr class="memitem:a8be0301cc77fc18ccf70384815678eb0" id="r_a8be0301cc77fc18ccf70384815678eb0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8be0301cc77fc18ccf70384815678eb0">atlas_get_image_coords</a> (<a class="el" href="structAtlas.html">Atlas</a> *atlas, unsigned int index, <a class="el" href="texture__coord_8h.html#a76118e348ad0b82dadecca0b09c911a5">TextureCoords</a> *uv_out)</td></tr>
+<tr class="memdesc:a8be0301cc77fc18ccf70384815678eb0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permet de récupérer les coordonnées de texture sur l'<a class="el" href="structAtlas.html">Atlas</a> d'une image.  <br /></td></tr>
 <tr class="memitem:ab86c2a062d69e110c103c739e0cee41a" id="r_ab86c2a062d69e110c103c739e0cee41a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab86c2a062d69e110c103c739e0cee41a">atlas_write_image</a> (<a class="el" href="structAtlas.html">Atlas</a> *atlas, const char *file_path)</td></tr>
+<tr class="memdesc:ab86c2a062d69e110c103c739e0cee41a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permet d'écrire le contenue de l'atlas dans une image.  <br /></td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentation des fonctions</h2>
 <a id="a0759bc1191570b18eaad0af5f923ab98" name="a0759bc1191570b18eaad0af5f923ab98"></a>
@@ -170,6 +175,17 @@ Fonctions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Ajoute une image à l'atlas. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">atlas</td><td><a class="el" href="structAtlas.html">Atlas</a> ou ajouter l'image </td></tr>
+    <tr><td class="paramname">img</td><td><a class="el" href="structImage.html">Image</a> à ajouter </td></tr>
+    <tr><td class="paramname">uv_out</td><td>Ou la fonction va écrire les coordonnées de texture sur l'atlas de l'image ajouter </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>retourne <code>true</code> si l'image à pu être ajouter et <code>false</code> sinon. </dd></dl>
 
 <p class="definition">Définition à la ligne <a class="el" href="atlas_8c_source.html#l00048">48</a> du fichier <a class="el" href="atlas_8c_source.html">atlas.c</a>.</p>
 
@@ -199,6 +215,17 @@ Fonctions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Créer un <a class="el" href="structAtlas.html">Atlas</a> alloué sur le tas. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">width</td><td>Largeur de l'atlas </td></tr>
+    <tr><td class="paramname">height</td><td>Longueur de l'atlas </td></tr>
+    <tr><td class="paramname">channels</td><td>Nombre de canneaux de couleurs de l'atlas (RGB, RGBA, ...) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>pointeur vers un <a class="el" href="structAtlas.html">Atlas</a> alloué </dd></dl>
+
 <p class="definition">Définition à la ligne <a class="el" href="atlas_8c_source.html#l00010">10</a> du fichier <a class="el" href="atlas_8c_source.html">atlas.c</a>.</p>
 
 </div>
@@ -217,6 +244,14 @@ Fonctions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Libére la mémoire de l'atlas en paramêtre. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">atlas</td><td><a class="el" href="structAtlas.html">Atlas</a> à libérer </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p class="definition">Définition à la ligne <a class="el" href="atlas_8c_source.html#l00040">40</a> du fichier <a class="el" href="atlas_8c_source.html">atlas.c</a>.</p>
 
@@ -246,6 +281,17 @@ Fonctions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Permet de récupérer les coordonnées de texture sur l'<a class="el" href="structAtlas.html">Atlas</a> d'une image. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">atlas</td><td><a class="el" href="structAtlas.html">Atlas</a> cible </td></tr>
+    <tr><td class="paramname">indx</td><td>index de l'image qu'on veut récupérer </td></tr>
+    <tr><td class="paramname">uv_out</td><td>Ou la fonction va écrire les coordonnées récupérer </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>retourne <code>true</code> si les coordonnées on pu être trouver et <code>false</code> sinon. </dd></dl>
+
 <p class="definition">Définition à la ligne <a class="el" href="atlas_8c_source.html#l00119">119</a> du fichier <a class="el" href="atlas_8c_source.html">atlas.c</a>.</p>
 
 </div>
@@ -268,6 +314,15 @@ Fonctions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Permet d'écrire le contenue de l'atlas dans une image. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">atlas</td><td><a class="el" href="structAtlas.html">Atlas</a> à écrire </td></tr>
+    <tr><td class="paramname">file_path</td><td>chemin vers le fichier de sortie </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p class="definition">Définition à la ligne <a class="el" href="atlas_8c_source.html#l00131">131</a> du fichier <a class="el" href="atlas_8c_source.html">atlas.c</a>.</p>
 

@@ -105,9 +105,9 @@ Graphe des dépendances par inclusion de texture_array.c:</div>
 <div class="center"><img src="texture__array_8c__incl.png" border="0" usemap="#aFEURcraft_2graphic_2src_2texture__array_8c" loading="lazy" alt=""/></div>
 <map name="aFEURcraft_2graphic_2src_2texture__array_8c" id="aFEURcraft_2graphic_2src_2texture__array_8c">
 <area shape="rect" title=" " alt="" coords="180,5,332,44"/>
-<area shape="rect" href="texture__array_8h.html" title=" " alt="" coords="157,92,265,117"/>
+<area shape="rect" href="texture__array_8h.html" title="Structure représentant les données d&#39;une list ed texture charger dans le GPU." alt="" coords="157,92,265,117"/>
 <area shape="poly" title=" " alt="" coords="248,46,228,80,223,77,243,43"/>
-<area shape="rect" href="image__array_8h.html" title=" " alt="" coords="58,165,161,189"/>
+<area shape="rect" href="image__array_8h.html" title="Permet de stocker une liste d&#39;image de même taille et cannaux." alt="" coords="58,165,161,189"/>
 <area shape="poly" title=" " alt="" coords="213,47,179,67,148,94,130,122,119,151,114,149,125,119,144,90,176,63,211,42"/>
 <area shape="rect" href="error__checker_8h.html" title=" " alt="" coords="338,92,449,117"/>
 <area shape="poly" title=" " alt="" coords="291,42,361,82,359,86,288,47"/>
@@ -137,10 +137,15 @@ Graphe des dépendances par inclusion de texture_array.c:</div>
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Fonctions</h2></td></tr>
 <tr class="memitem:a025f1ad8f3688a49305422e9cbda51f8" id="r_a025f1ad8f3688a49305422e9cbda51f8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structTextureArray.html">TextureArray</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a025f1ad8f3688a49305422e9cbda51f8">texture_array_create</a> (unsigned char *data, unsigned int width, unsigned int height, unsigned int channels, unsigned int layer_count)</td></tr>
+<tr class="memdesc:a025f1ad8f3688a49305422e9cbda51f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Créer une <a class="el" href="structTextureArray.html">TextureArray</a> à partir de données brut CPU.  <br /></td></tr>
 <tr class="memitem:aa151c7bace315c24b3b4ab940e7d5563" id="r_aa151c7bace315c24b3b4ab940e7d5563"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structTextureArray.html">TextureArray</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa151c7bace315c24b3b4ab940e7d5563">texture_array_create_from_img_array</a> (<a class="el" href="structImageArray.html">ImageArray</a> *img_array)</td></tr>
+<tr class="memdesc:aa151c7bace315c24b3b4ab940e7d5563"><td class="mdescLeft">&#160;</td><td class="mdescRight">Créer une <a class="el" href="structTextureArray.html">TextureArray</a> à partir d'une <a class="el" href="structImageArray.html">ImageArray</a>.  <br /></td></tr>
 <tr class="memitem:a1b1fec4230d53b8f695db80a3ca94287" id="r_a1b1fec4230d53b8f695db80a3ca94287"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1b1fec4230d53b8f695db80a3ca94287">texture_array_free</a> (<a class="el" href="structTextureArray.html">TextureArray</a> *tex_array)</td></tr>
+<tr class="memdesc:a1b1fec4230d53b8f695db80a3ca94287"><td class="mdescLeft">&#160;</td><td class="mdescRight">Libère la mémoire du tas et du GPU de la \refTextureArrayCible.  <br /></td></tr>
 <tr class="memitem:a71303db3bdf7c9953c5449910a1a640a" id="r_a71303db3bdf7c9953c5449910a1a640a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a71303db3bdf7c9953c5449910a1a640a">texture_array_bind</a> (<a class="el" href="structTextureArray.html">TextureArray</a> *tex_array, unsigned int unit)</td></tr>
+<tr class="memdesc:a71303db3bdf7c9953c5449910a1a640a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permet de définir la <a class="el" href="structTextureArray.html">TextureArray</a> actuelle comme celle utilisé pour le rendu.  <br /></td></tr>
 <tr class="memitem:a09113a2fed528a03637491ae62df55df" id="r_a09113a2fed528a03637491ae62df55df"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a09113a2fed528a03637491ae62df55df">texture_array_unbind</a> ()</td></tr>
+<tr class="memdesc:a09113a2fed528a03637491ae62df55df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Désaffecte la <a class="el" href="structTextureArray.html">TextureArray</a> comme celle actuellement utilisé pour le rendu.  <br /></td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentation des fonctions</h2>
 <a id="a71303db3bdf7c9953c5449910a1a640a" name="a71303db3bdf7c9953c5449910a1a640a"></a>
@@ -161,6 +166,15 @@ Fonctions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Permet de définir la <a class="el" href="structTextureArray.html">TextureArray</a> actuelle comme celle utilisé pour le rendu. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tex_array</td><td><a class="el" href="structTextureArray.html">TextureArray</a> cible </td></tr>
+    <tr><td class="paramname">unit</td><td>à quelle emplacement la stocker </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p class="definition">Définition à la ligne <a class="el" href="texture__array_8c_source.html#l00083">83</a> du fichier <a class="el" href="texture__array_8c_source.html">texture_array.c</a>.</p>
 
@@ -200,6 +214,19 @@ Fonctions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Créer une <a class="el" href="structTextureArray.html">TextureArray</a> à partir de données brut CPU. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>pointeur vers les données brut CPU </td></tr>
+    <tr><td class="paramname">width</td><td>largeur <b>d'une</b> <b>image</b> </td></tr>
+    <tr><td class="paramname">height</td><td>hauteur <b>d'une</b> <b>image</b> </td></tr>
+    <tr><td class="paramname">channels</td><td>nombre de canneaux de <b>chaque</b> <b>image</b> </td></tr>
+    <tr><td class="paramname">layer_count</td><td>nombre de d'image totale dans la liste </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd><a class="el" href="structTextureArray.html">TextureArray</a> alloué sur le tas et le GPU </dd></dl>
+
 <p class="definition">Définition à la ligne <a class="el" href="texture__array_8c_source.html#l00007">7</a> du fichier <a class="el" href="texture__array_8c_source.html">texture_array.c</a>.</p>
 
 </div>
@@ -218,6 +245,15 @@ Fonctions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Créer une <a class="el" href="structTextureArray.html">TextureArray</a> à partir d'une <a class="el" href="structImageArray.html">ImageArray</a>. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">img_array</td><td>Liste d'image à partir on veut créer notre <a class="el" href="structTextureArray.html">TextureArray</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd><a class="el" href="structTextureArray.html">TextureArray</a> alloué sur le tas et le GPU </dd></dl>
 
 <p class="definition">Définition à la ligne <a class="el" href="texture__array_8c_source.html#l00055">55</a> du fichier <a class="el" href="texture__array_8c_source.html">texture_array.c</a>.</p>
 
@@ -238,6 +274,14 @@ Fonctions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Libère la mémoire du tas et du GPU de la \refTextureArrayCible. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tex_array</td><td><a class="el" href="structTextureArray.html">TextureArray</a> cible </td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p class="definition">Définition à la ligne <a class="el" href="texture__array_8c_source.html#l00067">67</a> du fichier <a class="el" href="texture__array_8c_source.html">texture_array.c</a>.</p>
 
 </div>
@@ -256,6 +300,8 @@ Fonctions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Désaffecte la <a class="el" href="structTextureArray.html">TextureArray</a> comme celle actuellement utilisé pour le rendu. </p>
 
 <p class="definition">Définition à la ligne <a class="el" href="texture__array_8c_source.html#l00091">91</a> du fichier <a class="el" href="texture__array_8c_source.html">texture_array.c</a>.</p>
 

@@ -106,7 +106,7 @@ Graphe des dépendances par inclusion de image_array.c:</div>
 <div class="center"><img src="image__array_8c__incl.png" border="0" usemap="#aFEURcraft_2graphic_2src_2image__array_8c" loading="lazy" alt=""/></div>
 <map name="aFEURcraft_2graphic_2src_2image__array_8c" id="aFEURcraft_2graphic_2src_2image__array_8c">
 <area shape="rect" title=" " alt="" coords="224,5,376,44"/>
-<area shape="rect" href="image__array_8h.html" title=" " alt="" coords="61,92,164,117"/>
+<area shape="rect" href="image__array_8h.html" title="Permet de stocker une liste d&#39;image de même taille et cannaux." alt="" coords="61,92,164,117"/>
 <area shape="poly" title=" " alt="" coords="256,47,156,88,154,83,254,42"/>
 <area shape="rect" title=" " alt="" coords="147,165,214,189"/>
 <area shape="poly" title=" " alt="" coords="281,46,236,94,196,152,192,149,232,90,277,43"/>
@@ -140,8 +140,11 @@ Macros</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Fonctions</h2></td></tr>
 <tr class="memitem:a29d3c353999ab8556026b8f31695ea1e" id="r_a29d3c353999ab8556026b8f31695ea1e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structImageArray.html">ImageArray</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a29d3c353999ab8556026b8f31695ea1e">image_array_create</a> (unsigned int width, unsigned int height, unsigned int channels)</td></tr>
+<tr class="memdesc:a29d3c353999ab8556026b8f31695ea1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Créer une liste d'image vide.  <br /></td></tr>
 <tr class="memitem:a37ebf993b46bce8c7fe931183b0b6b3b" id="r_a37ebf993b46bce8c7fe931183b0b6b3b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a37ebf993b46bce8c7fe931183b0b6b3b">image_array_free</a> (<a class="el" href="structImageArray.html">ImageArray</a> *img_array)</td></tr>
+<tr class="memdesc:a37ebf993b46bce8c7fe931183b0b6b3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Libère la mémoire de l' <a class="el" href="structImageArray.html">ImageArray</a> en paramêtre.  <br /></td></tr>
 <tr class="memitem:ac0087e07285510d95ab711b0ad3365ef" id="r_ac0087e07285510d95ab711b0ad3365ef"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac0087e07285510d95ab711b0ad3365ef">image_array_add_image</a> (<a class="el" href="structImageArray.html">ImageArray</a> *img_array, <a class="el" href="structImage.html">Image</a> *img)</td></tr>
+<tr class="memdesc:ac0087e07285510d95ab711b0ad3365ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ajoute une image à l' <a class="el" href="structImageArray.html">ImageArray</a>.  <br /></td></tr>
 </table>
 <a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="groupheader">Documentation des macros</h2>
 <a id="abc9121abf56bb8bd885228004eaad16b" name="abc9121abf56bb8bd885228004eaad16b"></a>
@@ -170,7 +173,7 @@ Fonctions</h2></td></tr>
         <tr>
           <td class="memname">int image_array_add_image </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structImageArray.html">ImageArray</a> *</td>          <td class="paramname"><span class="paramname"><em>img_array</em></span>, </td>
+          <td class="paramtype"><a class="el" href="structImageArray.html">ImageArray</a> *</td>          <td class="paramname"><span class="paramname"><em>tex_array</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -179,6 +182,17 @@ Fonctions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Ajoute une image à l' <a class="el" href="structImageArray.html">ImageArray</a>. </p>
+<dl class="section warning"><dt>Avertissement</dt><dd>L'image ajouter doit avoir les même dimension et le même nombre de canneaux que la <a class="el" href="structImageArray.html">ImageArray</a>. </dd></dl>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tex_array</td><td><a class="el" href="structImageArray.html">ImageArray</a> cible </td></tr>
+    <tr><td class="paramname">img</td><td><a class="el" href="structImage.html">Image</a> à ajouter </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd><code>-1</code> si l'image n'as pas pu être ajouter, sinon l'index de l'image. </dd></dl>
 
 <p class="definition">Définition à la ligne <a class="el" href="image__array_8c_source.html#l00041">41</a> du fichier <a class="el" href="image__array_8c_source.html">image_array.c</a>.</p>
 
@@ -208,6 +222,17 @@ Fonctions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Créer une liste d'image vide. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">width</td><td>largeur <b>des</b> <b>images</b> de la liste </td></tr>
+    <tr><td class="paramname">height</td><td>longeur <b>des</b> <b>images</b> de la liste </td></tr>
+    <tr><td class="paramname">channels</td><td>nombre de canneaux <b>des</b> <b>images</b> de la liste </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Pointeur vers une <a class="el" href="structImageArray.html">ImageArray</a> alloué sur le tas </dd></dl>
+
 <p class="definition">Définition à la ligne <a class="el" href="image__array_8c_source.html#l00011">11</a> du fichier <a class="el" href="image__array_8c_source.html">image_array.c</a>.</p>
 
 </div>
@@ -221,11 +246,19 @@ Fonctions</h2></td></tr>
         <tr>
           <td class="memname">void image_array_free </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structImageArray.html">ImageArray</a> *</td>          <td class="paramname"><span class="paramname"><em>img_array</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="structImageArray.html">ImageArray</a> *</td>          <td class="paramname"><span class="paramname"><em>tex_array</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Libère la mémoire de l' <a class="el" href="structImageArray.html">ImageArray</a> en paramêtre. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tex_array</td><td><a class="el" href="structImageArray.html">ImageArray</a> cible </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p class="definition">Définition à la ligne <a class="el" href="image__array_8c_source.html#l00033">33</a> du fichier <a class="el" href="image__array_8c_source.html">image_array.c</a>.</p>
 

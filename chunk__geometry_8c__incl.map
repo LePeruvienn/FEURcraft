@@ -1,6 +1,6 @@
 <map id="FEURcraft/graphic/src/chunk_geometry.c" name="FEURcraft/graphic/src/chunk_geometry.c">
 <area shape="rect" id="Node000001" title=" " alt="" coords="463,5,616,44"/>
-<area shape="rect" id="Node000002" href="$chunk__geometry_8h.html" title=" " alt="" coords="186,92,314,117"/>
+<area shape="rect" id="Node000002" href="$chunk__geometry_8h.html" title="Gère la génération des données géométrique d&#39;un chunk." alt="" coords="186,92,314,117"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="470,47,309,90,308,85,469,42"/>
 <area shape="rect" id="Node000003" href="$geometry_8h.html" title="Structure représentant les données d&#39;un modèle 3D." alt="" coords="108,165,195,189"/>
 <area shape="poly" id="edge15_Node000001_Node000003" title=" " alt="" coords="463,33,384,40,299,52,224,70,196,81,176,94,166,106,160,120,154,150,149,149,155,118,162,103,172,90,193,76,223,65,298,47,383,35,463,28"/>

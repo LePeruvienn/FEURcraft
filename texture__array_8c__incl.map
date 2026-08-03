@@ -1,8 +1,8 @@
 <map id="FEURcraft/graphic/src/texture_array.c" name="FEURcraft/graphic/src/texture_array.c">
 <area shape="rect" id="Node000001" title=" " alt="" coords="180,5,332,44"/>
-<area shape="rect" id="Node000002" href="$texture__array_8h.html" title=" " alt="" coords="157,92,265,117"/>
+<area shape="rect" id="Node000002" href="$texture__array_8h.html" title="Structure représentant les données d&#39;une list ed texture charger dans le GPU." alt="" coords="157,92,265,117"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="248,46,228,80,223,77,243,43"/>
-<area shape="rect" id="Node000003" href="$image__array_8h.html" title=" " alt="" coords="58,165,161,189"/>
+<area shape="rect" id="Node000003" href="$image__array_8h.html" title="Permet de stocker une liste d&#39;image de même taille et cannaux." alt="" coords="58,165,161,189"/>
 <area shape="poly" id="edge8_Node000001_Node000003" title=" " alt="" coords="213,47,179,67,148,94,130,122,119,151,114,149,125,119,144,90,176,63,211,42"/>
 <area shape="rect" id="Node000008" href="$error__checker_8h.html" title=" " alt="" coords="338,92,449,117"/>
 <area shape="poly" id="edge9_Node000001_Node000008" title=" " alt="" coords="291,42,361,82,359,86,288,47"/>

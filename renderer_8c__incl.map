@@ -1,6 +1,6 @@
 <map id="FEURcraft/graphic/src/renderer.c" name="FEURcraft/graphic/src/renderer.c">
 <area shape="rect" id="Node000001" title=" " alt="" coords="303,5,455,44"/>
-<area shape="rect" id="Node000002" href="$renderer_8h.html" title=" " alt="" coords="339,92,419,117"/>
+<area shape="rect" id="Node000002" href="$renderer_8h.html" title="Intiliase le moteur de rendu et son contexte." alt="" coords="339,92,419,117"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="382,45,382,76,376,76,376,45"/>
 <area shape="rect" id="Node000003" href="$camera_8h.html" title="Structure et fonctions pour la caméra 3D." alt="" coords="189,165,265,189"/>
 <area shape="poly" id="edge14_Node000001_Node000003" title=" " alt="" coords="347,47,315,68,285,94,261,123,242,153,238,150,257,120,281,90,312,64,344,42"/>

@@ -95,6 +95,9 @@ $(function(){initNavTree('chunk__geometry_8h.html','',''); });
   <div class="headertitle"><div class="title">Référence du fichier chunk_geometry.h</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Gère la génération des données géométrique d'un chunk.  
+<a href="#details">Plus de détails...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="geometry_8h_source.html">geometry.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="chunk_8h_source.html">chunk.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
@@ -102,7 +105,7 @@ Graphe des dépendances par inclusion de chunk_geometry.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="chunk__geometry_8h__incl.png" border="0" usemap="#aFEURcraft_2graphic_2include_2chunk__geometry_8h" loading="lazy" alt=""/></div>
 <map name="aFEURcraft_2graphic_2include_2chunk__geometry_8h" id="aFEURcraft_2graphic_2include_2chunk__geometry_8h">
-<area shape="rect" title=" " alt="" coords="144,5,319,44"/>
+<area shape="rect" title="Gère la génération des données géométrique d&#39;un chunk." alt="" coords="144,5,319,44"/>
 <area shape="rect" href="geometry_8h.html" title="Structure représentant les données d&#39;un modèle 3D." alt="" coords="148,92,235,117"/>
 <area shape="poly" title=" " alt="" coords="224,46,207,79,202,77,219,43"/>
 <area shape="rect" href="chunk_8h.html" title=" " alt="" coords="298,165,365,189"/>
@@ -132,7 +135,7 @@ Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier
 <div class="dyncontent">
 <div class="center"><img src="chunk__geometry_8h__dep__incl.png" border="0" usemap="#aFEURcraft_2graphic_2include_2chunk__geometry_8hdep" loading="lazy" alt=""/></div>
 <map name="aFEURcraft_2graphic_2include_2chunk__geometry_8hdep" id="aFEURcraft_2graphic_2include_2chunk__geometry_8hdep">
-<area shape="rect" title=" " alt="" coords="5,5,181,44"/>
+<area shape="rect" title="Gère la génération des données géométrique d&#39;un chunk." alt="" coords="5,5,181,44"/>
 <area shape="rect" href="chunk__geometry_8c.html" title=" " alt="" coords="17,92,169,131"/>
 <area shape="poly" title=" " alt="" coords="96,60,96,91,90,91,90,60"/>
 </map>
@@ -143,8 +146,13 @@ Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Fonctions</h2></td></tr>
 <tr class="memitem:a128344b0c5cf5ed634a3def31010feed" id="r_a128344b0c5cf5ed634a3def31010feed"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structGeometry.html">Geometry</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a128344b0c5cf5ed634a3def31010feed">chunk_geometry_create</a> (const <a class="el" href="structChunk.html">Chunk</a> *chunk)</td></tr>
+<tr class="memdesc:a128344b0c5cf5ed634a3def31010feed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Génère les données géméotrique d'un chunk.  <br /></td></tr>
 </table>
-<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentation des fonctions</h2>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Description détaillée</h2>
+<div class="textblock"><p>Gère la génération des données géométrique d'un chunk. </p>
+
+<p class="definition">Définition dans le fichier <a class="el" href="chunk__geometry_8h_source.html">chunk_geometry.h</a>.</p>
+</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentation des fonctions</h2>
 <a id="a128344b0c5cf5ed634a3def31010feed" name="a128344b0c5cf5ed634a3def31010feed"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a128344b0c5cf5ed634a3def31010feed">&#9670;&#160;</a></span>chunk_geometry_create()</h2>
 
@@ -159,6 +167,15 @@ Fonctions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Génère les données géméotrique d'un chunk. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">chunk</td><td><a class="el" href="structChunk.html">Chunk</a> auquel on veut générer la géométrie </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Donnés gémoetrique stocker dans un pointeur <a class="el" href="structGeometry.html">Geometry</a> alloué </dd></dl>
 
 <p class="definition">Définition à la ligne <a class="el" href="chunk__geometry_8c_source.html#l00049">49</a> du fichier <a class="el" href="chunk__geometry_8c_source.html">chunk_geometry.c</a>.</p>
 

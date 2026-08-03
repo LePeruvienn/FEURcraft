@@ -8,7 +8,7 @@
 <area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="431,55,457,90,453,93,427,58"/>
 <area shape="rect" id="Node000008" href="$mat4_8c.html" title=" " alt="" coords="581,92,720,131"/>
 <area shape="poly" id="edge9_Node000001_Node000008" title=" " alt="" coords="476,47,597,89,595,94,474,52"/>
-<area shape="rect" id="Node000003" href="$renderer_8h.html" title=" " alt="" coords="5,179,181,217"/>
+<area shape="rect" id="Node000003" href="$renderer_8h.html" title="Intiliase le moteur de rendu et son contexte." alt="" coords="5,179,181,217"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="180,142,122,180,119,176,177,137"/>
 <area shape="rect" id="Node000004" href="$renderer_8c.html" title=" " alt="" coords="80,265,232,304"/>
 <area shape="poly" id="edge5_Node000002_Node000004" title=" " alt="" coords="215,147,195,218,170,266,166,264,191,216,210,145"/>

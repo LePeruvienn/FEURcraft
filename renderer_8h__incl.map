@@ -1,5 +1,5 @@
 <map id="FEURcraft/graphic/include/renderer.h" name="FEURcraft/graphic/include/renderer.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="253,5,428,44"/>
+<area shape="rect" id="Node000001" title="Intiliase le moteur de rendu et son contexte." alt="" coords="253,5,428,44"/>
 <area shape="rect" id="Node000002" href="$camera_8h.html" title="Structure et fonctions pour la caméra 3D." alt="" coords="175,92,250,117"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="311,47,246,86,243,82,308,42"/>
 <area shape="rect" id="Node000007" href="$window_8h.html" title="Abstraction de la gestion de la fenêtre et du contexte OpenGL." alt="" coords="303,165,378,189"/>

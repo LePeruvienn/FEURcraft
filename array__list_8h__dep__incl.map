@@ -8,7 +8,7 @@
 <area shape="poly" id="edge9_Node000001_Node000005" title=" " alt="" coords="522,50,567,83,610,125,625,147,633,171,633,195,622,219,596,245,564,263,530,275,495,282,494,277,528,270,562,258,593,241,617,216,628,194,628,172,620,150,605,128,564,87,518,55"/>
 <area shape="rect" id="Node000008" href="$geometry_8c.html" title=" " alt="" coords="456,179,608,217"/>
 <area shape="poly" id="edge10_Node000001_Node000008" title=" " alt="" coords="497,56,514,91,527,137,533,178,527,178,521,138,509,93,492,58"/>
-<area shape="rect" id="Node000004" href="$chunk__geometry_8h.html" title=" " alt="" coords="205,179,381,217"/>
+<area shape="rect" id="Node000004" href="$chunk__geometry_8h.html" title="Gère la génération des données géométrique d&#39;un chunk." alt="" coords="205,179,381,217"/>
 <area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="375,142,321,180,318,176,372,138"/>
 <area shape="poly" id="edge7_Node000003_Node000005" title=" " alt="" coords="416,146,420,265,415,265,410,146"/>
 <area shape="rect" id="Node000006" href="$mesh_8h.html" title="Structure représentant les données d&#39;un modèle 3D charger dans le GPU." alt="" coords="5,179,181,217"/>

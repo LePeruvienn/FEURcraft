@@ -1,6 +1,6 @@
 <map id="FEURcraft/graphic/src/image_array.c" name="FEURcraft/graphic/src/image_array.c">
 <area shape="rect" id="Node000001" title=" " alt="" coords="224,5,376,44"/>
-<area shape="rect" id="Node000002" href="$image__array_8h.html" title=" " alt="" coords="61,92,164,117"/>
+<area shape="rect" id="Node000002" href="$image__array_8h.html" title="Permet de stocker une liste d&#39;image de même taille et cannaux." alt="" coords="61,92,164,117"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="256,47,156,88,154,83,254,42"/>
 <area shape="rect" id="Node000005" title=" " alt="" coords="147,165,214,189"/>
 <area shape="poly" id="edge13_Node000001_Node000005" title=" " alt="" coords="281,46,236,94,196,152,192,149,232,90,277,43"/>
