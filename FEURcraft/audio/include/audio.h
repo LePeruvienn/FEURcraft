@@ -1,10 +1,9 @@
-# ifndef AUDIO
+#ifndef AUDIO_H
+#define AUDIO_H
 
 #include <AL/al.h>
 #include <AL/alc.h>
 #include <sndfile.h>
-
-# endif
 
 #include "vec3.h"
 
@@ -118,14 +117,14 @@ AudioListener AUDIO_LISTENER_CREATE_WITH_POSITION_AND_ROTATION(Vec3 pos, Vec3 at
  *
  * \return Une structure représentant l'audio listener.
  */
-AudioListener AUDIO_LISTENER_CREATE_WITH_POSITION(Vec3 pos){return AUDIO_LISTENER_CREATE_WITH_POSITION_AND_ROTATION(pos, VEC3(0.f, 0.f, -1.f), VEC3(0.f, 1.f, 0.f));};
+AudioListener AUDIO_LISTENER_CREATE_WITH_POSITION(Vec3 pos);
 
 /**
  * \brief Créer une structure représentant l'audio listener.
  *
  * \return Une structure représentant l'audio listener.
  */
-AudioListener AUDIO_LISTENER_CREATE(){return AUDIO_LISTENER_CREATE_WITH_POSITION_AND_ROTATION(VEC3(0.f, 0.f, 0.f), VEC3(0.f, 0.f, -1.f), VEC3(0.f, 1.f, 0.f));};
+AudioListener AUDIO_LISTENER_CREATE();
 
 
 /**
@@ -228,7 +227,7 @@ AudioEmitter AUDIO_EMITTER_CREATE_WITH_POSITION(AudioSource audioSource, Vec3 po
  *
  * \return L'AudioEmitter.
  */
-AudioEmitter AUDIO_EMITTER_CREATE(AudioSource audioSource){return AUDIO_EMITTER_CREATE_WITH_POSITION(audioSource, VEC3(0.f, 0.f, 0.f));};
+AudioEmitter AUDIO_EMITTER_CREATE(AudioSource audioSource);
 
 /**
  * \brief Détruit un AudioEmitter.
@@ -322,4 +321,4 @@ void AUDIO_EMITTER_PAUSE(AudioEmitter audioEm);
 
 
 
-
+#endif
