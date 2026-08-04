@@ -9,7 +9,7 @@ AudioConfig AUDIO_INSTANTIATE()
 {
     AudioConfig audioConf = malloc(sizeof(AudioConfigStruct));
 
-    /* 1. Open the default playback device */
+    /* Open the default playback device */
     audioConf->device = alcOpenDevice(NULL);
     if (!audioConf->device) {
         fprintf(stderr, "Failed to open audio device.\n");
@@ -18,7 +18,7 @@ AudioConfig AUDIO_INSTANTIATE()
 
 
 
-    /* 2. Create and set the audio context */
+    /* Create and set the audio context */
     audioConf->context = alcCreateContext(audioConf->device, NULL);
     if (!audioConf->context || !alcMakeContextCurrent(audioConf->context)) {
         fprintf(stderr, "Failed to set audio context.\n");
@@ -33,7 +33,6 @@ AudioConfig AUDIO_INSTANTIATE()
 
 AudioSource AUDIO_SOURCE_CREATE(const char *filename)
 {
-    /*  Open the sound file */
     SF_INFO sfinfo = {0};
     SNDFILE *sndfile = sf_open(filename, SFM_READ, &sfinfo);
 
@@ -42,42 +41,59 @@ AudioSource AUDIO_SOURCE_CREATE(const char *filename)
         return 0;
     }
 
-    /* Map libsndfile format to OpenAL format */
-    ALenum format;
-    if (sfinfo.channels == 1) {
-        format = AL_FORMAT_MONO16;
-    } else if (sfinfo.channels == 2) {
-        format = AL_FORMAT_STEREO16;
-    } else {
-        fprintf(stderr, "Unsupported channel count: %d\n", sfinfo.channels);
-        sf_close(sndfile);
-        return 0;
-    }
+    /* Total raw frames in the file */
+    sf_count_t num_frames = sfinfo.frames;
+    sf_count_t total_samples = num_frames * sfinfo.channels;
 
-    /* Calculate total samples and allocate buffer space */
-    sf_count_t num_samples = sfinfo.frames * sfinfo.channels;
-    short *pcm_data = (short *)malloc(num_samples * sizeof(short));
-
+    short *pcm_data = (short *)malloc(total_samples * sizeof(short));
     if (!pcm_data) {
         fprintf(stderr, "Memory allocation error\n");
         sf_close(sndfile);
         return 0;
     }
 
-    /* Read PCM frames as 16-bit signed integers */
-    sf_count_t read_count = sf_read_short(sndfile, pcm_data, num_samples);
-    if (read_count != num_samples) {
-        fprintf(stderr, "Warning: Expected %ld samples, read %ld\n", (long)num_samples, (long)read_count);
-    }
-
+    /* Read all audio data as 16-bit PCM */
+    sf_count_t read_count = sf_read_short(sndfile, pcm_data, total_samples);
     sf_close(sndfile);
 
-    /* Generate OpenAL buffer and send PCM bytes */
+    short *mono_data = NULL;
+    sf_count_t mono_samples = 0;
+
+    if (sfinfo.channels == 1) {
+        /* Already mono: use data directly */
+        mono_data = pcm_data;
+        mono_samples = read_count;
+    }
+    else if (sfinfo.channels == 2) {
+        /* Downmix stereo to mono in-memory */
+        mono_samples = num_frames;
+        mono_data = (short *)malloc(mono_samples * sizeof(short));
+
+        for (sf_count_t i = 0; i < mono_samples; i++) {
+            int left  = pcm_data[i * 2];
+            int right = pcm_data[i * 2 + 1];
+
+            /* Average L & R channels (divide first or sum as int to avoid 16-bit overflow) */
+            mono_data[i] = (short)((left + right) / 2);
+        }
+
+        /* Free original stereo raw buffer */
+        free(pcm_data);
+    }
+    else {
+        fprintf(stderr, "Unsupported channel count: %d\n", sfinfo.channels);
+        free(pcm_data);
+        return 0;
+    }
+
+    /* Upload the buffer as AL_FORMAT_MONO16 */
     ALuint buffer;
     alGenBuffers(1, &buffer);
-    alBufferData(buffer, format, pcm_data, (ALsizei)(read_count * sizeof(short)), sfinfo.samplerate);
+    alBufferData(buffer, AL_FORMAT_MONO16, mono_data,
+                 (ALsizei)(mono_samples * sizeof(short)),
+                 sfinfo.samplerate);
 
-    free(pcm_data);
+    free(mono_data);
 
     return buffer;
 }

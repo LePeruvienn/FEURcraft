@@ -61,7 +61,7 @@ int main()
 
 	AudioConfig audioConf = AUDIO_INSTANTIATE();
 	AudioListener audioLi = AUDIO_LISTENER_CREATE_WITH_POSITION(VEC3(0.f, 0.f, 5.f));
-	AudioSource lel = AUDIO_SOURCE_CREATE("assets/audio/Waiting for transaction mono.wav");
+	AudioSource lel = AUDIO_SOURCE_CREATE("assets/audio/Waiting for transaction.wav");
 	AudioEmitter audioEm = AUDIO_EMITTER_CREATE(lel);
 
 
