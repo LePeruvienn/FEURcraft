@@ -5,12 +5,21 @@
 #include <stdbool.h>
 
 #define FEUR_STR_BEGIN 0
+#define FEUR_C_STR_EMPTY "\0"
 
-#define FEUR_STR_STATIC(_buffer, _capacity, _length) \
+#define FEUR_STR_STATIC(_buffer, _capacity, _init_str) \
+	((FeurString) { .c_str = strcpy((_buffer), (_init_str)), \
+	                .length = strlen(_init_str), \
+	                .capacity = (_capacity), \
+	                .is_static = true })
+
+#define FEUR_STR_STATIC_INIT(_buffer, _capacity, _length) \
 	((FeurString) { .c_str = (_buffer), \
 	                .capacity = (_capacity), \
 	                .length = _length, \
 	                .is_static = true })
+
+	
 
 typedef struct FeurString FeurString;
 

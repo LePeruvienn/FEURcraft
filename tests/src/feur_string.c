@@ -123,10 +123,29 @@ FEUR_Test_Result Test_FeurString_AutoResize()
 
 FEUR_Test_Result Test_FeurString_Static()
 {
+	char stack_buffer[16];
+	FeurString string = FEUR_STR_STATIC(stack_buffer, 16, "Sur la");
+
+	FEUR_TEST_ASSERT(string.is_static == true);
+	FEUR_TEST_ASSERT(string.length == 6);
+	FEUR_TEST_ASSERT(string.capacity == 16);
+
+	feur_string_append_str(&string, " pile !");
+
+	FEUR_TEST_ASSERT(string.length == 13);
+
+	FEUR_TEST_ASSERT(strcmp(string.c_str, "Sur la pile !") == 0);
+	FEUR_TEST_ASSERT(strcmp(stack_buffer, "Sur la pile !") == 0);
+
+	return FEUR_Test_Success;
+}
+
+FEUR_Test_Result Test_FeurString_Static_Init()
+{
 	char stack_buffer[32];
 	stack_buffer[0] = '\0';
 
-	FeurString string = FEUR_STR_STATIC(stack_buffer, 32, 0);
+	FeurString string = FEUR_STR_STATIC_INIT(stack_buffer, 32, 0);
 
 	FEUR_TEST_ASSERT(string.is_static == true);
 	FEUR_TEST_ASSERT(string.length == 0);
@@ -161,6 +180,7 @@ int main()
 
 	FEUR_Test_Add_Group("Sur la pile!");
 	FEUR_Test_Add_Test("FeurString static", Test_FeurString_Static);
+	FEUR_Test_Add_Test("FeurString static init", Test_FeurString_Static_Init);
 
 	FEUR_Test_Run();
 	FEUR_Test_End();
