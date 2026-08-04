@@ -1,7 +1,9 @@
 #ifndef BLOCK_H
 #define BLOCK_H
 
-typedef enum Block Block;
+#include <stdint.h>
+
+typedef uint8_t Block;
 
 enum Block
 {
