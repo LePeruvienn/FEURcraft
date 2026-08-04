@@ -4,10 +4,41 @@
 #include <stddef.h>
 #include <stdlib.h>
 
+// ================= Structures =================
+
+struct AudioConfigStruct
+{
+    int error; // Vaut 1 en cas d'érreur, 0 sinon
+
+    ALCdevice *device;  // Le pointeur vers le l'appareille utilisé.
+    ALCcontext *context; // Le context d'OpenAL.
+};
+
+
+struct AudioListenerStruct
+{
+    float gain;
+    Vec3 pos;
+    Vec3 atVector;
+    Vec3 upVector;
+};
+
+
+
+struct AudioEmitterStruct
+{
+    AudioSource audioSource;
+    float gain;
+    Vec3 pos;
+    Vec3 direction;
+};
+
+
+// ================= Functions ==================
 
 AudioConfig AUDIO_INSTANTIATE()
 {
-    AudioConfig audioConf = malloc(sizeof(AudioConfigStruct));
+    AudioConfig audioConf = malloc(sizeof(struct AudioConfigStruct));
 
     /* Open the default playback device */
     audioConf->device = alcOpenDevice(NULL);
@@ -29,6 +60,17 @@ AudioConfig AUDIO_INSTANTIATE()
 
     return audioConf;
 }
+
+
+void AUDIO_FREE(AudioConfig audioConf)
+{
+    alcMakeContextCurrent(NULL);
+    alcDestroyContext(audioConf->context);
+    alcCloseDevice(audioConf->device);
+
+    free(audioConf);
+}
+
 
 
 AudioSource AUDIO_SOURCE_CREATE(const char *filename)
@@ -98,6 +140,16 @@ AudioSource AUDIO_SOURCE_CREATE(const char *filename)
     return buffer;
 }
 
+void AUDIO_SOURCE_FREE(AudioSource audioSource)
+{
+    alDeleteBuffers(1, &audioSource);
+}
+
+
+
+
+
+
 
 // AudioListener
 // ----------------
@@ -106,7 +158,7 @@ AudioSource AUDIO_SOURCE_CREATE(const char *filename)
 
 AudioListener AUDIO_LISTENER_CREATE_WITH_POSITION_AND_ROTATION(Vec3 pos, Vec3 atVector, Vec3 upVector)
 {
-    AudioListener audioList = malloc(sizeof(AudioListenerStruct));
+    AudioListener audioList = malloc(sizeof(struct AudioListenerStruct));
 
     audioList->gain = 1;
     audioList->pos = pos;
@@ -118,6 +170,11 @@ AudioListener AUDIO_LISTENER_CREATE_WITH_POSITION_AND_ROTATION(Vec3 pos, Vec3 at
     alListenerfv(AL_ORIENTATION, listenerOri);
 
     return audioList;
+}
+
+void AUDIO_LISTENER_FREE(AudioListener audioLi)
+{
+    free(audioLi);
 }
 
 
@@ -141,6 +198,21 @@ void AUDIO_LISTENER_SET_ROTATION(AudioListener audioLi, Vec3 at, Vec3 up)
     ALfloat listenerOri[] = {at.x, at.y, at.z, up.x, up.y, up.z};
     alListenerfv(AL_ORIENTATION, listenerOri);
 }
+
+
+float AUDIO_LISTENER_GET_GAIN(AudioListener audioLi){return audioLi->gain;};
+
+
+Vec3 AUDIO_LISTENER_GET_POSITION(AudioListener audioLi){return audioLi->pos;};
+
+
+Vec3 AUDIO_LISTENER_GET_AT_VECTOR(AudioListener audioLi){return audioLi->atVector;};
+
+
+Vec3 AUDIO_LISTENER_GET_UP_VECTOR(AudioListener audioLi){return audioLi->upVector;};
+
+
+
 
 void AUDIO_LISTENER_UPDATE(AudioListener audioLi)
 {
@@ -173,7 +245,7 @@ void AUDIO_LISTENER_UPDATE(AudioListener audioLi)
 // ----------------
 AudioEmitter AUDIO_EMITTER_CREATE_WITH_POSITION(AudioSource audioSource, Vec3 pos)
 {
-    AudioEmitter audioEm = malloc(sizeof(AudioEmitterStruct));
+    AudioEmitter audioEm = malloc(sizeof(struct AudioEmitterStruct));
     audioEm->gain = 1;
     audioEm->pos = pos;
     audioEm->direction = VEC3(0.f, 0.f, 0.f);
@@ -184,6 +256,13 @@ AudioEmitter AUDIO_EMITTER_CREATE_WITH_POSITION(AudioSource audioSource, Vec3 po
 
 
     return audioEm;
+}
+
+void AUDIO_EMITTER_FREE(AudioEmitter audioEm)
+{
+    alDeleteSources(1, &audioEm->audioSource);
+
+    free(audioEm);
 }
 
 
@@ -205,6 +284,17 @@ void AUDIO_EMITTER_SET_DIRECTION(AudioEmitter audioEm, Vec3 dir)
     alSource3f(audioEm->audioSource, AL_DIRECTION, dir.x, dir.y, dir.z);
 }
 
+
+float AUDIO_EMITTER_GET_GAIN(AudioEmitter audioEm){return audioEm->gain;};
+
+Vec3 AUDIO_EMITTER_GET_POSITION(AudioEmitter audioEm){return audioEm->pos;};
+
+Vec3 AUDIO_EMITTER_GET_DIRECTION(AudioEmitter audioEm){return audioEm->direction;};
+
+
+
+
+
 void AUDIO_EMITTER_UPDATE(AudioEmitter audioEm)
 {
     // Update OpenAL data
@@ -225,4 +315,10 @@ void AUDIO_EMITTER_UPDATE(AudioEmitter audioEm)
 }
 
 
+
+void AUDIO_EMITTER_PLAY(AudioEmitter audioEm) {alSourcePlay(audioEm->audioSource);}
+
+void AUDIO_EMITTER_STOP(AudioEmitter audioEm) {alSourceStop(audioEm->audioSource);};
+
+void AUDIO_EMITTER_PAUSE(AudioEmitter audioEm) {alSourcePause(audioEm->audioSource);};
 

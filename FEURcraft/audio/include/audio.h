@@ -20,18 +20,10 @@
 // =========== Types definitions ===============
 
 
-typedef struct
-{
-    int error; // Vaut 1 en cas d'érreur, 0 sinon
-
-    ALCdevice *device;  // Le pointeur vers le l'appareille utilisé.
-    ALCcontext *context; // Le context d'OpenAL.
-} AudioConfigStruct;
-
 /**
  * \brief Type représentant les données de config d'OpenAL.
  */
-typedef AudioConfigStruct* AudioConfig;
+typedef struct AudioConfigStruct* AudioConfig;
 
 
 /**
@@ -40,40 +32,18 @@ typedef AudioConfigStruct* AudioConfig;
 typedef ALuint AudioSource;
 
 
-
-
-
-typedef struct
-{
-    float gain;
-    Vec3 pos;
-    Vec3 atVector;
-    Vec3 upVector;
-} AudioListenerStruct;
-
-
 /**
  * \brief Type représentant l'audio listener, l'élément qui reçoit le sons.
  */
-typedef AudioListenerStruct* AudioListener;
+typedef struct AudioListenerStruct* AudioListener;
 
-
-
-
-
-typedef struct
-{
-    AudioSource audioSource;
-    float gain;
-    Vec3 pos;
-    Vec3 direction;
-} AudioEmitterStruct;
 
 
 /**
  * \brief Type représentant un audio emitter, un élément qui émèts du sons
  */
-typedef AudioEmitterStruct* AudioEmitter;
+typedef struct AudioEmitterStruct* AudioEmitter;
+
 
 
 
@@ -93,6 +63,12 @@ typedef AudioEmitterStruct* AudioEmitter;
  */
 AudioConfig AUDIO_INSTANTIATE();
 
+/**
+ * \brief Libère toute les donnée liée à OpenAL.
+ *
+ * \param audioConf Les donnée de configuration d'OpenAL
+ */
+void AUDIO_FREE(AudioConfig audioConf);
 
 
 /**
@@ -104,6 +80,12 @@ AudioConfig AUDIO_INSTANTIATE();
  */
 AudioSource AUDIO_SOURCE_CREATE(const char *filename);
 
+/**
+ * \brief Détruit l'AudioSource.
+ *
+ * \param audioSource L'AudioSource.
+ */
+void AUDIO_SOURCE_FREE(AudioSource audioSource);
 
 
 
@@ -147,6 +129,14 @@ AudioListener AUDIO_LISTENER_CREATE(){return AUDIO_LISTENER_CREATE_WITH_POSITION
 
 
 /**
+ * \brief Détruit l'AudioListener
+ *
+ * \param audioLi L'AudioListener.
+ */
+void AUDIO_LISTENER_FREE(AudioListener audioLi);
+
+
+/**
  * \brief Mets à jours le gain de l'AudioListener.
  *
  * \param audioLi L'AudioListener.
@@ -179,7 +169,7 @@ void AUDIO_LISTENER_SET_ROTATION(AudioListener audioLi, Vec3 at, Vec3 up);
  *
  * \return Le gain de l'AudioListener.
  */
-float AUDIO_LISTENER_GET_GAIN(AudioListener audioLi){return audioLi->gain;};
+float AUDIO_LISTENER_GET_GAIN(AudioListener audioLi);
 
 /**
  * \brief Renvoit la position de l'AudioListener.
@@ -188,7 +178,7 @@ float AUDIO_LISTENER_GET_GAIN(AudioListener audioLi){return audioLi->gain;};
  *
  * \return La position de l'AudioListener.
  */
-Vec3 AUDIO_LISTENER_GET_POSITION(AudioListener audioLi){return audioLi->pos;};
+Vec3 AUDIO_LISTENER_GET_POSITION(AudioListener audioLi);
 
 /**
  * \brief Renvoit le vecteur direction de l'AudioListener.
@@ -197,7 +187,7 @@ Vec3 AUDIO_LISTENER_GET_POSITION(AudioListener audioLi){return audioLi->pos;};
  *
  * \return Le vecteur direction de l'AudioListener.
  */
-Vec3 AUDIO_LISTENER_GET_AT_VECTOR(AudioListener audioLi){return audioLi->atVector;};
+Vec3 AUDIO_LISTENER_GET_AT_VECTOR(AudioListener audioLi);
 
 /**
  * \brief Renvoit le vecteur indiquant le haut de l'AudioListener.
@@ -206,7 +196,7 @@ Vec3 AUDIO_LISTENER_GET_AT_VECTOR(AudioListener audioLi){return audioLi->atVecto
  *
  * \return Le vecteur indiquant le haut de l'AudioListener.
  */
-Vec3 AUDIO_LISTENER_GET_UP_VECTOR(AudioListener audioLi){return audioLi->upVector;};
+Vec3 AUDIO_LISTENER_GET_UP_VECTOR(AudioListener audioLi);
 
 /**
  * \brief Mets à jours l'état de l'AudioListener.
@@ -239,6 +229,13 @@ AudioEmitter AUDIO_EMITTER_CREATE_WITH_POSITION(AudioSource audioSource, Vec3 po
  * \return L'AudioEmitter.
  */
 AudioEmitter AUDIO_EMITTER_CREATE(AudioSource audioSource){return AUDIO_EMITTER_CREATE_WITH_POSITION(audioSource, VEC3(0.f, 0.f, 0.f));};
+
+/**
+ * \brief Détruit un AudioEmitter.
+ *
+ * \param audioEm L'AudioEmitter.
+ */
+void AUDIO_EMITTER_FREE(AudioEmitter audioEm);
 
 
 /**
@@ -273,7 +270,7 @@ void AUDIO_EMITTER_SET_DIRECTION(AudioEmitter audioEm, Vec3 direction);
  *
  * \return Le gain de l'AudioEmitter.
  */
-float AUDIO_EMITTER_GET_GAIN(AudioEmitter audioEm){return audioEm->gain;};
+float AUDIO_EMITTER_GET_GAIN(AudioEmitter audioEm);
 
 /**
  * \brief Renvoit la position de l'AudioEmitter.
@@ -282,7 +279,7 @@ float AUDIO_EMITTER_GET_GAIN(AudioEmitter audioEm){return audioEm->gain;};
  *
  * \return La position de l'AudioEmitter.
  */
-Vec3 AUDIO_EMITTER_GET_POSITION(AudioEmitter audioEm){return audioEm->pos;};
+Vec3 AUDIO_EMITTER_GET_POSITION(AudioEmitter audioEm);
 
 /**
  * \brief Renvoit la direction de l'AudioEmitter.
@@ -291,7 +288,7 @@ Vec3 AUDIO_EMITTER_GET_POSITION(AudioEmitter audioEm){return audioEm->pos;};
  *
  * \return La direction de l'AudioEmitter.
  */
-Vec3 AUDIO_EMITTER_GET_DIRECTION(AudioEmitter audioEm){return audioEm->direction;};
+Vec3 AUDIO_EMITTER_GET_DIRECTION(AudioEmitter audioEm);
 
 
 /**
@@ -306,21 +303,21 @@ void AUDIO_EMITTER_UPDATE(AudioEmitter);
  *
  * \param audioEm L'AudioEmitter.
  */
-void AUDIO_EMITTER_PLAY(AudioEmitter audioEm) {alSourcePlay(audioEm->audioSource);}
+void AUDIO_EMITTER_PLAY(AudioEmitter audioEm);
 
 /**
  * \brief Stop le sons de l'AudioEmitter
  *
  * \param audioEm L'AudioEmitter.
  */
-void AUDIO_EMITTER_STOP(AudioEmitter audioEm) {alSourceStop(audioEm->audioSource);};
+void AUDIO_EMITTER_STOP(AudioEmitter audioEm);
 
 /**
  * \brief Mets en pause le sons de l'AudioEmitter
  *
  * \param audioEm L'AudioEmitter.
  */
-void AUDIO_EMITTER_PAUSE(AudioEmitter audioEm) {alSourcePause(audioEm->audioSource);};
+void AUDIO_EMITTER_PAUSE(AudioEmitter audioEm);
 
 
 
