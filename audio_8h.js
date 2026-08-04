@@ -1,14 +1,12 @@
 var audio_8h =
 [
-    [ "AudioConfigStruct", "structAudioConfigStruct.html", null ],
-    [ "AudioListenerStruct", "structAudioListenerStruct.html", null ],
-    [ "AudioEmitterStruct", "structAudioEmitterStruct.html", null ],
-    [ "AudioConfig", "audio_8h.html#a334fd2ea448fb62ec410b3f96480ad94", null ],
-    [ "AudioEmitter", "audio_8h.html#a290d3170fe99a97392978515bacf057d", null ],
-    [ "AudioListener", "audio_8h.html#a3700e55e1dc43549d557258fac1af4d7", null ],
+    [ "AudioConfig", "audio_8h.html#a148028b37ef89ccd0fe374e429350f5d", null ],
+    [ "AudioEmitter", "audio_8h.html#a21ae786262b00bc0c58c75a3016dc62a", null ],
+    [ "AudioListener", "audio_8h.html#aabd587cb003ad09e88ea5a4b7f477c7b", null ],
     [ "AudioSource", "audio_8h.html#aeb12fb6b97d973f47522ad70bf6f8862", null ],
     [ "AUDIO_EMITTER_CREATE", "audio_8h.html#aa67b7fd1d246f3381c4c4db388547cad", null ],
     [ "AUDIO_EMITTER_CREATE_WITH_POSITION", "audio_8h.html#a8b0ffb7338d258484b13ef963138a466", null ],
+    [ "AUDIO_EMITTER_FREE", "audio_8h.html#a47a3c7461765556efb327756a1b23a7b", null ],
     [ "AUDIO_EMITTER_GET_DIRECTION", "audio_8h.html#ad14490c9290965066e1d95786b4466c8", null ],
     [ "AUDIO_EMITTER_GET_GAIN", "audio_8h.html#a1774cbbdc9b8ee92de21d1695ff76e00", null ],
     [ "AUDIO_EMITTER_GET_POSITION", "audio_8h.html#ad2a1505bcc86678357e81966533195f6", null ],
@@ -19,10 +17,12 @@ var audio_8h =
     [ "AUDIO_EMITTER_SET_POSITION", "audio_8h.html#ad625b05f93c9d6f419e2f762398e9adb", null ],
     [ "AUDIO_EMITTER_STOP", "audio_8h.html#aba64fc49761113c6a97f733e1521cd1d", null ],
     [ "AUDIO_EMITTER_UPDATE", "audio_8h.html#a1c581e5113d7aa95dc819bf33fecb561", null ],
+    [ "AUDIO_FREE", "audio_8h.html#a2f5047af65311e79a9ec6049d2b6c3c4", null ],
     [ "AUDIO_INSTANTIATE", "audio_8h.html#a1e4ffb46267753d2cb0421b7f9d63dec", null ],
     [ "AUDIO_LISTENER_CREATE", "audio_8h.html#ab980daad45d21552b1572ec66b729da2", null ],
     [ "AUDIO_LISTENER_CREATE_WITH_POSITION", "audio_8h.html#afe8eec4cb3ced1255b9838781144f81a", null ],
     [ "AUDIO_LISTENER_CREATE_WITH_POSITION_AND_ROTATION", "audio_8h.html#a85eed784497565744d7d0e5a2cd5e8eb", null ],
+    [ "AUDIO_LISTENER_FREE", "audio_8h.html#ae13ef50bac46d13074e349c90bc0b544", null ],
     [ "AUDIO_LISTENER_GET_AT_VECTOR", "audio_8h.html#a10ea25425aa198c115f01fe4910bf019", null ],
     [ "AUDIO_LISTENER_GET_GAIN", "audio_8h.html#a24950de1f89edb88a3e3b26fa6ee6f96", null ],
     [ "AUDIO_LISTENER_GET_POSITION", "audio_8h.html#a6684747b52b4af592599125e324bf8cb", null ],
@@ -31,5 +31,6 @@ var audio_8h =
     [ "AUDIO_LISTENER_SET_POSITION", "audio_8h.html#a07ab5efa7c83f5d9a0643c85aef74699", null ],
     [ "AUDIO_LISTENER_SET_ROTATION", "audio_8h.html#a9111cf6a4e9638d5c8ecb677654f6426", null ],
     [ "AUDIO_LISTENER_UPDATE", "audio_8h.html#aba9ba7056c3d0f6c331cb694fabdf94f", null ],
-    [ "AUDIO_SOURCE_CREATE", "audio_8h.html#a0dbcf52e5403262b2e016cdfdf46968e", null ]
+    [ "AUDIO_SOURCE_CREATE", "audio_8h.html#a0dbcf52e5403262b2e016cdfdf46968e", null ],
+    [ "AUDIO_SOURCE_FREE", "audio_8h.html#ab7ee3f12b8fabe09fc686cc0233984a8", null ]
 ];
