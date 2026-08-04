@@ -114,7 +114,26 @@ void unbind_mesh(Mesh* m)
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
 }
 
-void draw_mesh(Mesh* m, GLenum mode)
+static GLenum draw_mode_to_gl(DrawMode mode)
+{
+	switch(mode)
+	{
+		case DRAW_TRIANGLES:
+			return GL_TRIANGLES;
+
+		case DRAW_LINES:
+			return GL_LINES;
+
+		case DRAW_LINES_STRIP:
+			return GL_LINE_LOOP;
+	}
+
+	LOG_ERROR("Failed to get GLenum from DrawMode. Return GL_TRIANGLES");
+
+	return GL_TRIANGLES;
+}
+
+void draw_mesh(Mesh* m, DrawMode mode)
 {
 	if (m == NULL)
 	{
@@ -123,14 +142,14 @@ void draw_mesh(Mesh* m, GLenum mode)
 	}
 
 	GL_CALL(glDrawElements(
-		mode,
+		draw_mode_to_gl(mode),
 		m->indices_amount,
 		GL_UNSIGNED_INT,
 		NULL
 	));
 }
 
-void draw_mesh_instanced(Mesh* m, GLenum mode, unsigned int amount)
+void draw_mesh_instanced(Mesh* m, DrawMode mode, unsigned int amount)
 {
 	if (m == NULL)
 	{
@@ -139,7 +158,7 @@ void draw_mesh_instanced(Mesh* m, GLenum mode, unsigned int amount)
 	}
 
 	GL_CALL(glDrawElementsInstanced(
-		mode,
+		draw_mode_to_gl(mode),
 		m->indices_amount,
 		GL_UNSIGNED_INT,
 		NULL,

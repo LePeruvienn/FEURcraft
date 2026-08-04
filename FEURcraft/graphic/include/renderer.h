@@ -6,6 +6,11 @@
 
 #include <stdbool.h>
 
+/**
+ * \file renderer.h
+ * \brief Intiliase le moteur de rendu et son contexte
+ */
+
 typedef struct Renderer Renderer;
 
 struct Renderer

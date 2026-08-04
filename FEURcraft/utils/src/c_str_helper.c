@@ -84,9 +84,8 @@ bool c_str_mean_false(const char* str)
 		return false;
 	}
 
-	const size_t buf_size = 32;
-	char tmp[buf_size];
-	strncpy(tmp, str, buf_size);
+	char tmp[32];
+	strncpy(tmp, str, 32);
 
 	c_str_trim(tmp);
 	c_str_to_lower(tmp);
@@ -106,9 +105,8 @@ bool c_str_mean_true(const char* str)
 		return false;
 	}
 
-	const size_t buf_size = 32;
-	char tmp[buf_size];
-	strncpy(tmp, str, buf_size);
+	char tmp[32];
+	strncpy(tmp, str, 32);
 
 	c_str_trim(tmp);
 	c_str_to_lower(tmp);

@@ -1,4 +1,6 @@
-# FEURcraft
+<center>
+    <img src="FEURcraft.png"/>
+</center>
 
 Small Voxel Engine.
 

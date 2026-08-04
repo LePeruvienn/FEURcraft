@@ -10,18 +10,17 @@
 
 static void log_matrices(Mat4 view, Mat4 model, Mat4 proj)
 {
-	unsigned int str_size = 256;
-	char str_buf[str_size];
+	char str_buf[256];
 
-	mat4_to_str(view, str_buf, str_size);
+	mat4_to_str(view, str_buf, 256);
 	LOG("--- View Matrix ---");
 	LOG("%s", str_buf);
 
-	mat4_to_str(model, str_buf, str_size);
+	mat4_to_str(model, str_buf, 256);
 	LOG("--- Model Matrix (change) ---");
 	LOG("%s", str_buf);
 
-	mat4_to_str(proj, str_buf, str_size);
+	mat4_to_str(proj, str_buf, 256);
 	LOG("--- Proj Matrix ---");
 	LOG("%s", str_buf);
 }
@@ -76,7 +75,7 @@ int main()
 
 		bind_mesh(mesh);
 
-		draw_mesh(mesh, GL_LINE_STRIP);
+		draw_mesh(mesh, DRAW_LINES_STRIP);
 
 		window_swap_buffers(window);
 	}

@@ -4,10 +4,15 @@ get_filename_component(DIR_NAME ${CMAKE_CURRENT_SOURCE_DIR} NAME)
 set(LIB_NAME ${DIR_NAME})
 
 # Création de la librairie
-add_library(${LIB_NAME} SHARED)
+add_library(${LIB_NAME} STATIC)
 
 # Flag de compilation
-target_compile_options(${LIB_NAME} PRIVATE -Wall -Werror -Wextra)
+if(MSVC)
+	# Windows est chiant
+	# target_compile_options(${LIB_NAME} PRIVATE /W4 /WX)
+else()
+	target_compile_options(${LIB_NAME} PRIVATE -Wall -Werror -Wextra)
+endif()
 
 # Ajout des includes de la librairie
 target_include_directories(${LIB_NAME}

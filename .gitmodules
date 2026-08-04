@@ -1,6 +1,7 @@
-[submodule "deps/cglm"]
-	path = deps/cglm
-	url = https://github.com/recp/cglm.git
 [submodule "deps/GLFW"]
 	path = deps/GLFW
 	url = https://github.com/glfw/glfw.git
+
+[submodule "doxygen/doxygen-awesome"]
+	path = doxygen/doxygen-awesome
+	url = https://github.com/jothepro/doxygen-awesome-css.git

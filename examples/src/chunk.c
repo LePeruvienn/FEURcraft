@@ -151,7 +151,7 @@ int main()
 		shader_program_set_texture_unit(program, "uTextureArray", texture_unit);
 
 		bind_mesh(mesh_world);
-		draw_mesh(mesh_world, GL_TRIANGLES);
+		draw_mesh(mesh_world, DRAW_TRIANGLES);
 
 		// Draw debug lines
 
@@ -162,7 +162,7 @@ int main()
 		shader_program_set_mat4(program_debug, "uModelMatrix", model);
 
 		bind_mesh(mesh_debug);
-		draw_mesh(mesh_debug, GL_LINES);
+		draw_mesh(mesh_debug, DRAW_LINES);
 
 		window_swap_buffers(window);
 	}
