@@ -13,6 +13,7 @@ var annotated_dup =
     [ "Keyboard", "structKeyboard.html", null ],
     [ "Mat4", "structMat4.html", null ],
     [ "Mesh", "structMesh.html", null ],
+    [ "MouseInput", "structMouseInput.html", null ],
     [ "Renderer", "structRenderer.html", null ],
     [ "Shader", "structShader.html", null ],
     [ "ShaderProgram", "structShaderProgram.html", null ],
