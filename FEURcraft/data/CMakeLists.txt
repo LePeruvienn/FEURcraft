@@ -28,6 +28,7 @@ target_include_directories(${LIB_NAME}
 target_sources(${LIB_NAME}
 	PRIVATE
 		src/array_list.c
+		src/feur_string.c
 )
 
 # On link les librarie nécessaire à la compilation de la lib
