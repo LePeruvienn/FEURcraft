@@ -2,6 +2,9 @@ var annotated_dup =
 [
     [ "ArrayList", "structArrayList.html", "structArrayList" ],
     [ "Atlas", "structAtlas.html", "structAtlas" ],
+    [ "AudioConfigStruct", "structAudioConfigStruct.html", "structAudioConfigStruct" ],
+    [ "AudioEmitterStruct", "structAudioEmitterStruct.html", "structAudioEmitterStruct" ],
+    [ "AudioListenerStruct", "structAudioListenerStruct.html", "structAudioListenerStruct" ],
     [ "Camera", "structCamera.html", "structCamera" ],
     [ "Chunk", "structChunk.html", "structChunk" ],
     [ "FEUR_Test", "structFEUR__Test.html", "structFEUR__Test" ],

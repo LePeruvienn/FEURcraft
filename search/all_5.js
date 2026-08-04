@@ -8,9 +8,10 @@ var searchData=
   ['env_5fhelper_2ec_5',['env_helper.c',['../env__helper_8c.html',1,'']]],
   ['env_5fhelper_2eh_6',['env_helper.h',['../env__helper_8h.html',1,'']]],
   ['epsilon_7',['EPSILON',['../test__assert_8h.html#a002b2f4894492820fe708b1b7e7c5e70',1,'test_assert.h']]],
-  ['error_5fchecker_2eh_8',['error_checker.h',['../error__checker_8h.html',1,'']]],
-  ['exécutables_9',['Exécutables',['../index.html#autotoc_md6',1,'']]],
-  ['exit_5ferror_10',['EXIT_ERROR',['../logger_8h.html#a2b06e72323be9f5500c25924ac6fa5b6',1,'logger.h']]],
-  ['exit_5fon_5ferror_11',['EXIT_ON_ERROR',['../logger_8h.html#aac1d7bb7abb0c7f2494d2f49ff486e85',1,'logger.h']]],
-  ['exit_5fprogram_12',['EXIT_PROGRAM',['../logger_8h.html#a45701bae2fd25cd75d47a4f9fd84e38a',1,'logger.h']]]
+  ['error_8',['error',['../structAudioConfigStruct.html#a00006eb581a4cd78b9fb86cbfa720355',1,'AudioConfigStruct']]],
+  ['error_5fchecker_2eh_9',['error_checker.h',['../error__checker_8h.html',1,'']]],
+  ['exécutables_10',['Exécutables',['../index.html#autotoc_md6',1,'']]],
+  ['exit_5ferror_11',['EXIT_ERROR',['../logger_8h.html#a2b06e72323be9f5500c25924ac6fa5b6',1,'logger.h']]],
+  ['exit_5fon_5ferror_12',['EXIT_ON_ERROR',['../logger_8h.html#aac1d7bb7abb0c7f2494d2f49ff486e85',1,'logger.h']]],
+  ['exit_5fprogram_13',['EXIT_PROGRAM',['../logger_8h.html#a45701bae2fd25cd75d47a4f9fd84e38a',1,'logger.h']]]
 ];

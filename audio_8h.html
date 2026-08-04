@@ -1,0 +1,1023 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>FEURcraft: Référence du fichier FEURcraft/audio/include/audio.h</title>
+<link rel="icon" href="FEURcraft.png" type="image/x-icon" />
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="FEURcraft.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">FEURcraft<span id="projectnumber">&#160;0.0.1</span>
+   </div>
+   <div id="projectbrief">Moteur Voxel.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Recherche',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('audio_8h.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Chargement...</div>
+<div class="SRStatus" id="Searching">Recherche...</div>
+<div class="SRStatus" id="NoMatches">Aucune correspondance</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Référence du fichier audio.h</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Structure et fonctions permettant de gérer l'audio.  
+<a href="#details">Plus de détails...</a></p>
+<div class="textblock"><code>#include &lt;AL/al.h&gt;</code><br />
+<code>#include &lt;AL/alc.h&gt;</code><br />
+<code>#include &lt;sndfile.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="vec3_8h_source.html">vec3.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Graphe des dépendances par inclusion de audio.h:</div>
+<div class="dyncontent">
+<div class="center"><img src="audio_8h__incl.png" border="0" usemap="#aFEURcraft_2audio_2include_2audio_8h" loading="lazy" alt=""/></div>
+<map name="aFEURcraft_2audio_2include_2audio_8h" id="aFEURcraft_2audio_2include_2audio_8h">
+<area shape="rect" title="Structure et fonctions permettant de gérer l&#39;audio." alt="" coords="90,5,255,44"/>
+<area shape="rect" title=" " alt="" coords="5,92,68,117"/>
+<area shape="poly" title=" " alt="" coords="141,47,71,86,68,82,138,42"/>
+<area shape="rect" title=" " alt="" coords="91,92,160,117"/>
+<area shape="poly" title=" " alt="" coords="163,46,143,80,138,77,159,43"/>
+<area shape="rect" title=" " alt="" coords="184,92,254,117"/>
+<area shape="poly" title=" " alt="" coords="186,43,207,77,202,80,182,46"/>
+<area shape="rect" href="vec3_8h.html" title=" " alt="" coords="279,92,338,117"/>
+<area shape="poly" title=" " alt="" coords="207,42,277,82,274,86,204,47"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier :</div>
+<div class="dyncontent">
+<div class="center"><img src="audio_8h__dep__incl.png" border="0" usemap="#aFEURcraft_2audio_2include_2audio_8hdep" loading="lazy" alt=""/></div>
+<map name="aFEURcraft_2audio_2include_2audio_8hdep" id="aFEURcraft_2audio_2include_2audio_8hdep">
+<area shape="rect" title="Structure et fonctions permettant de gérer l&#39;audio." alt="" coords="5,5,170,44"/>
+<area shape="rect" href="audio_8c.html" title=" " alt="" coords="17,92,158,131"/>
+<area shape="poly" title=" " alt="" coords="90,60,90,91,85,91,85,60"/>
+</map>
+</div>
+</div>
+<p><a href="audio_8h_source.html">Aller au code source de ce fichier.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Structures de données</h2></td></tr>
+<tr class="memitem:AudioConfigStruct" id="r_AudioConfigStruct"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structAudioConfigStruct.html">AudioConfigStruct</a></td></tr>
+<tr class="memitem:AudioListenerStruct" id="r_AudioListenerStruct"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structAudioListenerStruct.html">AudioListenerStruct</a></td></tr>
+<tr class="memitem:AudioEmitterStruct" id="r_AudioEmitterStruct"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structAudioEmitterStruct.html">AudioEmitterStruct</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-typedef-members" class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+Définitions de type</h2></td></tr>
+<tr class="memitem:a334fd2ea448fb62ec410b3f96480ad94" id="r_a334fd2ea448fb62ec410b3f96480ad94"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="structAudioConfigStruct.html">AudioConfigStruct</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a334fd2ea448fb62ec410b3f96480ad94">AudioConfig</a></td></tr>
+<tr class="memdesc:a334fd2ea448fb62ec410b3f96480ad94"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type représentant les données de config d'OpenAL.  <br /></td></tr>
+<tr class="memitem:aeb12fb6b97d973f47522ad70bf6f8862" id="r_aeb12fb6b97d973f47522ad70bf6f8862"><td class="memItemLeft" align="right" valign="top">typedef ALuint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aeb12fb6b97d973f47522ad70bf6f8862">AudioSource</a></td></tr>
+<tr class="memdesc:aeb12fb6b97d973f47522ad70bf6f8862"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type représentant les donnée d'un sons.  <br /></td></tr>
+<tr class="memitem:a3700e55e1dc43549d557258fac1af4d7" id="r_a3700e55e1dc43549d557258fac1af4d7"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="structAudioListenerStruct.html">AudioListenerStruct</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3700e55e1dc43549d557258fac1af4d7">AudioListener</a></td></tr>
+<tr class="memdesc:a3700e55e1dc43549d557258fac1af4d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type représentant l'audio listener, l'élément qui reçoit le sons.  <br /></td></tr>
+<tr class="memitem:a290d3170fe99a97392978515bacf057d" id="r_a290d3170fe99a97392978515bacf057d"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="structAudioEmitterStruct.html">AudioEmitterStruct</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a290d3170fe99a97392978515bacf057d">AudioEmitter</a></td></tr>
+<tr class="memdesc:a290d3170fe99a97392978515bacf057d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type représentant un audio emitter, un élément qui émèts du sons.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr class="memitem:a1e4ffb46267753d2cb0421b7f9d63dec" id="r_a1e4ffb46267753d2cb0421b7f9d63dec"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a334fd2ea448fb62ec410b3f96480ad94">AudioConfig</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1e4ffb46267753d2cb0421b7f9d63dec">AUDIO_INSTANTIATE</a> ()</td></tr>
+<tr class="memdesc:a1e4ffb46267753d2cb0421b7f9d63dec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Instantie OpenAL et renvoit les données associée.  <br /></td></tr>
+<tr class="memitem:a0dbcf52e5403262b2e016cdfdf46968e" id="r_a0dbcf52e5403262b2e016cdfdf46968e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#aeb12fb6b97d973f47522ad70bf6f8862">AudioSource</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0dbcf52e5403262b2e016cdfdf46968e">AUDIO_SOURCE_CREATE</a> (const char *filename)</td></tr>
+<tr class="memdesc:a0dbcf52e5403262b2e016cdfdf46968e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Créer un audio source qui est en réalité un audio buffer pour OpenAL.  <br /></td></tr>
+<tr class="memitem:a85eed784497565744d7d0e5a2cd5e8eb" id="r_a85eed784497565744d7d0e5a2cd5e8eb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a3700e55e1dc43549d557258fac1af4d7">AudioListener</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a85eed784497565744d7d0e5a2cd5e8eb">AUDIO_LISTENER_CREATE_WITH_POSITION_AND_ROTATION</a> (<a class="el" href="structVec3.html">Vec3</a> pos, <a class="el" href="structVec3.html">Vec3</a> atVector, <a class="el" href="structVec3.html">Vec3</a> upVector)</td></tr>
+<tr class="memdesc:a85eed784497565744d7d0e5a2cd5e8eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Créer une structure représentant l'<a class="el" href="#a3700e55e1dc43549d557258fac1af4d7" title="Type représentant l&#39;audio listener, l&#39;élément qui reçoit le sons.">AudioListener</a>.  <br /></td></tr>
+<tr class="memitem:afe8eec4cb3ced1255b9838781144f81a" id="r_afe8eec4cb3ced1255b9838781144f81a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a3700e55e1dc43549d557258fac1af4d7">AudioListener</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afe8eec4cb3ced1255b9838781144f81a">AUDIO_LISTENER_CREATE_WITH_POSITION</a> (<a class="el" href="structVec3.html">Vec3</a> pos)</td></tr>
+<tr class="memdesc:afe8eec4cb3ced1255b9838781144f81a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Créer une structure représentant l'audio listener.  <br /></td></tr>
+<tr class="memitem:ab980daad45d21552b1572ec66b729da2" id="r_ab980daad45d21552b1572ec66b729da2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a3700e55e1dc43549d557258fac1af4d7">AudioListener</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab980daad45d21552b1572ec66b729da2">AUDIO_LISTENER_CREATE</a> ()</td></tr>
+<tr class="memdesc:ab980daad45d21552b1572ec66b729da2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Créer une structure représentant l'audio listener.  <br /></td></tr>
+<tr class="memitem:ab2fa4f7cf3251b872b8b86941cebecd0" id="r_ab2fa4f7cf3251b872b8b86941cebecd0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab2fa4f7cf3251b872b8b86941cebecd0">AUDIO_LISTENER_SET_GAIN</a> (<a class="el" href="#a3700e55e1dc43549d557258fac1af4d7">AudioListener</a> audioLi, float gain)</td></tr>
+<tr class="memdesc:ab2fa4f7cf3251b872b8b86941cebecd0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mets à jours le gain de l'<a class="el" href="#a3700e55e1dc43549d557258fac1af4d7" title="Type représentant l&#39;audio listener, l&#39;élément qui reçoit le sons.">AudioListener</a>.  <br /></td></tr>
+<tr class="memitem:a07ab5efa7c83f5d9a0643c85aef74699" id="r_a07ab5efa7c83f5d9a0643c85aef74699"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a07ab5efa7c83f5d9a0643c85aef74699">AUDIO_LISTENER_SET_POSITION</a> (<a class="el" href="#a3700e55e1dc43549d557258fac1af4d7">AudioListener</a> audioLi, <a class="el" href="structVec3.html">Vec3</a> pos)</td></tr>
+<tr class="memdesc:a07ab5efa7c83f5d9a0643c85aef74699"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mets à jours la position de l'<a class="el" href="#a3700e55e1dc43549d557258fac1af4d7" title="Type représentant l&#39;audio listener, l&#39;élément qui reçoit le sons.">AudioListener</a>.  <br /></td></tr>
+<tr class="memitem:a9111cf6a4e9638d5c8ecb677654f6426" id="r_a9111cf6a4e9638d5c8ecb677654f6426"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9111cf6a4e9638d5c8ecb677654f6426">AUDIO_LISTENER_SET_ROTATION</a> (<a class="el" href="#a3700e55e1dc43549d557258fac1af4d7">AudioListener</a> audioLi, <a class="el" href="structVec3.html">Vec3</a> at, <a class="el" href="structVec3.html">Vec3</a> up)</td></tr>
+<tr class="memdesc:a9111cf6a4e9638d5c8ecb677654f6426"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mets à jours la rotation de l'<a class="el" href="#a3700e55e1dc43549d557258fac1af4d7" title="Type représentant l&#39;audio listener, l&#39;élément qui reçoit le sons.">AudioListener</a>.  <br /></td></tr>
+<tr class="memitem:a24950de1f89edb88a3e3b26fa6ee6f96" id="r_a24950de1f89edb88a3e3b26fa6ee6f96"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a24950de1f89edb88a3e3b26fa6ee6f96">AUDIO_LISTENER_GET_GAIN</a> (<a class="el" href="#a3700e55e1dc43549d557258fac1af4d7">AudioListener</a> audioLi)</td></tr>
+<tr class="memdesc:a24950de1f89edb88a3e3b26fa6ee6f96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoit le gain de l'<a class="el" href="#a3700e55e1dc43549d557258fac1af4d7" title="Type représentant l&#39;audio listener, l&#39;élément qui reçoit le sons.">AudioListener</a>.  <br /></td></tr>
+<tr class="memitem:a6684747b52b4af592599125e324bf8cb" id="r_a6684747b52b4af592599125e324bf8cb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structVec3.html">Vec3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6684747b52b4af592599125e324bf8cb">AUDIO_LISTENER_GET_POSITION</a> (<a class="el" href="#a3700e55e1dc43549d557258fac1af4d7">AudioListener</a> audioLi)</td></tr>
+<tr class="memdesc:a6684747b52b4af592599125e324bf8cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoit la position de l'<a class="el" href="#a3700e55e1dc43549d557258fac1af4d7" title="Type représentant l&#39;audio listener, l&#39;élément qui reçoit le sons.">AudioListener</a>.  <br /></td></tr>
+<tr class="memitem:a10ea25425aa198c115f01fe4910bf019" id="r_a10ea25425aa198c115f01fe4910bf019"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structVec3.html">Vec3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a10ea25425aa198c115f01fe4910bf019">AUDIO_LISTENER_GET_AT_VECTOR</a> (<a class="el" href="#a3700e55e1dc43549d557258fac1af4d7">AudioListener</a> audioLi)</td></tr>
+<tr class="memdesc:a10ea25425aa198c115f01fe4910bf019"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoit le vecteur direction de l'<a class="el" href="#a3700e55e1dc43549d557258fac1af4d7" title="Type représentant l&#39;audio listener, l&#39;élément qui reçoit le sons.">AudioListener</a>.  <br /></td></tr>
+<tr class="memitem:adb29620b3642d491af3f8e4531b6db3d" id="r_adb29620b3642d491af3f8e4531b6db3d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structVec3.html">Vec3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adb29620b3642d491af3f8e4531b6db3d">AUDIO_LISTENER_GET_UP_VECTOR</a> (<a class="el" href="#a3700e55e1dc43549d557258fac1af4d7">AudioListener</a> audioLi)</td></tr>
+<tr class="memdesc:adb29620b3642d491af3f8e4531b6db3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoit le vecteur indiquant le haut de l'<a class="el" href="#a3700e55e1dc43549d557258fac1af4d7" title="Type représentant l&#39;audio listener, l&#39;élément qui reçoit le sons.">AudioListener</a>.  <br /></td></tr>
+<tr class="memitem:aba9ba7056c3d0f6c331cb694fabdf94f" id="r_aba9ba7056c3d0f6c331cb694fabdf94f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aba9ba7056c3d0f6c331cb694fabdf94f">AUDIO_LISTENER_UPDATE</a> (<a class="el" href="#a3700e55e1dc43549d557258fac1af4d7">AudioListener</a>)</td></tr>
+<tr class="memdesc:aba9ba7056c3d0f6c331cb694fabdf94f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mets à jours l'état de l'<a class="el" href="#a3700e55e1dc43549d557258fac1af4d7" title="Type représentant l&#39;audio listener, l&#39;élément qui reçoit le sons.">AudioListener</a>.  <br /></td></tr>
+<tr class="memitem:a8b0ffb7338d258484b13ef963138a466" id="r_a8b0ffb7338d258484b13ef963138a466"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a290d3170fe99a97392978515bacf057d">AudioEmitter</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8b0ffb7338d258484b13ef963138a466">AUDIO_EMITTER_CREATE_WITH_POSITION</a> (<a class="el" href="#aeb12fb6b97d973f47522ad70bf6f8862">AudioSource</a> audioSource, <a class="el" href="structVec3.html">Vec3</a> pos)</td></tr>
+<tr class="memdesc:a8b0ffb7338d258484b13ef963138a466"><td class="mdescLeft">&#160;</td><td class="mdescRight">Créer un <a class="el" href="#a290d3170fe99a97392978515bacf057d" title="Type représentant un audio emitter, un élément qui émèts du sons.">AudioEmitter</a>.  <br /></td></tr>
+<tr class="memitem:aa67b7fd1d246f3381c4c4db388547cad" id="r_aa67b7fd1d246f3381c4c4db388547cad"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a290d3170fe99a97392978515bacf057d">AudioEmitter</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa67b7fd1d246f3381c4c4db388547cad">AUDIO_EMITTER_CREATE</a> (<a class="el" href="#aeb12fb6b97d973f47522ad70bf6f8862">AudioSource</a> audioSource)</td></tr>
+<tr class="memdesc:aa67b7fd1d246f3381c4c4db388547cad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Créer un <a class="el" href="#a290d3170fe99a97392978515bacf057d" title="Type représentant un audio emitter, un élément qui émèts du sons.">AudioEmitter</a>.  <br /></td></tr>
+<tr class="memitem:a184e302c3d1b428af88f4629d9266935" id="r_a184e302c3d1b428af88f4629d9266935"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a184e302c3d1b428af88f4629d9266935">AUDIO_EMITTER_SET_GAIN</a> (<a class="el" href="#a290d3170fe99a97392978515bacf057d">AudioEmitter</a> audioEm, float gain)</td></tr>
+<tr class="memdesc:a184e302c3d1b428af88f4629d9266935"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mets à jours le gain de l'<a class="el" href="#a290d3170fe99a97392978515bacf057d" title="Type représentant un audio emitter, un élément qui émèts du sons.">AudioEmitter</a>.  <br /></td></tr>
+<tr class="memitem:ad625b05f93c9d6f419e2f762398e9adb" id="r_ad625b05f93c9d6f419e2f762398e9adb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad625b05f93c9d6f419e2f762398e9adb">AUDIO_EMITTER_SET_POSITION</a> (<a class="el" href="#a290d3170fe99a97392978515bacf057d">AudioEmitter</a> audioEm, <a class="el" href="structVec3.html">Vec3</a> pos)</td></tr>
+<tr class="memdesc:ad625b05f93c9d6f419e2f762398e9adb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mets à jours la position de l'<a class="el" href="#a290d3170fe99a97392978515bacf057d" title="Type représentant un audio emitter, un élément qui émèts du sons.">AudioEmitter</a>.  <br /></td></tr>
+<tr class="memitem:a2b7c499a34fd8a4cd12e7a4ee1049e61" id="r_a2b7c499a34fd8a4cd12e7a4ee1049e61"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2b7c499a34fd8a4cd12e7a4ee1049e61">AUDIO_EMITTER_SET_DIRECTION</a> (<a class="el" href="#a290d3170fe99a97392978515bacf057d">AudioEmitter</a> audioEm, <a class="el" href="structVec3.html">Vec3</a> direction)</td></tr>
+<tr class="memdesc:a2b7c499a34fd8a4cd12e7a4ee1049e61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mets à jours la direction de l'<a class="el" href="#a290d3170fe99a97392978515bacf057d" title="Type représentant un audio emitter, un élément qui émèts du sons.">AudioEmitter</a>.  <br /></td></tr>
+<tr class="memitem:a1774cbbdc9b8ee92de21d1695ff76e00" id="r_a1774cbbdc9b8ee92de21d1695ff76e00"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1774cbbdc9b8ee92de21d1695ff76e00">AUDIO_EMITTER_GET_GAIN</a> (<a class="el" href="#a290d3170fe99a97392978515bacf057d">AudioEmitter</a> audioEm)</td></tr>
+<tr class="memdesc:a1774cbbdc9b8ee92de21d1695ff76e00"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoit le gain de l'<a class="el" href="#a290d3170fe99a97392978515bacf057d" title="Type représentant un audio emitter, un élément qui émèts du sons.">AudioEmitter</a>.  <br /></td></tr>
+<tr class="memitem:ad2a1505bcc86678357e81966533195f6" id="r_ad2a1505bcc86678357e81966533195f6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structVec3.html">Vec3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad2a1505bcc86678357e81966533195f6">AUDIO_EMITTER_GET_POSITION</a> (<a class="el" href="#a290d3170fe99a97392978515bacf057d">AudioEmitter</a> audioEm)</td></tr>
+<tr class="memdesc:ad2a1505bcc86678357e81966533195f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoit la position de l'<a class="el" href="#a290d3170fe99a97392978515bacf057d" title="Type représentant un audio emitter, un élément qui émèts du sons.">AudioEmitter</a>.  <br /></td></tr>
+<tr class="memitem:ad14490c9290965066e1d95786b4466c8" id="r_ad14490c9290965066e1d95786b4466c8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structVec3.html">Vec3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad14490c9290965066e1d95786b4466c8">AUDIO_EMITTER_GET_DIRECTION</a> (<a class="el" href="#a290d3170fe99a97392978515bacf057d">AudioEmitter</a> audioEm)</td></tr>
+<tr class="memdesc:ad14490c9290965066e1d95786b4466c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoit la direction de l'<a class="el" href="#a290d3170fe99a97392978515bacf057d" title="Type représentant un audio emitter, un élément qui émèts du sons.">AudioEmitter</a>.  <br /></td></tr>
+<tr class="memitem:a1c581e5113d7aa95dc819bf33fecb561" id="r_a1c581e5113d7aa95dc819bf33fecb561"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1c581e5113d7aa95dc819bf33fecb561">AUDIO_EMITTER_UPDATE</a> (<a class="el" href="#a290d3170fe99a97392978515bacf057d">AudioEmitter</a>)</td></tr>
+<tr class="memdesc:a1c581e5113d7aa95dc819bf33fecb561"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mets à jours l'état de l'<a class="el" href="#a290d3170fe99a97392978515bacf057d" title="Type représentant un audio emitter, un élément qui émèts du sons.">AudioEmitter</a>.  <br /></td></tr>
+<tr class="memitem:a125bddff6de6cabcd3af011591c6ba7c" id="r_a125bddff6de6cabcd3af011591c6ba7c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a125bddff6de6cabcd3af011591c6ba7c">AUDIO_EMITTER_PLAY</a> (<a class="el" href="#a290d3170fe99a97392978515bacf057d">AudioEmitter</a> audioEm)</td></tr>
+<tr class="memdesc:a125bddff6de6cabcd3af011591c6ba7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Joue le sons ou reprends la lecture du sons de l'<a class="el" href="#a290d3170fe99a97392978515bacf057d" title="Type représentant un audio emitter, un élément qui émèts du sons.">AudioEmitter</a>.  <br /></td></tr>
+<tr class="memitem:aba64fc49761113c6a97f733e1521cd1d" id="r_aba64fc49761113c6a97f733e1521cd1d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aba64fc49761113c6a97f733e1521cd1d">AUDIO_EMITTER_STOP</a> (<a class="el" href="#a290d3170fe99a97392978515bacf057d">AudioEmitter</a> audioEm)</td></tr>
+<tr class="memdesc:aba64fc49761113c6a97f733e1521cd1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stop le sons de l'<a class="el" href="#a290d3170fe99a97392978515bacf057d" title="Type représentant un audio emitter, un élément qui émèts du sons.">AudioEmitter</a>.  <br /></td></tr>
+<tr class="memitem:ae127820b30c6eed94988081ab6f4736d" id="r_ae127820b30c6eed94988081ab6f4736d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae127820b30c6eed94988081ab6f4736d">AUDIO_EMITTER_PAUSE</a> (<a class="el" href="#a290d3170fe99a97392978515bacf057d">AudioEmitter</a> audioEm)</td></tr>
+<tr class="memdesc:ae127820b30c6eed94988081ab6f4736d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mets en pause le sons de l'<a class="el" href="#a290d3170fe99a97392978515bacf057d" title="Type représentant un audio emitter, un élément qui émèts du sons.">AudioEmitter</a>.  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Description détaillée</h2>
+<div class="textblock"><p>Structure et fonctions permettant de gérer l'audio. </p>
+<p>Ce fichier contient toute les fonction permettant de controller l'audio du jeu. </p>
+
+<p class="definition">Définition dans le fichier <a class="el" href="audio_8h_source.html">audio.h</a>.</p>
+</div><a name="doc-typedef-members" id="doc-typedef-members"></a><h2 id="header-doc-typedef-members" class="groupheader">Documentation des définitions de type</h2>
+<a id="a334fd2ea448fb62ec410b3f96480ad94" name="a334fd2ea448fb62ec410b3f96480ad94"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a334fd2ea448fb62ec410b3f96480ad94">&#9670;&#160;</a></span>AudioConfig</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="structAudioConfigStruct.html">AudioConfigStruct</a>* <a class="el" href="#a334fd2ea448fb62ec410b3f96480ad94">AudioConfig</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Type représentant les données de config d'OpenAL. </p>
+
+<p class="definition">Définition à la ligne <a class="el" href="audio_8h_source.html#l00034">34</a> du fichier <a class="el" href="audio_8h_source.html">audio.h</a>.</p>
+
+</div>
+</div>
+<a id="a290d3170fe99a97392978515bacf057d" name="a290d3170fe99a97392978515bacf057d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a290d3170fe99a97392978515bacf057d">&#9670;&#160;</a></span>AudioEmitter</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="structAudioEmitterStruct.html">AudioEmitterStruct</a>* <a class="el" href="#a290d3170fe99a97392978515bacf057d">AudioEmitter</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Type représentant un audio emitter, un élément qui émèts du sons. </p>
+
+<p class="definition">Définition à la ligne <a class="el" href="audio_8h_source.html#l00076">76</a> du fichier <a class="el" href="audio_8h_source.html">audio.h</a>.</p>
+
+</div>
+</div>
+<a id="a3700e55e1dc43549d557258fac1af4d7" name="a3700e55e1dc43549d557258fac1af4d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3700e55e1dc43549d557258fac1af4d7">&#9670;&#160;</a></span>AudioListener</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="structAudioListenerStruct.html">AudioListenerStruct</a>* <a class="el" href="#a3700e55e1dc43549d557258fac1af4d7">AudioListener</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Type représentant l'audio listener, l'élément qui reçoit le sons. </p>
+
+<p class="definition">Définition à la ligne <a class="el" href="audio_8h_source.html#l00058">58</a> du fichier <a class="el" href="audio_8h_source.html">audio.h</a>.</p>
+
+</div>
+</div>
+<a id="aeb12fb6b97d973f47522ad70bf6f8862" name="aeb12fb6b97d973f47522ad70bf6f8862"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb12fb6b97d973f47522ad70bf6f8862">&#9670;&#160;</a></span>AudioSource</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef ALuint <a class="el" href="#aeb12fb6b97d973f47522ad70bf6f8862">AudioSource</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Type représentant les donnée d'un sons. </p>
+
+<p class="definition">Définition à la ligne <a class="el" href="audio_8h_source.html#l00040">40</a> du fichier <a class="el" href="audio_8h_source.html">audio.h</a>.</p>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentation des fonctions</h2>
+<a id="aa67b7fd1d246f3381c4c4db388547cad" name="aa67b7fd1d246f3381c4c4db388547cad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa67b7fd1d246f3381c4c4db388547cad">&#9670;&#160;</a></span>AUDIO_EMITTER_CREATE()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a290d3170fe99a97392978515bacf057d">AudioEmitter</a> AUDIO_EMITTER_CREATE </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#aeb12fb6b97d973f47522ad70bf6f8862">AudioSource</a></td>          <td class="paramname"><span class="paramname"><em>audioSource</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Créer un <a class="el" href="#a290d3170fe99a97392978515bacf057d" title="Type représentant un audio emitter, un élément qui émèts du sons.">AudioEmitter</a>. </p>
+<dl class="section return"><dt>Renvoie</dt><dd>L'<a class="el" href="#a290d3170fe99a97392978515bacf057d" title="Type représentant un audio emitter, un élément qui émèts du sons.">AudioEmitter</a>. </dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="audio_8h_source.html#l00241">241</a> du fichier <a class="el" href="audio_8h_source.html">audio.h</a>.</p>
+
+</div>
+</div>
+<a id="a8b0ffb7338d258484b13ef963138a466" name="a8b0ffb7338d258484b13ef963138a466"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b0ffb7338d258484b13ef963138a466">&#9670;&#160;</a></span>AUDIO_EMITTER_CREATE_WITH_POSITION()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a290d3170fe99a97392978515bacf057d">AudioEmitter</a> AUDIO_EMITTER_CREATE_WITH_POSITION </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#aeb12fb6b97d973f47522ad70bf6f8862">AudioSource</a></td>          <td class="paramname"><span class="paramname"><em>audioSource</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structVec3.html">Vec3</a></td>          <td class="paramname"><span class="paramname"><em>pos</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Créer un <a class="el" href="#a290d3170fe99a97392978515bacf057d" title="Type représentant un audio emitter, un élément qui émèts du sons.">AudioEmitter</a>. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pos</td><td>La position initial de l'<a class="el" href="#a290d3170fe99a97392978515bacf057d" title="Type représentant un audio emitter, un élément qui émèts du sons.">AudioEmitter</a>.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>L'<a class="el" href="#a290d3170fe99a97392978515bacf057d" title="Type représentant un audio emitter, un élément qui émèts du sons.">AudioEmitter</a>. </dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="audio_8c_source.html#l00174">174</a> du fichier <a class="el" href="audio_8c_source.html">audio.c</a>.</p>
+
+</div>
+</div>
+<a id="ad14490c9290965066e1d95786b4466c8" name="ad14490c9290965066e1d95786b4466c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad14490c9290965066e1d95786b4466c8">&#9670;&#160;</a></span>AUDIO_EMITTER_GET_DIRECTION()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structVec3.html">Vec3</a> AUDIO_EMITTER_GET_DIRECTION </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a290d3170fe99a97392978515bacf057d">AudioEmitter</a></td>          <td class="paramname"><span class="paramname"><em>audioEm</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Renvoit la direction de l'<a class="el" href="#a290d3170fe99a97392978515bacf057d" title="Type représentant un audio emitter, un élément qui émèts du sons.">AudioEmitter</a>. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">audioEm</td><td>L'<a class="el" href="#a290d3170fe99a97392978515bacf057d" title="Type représentant un audio emitter, un élément qui émèts du sons.">AudioEmitter</a>.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>La direction de l'<a class="el" href="#a290d3170fe99a97392978515bacf057d" title="Type représentant un audio emitter, un élément qui émèts du sons.">AudioEmitter</a>. </dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="audio_8h_source.html#l00294">294</a> du fichier <a class="el" href="audio_8h_source.html">audio.h</a>.</p>
+
+</div>
+</div>
+<a id="a1774cbbdc9b8ee92de21d1695ff76e00" name="a1774cbbdc9b8ee92de21d1695ff76e00"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1774cbbdc9b8ee92de21d1695ff76e00">&#9670;&#160;</a></span>AUDIO_EMITTER_GET_GAIN()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float AUDIO_EMITTER_GET_GAIN </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a290d3170fe99a97392978515bacf057d">AudioEmitter</a></td>          <td class="paramname"><span class="paramname"><em>audioEm</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Renvoit le gain de l'<a class="el" href="#a290d3170fe99a97392978515bacf057d" title="Type représentant un audio emitter, un élément qui émèts du sons.">AudioEmitter</a>. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">audioEm</td><td>L'<a class="el" href="#a290d3170fe99a97392978515bacf057d" title="Type représentant un audio emitter, un élément qui émèts du sons.">AudioEmitter</a>.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Le gain de l'<a class="el" href="#a290d3170fe99a97392978515bacf057d" title="Type représentant un audio emitter, un élément qui émèts du sons.">AudioEmitter</a>. </dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="audio_8h_source.html#l00276">276</a> du fichier <a class="el" href="audio_8h_source.html">audio.h</a>.</p>
+
+</div>
+</div>
+<a id="ad2a1505bcc86678357e81966533195f6" name="ad2a1505bcc86678357e81966533195f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad2a1505bcc86678357e81966533195f6">&#9670;&#160;</a></span>AUDIO_EMITTER_GET_POSITION()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structVec3.html">Vec3</a> AUDIO_EMITTER_GET_POSITION </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a290d3170fe99a97392978515bacf057d">AudioEmitter</a></td>          <td class="paramname"><span class="paramname"><em>audioEm</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Renvoit la position de l'<a class="el" href="#a290d3170fe99a97392978515bacf057d" title="Type représentant un audio emitter, un élément qui émèts du sons.">AudioEmitter</a>. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">audioEm</td><td>L'<a class="el" href="#a290d3170fe99a97392978515bacf057d" title="Type représentant un audio emitter, un élément qui émèts du sons.">AudioEmitter</a>.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>La position de l'<a class="el" href="#a290d3170fe99a97392978515bacf057d" title="Type représentant un audio emitter, un élément qui émèts du sons.">AudioEmitter</a>. </dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="audio_8h_source.html#l00285">285</a> du fichier <a class="el" href="audio_8h_source.html">audio.h</a>.</p>
+
+</div>
+</div>
+<a id="ae127820b30c6eed94988081ab6f4736d" name="ae127820b30c6eed94988081ab6f4736d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae127820b30c6eed94988081ab6f4736d">&#9670;&#160;</a></span>AUDIO_EMITTER_PAUSE()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AUDIO_EMITTER_PAUSE </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a290d3170fe99a97392978515bacf057d">AudioEmitter</a></td>          <td class="paramname"><span class="paramname"><em>audioEm</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Mets en pause le sons de l'<a class="el" href="#a290d3170fe99a97392978515bacf057d" title="Type représentant un audio emitter, un élément qui émèts du sons.">AudioEmitter</a>. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">audioEm</td><td>L'<a class="el" href="#a290d3170fe99a97392978515bacf057d" title="Type représentant un audio emitter, un élément qui émèts du sons.">AudioEmitter</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="audio_8h_source.html#l00323">323</a> du fichier <a class="el" href="audio_8h_source.html">audio.h</a>.</p>
+
+</div>
+</div>
+<a id="a125bddff6de6cabcd3af011591c6ba7c" name="a125bddff6de6cabcd3af011591c6ba7c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a125bddff6de6cabcd3af011591c6ba7c">&#9670;&#160;</a></span>AUDIO_EMITTER_PLAY()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AUDIO_EMITTER_PLAY </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a290d3170fe99a97392978515bacf057d">AudioEmitter</a></td>          <td class="paramname"><span class="paramname"><em>audioEm</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Joue le sons ou reprends la lecture du sons de l'<a class="el" href="#a290d3170fe99a97392978515bacf057d" title="Type représentant un audio emitter, un élément qui émèts du sons.">AudioEmitter</a>. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">audioEm</td><td>L'<a class="el" href="#a290d3170fe99a97392978515bacf057d" title="Type représentant un audio emitter, un élément qui émèts du sons.">AudioEmitter</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="audio_8h_source.html#l00309">309</a> du fichier <a class="el" href="audio_8h_source.html">audio.h</a>.</p>
+
+</div>
+</div>
+<a id="a2b7c499a34fd8a4cd12e7a4ee1049e61" name="a2b7c499a34fd8a4cd12e7a4ee1049e61"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b7c499a34fd8a4cd12e7a4ee1049e61">&#9670;&#160;</a></span>AUDIO_EMITTER_SET_DIRECTION()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AUDIO_EMITTER_SET_DIRECTION </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a290d3170fe99a97392978515bacf057d">AudioEmitter</a></td>          <td class="paramname"><span class="paramname"><em>audioEm</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structVec3.html">Vec3</a></td>          <td class="paramname"><span class="paramname"><em>direction</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Mets à jours la direction de l'<a class="el" href="#a290d3170fe99a97392978515bacf057d" title="Type représentant un audio emitter, un élément qui émèts du sons.">AudioEmitter</a>. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">audioEm</td><td>L'<a class="el" href="#a290d3170fe99a97392978515bacf057d" title="Type représentant un audio emitter, un élément qui émèts du sons.">AudioEmitter</a>. </td></tr>
+    <tr><td class="paramname">direction</td><td>La nouvelle direction de l'<a class="el" href="#a290d3170fe99a97392978515bacf057d" title="Type représentant un audio emitter, un élément qui émèts du sons.">AudioEmitter</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="audio_8c_source.html#l00202">202</a> du fichier <a class="el" href="audio_8c_source.html">audio.c</a>.</p>
+
+</div>
+</div>
+<a id="a184e302c3d1b428af88f4629d9266935" name="a184e302c3d1b428af88f4629d9266935"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a184e302c3d1b428af88f4629d9266935">&#9670;&#160;</a></span>AUDIO_EMITTER_SET_GAIN()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AUDIO_EMITTER_SET_GAIN </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a290d3170fe99a97392978515bacf057d">AudioEmitter</a></td>          <td class="paramname"><span class="paramname"><em>audioEm</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>gain</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Mets à jours le gain de l'<a class="el" href="#a290d3170fe99a97392978515bacf057d" title="Type représentant un audio emitter, un élément qui émèts du sons.">AudioEmitter</a>. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">audioEm</td><td>L'<a class="el" href="#a290d3170fe99a97392978515bacf057d" title="Type représentant un audio emitter, un élément qui émèts du sons.">AudioEmitter</a>. </td></tr>
+    <tr><td class="paramname">gain</td><td>Le nouveau gain de l'<a class="el" href="#a290d3170fe99a97392978515bacf057d" title="Type représentant un audio emitter, un élément qui émèts du sons.">AudioEmitter</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="audio_8c_source.html#l00190">190</a> du fichier <a class="el" href="audio_8c_source.html">audio.c</a>.</p>
+
+</div>
+</div>
+<a id="ad625b05f93c9d6f419e2f762398e9adb" name="ad625b05f93c9d6f419e2f762398e9adb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad625b05f93c9d6f419e2f762398e9adb">&#9670;&#160;</a></span>AUDIO_EMITTER_SET_POSITION()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AUDIO_EMITTER_SET_POSITION </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a290d3170fe99a97392978515bacf057d">AudioEmitter</a></td>          <td class="paramname"><span class="paramname"><em>audioEm</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structVec3.html">Vec3</a></td>          <td class="paramname"><span class="paramname"><em>pos</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Mets à jours la position de l'<a class="el" href="#a290d3170fe99a97392978515bacf057d" title="Type représentant un audio emitter, un élément qui émèts du sons.">AudioEmitter</a>. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">audioEm</td><td>L'<a class="el" href="#a290d3170fe99a97392978515bacf057d" title="Type représentant un audio emitter, un élément qui émèts du sons.">AudioEmitter</a>. </td></tr>
+    <tr><td class="paramname">pos</td><td>La nouvelle position de l'<a class="el" href="#a290d3170fe99a97392978515bacf057d" title="Type représentant un audio emitter, un élément qui émèts du sons.">AudioEmitter</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="audio_8c_source.html#l00196">196</a> du fichier <a class="el" href="audio_8c_source.html">audio.c</a>.</p>
+
+</div>
+</div>
+<a id="aba64fc49761113c6a97f733e1521cd1d" name="aba64fc49761113c6a97f733e1521cd1d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba64fc49761113c6a97f733e1521cd1d">&#9670;&#160;</a></span>AUDIO_EMITTER_STOP()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AUDIO_EMITTER_STOP </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a290d3170fe99a97392978515bacf057d">AudioEmitter</a></td>          <td class="paramname"><span class="paramname"><em>audioEm</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Stop le sons de l'<a class="el" href="#a290d3170fe99a97392978515bacf057d" title="Type représentant un audio emitter, un élément qui émèts du sons.">AudioEmitter</a>. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">audioEm</td><td>L'<a class="el" href="#a290d3170fe99a97392978515bacf057d" title="Type représentant un audio emitter, un élément qui émèts du sons.">AudioEmitter</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="audio_8h_source.html#l00316">316</a> du fichier <a class="el" href="audio_8h_source.html">audio.h</a>.</p>
+
+</div>
+</div>
+<a id="a1c581e5113d7aa95dc819bf33fecb561" name="a1c581e5113d7aa95dc819bf33fecb561"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c581e5113d7aa95dc819bf33fecb561">&#9670;&#160;</a></span>AUDIO_EMITTER_UPDATE()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AUDIO_EMITTER_UPDATE </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a290d3170fe99a97392978515bacf057d">AudioEmitter</a></td>          <td class="paramname"><span class="paramname"><em>audioEm</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Mets à jours l'état de l'<a class="el" href="#a290d3170fe99a97392978515bacf057d" title="Type représentant un audio emitter, un élément qui émèts du sons.">AudioEmitter</a>. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">audioEm</td><td>L'<a class="el" href="#a290d3170fe99a97392978515bacf057d" title="Type représentant un audio emitter, un élément qui émèts du sons.">AudioEmitter</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="audio_8c_source.html#l00208">208</a> du fichier <a class="el" href="audio_8c_source.html">audio.c</a>.</p>
+
+</div>
+</div>
+<a id="a1e4ffb46267753d2cb0421b7f9d63dec" name="a1e4ffb46267753d2cb0421b7f9d63dec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e4ffb46267753d2cb0421b7f9d63dec">&#9670;&#160;</a></span>AUDIO_INSTANTIATE()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a334fd2ea448fb62ec410b3f96480ad94">AudioConfig</a> AUDIO_INSTANTIATE </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Instantie OpenAL et renvoit les données associée. </p>
+<dl class="section return"><dt>Renvoie</dt><dd>Une structure contenant les donnée de config d'OpenAL </dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="audio_8c_source.html#l00008">8</a> du fichier <a class="el" href="audio_8c_source.html">audio.c</a>.</p>
+
+</div>
+</div>
+<a id="ab980daad45d21552b1572ec66b729da2" name="ab980daad45d21552b1572ec66b729da2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab980daad45d21552b1572ec66b729da2">&#9670;&#160;</a></span>AUDIO_LISTENER_CREATE()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a3700e55e1dc43549d557258fac1af4d7">AudioListener</a> AUDIO_LISTENER_CREATE </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Créer une structure représentant l'audio listener. </p>
+<dl class="section return"><dt>Renvoie</dt><dd>Une structure représentant l'audio listener. </dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="audio_8h_source.html#l00146">146</a> du fichier <a class="el" href="audio_8h_source.html">audio.h</a>.</p>
+
+</div>
+</div>
+<a id="afe8eec4cb3ced1255b9838781144f81a" name="afe8eec4cb3ced1255b9838781144f81a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe8eec4cb3ced1255b9838781144f81a">&#9670;&#160;</a></span>AUDIO_LISTENER_CREATE_WITH_POSITION()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a3700e55e1dc43549d557258fac1af4d7">AudioListener</a> AUDIO_LISTENER_CREATE_WITH_POSITION </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structVec3.html">Vec3</a></td>          <td class="paramname"><span class="paramname"><em>pos</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Créer une structure représentant l'audio listener. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pos</td><td>La position initial de l'audio listener.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Une structure représentant l'audio listener. </dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="audio_8h_source.html#l00139">139</a> du fichier <a class="el" href="audio_8h_source.html">audio.h</a>.</p>
+
+</div>
+</div>
+<a id="a85eed784497565744d7d0e5a2cd5e8eb" name="a85eed784497565744d7d0e5a2cd5e8eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85eed784497565744d7d0e5a2cd5e8eb">&#9670;&#160;</a></span>AUDIO_LISTENER_CREATE_WITH_POSITION_AND_ROTATION()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a3700e55e1dc43549d557258fac1af4d7">AudioListener</a> AUDIO_LISTENER_CREATE_WITH_POSITION_AND_ROTATION </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structVec3.html">Vec3</a></td>          <td class="paramname"><span class="paramname"><em>pos</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structVec3.html">Vec3</a></td>          <td class="paramname"><span class="paramname"><em>atVector</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structVec3.html">Vec3</a></td>          <td class="paramname"><span class="paramname"><em>upVector</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Créer une structure représentant l'<a class="el" href="#a3700e55e1dc43549d557258fac1af4d7" title="Type représentant l&#39;audio listener, l&#39;élément qui reçoit le sons.">AudioListener</a>. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pos</td><td>La position initial de l'audio listener. </td></tr>
+    <tr><td class="paramname">atVector</td><td>Vecteur direction initial de l'audio listener. </td></tr>
+    <tr><td class="paramname">upVector</td><td>Vecteur initial indiquant le haut de l'audio listener.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Une structure représentant l'audio listener. </dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="audio_8c_source.html#l00107">107</a> du fichier <a class="el" href="audio_8c_source.html">audio.c</a>.</p>
+
+</div>
+</div>
+<a id="a10ea25425aa198c115f01fe4910bf019" name="a10ea25425aa198c115f01fe4910bf019"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a10ea25425aa198c115f01fe4910bf019">&#9670;&#160;</a></span>AUDIO_LISTENER_GET_AT_VECTOR()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structVec3.html">Vec3</a> AUDIO_LISTENER_GET_AT_VECTOR </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a3700e55e1dc43549d557258fac1af4d7">AudioListener</a></td>          <td class="paramname"><span class="paramname"><em>audioLi</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Renvoit le vecteur direction de l'<a class="el" href="#a3700e55e1dc43549d557258fac1af4d7" title="Type représentant l&#39;audio listener, l&#39;élément qui reçoit le sons.">AudioListener</a>. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">audioLi</td><td>L'<a class="el" href="#a3700e55e1dc43549d557258fac1af4d7" title="Type représentant l&#39;audio listener, l&#39;élément qui reçoit le sons.">AudioListener</a>.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Le vecteur direction de l'<a class="el" href="#a3700e55e1dc43549d557258fac1af4d7" title="Type représentant l&#39;audio listener, l&#39;élément qui reçoit le sons.">AudioListener</a>. </dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="audio_8h_source.html#l00200">200</a> du fichier <a class="el" href="audio_8h_source.html">audio.h</a>.</p>
+
+</div>
+</div>
+<a id="a24950de1f89edb88a3e3b26fa6ee6f96" name="a24950de1f89edb88a3e3b26fa6ee6f96"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24950de1f89edb88a3e3b26fa6ee6f96">&#9670;&#160;</a></span>AUDIO_LISTENER_GET_GAIN()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float AUDIO_LISTENER_GET_GAIN </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a3700e55e1dc43549d557258fac1af4d7">AudioListener</a></td>          <td class="paramname"><span class="paramname"><em>audioLi</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Renvoit le gain de l'<a class="el" href="#a3700e55e1dc43549d557258fac1af4d7" title="Type représentant l&#39;audio listener, l&#39;élément qui reçoit le sons.">AudioListener</a>. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">audioLi</td><td>L'<a class="el" href="#a3700e55e1dc43549d557258fac1af4d7" title="Type représentant l&#39;audio listener, l&#39;élément qui reçoit le sons.">AudioListener</a>.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Le gain de l'<a class="el" href="#a3700e55e1dc43549d557258fac1af4d7" title="Type représentant l&#39;audio listener, l&#39;élément qui reçoit le sons.">AudioListener</a>. </dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="audio_8h_source.html#l00182">182</a> du fichier <a class="el" href="audio_8h_source.html">audio.h</a>.</p>
+
+</div>
+</div>
+<a id="a6684747b52b4af592599125e324bf8cb" name="a6684747b52b4af592599125e324bf8cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6684747b52b4af592599125e324bf8cb">&#9670;&#160;</a></span>AUDIO_LISTENER_GET_POSITION()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structVec3.html">Vec3</a> AUDIO_LISTENER_GET_POSITION </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a3700e55e1dc43549d557258fac1af4d7">AudioListener</a></td>          <td class="paramname"><span class="paramname"><em>audioLi</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Renvoit la position de l'<a class="el" href="#a3700e55e1dc43549d557258fac1af4d7" title="Type représentant l&#39;audio listener, l&#39;élément qui reçoit le sons.">AudioListener</a>. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">audioLi</td><td>L'<a class="el" href="#a3700e55e1dc43549d557258fac1af4d7" title="Type représentant l&#39;audio listener, l&#39;élément qui reçoit le sons.">AudioListener</a>.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>La position de l'<a class="el" href="#a3700e55e1dc43549d557258fac1af4d7" title="Type représentant l&#39;audio listener, l&#39;élément qui reçoit le sons.">AudioListener</a>. </dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="audio_8h_source.html#l00191">191</a> du fichier <a class="el" href="audio_8h_source.html">audio.h</a>.</p>
+
+</div>
+</div>
+<a id="adb29620b3642d491af3f8e4531b6db3d" name="adb29620b3642d491af3f8e4531b6db3d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb29620b3642d491af3f8e4531b6db3d">&#9670;&#160;</a></span>AUDIO_LISTENER_GET_UP_VECTOR()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structVec3.html">Vec3</a> AUDIO_LISTENER_GET_UP_VECTOR </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a3700e55e1dc43549d557258fac1af4d7">AudioListener</a></td>          <td class="paramname"><span class="paramname"><em>audioLi</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Renvoit le vecteur indiquant le haut de l'<a class="el" href="#a3700e55e1dc43549d557258fac1af4d7" title="Type représentant l&#39;audio listener, l&#39;élément qui reçoit le sons.">AudioListener</a>. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">audioLi</td><td>L'<a class="el" href="#a3700e55e1dc43549d557258fac1af4d7" title="Type représentant l&#39;audio listener, l&#39;élément qui reçoit le sons.">AudioListener</a>.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Le vecteur indiquant le haut de l'<a class="el" href="#a3700e55e1dc43549d557258fac1af4d7" title="Type représentant l&#39;audio listener, l&#39;élément qui reçoit le sons.">AudioListener</a>. </dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="audio_8h_source.html#l00209">209</a> du fichier <a class="el" href="audio_8h_source.html">audio.h</a>.</p>
+
+</div>
+</div>
+<a id="ab2fa4f7cf3251b872b8b86941cebecd0" name="ab2fa4f7cf3251b872b8b86941cebecd0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2fa4f7cf3251b872b8b86941cebecd0">&#9670;&#160;</a></span>AUDIO_LISTENER_SET_GAIN()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AUDIO_LISTENER_SET_GAIN </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a3700e55e1dc43549d557258fac1af4d7">AudioListener</a></td>          <td class="paramname"><span class="paramname"><em>audioLi</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>gain</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Mets à jours le gain de l'<a class="el" href="#a3700e55e1dc43549d557258fac1af4d7" title="Type représentant l&#39;audio listener, l&#39;élément qui reçoit le sons.">AudioListener</a>. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">audioLi</td><td>L'<a class="el" href="#a3700e55e1dc43549d557258fac1af4d7" title="Type représentant l&#39;audio listener, l&#39;élément qui reçoit le sons.">AudioListener</a>. </td></tr>
+    <tr><td class="paramname">gain</td><td>Le nouveau gain de l'<a class="el" href="#a3700e55e1dc43549d557258fac1af4d7" title="Type représentant l&#39;audio listener, l&#39;élément qui reçoit le sons.">AudioListener</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="audio_8c_source.html#l00124">124</a> du fichier <a class="el" href="audio_8c_source.html">audio.c</a>.</p>
+
+</div>
+</div>
+<a id="a07ab5efa7c83f5d9a0643c85aef74699" name="a07ab5efa7c83f5d9a0643c85aef74699"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07ab5efa7c83f5d9a0643c85aef74699">&#9670;&#160;</a></span>AUDIO_LISTENER_SET_POSITION()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AUDIO_LISTENER_SET_POSITION </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a3700e55e1dc43549d557258fac1af4d7">AudioListener</a></td>          <td class="paramname"><span class="paramname"><em>audioLi</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structVec3.html">Vec3</a></td>          <td class="paramname"><span class="paramname"><em>pos</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Mets à jours la position de l'<a class="el" href="#a3700e55e1dc43549d557258fac1af4d7" title="Type représentant l&#39;audio listener, l&#39;élément qui reçoit le sons.">AudioListener</a>. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">audioLi</td><td>L'<a class="el" href="#a3700e55e1dc43549d557258fac1af4d7" title="Type représentant l&#39;audio listener, l&#39;élément qui reçoit le sons.">AudioListener</a>. </td></tr>
+    <tr><td class="paramname">pos</td><td>La nouvelle position de l'<a class="el" href="#a3700e55e1dc43549d557258fac1af4d7" title="Type représentant l&#39;audio listener, l&#39;élément qui reçoit le sons.">AudioListener</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="audio_8c_source.html#l00130">130</a> du fichier <a class="el" href="audio_8c_source.html">audio.c</a>.</p>
+
+</div>
+</div>
+<a id="a9111cf6a4e9638d5c8ecb677654f6426" name="a9111cf6a4e9638d5c8ecb677654f6426"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9111cf6a4e9638d5c8ecb677654f6426">&#9670;&#160;</a></span>AUDIO_LISTENER_SET_ROTATION()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AUDIO_LISTENER_SET_ROTATION </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a3700e55e1dc43549d557258fac1af4d7">AudioListener</a></td>          <td class="paramname"><span class="paramname"><em>audioLi</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structVec3.html">Vec3</a></td>          <td class="paramname"><span class="paramname"><em>at</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structVec3.html">Vec3</a></td>          <td class="paramname"><span class="paramname"><em>up</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Mets à jours la rotation de l'<a class="el" href="#a3700e55e1dc43549d557258fac1af4d7" title="Type représentant l&#39;audio listener, l&#39;élément qui reçoit le sons.">AudioListener</a>. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">audioLi</td><td>L'<a class="el" href="#a3700e55e1dc43549d557258fac1af4d7" title="Type représentant l&#39;audio listener, l&#39;élément qui reçoit le sons.">AudioListener</a>. </td></tr>
+    <tr><td class="paramname">at</td><td>Le nouveau vecteur direction de l'<a class="el" href="#a3700e55e1dc43549d557258fac1af4d7" title="Type représentant l&#39;audio listener, l&#39;élément qui reçoit le sons.">AudioListener</a> </td></tr>
+    <tr><td class="paramname">up</td><td>Le nouveau vecteur indiquant le haut de l'<a class="el" href="#a3700e55e1dc43549d557258fac1af4d7" title="Type représentant l&#39;audio listener, l&#39;élément qui reçoit le sons.">AudioListener</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="audio_8c_source.html#l00136">136</a> du fichier <a class="el" href="audio_8c_source.html">audio.c</a>.</p>
+
+</div>
+</div>
+<a id="aba9ba7056c3d0f6c331cb694fabdf94f" name="aba9ba7056c3d0f6c331cb694fabdf94f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba9ba7056c3d0f6c331cb694fabdf94f">&#9670;&#160;</a></span>AUDIO_LISTENER_UPDATE()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AUDIO_LISTENER_UPDATE </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a3700e55e1dc43549d557258fac1af4d7">AudioListener</a></td>          <td class="paramname"><span class="paramname"><em>audioLi</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Mets à jours l'état de l'<a class="el" href="#a3700e55e1dc43549d557258fac1af4d7" title="Type représentant l&#39;audio listener, l&#39;élément qui reçoit le sons.">AudioListener</a>. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">audioLi</td><td>L'<a class="el" href="#a3700e55e1dc43549d557258fac1af4d7" title="Type représentant l&#39;audio listener, l&#39;élément qui reçoit le sons.">AudioListener</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="audio_8c_source.html#l00145">145</a> du fichier <a class="el" href="audio_8c_source.html">audio.c</a>.</p>
+
+</div>
+</div>
+<a id="a0dbcf52e5403262b2e016cdfdf46968e" name="a0dbcf52e5403262b2e016cdfdf46968e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0dbcf52e5403262b2e016cdfdf46968e">&#9670;&#160;</a></span>AUDIO_SOURCE_CREATE()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#aeb12fb6b97d973f47522ad70bf6f8862">AudioSource</a> AUDIO_SOURCE_CREATE </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>filename</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Créer un audio source qui est en réalité un audio buffer pour OpenAL. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filename</td><td>Un fichier audio. (.wav, .mp3, ...)</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Une structure contenant le buffer possèdant les donnée d'un sons. </dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="audio_8c_source.html#l00034">34</a> du fichier <a class="el" href="audio_8c_source.html">audio.c</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_758d8e9166e39e682af4fe71d4574a53.html">FEURcraft</a></li><li class="navelem"><a href="dir_967b30117d789c02beaa805154dd0c67.html">audio</a></li><li class="navelem"><a href="dir_61e60e3610eb4b657c55a2fdac72de1b.html">include</a></li><li class="navelem"><a href="audio_8h.html">audio.h</a></li>
+    <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>
