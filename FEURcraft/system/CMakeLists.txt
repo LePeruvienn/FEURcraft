@@ -29,7 +29,8 @@ target_sources(${LIB_NAME}
 		src/image.c
 		src/keyboard.c
 		src/keyboard_key.c
+		src/mouse_input.c
 )
 
 # On link les librarie nécessaire à la compilation de la lib
-target_link_libraries(${LIB_NAME} PUBLIC utils glfw glad stb_image)
+target_link_libraries(${LIB_NAME} PUBLIC utils math glfw glad stb_image)
