@@ -7,6 +7,7 @@ var annotated_dup =
     [ "FEUR_Test", "structFEUR__Test.html", null ],
     [ "FEUR_Test_Group", "structFEUR__Test__Group.html", null ],
     [ "FEUR_Tester", "structFEUR__Tester.html", null ],
+    [ "FeurString", "structFeurString.html", null ],
     [ "Geometry", "structGeometry.html", null ],
     [ "Image", "structImage.html", null ],
     [ "ImageArray", "structImageArray.html", null ],
@@ -30,5 +31,6 @@ var annotated_dup =
     [ "VertexBlock", "structVertexBlock.html", null ],
     [ "VertexLayout", "structVertexLayout.html", null ],
     [ "VertexUV", "structVertexUV.html", null ],
-    [ "Window", "structWindow.html", null ]
+    [ "Window", "structWindow.html", null ],
+    [ "World", "structWorld.html", null ]
 ];

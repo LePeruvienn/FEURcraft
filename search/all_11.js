@@ -7,5 +7,6 @@ var searchData=
   ['window_5fpool_5fevents_4',['window_pool_events',['../window_8h.html#a1249ae5b9572b012ef86427de03adc5a',1,'window.h']]],
   ['window_5fshould_5fclose_5',['window_should_close',['../window_8h.html#a4e444447c3ba0bcebc8f0d79f6a384d9',1,'window.h']]],
   ['window_5fswap_5fbuffers_6',['window_swap_buffers',['../window_8h.html#a5d627011e6ff06e0ffd3c3dfe1935456',1,'window.h']]],
-  ['window_5fwait_5fevents_7',['window_wait_events',['../window_8h.html#a395c93ec8b9651fe1a2ff8b992c49ca1',1,'window.h']]]
+  ['window_5fwait_5fevents_7',['window_wait_events',['../window_8h.html#a395c93ec8b9651fe1a2ff8b992c49ca1',1,'window.h']]],
+  ['world_8',['World',['../structWorld.html',1,'']]]
 ];
