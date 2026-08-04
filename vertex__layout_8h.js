@@ -1,11 +1,7 @@
 var vertex__layout_8h =
 [
-    [ "VertexAttribute", "structVertexAttribute.html", "structVertexAttribute" ],
-    [ "VertexLayout", "structVertexLayout.html", "structVertexLayout" ],
-    [ "MAX_VERTEX_ATTRIBUTE_AMOUNT", "vertex__layout_8h.html#a0dc1b45c02067f2b79de8a9a6e6bb393", null ],
-    [ "VERTEX_ATTR_LAYER_INDEX", "vertex__layout_8h.html#a10ce992793558400271862a29f8649be", null ],
-    [ "VERTEX_ATTR_POSITION", "vertex__layout_8h.html#a75bb7200a83f96cb59011d3e81689380", null ],
-    [ "VERTEX_ATTR_UV", "vertex__layout_8h.html#a4cd4bba5a267a82f8f5e1fda44f8bf13", null ],
+    [ "VertexAttribute", "structVertexAttribute.html", null ],
+    [ "VertexLayout", "structVertexLayout.html", null ],
     [ "VertexAttribute", "vertex__layout_8h.html#a847cda4fb3271496952f708ea6496bb7", null ],
     [ "VertexLayout", "vertex__layout_8h.html#aaa60f579ce904b1e7a004ab27a260987", null ],
     [ "vertex_layout_init", "vertex__layout_8h.html#a23d567e5caac17425f1bca4d0369b9da", null ],

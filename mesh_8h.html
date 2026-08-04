@@ -99,7 +99,7 @@ $(function(){initNavTree('mesh_8h.html','',''); });
 <p>Structure représentant les données d'un modèle 3D charger dans le GPU.  
 <a href="#details">Plus de détails...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="geometry_8h_source.html">geometry.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="draw__mode_8h_source.html">draw_mode.h</a>&quot;</code><br />
+<code>#include &quot;draw_mode.h&quot;</code><br />
 <code>#include &quot;glad/glad.h&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Graphe des dépendances par inclusion de mesh.h:</div>
@@ -111,7 +111,7 @@ Graphe des dépendances par inclusion de mesh.h:</div>
 <area shape="poly" title=" " alt="" coords="281,47,211,86,208,82,279,42"/>
 <area shape="rect" title=" " alt="" coords="232,237,317,262"/>
 <area shape="poly" title=" " alt="" coords="313,45,290,190,283,223,278,222,285,189,308,44"/>
-<area shape="rect" href="draw__mode_8h.html" title=" " alt="" coords="350,92,450,117"/>
+<area shape="rect" href="draw__mode_8h_source.html" title=" " alt="" coords="350,92,450,117"/>
 <area shape="poly" title=" " alt="" coords="336,43,377,79,374,83,332,47"/>
 <area shape="rect" href="vertex__layout_8h.html" title="Fichier contenant les structure de spécification de la disposition des attributs des vertex." alt="" coords="167,165,275,189"/>
 <area shape="poly" title=" " alt="" coords="186,116,208,150,203,153,181,119"/>
@@ -124,16 +124,6 @@ Graphe des dépendances par inclusion de mesh.h:</div>
 <area shape="poly" title=" " alt="" coords="65,188,113,225,109,230,62,192"/>
 <area shape="rect" title=" " alt="" coords="5,237,80,262"/>
 <area shape="poly" title=" " alt="" coords="51,190,48,222,42,222,45,190"/>
-</map>
-</div>
-</div><div class="textblock"><div class="dynheader">
-Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier :</div>
-<div class="dyncontent">
-<div class="center"><img src="mesh_8h__dep__incl.png" border="0" usemap="#aFEURcraft_2graphic_2include_2mesh_8hdep" loading="lazy" alt=""/></div>
-<map name="aFEURcraft_2graphic_2include_2mesh_8hdep" id="aFEURcraft_2graphic_2include_2mesh_8hdep">
-<area shape="rect" title="Structure représentant les données d&#39;un modèle 3D charger dans le GPU." alt="" coords="5,5,181,44"/>
-<area shape="rect" href="mesh_8c.html" title=" " alt="" coords="17,92,169,131"/>
-<area shape="poly" title=" " alt="" coords="96,60,96,91,90,91,90,60"/>
 </map>
 </div>
 </div>
@@ -166,9 +156,9 @@ Fonctions</h2></td></tr>
 <tr class="memdesc:a9b979d7f4d62651bd60ebe01b94b08b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lie les données de la géométrie au GPU.  <br /></td></tr>
 <tr class="memitem:a21948ef730bd24893eac626b7ff2552f" id="r_a21948ef730bd24893eac626b7ff2552f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a21948ef730bd24893eac626b7ff2552f">unbind_mesh</a> (<a class="el" href="structMesh.html">Mesh</a> *m)</td></tr>
 <tr class="memdesc:a21948ef730bd24893eac626b7ff2552f"><td class="mdescLeft">&#160;</td><td class="mdescRight">dé lie les données de la géométrie du GPU  <br /></td></tr>
-<tr class="memitem:a62af1336311bc05f7b4f928e04e8caa4" id="r_a62af1336311bc05f7b4f928e04e8caa4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a62af1336311bc05f7b4f928e04e8caa4">draw_mesh</a> (<a class="el" href="structMesh.html">Mesh</a> *m, <a class="el" href="draw__mode_8h.html#a9a325db332d24e6105fe3b48a94604c3">DrawMode</a> mode)</td></tr>
+<tr class="memitem:a62af1336311bc05f7b4f928e04e8caa4" id="r_a62af1336311bc05f7b4f928e04e8caa4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a62af1336311bc05f7b4f928e04e8caa4">draw_mesh</a> (<a class="el" href="structMesh.html">Mesh</a> *m, DrawMode mode)</td></tr>
 <tr class="memdesc:a62af1336311bc05f7b4f928e04e8caa4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Déssine la géométrie actuelle en faisant un appel GPU.  <br /></td></tr>
-<tr class="memitem:a8605f85eacdd4d5a903a6d6f19b4e285" id="r_a8605f85eacdd4d5a903a6d6f19b4e285"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8605f85eacdd4d5a903a6d6f19b4e285">draw_mesh_instanced</a> (<a class="el" href="structMesh.html">Mesh</a> *m, <a class="el" href="draw__mode_8h.html#a9a325db332d24e6105fe3b48a94604c3">DrawMode</a> mode, unsigned int amount)</td></tr>
+<tr class="memitem:a8605f85eacdd4d5a903a6d6f19b4e285" id="r_a8605f85eacdd4d5a903a6d6f19b4e285"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8605f85eacdd4d5a903a6d6f19b4e285">draw_mesh_instanced</a> (<a class="el" href="structMesh.html">Mesh</a> *m, DrawMode mode, unsigned int amount)</td></tr>
 <tr class="memdesc:a8605f85eacdd4d5a903a6d6f19b4e285"><td class="mdescLeft">&#160;</td><td class="mdescRight">fait un appel GPU pour déssiner plusieurs instance la géométrie  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Description détaillée</h2>
@@ -221,8 +211,6 @@ Fonctions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="mesh_8c_source.html#l00093">93</a> du fichier <a class="el" href="mesh_8c_source.html">mesh.c</a>.</p>
-
 </div>
 </div>
 <a id="ad176a7fba154dd6c331ed669c0910a2f" name="ad176a7fba154dd6c331ed669c0910a2f"></a>
@@ -242,8 +230,6 @@ Fonctions</h2></td></tr>
 
 <p>Créer une nouvelle géométrie de block. </p>
 <dl class="section return"><dt>Renvoie</dt><dd>nouvelle géométrie alloué </dd></dl>
-
-<p class="definition">Définition à la ligne <a class="el" href="mesh_8c_source.html#l00058">58</a> du fichier <a class="el" href="mesh_8c_source.html">mesh.c</a>.</p>
 
 </div>
 </div>
@@ -265,8 +251,6 @@ Fonctions</h2></td></tr>
 <p>Créer une nouvelle géométrie de cube. </p>
 <dl class="section return"><dt>Renvoie</dt><dd>nouvelle géométrie alloué </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="mesh_8c_source.html#l00038">38</a> du fichier <a class="el" href="mesh_8c_source.html">mesh.c</a>.</p>
-
 </div>
 </div>
 <a id="aecd1461a3cd08ea754e799e462a943a7" name="aecd1461a3cd08ea754e799e462a943a7"></a>
@@ -286,8 +270,6 @@ Fonctions</h2></td></tr>
 
 <p>Créer une nouvelle géométrie de cube avec UV. </p>
 <dl class="section return"><dt>Renvoie</dt><dd>nouvelle géométrie alloué </dd></dl>
-
-<p class="definition">Définition à la ligne <a class="el" href="mesh_8c_source.html#l00048">48</a> du fichier <a class="el" href="mesh_8c_source.html">mesh.c</a>.</p>
 
 </div>
 </div>
@@ -314,8 +296,6 @@ Fonctions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd>nouvelle géométrie alloué </dd></dl>
-
-<p class="definition">Définition à la ligne <a class="el" href="mesh_8c_source.html#l00011">11</a> du fichier <a class="el" href="mesh_8c_source.html">mesh.c</a>.</p>
 
 </div>
 </div>
@@ -354,8 +334,6 @@ Fonctions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd>nouvelle géométrie alloué </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="mesh_8c_source.html#l00068">68</a> du fichier <a class="el" href="mesh_8c_source.html">mesh.c</a>.</p>
-
 </div>
 </div>
 <a id="a62af1336311bc05f7b4f928e04e8caa4" name="a62af1336311bc05f7b4f928e04e8caa4"></a>
@@ -372,7 +350,7 @@ Fonctions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="draw__mode_8h.html#a9a325db332d24e6105fe3b48a94604c3">DrawMode</a></td>          <td class="paramname"><span class="paramname"><em>mode</em></span>&#160;)</td>
+          <td class="paramtype">DrawMode</td>          <td class="paramname"><span class="paramname"><em>mode</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -385,8 +363,6 @@ Fonctions</h2></td></tr>
   </table>
   </dd>
 </dl>
-
-<p class="definition">Définition à la ligne <a class="el" href="mesh_8c_source.html#l00136">136</a> du fichier <a class="el" href="mesh_8c_source.html">mesh.c</a>.</p>
 
 </div>
 </div>
@@ -404,7 +380,7 @@ Fonctions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="draw__mode_8h.html#a9a325db332d24e6105fe3b48a94604c3">DrawMode</a></td>          <td class="paramname"><span class="paramname"><em>mode</em></span>, </td>
+          <td class="paramtype">DrawMode</td>          <td class="paramname"><span class="paramname"><em>mode</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -424,8 +400,6 @@ Fonctions</h2></td></tr>
   </table>
   </dd>
 </dl>
-
-<p class="definition">Définition à la ligne <a class="el" href="mesh_8c_source.html#l00152">152</a> du fichier <a class="el" href="mesh_8c_source.html">mesh.c</a>.</p>
 
 </div>
 </div>
@@ -452,8 +426,6 @@ Fonctions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="mesh_8c_source.html#l00078">78</a> du fichier <a class="el" href="mesh_8c_source.html">mesh.c</a>.</p>
-
 </div>
 </div>
 <a id="a21948ef730bd24893eac626b7ff2552f" name="a21948ef730bd24893eac626b7ff2552f"></a>
@@ -478,8 +450,6 @@ Fonctions</h2></td></tr>
   </table>
   </dd>
 </dl>
-
-<p class="definition">Définition à la ligne <a class="el" href="mesh_8c_source.html#l00105">105</a> du fichier <a class="el" href="mesh_8c_source.html">mesh.c</a>.</p>
 
 </div>
 </div>

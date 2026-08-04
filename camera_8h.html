@@ -98,8 +98,8 @@ $(function(){initNavTree('camera_8h.html','',''); });
 
 <p>Structure et fonctions pour la caméra 3D.  
 <a href="#details">Plus de détails...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="vec3_8h_source.html">vec3.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="mat4_8h_source.html">mat4.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;vec3.h&quot;</code><br />
+<code>#include &quot;mat4.h&quot;</code><br />
 <code>#include &quot;<a class="el" href="window_8h_source.html">window.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Graphe des dépendances par inclusion de camera.h:</div>
@@ -107,14 +107,14 @@ Graphe des dépendances par inclusion de camera.h:</div>
 <div class="center"><img src="camera_8h__incl.png" border="0" usemap="#aFEURcraft_2graphic_2include_2camera_8h" loading="lazy" alt=""/></div>
 <map name="aFEURcraft_2graphic_2include_2camera_8h" id="aFEURcraft_2graphic_2include_2camera_8h">
 <area shape="rect" title="Structure et fonctions pour la caméra 3D." alt="" coords="31,5,207,44"/>
-<area shape="rect" href="vec3_8h.html" title=" " alt="" coords="5,165,65,189"/>
+<area shape="rect" href="vec3_8h_source.html" title=" " alt="" coords="5,165,65,189"/>
 <area shape="poly" title=" " alt="" coords="109,46,79,93,49,152,44,149,74,91,104,43"/>
-<area shape="rect" href="mat4_8h.html" title=" " alt="" coords="88,92,150,117"/>
+<area shape="rect" href="mat4_8h_source.html" title=" " alt="" coords="88,92,150,117"/>
 <area shape="poly" title=" " alt="" coords="122,45,122,76,116,76,116,45"/>
 <area shape="rect" href="window_8h.html" title="Abstraction de la gestion de la fenêtre et du contexte OpenGL." alt="" coords="323,92,398,117"/>
 <area shape="poly" title=" " alt="" coords="178,42,310,84,308,89,177,47"/>
 <area shape="poly" title=" " alt="" coords="107,119,62,157,58,153,103,115"/>
-<area shape="rect" href="vec4_8h.html" title=" " alt="" coords="89,165,149,189"/>
+<area shape="rect" href="vec4_8h_source.html" title=" " alt="" coords="89,165,149,189"/>
 <area shape="poly" title=" " alt="" coords="122,117,122,149,116,149,116,117"/>
 <area shape="rect" title=" " alt="" coords="173,165,236,189"/>
 <area shape="poly" title=" " alt="" coords="135,115,181,153,177,157,131,119"/>
@@ -131,14 +131,9 @@ Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier
 <div class="dyncontent">
 <div class="center"><img src="camera_8h__dep__incl.png" border="0" usemap="#aFEURcraft_2graphic_2include_2camera_8hdep" loading="lazy" alt=""/></div>
 <map name="aFEURcraft_2graphic_2include_2camera_8hdep" id="aFEURcraft_2graphic_2include_2camera_8hdep">
-<area shape="rect" title="Structure et fonctions pour la caméra 3D." alt="" coords="131,5,306,44"/>
+<area shape="rect" title="Structure et fonctions pour la caméra 3D." alt="" coords="5,5,181,44"/>
 <area shape="rect" href="renderer_8h.html" title="Intiliase le moteur de rendu et son contexte." alt="" coords="5,92,181,131"/>
-<area shape="poly" title=" " alt="" coords="180,55,122,94,119,89,177,51"/>
-<area shape="rect" href="renderer_8c.html" title=" " alt="" coords="80,179,232,217"/>
-<area shape="poly" title=" " alt="" coords="215,60,195,132,170,180,166,177,191,130,210,59"/>
-<area shape="rect" href="camera_8c.html" title=" " alt="" coords="256,92,408,131"/>
-<area shape="poly" title=" " alt="" coords="257,52,308,89,305,94,254,56"/>
-<area shape="poly" title=" " alt="" coords="118,142,144,176,140,180,114,145"/>
+<area shape="poly" title=" " alt="" coords="96,60,96,91,90,91,90,60"/>
 </map>
 </div>
 </div>
@@ -159,8 +154,9 @@ Fonctions</h2></td></tr>
 <tr class="memdesc:a557be73ff04aff12eaa9b10b7491116e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Crée une caméra positionnée en (px,py,pz), visant (tx,ty,tz).  <br /></td></tr>
 <tr class="memitem:a92ab58e66bee329db0c4ccb9a7777fb3" id="r_a92ab58e66bee329db0c4ccb9a7777fb3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a92ab58e66bee329db0c4ccb9a7777fb3">camera_init_default</a> (<a class="el" href="structCamera.html">Camera</a> *c, <a class="el" href="structWindow.html">Window</a> *w)</td></tr>
 <tr class="memdesc:a92ab58e66bee329db0c4ccb9a7777fb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Créer une caméra et l'initalize avec ses valeurs par défaut par rapprot à la fenêtre donné  <br /></td></tr>
-<tr class="memitem:a77313b9666c31e3b3d68c582c187ddfe" id="r_a77313b9666c31e3b3d68c582c187ddfe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a77313b9666c31e3b3d68c582c187ddfe">camera_translate</a> (<a class="el" href="structCamera.html">Camera</a> *c, float dx, float dy, float dz)</td></tr>
-<tr class="memdesc:a77313b9666c31e3b3d68c582c187ddfe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Translation de la caméra et de sa cible de (dx, dy, dz).  <br /></td></tr>
+<tr class="memitem:a77313b9666c31e3b3d68c582c187ddfe" id="r_a77313b9666c31e3b3d68c582c187ddfe"><td class="memItemLeft" align="right" valign="top"><a id="a77313b9666c31e3b3d68c582c187ddfe" name="a77313b9666c31e3b3d68c582c187ddfe"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>camera_translate</b> (<a class="el" href="structCamera.html">Camera</a> *c, float dx, float dy, float dz)</td></tr>
+<tr class="memdesc:a77313b9666c31e3b3d68c582c187ddfe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Translation de la caméra et de sa cible de (dx, dy, dz). <br /></td></tr>
 <tr class="memitem:a1a84c42ee328e2dfae17e06a86752116" id="r_a1a84c42ee328e2dfae17e06a86752116"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1a84c42ee328e2dfae17e06a86752116">camera_rotate</a> (<a class="el" href="structCamera.html">Camera</a> *c, float dyaw, float dpitch)</td></tr>
 <tr class="memdesc:a1a84c42ee328e2dfae17e06a86752116"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tourne la caméra par rapport à une vue première personne.  <br /></td></tr>
 <tr class="memitem:a5ce5bd3db68ea9878f9f3e8c47196673" id="r_a5ce5bd3db68ea9878f9f3e8c47196673"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5ce5bd3db68ea9878f9f3e8c47196673">camera_update_aspect</a> (<a class="el" href="structCamera.html">Camera</a> *c, unsigned int width, unsigned int height)</td></tr>
@@ -222,8 +218,6 @@ Fonctions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd>matrice 4x4 projection </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="camera_8c_source.html#l00138">138</a> du fichier <a class="el" href="camera_8c_source.html">camera.c</a>.</p>
-
 </div>
 </div>
 <a id="a3367b7cb7483ca7553fe71a4d9038865" name="a3367b7cb7483ca7553fe71a4d9038865"></a>
@@ -250,8 +244,6 @@ Fonctions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd>matrice 4x4 vue </dd></dl>
-
-<p class="definition">Définition à la ligne <a class="el" href="camera_8c_source.html#l00114">114</a> du fichier <a class="el" href="camera_8c_source.html">camera.c</a>.</p>
 
 </div>
 </div>
@@ -319,8 +311,6 @@ Fonctions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="camera_8c_source.html#l00011">11</a> du fichier <a class="el" href="camera_8c_source.html">camera.c</a>.</p>
-
 </div>
 </div>
 <a id="a92ab58e66bee329db0c4ccb9a7777fb3" name="a92ab58e66bee329db0c4ccb9a7777fb3"></a>
@@ -350,8 +340,6 @@ Fonctions</h2></td></tr>
   </table>
   </dd>
 </dl>
-
-<p class="definition">Définition à la ligne <a class="el" href="camera_8c_source.html#l00035">35</a> du fichier <a class="el" href="camera_8c_source.html">camera.c</a>.</p>
 
 </div>
 </div>
@@ -390,43 +378,6 @@ Fonctions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="camera_8c_source.html#l00083">83</a> du fichier <a class="el" href="camera_8c_source.html">camera.c</a>.</p>
-
-</div>
-</div>
-<a id="a77313b9666c31e3b3d68c582c187ddfe" name="a77313b9666c31e3b3d68c582c187ddfe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a77313b9666c31e3b3d68c582c187ddfe">&#9670;&#160;</a></span>camera_translate()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void camera_translate </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structCamera.html">Camera</a> *</td>          <td class="paramname"><span class="paramname"><em>c</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>dx</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>dy</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>dz</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Translation de la caméra et de sa cible de (dx, dy, dz). </p>
-
-<p class="definition">Définition à la ligne <a class="el" href="camera_8c_source.html#l00057">57</a> du fichier <a class="el" href="camera_8c_source.html">camera.c</a>.</p>
-
 </div>
 </div>
 <a id="a5ce5bd3db68ea9878f9f3e8c47196673" name="a5ce5bd3db68ea9878f9f3e8c47196673"></a>
@@ -463,8 +414,6 @@ Fonctions</h2></td></tr>
   </table>
   </dd>
 </dl>
-
-<p class="definition">Définition à la ligne <a class="el" href="camera_8c_source.html#l00107">107</a> du fichier <a class="el" href="camera_8c_source.html">camera.c</a>.</p>
 
 </div>
 </div>

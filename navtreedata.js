@@ -33,21 +33,14 @@ var NAVTREE =
     [ "Tests", "index.html#autotoc_md7", null ],
     [ "Structures de données", "annotated.html", [
       [ "Structures de données", "annotated.html", "annotated_dup" ],
-      [ "Index des structures de données", "classes.html", null ],
-      [ "Champs de donnée", "functions.html", [
-        [ "Tout", "functions.html", null ],
-        [ "Variables", "functions_vars.html", null ]
-      ] ]
+      [ "Index des structures de données", "classes.html", null ]
     ] ],
     [ "Fichiers", "files.html", [
       [ "Liste des fichiers", "files.html", "files_dup" ],
       [ "Variables globale", "globals.html", [
-        [ "Tout", "globals.html", "globals_dup" ],
-        [ "Fonctions", "globals_func.html", "globals_func" ],
-        [ "Variables", "globals_vars.html", null ],
+        [ "Tout", "globals.html", null ],
+        [ "Fonctions", "globals_func.html", null ],
         [ "Définitions de type", "globals_type.html", null ],
-        [ "Énumérations", "globals_enum.html", null ],
-        [ "Valeurs énumérées", "globals_eval.html", null ],
         [ "Macros", "globals_defs.html", null ]
       ] ]
     ] ]
@@ -56,11 +49,7 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"FEUR__Test_8h.html",
-"files.html",
-"mat4_8h.html#a3b352583944943e6948b5ebd43388eb1",
-"structShaderProgram.html#a1e6ee9822b18e51b705d553c285442d0",
-"vec3_8h_source.html"
+"FEUR__Test_8h_source.html"
 ];
 
 var SYNCONMSG = 'cliquez pour désactiver la synchronisation du panel';

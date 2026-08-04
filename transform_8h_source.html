@@ -95,54 +95,44 @@ $(function(){initNavTree('transform_8h_source.html','',''); });
   <div class="headertitle"><div class="title">transform.h</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="transform_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef TRANSFORM_H</span></div>
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef TRANSFORM_H</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define TRANSFORM_H</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="vec3_8h.html">vec3.h</a>&quot;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="mat4_8h.html">mat4.h</a>&quot;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;vec3.h&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;mat4.h&quot;</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="transform_8h.html#a512254f7ee8948f0323992006331503c">    7</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="structTransform.html">Transform</a> <a class="code hl_struct" href="structTransform.html">Transform</a>;</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="structTransform.html">Transform</a> <a class="code hl_struct" href="structTransform.html">Transform</a>;</div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
 <div class="foldopen" id="foldopen00009" data-start="{" data-end="};">
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="structTransform.html">    9</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structTransform.html">Transform</a></div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>{</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="structTransform.html#aac271bf9324ecac32d40b89f9a6bcfff">   11</a></span>    <a class="code hl_struct" href="structVec3.html">Vec3</a> <a class="code hl_variable" href="structTransform.html#aac271bf9324ecac32d40b89f9a6bcfff">pos</a>;</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="structTransform.html#a2212569c91ac3fcf781b99a0be3e7f82">   12</a></span>    <a class="code hl_struct" href="structVec3.html">Vec3</a> <a class="code hl_variable" href="structTransform.html#a2212569c91ac3fcf781b99a0be3e7f82">scale</a>;</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <a class="code hl_struct" href="structVec3.html">Vec3</a> pos;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <a class="code hl_struct" href="structVec3.html">Vec3</a> scale;</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="structTransform.html#a9dd80d835745261347e945bef04286c5">   14</a></span>    <a class="code hl_struct" href="structVec3.html">Vec3</a> <a class="code hl_variable" href="structTransform.html#a9dd80d835745261347e945bef04286c5">forward</a>;</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="structTransform.html#ac8b2e32c5ccec07383503d25cc27da63">   15</a></span>    <a class="code hl_struct" href="structVec3.html">Vec3</a> <a class="code hl_variable" href="structTransform.html#ac8b2e32c5ccec07383503d25cc27da63">up</a>;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <a class="code hl_struct" href="structVec3.html">Vec3</a> forward;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <a class="code hl_struct" href="structVec3.html">Vec3</a> up;</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>};</div>
 </div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="transform_8h.html#a729592456023f8f56ffb6b55fa716a44">   18</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="transform_8h.html#a729592456023f8f56ffb6b55fa716a44">transform_translate</a>(<a class="code hl_struct" href="structTransform.html">Transform</a>* transform, <a class="code hl_struct" href="structVec3.html">Vec3</a> translate);</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keywordtype">void</span> transform_translate(<a class="code hl_struct" href="structTransform.html">Transform</a>* transform, <a class="code hl_struct" href="structVec3.html">Vec3</a> translate);</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="transform_8h.html#a6f1e0354c7a5b008717634502288f5df">   20</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="transform_8h.html#a6f1e0354c7a5b008717634502288f5df">transform_rotate</a>(<a class="code hl_struct" href="structTransform.html">Transform</a>* transform, <a class="code hl_struct" href="structVec3.html">Vec3</a> rotate);</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keywordtype">void</span> transform_rotate(<a class="code hl_struct" href="structTransform.html">Transform</a>* transform, <a class="code hl_struct" href="structVec3.html">Vec3</a> rotate);</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="transform_8h.html#a74f2db659b8949e221dc9c63c8fe79c6">   22</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="transform_8h.html#a74f2db659b8949e221dc9c63c8fe79c6">transform_scale</a>(<a class="code hl_struct" href="structTransform.html">Transform</a>* transformn, <a class="code hl_struct" href="structVec3.html">Vec3</a> scale);</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keywordtype">void</span> transform_scale(<a class="code hl_struct" href="structTransform.html">Transform</a>* transformn, <a class="code hl_struct" href="structVec3.html">Vec3</a> scale);</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="transform_8h.html#a3405c5f7e5843562bca5515d1099d76a">   24</a></span><a class="code hl_struct" href="structMat4.html">Mat4</a> <a class="code hl_function" href="transform_8h.html#a3405c5f7e5843562bca5515d1099d76a">transform_compute_model</a>(<a class="code hl_struct" href="structTransform.html">Transform</a>* transform);</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><a class="code hl_struct" href="structMat4.html">Mat4</a> transform_compute_model(<a class="code hl_struct" href="structTransform.html">Transform</a>* transform);</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#endif </span><span class="comment">// TRANSFORM_H</span></div>
-<div class="ttc" id="amat4_8h_html"><div class="ttname"><a href="mat4_8h.html">mat4.h</a></div></div>
 <div class="ttc" id="astructMat4_html"><div class="ttname"><a href="structMat4.html">Mat4</a></div><div class="ttdef"><b>Definition</b> <a href="mat4_8h_source.html#l00035">mat4.h:36</a></div></div>
 <div class="ttc" id="astructTransform_html"><div class="ttname"><a href="structTransform.html">Transform</a></div><div class="ttdef"><b>Definition</b> <a href="#l00009">transform.h:10</a></div></div>
-<div class="ttc" id="astructTransform_html_a2212569c91ac3fcf781b99a0be3e7f82"><div class="ttname"><a href="structTransform.html#a2212569c91ac3fcf781b99a0be3e7f82">Transform::scale</a></div><div class="ttdeci">Vec3 scale</div><div class="ttdef"><b>Definition</b> <a href="#l00012">transform.h:12</a></div></div>
-<div class="ttc" id="astructTransform_html_a9dd80d835745261347e945bef04286c5"><div class="ttname"><a href="structTransform.html#a9dd80d835745261347e945bef04286c5">Transform::forward</a></div><div class="ttdeci">Vec3 forward</div><div class="ttdef"><b>Definition</b> <a href="#l00014">transform.h:14</a></div></div>
-<div class="ttc" id="astructTransform_html_aac271bf9324ecac32d40b89f9a6bcfff"><div class="ttname"><a href="structTransform.html#aac271bf9324ecac32d40b89f9a6bcfff">Transform::pos</a></div><div class="ttdeci">Vec3 pos</div><div class="ttdef"><b>Definition</b> <a href="#l00011">transform.h:11</a></div></div>
-<div class="ttc" id="astructTransform_html_ac8b2e32c5ccec07383503d25cc27da63"><div class="ttname"><a href="structTransform.html#ac8b2e32c5ccec07383503d25cc27da63">Transform::up</a></div><div class="ttdeci">Vec3 up</div><div class="ttdef"><b>Definition</b> <a href="#l00015">transform.h:15</a></div></div>
 <div class="ttc" id="astructVec3_html"><div class="ttname"><a href="structVec3.html">Vec3</a></div><div class="ttdef"><b>Definition</b> <a href="vec3_8h_source.html#l00011">vec3.h:12</a></div></div>
-<div class="ttc" id="atransform_8h_html_a3405c5f7e5843562bca5515d1099d76a"><div class="ttname"><a href="transform_8h.html#a3405c5f7e5843562bca5515d1099d76a">transform_compute_model</a></div><div class="ttdeci">Mat4 transform_compute_model(Transform *transform)</div></div>
-<div class="ttc" id="atransform_8h_html_a6f1e0354c7a5b008717634502288f5df"><div class="ttname"><a href="transform_8h.html#a6f1e0354c7a5b008717634502288f5df">transform_rotate</a></div><div class="ttdeci">void transform_rotate(Transform *transform, Vec3 rotate)</div></div>
-<div class="ttc" id="atransform_8h_html_a729592456023f8f56ffb6b55fa716a44"><div class="ttname"><a href="transform_8h.html#a729592456023f8f56ffb6b55fa716a44">transform_translate</a></div><div class="ttdeci">void transform_translate(Transform *transform, Vec3 translate)</div></div>
-<div class="ttc" id="atransform_8h_html_a74f2db659b8949e221dc9c63c8fe79c6"><div class="ttname"><a href="transform_8h.html#a74f2db659b8949e221dc9c63c8fe79c6">transform_scale</a></div><div class="ttdeci">void transform_scale(Transform *transformn, Vec3 scale)</div></div>
-<div class="ttc" id="avec3_8h_html"><div class="ttname"><a href="vec3_8h.html">vec3.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="dir_758d8e9166e39e682af4fe71d4574a53.html">FEURcraft</a></li><li class="navelem"><a href="dir_49e1aeef74c48005ded1a420e4bd69c5.html">world</a></li><li class="navelem"><a href="dir_0c9ffa712343ec22aae66ea23ff09635.html">include</a></li><li class="navelem"><a href="transform_8h.html">transform.h</a></li>
+    <li class="navelem"><a href="dir_758d8e9166e39e682af4fe71d4574a53.html">FEURcraft</a></li><li class="navelem"><a href="dir_49e1aeef74c48005ded1a420e4bd69c5.html">world</a></li><li class="navelem"><a href="dir_0c9ffa712343ec22aae66ea23ff09635.html">include</a></li><li class="navelem"><b>transform.h</b></li>
     <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
   </ul>
 </div>

@@ -202,61 +202,49 @@ Tests</h1>
 </div><!-- fragment --><p>Pour exécuter tout les tests du projet</p>
 <div class="fragment"><div class="line">./tests/run.sh</div>
 </div><!-- fragment --><p>Voci un exemple de tests unitaire :</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="FEUR__Test_8h.html">FEUR_Test/FEUR_Test.h</a>&quot;</span></div>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &quot;FEUR_Test/FEUR_Test.h&quot;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><a class="code hl_enumeration" href="test__data_8h.html#aa94862fe5682452e8aea21843fc12c76">FEUR_Test_Result</a> Test_1()</div>
+<div class="line">FEUR_Test_Result Test_1()</div>
 <div class="line">{</div>
 <div class="line">    <span class="keywordtype">int</span> value = 10;</div>
 <div class="line"> </div>
-<div class="line">    <a class="code hl_define" href="test__assert_8h.html#a8e122d8dcb0beaa0c708b36a95595f24">FEUR_TEST_ASSERT</a>(value == 10);</div>
-<div class="line">    <a class="code hl_define" href="test__assert_8h.html#a8e122d8dcb0beaa0c708b36a95595f24">FEUR_TEST_ASSERT</a>(value != 5);</div>
+<div class="line">    FEUR_TEST_ASSERT(value == 10);</div>
+<div class="line">    FEUR_TEST_ASSERT(value != 5);</div>
 <div class="line"> </div>
-<div class="line">    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="test__data_8h.html#aa94862fe5682452e8aea21843fc12c76a71d9dc57bfd4c19f3ab4657d0518fb21">FEUR_Test_Success</a>;</div>
+<div class="line">    <span class="keywordflow">return</span> FEUR_Test_Success;</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><a class="code hl_enumeration" href="test__data_8h.html#aa94862fe5682452e8aea21843fc12c76">FEUR_Test_Result</a> Test_2()</div>
+<div class="line">FEUR_Test_Result Test_2()</div>
 <div class="line">{</div>
 <div class="line">    <span class="keywordtype">float</span> value = 0.333333f;</div>
 <div class="line"> </div>
-<div class="line">    <a class="code hl_define" href="test__assert_8h.html#ab49f770f61251c543e41bf94d50c67d8">FEUR_TEST_ASSERT_FLOAT</a>(value, 0.333333f);</div>
+<div class="line">    FEUR_TEST_ASSERT_FLOAT(value, 0.333333f);</div>
 <div class="line"> </div>
-<div class="line">    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="test__data_8h.html#aa94862fe5682452e8aea21843fc12c76a71d9dc57bfd4c19f3ab4657d0518fb21">FEUR_Test_Success</a>;</div>
+<div class="line">    <span class="keywordflow">return</span> FEUR_Test_Success;</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><span class="keywordtype">int</span> <a class="code hl_function" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>()</div>
+<div class="line"><span class="keywordtype">int</span> main()</div>
 <div class="line">{</div>
-<div class="line">    <a class="code hl_function" href="tester_8h.html#a67f50cb35612071c5ace642a913b724d">FEUR_Test_Init</a>();</div>
+<div class="line">    FEUR_Test_Init();</div>
 <div class="line"> </div>
-<div class="line">    <a class="code hl_define" href="test__logger_8h.html#a4f927b7dc5ef44165848e13a00cfaa7a">FEUR_TEST_LOG</a>(<span class="stringliteral">&quot;This is a example of log in a test!&quot;</span>);</div>
+<div class="line">    FEUR_TEST_LOG(<span class="stringliteral">&quot;This is a example of log in a test!&quot;</span>);</div>
 <div class="line"> </div>
-<div class="line">    <a class="code hl_function" href="tester_8h.html#a8bc032e75866d9e3ba035fb9ed4360c4">FEUR_Test_Add_Group</a>(<span class="stringliteral">&quot;Easy Tests :)&quot;</span>);</div>
+<div class="line">    FEUR_Test_Add_Group(<span class="stringliteral">&quot;Easy Tests :)&quot;</span>);</div>
 <div class="line"> </div>
-<div class="line">    <a class="code hl_function" href="tester_8h.html#a4f189b08365fb1c8aa8cf232d023f5d4">FEUR_Test_Add_Test</a>(<span class="stringliteral">&quot;Test 1&quot;</span>, Test_1);</div>
+<div class="line">    FEUR_Test_Add_Test(<span class="stringliteral">&quot;Test 1&quot;</span>, Test_1);</div>
 <div class="line"> </div>
-<div class="line">    <a class="code hl_function" href="tester_8h.html#a8bc032e75866d9e3ba035fb9ed4360c4">FEUR_Test_Add_Group</a>(<span class="stringliteral">&quot;Hard Tests D:&quot;</span>);</div>
+<div class="line">    FEUR_Test_Add_Group(<span class="stringliteral">&quot;Hard Tests D:&quot;</span>);</div>
 <div class="line"> </div>
-<div class="line">    <a class="code hl_function" href="tester_8h.html#a4f189b08365fb1c8aa8cf232d023f5d4">FEUR_Test_Add_Test</a>(<span class="stringliteral">&quot;Test 2&quot;</span>, Test_2);</div>
+<div class="line">    FEUR_Test_Add_Test(<span class="stringliteral">&quot;Test 2&quot;</span>, Test_2);</div>
 <div class="line"> </div>
-<div class="line">    <a class="code hl_function" href="tester_8h.html#a1b8f49126671fd90bddeb69c61642523">FEUR_Test_Run</a>();</div>
+<div class="line">    FEUR_Test_Run();</div>
 <div class="line"> </div>
-<div class="line">    <a class="code hl_function" href="tester_8h.html#ad203ae5f71383ae571eb4a28e2a93f5f">FEUR_Test_End</a>();</div>
+<div class="line">    FEUR_Test_End();</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordflow">return</span> 0;</div>
 <div class="line">}</div>
-<div class="ttc" id="aFEUR__Test_8h_html"><div class="ttname"><a href="FEUR__Test_8h.html">FEUR_Test.h</a></div></div>
-<div class="ttc" id="amain_8c_html_ae66f6b31b5ad750f1fe042a706a4e3d4"><div class="ttname"><a href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a></div><div class="ttdeci">int main()</div><div class="ttdef"><b>Definition</b> <a href="main_8c_source.html#l00003">main.c:3</a></div></div>
-<div class="ttc" id="atest__assert_8h_html_a8e122d8dcb0beaa0c708b36a95595f24"><div class="ttname"><a href="test__assert_8h.html#a8e122d8dcb0beaa0c708b36a95595f24">FEUR_TEST_ASSERT</a></div><div class="ttdeci">#define FEUR_TEST_ASSERT(cond)</div><div class="ttdef"><b>Definition</b> <a href="test__assert_8h_source.html#l00025">test_assert.h:25</a></div></div>
-<div class="ttc" id="atest__assert_8h_html_ab49f770f61251c543e41bf94d50c67d8"><div class="ttname"><a href="test__assert_8h.html#ab49f770f61251c543e41bf94d50c67d8">FEUR_TEST_ASSERT_FLOAT</a></div><div class="ttdeci">#define FEUR_TEST_ASSERT_FLOAT(a, b)</div><div class="ttdef"><b>Definition</b> <a href="test__assert_8h_source.html#l00037">test_assert.h:37</a></div></div>
-<div class="ttc" id="atest__data_8h_html_aa94862fe5682452e8aea21843fc12c76"><div class="ttname"><a href="test__data_8h.html#aa94862fe5682452e8aea21843fc12c76">FEUR_Test_Result</a></div><div class="ttdeci">FEUR_Test_Result</div><div class="ttdef"><b>Definition</b> <a href="test__data_8h_source.html#l00015">test_data.h:16</a></div></div>
-<div class="ttc" id="atest__data_8h_html_aa94862fe5682452e8aea21843fc12c76a71d9dc57bfd4c19f3ab4657d0518fb21"><div class="ttname"><a href="test__data_8h.html#aa94862fe5682452e8aea21843fc12c76a71d9dc57bfd4c19f3ab4657d0518fb21">FEUR_Test_Success</a></div><div class="ttdeci">@ FEUR_Test_Success</div><div class="ttdef"><b>Definition</b> <a href="test__data_8h_source.html#l00017">test_data.h:17</a></div></div>
-<div class="ttc" id="atest__logger_8h_html_a4f927b7dc5ef44165848e13a00cfaa7a"><div class="ttname"><a href="test__logger_8h.html#a4f927b7dc5ef44165848e13a00cfaa7a">FEUR_TEST_LOG</a></div><div class="ttdeci">#define FEUR_TEST_LOG(fmt,...)</div><div class="ttdef"><b>Definition</b> <a href="test__logger_8h_source.html#l00015">test_logger.h:15</a></div></div>
-<div class="ttc" id="atester_8h_html_a1b8f49126671fd90bddeb69c61642523"><div class="ttname"><a href="tester_8h.html#a1b8f49126671fd90bddeb69c61642523">FEUR_Test_Run</a></div><div class="ttdeci">void FEUR_Test_Run()</div><div class="ttdef"><b>Definition</b> <a href="tester_8h_source.html#l00115">tester.h:115</a></div></div>
-<div class="ttc" id="atester_8h_html_a4f189b08365fb1c8aa8cf232d023f5d4"><div class="ttname"><a href="tester_8h.html#a4f189b08365fb1c8aa8cf232d023f5d4">FEUR_Test_Add_Test</a></div><div class="ttdeci">void FEUR_Test_Add_Test(const char *name, FEUR_Test_Result(*test_func)())</div><div class="ttdef"><b>Definition</b> <a href="tester_8h_source.html#l00076">tester.h:76</a></div></div>
-<div class="ttc" id="atester_8h_html_a67f50cb35612071c5ace642a913b724d"><div class="ttname"><a href="tester_8h.html#a67f50cb35612071c5ace642a913b724d">FEUR_Test_Init</a></div><div class="ttdeci">void FEUR_Test_Init()</div><div class="ttdef"><b>Definition</b> <a href="tester_8h_source.html#l00033">tester.h:33</a></div></div>
-<div class="ttc" id="atester_8h_html_a8bc032e75866d9e3ba035fb9ed4360c4"><div class="ttname"><a href="tester_8h.html#a8bc032e75866d9e3ba035fb9ed4360c4">FEUR_Test_Add_Group</a></div><div class="ttdeci">void FEUR_Test_Add_Group(const char *name)</div><div class="ttdef"><b>Definition</b> <a href="tester_8h_source.html#l00048">tester.h:48</a></div></div>
-<div class="ttc" id="atester_8h_html_ad203ae5f71383ae571eb4a28e2a93f5f"><div class="ttname"><a href="tester_8h.html#ad203ae5f71383ae571eb4a28e2a93f5f">FEUR_Test_End</a></div><div class="ttdeci">void FEUR_Test_End()</div><div class="ttdef"><b>Definition</b> <a href="tester_8h_source.html#l00170">tester.h:170</a></div></div>
 </div><!-- fragment --> </div></div><!-- PageDoc -->
 <a href="doxygen_crawl.html"></a>
 </div><!-- contents -->

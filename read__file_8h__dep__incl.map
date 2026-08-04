@@ -1,7 +1,0 @@
-<map id="FEURcraft/system/include/read_file.h" name="FEURcraft/system/include/read_file.h">
-<area shape="rect" id="Node000001" title="Fichier implémentant des fonction permettant de lire des fichier sur le système." alt="" coords="82,5,257,44"/>
-<area shape="rect" id="Node000002" href="$shader_8c.html" title=" " alt="" coords="5,92,158,131"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="141,57,103,93,99,89,137,53"/>
-<area shape="rect" id="Node000003" href="$read__file_8c.html" title=" " alt="" coords="182,92,333,131"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="202,53,240,89,236,93,198,57"/>
-</map>

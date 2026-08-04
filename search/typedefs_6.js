@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['image_0',['Image',['../image_8h.html#acf12205a65321baefe5174db248f56f6',1,'image.h']]],
-  ['imagearray_1',['ImageArray',['../image__array_8h.html#a748df57b930d92d13ca7b41128347a64',1,'image_array.h']]]
+  ['texture_0',['Texture',['../texture_8h.html#a9862149b4afb78441c9ac01b07535975',1,'texture.h']]],
+  ['texturearray_1',['TextureArray',['../texture__array_8h.html#a4a55fb05c9cf187e8d2c6f376dbe5149',1,'texture_array.h']]]
 ];

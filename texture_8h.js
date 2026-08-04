@@ -1,6 +1,6 @@
 var texture_8h =
 [
-    [ "Texture", "structTexture.html", "structTexture" ],
+    [ "Texture", "structTexture.html", null ],
     [ "Texture", "texture_8h.html#a9862149b4afb78441c9ac01b07535975", null ],
     [ "bind_texture", "texture_8h.html#a7fcb3693c1cc5a243227c428a453a2f2", null ],
     [ "create_texture", "texture_8h.html#a0fcb309ad9f79b49446995dfbc7fc29d", null ],

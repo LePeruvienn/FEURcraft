@@ -1,6 +1,6 @@
 var window_8h =
 [
-    [ "Window", "structWindow.html", "structWindow" ],
+    [ "Window", "structWindow.html", null ],
     [ "Window", "window_8h.html#adb2a551453af16dd3214a23b16e67544", null ],
     [ "create_window", "window_8h.html#a3eec75dc36557ea34fb768a6582a9fb9", null ],
     [ "free_window", "window_8h.html#ac270e1dd9265fc2316b3cba0d7b55476", null ],

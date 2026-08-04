@@ -1,8 +1,8 @@
 var audio_8h =
 [
-    [ "AudioConfigStruct", "structAudioConfigStruct.html", "structAudioConfigStruct" ],
-    [ "AudioListenerStruct", "structAudioListenerStruct.html", "structAudioListenerStruct" ],
-    [ "AudioEmitterStruct", "structAudioEmitterStruct.html", "structAudioEmitterStruct" ],
+    [ "AudioConfigStruct", "structAudioConfigStruct.html", null ],
+    [ "AudioListenerStruct", "structAudioListenerStruct.html", null ],
+    [ "AudioEmitterStruct", "structAudioEmitterStruct.html", null ],
     [ "AudioConfig", "audio_8h.html#a334fd2ea448fb62ec410b3f96480ad94", null ],
     [ "AudioEmitter", "audio_8h.html#a290d3170fe99a97392978515bacf057d", null ],
     [ "AudioListener", "audio_8h.html#a3700e55e1dc43549d557258fac1af4d7", null ],

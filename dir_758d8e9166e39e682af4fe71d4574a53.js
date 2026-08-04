@@ -6,6 +6,5 @@ var dir_758d8e9166e39e682af4fe71d4574a53 =
     [ "math", "dir_10b468d1c052a6ef64c2aa4aa778b09b.html", "dir_10b468d1c052a6ef64c2aa4aa778b09b" ],
     [ "system", "dir_121b99d75cc55fbf4355f6d11b6bf404.html", "dir_121b99d75cc55fbf4355f6d11b6bf404" ],
     [ "utils", "dir_a359e578c71601500fd7ca04818a85da.html", "dir_a359e578c71601500fd7ca04818a85da" ],
-    [ "world", "dir_49e1aeef74c48005ded1a420e4bd69c5.html", "dir_49e1aeef74c48005ded1a420e4bd69c5" ],
-    [ "main.c", "main_8c.html", "main_8c" ]
+    [ "world", "dir_49e1aeef74c48005ded1a420e4bd69c5.html", "dir_49e1aeef74c48005ded1a420e4bd69c5" ]
 ];

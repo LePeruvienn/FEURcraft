@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['_5f10e9_0',['_10e9',['../window_8c.html#aa51f24a1879d3899e6a6fb3c9dd55ef7',1,'window.c']]]
+  ['exit_5fon_5ferror_0',['EXIT_ON_ERROR',['../logger_8h.html#aac1d7bb7abb0c7f2494d2f49ff486e85',1,'logger.h']]]
 ];

@@ -1,14 +1,7 @@
 <map id="FEURcraft/graphic/include/geometry.h" name="FEURcraft/graphic/include/geometry.h">
-<area shape="rect" id="Node000001" title="Structure représentant les données d&#39;un modèle 3D." alt="" coords="193,5,369,44"/>
+<area shape="rect" id="Node000001" title="Structure représentant les données d&#39;un modèle 3D." alt="" coords="105,5,281,44"/>
 <area shape="rect" id="Node000002" href="$chunk__geometry_8h.html" title="Gère la génération des données géométrique d&#39;un chunk." alt="" coords="5,92,181,131"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="227,53,136,94,134,89,224,48"/>
-<area shape="rect" id="Node000003" href="$chunk__geometry_8c.html" title=" " alt="" coords="54,179,206,217"/>
-<area shape="poly" id="edge5_Node000001_Node000003" title=" " alt="" coords="259,58,195,132,150,180,146,177,191,129,255,54"/>
-<area shape="rect" id="Node000004" href="$mesh_8h.html" title="Structure représentant les données d&#39;un modèle 3D charger dans le GPU." alt="" coords="256,92,431,131"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="306,55,332,90,328,93,302,58"/>
-<area shape="rect" id="Node000006" href="$geometry_8c.html" title=" " alt="" coords="456,92,608,131"/>
-<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="352,47,477,89,475,94,350,52"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="110,144,125,177,120,179,105,146"/>
-<area shape="rect" id="Node000005" href="$mesh_8c.html" title=" " alt="" coords="268,179,420,217"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="346,147,346,178,341,178,341,147"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="161,56,117,93,113,89,157,52"/>
+<area shape="rect" id="Node000003" href="$mesh_8h.html" title="Structure représentant les données d&#39;un modèle 3D charger dans le GPU." alt="" coords="205,92,381,131"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="229,52,273,89,269,93,225,56"/>
 </map>

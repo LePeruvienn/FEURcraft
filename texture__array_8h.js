@@ -1,6 +1,6 @@
 var texture__array_8h =
 [
-    [ "TextureArray", "structTextureArray.html", "structTextureArray" ],
+    [ "TextureArray", "structTextureArray.html", null ],
     [ "TextureArray", "texture__array_8h.html#a4a55fb05c9cf187e8d2c6f376dbe5149", null ],
     [ "texture_array_bind", "texture__array_8h.html#a71303db3bdf7c9953c5449910a1a640a", null ],
     [ "texture_array_create", "texture__array_8h.html#a025f1ad8f3688a49305422e9cbda51f8", null ],

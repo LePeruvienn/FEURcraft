@@ -95,13 +95,12 @@ $(function(){initNavTree('call__once_8h_source.html','',''); });
   <div class="headertitle"><div class="title">call_once.h</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="call__once_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef CALL_ONCE_H</span></div>
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef CALL_ONCE_H</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define CALL_ONCE_H</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;stdbool.h&gt;</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="foldopen" id="foldopen00006" data-start="" data-end="">
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="call__once_8h.html#a8fa73c166bc27fb06a863513d68f1bb0">    6</a></span><span class="preprocessor">#define CALL_ONCE(id, todo) \</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#define CALL_ONCE(id, todo) \</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">    do \</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">    { \</span></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">        static bool _is_called_##id = false; \</span></div>
@@ -111,9 +110,8 @@ $(function(){initNavTree('call__once_8h_source.html','',''); });
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">            todo; \</span></div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">        } \</span></div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">    } while (0)</span></div>
-</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="call__once_8h.html#a2c96eb10961d498d97bd98c84f234eec">   17</a></span><span class="preprocessor">#define CALL_ONCE_UNIQUE(todo) CALL_ONCE(unique, todo)</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#define CALL_ONCE_UNIQUE(todo) CALL_ONCE(unique, todo)</span></div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#endif </span><span class="comment">// CALL_ONCE_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
@@ -122,7 +120,7 @@ $(function(){initNavTree('call__once_8h_source.html','',''); });
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="dir_758d8e9166e39e682af4fe71d4574a53.html">FEURcraft</a></li><li class="navelem"><a href="dir_a359e578c71601500fd7ca04818a85da.html">utils</a></li><li class="navelem"><a href="dir_fff55801cf97b51d7f96e1569882b7ce.html">include</a></li><li class="navelem"><a href="call__once_8h.html">call_once.h</a></li>
+    <li class="navelem"><a href="dir_758d8e9166e39e682af4fe71d4574a53.html">FEURcraft</a></li><li class="navelem"><a href="dir_a359e578c71601500fd7ca04818a85da.html">utils</a></li><li class="navelem"><a href="dir_fff55801cf97b51d7f96e1569882b7ce.html">include</a></li><li class="navelem"><b>call_once.h</b></li>
     <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
   </ul>
 </div>

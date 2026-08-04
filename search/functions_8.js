@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['keyboard_5fget_5fkey_5fstate_0',['keyboard_get_key_state',['../keyboard_8h.html#a6b50c0ce8cab7b24b3731ad10fb3a0b9',1,'keyboard_get_key_state(Keyboard *kb, KeyboardKey key):&#160;keyboard.c'],['../keyboard_8c.html#a6b50c0ce8cab7b24b3731ad10fb3a0b9',1,'keyboard_get_key_state(Keyboard *kb, KeyboardKey key):&#160;keyboard.c']]],
-  ['keyboard_5finit_1',['keyboard_init',['../keyboard_8h.html#a4ddc3b5c1d8e503fdb30f18ca9b6d6d3',1,'keyboard_init(Keyboard *kb, Window *window):&#160;keyboard.c'],['../keyboard_8c.html#a4ddc3b5c1d8e503fdb30f18ca9b6d6d3',1,'keyboard_init(Keyboard *kb, Window *window):&#160;keyboard.c']]],
-  ['keyboard_5fkey_5fto_5fstr_2',['keyboard_key_to_str',['../keyboard__key_8h.html#a2a0d30284f48ba33e9287d2e8ba57db5',1,'keyboard_key_to_str(KeyboardKey key):&#160;keyboard_key.c'],['../keyboard__key_8c.html#a2a0d30284f48ba33e9287d2e8ba57db5',1,'keyboard_key_to_str(KeyboardKey key):&#160;keyboard_key.c']]],
-  ['keyboard_5fupdate_3',['keyboard_update',['../keyboard_8h.html#ad17d32d0e2c51b92f65a3ec025125039',1,'keyboard_update(Keyboard *kb):&#160;keyboard.c'],['../keyboard_8c.html#ad17d32d0e2c51b92f65a3ec025125039',1,'keyboard_update(Keyboard *kb):&#160;keyboard.c']]]
+  ['shader_5fcompile_0',['shader_compile',['../shader_8h.html#a6d94c8c50b822514935b17f5ad677ddb',1,'shader.h']]],
+  ['shader_5fcreate_1',['shader_create',['../shader_8h.html#a5a9333cfb4cc911bc5de5b3f55f284d9',1,'shader.h']]],
+  ['shader_5ffree_2',['shader_free',['../shader_8h.html#a74428bb9c133c0ebc36487e9c69e641c',1,'shader.h']]],
+  ['shader_5ftype_5fget_5fname_3',['shader_type_get_name',['../shader_8h.html#a31c32b9d915b2e83cf141bff74d2b96e',1,'shader.h']]]
 ];

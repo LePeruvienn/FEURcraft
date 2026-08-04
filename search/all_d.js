@@ -1,6 +1,12 @@
 var searchData=
 [
-  ['name_0',['name',['../structFEUR__Test.html#a44ed47967997c6f8a82d9885a1de0ebf',1,'FEUR_Test::name'],['../structFEUR__Test__Group.html#ae985b18a0ae54576cb961c62d11e1c37',1,'FEUR_Test_Group::name']]],
-  ['near_1',['near',['../structCamera.html#ad96efd3e1e4ec33dddb1d25f05d02ff2',1,'Camera']]],
-  ['normalized_2',['normalized',['../structVertexAttribute.html#a5fbf7acbd32a5395e051f5a1c13352a7',1,'VertexAttribute']]]
+  ['shader_0',['Shader',['../structShader.html',1,'Shader'],['../shader_8h.html#af07fd61ffbc69d06247badf9024d254d',1,'Shader:&#160;shader.h']]],
+  ['shader_2eh_1',['shader.h',['../shader_8h.html',1,'']]],
+  ['shader_5fcompile_2',['shader_compile',['../shader_8h.html#a6d94c8c50b822514935b17f5ad677ddb',1,'shader.h']]],
+  ['shader_5fcreate_3',['shader_create',['../shader_8h.html#a5a9333cfb4cc911bc5de5b3f55f284d9',1,'shader.h']]],
+  ['shader_5ffree_4',['shader_free',['../shader_8h.html#a74428bb9c133c0ebc36487e9c69e641c',1,'shader.h']]],
+  ['shader_5ftype_5fget_5fname_5',['shader_type_get_name',['../shader_8h.html#a31c32b9d915b2e83cf141bff74d2b96e',1,'shader.h']]],
+  ['shaderprogram_6',['ShaderProgram',['../structShaderProgram.html',1,'']]],
+  ['shaderstatus_7',['ShaderStatus',['../shader_8h.html#a4d547c74201cec901b9fb5faecd7f6a4',1,'shader.h']]],
+  ['shadertype_8',['ShaderType',['../shader_8h.html#a7d6763eae0bb2dbf066f694e3b7015a6',1,'shader.h']]]
 ];

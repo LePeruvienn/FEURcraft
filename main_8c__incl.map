@@ -1,9 +1,0 @@
-<map id="FEURcraft/main.c" name="FEURcraft/main.c">
-<area shape="rect" id="Node000001" title=" " alt="" coords="14,5,142,30"/>
-<area shape="rect" id="Node000002" href="$logger_8h.html" title="Ficher fournissant des macro de log afin d&#39;afficher des messages de déboggage dans la console." alt="" coords="44,78,112,103"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="81,31,81,62,76,62,76,31"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="5,151,66,175"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="73,105,53,139,48,136,69,102"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="89,151,152,175"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="87,102,108,136,104,139,83,105"/>
-</map>

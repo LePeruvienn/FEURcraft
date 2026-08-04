@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['camera_0',['Camera',['../camera_8h.html#a78750a39b09d6562fd9b910c7743cfca',1,'camera.h']]],
-  ['chunk_1',['Chunk',['../chunk_8h.html#ac3addd1f4caf0ce9547dc20e95664253',1,'chunk.h']]]
+  ['geometry_0',['Geometry',['../geometry_8h.html#ad09eeee98636649758c17a4a4e0d2858',1,'geometry.h']]]
 ];

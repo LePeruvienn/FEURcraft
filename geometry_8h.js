@@ -1,9 +1,7 @@
 var geometry_8h =
 [
-    [ "Geometry", "structGeometry.html", "structGeometry" ],
+    [ "Geometry", "structGeometry.html", null ],
     [ "Geometry", "geometry_8h.html#ad09eeee98636649758c17a4a4e0d2858", null ],
-    [ "geometry_add_array", "geometry_8h.html#a23b9d8d25db32c494aa62e560d1023fc", null ],
-    [ "geometry_add_buffer", "geometry_8h.html#aab0ed854bfde7e7d27b9abbb5094fb50", null ],
     [ "geometry_create", "geometry_8h.html#a1ab8b96f541dbadd32260cc17a3d0496", null ],
     [ "geometry_create_block", "geometry_8h.html#a6496e643e28bd293c1f4d6cb0d53a9b3", null ],
     [ "geometry_create_cube", "geometry_8h.html#af386d6f00f08874f69f6949029bac432", null ],

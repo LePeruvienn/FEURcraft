@@ -1,6 +1,6 @@
 var camera_8h =
 [
-    [ "Camera", "structCamera.html", "structCamera" ],
+    [ "Camera", "structCamera.html", null ],
     [ "Camera", "camera_8h.html#a78750a39b09d6562fd9b910c7743cfca", null ],
     [ "camera_compute_proj", "camera_8h.html#a54db26a50745134e7674f88a1c8c6f8a", null ],
     [ "camera_compute_view", "camera_8h.html#a3367b7cb7483ca7553fe71a4d9038865", null ],

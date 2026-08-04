@@ -95,45 +95,35 @@ $(function(){initNavTree('block__face_8h_source.html','',''); });
   <div class="headertitle"><div class="title">block_face.h</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="block__face_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef BLOCK_FACE_H</span></div>
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef BLOCK_FACE_H</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define BLOCK_FACE_H</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">// Définition des différents indices pour les faces des blocks</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="block__face_8h.html#aa4553fd26488fd3e1daecd5146367ede">    8</a></span><span class="keyword">typedef</span> <span class="keyword">enum</span> <a class="code hl_enumeration" href="block__face_8h.html#a67a0b86beeb7045a9d529c432c71a745">BlockFace</a> <a class="code hl_enumeration" href="block__face_8h.html#a67a0b86beeb7045a9d529c432c71a745">BlockFace</a>;</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">typedef</span> <span class="keyword">enum</span> BlockFace BlockFace;</div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
-<div class="foldopen" id="foldopen00010" data-start="{" data-end="};">
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="block__face_8h.html#a67a0b86beeb7045a9d529c432c71a745">   10</a></span><span class="keyword">enum</span> <a class="code hl_enumeration" href="block__face_8h.html#a67a0b86beeb7045a9d529c432c71a745">BlockFace</a></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">enum</span> BlockFace</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>{</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="block__face_8h.html#a67a0b86beeb7045a9d529c432c71a745a7232b605916cacc7dafdd1906fe58254">   12</a></span>    <a class="code hl_enumvalue" href="block__face_8h.html#a67a0b86beeb7045a9d529c432c71a745a7232b605916cacc7dafdd1906fe58254">BLOCK_FACE_FRONT</a> = 0,</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="block__face_8h.html#a67a0b86beeb7045a9d529c432c71a745aa3d0f8574f6575d9a0d1fd67f71ae697">   13</a></span>    <a class="code hl_enumvalue" href="block__face_8h.html#a67a0b86beeb7045a9d529c432c71a745aa3d0f8574f6575d9a0d1fd67f71ae697">BLOCK_FACE_BACK</a>,</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="block__face_8h.html#a67a0b86beeb7045a9d529c432c71a745a7521b364e68cda8896889e4d9be2b629">   14</a></span>    <a class="code hl_enumvalue" href="block__face_8h.html#a67a0b86beeb7045a9d529c432c71a745a7521b364e68cda8896889e4d9be2b629">BLOCK_FACE_TOP</a>,</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="block__face_8h.html#a67a0b86beeb7045a9d529c432c71a745a2d16f061fb2e42a5ea4e2938a5dc5c02">   15</a></span>    <a class="code hl_enumvalue" href="block__face_8h.html#a67a0b86beeb7045a9d529c432c71a745a2d16f061fb2e42a5ea4e2938a5dc5c02">BLOCK_FACE_BOT</a>,</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="block__face_8h.html#a67a0b86beeb7045a9d529c432c71a745a111cf9295de22ee4c0187fcd922fa76a">   16</a></span>    <a class="code hl_enumvalue" href="block__face_8h.html#a67a0b86beeb7045a9d529c432c71a745a111cf9295de22ee4c0187fcd922fa76a">BLOCK_FACE_LEFT</a>,</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="block__face_8h.html#a67a0b86beeb7045a9d529c432c71a745a2c21f2536d738ca67f49a0cf10a1c114">   17</a></span>    <a class="code hl_enumvalue" href="block__face_8h.html#a67a0b86beeb7045a9d529c432c71a745a2c21f2536d738ca67f49a0cf10a1c114">BLOCK_FACE_RIGHT</a>,</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    BLOCK_FACE_FRONT = 0,</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    BLOCK_FACE_BACK,</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    BLOCK_FACE_TOP,</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    BLOCK_FACE_BOT,</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    BLOCK_FACE_LEFT,</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    BLOCK_FACE_RIGHT,</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="block__face_8h.html#a67a0b86beeb7045a9d529c432c71a745aab03804c2dfab131b808955ea8e476d8">   19</a></span>    <a class="code hl_enumvalue" href="block__face_8h.html#a67a0b86beeb7045a9d529c432c71a745aab03804c2dfab131b808955ea8e476d8">BLOCK_FACE_COUNT</a></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    BLOCK_FACE_COUNT</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>};</div>
-</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#endif </span><span class="comment">// BLOCK_FACE_H</span></div>
-<div class="ttc" id="ablock__face_8h_html_a67a0b86beeb7045a9d529c432c71a745"><div class="ttname"><a href="block__face_8h.html#a67a0b86beeb7045a9d529c432c71a745">BlockFace</a></div><div class="ttdeci">BlockFace</div><div class="ttdef"><b>Definition</b> <a href="#l00010">block_face.h:11</a></div></div>
-<div class="ttc" id="ablock__face_8h_html_a67a0b86beeb7045a9d529c432c71a745a111cf9295de22ee4c0187fcd922fa76a"><div class="ttname"><a href="block__face_8h.html#a67a0b86beeb7045a9d529c432c71a745a111cf9295de22ee4c0187fcd922fa76a">BLOCK_FACE_LEFT</a></div><div class="ttdeci">@ BLOCK_FACE_LEFT</div><div class="ttdef"><b>Definition</b> <a href="#l00016">block_face.h:16</a></div></div>
-<div class="ttc" id="ablock__face_8h_html_a67a0b86beeb7045a9d529c432c71a745a2c21f2536d738ca67f49a0cf10a1c114"><div class="ttname"><a href="block__face_8h.html#a67a0b86beeb7045a9d529c432c71a745a2c21f2536d738ca67f49a0cf10a1c114">BLOCK_FACE_RIGHT</a></div><div class="ttdeci">@ BLOCK_FACE_RIGHT</div><div class="ttdef"><b>Definition</b> <a href="#l00017">block_face.h:17</a></div></div>
-<div class="ttc" id="ablock__face_8h_html_a67a0b86beeb7045a9d529c432c71a745a2d16f061fb2e42a5ea4e2938a5dc5c02"><div class="ttname"><a href="block__face_8h.html#a67a0b86beeb7045a9d529c432c71a745a2d16f061fb2e42a5ea4e2938a5dc5c02">BLOCK_FACE_BOT</a></div><div class="ttdeci">@ BLOCK_FACE_BOT</div><div class="ttdef"><b>Definition</b> <a href="#l00015">block_face.h:15</a></div></div>
-<div class="ttc" id="ablock__face_8h_html_a67a0b86beeb7045a9d529c432c71a745a7232b605916cacc7dafdd1906fe58254"><div class="ttname"><a href="block__face_8h.html#a67a0b86beeb7045a9d529c432c71a745a7232b605916cacc7dafdd1906fe58254">BLOCK_FACE_FRONT</a></div><div class="ttdeci">@ BLOCK_FACE_FRONT</div><div class="ttdef"><b>Definition</b> <a href="#l00012">block_face.h:12</a></div></div>
-<div class="ttc" id="ablock__face_8h_html_a67a0b86beeb7045a9d529c432c71a745a7521b364e68cda8896889e4d9be2b629"><div class="ttname"><a href="block__face_8h.html#a67a0b86beeb7045a9d529c432c71a745a7521b364e68cda8896889e4d9be2b629">BLOCK_FACE_TOP</a></div><div class="ttdeci">@ BLOCK_FACE_TOP</div><div class="ttdef"><b>Definition</b> <a href="#l00014">block_face.h:14</a></div></div>
-<div class="ttc" id="ablock__face_8h_html_a67a0b86beeb7045a9d529c432c71a745aa3d0f8574f6575d9a0d1fd67f71ae697"><div class="ttname"><a href="block__face_8h.html#a67a0b86beeb7045a9d529c432c71a745aa3d0f8574f6575d9a0d1fd67f71ae697">BLOCK_FACE_BACK</a></div><div class="ttdeci">@ BLOCK_FACE_BACK</div><div class="ttdef"><b>Definition</b> <a href="#l00013">block_face.h:13</a></div></div>
-<div class="ttc" id="ablock__face_8h_html_a67a0b86beeb7045a9d529c432c71a745aab03804c2dfab131b808955ea8e476d8"><div class="ttname"><a href="block__face_8h.html#a67a0b86beeb7045a9d529c432c71a745aab03804c2dfab131b808955ea8e476d8">BLOCK_FACE_COUNT</a></div><div class="ttdeci">@ BLOCK_FACE_COUNT</div><div class="ttdef"><b>Definition</b> <a href="#l00019">block_face.h:19</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="dir_758d8e9166e39e682af4fe71d4574a53.html">FEURcraft</a></li><li class="navelem"><a href="dir_49e1aeef74c48005ded1a420e4bd69c5.html">world</a></li><li class="navelem"><a href="dir_0c9ffa712343ec22aae66ea23ff09635.html">include</a></li><li class="navelem"><a href="block__face_8h.html">block_face.h</a></li>
+    <li class="navelem"><a href="dir_758d8e9166e39e682af4fe71d4574a53.html">FEURcraft</a></li><li class="navelem"><a href="dir_49e1aeef74c48005ded1a420e4bd69c5.html">world</a></li><li class="navelem"><a href="dir_0c9ffa712343ec22aae66ea23ff09635.html">include</a></li><li class="navelem"><b>block_face.h</b></li>
     <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
   </ul>
 </div>

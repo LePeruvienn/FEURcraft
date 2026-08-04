@@ -95,39 +95,30 @@ $(function(){initNavTree('keyboard_8h_source.html','',''); });
   <div class="headertitle"><div class="title">keyboard.h</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="keyboard_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef KEYBOARD_H</span></div>
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef KEYBOARD_H</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define KEYBOARD_H</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="window_8h.html">window.h</a>&quot;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="keyboard__key_8h.html">keyboard_key.h</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;keyboard_key.h&quot;</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="keyboard_8h.html#ac433655d1927275e2c4b73be8b40db61">    7</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="structKeyboard.html">Keyboard</a> <a class="code hl_struct" href="structKeyboard.html">Keyboard</a>;</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="structKeyboard.html">Keyboard</a> <a class="code hl_struct" href="structKeyboard.html">Keyboard</a>;</div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
 <div class="foldopen" id="foldopen00009" data-start="{" data-end="};">
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="structKeyboard.html">    9</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structKeyboard.html">Keyboard</a></div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>{</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="structKeyboard.html#ae507da7484a6eea7fbff466aefe13368">   11</a></span>    <a class="code hl_struct" href="structWindow.html">Window</a>* <a class="code hl_variable" href="structKeyboard.html#ae507da7484a6eea7fbff466aefe13368">window</a>;</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="structKeyboard.html#a1e22b10427243e80a8101063f59f0930">   12</a></span>    <a class="code hl_enumeration" href="keyboard__key_8h.html#a7e51438e5f6bf556512ce7103cddac09">KeyState</a> <a class="code hl_variable" href="structKeyboard.html#a1e22b10427243e80a8101063f59f0930">keys</a>[<a class="code hl_enumvalue" href="keyboard__key_8h.html#a94b4a5e76ed30c0af90a1bbbdc214b2bae4385412720195517a0461f3b682e323">KEYBOARD_KEY_COUNT</a>];</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <a class="code hl_struct" href="structWindow.html">Window</a>* window;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    KeyState keys[KEYBOARD_KEY_COUNT];</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>};</div>
 </div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keywordtype">void</span> <a class="code hl_function" href="keyboard_8h.html#a4ddc3b5c1d8e503fdb30f18ca9b6d6d3">keyboard_init</a>(<a class="code hl_struct" href="structKeyboard.html">Keyboard</a>* kb, <a class="code hl_struct" href="structWindow.html">Window</a>* window);</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keywordtype">void</span> keyboard_init(<a class="code hl_struct" href="structKeyboard.html">Keyboard</a>* kb, <a class="code hl_struct" href="structWindow.html">Window</a>* window);</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keywordtype">void</span> <a class="code hl_function" href="keyboard_8h.html#ad17d32d0e2c51b92f65a3ec025125039">keyboard_update</a>(<a class="code hl_struct" href="structKeyboard.html">Keyboard</a>* kb);</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keywordtype">void</span> keyboard_update(<a class="code hl_struct" href="structKeyboard.html">Keyboard</a>* kb);</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><a class="code hl_enumeration" href="keyboard__key_8h.html#a7e51438e5f6bf556512ce7103cddac09">KeyState</a> <a class="code hl_function" href="keyboard_8h.html#a6b50c0ce8cab7b24b3731ad10fb3a0b9">keyboard_get_key_state</a>(<a class="code hl_struct" href="structKeyboard.html">Keyboard</a>* kb, <a class="code hl_enumeration" href="keyboard__key_8h.html#a94b4a5e76ed30c0af90a1bbbdc214b2b">KeyboardKey</a> key);</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>KeyState keyboard_get_key_state(<a class="code hl_struct" href="structKeyboard.html">Keyboard</a>* kb, KeyboardKey key);</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#endif </span><span class="comment">// KEYBOARD_H</span></div>
-<div class="ttc" id="akeyboard_8h_html_a4ddc3b5c1d8e503fdb30f18ca9b6d6d3"><div class="ttname"><a href="keyboard_8h.html#a4ddc3b5c1d8e503fdb30f18ca9b6d6d3">keyboard_init</a></div><div class="ttdeci">void keyboard_init(Keyboard *kb, Window *window)</div><div class="ttdef"><b>Definition</b> <a href="keyboard_8c_source.html#l00009">keyboard.c:9</a></div></div>
-<div class="ttc" id="akeyboard_8h_html_a6b50c0ce8cab7b24b3731ad10fb3a0b9"><div class="ttname"><a href="keyboard_8h.html#a6b50c0ce8cab7b24b3731ad10fb3a0b9">keyboard_get_key_state</a></div><div class="ttdeci">KeyState keyboard_get_key_state(Keyboard *kb, KeyboardKey key)</div><div class="ttdef"><b>Definition</b> <a href="keyboard_8c_source.html#l00077">keyboard.c:77</a></div></div>
-<div class="ttc" id="akeyboard_8h_html_ad17d32d0e2c51b92f65a3ec025125039"><div class="ttname"><a href="keyboard_8h.html#ad17d32d0e2c51b92f65a3ec025125039">keyboard_update</a></div><div class="ttdeci">void keyboard_update(Keyboard *kb)</div><div class="ttdef"><b>Definition</b> <a href="keyboard_8c_source.html#l00022">keyboard.c:22</a></div></div>
-<div class="ttc" id="akeyboard__key_8h_html"><div class="ttname"><a href="keyboard__key_8h.html">keyboard_key.h</a></div></div>
-<div class="ttc" id="akeyboard__key_8h_html_a7e51438e5f6bf556512ce7103cddac09"><div class="ttname"><a href="keyboard__key_8h.html#a7e51438e5f6bf556512ce7103cddac09">KeyState</a></div><div class="ttdeci">KeyState</div><div class="ttdef"><b>Definition</b> <a href="keyboard__key_8h_source.html#l00006">keyboard_key.h:7</a></div></div>
-<div class="ttc" id="akeyboard__key_8h_html_a94b4a5e76ed30c0af90a1bbbdc214b2b"><div class="ttname"><a href="keyboard__key_8h.html#a94b4a5e76ed30c0af90a1bbbdc214b2b">KeyboardKey</a></div><div class="ttdeci">KeyboardKey</div><div class="ttdef"><b>Definition</b> <a href="keyboard__key_8h_source.html#l00016">keyboard_key.h:17</a></div></div>
-<div class="ttc" id="akeyboard__key_8h_html_a94b4a5e76ed30c0af90a1bbbdc214b2bae4385412720195517a0461f3b682e323"><div class="ttname"><a href="keyboard__key_8h.html#a94b4a5e76ed30c0af90a1bbbdc214b2bae4385412720195517a0461f3b682e323">KEYBOARD_KEY_COUNT</a></div><div class="ttdeci">@ KEYBOARD_KEY_COUNT</div><div class="ttdef"><b>Definition</b> <a href="keyboard__key_8h_source.html#l00032">keyboard_key.h:32</a></div></div>
 <div class="ttc" id="astructKeyboard_html"><div class="ttname"><a href="structKeyboard.html">Keyboard</a></div><div class="ttdef"><b>Definition</b> <a href="#l00009">keyboard.h:10</a></div></div>
-<div class="ttc" id="astructKeyboard_html_a1e22b10427243e80a8101063f59f0930"><div class="ttname"><a href="structKeyboard.html#a1e22b10427243e80a8101063f59f0930">Keyboard::keys</a></div><div class="ttdeci">KeyState keys[KEYBOARD_KEY_COUNT]</div><div class="ttdef"><b>Definition</b> <a href="#l00012">keyboard.h:12</a></div></div>
-<div class="ttc" id="astructKeyboard_html_ae507da7484a6eea7fbff466aefe13368"><div class="ttname"><a href="structKeyboard.html#ae507da7484a6eea7fbff466aefe13368">Keyboard::window</a></div><div class="ttdeci">Window * window</div><div class="ttdef"><b>Definition</b> <a href="#l00011">keyboard.h:11</a></div></div>
 <div class="ttc" id="astructWindow_html"><div class="ttname"><a href="structWindow.html">Window</a></div><div class="ttdef"><b>Definition</b> <a href="window_8h_source.html#l00026">window.h:27</a></div></div>
 <div class="ttc" id="awindow_8h_html"><div class="ttname"><a href="window_8h.html">window.h</a></div><div class="ttdoc">Abstraction de la gestion de la fenêtre et du contexte OpenGL.</div></div>
 </div><!-- fragment --></div><!-- contents -->
@@ -136,7 +127,7 @@ $(function(){initNavTree('keyboard_8h_source.html','',''); });
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="dir_758d8e9166e39e682af4fe71d4574a53.html">FEURcraft</a></li><li class="navelem"><a href="dir_121b99d75cc55fbf4355f6d11b6bf404.html">system</a></li><li class="navelem"><a href="dir_4f3e54ad96ce3be55b749960d3d0d119.html">include</a></li><li class="navelem"><a href="keyboard_8h.html">keyboard.h</a></li>
+    <li class="navelem"><a href="dir_758d8e9166e39e682af4fe71d4574a53.html">FEURcraft</a></li><li class="navelem"><a href="dir_121b99d75cc55fbf4355f6d11b6bf404.html">system</a></li><li class="navelem"><a href="dir_4f3e54ad96ce3be55b749960d3d0d119.html">include</a></li><li class="navelem"><b>keyboard.h</b></li>
     <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
   </ul>
 </div>

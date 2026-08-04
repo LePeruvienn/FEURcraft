@@ -126,18 +126,11 @@ Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier
 <div class="dyncontent">
 <div class="center"><img src="geometry_8h__dep__incl.png" border="0" usemap="#aFEURcraft_2graphic_2include_2geometry_8hdep" loading="lazy" alt=""/></div>
 <map name="aFEURcraft_2graphic_2include_2geometry_8hdep" id="aFEURcraft_2graphic_2include_2geometry_8hdep">
-<area shape="rect" title="Structure représentant les données d&#39;un modèle 3D." alt="" coords="193,5,369,44"/>
+<area shape="rect" title="Structure représentant les données d&#39;un modèle 3D." alt="" coords="105,5,281,44"/>
 <area shape="rect" href="chunk__geometry_8h.html" title="Gère la génération des données géométrique d&#39;un chunk." alt="" coords="5,92,181,131"/>
-<area shape="poly" title=" " alt="" coords="227,53,136,94,134,89,224,48"/>
-<area shape="rect" href="chunk__geometry_8c.html" title=" " alt="" coords="54,179,206,217"/>
-<area shape="poly" title=" " alt="" coords="259,58,195,132,150,180,146,177,191,129,255,54"/>
-<area shape="rect" href="mesh_8h.html" title="Structure représentant les données d&#39;un modèle 3D charger dans le GPU." alt="" coords="256,92,431,131"/>
-<area shape="poly" title=" " alt="" coords="306,55,332,90,328,93,302,58"/>
-<area shape="rect" href="geometry_8c.html" title=" " alt="" coords="456,92,608,131"/>
-<area shape="poly" title=" " alt="" coords="352,47,477,89,475,94,350,52"/>
-<area shape="poly" title=" " alt="" coords="110,144,125,177,120,179,105,146"/>
-<area shape="rect" href="mesh_8c.html" title=" " alt="" coords="268,179,420,217"/>
-<area shape="poly" title=" " alt="" coords="346,147,346,178,341,178,341,147"/>
+<area shape="poly" title=" " alt="" coords="161,56,117,93,113,89,157,52"/>
+<area shape="rect" href="mesh_8h.html" title="Structure représentant les données d&#39;un modèle 3D charger dans le GPU." alt="" coords="205,92,381,131"/>
+<area shape="poly" title=" " alt="" coords="229,52,273,89,269,93,225,56"/>
 </map>
 </div>
 </div>
@@ -166,8 +159,10 @@ Fonctions</h2></td></tr>
 <tr class="memdesc:a6496e643e28bd293c1f4d6cb0d53a9b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Créer les données de géomotrie d'un block avec des vertices de <a class="el" href="structVertexBlock.html">VertexBlock</a>.  <br /></td></tr>
 <tr class="memitem:a368965c6bda621e7b5d07d82c4047dfc" id="r_a368965c6bda621e7b5d07d82c4047dfc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structGeometry.html">Geometry</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a368965c6bda621e7b5d07d82c4047dfc">geometry_create_sphere</a> (float R, unsigned int lat_amount, unsigned int long_amount)</td></tr>
 <tr class="memdesc:a368965c6bda621e7b5d07d82c4047dfc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Créer les données de vertex d'une sphère.  <br /></td></tr>
-<tr class="memitem:a23b9d8d25db32c494aa62e560d1023fc" id="r_a23b9d8d25db32c494aa62e560d1023fc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a23b9d8d25db32c494aa62e560d1023fc">geometry_add_array</a> (<a class="el" href="structGeometry.html">Geometry</a> *g, const <a class="el" href="structArrayList.html">ArrayList</a> *vertices, const <a class="el" href="structArrayList.html">ArrayList</a> *indices)</td></tr>
-<tr class="memitem:aab0ed854bfde7e7d27b9abbb5094fb50" id="r_aab0ed854bfde7e7d27b9abbb5094fb50"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aab0ed854bfde7e7d27b9abbb5094fb50">geometry_add_buffer</a> (<a class="el" href="structGeometry.html">Geometry</a> *g, const void *vertices_buffer, size_t vertices_amount, const unsigned int *indices_buffer, size_t indices_amount)</td></tr>
+<tr class="memitem:a23b9d8d25db32c494aa62e560d1023fc" id="r_a23b9d8d25db32c494aa62e560d1023fc"><td class="memItemLeft" align="right" valign="top"><a id="a23b9d8d25db32c494aa62e560d1023fc" name="a23b9d8d25db32c494aa62e560d1023fc"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>geometry_add_array</b> (<a class="el" href="structGeometry.html">Geometry</a> *g, const <a class="el" href="structArrayList.html">ArrayList</a> *vertices, const <a class="el" href="structArrayList.html">ArrayList</a> *indices)</td></tr>
+<tr class="memitem:aab0ed854bfde7e7d27b9abbb5094fb50" id="r_aab0ed854bfde7e7d27b9abbb5094fb50"><td class="memItemLeft" align="right" valign="top"><a id="aab0ed854bfde7e7d27b9abbb5094fb50" name="aab0ed854bfde7e7d27b9abbb5094fb50"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>geometry_add_buffer</b> (<a class="el" href="structGeometry.html">Geometry</a> *g, const void *vertices_buffer, size_t vertices_amount, const unsigned int *indices_buffer, size_t indices_amount)</td></tr>
 <tr class="memitem:a4cc0860cc218307101509c3893739f84" id="r_a4cc0860cc218307101509c3893739f84"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4cc0860cc218307101509c3893739f84">geometry_free</a> (<a class="el" href="structGeometry.html">Geometry</a> *g)</td></tr>
 <tr class="memdesc:a4cc0860cc218307101509c3893739f84"><td class="mdescLeft">&#160;</td><td class="mdescRight">libère la mémoire de la geometry passer en paramêtre  <br /></td></tr>
 <tr class="memitem:a04f396ba56a29e4dd8489afd3975bac0" id="r_a04f396ba56a29e4dd8489afd3975bac0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a04f396ba56a29e4dd8489afd3975bac0">geometry_load_to_gpu</a> (<a class="el" href="structGeometry.html">Geometry</a> *g)</td></tr>
@@ -199,72 +194,6 @@ Fonctions</h2></td></tr>
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentation des fonctions</h2>
-<a id="a23b9d8d25db32c494aa62e560d1023fc" name="a23b9d8d25db32c494aa62e560d1023fc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a23b9d8d25db32c494aa62e560d1023fc">&#9670;&#160;</a></span>geometry_add_array()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void geometry_add_array </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structGeometry.html">Geometry</a> *</td>          <td class="paramname"><span class="paramname"><em>g</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="structArrayList.html">ArrayList</a> *</td>          <td class="paramname"><span class="paramname"><em>vertices</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="structArrayList.html">ArrayList</a> *</td>          <td class="paramname"><span class="paramname"><em>indices</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Définition à la ligne <a class="el" href="geometry_8c_source.html#l00193">193</a> du fichier <a class="el" href="geometry_8c_source.html">geometry.c</a>.</p>
-
-</div>
-</div>
-<a id="aab0ed854bfde7e7d27b9abbb5094fb50" name="aab0ed854bfde7e7d27b9abbb5094fb50"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aab0ed854bfde7e7d27b9abbb5094fb50">&#9670;&#160;</a></span>geometry_add_buffer()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void geometry_add_buffer </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structGeometry.html">Geometry</a> *</td>          <td class="paramname"><span class="paramname"><em>g</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const void *</td>          <td class="paramname"><span class="paramname"><em>vertices_buffer</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>vertices_amount</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const unsigned int *</td>          <td class="paramname"><span class="paramname"><em>indices_buffer</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>indices_amount</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Définition à la ligne <a class="el" href="geometry_8c_source.html#l00222">222</a> du fichier <a class="el" href="geometry_8c_source.html">geometry.c</a>.</p>
-
-</div>
-</div>
 <a id="a1ab8b96f541dbadd32260cc17a3d0496" name="a1ab8b96f541dbadd32260cc17a3d0496"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1ab8b96f541dbadd32260cc17a3d0496">&#9670;&#160;</a></span>geometry_create()</h2>
 
@@ -302,8 +231,6 @@ Fonctions</h2></td></tr>
 <p>Créer les données géométrique d'un modèle pour le type de <a class="el" href="structVertex.html">Vertex</a> du <a class="el" href="structVertexLayout.html">VertexLayout</a>. </p>
 <dl class="section return"><dt>Renvoie</dt><dd>geometry vertex du cube </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="geometry_8c_source.html#l00049">49</a> du fichier <a class="el" href="geometry_8c_source.html">geometry.c</a>.</p>
-
 </div>
 </div>
 <a id="a6496e643e28bd293c1f4d6cb0d53a9b3" name="a6496e643e28bd293c1f4d6cb0d53a9b3"></a>
@@ -323,8 +250,6 @@ Fonctions</h2></td></tr>
 
 <p>Créer les données de géomotrie d'un block avec des vertices de <a class="el" href="structVertexBlock.html">VertexBlock</a>. </p>
 <dl class="section return"><dt>Renvoie</dt><dd>geometry vertex d'un block </dd></dl>
-
-<p class="definition">Définition à la ligne <a class="el" href="geometry_8c_source.html#l00117">117</a> du fichier <a class="el" href="geometry_8c_source.html">geometry.c</a>.</p>
 
 </div>
 </div>
@@ -346,8 +271,6 @@ Fonctions</h2></td></tr>
 <p>Créer les données de géomotrie d'un cube avec des vertices de <a class="el" href="structVertex.html">Vertex</a>. </p>
 <dl class="section return"><dt>Renvoie</dt><dd>geometry vertex du cube </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="geometry_8c_source.html#l00099">99</a> du fichier <a class="el" href="geometry_8c_source.html">geometry.c</a>.</p>
-
 </div>
 </div>
 <a id="ab3f32e44ecb06bdd0184c0562354fdf2" name="ab3f32e44ecb06bdd0184c0562354fdf2"></a>
@@ -367,8 +290,6 @@ Fonctions</h2></td></tr>
 
 <p>Créer les données de géomotrie d'un cube avec des vertices de <a class="el" href="structVertexUV.html">VertexUV</a>. </p>
 <dl class="section return"><dt>Renvoie</dt><dd>geometry vertex du cube </dd></dl>
-
-<p class="definition">Définition à la ligne <a class="el" href="geometry_8c_source.html#l00108">108</a> du fichier <a class="el" href="geometry_8c_source.html">geometry.c</a>.</p>
 
 </div>
 </div>
@@ -395,8 +316,6 @@ Fonctions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd>geometry alloué </dd></dl>
-
-<p class="definition">Définition à la ligne <a class="el" href="geometry_8c_source.html#l00024">24</a> du fichier <a class="el" href="geometry_8c_source.html">geometry.c</a>.</p>
 
 </div>
 </div>
@@ -435,8 +354,6 @@ Fonctions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd>geometry vertex de la sphère </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="geometry_8c_source.html#l00126">126</a> du fichier <a class="el" href="geometry_8c_source.html">geometry.c</a>.</p>
-
 </div>
 </div>
 <a id="a4cc0860cc218307101509c3893739f84" name="a4cc0860cc218307101509c3893739f84"></a>
@@ -462,8 +379,6 @@ Fonctions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="geometry_8c_source.html#l00271">271</a> du fichier <a class="el" href="geometry_8c_source.html">geometry.c</a>.</p>
-
 </div>
 </div>
 <a id="a04f396ba56a29e4dd8489afd3975bac0" name="a04f396ba56a29e4dd8489afd3975bac0"></a>
@@ -488,8 +403,6 @@ Fonctions</h2></td></tr>
   </table>
   </dd>
 </dl>
-
-<p class="definition">Définition à la ligne <a class="el" href="geometry_8c_source.html#l00256">256</a> du fichier <a class="el" href="geometry_8c_source.html">geometry.c</a>.</p>
 
 </div>
 </div>

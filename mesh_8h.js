@@ -1,6 +1,6 @@
 var mesh_8h =
 [
-    [ "Mesh", "structMesh.html", "structMesh" ],
+    [ "Mesh", "structMesh.html", null ],
     [ "Mesh", "mesh_8h.html#a2abca57ece005663a4df39aed5463027", null ],
     [ "bind_mesh", "mesh_8h.html#a9b979d7f4d62651bd60ebe01b94b08b2", null ],
     [ "create_block_mesh", "mesh_8h.html#ad176a7fba154dd6c331ed669c0910a2f", null ],
