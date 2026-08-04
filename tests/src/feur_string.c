@@ -121,6 +121,27 @@ FEUR_Test_Result Test_FeurString_AutoResize()
 	return FEUR_Test_Success;
 }
 
+FEUR_Test_Result Test_FeurString_Static()
+{
+	char stack_buffer[32];
+	stack_buffer[0] = '\0';
+
+	FeurString string = FEUR_STR_STATIC(stack_buffer, 32, 0);
+
+	FEUR_TEST_ASSERT(string.is_static == true);
+	FEUR_TEST_ASSERT(string.length == 0);
+	FEUR_TEST_ASSERT(string.capacity == 32);
+
+	feur_string_append_str(&string, "Sur la pile !");
+
+	FEUR_TEST_ASSERT(string.length == 13);
+	FEUR_TEST_ASSERT(strcmp(string.c_str, "Sur la pile !") == 0);
+	
+	FEUR_TEST_ASSERT(strcmp(stack_buffer, "Sur la pile !") == 0);
+
+	return FEUR_Test_Success;
+}
+
 int main()
 {
 	FEUR_Test_Init();
@@ -137,6 +158,9 @@ int main()
 
 	FEUR_Test_Add_Group("Gestion Mémoire");
 	FEUR_Test_Add_Test("Redimensionnement Auto", Test_FeurString_AutoResize);
+
+	FEUR_Test_Add_Group("Sur la pile!");
+	FEUR_Test_Add_Test("FeurString static", Test_FeurString_Static);
 
 	FEUR_Test_Run();
 	FEUR_Test_End();

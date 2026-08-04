@@ -4,7 +4,13 @@
 #include <stddef.h>
 #include <stdbool.h>
 
-#define FEUR_STRING_BEGIN 0
+#define FEUR_STR_BEGIN 0
+
+#define FEUR_STR_STATIC(_buffer, _capacity, _length) \
+	((FeurString) { .c_str = (_buffer), \
+	                .capacity = (_capacity), \
+	                .length = _length, \
+	                .is_static = true })
 
 typedef struct FeurString FeurString;
 

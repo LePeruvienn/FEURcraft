@@ -8,7 +8,7 @@
 #include <string.h>
 #include <stddef.h>
 
-#define FEUR_STRING_MIN_CAPACITY 8
+#define FEUR_STR_MIN_CAPACITY 8
 
 FeurString* feur_string_create(size_t capacity)
 {
@@ -16,7 +16,7 @@ FeurString* feur_string_create(size_t capacity)
 
 	CHECK_IS_NULL_RET(string, "Failed to malloc FeurString struct.", NULL);
 
-	size_t optimized_capacity = FEUR_STRING_MIN_CAPACITY;
+	size_t optimized_capacity = FEUR_STR_MIN_CAPACITY;
 
 	while(optimized_capacity < capacity)
 	{
@@ -58,7 +58,7 @@ FeurString* feur_string_create_c_str_size(const char* c_str, size_t size)
 
 	CHECK_IS_NULL_RET(string, "Failed to create FeurString.", NULL);
 
-	feur_string_set_c_str_size(string, c_str, size, 0);
+	feur_string_set_c_str_size(string, c_str, size, FEUR_STR_BEGIN);
 
 	return string;
 }
@@ -143,7 +143,7 @@ void feur_string_set_c_str_size(FeurString* string, const char* c_str, size_t si
 			"Cannot expand a static FeurString.", );
 
 		size_t capacity_needed = (string->capacity == 0) ?
-			FEUR_STRING_MIN_CAPACITY : string->capacity;
+			FEUR_STR_MIN_CAPACITY : string->capacity;
 
 		while (new_length_needed + 1 > capacity_needed)
 		{
