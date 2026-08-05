@@ -63,7 +63,7 @@ FeurString* feur_string_create_c_str_size(const char* c_str, size_t size)
 	return string;
 }
 
-FeurString* feur_string_create_from(FeurString* string, size_t beg, size_t end)
+FeurString* feur_string_create_from(const FeurString* string, size_t beg, size_t end)
 {
 	CHECK_IS_NULL_RET(string, "Cannot create a FeurString from a NULL ptr.", NULL);
 
@@ -76,6 +76,13 @@ FeurString* feur_string_create_from(FeurString* string, size_t beg, size_t end)
 	const char* c_str = string->c_str + beg;
 
 	return feur_string_create_c_str_size(c_str, size);
+}
+
+FeurString* feur_string_create_copy(const FeurString* string)
+{
+	CHECK_IS_NULL_RET(string, "Cannot create a FeurString from a NULL ptr.", NULL);
+
+	return feur_string_create_from(string, FEUR_STR_BEGIN, string->length);
 }
 
 void feur_string_set_c_str(FeurString* string, const char* c_str, size_t beg)

@@ -23,7 +23,7 @@ target_include_directories(${LIB_NAME}
 # Fichiers sources de la librairie
 target_sources(${LIB_NAME}
 	PRIVATE
-		src/read_file.c
+		src/file_helper.c
 		src/window.c
 		src/env_helper.c
 		src/image.c
@@ -31,7 +31,8 @@ target_sources(${LIB_NAME}
 		src/keyboard_key.c
 		src/mouse_input.c
 		src/program_status.c
+		src/feur_file.c
 )
 
 # On link les librarie nécessaire à la compilation de la lib
-target_link_libraries(${LIB_NAME} PUBLIC utils math glfw glad stb_image)
+target_link_libraries(${LIB_NAME} PUBLIC utils math glfw glad stb_image data)

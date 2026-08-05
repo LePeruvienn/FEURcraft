@@ -36,9 +36,9 @@ FeurString* feur_string_create(size_t capacity);
 FeurString* feur_string_create_c_str(const char* c_str);
 FeurString* feur_string_create_c_str_size(const char* c_str, size_t size);
 
-FeurString* feur_string_create_from(FeurString* string, size_t beg, size_t end);
+FeurString* feur_string_create_from(const FeurString* string, size_t beg, size_t end);
 
-FeurString* feur_string_create_copy(FeurString* string);
+FeurString* feur_string_create_copy(const FeurString* string);
 
 void feur_string_free(FeurString* string);
 

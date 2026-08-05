@@ -23,7 +23,7 @@
  */
 
 #define FEUR_TEST_ASSERT(cond) \
-	FEUR_TEST_ASSERT_MSG(cond, "Condition is false, Assertion Failed !")
+	FEUR_TEST_ASSERT_MSG((cond), "Condition is false, Assertion Failed !")
 
 #define FEUR_TEST_ASSERT_NULL(ptr) \
 	FEUR_TEST_ASSERT_NULL_MSG(ptr, "Pointer is NOT NULL, Assertion Failed !")

@@ -1,6 +1,6 @@
 #include "shader.h"
 
-#include "read_file.h"
+#include "file_helper.h"
 
 #include "error_checker.h"
 
@@ -95,7 +95,7 @@ void shader_compile(Shader* shader)
 		LOG_WARNING("Shader already compiled, recompiling shader.");
 	}
 
-	const char* source = read_file_txt(shader->file_path);
+	const char* source = file_read_txt(shader->file_path);
 
 	CHECK_IS_NULL_RET(source, "Failed to read shader source", );
 
