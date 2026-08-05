@@ -102,31 +102,20 @@ $(function(){initNavTree('audio_8h.html','',''); });
 <code>#include &lt;AL/alc.h&gt;</code><br />
 <code>#include &lt;sndfile.h&gt;</code><br />
 <code>#include &quot;vec3.h&quot;</code><br />
-<code>#include &quot;transform.h&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Graphe des dépendances par inclusion de audio.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="audio_8h__incl.png" border="0" usemap="#aFEURcraft_2audio_2include_2audio_8h" loading="lazy" alt=""/></div>
 <map name="aFEURcraft_2audio_2include_2audio_8h" id="aFEURcraft_2audio_2include_2audio_8h">
-<area shape="rect" title="Structure et fonctions permettant de gérer l&#39;audio." alt="" coords="137,5,301,44"/>
+<area shape="rect" title="Structure et fonctions permettant de gérer l&#39;audio." alt="" coords="90,5,255,44"/>
 <area shape="rect" title=" " alt="" coords="5,92,68,117"/>
-<area shape="poly" title=" " alt="" coords="176,47,79,88,77,83,174,42"/>
+<area shape="poly" title=" " alt="" coords="141,47,71,86,68,82,138,42"/>
 <area shape="rect" title=" " alt="" coords="91,92,160,117"/>
-<area shape="poly" title=" " alt="" coords="198,47,153,84,150,80,195,43"/>
+<area shape="poly" title=" " alt="" coords="163,46,143,80,138,77,159,43"/>
 <area shape="rect" title=" " alt="" coords="184,92,254,117"/>
-<area shape="poly" title=" " alt="" coords="222,45,222,76,216,76,216,45"/>
-<area shape="rect" href="vec3_8h_source.html" title=" " alt="" coords="296,237,356,262"/>
-<area shape="poly" title=" " alt="" coords="236,43,268,91,300,161,321,222,316,224,295,163,263,93,232,46"/>
-<area shape="rect" href="transform_8h_source.html" title=" " alt="" coords="329,92,416,117"/>
-<area shape="poly" title=" " alt="" coords="257,42,337,82,335,87,255,47"/>
-<area shape="poly" title=" " alt="" coords="371,118,337,223,332,222,366,116"/>
-<area shape="rect" href="mat4_8h_source.html" title=" " alt="" coords="379,165,440,189"/>
-<area shape="poly" title=" " alt="" coords="381,116,399,150,394,152,376,118"/>
-<area shape="poly" title=" " alt="" coords="398,192,353,230,349,225,394,188"/>
-<area shape="rect" href="vec4_8h_source.html" title=" " alt="" coords="380,237,440,262"/>
-<area shape="poly" title=" " alt="" coords="412,190,412,222,407,222,407,190"/>
-<area shape="rect" title=" " alt="" coords="464,237,527,262"/>
-<area shape="poly" title=" " alt="" coords="426,188,471,225,468,230,422,192"/>
+<area shape="poly" title=" " alt="" coords="186,43,207,77,202,80,182,46"/>
+<area shape="rect" href="vec3_8h_source.html" title=" " alt="" coords="279,92,338,117"/>
+<area shape="poly" title=" " alt="" coords="207,42,277,82,274,86,204,47"/>
 </map>
 </div>
 </div>
@@ -170,12 +159,6 @@ Fonctions</h2></td></tr>
 <tr class="memdesc:afe8eec4cb3ced1255b9838781144f81a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Créer une structure représentant l'audio listener.  <br /></td></tr>
 <tr class="memitem:ab980daad45d21552b1572ec66b729da2" id="r_ab980daad45d21552b1572ec66b729da2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#aabd587cb003ad09e88ea5a4b7f477c7b">AudioListener</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab980daad45d21552b1572ec66b729da2">AUDIO_LISTENER_CREATE</a> ()</td></tr>
 <tr class="memdesc:ab980daad45d21552b1572ec66b729da2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Créer une structure représentant l'audio listener.  <br /></td></tr>
-<tr class="memitem:a7e2999409fe6f2cc7e80430b0c415ffd" id="r_a7e2999409fe6f2cc7e80430b0c415ffd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#aabd587cb003ad09e88ea5a4b7f477c7b">AudioListener</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7e2999409fe6f2cc7e80430b0c415ffd">AUDIO_LISTENER_CREATE_WITH_ATTACHED_TRANSFORM</a> (<a class="el" href="structTransform.html">Transform</a> *transform_ptr)</td></tr>
-<tr class="memdesc:a7e2999409fe6f2cc7e80430b0c415ffd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Créer une structure représentant l'audio listener.  <br /></td></tr>
-<tr class="memitem:a51a3aaf22a171ecd30ef5373cafc8549" id="r_a51a3aaf22a171ecd30ef5373cafc8549"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a51a3aaf22a171ecd30ef5373cafc8549">AUDIO_LISTENER_ATTACH_TRANSFORM</a> (<a class="el" href="#aabd587cb003ad09e88ea5a4b7f477c7b">AudioListener</a> audioLi, <a class="el" href="structTransform.html">Transform</a> *transform_ptr)</td></tr>
-<tr class="memdesc:a51a3aaf22a171ecd30ef5373cafc8549"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attache une transform à l'<a class="el" href="#aabd587cb003ad09e88ea5a4b7f477c7b" title="Type représentant l&#39;audio listener, l&#39;élément qui reçoit le sons.">AudioListener</a>.  <br /></td></tr>
-<tr class="memitem:adbf93704aa9fa2a7c16843c3d31e3a64" id="r_adbf93704aa9fa2a7c16843c3d31e3a64"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#aabd587cb003ad09e88ea5a4b7f477c7b">AudioListener</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adbf93704aa9fa2a7c16843c3d31e3a64">AUDIO_LISTENER_DEATACH_TRANSFORM</a> ()</td></tr>
-<tr class="memdesc:adbf93704aa9fa2a7c16843c3d31e3a64"><td class="mdescLeft">&#160;</td><td class="mdescRight">Créer une structure représentant l'audio listener.  <br /></td></tr>
 <tr class="memitem:ae13ef50bac46d13074e349c90bc0b544" id="r_ae13ef50bac46d13074e349c90bc0b544"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae13ef50bac46d13074e349c90bc0b544">AUDIO_LISTENER_FREE</a> (<a class="el" href="#aabd587cb003ad09e88ea5a4b7f477c7b">AudioListener</a> audioLi)</td></tr>
 <tr class="memdesc:ae13ef50bac46d13074e349c90bc0b544"><td class="mdescLeft">&#160;</td><td class="mdescRight">Détruit l'<a class="el" href="#aabd587cb003ad09e88ea5a4b7f477c7b" title="Type représentant l&#39;audio listener, l&#39;élément qui reçoit le sons.">AudioListener</a>.  <br /></td></tr>
 <tr class="memitem:ab2fa4f7cf3251b872b8b86941cebecd0" id="r_ab2fa4f7cf3251b872b8b86941cebecd0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab2fa4f7cf3251b872b8b86941cebecd0">AUDIO_LISTENER_SET_GAIN</a> (<a class="el" href="#aabd587cb003ad09e88ea5a4b7f477c7b">AudioListener</a> audioLi, float gain)</td></tr>
@@ -192,20 +175,12 @@ Fonctions</h2></td></tr>
 <tr class="memdesc:a10ea25425aa198c115f01fe4910bf019"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoit le vecteur direction de l'<a class="el" href="#aabd587cb003ad09e88ea5a4b7f477c7b" title="Type représentant l&#39;audio listener, l&#39;élément qui reçoit le sons.">AudioListener</a>.  <br /></td></tr>
 <tr class="memitem:adb29620b3642d491af3f8e4531b6db3d" id="r_adb29620b3642d491af3f8e4531b6db3d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structVec3.html">Vec3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adb29620b3642d491af3f8e4531b6db3d">AUDIO_LISTENER_GET_UP_VECTOR</a> (<a class="el" href="#aabd587cb003ad09e88ea5a4b7f477c7b">AudioListener</a> audioLi)</td></tr>
 <tr class="memdesc:adb29620b3642d491af3f8e4531b6db3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoit le vecteur indiquant le haut de l'<a class="el" href="#aabd587cb003ad09e88ea5a4b7f477c7b" title="Type représentant l&#39;audio listener, l&#39;élément qui reçoit le sons.">AudioListener</a>.  <br /></td></tr>
-<tr class="memitem:aba9ba7056c3d0f6c331cb694fabdf94f" id="r_aba9ba7056c3d0f6c331cb694fabdf94f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aba9ba7056c3d0f6c331cb694fabdf94f">AUDIO_LISTENER_UPDATE</a> (<a class="el" href="#aabd587cb003ad09e88ea5a4b7f477c7b">AudioListener</a>)</td></tr>
-<tr class="memdesc:aba9ba7056c3d0f6c331cb694fabdf94f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mets à jours l'état de l'<a class="el" href="#aabd587cb003ad09e88ea5a4b7f477c7b" title="Type représentant l&#39;audio listener, l&#39;élément qui reçoit le sons.">AudioListener</a>.  <br /></td></tr>
 <tr class="memitem:a8b0ffb7338d258484b13ef963138a466" id="r_a8b0ffb7338d258484b13ef963138a466"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a21ae786262b00bc0c58c75a3016dc62a">AudioEmitter</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8b0ffb7338d258484b13ef963138a466">AUDIO_EMITTER_CREATE_WITH_POSITION</a> (<a class="el" href="#aeb12fb6b97d973f47522ad70bf6f8862">AudioSource</a> audioSource, <a class="el" href="structVec3.html">Vec3</a> pos)</td></tr>
-<tr class="memdesc:a8b0ffb7338d258484b13ef963138a466"><td class="mdescLeft">&#160;</td><td class="mdescRight">Créer un <a class="el" href="#a21ae786262b00bc0c58c75a3016dc62a" title="Type représentant un audio emitter, un élément qui émèts du sons.">AudioEmitter</a>.  <br /></td></tr>
-<tr class="memitem:a71943a78007a98eee8cb528887648c8d" id="r_a71943a78007a98eee8cb528887648c8d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a21ae786262b00bc0c58c75a3016dc62a">AudioEmitter</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a71943a78007a98eee8cb528887648c8d">AUDIO_EMITTER_CREATE_WITH_ATTACHED_TRANSFORM</a> (<a class="el" href="#aeb12fb6b97d973f47522ad70bf6f8862">AudioSource</a> audioSource, <a class="el" href="structTransform.html">Transform</a> *transform_ptr)</td></tr>
-<tr class="memdesc:a71943a78007a98eee8cb528887648c8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Créer un <a class="el" href="#a21ae786262b00bc0c58c75a3016dc62a" title="Type représentant un audio emitter, un élément qui émèts du sons.">AudioEmitter</a>.  <br /></td></tr>
+<tr class="memdesc:a8b0ffb7338d258484b13ef963138a466"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mets à jours l'état de l'<a class="el" href="#aabd587cb003ad09e88ea5a4b7f477c7b" title="Type représentant l&#39;audio listener, l&#39;élément qui reçoit le sons.">AudioListener</a>.  <br /></td></tr>
 <tr class="memitem:aa67b7fd1d246f3381c4c4db388547cad" id="r_aa67b7fd1d246f3381c4c4db388547cad"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a21ae786262b00bc0c58c75a3016dc62a">AudioEmitter</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa67b7fd1d246f3381c4c4db388547cad">AUDIO_EMITTER_CREATE</a> (<a class="el" href="#aeb12fb6b97d973f47522ad70bf6f8862">AudioSource</a> audioSource)</td></tr>
 <tr class="memdesc:aa67b7fd1d246f3381c4c4db388547cad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Créer un <a class="el" href="#a21ae786262b00bc0c58c75a3016dc62a" title="Type représentant un audio emitter, un élément qui émèts du sons.">AudioEmitter</a> attaché à une transform.  <br /></td></tr>
 <tr class="memitem:a47a3c7461765556efb327756a1b23a7b" id="r_a47a3c7461765556efb327756a1b23a7b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a47a3c7461765556efb327756a1b23a7b">AUDIO_EMITTER_FREE</a> (<a class="el" href="#a21ae786262b00bc0c58c75a3016dc62a">AudioEmitter</a> audioEm)</td></tr>
 <tr class="memdesc:a47a3c7461765556efb327756a1b23a7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Détruit un <a class="el" href="#a21ae786262b00bc0c58c75a3016dc62a" title="Type représentant un audio emitter, un élément qui émèts du sons.">AudioEmitter</a>.  <br /></td></tr>
-<tr class="memitem:adbb3a012a312ec1649ce89415ffe897a" id="r_adbb3a012a312ec1649ce89415ffe897a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adbb3a012a312ec1649ce89415ffe897a">AUDIO_EMITTER_ATTACH_TRANSFORM</a> (<a class="el" href="#a21ae786262b00bc0c58c75a3016dc62a">AudioEmitter</a> audioEm, <a class="el" href="structTransform.html">Transform</a> *transform_ptr)</td></tr>
-<tr class="memdesc:adbb3a012a312ec1649ce89415ffe897a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attache une <a class="el" href="structTransform.html">Transform</a> à un <a class="el" href="#a21ae786262b00bc0c58c75a3016dc62a" title="Type représentant un audio emitter, un élément qui émèts du sons.">AudioEmitter</a>.  <br /></td></tr>
-<tr class="memitem:a878b76c2d4cce48de7b595d4ca5196c6" id="r_a878b76c2d4cce48de7b595d4ca5196c6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a878b76c2d4cce48de7b595d4ca5196c6">AUDIO_EMITTER_DETACH_TRANSFORM</a> (<a class="el" href="#a21ae786262b00bc0c58c75a3016dc62a">AudioEmitter</a> audioEm)</td></tr>
-<tr class="memdesc:a878b76c2d4cce48de7b595d4ca5196c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Détache la <a class="el" href="structTransform.html">Transform</a> d'un <a class="el" href="#a21ae786262b00bc0c58c75a3016dc62a" title="Type représentant un audio emitter, un élément qui émèts du sons.">AudioEmitter</a>.  <br /></td></tr>
 <tr class="memitem:a184e302c3d1b428af88f4629d9266935" id="r_a184e302c3d1b428af88f4629d9266935"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a184e302c3d1b428af88f4629d9266935">AUDIO_EMITTER_SET_GAIN</a> (<a class="el" href="#a21ae786262b00bc0c58c75a3016dc62a">AudioEmitter</a> audioEm, float gain)</td></tr>
 <tr class="memdesc:a184e302c3d1b428af88f4629d9266935"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mets à jours le gain de l'<a class="el" href="#a21ae786262b00bc0c58c75a3016dc62a" title="Type représentant un audio emitter, un élément qui émèts du sons.">AudioEmitter</a>.  <br /></td></tr>
 <tr class="memitem:afd595b3faae584e1cf518a996c11bc96" id="r_afd595b3faae584e1cf518a996c11bc96"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afd595b3faae584e1cf518a996c11bc96">AUDIO_EMITTER_SET_IS_LOOPING</a> (<a class="el" href="#a21ae786262b00bc0c58c75a3016dc62a">AudioEmitter</a> audioEm, int is_looping)</td></tr>
@@ -224,10 +199,8 @@ Fonctions</h2></td></tr>
 <tr class="memdesc:ad14490c9290965066e1d95786b4466c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoit la direction de l'<a class="el" href="#a21ae786262b00bc0c58c75a3016dc62a" title="Type représentant un audio emitter, un élément qui émèts du sons.">AudioEmitter</a>.  <br /></td></tr>
 <tr class="memitem:a4b08c6c50ed91d00f140d535d2cf7e12" id="r_a4b08c6c50ed91d00f140d535d2cf7e12"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#afb5c99255eacd759278f3b99b20bb4fa">AudioEmitterState</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4b08c6c50ed91d00f140d535d2cf7e12">AUDIO_EMITTER_GET_STATE</a> (<a class="el" href="#a21ae786262b00bc0c58c75a3016dc62a">AudioEmitter</a> audioEm)</td></tr>
 <tr class="memdesc:a4b08c6c50ed91d00f140d535d2cf7e12"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoit l'état de lecture de l'<a class="el" href="#a21ae786262b00bc0c58c75a3016dc62a" title="Type représentant un audio emitter, un élément qui émèts du sons.">AudioEmitter</a>.  <br /></td></tr>
-<tr class="memitem:a1c581e5113d7aa95dc819bf33fecb561" id="r_a1c581e5113d7aa95dc819bf33fecb561"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1c581e5113d7aa95dc819bf33fecb561">AUDIO_EMITTER_UPDATE</a> (<a class="el" href="#a21ae786262b00bc0c58c75a3016dc62a">AudioEmitter</a>)</td></tr>
-<tr class="memdesc:a1c581e5113d7aa95dc819bf33fecb561"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mets à jours l'état de l'<a class="el" href="#a21ae786262b00bc0c58c75a3016dc62a" title="Type représentant un audio emitter, un élément qui émèts du sons.">AudioEmitter</a>.  <br /></td></tr>
 <tr class="memitem:a125bddff6de6cabcd3af011591c6ba7c" id="r_a125bddff6de6cabcd3af011591c6ba7c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a125bddff6de6cabcd3af011591c6ba7c">AUDIO_EMITTER_PLAY</a> (<a class="el" href="#a21ae786262b00bc0c58c75a3016dc62a">AudioEmitter</a> audioEm)</td></tr>
-<tr class="memdesc:a125bddff6de6cabcd3af011591c6ba7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Joue le sons ou reprends la lecture du sons de l'<a class="el" href="#a21ae786262b00bc0c58c75a3016dc62a" title="Type représentant un audio emitter, un élément qui émèts du sons.">AudioEmitter</a>.  <br /></td></tr>
+<tr class="memdesc:a125bddff6de6cabcd3af011591c6ba7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mets à jours l'état de l'<a class="el" href="#a21ae786262b00bc0c58c75a3016dc62a" title="Type représentant un audio emitter, un élément qui émèts du sons.">AudioEmitter</a>.  <br /></td></tr>
 <tr class="memitem:aba64fc49761113c6a97f733e1521cd1d" id="r_aba64fc49761113c6a97f733e1521cd1d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aba64fc49761113c6a97f733e1521cd1d">AUDIO_EMITTER_STOP</a> (<a class="el" href="#a21ae786262b00bc0c58c75a3016dc62a">AudioEmitter</a> audioEm)</td></tr>
 <tr class="memdesc:aba64fc49761113c6a97f733e1521cd1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stop le sons de l'<a class="el" href="#a21ae786262b00bc0c58c75a3016dc62a" title="Type représentant un audio emitter, un élément qui émèts du sons.">AudioEmitter</a>.  <br /></td></tr>
 <tr class="memitem:ae127820b30c6eed94988081ab6f4736d" id="r_ae127820b30c6eed94988081ab6f4736d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae127820b30c6eed94988081ab6f4736d">AUDIO_EMITTER_PAUSE</a> (<a class="el" href="#a21ae786262b00bc0c58c75a3016dc62a">AudioEmitter</a> audioEm)</td></tr>
@@ -253,7 +226,7 @@ Fonctions</h2></td></tr>
 
 <p>Type représentant les données de config d'OpenAL. </p>
 
-<p class="definition">Définition à la ligne <a class="el" href="audio_8h_source.html#l00026">26</a> du fichier <a class="el" href="audio_8h_source.html">audio.h</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="audio_8h_source.html#l00025">25</a> du fichier <a class="el" href="audio_8h_source.html">audio.h</a>.</p>
 
 </div>
 </div>
@@ -271,7 +244,7 @@ Fonctions</h2></td></tr>
 
 <p>Type représentant un audio emitter, un élément qui émèts du sons. </p>
 
-<p class="definition">Définition à la ligne <a class="el" href="audio_8h_source.html#l00045">45</a> du fichier <a class="el" href="audio_8h_source.html">audio.h</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="audio_8h_source.html#l00044">44</a> du fichier <a class="el" href="audio_8h_source.html">audio.h</a>.</p>
 
 </div>
 </div>
@@ -289,7 +262,7 @@ Fonctions</h2></td></tr>
 
 <p>Type représentant l'audio listener, l'élément qui reçoit le sons. </p>
 
-<p class="definition">Définition à la ligne <a class="el" href="audio_8h_source.html#l00038">38</a> du fichier <a class="el" href="audio_8h_source.html">audio.h</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="audio_8h_source.html#l00037">37</a> du fichier <a class="el" href="audio_8h_source.html">audio.h</a>.</p>
 
 </div>
 </div>
@@ -307,7 +280,7 @@ Fonctions</h2></td></tr>
 
 <p>Type représentant les donnée d'un sons. </p>
 
-<p class="definition">Définition à la ligne <a class="el" href="audio_8h_source.html#l00032">32</a> du fichier <a class="el" href="audio_8h_source.html">audio.h</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="audio_8h_source.html#l00031">31</a> du fichier <a class="el" href="audio_8h_source.html">audio.h</a>.</p>
 
 </div>
 </div>
@@ -334,41 +307,11 @@ Fonctions</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Définition à la ligne <a class="el" href="audio_8h_source.html#l00051">51</a> du fichier <a class="el" href="audio_8h_source.html">audio.h</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="audio_8h_source.html#l00050">50</a> du fichier <a class="el" href="audio_8h_source.html">audio.h</a>.</p>
 
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentation des fonctions</h2>
-<a id="adbb3a012a312ec1649ce89415ffe897a" name="adbb3a012a312ec1649ce89415ffe897a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adbb3a012a312ec1649ce89415ffe897a">&#9670;&#160;</a></span>AUDIO_EMITTER_ATTACH_TRANSFORM()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void AUDIO_EMITTER_ATTACH_TRANSFORM </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="#a21ae786262b00bc0c58c75a3016dc62a">AudioEmitter</a></td>          <td class="paramname"><span class="paramname"><em>audioEm</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structTransform.html">Transform</a> *</td>          <td class="paramname"><span class="paramname"><em>transform_ptr</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Attache une <a class="el" href="structTransform.html">Transform</a> à un <a class="el" href="#a21ae786262b00bc0c58c75a3016dc62a" title="Type représentant un audio emitter, un élément qui émèts du sons.">AudioEmitter</a>. </p>
-<dl class="params"><dt>Paramètres</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">audioSource</td><td>L'<a class="el" href="#aeb12fb6b97d973f47522ad70bf6f8862" title="Type représentant les donnée d&#39;un sons.">AudioSource</a>. </td></tr>
-    <tr><td class="paramname">transform_ptr</td><td>Le pointeur vers une <a class="el" href="structTransform.html">Transform</a>. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
 <a id="aa67b7fd1d246f3381c4c4db388547cad" name="aa67b7fd1d246f3381c4c4db388547cad"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa67b7fd1d246f3381c4c4db388547cad">&#9670;&#160;</a></span>AUDIO_EMITTER_CREATE()</h2>
 
@@ -385,37 +328,6 @@ Fonctions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Créer un <a class="el" href="#a21ae786262b00bc0c58c75a3016dc62a" title="Type représentant un audio emitter, un élément qui émèts du sons.">AudioEmitter</a> attaché à une transform. </p>
-<dl class="section return"><dt>Renvoie</dt><dd>L'<a class="el" href="#a21ae786262b00bc0c58c75a3016dc62a" title="Type représentant un audio emitter, un élément qui émèts du sons.">AudioEmitter</a>. </dd></dl>
-
-</div>
-</div>
-<a id="a71943a78007a98eee8cb528887648c8d" name="a71943a78007a98eee8cb528887648c8d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a71943a78007a98eee8cb528887648c8d">&#9670;&#160;</a></span>AUDIO_EMITTER_CREATE_WITH_ATTACHED_TRANSFORM()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a21ae786262b00bc0c58c75a3016dc62a">AudioEmitter</a> AUDIO_EMITTER_CREATE_WITH_ATTACHED_TRANSFORM </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="#aeb12fb6b97d973f47522ad70bf6f8862">AudioSource</a></td>          <td class="paramname"><span class="paramname"><em>audioSource</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structTransform.html">Transform</a> *</td>          <td class="paramname"><span class="paramname"><em>transform_ptr</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Créer un <a class="el" href="#a21ae786262b00bc0c58c75a3016dc62a" title="Type représentant un audio emitter, un élément qui émèts du sons.">AudioEmitter</a>. </p>
-<dl class="params"><dt>Paramètres</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">audioSource</td><td>L'<a class="el" href="#aeb12fb6b97d973f47522ad70bf6f8862" title="Type représentant les donnée d&#39;un sons.">AudioSource</a>. </td></tr>
-    <tr><td class="paramname">transform_ptr</td><td>Le pointeur vers une <a class="el" href="structTransform.html">Transform</a>.</td></tr>
-  </table>
-  </dd>
-</dl>
 <dl class="section return"><dt>Renvoie</dt><dd>L'<a class="el" href="#a21ae786262b00bc0c58c75a3016dc62a" title="Type représentant un audio emitter, un élément qui émèts du sons.">AudioEmitter</a>. </dd></dl>
 
 </div>
@@ -439,7 +351,14 @@ Fonctions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Créer un <a class="el" href="#a21ae786262b00bc0c58c75a3016dc62a" title="Type représentant un audio emitter, un élément qui émèts du sons.">AudioEmitter</a>. </p>
+<p>Mets à jours l'état de l'<a class="el" href="#aabd587cb003ad09e88ea5a4b7f477c7b" title="Type représentant l&#39;audio listener, l&#39;élément qui reçoit le sons.">AudioListener</a>. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">audioLi</td><td>L'<a class="el" href="#aabd587cb003ad09e88ea5a4b7f477c7b" title="Type représentant l&#39;audio listener, l&#39;élément qui reçoit le sons.">AudioListener</a>.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Créer un <a class="el" href="#a21ae786262b00bc0c58c75a3016dc62a" title="Type représentant un audio emitter, un élément qui émèts du sons.">AudioEmitter</a>.</p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">audioSource</td><td>L'<a class="el" href="#aeb12fb6b97d973f47522ad70bf6f8862" title="Type représentant les donnée d&#39;un sons.">AudioSource</a>. </td></tr>
@@ -448,31 +367,6 @@ Fonctions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd>L'<a class="el" href="#a21ae786262b00bc0c58c75a3016dc62a" title="Type représentant un audio emitter, un élément qui émèts du sons.">AudioEmitter</a>. </dd></dl>
-
-</div>
-</div>
-<a id="a878b76c2d4cce48de7b595d4ca5196c6" name="a878b76c2d4cce48de7b595d4ca5196c6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a878b76c2d4cce48de7b595d4ca5196c6">&#9670;&#160;</a></span>AUDIO_EMITTER_DETACH_TRANSFORM()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void AUDIO_EMITTER_DETACH_TRANSFORM </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="#a21ae786262b00bc0c58c75a3016dc62a">AudioEmitter</a></td>          <td class="paramname"><span class="paramname"><em>audioEm</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Détache la <a class="el" href="structTransform.html">Transform</a> d'un <a class="el" href="#a21ae786262b00bc0c58c75a3016dc62a" title="Type représentant un audio emitter, un élément qui émèts du sons.">AudioEmitter</a>. </p>
-<dl class="params"><dt>Paramètres</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">audioSource</td><td>L'<a class="el" href="#aeb12fb6b97d973f47522ad70bf6f8862" title="Type représentant les donnée d&#39;un sons.">AudioSource</a>. </td></tr>
-  </table>
-  </dd>
-</dl>
 
 </div>
 </div>
@@ -671,7 +565,14 @@ Fonctions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Joue le sons ou reprends la lecture du sons de l'<a class="el" href="#a21ae786262b00bc0c58c75a3016dc62a" title="Type représentant un audio emitter, un élément qui émèts du sons.">AudioEmitter</a>. </p>
+<p>Mets à jours l'état de l'<a class="el" href="#a21ae786262b00bc0c58c75a3016dc62a" title="Type représentant un audio emitter, un élément qui émèts du sons.">AudioEmitter</a>. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">audioEm</td><td>L'<a class="el" href="#a21ae786262b00bc0c58c75a3016dc62a" title="Type représentant un audio emitter, un élément qui émèts du sons.">AudioEmitter</a>.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Joue le sons ou reprends la lecture du sons de l'<a class="el" href="#a21ae786262b00bc0c58c75a3016dc62a" title="Type représentant un audio emitter, un élément qui émèts du sons.">AudioEmitter</a></p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">audioEm</td><td>L'<a class="el" href="#a21ae786262b00bc0c58c75a3016dc62a" title="Type représentant un audio emitter, un élément qui émèts du sons.">AudioEmitter</a>. </td></tr>
@@ -826,31 +727,6 @@ Fonctions</h2></td></tr>
 
 </div>
 </div>
-<a id="a1c581e5113d7aa95dc819bf33fecb561" name="a1c581e5113d7aa95dc819bf33fecb561"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1c581e5113d7aa95dc819bf33fecb561">&#9670;&#160;</a></span>AUDIO_EMITTER_UPDATE()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void AUDIO_EMITTER_UPDATE </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="#a21ae786262b00bc0c58c75a3016dc62a">AudioEmitter</a></td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Mets à jours l'état de l'<a class="el" href="#a21ae786262b00bc0c58c75a3016dc62a" title="Type représentant un audio emitter, un élément qui émèts du sons.">AudioEmitter</a>. </p>
-<dl class="params"><dt>Paramètres</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">audioEm</td><td>L'<a class="el" href="#a21ae786262b00bc0c58c75a3016dc62a" title="Type représentant un audio emitter, un élément qui émèts du sons.">AudioEmitter</a>. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
 <a id="a2f5047af65311e79a9ec6049d2b6c3c4" name="a2f5047af65311e79a9ec6049d2b6c3c4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2f5047af65311e79a9ec6049d2b6c3c4">&#9670;&#160;</a></span>AUDIO_FREE()</h2>
 
@@ -896,36 +772,6 @@ Fonctions</h2></td></tr>
 
 </div>
 </div>
-<a id="a51a3aaf22a171ecd30ef5373cafc8549" name="a51a3aaf22a171ecd30ef5373cafc8549"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a51a3aaf22a171ecd30ef5373cafc8549">&#9670;&#160;</a></span>AUDIO_LISTENER_ATTACH_TRANSFORM()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void AUDIO_LISTENER_ATTACH_TRANSFORM </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="#aabd587cb003ad09e88ea5a4b7f477c7b">AudioListener</a></td>          <td class="paramname"><span class="paramname"><em>audioLi</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structTransform.html">Transform</a> *</td>          <td class="paramname"><span class="paramname"><em>transform_ptr</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Attache une transform à l'<a class="el" href="#aabd587cb003ad09e88ea5a4b7f477c7b" title="Type représentant l&#39;audio listener, l&#39;élément qui reçoit le sons.">AudioListener</a>. </p>
-<dl class="params"><dt>Paramètres</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">audioLi</td><td>L'<a class="el" href="#aabd587cb003ad09e88ea5a4b7f477c7b" title="Type représentant l&#39;audio listener, l&#39;élément qui reçoit le sons.">AudioListener</a>. </td></tr>
-    <tr><td class="paramname">transform</td><td>La tranform. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
 <a id="ab980daad45d21552b1572ec66b729da2" name="ab980daad45d21552b1572ec66b729da2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab980daad45d21552b1572ec66b729da2">&#9670;&#160;</a></span>AUDIO_LISTENER_CREATE()</h2>
 
@@ -942,32 +788,6 @@ Fonctions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Créer une structure représentant l'audio listener. </p>
-<dl class="section return"><dt>Renvoie</dt><dd>Une structure représentant l'audio listener. </dd></dl>
-
-</div>
-</div>
-<a id="a7e2999409fe6f2cc7e80430b0c415ffd" name="a7e2999409fe6f2cc7e80430b0c415ffd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7e2999409fe6f2cc7e80430b0c415ffd">&#9670;&#160;</a></span>AUDIO_LISTENER_CREATE_WITH_ATTACHED_TRANSFORM()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#aabd587cb003ad09e88ea5a4b7f477c7b">AudioListener</a> AUDIO_LISTENER_CREATE_WITH_ATTACHED_TRANSFORM </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structTransform.html">Transform</a> *</td>          <td class="paramname"><span class="paramname"><em>transform_ptr</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Créer une structure représentant l'audio listener. </p>
-<dl class="params"><dt>Paramètres</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">transform</td><td>La tranform.</td></tr>
-  </table>
-  </dd>
-</dl>
 <dl class="section return"><dt>Renvoie</dt><dd>Une structure représentant l'audio listener. </dd></dl>
 
 </div>
@@ -1028,32 +848,6 @@ Fonctions</h2></td></tr>
     <tr><td class="paramname">pos</td><td>La position initial de l'audio listener. </td></tr>
     <tr><td class="paramname">atVector</td><td>Vecteur direction initial de l'audio listener. </td></tr>
     <tr><td class="paramname">upVector</td><td>Vecteur initial indiquant le haut de l'audio listener.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Renvoie</dt><dd>Une structure représentant l'audio listener. </dd></dl>
-
-</div>
-</div>
-<a id="adbf93704aa9fa2a7c16843c3d31e3a64" name="adbf93704aa9fa2a7c16843c3d31e3a64"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adbf93704aa9fa2a7c16843c3d31e3a64">&#9670;&#160;</a></span>AUDIO_LISTENER_DEATACH_TRANSFORM()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#aabd587cb003ad09e88ea5a4b7f477c7b">AudioListener</a> AUDIO_LISTENER_DEATACH_TRANSFORM </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Créer une structure représentant l'audio listener. </p>
-<dl class="params"><dt>Paramètres</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">transform</td><td>La tranform.</td></tr>
   </table>
   </dd>
 </dl>
@@ -1280,31 +1074,6 @@ Fonctions</h2></td></tr>
     <tr><td class="paramname">audioLi</td><td>L'<a class="el" href="#aabd587cb003ad09e88ea5a4b7f477c7b" title="Type représentant l&#39;audio listener, l&#39;élément qui reçoit le sons.">AudioListener</a>. </td></tr>
     <tr><td class="paramname">at</td><td>Le nouveau vecteur direction de l'<a class="el" href="#aabd587cb003ad09e88ea5a4b7f477c7b" title="Type représentant l&#39;audio listener, l&#39;élément qui reçoit le sons.">AudioListener</a> </td></tr>
     <tr><td class="paramname">up</td><td>Le nouveau vecteur indiquant le haut de l'<a class="el" href="#aabd587cb003ad09e88ea5a4b7f477c7b" title="Type représentant l&#39;audio listener, l&#39;élément qui reçoit le sons.">AudioListener</a>. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="aba9ba7056c3d0f6c331cb694fabdf94f" name="aba9ba7056c3d0f6c331cb694fabdf94f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aba9ba7056c3d0f6c331cb694fabdf94f">&#9670;&#160;</a></span>AUDIO_LISTENER_UPDATE()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void AUDIO_LISTENER_UPDATE </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="#aabd587cb003ad09e88ea5a4b7f477c7b">AudioListener</a></td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Mets à jours l'état de l'<a class="el" href="#aabd587cb003ad09e88ea5a4b7f477c7b" title="Type représentant l&#39;audio listener, l&#39;élément qui reçoit le sons.">AudioListener</a>. </p>
-<dl class="params"><dt>Paramètres</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">audioLi</td><td>L'<a class="el" href="#aabd587cb003ad09e88ea5a4b7f477c7b" title="Type représentant l&#39;audio listener, l&#39;élément qui reçoit le sons.">AudioListener</a>. </td></tr>
   </table>
   </dd>
 </dl>
