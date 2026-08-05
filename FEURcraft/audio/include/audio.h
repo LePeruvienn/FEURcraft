@@ -6,6 +6,7 @@
 #include <sndfile.h>
 
 #include "vec3.h"
+#include "transform.h"
 
 
 /**
@@ -44,10 +45,15 @@ typedef struct AudioListenerStruct* AudioListener;
 typedef struct AudioEmitterStruct* AudioEmitter;
 
 
-
-
-
-
+/**
+ * \brief État de lecture d'un AudioEmitter.
+ */
+typedef enum AudioEmitterState
+{
+    PLAYING, /**< Audio is playing */
+    STOPPED, /**< Audio is not playing */
+    PAUSED /**< Audio is paused */
+} AudioEmitterState;
 
 
 
@@ -125,6 +131,33 @@ AudioListener AUDIO_LISTENER_CREATE_WITH_POSITION(Vec3 pos);
  * \return Une structure représentant l'audio listener.
  */
 AudioListener AUDIO_LISTENER_CREATE();
+
+/**
+ * \brief Créer une structure représentant l'audio listener.
+ *
+ * \param transform La tranform.
+ *
+ * \return Une structure représentant l'audio listener.
+ */
+AudioListener AUDIO_LISTENER_CREATE_WITH_ATTACHED_TRANSFORM(Transform* transform_ptr);
+
+/**
+ * \brief Attache une transform à l'AudioListener.
+ *
+ * \param audioLi L'AudioListener.
+ * \param transform La tranform.
+ */
+void AUDIO_LISTENER_ATTACH_TRANSFORM(AudioListener audioLi, Transform* transform_ptr);
+
+
+/**
+ * \brief Créer une structure représentant l'audio listener.
+ *
+ * \param transform La tranform.
+ *
+ * \return Une structure représentant l'audio listener.
+ */
+AudioListener AUDIO_LISTENER_DEATACH_TRANSFORM();
 
 
 /**
@@ -216,6 +249,7 @@ void AUDIO_LISTENER_UPDATE(AudioListener);
 /**
  * \brief Créer un AudioEmitter.
  *
+ * \param audioSource L'AudioSource.
  * \param pos La position initial de l'AudioEmitter.
  *
  * \return L'AudioEmitter.
@@ -224,6 +258,16 @@ AudioEmitter AUDIO_EMITTER_CREATE_WITH_POSITION(AudioSource audioSource, Vec3 po
 
 /**
  * \brief Créer un AudioEmitter.
+ *
+ * \param audioSource L'AudioSource.
+ * \param transform_ptr Le pointeur vers une Transform.
+ *
+ * \return L'AudioEmitter.
+ */
+AudioEmitter AUDIO_EMITTER_CREATE_WITH_ATTACHED_TRANSFORM(AudioSource audioSource, Transform* transform_ptr);
+
+/**
+ * \brief Créer un AudioEmitter attaché à une transform.
  *
  * \return L'AudioEmitter.
  */
@@ -238,12 +282,37 @@ void AUDIO_EMITTER_FREE(AudioEmitter audioEm);
 
 
 /**
+ * \brief Attache une Transform à un AudioEmitter.
+ *
+ * \param audioSource L'AudioSource.
+ * \param transform_ptr Le pointeur vers une Transform.
+ */
+void AUDIO_EMITTER_ATTACH_TRANSFORM(AudioEmitter audioEm, Transform* transform_ptr);
+
+
+/**
+ * \brief Détache la Transform d'un AudioEmitter.
+ *
+ * \param audioSource L'AudioSource.
+ */
+void AUDIO_EMITTER_DETACH_TRANSFORM(AudioEmitter audioEm);
+
+
+/**
  * \brief Mets à jours le gain de l'AudioEmitter.
  *
  * \param audioEm L'AudioEmitter.
  * \param gain Le nouveau gain de l'AudioEmitter.
  */
 void AUDIO_EMITTER_SET_GAIN(AudioEmitter audioEm, float gain);
+
+/**
+ * \brief Configure si l'AudioEmitter doit boucler ou non.
+ *
+ * \param audioEm L'AudioEmitter.
+ * \param is_looping 1 AudioEmitter vas boucler, 0 AudioEmitter ne vas pas boucler
+ */
+void AUDIO_EMITTER_SET_IS_LOOPING(AudioEmitter audioEm, int is_looping);
 
 /**
  * \brief Mets à jours la position de l'AudioEmitter.
@@ -272,6 +341,15 @@ void AUDIO_EMITTER_SET_DIRECTION(AudioEmitter audioEm, Vec3 direction);
 float AUDIO_EMITTER_GET_GAIN(AudioEmitter audioEm);
 
 /**
+ * \brief Renvoit si l'AudioEmitter boucle ou non.
+ *
+ * \param audioEm L'AudioEmitter.
+ *
+ * \return 1 Si l'AudioEmitter boucle, 0 sinon.
+ */
+int AUDIO_EMITTER_GET_IS_LOOPING(AudioEmitter audioEm);
+
+/**
  * \brief Renvoit la position de l'AudioEmitter.
  *
  * \param audioEm L'AudioEmitter.
@@ -289,6 +367,14 @@ Vec3 AUDIO_EMITTER_GET_POSITION(AudioEmitter audioEm);
  */
 Vec3 AUDIO_EMITTER_GET_DIRECTION(AudioEmitter audioEm);
 
+/**
+ * \brief Renvoit l'état de lecture de l'AudioEmitter.
+ *
+ * \param audioEm L'AudioEmitter.
+ *
+ * \return L'état de lecture de l'AudioEmitter.
+ */
+AudioEmitterState AUDIO_EMITTER_GET_STATE(AudioEmitter audioEm);
 
 /**
  * \brief Mets à jours l'état de l'AudioEmitter
