@@ -112,4 +112,11 @@ int main()
 	shader_free(frag);
 
 	free_window(window);
+
+	// AUDIO
+	// AUDIO
+	AUDIO_EMITTER_FREE(audioEm);
+	AUDIO_SOURCE_FREE(lel);
+	AUDIO_LISTENER_FREE(audioLi);
+	AUDIO_FREE(audioConf);
 }

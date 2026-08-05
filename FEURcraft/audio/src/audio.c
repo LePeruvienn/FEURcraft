@@ -1,4 +1,5 @@
 #include "audio.h"
+#include "logger.h"
 
 #include <AL/al.h>
 #include <stddef.h>
@@ -39,11 +40,13 @@ struct AudioEmitterStruct
 AudioConfig AUDIO_INSTANTIATE()
 {
     AudioConfig audioConf = malloc(sizeof(struct AudioConfigStruct));
+    if (audioConf == NULL) {LOG_ERROR("Audio : Failed to create AudioConfig");}
 
     /* Open the default playback device */
     audioConf->device = alcOpenDevice(NULL);
     if (!audioConf->device) {
-        fprintf(stderr, "Failed to open audio device.\n");
+        LOG_ERROR("OpenAL : Failed to open audio device.\n");
+        //fprintf(stderr, "Failed to open audio device.\n");
         audioConf->error = 1;
     }
 
@@ -52,7 +55,8 @@ AudioConfig AUDIO_INSTANTIATE()
     /* Create and set the audio context */
     audioConf->context = alcCreateContext(audioConf->device, NULL);
     if (!audioConf->context || !alcMakeContextCurrent(audioConf->context)) {
-        fprintf(stderr, "Failed to set audio context.\n");
+        LOG_ERROR("OpenAL : Failed to set audio context.\n");
+        //fprintf(stderr, "Failed to set audio context.\n");
         if (audioConf->context) alcDestroyContext(audioConf->context);
         alcCloseDevice(audioConf->device);
         audioConf->error = 1;
@@ -79,7 +83,9 @@ AudioSource AUDIO_SOURCE_CREATE(const char *filename)
     SNDFILE *sndfile = sf_open(filename, SFM_READ, &sfinfo);
 
     if (!sndfile) {
-        fprintf(stderr, "Failed to open sound file '%s': %s\n", filename, sf_strerror(NULL));
+
+        LOG_ERROR("Failed to open sound file \n '%s' : %s\n", filename, sf_strerror(NULL));
+        //fprintf(stderr, "Failed to open sound file '%s': %s\n", filename, sf_strerror(NULL));
         return 0;
     }
 
@@ -89,7 +95,7 @@ AudioSource AUDIO_SOURCE_CREATE(const char *filename)
 
     short *pcm_data = (short *)malloc(total_samples * sizeof(short));
     if (!pcm_data) {
-        fprintf(stderr, "Memory allocation error\n");
+        //fprintf(stderr, "Memory allocation error\n");
         sf_close(sndfile);
         return 0;
     }
@@ -123,7 +129,8 @@ AudioSource AUDIO_SOURCE_CREATE(const char *filename)
         free(pcm_data);
     }
     else {
-        fprintf(stderr, "Unsupported channel count: %d\n", sfinfo.channels);
+        LOG_ERROR("OpenAL : Unsupported channel count: %d (%s)\n", sfinfo.channels, filename);
+        //fprintf(stderr, "Unsupported channel count: %d\n", sfinfo.channels);
         free(pcm_data);
         return 0;
     }
@@ -159,6 +166,7 @@ void AUDIO_SOURCE_FREE(AudioSource audioSource)
 AudioListener AUDIO_LISTENER_CREATE_WITH_POSITION_AND_ROTATION(Vec3 pos, Vec3 atVector, Vec3 upVector)
 {
     AudioListener audioList = malloc(sizeof(struct AudioListenerStruct));
+    if (audioList == NULL) {LOG_ERROR("Audio : Failed to create AudioListener");}
 
     audioList->gain = 1;
     audioList->pos = pos;
@@ -234,6 +242,7 @@ void AUDIO_LISTENER_UPDATE(AudioListener audioLi)
 AudioEmitter AUDIO_EMITTER_CREATE_WITH_POSITION(AudioSource audioSource, Vec3 pos)
 {
     AudioEmitter audioEm = malloc(sizeof(struct AudioEmitterStruct));
+    if (audioEm == NULL) {LOG_ERROR("Audio : Failed to create AudioEmitter");}
     audioEm->gain = 1;
     audioEm->pos = pos;
     audioEm->direction = VEC3(0.f, 0.f, 0.f);
