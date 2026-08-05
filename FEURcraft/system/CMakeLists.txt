@@ -30,6 +30,7 @@ target_sources(${LIB_NAME}
 		src/keyboard.c
 		src/keyboard_key.c
 		src/mouse_input.c
+		src/program_status.c
 )
 
 # On link les librarie nécessaire à la compilation de la lib
