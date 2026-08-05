@@ -1,7 +1,8 @@
 var searchData=
 [
-  ['shader_5fcompile_0',['shader_compile',['../shader_8h.html#a6d94c8c50b822514935b17f5ad677ddb',1,'shader.h']]],
-  ['shader_5fcreate_1',['shader_create',['../shader_8h.html#a5a9333cfb4cc911bc5de5b3f55f284d9',1,'shader.h']]],
-  ['shader_5ffree_2',['shader_free',['../shader_8h.html#a74428bb9c133c0ebc36487e9c69e641c',1,'shader.h']]],
-  ['shader_5ftype_5fget_5fname_3',['shader_type_get_name',['../shader_8h.html#a31c32b9d915b2e83cf141bff74d2b96e',1,'shader.h']]]
+  ['texture_5farray_5fbind_0',['texture_array_bind',['../texture__array_8h.html#a71303db3bdf7c9953c5449910a1a640a',1,'texture_array.h']]],
+  ['texture_5farray_5fcreate_1',['texture_array_create',['../texture__array_8h.html#a025f1ad8f3688a49305422e9cbda51f8',1,'texture_array.h']]],
+  ['texture_5farray_5fcreate_5ffrom_5fimg_5farray_2',['texture_array_create_from_img_array',['../texture__array_8h.html#aa151c7bace315c24b3b4ab940e7d5563',1,'texture_array.h']]],
+  ['texture_5farray_5ffree_3',['texture_array_free',['../texture__array_8h.html#a1b1fec4230d53b8f695db80a3ca94287',1,'texture_array.h']]],
+  ['texture_5farray_5funbind_4',['texture_array_unbind',['../texture__array_8h.html#a09113a2fed528a03637491ae62df55df',1,'texture_array.h']]]
 ];

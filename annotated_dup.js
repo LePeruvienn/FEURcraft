@@ -7,6 +7,7 @@ var annotated_dup =
     [ "FEUR_Test", "structFEUR__Test.html", null ],
     [ "FEUR_Test_Group", "structFEUR__Test__Group.html", null ],
     [ "FEUR_Tester", "structFEUR__Tester.html", null ],
+    [ "FeurFile", "structFeurFile.html", null ],
     [ "FeurString", "structFeurString.html", null ],
     [ "Geometry", "structGeometry.html", null ],
     [ "Image", "structImage.html", null ],
