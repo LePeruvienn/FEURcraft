@@ -41,6 +41,8 @@ var NAVTREE =
         [ "Tout", "globals.html", null ],
         [ "Fonctions", "globals_func.html", null ],
         [ "Définitions de type", "globals_type.html", null ],
+        [ "Énumérations", "globals_enum.html", null ],
+        [ "Valeurs énumérées", "globals_eval.html", null ],
         [ "Macros", "globals_defs.html", null ]
       ] ]
     ] ]
@@ -49,7 +51,8 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"FEUR__Test_8h_source.html"
+"FEUR__Test_8h_source.html",
+"vertex__layout_8h.html#ac22ba8e210ba8f3e6a203b193e3139e0"
 ];
 
 var SYNCONMSG = 'cliquez pour désactiver la synchronisation du panel';
