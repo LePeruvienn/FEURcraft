@@ -1,7 +1,9 @@
 <map id="FEURcraft/utils/include/logger.h" name="FEURcraft/utils/include/logger.h">
-<area shape="rect" id="Node000001" title="Ficher fournissant des macro de log afin d&#39;afficher des messages de déboggage dans la console." alt="" coords="5,5,163,44"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="11,92,72,117"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="76,46,57,79,53,77,71,43"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="95,92,158,117"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="97,43,115,77,111,79,92,46"/>
+<area shape="rect" id="Node000001" title="Ficher fournissant des macro de log afin d&#39;afficher des messages de déboggage dans la console." alt="" coords="42,5,200,44"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,92,66,117"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="102,47,61,83,58,79,98,43"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="89,92,152,117"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="124,45,124,76,118,76,118,45"/>
+<area shape="rect" id="Node000004" href="$program__status_8h_source.html" title=" " alt="" coords="177,92,299,117"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="151,42,209,81,206,85,148,47"/>
 </map>

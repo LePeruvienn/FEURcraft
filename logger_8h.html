@@ -100,16 +100,19 @@ $(function(){initNavTree('logger_8h.html','',''); });
 <a href="#details">Plus de détails...</a></p>
 <div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
 <code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &quot;program_status.h&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Graphe des dépendances par inclusion de logger.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="logger_8h__incl.png" border="0" usemap="#aFEURcraft_2utils_2include_2logger_8h" loading="lazy" alt=""/></div>
 <map name="aFEURcraft_2utils_2include_2logger_8h" id="aFEURcraft_2utils_2include_2logger_8h">
-<area shape="rect" title="Ficher fournissant des macro de log afin d&#39;afficher des messages de déboggage dans la console." alt="" coords="5,5,163,44"/>
-<area shape="rect" title=" " alt="" coords="11,92,72,117"/>
-<area shape="poly" title=" " alt="" coords="76,46,57,79,53,77,71,43"/>
-<area shape="rect" title=" " alt="" coords="95,92,158,117"/>
-<area shape="poly" title=" " alt="" coords="97,43,115,77,111,79,92,46"/>
+<area shape="rect" title="Ficher fournissant des macro de log afin d&#39;afficher des messages de déboggage dans la console." alt="" coords="42,5,200,44"/>
+<area shape="rect" title=" " alt="" coords="5,92,66,117"/>
+<area shape="poly" title=" " alt="" coords="102,47,61,83,58,79,98,43"/>
+<area shape="rect" title=" " alt="" coords="89,92,152,117"/>
+<area shape="poly" title=" " alt="" coords="124,45,124,76,118,76,118,45"/>
+<area shape="rect" href="program__status_8h_source.html" title=" " alt="" coords="177,92,299,117"/>
+<area shape="poly" title=" " alt="" coords="151,42,209,81,206,85,148,47"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -296,11 +299,12 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <b>Valeur :</b><div class="fragment"><div class="line">        <span class="keywordflow">do</span> { LOG_HEADER_FILE(stderr, <span class="stringliteral">&quot;ERROR&quot;</span>, fmt, ##__VA_ARGS__); \</div>
-<div class="line">             LOG_INFO(<span class="stringliteral">&quot;Exit on error is active exiting ...&quot;</span>);      \</div>
-<div class="line">             EXIT_PROGRAM(EXIT_FAILURE);                           \</div>
+<div class="line">            print_call_stack();                                    \</div>
+<div class="line">            LOG_INFO(<span class="stringliteral">&quot;Exit on error is active exiting ...&quot;</span>);       \</div>
+<div class="line">            EXIT_PROGRAM(EXIT_FAILURE);                            \</div>
 <div class="line">        } <span class="keywordflow">while</span>(0)</div>
 </div><!-- fragment -->
-<p class="definition">Définition à la ligne <a class="el" href="logger_8h_source.html#l00071">71</a> du fichier <a class="el" href="logger_8h_source.html">logger.h</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="logger_8h_source.html#l00073">73</a> du fichier <a class="el" href="logger_8h_source.html">logger.h</a>.</p>
 
 </div>
 </div>
