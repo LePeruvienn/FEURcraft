@@ -1,5 +1,4 @@
 #include "audio.h"
-#include "transform.h"
 
 #include <AL/al.h>
 #include <stddef.h>
@@ -22,7 +21,6 @@ struct AudioListenerStruct
     Vec3 pos;
     Vec3 atVector;
     Vec3 upVector;
-    Transform* transform;
 };
 
 
@@ -33,7 +31,6 @@ struct AudioEmitterStruct
     float gain;
     Vec3 pos;
     Vec3 direction;
-    Transform* transform;
 };
 
 
@@ -179,36 +176,8 @@ AudioListener AUDIO_LISTENER_CREATE_WITH_POSITION(Vec3 pos){return AUDIO_LISTENE
 AudioListener AUDIO_LISTENER_CREATE(){return AUDIO_LISTENER_CREATE_WITH_POSITION_AND_ROTATION(VEC3(0.f, 0.f, 0.f), VEC3(0.f, 0.f, -1.f), VEC3(0.f, 1.f, 0.f));};
 
 
-void AUDIO_LISTENER_ATTACH_TRANSFORM(AudioListener audioLi, Transform* transform_ptr)
-{
-    audioLi->transform =transform_ptr;
-    audioLi->pos = transform_ptr->pos;
-    audioLi->atVector = transform_ptr->forward;
-    audioLi->upVector = transform_ptr->up;
-
-    alListener3f(AL_POSITION, audioLi->pos.x, audioLi->pos.y, audioLi->pos.z);
-    ALfloat listenerOri[] = {audioLi->atVector.x, audioLi->atVector.y, audioLi->atVector.z, audioLi->atVector.x, audioLi->atVector.y, audioLi->atVector.z};
-    alListenerfv(AL_ORIENTATION, listenerOri);
-}
-
-void AUDIO_LISTENER_DETACH_TRANSFORM(AudioListener audioLi)
-{
-    audioLi->transform = NULL;
-}
-
-AudioListener AUDIO_LISTENER_CREATE_WITH_ATTACHED_TRANSFORM(Transform* transform_ptr)
-{
-    AudioListener audioList = malloc(sizeof(struct AudioListenerStruct));
-    audioList->gain = 1;
-
-    AUDIO_LISTENER_ATTACH_TRANSFORM(audioList, transform_ptr);
-
-    return audioList;
-}
-
 void AUDIO_LISTENER_FREE(AudioListener audioLi)
 {
-    AUDIO_LISTENER_DETACH_TRANSFORM(audioLi);
     free(audioLi);
 }
 
@@ -248,19 +217,11 @@ Vec3 AUDIO_LISTENER_GET_UP_VECTOR(AudioListener audioLi){return audioLi->upVecto
 
 
 
-
+/*
 void AUDIO_LISTENER_UPDATE(AudioListener audioLi)
 {
-    // Update from transform data
-    if (audioLi->pos.x != audioLi->transform->pos.x || audioLi->pos.y != audioLi->transform->pos.y || audioLi->pos.z != audioLi->transform->pos.z)
-    {AUDIO_LISTENER_SET_POSITION(audioLi, audioLi->transform->pos);}
-
-    if (audioLi->atVector.x != audioLi->transform->forward.x || audioLi->atVector.y != audioLi->transform->forward.y || audioLi->atVector.z != audioLi->transform->forward.z ||
-        audioLi->upVector.x != audioLi->transform->up.x || audioLi->upVector.y != audioLi->transform->up.y || audioLi->upVector.z != audioLi->transform->up.z)
-    {AUDIO_LISTENER_SET_ROTATION(audioLi, audioLi->transform->forward, audioLi->transform->up);}
-
 }
-
+*/
 
 
 
@@ -288,38 +249,9 @@ AudioEmitter AUDIO_EMITTER_CREATE_WITH_POSITION(AudioSource audioSource, Vec3 po
 AudioEmitter AUDIO_EMITTER_CREATE(AudioSource audioSource){return AUDIO_EMITTER_CREATE_WITH_POSITION(audioSource, VEC3(0.f, 0.f, 0.f));};
 
 
-void AUDIO_EMITTER_ATTACH_TRANSFORM(AudioEmitter audioEm, Transform* transform_ptr)
-{
-    audioEm->transform = transform_ptr;
-    audioEm->pos = transform_ptr->pos;
-    audioEm->direction = transform_ptr->forward;
-
-    alSource3f(audioEm->audioSource, AL_POSITION, audioEm->pos.x, audioEm->pos.y, audioEm->pos.z);
-    alSource3f(audioEm->audioSource, AL_DIRECTION, audioEm->direction.x, audioEm->direction.y, audioEm->direction.z);
-
-}
-
-AudioEmitter AUDIO_EMITTER_CREATE_WITH_ATTACHED_TRANSFORM(AudioSource audioSource, Transform* transform_ptr)
-{
-    AudioEmitter audioEm = malloc(sizeof(struct AudioEmitterStruct));
-    audioEm->gain = 1;
-    AUDIO_EMITTER_ATTACH_TRANSFORM(audioEm, transform_ptr);
-
-    alGenSources(1, &audioEm->audioSource);
-    alSourcei(audioEm->audioSource, AL_BUFFER, audioSource);
-
-    return audioEm;
-}
-
-void AUDIO_EMITTER_DETACH_TRANSFORM(AudioEmitter audioEm)
-{
-    audioEm->transform = NULL;
-
-}
 
 void AUDIO_EMITTER_FREE(AudioEmitter audioEm)
 {
-    AUDIO_EMITTER_DETACH_TRANSFORM(audioEm);
     alDeleteSources(1, &audioEm->audioSource);
     free(audioEm);
 }
@@ -391,17 +323,12 @@ AudioEmitterState AUDIO_EMITTER_GET_STATE(AudioEmitter audioEm)
 }
 
 
-
+/*
 void AUDIO_EMITTER_UPDATE(AudioEmitter audioEm)
 {
-    // Update from transform data
-    if (audioEm->pos.x != audioEm->transform->pos.x || audioEm->pos.y != audioEm->transform->pos.y || audioEm->pos.z != audioEm->transform->pos.z)
-    {AUDIO_EMITTER_SET_POSITION(audioEm, audioEm->transform->pos);}
 
-    if (audioEm->direction.x != audioEm->transform->forward.x || audioEm->direction.y != audioEm->transform->forward.y || audioEm->direction.z != audioEm->transform->forward.z)
-    {AUDIO_EMITTER_SET_DIRECTION(audioEm, audioEm->transform->forward);}
 }
-
+*/
 
 
 void AUDIO_EMITTER_PLAY(AudioEmitter audioEm) {alSourcePlay(audioEm->audioSource);}

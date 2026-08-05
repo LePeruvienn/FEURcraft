@@ -6,7 +6,6 @@
 #include <sndfile.h>
 
 #include "vec3.h"
-#include "transform.h"
 
 
 /**
@@ -132,32 +131,6 @@ AudioListener AUDIO_LISTENER_CREATE_WITH_POSITION(Vec3 pos);
  */
 AudioListener AUDIO_LISTENER_CREATE();
 
-/**
- * \brief Créer une structure représentant l'audio listener.
- *
- * \param transform La tranform.
- *
- * \return Une structure représentant l'audio listener.
- */
-AudioListener AUDIO_LISTENER_CREATE_WITH_ATTACHED_TRANSFORM(Transform* transform_ptr);
-
-/**
- * \brief Attache une transform à l'AudioListener.
- *
- * \param audioLi L'AudioListener.
- * \param transform La tranform.
- */
-void AUDIO_LISTENER_ATTACH_TRANSFORM(AudioListener audioLi, Transform* transform_ptr);
-
-
-/**
- * \brief Créer une structure représentant l'audio listener.
- *
- * \param transform La tranform.
- *
- * \return Une structure représentant l'audio listener.
- */
-AudioListener AUDIO_LISTENER_DEATACH_TRANSFORM();
 
 
 /**
@@ -235,7 +208,7 @@ Vec3 AUDIO_LISTENER_GET_UP_VECTOR(AudioListener audioLi);
  *
  * \param audioLi L'AudioListener.
  */
-void AUDIO_LISTENER_UPDATE(AudioListener);
+//void AUDIO_LISTENER_UPDATE(AudioListener);
 
 
 
@@ -256,15 +229,7 @@ void AUDIO_LISTENER_UPDATE(AudioListener);
  */
 AudioEmitter AUDIO_EMITTER_CREATE_WITH_POSITION(AudioSource audioSource, Vec3 pos);
 
-/**
- * \brief Créer un AudioEmitter.
- *
- * \param audioSource L'AudioSource.
- * \param transform_ptr Le pointeur vers une Transform.
- *
- * \return L'AudioEmitter.
- */
-AudioEmitter AUDIO_EMITTER_CREATE_WITH_ATTACHED_TRANSFORM(AudioSource audioSource, Transform* transform_ptr);
+
 
 /**
  * \brief Créer un AudioEmitter attaché à une transform.
@@ -281,21 +246,6 @@ AudioEmitter AUDIO_EMITTER_CREATE(AudioSource audioSource);
 void AUDIO_EMITTER_FREE(AudioEmitter audioEm);
 
 
-/**
- * \brief Attache une Transform à un AudioEmitter.
- *
- * \param audioSource L'AudioSource.
- * \param transform_ptr Le pointeur vers une Transform.
- */
-void AUDIO_EMITTER_ATTACH_TRANSFORM(AudioEmitter audioEm, Transform* transform_ptr);
-
-
-/**
- * \brief Détache la Transform d'un AudioEmitter.
- *
- * \param audioSource L'AudioSource.
- */
-void AUDIO_EMITTER_DETACH_TRANSFORM(AudioEmitter audioEm);
 
 
 /**
@@ -381,7 +331,7 @@ AudioEmitterState AUDIO_EMITTER_GET_STATE(AudioEmitter audioEm);
  *
  * \param audioEm L'AudioEmitter.
  */
-void AUDIO_EMITTER_UPDATE(AudioEmitter);
+//void AUDIO_EMITTER_UPDATE(AudioEmitter);
 
 /**
  * \brief Joue le sons ou reprends la lecture du sons de l'AudioEmitter
