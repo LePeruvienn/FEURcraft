@@ -4,6 +4,10 @@ project(FEURcraft)
 
 set(CMAKE_BUILD_TYPE Debug)
 
+if((CMAKE_C_COMPILER_ID MATCHES "GNU|Clang") AND (CMAKE_BUILD_TYPE STREQUAL "Debug"))
+	add_link_options(-rdynamic)
+endif()
+
 # Passage du standart C99 en C11
 set(CMAKE_C_STANDARD 11)
 # Pour que les extension d'autocomplétion fonctionne pour nvim / vscode

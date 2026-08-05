@@ -68,11 +68,15 @@
 
 #if LOG_ENABLED && EXIT_ON_ERROR
 
+	#include "program_status.h"
+
 	#define LOG_ERROR(fmt, ...)                                    \
 		do { LOG_HEADER_FILE(stderr, "ERROR", fmt, ##__VA_ARGS__); \
-			 LOG_INFO("Exit on error is active exiting ...");      \
-			 EXIT_PROGRAM(EXIT_FAILURE);                           \
+			print_call_stack();                                    \
+			LOG_INFO("Exit on error is active exiting ...");       \
+			EXIT_PROGRAM(EXIT_FAILURE);                            \
 		} while(0)
 #endif
 
 #endif // LOG_H
+

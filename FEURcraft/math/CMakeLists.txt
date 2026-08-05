@@ -37,3 +37,5 @@ target_sources(${LIB_NAME}
 if (NOT MSVC)
 	target_link_libraries(${LIB_NAME} PUBLIC m)
 endif()
+
+target_link_libraries(${LIB_NAME} PUBLIC utils)
