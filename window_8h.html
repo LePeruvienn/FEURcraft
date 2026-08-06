@@ -158,10 +158,8 @@ Fonctions</h2></td></tr>
 <tr class="memdesc:a1249ae5b9572b012ef86427de03adc5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Traite les événements de la fenêtre.  <br /></td></tr>
 <tr class="memitem:a5d627011e6ff06e0ffd3c3dfe1935456" id="r_a5d627011e6ff06e0ffd3c3dfe1935456"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5d627011e6ff06e0ffd3c3dfe1935456">window_swap_buffers</a> (<a class="el" href="structWindow.html">Window</a> *w)</td></tr>
 <tr class="memdesc:a5d627011e6ff06e0ffd3c3dfe1935456"><td class="mdescLeft">&#160;</td><td class="mdescRight">Met à jour l'affichage.  <br /></td></tr>
-<tr class="memitem:a395c93ec8b9651fe1a2ff8b992c49ca1" id="r_a395c93ec8b9651fe1a2ff8b992c49ca1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a395c93ec8b9651fe1a2ff8b992c49ca1">window_wait_events</a> (double timeout)</td></tr>
-<tr class="memdesc:a395c93ec8b9651fe1a2ff8b992c49ca1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Met en pause le processus en attendant des événements.  <br /></td></tr>
 <tr class="memitem:acc1318872fe875e2f57ac87ea0e8fe95" id="r_acc1318872fe875e2f57ac87ea0e8fe95"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acc1318872fe875e2f57ac87ea0e8fe95">window_has_resized</a> (<a class="el" href="structWindow.html">Window</a> *w)</td></tr>
-<tr class="memdesc:acc1318872fe875e2f57ac87ea0e8fe95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vérifie si la taille de la fenêtre à changer Si oui met la taille de la fenêtre à jour.  <br /></td></tr>
+<tr class="memdesc:acc1318872fe875e2f57ac87ea0e8fe95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Met en pause le processus en attendant des événements.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Description détaillée</h2>
 <div class="textblock"><p>Abstraction de la gestion de la fenêtre et du contexte OpenGL. </p>
@@ -293,7 +291,15 @@ Fonctions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Vérifie si la taille de la fenêtre à changer Si oui met la taille de la fenêtre à jour. </p>
+<p>Met en pause le processus en attendant des événements. </p>
+<p>Utile pour limiter l'utilisation du processeur (limitation de FPS) lorsqu'aucune mise à jour n'est requise immédiatement.</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">timeout</td><td>Temps d'attente maximum en secondes.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Vérifie si la taille de la fenêtre à changer Si oui met la taille de la fenêtre à jour</p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">w</td><td>fenêtre cible </td></tr>
@@ -370,32 +376,6 @@ Fonctions</h2></td></tr>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">w</td><td>La fenêtre cible </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a395c93ec8b9651fe1a2ff8b992c49ca1" name="a395c93ec8b9651fe1a2ff8b992c49ca1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a395c93ec8b9651fe1a2ff8b992c49ca1">&#9670;&#160;</a></span>window_wait_events()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void window_wait_events </td>
-          <td>(</td>
-          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>timeout</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Met en pause le processus en attendant des événements. </p>
-<p>Utile pour limiter l'utilisation du processeur (limitation de FPS) lorsqu'aucune mise à jour n'est requise immédiatement.</p>
-<dl class="params"><dt>Paramètres</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">timeout</td><td>Temps d'attente maximum en secondes. </td></tr>
   </table>
   </dd>
 </dl>
