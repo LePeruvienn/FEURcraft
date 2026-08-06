@@ -12,7 +12,7 @@ find_package(OpenGL REQUIRED)
 #### SEARCHING AND CLONING PACKAGE IF DONT EXISTS TO REFACTO
 
 # Package checking for GLFW
-find_package(glfw3 CONFIG QUIET)
+find_package(glfw3 QUIET)
 
 if(NOT glfw3_FOUND)
 	if(NOT EXISTS "${CMAKE_SOURCE_DIR}/deps/GLFW/CMakeLists.txt")
@@ -24,7 +24,7 @@ if(NOT glfw3_FOUND)
 endif()
 
 # Package checking for OpenAL
-find_package(OpenAL CONFIG QUIET)
+find_package(OpenAL QUIET)
 
 if(NOT OpenAL_FOUND)
 	if(NOT EXISTS "${CMAKE_SOURCE_DIR}/deps/OpenAL/CMakeLists.txt")
@@ -36,7 +36,7 @@ if(NOT OpenAL_FOUND)
 endif()
 
 # Package checking for sndfile
-find_package(SndFile CONFIG QUIET)
+find_package(SndFile QUIET)
 
 if(NOT SndFile_FOUND)
 	if(NOT EXISTS "${CMAKE_SOURCE_DIR}/deps/sndfile/CMakeLists.txt")
