@@ -23,6 +23,11 @@ add_executable(${PROJECT_NAME})
 
 # Configuration des flags de compilation différentes sur Windows et Linux
 if(MSVC)
+    
+	# MSCV version is important for compiling some libs locally
+    message(STATUS "MSVC compiler detected")
+    message(STATUS "MSVC version: ${MSVC_VERSION}")
+
 	# Flag de warnings
 	# target_compile_options(${EXECUTABLE_NAME} PRIVATE /W4 /WX)
 	target_compile_definitions(${PROJECT_NAME} PRIVATE _USE_MATH_DEFINES)

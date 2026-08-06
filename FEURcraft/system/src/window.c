@@ -8,9 +8,7 @@
 
 #include <stdlib.h>
 #include <time.h>
-#include <threads.h>
 #include <stdbool.h>
-
 
 
 // IMPORTANT: MUST BE ENABLED WHEN DEBUGGING WITH RENDERDOC!
@@ -113,15 +111,16 @@ void window_swap_buffers(Window* w)
 	glfwSwapBuffers(w->handle);
 }
 
-void window_wait_events(double timeout)
-{
-	struct timespec ts;
+// Pas cross platform Windows thread.h n'est pas disponsible sur MSVC pafois
+// void window_wait_events(double timeout)
+// {
+	// struct timespec ts;
 
-	ts.tv_sec  = (time_t) timeout;
-	ts.tv_nsec = (long) ((timeout - ts.tv_sec) * _10e9);
+	// ts.tv_sec  = (time_t) timeout;
+	// ts.tv_nsec = (long) ((timeout - ts.tv_sec) * _10e9);
 
-	thrd_sleep(&ts, NULL);
-}
+	// thrd_sleep(&ts, NULL);
+// }
 
 bool window_has_resized(Window* w)
 {

@@ -91,15 +91,16 @@ void window_pool_events();
  */
 void window_swap_buffers(Window* w);
 
-/**
- * \brief Met en pause le processus en attendant des événements.
- *
- * Utile pour limiter l'utilisation du processeur (limitation de FPS) 
- * lorsqu'aucune mise à jour n'est requise immédiatement.
- *
- * \param timeout Temps d'attente maximum en secondes.
- */
-void window_wait_events(double timeout);
+// Pas cross platform Windows thread.h n'est pas disponsible sur MSVC pafois
+// /**
+ // * \brief Met en pause le processus en attendant des événements.
+ // *
+ // * Utile pour limiter l'utilisation du processeur (limitation de FPS) 
+ // * lorsqu'aucune mise à jour n'est requise immédiatement.
+ // *
+ // * \param timeout Temps d'attente maximum en secondes.
+ // */
+// void window_wait_events(double timeout);
 
 /**
  * \brief Vérifie si la taille de la fenêtre à changer
