@@ -98,18 +98,21 @@ $(function(){initNavTree('array__list_8h.html','',''); });
 
 <p>Liste dynamique.  
 <a href="#details">Plus de détails...</a></p>
-<div class="textblock"><code>#include &lt;stddef.h&gt;</code><br />
+<div class="textblock"><code>#include &quot;feur_types.h&quot;</code><br />
+<code>#include &lt;stddef.h&gt;</code><br />
 <code>#include &lt;stdbool.h&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Graphe des dépendances par inclusion de array_list.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="array__list_8h__incl.png" border="0" usemap="#aFEURcraft_2data_2include_2array__list_8h" loading="lazy" alt=""/></div>
 <map name="aFEURcraft_2data_2include_2array__list_8h" id="aFEURcraft_2data_2include_2array__list_8h">
-<area shape="rect" title="Liste dynamique." alt="" coords="6,5,165,44"/>
-<area shape="rect" title=" " alt="" coords="5,92,73,117"/>
-<area shape="poly" title=" " alt="" coords="77,46,56,80,52,77,72,43"/>
-<area shape="rect" title=" " alt="" coords="96,92,171,117"/>
-<area shape="poly" title=" " alt="" coords="100,43,121,77,116,80,95,46"/>
+<area shape="rect" title="Liste dynamique." alt="" coords="77,5,235,44"/>
+<area shape="rect" href="feur__types_8h_source.html" title=" " alt="" coords="5,92,99,117"/>
+<area shape="poly" title=" " alt="" coords="132,47,81,85,78,80,129,42"/>
+<area shape="rect" title=" " alt="" coords="122,92,190,117"/>
+<area shape="poly" title=" " alt="" coords="159,45,159,76,153,76,153,45"/>
+<area shape="rect" title=" " alt="" coords="214,92,288,117"/>
+<area shape="poly" title=" " alt="" coords="181,43,227,80,223,84,177,47"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -117,13 +120,15 @@ Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier
 <div class="dyncontent">
 <div class="center"><img src="array__list_8h__dep__incl.png" border="0" usemap="#aFEURcraft_2data_2include_2array__list_8hdep" loading="lazy" alt=""/></div>
 <map name="aFEURcraft_2data_2include_2array__list_8hdep" id="aFEURcraft_2data_2include_2array__list_8hdep">
-<area shape="rect" title="Liste dynamique." alt="" coords="114,5,272,44"/>
-<area shape="rect" href="geometry_8h.html" title="Structure représentant les données d&#39;un modèle 3D." alt="" coords="105,92,281,131"/>
-<area shape="poly" title=" " alt="" coords="196,60,196,91,190,91,190,60"/>
-<area shape="rect" href="chunk__geometry_8h.html" title="Gère la génération des données géométrique d&#39;un chunk." alt="" coords="5,179,181,217"/>
-<area shape="poly" title=" " alt="" coords="161,143,117,180,113,176,157,139"/>
-<area shape="rect" href="mesh_8h.html" title="Structure représentant les données d&#39;un modèle 3D charger dans le GPU." alt="" coords="205,179,381,217"/>
-<area shape="poly" title=" " alt="" coords="229,139,273,176,269,180,225,143"/>
+<area shape="rect" title="Liste dynamique." alt="" coords="100,5,258,44"/>
+<area shape="rect" href="component__pool_8h_source.html" title=" " alt="" coords="5,92,164,131"/>
+<area shape="poly" title=" " alt="" coords="149,57,107,93,104,89,145,53"/>
+<area shape="rect" href="geometry_8h.html" title="Structure représentant les données d&#39;un modèle 3D." alt="" coords="188,92,363,131"/>
+<area shape="poly" title=" " alt="" coords="213,52,256,89,252,93,210,56"/>
+<area shape="rect" href="chunk__geometry_8h.html" title="Gère la génération des données géométrique d&#39;un chunk." alt="" coords="88,179,263,217"/>
+<area shape="poly" title=" " alt="" coords="243,143,199,180,196,176,240,139"/>
+<area shape="rect" href="mesh_8h.html" title="Structure représentant les données d&#39;un modèle 3D charger dans le GPU." alt="" coords="288,179,463,217"/>
+<area shape="poly" title=" " alt="" coords="311,139,355,176,351,180,307,143"/>
 </map>
 </div>
 </div>
@@ -145,24 +150,38 @@ Définitions de type</h2></td></tr>
 Fonctions</h2></td></tr>
 <tr class="memitem:a6b9c9717ba2edfa7723b4750acccea48" id="r_a6b9c9717ba2edfa7723b4750acccea48"><td class="memItemLeft" align="right" valign="top"><a id="a6b9c9717ba2edfa7723b4750acccea48" name="a6b9c9717ba2edfa7723b4750acccea48"></a>
 <a class="el" href="structArrayList.html">ArrayList</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>array_list_create</b> (size_t item_size, size_t capacity)</td></tr>
-<tr class="memitem:a92491465ad3119001acd55b29d7634ae" id="r_a92491465ad3119001acd55b29d7634ae"><td class="memItemLeft" align="right" valign="top"><a id="a92491465ad3119001acd55b29d7634ae" name="a92491465ad3119001acd55b29d7634ae"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>array_list_copy</b> (const <a class="el" href="structArrayList.html">ArrayList</a> *source, <a class="el" href="structArrayList.html">ArrayList</a> *dest)</td></tr>
+<tr class="memitem:aa034ac681fcadb0a9e2961e88c9e476f" id="r_aa034ac681fcadb0a9e2961e88c9e476f"><td class="memItemLeft" align="right" valign="top"><a id="aa034ac681fcadb0a9e2961e88c9e476f" name="aa034ac681fcadb0a9e2961e88c9e476f"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>array_list_copy</b> (const <a class="el" href="structArrayList.html">ArrayList</a> *source, <a class="el" href="structArrayList.html">ArrayList</a> *dest)</td></tr>
 <tr class="memitem:a7c190087570c263f3ba3acb82c4fbbc3" id="r_a7c190087570c263f3ba3acb82c4fbbc3"><td class="memItemLeft" align="right" valign="top"><a id="a7c190087570c263f3ba3acb82c4fbbc3" name="a7c190087570c263f3ba3acb82c4fbbc3"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>array_list_free</b> (<a class="el" href="structArrayList.html">ArrayList</a> *list)</td></tr>
-<tr class="memitem:a1bc94392afdc6e0f2129638849a5b7ab" id="r_a1bc94392afdc6e0f2129638849a5b7ab"><td class="memItemLeft" align="right" valign="top"><a id="a1bc94392afdc6e0f2129638849a5b7ab" name="a1bc94392afdc6e0f2129638849a5b7ab"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>array_list_resize</b> (<a class="el" href="structArrayList.html">ArrayList</a> *list, size_t capacity)</td></tr>
-<tr class="memitem:a3b6306784dbfbea42bf053eaab23d0d9" id="r_a3b6306784dbfbea42bf053eaab23d0d9"><td class="memItemLeft" align="right" valign="top"><a id="a3b6306784dbfbea42bf053eaab23d0d9" name="a3b6306784dbfbea42bf053eaab23d0d9"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>array_list_reserve</b> (<a class="el" href="structArrayList.html">ArrayList</a> *list, size_t capacity)</td></tr>
-<tr class="memitem:afb242bcb995e14ec1e3059820bee3eb3" id="r_afb242bcb995e14ec1e3059820bee3eb3"><td class="memItemLeft" align="right" valign="top"><a id="afb242bcb995e14ec1e3059820bee3eb3" name="afb242bcb995e14ec1e3059820bee3eb3"></a>
-void *&#160;</td><td class="memItemRight" valign="bottom"><b>array_list_get</b> (const <a class="el" href="structArrayList.html">ArrayList</a> *list, size_t index)</td></tr>
-<tr class="memitem:a6d45549d2fc28b0c7617ef4267c41f0c" id="r_a6d45549d2fc28b0c7617ef4267c41f0c"><td class="memItemLeft" align="right" valign="top"><a id="a6d45549d2fc28b0c7617ef4267c41f0c" name="a6d45549d2fc28b0c7617ef4267c41f0c"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>array_list_push</b> (<a class="el" href="structArrayList.html">ArrayList</a> *list, const void *item)</td></tr>
-<tr class="memitem:a34c98bfb37987b998c3c7f9201c66913" id="r_a34c98bfb37987b998c3c7f9201c66913"><td class="memItemLeft" align="right" valign="top"><a id="a34c98bfb37987b998c3c7f9201c66913" name="a34c98bfb37987b998c3c7f9201c66913"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>array_list_push_buffer</b> (<a class="el" href="structArrayList.html">ArrayList</a> *list, const void *items, size_t items_len)</td></tr>
-<tr class="memitem:a75176badbbb9d1f129d30229278d4926" id="r_a75176badbbb9d1f129d30229278d4926"><td class="memItemLeft" align="right" valign="top"><a id="a75176badbbb9d1f129d30229278d4926" name="a75176badbbb9d1f129d30229278d4926"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>array_list_push_array</b> (<a class="el" href="structArrayList.html">ArrayList</a> *list, const <a class="el" href="structArrayList.html">ArrayList</a> *list_to_add)</td></tr>
+<tr class="memitem:a59fb7f5dee123481dd677649ac4b8546" id="r_a59fb7f5dee123481dd677649ac4b8546"><td class="memItemLeft" align="right" valign="top"><a id="a59fb7f5dee123481dd677649ac4b8546" name="a59fb7f5dee123481dd677649ac4b8546"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>array_list_is_empty</b> (<a class="el" href="structArrayList.html">ArrayList</a> *list)</td></tr>
+<tr class="memitem:af92477fbb2e66490be854a371bbb8675" id="r_af92477fbb2e66490be854a371bbb8675"><td class="memItemLeft" align="right" valign="top"><a id="af92477fbb2e66490be854a371bbb8675" name="af92477fbb2e66490be854a371bbb8675"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>array_list_resize</b> (<a class="el" href="structArrayList.html">ArrayList</a> *list, size_t capacity)</td></tr>
+<tr class="memitem:a682db7991e768113bfc5cc5c4f5b9d11" id="r_a682db7991e768113bfc5cc5c4f5b9d11"><td class="memItemLeft" align="right" valign="top"><a id="a682db7991e768113bfc5cc5c4f5b9d11" name="a682db7991e768113bfc5cc5c4f5b9d11"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>array_list_reserve</b> (<a class="el" href="structArrayList.html">ArrayList</a> *list, size_t size)</td></tr>
+<tr class="memitem:a636ad347914d6477888f0af7f32739c5" id="r_a636ad347914d6477888f0af7f32739c5"><td class="memItemLeft" align="right" valign="top"><a id="a636ad347914d6477888f0af7f32739c5" name="a636ad347914d6477888f0af7f32739c5"></a>
+void *&#160;</td><td class="memItemRight" valign="bottom"><b>array_list_get</b> (<a class="el" href="structArrayList.html">ArrayList</a> *list, size_t index)</td></tr>
+<tr class="memitem:a840ae365a53587b7b868e7035f0d42c7" id="r_a840ae365a53587b7b868e7035f0d42c7"><td class="memItemLeft" align="right" valign="top"><a id="a840ae365a53587b7b868e7035f0d42c7" name="a840ae365a53587b7b868e7035f0d42c7"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>array_list_pop</b> (<a class="el" href="structArrayList.html">ArrayList</a> *list, void *out)</td></tr>
+<tr class="memitem:a47d4c363becc4c7b151a5f750f4612c3" id="r_a47d4c363becc4c7b151a5f750f4612c3"><td class="memItemLeft" align="right" valign="top"><a id="a47d4c363becc4c7b151a5f750f4612c3" name="a47d4c363becc4c7b151a5f750f4612c3"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>array_list_push</b> (<a class="el" href="structArrayList.html">ArrayList</a> *list, const void *item)</td></tr>
+<tr class="memitem:a64a78c0b80e977641caaf4f975adcafa" id="r_a64a78c0b80e977641caaf4f975adcafa"><td class="memItemLeft" align="right" valign="top"><a id="a64a78c0b80e977641caaf4f975adcafa" name="a64a78c0b80e977641caaf4f975adcafa"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>array_list_push_new</b> (<a class="el" href="structArrayList.html">ArrayList</a> *list)</td></tr>
+<tr class="memitem:afd9e9b97b776c4a00335676ada331b3c" id="r_afd9e9b97b776c4a00335676ada331b3c"><td class="memItemLeft" align="right" valign="top"><a id="afd9e9b97b776c4a00335676ada331b3c" name="afd9e9b97b776c4a00335676ada331b3c"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>array_list_push_buffer</b> (<a class="el" href="structArrayList.html">ArrayList</a> *list, const void *items, size_t items_len)</td></tr>
+<tr class="memitem:aef963722072550c7439b4f4624b09cd7" id="r_aef963722072550c7439b4f4624b09cd7"><td class="memItemLeft" align="right" valign="top"><a id="aef963722072550c7439b4f4624b09cd7" name="aef963722072550c7439b4f4624b09cd7"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>array_list_push_array</b> (<a class="el" href="structArrayList.html">ArrayList</a> *list, const <a class="el" href="structArrayList.html">ArrayList</a> *list_to_add)</td></tr>
 <tr class="memitem:a90c2ea164e7cf0fed2b41e0966300034" id="r_a90c2ea164e7cf0fed2b41e0966300034"><td class="memItemLeft" align="right" valign="top"><a id="a90c2ea164e7cf0fed2b41e0966300034" name="a90c2ea164e7cf0fed2b41e0966300034"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>array_list_clear</b> (<a class="el" href="structArrayList.html">ArrayList</a> *list)</td></tr>
+<tr class="memitem:a257ed8c5302f1b2778571a7842ac1e38" id="r_a257ed8c5302f1b2778571a7842ac1e38"><td class="memItemLeft" align="right" valign="top"><a id="a257ed8c5302f1b2778571a7842ac1e38" name="a257ed8c5302f1b2778571a7842ac1e38"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>array_list_get_int</b> (const <a class="el" href="structArrayList.html">ArrayList</a> *list, size_t index, int *out)</td></tr>
+<tr class="memitem:a30ed3e9bc98bc1c17f83724c210c3be7" id="r_a30ed3e9bc98bc1c17f83724c210c3be7"><td class="memItemLeft" align="right" valign="top"><a id="a30ed3e9bc98bc1c17f83724c210c3be7" name="a30ed3e9bc98bc1c17f83724c210c3be7"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>array_list_get_uint</b> (const <a class="el" href="structArrayList.html">ArrayList</a> *list, size_t index, uint *out)</td></tr>
+<tr class="memitem:a22f86c3fd8c8931586d33a0e1d144bc8" id="r_a22f86c3fd8c8931586d33a0e1d144bc8"><td class="memItemLeft" align="right" valign="top"><a id="a22f86c3fd8c8931586d33a0e1d144bc8" name="a22f86c3fd8c8931586d33a0e1d144bc8"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>array_list_pop_int</b> (<a class="el" href="structArrayList.html">ArrayList</a> *list, int *out)</td></tr>
+<tr class="memitem:a950c669824db94811d611a805d75b56d" id="r_a950c669824db94811d611a805d75b56d"><td class="memItemLeft" align="right" valign="top"><a id="a950c669824db94811d611a805d75b56d" name="a950c669824db94811d611a805d75b56d"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>array_list_pop_uint</b> (<a class="el" href="structArrayList.html">ArrayList</a> *list, uint *out)</td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Description détaillée</h2>
 <div class="textblock"><p>Liste dynamique. </p>
@@ -203,9 +222,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>array_list_clear</b> 
 <div class="line">                   .count = (_count), \</div>
 <div class="line">                   .capacity = (_capacity), \</div>
 <div class="line">                   .is_static = <span class="keyword">true</span> })</div>
-<div class="ttc" id="astructArrayList_html"><div class="ttname"><a href="structArrayList.html">ArrayList</a></div><div class="ttdef"><b>Definition</b> <a href="array__list_8h_source.html#l00025">array_list.h:26</a></div></div>
+<div class="ttc" id="astructArrayList_html"><div class="ttname"><a href="structArrayList.html">ArrayList</a></div><div class="ttdef"><b>Definition</b> <a href="array__list_8h_source.html#l00027">array_list.h:28</a></div></div>
 </div><!-- fragment -->
-<p class="definition">Définition à la ligne <a class="el" href="array__list_8h_source.html#l00016">16</a> du fichier <a class="el" href="array__list_8h_source.html">array_list.h</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="array__list_8h_source.html#l00018">18</a> du fichier <a class="el" href="array__list_8h_source.html">array_list.h</a>.</p>
 
 </div>
 </div>
@@ -222,7 +241,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>array_list_clear</b> 
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="array__list_8h_source.html#l00023">23</a> du fichier <a class="el" href="array__list_8h_source.html">array_list.h</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="array__list_8h_source.html#l00025">25</a> du fichier <a class="el" href="array__list_8h_source.html">array_list.h</a>.</p>
 
 </div>
 </div>

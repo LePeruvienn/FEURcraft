@@ -52,7 +52,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "FEUR__Test_8h_source.html",
-"window_8h.html"
+"vertex__layout_8h.html#a9d811843319995383a728e3f2cbbbbaa"
 ];
 
 var SYNCONMSG = 'cliquez pour désactiver la synchronisation du panel';
