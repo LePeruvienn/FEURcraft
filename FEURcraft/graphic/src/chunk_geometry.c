@@ -100,7 +100,7 @@ Geometry* chunk_geometry_create(const Chunk* chunk)
 	}
 
 	// If chunk is empty dont return a geometry.
-	if (chunk_geometry->vertices->count == 0)
+	if (chunk_geometry->vertices->length == 0)
 	{
 		LOG_WARNING("Not returning geometry cause chunk has no vertices");
 		geometry_free(chunk_geometry);

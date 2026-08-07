@@ -70,7 +70,7 @@ Geometry* geometry_create(const void* vertices_buffer, size_t vertices_amount,
 
 	array_list_push_buffer(vertices, vertices_buffer, vertices_amount);
 
-	if (vertices->count != vertices_amount)
+	if (vertices->length != vertices_amount)
 	{
 		LOG_ERROR("Failed to add vertices to vertices array.");
 		array_list_free(vertices);
@@ -79,7 +79,7 @@ Geometry* geometry_create(const void* vertices_buffer, size_t vertices_amount,
 
 	array_list_push_buffer(indices, indices_buffer, indices_amount);
 
-	if (indices->count != indices_amount)
+	if (indices->length != indices_amount)
 	{
 		LOG_ERROR("Failed to add indices to indices array.");
 		array_list_free(vertices);
@@ -196,11 +196,11 @@ void geometry_add_array(Geometry* g, const ArrayList* vertices, const ArrayList*
 	CHECK_IS_NULL_RET(vertices, "Cannot add NULL vertices ArrayList to Geometry.", );
 	CHECK_IS_NULL_RET(indices, "Cannot add NULL indices ArrayList to Geometry.", );
 
-	size_t old_indices_count = g->indices->count;
+	size_t old_indices_count = g->indices->length;
 
 	array_list_push_array(g->indices, indices);
 
-	size_t new_indices_count = g->indices->count;
+	size_t new_indices_count = g->indices->length;
 
 	// Applying indices offset to new indices
 	for (size_t i = old_indices_count; i < new_indices_count; ++i)
@@ -213,7 +213,7 @@ void geometry_add_array(Geometry* g, const ArrayList* vertices, const ArrayList*
 			continue;
 		}
 
-		*indice += g->vertices->count;
+		*indice += g->vertices->length;
 	}
 
 	array_list_push_array(g->vertices, vertices);
@@ -230,11 +230,11 @@ void geometry_add_buffer(Geometry* g, const void* vertices_buffer, size_t vertic
 	CHECK_IS_NULL_RET(indices_buffer,
 		"Cannot add NULL indices buffer to Geometry.", );
 
-	size_t old_indices_count = g->indices->count;
+	size_t old_indices_count = g->indices->length;
 
 	array_list_push_buffer(g->indices, indices_buffer, indices_amount);
 
-	size_t new_indices_count = g->indices->count;
+	size_t new_indices_count = g->indices->length;
 
 	// Applying indices offset to new indices
 	for (size_t i = old_indices_count; i < new_indices_count; ++i)
@@ -247,7 +247,7 @@ void geometry_add_buffer(Geometry* g, const void* vertices_buffer, size_t vertic
 			continue;
 		}
 
-		*indice += g->vertices->count;
+		*indice += g->vertices->length;
 	}
 
 	array_list_push_buffer(g->vertices, vertices_buffer, vertices_amount);
@@ -255,15 +255,15 @@ void geometry_add_buffer(Geometry* g, const void* vertices_buffer, size_t vertic
 
 void geometry_load_to_gpu(Geometry* g)
 {
-	LOG_INFO("Loaded a geometry to GPU of %zu vertices and %zu indices", g->vertices->count, g->indices->count);
+	LOG_INFO("Loaded a geometry to GPU of %zu vertices and %zu indices", g->vertices->length, g->indices->length);
 
 	GL_CALL(glBufferData(GL_ARRAY_BUFFER,
-	             g->vertices->item_size * g->vertices->count,
+	             g->vertices->item_size * g->vertices->length,
 	             g->vertices->data,
 	             GL_STATIC_DRAW));
 
 	GL_CALL(glBufferData(GL_ELEMENT_ARRAY_BUFFER,
-	             sizeof(unsigned int) * g->indices->count,
+	             sizeof(unsigned int) * g->indices->length,
 	             g->indices->data,
 	             GL_STATIC_DRAW));
 }
