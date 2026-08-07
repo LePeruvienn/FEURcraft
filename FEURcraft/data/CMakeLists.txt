@@ -29,6 +29,7 @@ target_sources(${LIB_NAME}
 	PRIVATE
 		src/array_list.c
 		src/feur_string.c
+		src/component_pool.c
 )
 
 # On link les librarie nécessaire à la compilation de la lib
