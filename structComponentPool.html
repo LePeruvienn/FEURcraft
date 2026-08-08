@@ -95,12 +95,17 @@ $(function(){initNavTree('structComponentPool.html','',''); });
   <div class="headertitle"><div class="title">Référence de la structure ComponentPool</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Représente une pool de composant (ECS)  
+ <a href="#details">Plus de détails...</a></p>
+
+<p><code>#include &lt;<a class="el" href="component__pool_8h_source.html">component_pool.h</a>&gt;</code></p>
 <div class="dynheader">
 Graphe de collaboration de ComponentPool:</div>
 <div class="dyncontent">
 <div class="center"><img src="structComponentPool__coll__graph.png" border="0" usemap="#aComponentPool_coll__map" loading="lazy" alt="Collaboration graph"/></div>
 <map name="aComponentPool_coll__map" id="aComponentPool_coll__map">
-<area shape="rect" title=" " alt="" coords="5,139,120,163"/>
+<area shape="rect" title="Représente une pool de composant (ECS)" alt="" coords="5,139,120,163"/>
 <area shape="rect" href="structArrayList.html" title=" " alt="" coords="26,5,99,30"/>
 <area shape="poly" title=" " alt="" coords="65,46,65,138,60,138,60,46"/>
 </map>
@@ -108,14 +113,35 @@ Graphe de collaboration de ComponentPool:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Champs de données</h2></td></tr>
+<tr class="memitem:ad11daaef42100968dd13b43f0d2c2b5e" id="r_ad11daaef42100968dd13b43f0d2c2b5e"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad11daaef42100968dd13b43f0d2c2b5e">component_size</a></td></tr>
 <tr class="memitem:a15928e7f9866f559835dfca32477869f" id="r_a15928e7f9866f559835dfca32477869f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structArrayList.html">ArrayList</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a15928e7f9866f559835dfca32477869f">components</a></td></tr>
+<tr class="memdesc:a15928e7f9866f559835dfca32477869f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contient les données de tout les composants.  <br /></td></tr>
 <tr class="memitem:a44946b2af50886536ae8549cb7327e92" id="r_a44946b2af50886536ae8549cb7327e92"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structArrayList.html">ArrayList</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a44946b2af50886536ae8549cb7327e92">free_indices</a></td></tr>
-<tr class="memitem:a6e6b25ed5974182e1760614e6e981f63" id="r_a6e6b25ed5974182e1760614e6e981f63"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structArrayList.html">ArrayList</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6e6b25ed5974182e1760614e6e981f63">generations</a></td></tr>
+<tr class="memdesc:a44946b2af50886536ae8549cb7327e92"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contient la liste des indices libre dans <em class="arg">components</em>.  <br /></td></tr>
+<tr class="memitem:a09c3ef46b73f0bdb7bff87bf554cc999" id="r_a09c3ef46b73f0bdb7bff87bf554cc999"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structArrayList.html">ArrayList</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a09c3ef46b73f0bdb7bff87bf554cc999">states</a></td></tr>
+<tr class="memdesc:a09c3ef46b73f0bdb7bff87bf554cc999"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contient à l'indice <code>i</code> le status du composant <code>i</code>.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Description détaillée</h2>
-<div class="textblock">
-<p class="definition">Définition à la ligne <a class="el" href="component__pool_8h_source.html#l00012">12</a> du fichier <a class="el" href="component__pool_8h_source.html">component_pool.h</a>.</p>
+<div class="textblock"><p>Représente une pool de composant (ECS) </p>
+
+<p class="definition">Définition à la ligne <a class="el" href="component__pool_8h_source.html#l00018">18</a> du fichier <a class="el" href="component__pool_8h_source.html">component_pool.h</a>.</p>
 </div><a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Documentation des champs</h2>
+<a id="ad11daaef42100968dd13b43f0d2c2b5e" name="ad11daaef42100968dd13b43f0d2c2b5e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad11daaef42100968dd13b43f0d2c2b5e">&#9670;&#160;</a></span>component_size</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t ComponentPool::component_size</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="component__pool_8h_source.html#l00020">20</a> du fichier <a class="el" href="component__pool_8h_source.html">component_pool.h</a>.</p>
+
+</div>
+</div>
 <a id="a15928e7f9866f559835dfca32477869f" name="a15928e7f9866f559835dfca32477869f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a15928e7f9866f559835dfca32477869f">&#9670;&#160;</a></span>components</h2>
 
@@ -128,7 +154,9 @@ Champs de données</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="component__pool_8h_source.html#l00014">14</a> du fichier <a class="el" href="component__pool_8h_source.html">component_pool.h</a>.</p>
+<p>Contient les données de tout les composants. </p>
+
+<p class="definition">Définition à la ligne <a class="el" href="component__pool_8h_source.html#l00022">22</a> du fichier <a class="el" href="component__pool_8h_source.html">component_pool.h</a>.</p>
 
 </div>
 </div>
@@ -144,23 +172,27 @@ Champs de données</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="component__pool_8h_source.html#l00015">15</a> du fichier <a class="el" href="component__pool_8h_source.html">component_pool.h</a>.</p>
+<p>Contient la liste des indices libre dans <em class="arg">components</em>. </p>
+
+<p class="definition">Définition à la ligne <a class="el" href="component__pool_8h_source.html#l00023">23</a> du fichier <a class="el" href="component__pool_8h_source.html">component_pool.h</a>.</p>
 
 </div>
 </div>
-<a id="a6e6b25ed5974182e1760614e6e981f63" name="a6e6b25ed5974182e1760614e6e981f63"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6e6b25ed5974182e1760614e6e981f63">&#9670;&#160;</a></span>generations</h2>
+<a id="a09c3ef46b73f0bdb7bff87bf554cc999" name="a09c3ef46b73f0bdb7bff87bf554cc999"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09c3ef46b73f0bdb7bff87bf554cc999">&#9670;&#160;</a></span>states</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structArrayList.html">ArrayList</a>* ComponentPool::generations</td>
+          <td class="memname"><a class="el" href="structArrayList.html">ArrayList</a>* ComponentPool::states</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="component__pool_8h_source.html#l00016">16</a> du fichier <a class="el" href="component__pool_8h_source.html">component_pool.h</a>.</p>
+<p>Contient à l'indice <code>i</code> le status du composant <code>i</code>. </p>
+
+<p class="definition">Définition à la ligne <a class="el" href="component__pool_8h_source.html#l00024">24</a> du fichier <a class="el" href="component__pool_8h_source.html">component_pool.h</a>.</p>
 
 </div>
 </div>

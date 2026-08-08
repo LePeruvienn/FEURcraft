@@ -103,33 +103,42 @@ $(function(){initNavTree('component__pool_8h_source.html','',''); });
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="array__list_8h.html">array_list.h</a>&quot;</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;stddef.h&gt;</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="structComponentPool.html">ComponentPool</a> <a class="code hl_struct" href="structComponentPool.html">ComponentPool</a>;</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
-<div class="foldopen" id="foldopen00012" data-start="{" data-end="};">
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="structComponentPool.html">   12</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structComponentPool.html">ComponentPool</a></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>{</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <a class="code hl_struct" href="structArrayList.html">ArrayList</a>* components;</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <a class="code hl_struct" href="structArrayList.html">ArrayList</a>* free_indices;</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <a class="code hl_struct" href="structArrayList.html">ArrayList</a>* generations;</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>};</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="structComponentPool.html">ComponentPool</a> <a class="code hl_struct" href="structComponentPool.html">ComponentPool</a>;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span></div>
+<div class="foldopen" id="foldopen00018" data-start="{" data-end="};">
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="structComponentPool.html">   18</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structComponentPool.html">ComponentPool</a></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>{</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keywordtype">size_t</span> component_size;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="structComponentPool.html#a15928e7f9866f559835dfca32477869f">   22</a></span>    <a class="code hl_struct" href="structArrayList.html">ArrayList</a>* <a class="code hl_variable" href="structComponentPool.html#a15928e7f9866f559835dfca32477869f">components</a>; </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="structComponentPool.html#a44946b2af50886536ae8549cb7327e92">   23</a></span>    <a class="code hl_struct" href="structArrayList.html">ArrayList</a>* <a class="code hl_variable" href="structComponentPool.html#a44946b2af50886536ae8549cb7327e92">free_indices</a>; </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="structComponentPool.html#a09c3ef46b73f0bdb7bff87bf554cc999">   24</a></span>    <a class="code hl_struct" href="structArrayList.html">ArrayList</a>* <a class="code hl_variable" href="structComponentPool.html#a09c3ef46b73f0bdb7bff87bf554cc999">states</a>; </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>};</div>
 </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><a class="code hl_struct" href="structComponentPool.html">ComponentPool</a>* create_component_pool(<span class="keywordtype">size_t</span> component_size);</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keywordtype">void</span> component_pool_free(<a class="code hl_struct" href="structComponentPool.html">ComponentPool</a>* pool);</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keywordtype">void</span>* component_pool_get(<a class="code hl_struct" href="structComponentPool.html">ComponentPool</a>* pool, <a class="code hl_struct" href="structComponentHandle.html">ComponentHandle</a> handle);</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><a class="code hl_struct" href="structComponentHandle.html">ComponentHandle</a> component_pool_new(<a class="code hl_struct" href="structComponentPool.html">ComponentPool</a>* pool);</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="keywordtype">void</span> component_pool_delete(<a class="code hl_struct" href="structComponentPool.html">ComponentPool</a>* pool, <a class="code hl_struct" href="structComponentHandle.html">ComponentHandle</a> handle);</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#endif </span><span class="comment">// COMPONENT_POOL_H</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><a class="code hl_struct" href="structComponentPool.html">ComponentPool</a>* component_pool_create(<span class="keywordtype">size_t</span> component_size);</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="keywordtype">void</span> component_pool_free(<a class="code hl_struct" href="structComponentPool.html">ComponentPool</a>* pool);</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="keywordtype">size_t</span> component_pool_get_length(<a class="code hl_struct" href="structComponentPool.html">ComponentPool</a>* pool);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="keywordtype">void</span>* component_pool_get(<a class="code hl_struct" href="structComponentPool.html">ComponentPool</a>* pool, <a class="code hl_struct" href="structComponentHandle.html">ComponentHandle</a> handle);</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="keywordtype">void</span>* component_pool_get_at(<a class="code hl_struct" href="structComponentPool.html">ComponentPool</a>* pool, <span class="keywordtype">size_t</span> index);</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span></div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><a class="code hl_struct" href="structComponentHandle.html">ComponentHandle</a> component_pool_new(<a class="code hl_struct" href="structComponentPool.html">ComponentPool</a>* pool, uint owner_id);</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span><span class="keywordtype">void</span> component_pool_delete(<a class="code hl_struct" href="structComponentPool.html">ComponentPool</a>* pool, <a class="code hl_struct" href="structComponentHandle.html">ComponentHandle</a> handle);</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span><span class="preprocessor">#endif </span><span class="comment">// COMPONENT_POOL_H</span></div>
 <div class="ttc" id="aarray__list_8h_html"><div class="ttname"><a href="array__list_8h.html">array_list.h</a></div><div class="ttdoc">Liste dynamique.</div></div>
 <div class="ttc" id="astructArrayList_html"><div class="ttname"><a href="structArrayList.html">ArrayList</a></div><div class="ttdef"><b>Definition</b> <a href="array__list_8h_source.html#l00027">array_list.h:28</a></div></div>
 <div class="ttc" id="astructComponentHandle_html"><div class="ttname"><a href="structComponentHandle.html">ComponentHandle</a></div><div class="ttdef"><b>Definition</b> <a href="component__handle_8h_source.html#l00011">component_handle.h:12</a></div></div>
-<div class="ttc" id="astructComponentPool_html"><div class="ttname"><a href="structComponentPool.html">ComponentPool</a></div><div class="ttdef"><b>Definition</b> <a href="#l00012">component_pool.h:13</a></div></div>
+<div class="ttc" id="astructComponentPool_html"><div class="ttname"><a href="structComponentPool.html">ComponentPool</a></div><div class="ttdoc">Représente une pool de composant (ECS)</div><div class="ttdef"><b>Definition</b> <a href="#l00018">component_pool.h:19</a></div></div>
+<div class="ttc" id="astructComponentPool_html_a09c3ef46b73f0bdb7bff87bf554cc999"><div class="ttname"><a href="structComponentPool.html#a09c3ef46b73f0bdb7bff87bf554cc999">ComponentPool::states</a></div><div class="ttdeci">ArrayList * states</div><div class="ttdoc">Contient à l&#39;indice i le status du composant i.</div><div class="ttdef"><b>Definition</b> <a href="#l00024">component_pool.h:24</a></div></div>
+<div class="ttc" id="astructComponentPool_html_a15928e7f9866f559835dfca32477869f"><div class="ttname"><a href="structComponentPool.html#a15928e7f9866f559835dfca32477869f">ComponentPool::components</a></div><div class="ttdeci">ArrayList * components</div><div class="ttdoc">Contient les données de tout les composants.</div><div class="ttdef"><b>Definition</b> <a href="#l00022">component_pool.h:22</a></div></div>
+<div class="ttc" id="astructComponentPool_html_a44946b2af50886536ae8549cb7327e92"><div class="ttname"><a href="structComponentPool.html#a44946b2af50886536ae8549cb7327e92">ComponentPool::free_indices</a></div><div class="ttdeci">ArrayList * free_indices</div><div class="ttdoc">Contient la liste des indices libre dans components.</div><div class="ttdef"><b>Definition</b> <a href="#l00023">component_pool.h:23</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

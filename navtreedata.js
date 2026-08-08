@@ -33,7 +33,11 @@ var NAVTREE =
     [ "Tests", "index.html#autotoc_md7", null ],
     [ "Structures de données", "annotated.html", [
       [ "Structures de données", "annotated.html", "annotated_dup" ],
-      [ "Index des structures de données", "classes.html", null ]
+      [ "Index des structures de données", "classes.html", null ],
+      [ "Champs de donnée", "functions.html", [
+        [ "Tout", "functions.html", null ],
+        [ "Variables", "functions_vars.html", null ]
+      ] ]
     ] ],
     [ "Fichiers", "files.html", [
       [ "Liste des fichiers", "files.html", "files_dup" ],
@@ -52,7 +56,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "FEUR__Test_8h_source.html",
-"vertex__layout_8h.html#a9d811843319995383a728e3f2cbbbbaa"
+"vertex_8h.html"
 ];
 
 var SYNCONMSG = 'cliquez pour désactiver la synchronisation du panel';
