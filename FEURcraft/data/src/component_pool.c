@@ -1,5 +1,7 @@
 #include "component_pool.h"
 #include "component_handle.h"
+#include "component_status.h"
+
 #include "array_list.h"
 
 #include "error_checker.h"
@@ -9,6 +11,7 @@
 
 #include <stddef.h>
 #include <limits.h>
+#include <string.h>
 
 #define POOL_CAPACITY_START 128
 
@@ -17,20 +20,20 @@
 
 #define EMPTY_HANDLE COMPONENT_HANDLE(INDEX_EMPTY, GEN_INVALID)
 
-ComponentPool* create_component_pool(size_t component_size)
+ComponentPool* component_pool_create(size_t component_size)
 {
 	ComponentPool* pool = malloc(sizeof(ComponentPool));
 
 	CHECK_IS_NULL_RET(pool, "Failed to malloc ComponentPool", NULL);
 
+	pool->component_size = component_size;
 	pool->components = array_list_create(component_size, POOL_CAPACITY_START);
-
 	pool->free_indices = array_list_create(sizeof(uint), POOL_CAPACITY_START);
-	pool->generations  = array_list_create(sizeof(uint), POOL_CAPACITY_START);
+	pool->states = array_list_create(sizeof(ComponentStatus), POOL_CAPACITY_START);
 
 	if (pool->components  == NULL ||
 	    pool->free_indices   == NULL ||
-	    pool->generations == NULL )
+	    pool->states == NULL )
 	{
 		LOG_ERROR("Failed to malloc ComponentPool data");
 
@@ -48,9 +51,19 @@ void component_pool_free(ComponentPool* pool)
 
 	FREE_PTR_NOT_NULL(pool->components,   array_list_free);
 	FREE_PTR_NOT_NULL(pool->free_indices, array_list_free);
-	FREE_PTR_NOT_NULL(pool->generations,  array_list_free);
+	FREE_PTR_NOT_NULL(pool->states,  array_list_free);
 
 	free(pool);
+}
+
+size_t component_pool_get_length(ComponentPool* pool)
+{
+	CHECK_IS_NULL_RET(pool, "Cannot get size of a NULL ComponentPool", 0);
+
+	CHECK_COND_RET(pool->components->length == pool->states->length,
+		"ComponentPool components and states size mistmatch", 0);
+
+	return pool->components->length;
 }
 
 void* component_pool_get(ComponentPool* pool, ComponentHandle handle)
@@ -65,14 +78,14 @@ void* component_pool_get(ComponentPool* pool, ComponentHandle handle)
 	CHECK_COND_RET(pool->components->length > handle.index,
 		"Invalid ComponentPool Index", NULL);
 
-	uint gen_index = INDEX_EMPTY;
+	CHECK_COND_RET(pool->components->length == pool->states->length,
+		"ComponentPool components states mistmatch.", NULL);
 
-	CHECK_COND_RET(array_list_get_uint(pool->generations, handle.index, &gen_index),
-		"Failed to get generation of the current component.", NULL);
+	ComponentStatus* status = array_list_get(pool->states, handle.index);
 
-	// This means the index is not valid anymore
-	// The component has been reused
-	if (gen_index != handle.generation)
+	CHECK_IS_NULL_RET(status, "Failed to get pool components state.", NULL);
+
+	if (status->generation != handle.generation || status->is_alive == false)
 	{
 		return NULL;
 	}
@@ -80,53 +93,86 @@ void* component_pool_get(ComponentPool* pool, ComponentHandle handle)
 	return array_list_get(pool->components, handle.index);
 }
 
-ComponentHandle component_pool_new(ComponentPool* pool)
+ComponentHandle component_pool_new(ComponentPool* pool, uint owner_id)
 {
 	CHECK_IS_NULL_RET(pool,
 		"Cannot create new component in a NULL ComponentPool", EMPTY_HANDLE);
+
+	CHECK_COND_RET(pool->components->length == pool->states->length,
+		"ComponentPool components states mistmatch.", EMPTY_HANDLE);
 
 	uint free_index = INDEX_EMPTY;
 	bool have_free_index = array_list_pop_uint(pool->free_indices, &free_index);
 
 	if (have_free_index)
 	{
-		uint* cur_gen = array_list_get(pool->generations, free_index);
+		ComponentStatus* state = array_list_get(pool->states, free_index);
 
 		// If we can get generation of free index we are cooked
-		CHECK_IS_NULL_RET(cur_gen,
-			"Failed to get generation of free_index", EMPTY_HANDLE);
+		CHECK_IS_NULL_RET(state, 
+			"Failed to get status of free_index", EMPTY_HANDLE);
 
-		return COMPONENT_HANDLE(free_index, *cur_gen);
+		CHECK_COND_RET(state->is_alive == false,
+			"ComponentStatus of free index is alive ?", EMPTY_HANDLE);
+
+		// reseting component data
+		void* component = array_list_get(pool->components, free_index);
+
+		CHECK_IS_NULL_RET(component, "Failed to get free component", EMPTY_HANDLE);
+
+		memset(component, 0, pool->component_size);
+
+		// Update component state
+		state->owner_id = owner_id;
+		state->is_alive = true;
+		++state->generation;
+
+		// If we reach the max valid gen, we reset to 0
+		if (state->generation == GEN_INVALID)
+		{
+			LOG_WARNING("Needed to reset generation to 0 on new component!!");
+			state->generation = 0;
+		}
+		return COMPONENT_HANDLE(free_index, state->generation);
 	}
 
-	// If we dont have free_index we make a new component + his generation
-	CHECK_COND_RET(array_list_push_new(pool->components),
-		"Failed to push new component", EMPTY_HANDLE);
+	bool new_comp_ok = array_list_push_new(pool->components);
 
-	CHECK_COND_RET(array_list_push_new(pool->generations),
-		"Failed to push new generation", EMPTY_HANDLE);
+	CHECK_COND_RET(new_comp_ok == true,
+		"Failed to push a new component to ComponentPool", EMPTY_HANDLE);
+
+	bool new_state_ok = array_list_push_new(pool->states);
+
+	if (new_state_ok == false)
+	{
+		LOG_ERROR("Failed to push a new state to ComponentPool");
+		array_list_pop(pool->components, NULL);
+		return EMPTY_HANDLE;
+	}
 
 	// Check if we are cooked
-	CHECK_COND_RET(pool->components->length == pool->generations->length,
+	CHECK_COND_RET(pool->components->length == pool->states->length,
 		"Components and generation not the same size.", EMPTY_HANDLE);
 
 	// getting last index (that is the index of the thing we pushed)
 	uint new_index = pool->components->length - 1;
 
-	uint* new_gen = (uint*) array_list_get(pool->generations, new_index);
+	ComponentStatus* new_status = array_list_get(pool->states, new_index);
 
-	CHECK_IS_NULL_RET(new_gen, "Failed to get last generation", EMPTY_HANDLE);
+	CHECK_IS_NULL_RET(new_status, 
+		"Failed to get last component state", EMPTY_HANDLE);
 
-	// Set generation to 0
-	*new_gen = 0;
+	new_status->generation = 0;
+	new_status->is_alive = true;
+	new_status->owner_id = owner_id;
 
-	return COMPONENT_HANDLE(new_index, *new_gen);
+	return COMPONENT_HANDLE(new_index, new_status->generation);
 }
 
 void component_pool_delete(ComponentPool* pool, ComponentHandle handle)
 {
 	CHECK_IS_NULL_RET(pool,
-		"Cannot create new component in a NULL ComponentPool", );
+		"Cannot delete component in a NULL ComponentPool", );
 
 	// If we cant get the component:
 	// - handle Invalid or already deleted
@@ -136,19 +182,14 @@ void component_pool_delete(ComponentPool* pool, ComponentHandle handle)
 		return;
 	}
 
-	uint* cur_gen = array_list_get(pool->generations, handle.index);
+	ComponentStatus* status = array_list_get(pool->states, handle.index);
 
-	// Incrementing generation
-	(*cur_gen)++;
-	
-	// If we reach the max valid gen, we reset to 0
-	if (*cur_gen == GEN_INVALID)
-	{
-		LOG_WARNING("Needed to reset generation to 0 on new component!!");
-		*cur_gen = 0;
-	}
+	CHECK_IS_NULL_RET(status, "Failed to get component status", );
+
+	status->is_alive = false;
 
 	// adding index to free indices
-	array_list_push(pool->free_indices, &handle.index);
+	CHECK_COND_RET(array_list_push(pool->free_indices, &handle.index),
+		"Failed to push new_free indice, data would not be reused", );
 }
 

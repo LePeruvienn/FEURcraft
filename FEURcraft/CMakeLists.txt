@@ -6,6 +6,7 @@ add_subdirectory(system)
 add_subdirectory(world)
 add_subdirectory(graphic)
 add_subdirectory(audio)
+# add_subdirectory(game)
 
 # Sources seulement présente dans l'exec
 target_sources(${PROJECT_NAME}

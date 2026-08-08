@@ -166,15 +166,22 @@ void* array_list_get(ArrayList* list, size_t index)
 bool array_list_pop(ArrayList* list, void* out)
 {
 	CHECK_IS_NULL_RET(list, "Cannot pop from a NULL ArrayList.", false);
-	CHECK_IS_NULL_RET(out, "Cannot pop from ArrayList to a NULL buffer.", false);
 
 	// Nothing to get from an empty array_list
 	if (list->length == 0)
 	{
 		return false;
 	}
+
+	--list->length;
+
+	// If we dont want to get the data, we just return true
+	if(out == NULL)
+	{
+		return true;
+	}
 	
-	void* src = array_list_get_unsafe(list, --list->length);
+	void* src = array_list_get_unsafe(list, list->length);
 
 	memcpy(out, src, list->item_size);
 
@@ -296,6 +303,9 @@ bool array_list_pop_int(ArrayList* list, int* out)
 	CHECK_IS_NULL_RET(list, "Cannot pop from a NULL ArrayList.", false);
 	CHECK_IS_NULL_RET(out, "Cannot pop from ArrayList to a null ptr.", false);
 
+	CHECK_COND_RET(list->item_size == sizeof(int),
+		"Tried to get a int from a ArrayList that dont have a items of this size", false);
+
 	// Cannot pop from an empty array_list
 	if (list->length == 0)
 	{
@@ -313,6 +323,9 @@ bool array_list_pop_uint(ArrayList* list, uint* out)
 {
 	CHECK_IS_NULL_RET(list, "Cannot pop from a NULL ArrayList.", false);
 	CHECK_IS_NULL_RET(out, "Cannot pop from ArrayList to a null ptr.", false);
+
+	CHECK_COND_RET(list->item_size == sizeof(uint),
+		"Tried to get a unsigned int from a ArrayList that dont have a items of this size", false);
 
 	// Cannot pop from an empty array_list
 	if (list->length == 0)

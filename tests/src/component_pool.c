@@ -2,6 +2,8 @@
 
 #include "component_pool.h"
 
+#include "feur_types.h"
+
 #include <stddef.h>
 
 typedef struct TestComponent TestComponent;
@@ -15,12 +17,12 @@ struct TestComponent
 
 FEUR_Test_Result Test_ComponentPool_Create_Free()
 {
-	ComponentPool* pool = create_component_pool(sizeof(TestComponent));
+	ComponentPool* pool = component_pool_create(sizeof(TestComponent));
 
 	FEUR_TEST_ASSERT_EQUAL(pool != NULL, true);
 	FEUR_TEST_ASSERT_EQUAL(pool->components != NULL, true);
 	FEUR_TEST_ASSERT_EQUAL(pool->free_indices != NULL, true);
-	FEUR_TEST_ASSERT_EQUAL(pool->generations != NULL, true);
+	FEUR_TEST_ASSERT_EQUAL(pool->states != NULL, true);
 
 	component_pool_free(pool);
 
@@ -29,11 +31,14 @@ FEUR_Test_Result Test_ComponentPool_Create_Free()
 
 FEUR_Test_Result Test_ComponentPool_New_Get()
 {
-	ComponentPool* pool = create_component_pool(sizeof(TestComponent));
+	ComponentPool* pool = component_pool_create(sizeof(TestComponent));
 
-	ComponentHandle handle = component_pool_new(pool);
+	uint owner_id = 0;
+
+	ComponentHandle handle = component_pool_new(pool, owner_id);
 	
-	TestComponent* comp = (TestComponent*)component_pool_get(pool, handle);
+	TestComponent* comp = (TestComponent*) component_pool_get(pool, handle);
+
 	FEUR_TEST_ASSERT_EQUAL(comp != NULL, true);
 
 	comp->id = 1;
@@ -52,9 +57,10 @@ FEUR_Test_Result Test_ComponentPool_New_Get()
 
 FEUR_Test_Result Test_ComponentPool_Delete()
 {
-	ComponentPool* pool = create_component_pool(sizeof(TestComponent));
+	ComponentPool* pool = component_pool_create(sizeof(TestComponent));
 
-	ComponentHandle handle = component_pool_new(pool);
+	uint owner_id = 0;
+	ComponentHandle handle = component_pool_new(pool, owner_id);
 	
 	TestComponent* comp = (TestComponent*)component_pool_get(pool, handle);
 	FEUR_TEST_ASSERT_EQUAL(comp != NULL, true);
@@ -71,25 +77,30 @@ FEUR_Test_Result Test_ComponentPool_Delete()
 
 FEUR_Test_Result Test_ComponentPool_Generations()
 {
-	ComponentPool* pool = create_component_pool(sizeof(TestComponent));
+	ComponentPool* pool = component_pool_create(sizeof(TestComponent));
 
-	ComponentHandle handle1 = component_pool_new(pool);
+	uint owner_1 = 0;
+	ComponentHandle handle1 = component_pool_new(pool, owner_1);
 	
-	TestComponent* comp1 = (TestComponent*)component_pool_get(pool, handle1);
+	TestComponent* comp1 = (TestComponent*) component_pool_get(pool, handle1);
 	comp1->id = 42;
 
 	component_pool_delete(pool, handle1);
 
-	ComponentHandle handle2 = component_pool_new(pool);
+	uint owner_2 = 1;
+	ComponentHandle handle2 = component_pool_new(pool, owner_2);
 
-	TestComponent* comp1_old = (TestComponent*)component_pool_get(pool, handle1);
-	FEUR_TEST_ASSERT_EQUAL(comp1_old == NULL, true);
+	TestComponent* comp1_old = (TestComponent*) component_pool_get(pool, handle1);
+	FEUR_TEST_ASSERT(comp1_old == NULL);
 
-	TestComponent* comp2 = (TestComponent*)component_pool_get(pool, handle2);
-	FEUR_TEST_ASSERT_EQUAL(comp2 != NULL, true);
-	comp2->id = 84;
+	TestComponent* comp2 = (TestComponent*) component_pool_get(pool, handle2);
+	FEUR_TEST_ASSERT(comp2 != NULL);
 
-	FEUR_TEST_ASSERT_EQUAL(comp2->id, 84);
+	FEUR_TEST_ASSERT_MSG(handle1.index == handle2.index,
+		"The free index after delete has not been reused");
+
+	FEUR_TEST_ASSERT_MSG(handle1.generation != handle2.generation,
+		"Handles have the same generation for the same index.");
 
 	component_pool_free(pool);
 
@@ -98,30 +109,31 @@ FEUR_Test_Result Test_ComponentPool_Generations()
 
 FEUR_Test_Result Test_ComponentPool_Stress()
 {
-	ComponentPool* pool = create_component_pool(sizeof(TestComponent));
+	ComponentPool* pool = component_pool_create(sizeof(TestComponent));
 
-	ComponentHandle handles[100];
+	#define HANDLES_SIZE 300
+	ComponentHandle handles[HANDLES_SIZE];
 
-	for (int i = 0; i < 100; ++i)
+	for (int i = 0; i < HANDLES_SIZE; ++i)
 	{
-		handles[i] = component_pool_new(pool);
+		handles[i] = component_pool_new(pool, i);
 		TestComponent* comp = (TestComponent*)component_pool_get(pool, handles[i]);
 		comp->id = i;
 	}
 
-	for (int i = 0; i < 100; ++i)
+	for (int i = 0; i < HANDLES_SIZE; ++i)
 	{
 		TestComponent* comp = (TestComponent*)component_pool_get(pool, handles[i]);
 		FEUR_TEST_ASSERT_EQUAL(comp != NULL, true);
 		FEUR_TEST_ASSERT_EQUAL(comp->id, i);
 	}
 
-	for (int i = 0; i < 100; i += 2)
+	for (int i = 0; i < HANDLES_SIZE; i += 2)
 	{
 		component_pool_delete(pool, handles[i]);
 	}
 
-	for (int i = 0; i < 100; ++i)
+	for (int i = 0; i < HANDLES_SIZE; ++i)
 	{
 		TestComponent* comp = (TestComponent*)component_pool_get(pool, handles[i]);
 		if (i % 2 == 0)
