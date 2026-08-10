@@ -30,6 +30,9 @@ target_sources(${LIB_NAME}
 		src/array_list.c
 		src/feur_string.c
 		src/component_pool.c
+		src/linked_list.c
+		src/linked_list_iterator.c
+		src/linked_list_node.c
 )
 
 # On link les librarie nécessaire à la compilation de la lib

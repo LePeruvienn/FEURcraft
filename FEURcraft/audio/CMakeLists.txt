@@ -33,9 +33,15 @@ target_sources(${LIB_NAME}
 # On link les librarie nécessaire à la compilation de la lib
 target_link_libraries(${LIB_NAME}
 	PUBLIC 
-		openal
 		sndfile
 		math
 		utils
 		world
 )
+
+# Names are not the same
+if (MSVC)
+	target_link_libraries(${LIB_NAME} PUBLIC OpenAL)
+else()
+	target_link_libraries(${LIB_NAME} PUBLIC openal)
+endif()
