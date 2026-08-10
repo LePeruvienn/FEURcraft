@@ -1,0 +1,9 @@
+<map id="LinkedListIterator" name="LinkedListIterator">
+<area shape="rect" id="Node000001" title=" " alt="" coords="26,231,146,255"/>
+<area shape="rect" id="Node000002" href="$structLinkedList.html" title=" " alt="" coords="146,136,226,161"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="164,173,100,232,96,228,161,169"/>
+<area shape="rect" id="Node000003" href="$structLinkedListNode.html" title=" " alt="" coords="5,14,116,38"/>
+<area shape="poly" id="edge4_Node000001_Node000003" title=" " alt="" coords="57,54,50,104,50,132,53,160,66,198,81,229,77,231,61,200,48,161,45,133,45,104,52,53"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="85,47,176,133,172,137,82,51"/>
+<area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="132,14,139,19,142,26,134,37,117,41,115,35,132,32,137,26,135,22,129,19"/>
+</map>
