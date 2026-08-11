@@ -1,0 +1,35 @@
+<map id="FEURcraft/graphic/include/chunk_meshing.h" name="FEURcraft/graphic/include/chunk_meshing.h">
+<area shape="rect" id="Node000001" title="Gère la génération des données géométrique d&#39;un chunk." alt="" coords="340,5,515,44"/>
+<area shape="rect" id="Node000002" href="$chunk_8h_source.html" title=" " alt="" coords="182,237,249,262"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="412,46,239,228,235,224,408,43"/>
+<area shape="rect" id="Node000008" href="$geometry_8h.html" title="Structure représentant les données d&#39;un modèle 3D." alt="" coords="384,165,471,189"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="430,44,430,149,425,149,425,44"/>
+<area shape="rect" id="Node000013" href="$mesh_8h.html" title="Structure représentant les données d&#39;un modèle 3D charger dans le GPU." alt="" coords="522,92,586,117"/>
+<area shape="poly" id="edge16_Node000001_Node000013" title=" " alt="" coords="460,42,524,82,521,86,457,47"/>
+<area shape="rect" id="Node000003" href="$block_8h_source.html" title=" " alt="" coords="5,310,69,335"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="187,265,82,306,80,301,185,260"/>
+<area shape="rect" id="Node000005" href="$vec3i_8h_source.html" title=" " alt="" coords="92,310,155,335"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="202,265,152,303,149,298,199,260"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="394,310,461,335"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="251,260,380,302,378,307,249,265"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="178,310,253,335"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="218,263,218,294,213,294,213,263"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="5,383,69,407"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="40,335,40,367,34,367,34,335"/>
+<area shape="poly" id="edge15_Node000008_Node000006" title=" " alt="" coords="430,190,428,262,429,294,424,295,422,262,424,190"/>
+<area shape="rect" id="Node000009" href="$vertex__layout_8h.html" title="Fichier contenant les structure de spécification de la disposition des attributs des vertex." alt="" coords="438,237,546,262"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="440,188,473,224,469,228,436,192"/>
+<area shape="rect" id="Node000011" href="$array__list_8h.html" title="Liste dynamique." alt="" coords="278,237,362,262"/>
+<area shape="poly" id="edge11_Node000008_Node000011" title=" " alt="" coords="411,192,351,231,348,226,408,188"/>
+<area shape="poly" id="edge10_Node000009_Node000006" title=" " alt="" coords="483,264,450,300,446,297,479,261"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="514,310,598,335"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="504,261,537,297,533,300,500,264"/>
+<area shape="poly" id="edge13_Node000011_Node000006" title=" " alt="" coords="339,260,399,299,396,304,336,265"/>
+<area shape="poly" id="edge14_Node000011_Node000007" title=" " alt="" coords="304,265,247,303,244,299,301,260"/>
+<area shape="rect" id="Node000012" href="$feur__types_8h_source.html" title=" " alt="" coords="277,310,370,335"/>
+<area shape="poly" id="edge12_Node000011_Node000012" title=" " alt="" coords="323,262,325,294,319,295,318,263"/>
+<area shape="poly" id="edge17_Node000013_Node000008" title=" " alt="" coords="535,120,463,159,461,154,532,115"/>
+<area shape="poly" id="edge19_Node000013_Node000010" title=" " alt="" coords="558,117,561,262,560,295,554,294,556,262,552,117"/>
+<area shape="rect" id="Node000014" href="$draw__mode_8h_source.html" title=" " alt="" coords="621,165,720,189"/>
+<area shape="poly" id="edge18_Node000013_Node000014" title=" " alt="" coords="575,115,640,154,637,159,572,120"/>
+</map>

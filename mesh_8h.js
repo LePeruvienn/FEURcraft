@@ -2,14 +2,14 @@ var mesh_8h =
 [
     [ "Mesh", "structMesh.html", null ],
     [ "Mesh", "mesh_8h.html#a2abca57ece005663a4df39aed5463027", null ],
-    [ "bind_mesh", "mesh_8h.html#a9b979d7f4d62651bd60ebe01b94b08b2", null ],
-    [ "create_block_mesh", "mesh_8h.html#ad176a7fba154dd6c331ed669c0910a2f", null ],
-    [ "create_cube_mesh", "mesh_8h.html#abb59808459ab79134bb8e615f55229de", null ],
-    [ "create_cube_uv_mesh", "mesh_8h.html#aecd1461a3cd08ea754e799e462a943a7", null ],
-    [ "create_mesh", "mesh_8h.html#ad20fee6acdafe0427a94e0a60eba8086", null ],
-    [ "create_sphere_mesh", "mesh_8h.html#adb9d08fa8bd99ec95a04e1164c4b47e8", null ],
-    [ "draw_mesh", "mesh_8h.html#a62af1336311bc05f7b4f928e04e8caa4", null ],
-    [ "draw_mesh_instanced", "mesh_8h.html#a8605f85eacdd4d5a903a6d6f19b4e285", null ],
-    [ "free_mesh", "mesh_8h.html#a11d3f38dca8673ae5ded549f2426f779", null ],
-    [ "unbind_mesh", "mesh_8h.html#a21948ef730bd24893eac626b7ff2552f", null ]
+    [ "mesh_bind", "mesh_8h.html#a8f3a0780f47ebb2ec4d736dbb5f4118c", null ],
+    [ "mesh_create", "mesh_8h.html#aea8767dcdae0eaf329def9d2709164fe", null ],
+    [ "mesh_create_block", "mesh_8h.html#aed7f6bb2b35ecefa55e95e538f31ad92", null ],
+    [ "mesh_create_cube", "mesh_8h.html#a0656c8bc36b8a8f5a6580ff9ca933c30", null ],
+    [ "mesh_create_cube_uv", "mesh_8h.html#a235fcba01d9855d7de2d956454716ef8", null ],
+    [ "mesh_create_sphere", "mesh_8h.html#a3515bdd7102d5c3dccbd1b2fda3d5b0a", null ],
+    [ "mesh_draw", "mesh_8h.html#a6ff1952781efdfcd86d2a24b0ee07b0c", null ],
+    [ "mesh_draw_instanced", "mesh_8h.html#ab3495c5aa260861bcbc51c3b0a6f184f", null ],
+    [ "mesh_free", "mesh_8h.html#af0c008b5f24d202f309baf9c12cddf20", null ],
+    [ "mesh_unbind", "mesh_8h.html#a458ea7055458c5b881be38e44f4e0ed0", null ]
 ];

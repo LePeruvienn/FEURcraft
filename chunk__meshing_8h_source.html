@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>FEURcraft:  Fichier source de FEURcraft/graphic/include/chunk_geometry.h</title>
+<title>FEURcraft:  Fichier source de FEURcraft/graphic/include/chunk_meshing.h</title>
 <link rel="icon" href="FEURcraft.png" type="image/x-icon" />
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
@@ -66,7 +66,7 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-$(function(){initNavTree('chunk__geometry_8h_source.html','',''); });
+$(function(){initNavTree('chunk__meshing_8h_source.html','',''); });
 </script>
 <div id="container">
 <div id="doc-content">
@@ -92,30 +92,36 @@ $(function(){initNavTree('chunk__geometry_8h_source.html','',''); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">chunk_geometry.h</div></div>
+  <div class="headertitle"><div class="title">chunk_meshing.h</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="chunk__geometry_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef CHUNK_GEOMETRY_H</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define CHUNK_GEOMETRY_H</span></div>
+<a href="chunk__meshing_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef CHUNK_MESHING_H</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define CHUNK_MESHING_H</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="geometry_8h.html">geometry.h</a>&quot;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;chunk.h&quot;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="chunk__geometry_8h.html#a128344b0c5cf5ed634a3def31010feed">   17</a></span><a class="code hl_struct" href="structGeometry.html">Geometry</a>* <a class="code hl_function" href="chunk__geometry_8h.html#a128344b0c5cf5ed634a3def31010feed">chunk_geometry_create</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structChunk.html">Chunk</a>* chunk);</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#endif </span><span class="comment">// CHUNK_GEOMETRY_H</span></div>
-<div class="ttc" id="achunk__geometry_8h_html_a128344b0c5cf5ed634a3def31010feed"><div class="ttname"><a href="chunk__geometry_8h.html#a128344b0c5cf5ed634a3def31010feed">chunk_geometry_create</a></div><div class="ttdeci">Geometry * chunk_geometry_create(const Chunk *chunk)</div><div class="ttdoc">Génère les données géméotrique d&#39;un chunk.</div></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;chunk.h&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="geometry_8h.html">geometry.h</a>&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;<a class="code" href="mesh_8h.html">mesh.h</a>&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="chunk__meshing_8h.html#a128344b0c5cf5ed634a3def31010feed">   19</a></span><a class="code hl_struct" href="structGeometry.html">Geometry</a>* <a class="code hl_function" href="chunk__meshing_8h.html#a128344b0c5cf5ed634a3def31010feed">chunk_geometry_create</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structChunk.html">Chunk</a>* chunk);</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><a class="code hl_struct" href="structMesh.html">Mesh</a>* chunk_mesh_create(<span class="keyword">const</span> <a class="code hl_struct" href="structChunk.html">Chunk</a>* chunk);</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#endif </span><span class="comment">// CHUNK_MESHING_H</span></div>
+<div class="ttc" id="achunk__meshing_8h_html_a128344b0c5cf5ed634a3def31010feed"><div class="ttname"><a href="chunk__meshing_8h.html#a128344b0c5cf5ed634a3def31010feed">chunk_geometry_create</a></div><div class="ttdeci">Geometry * chunk_geometry_create(const Chunk *chunk)</div><div class="ttdoc">Génère les données géméotrique d&#39;un chunk.</div></div>
 <div class="ttc" id="ageometry_8h_html"><div class="ttname"><a href="geometry_8h.html">geometry.h</a></div><div class="ttdoc">Structure représentant les données d&#39;un modèle 3D.</div></div>
+<div class="ttc" id="amesh_8h_html"><div class="ttname"><a href="mesh_8h.html">mesh.h</a></div><div class="ttdoc">Structure représentant les données d&#39;un modèle 3D charger dans le GPU.</div></div>
 <div class="ttc" id="astructChunk_html"><div class="ttname"><a href="structChunk.html">Chunk</a></div><div class="ttdef"><b>Definition</b> <a href="chunk_8h_source.html#l00019">chunk.h:20</a></div></div>
 <div class="ttc" id="astructGeometry_html"><div class="ttname"><a href="structGeometry.html">Geometry</a></div><div class="ttdef"><b>Definition</b> <a href="geometry_8h_source.html#l00025">geometry.h:26</a></div></div>
+<div class="ttc" id="astructMesh_html"><div class="ttname"><a href="structMesh.html">Mesh</a></div><div class="ttdef"><b>Definition</b> <a href="mesh_8h_source.html#l00030">mesh.h:31</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="dir_758d8e9166e39e682af4fe71d4574a53.html">FEURcraft</a></li><li class="navelem"><a href="dir_d563573f48eefcd0f66954300c445435.html">graphic</a></li><li class="navelem"><a href="dir_70cb0612fe78639fcdf942bf945e5531.html">include</a></li><li class="navelem"><a href="chunk__geometry_8h.html">chunk_geometry.h</a></li>
+    <li class="navelem"><a href="dir_758d8e9166e39e682af4fe71d4574a53.html">FEURcraft</a></li><li class="navelem"><a href="dir_d563573f48eefcd0f66954300c445435.html">graphic</a></li><li class="navelem"><a href="dir_70cb0612fe78639fcdf942bf945e5531.html">include</a></li><li class="navelem"><a href="chunk__meshing_8h.html">chunk_meshing.h</a></li>
     <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
   </ul>
 </div>

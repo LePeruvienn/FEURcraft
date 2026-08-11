@@ -2,4 +2,8 @@
 <area shape="rect" id="Node000001" title="Gestion et compilation des shaders." alt="" coords="5,5,181,44"/>
 <area shape="rect" id="Node000002" href="$shader__program_8h_source.html" title=" " alt="" coords="5,92,181,131"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="96,60,96,91,90,91,90,60"/>
+<area shape="rect" id="Node000003" href="$material_8h_source.html" title=" " alt="" coords="5,179,181,217"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="96,147,96,178,90,178,90,147"/>
+<area shape="rect" id="Node000004" href="$render__object_8h_source.html" title=" " alt="" coords="5,265,181,304"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="96,233,96,265,90,265,90,233"/>
 </map>

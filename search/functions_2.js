@@ -8,15 +8,10 @@ var searchData=
   ['camera_5ftranslate_5',['camera_translate',['../camera_8h.html#a77313b9666c31e3b3d68c582c187ddfe',1,'camera.h']]],
   ['camera_5fupdate_5faspect_6',['camera_update_aspect',['../camera_8h.html#a5ce5bd3db68ea9878f9f3e8c47196673',1,'camera.h']]],
   ['camera_5fupdate_5fyaw_5fpitch_7',['camera_update_yaw_pitch',['../camera_8h.html#a04a96a1bab544f6d990b14c8b968db73',1,'camera.h']]],
-  ['chunk_5fgeometry_5fcreate_8',['chunk_geometry_create',['../chunk__geometry_8h.html#a128344b0c5cf5ed634a3def31010feed',1,'chunk_geometry.h']]],
-  ['create_5fblock_5fmesh_9',['create_block_mesh',['../mesh_8h.html#ad176a7fba154dd6c331ed669c0910a2f',1,'mesh.h']]],
-  ['create_5fcube_5fmesh_10',['create_cube_mesh',['../mesh_8h.html#abb59808459ab79134bb8e615f55229de',1,'mesh.h']]],
-  ['create_5fcube_5fuv_5fmesh_11',['create_cube_uv_mesh',['../mesh_8h.html#aecd1461a3cd08ea754e799e462a943a7',1,'mesh.h']]],
-  ['create_5fmesh_12',['create_mesh',['../mesh_8h.html#ad20fee6acdafe0427a94e0a60eba8086',1,'mesh.h']]],
-  ['create_5fsphere_5fmesh_13',['create_sphere_mesh',['../mesh_8h.html#adb9d08fa8bd99ec95a04e1164c4b47e8',1,'mesh.h']]],
-  ['create_5ftexture_14',['create_texture',['../texture_8h.html#a0fcb309ad9f79b49446995dfbc7fc29d',1,'texture.h']]],
-  ['create_5ftexture_5ffrom_5fatlas_15',['create_texture_from_atlas',['../texture_8h.html#ab9054d91a4a2d902554354dfa636fdda',1,'texture.h']]],
-  ['create_5ftexture_5ffrom_5ffile_16',['create_texture_from_file',['../texture_8h.html#a9930de07a8f8eb02aeb1bbbdc3daa871',1,'texture.h']]],
-  ['create_5ftexture_5ffrom_5fimage_17',['create_texture_from_image',['../texture_8h.html#a6b1bd7b1c338c1a6cc0fe76a59a028f9',1,'texture.h']]],
-  ['create_5fwindow_18',['create_window',['../window_8h.html#a3eec75dc36557ea34fb768a6582a9fb9',1,'window.h']]]
+  ['chunk_5fgeometry_5fcreate_8',['chunk_geometry_create',['../chunk__meshing_8h.html#a128344b0c5cf5ed634a3def31010feed',1,'chunk_meshing.h']]],
+  ['create_5ftexture_9',['create_texture',['../texture_8h.html#a0fcb309ad9f79b49446995dfbc7fc29d',1,'texture.h']]],
+  ['create_5ftexture_5ffrom_5fatlas_10',['create_texture_from_atlas',['../texture_8h.html#ab9054d91a4a2d902554354dfa636fdda',1,'texture.h']]],
+  ['create_5ftexture_5ffrom_5ffile_11',['create_texture_from_file',['../texture_8h.html#a9930de07a8f8eb02aeb1bbbdc3daa871',1,'texture.h']]],
+  ['create_5ftexture_5ffrom_5fimage_12',['create_texture_from_image',['../texture_8h.html#a6b1bd7b1c338c1a6cc0fe76a59a028f9',1,'texture.h']]],
+  ['create_5fwindow_13',['create_window',['../window_8h.html#a3eec75dc36557ea34fb768a6582a9fb9',1,'window.h']]]
 ];
