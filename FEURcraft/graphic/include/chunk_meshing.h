@@ -1,11 +1,13 @@
-#ifndef CHUNK_GEOMETRY_H
-#define CHUNK_GEOMETRY_H
+#ifndef CHUNK_MESHING_H
+#define CHUNK_MESHING_H
 
-#include "geometry.h"
 #include "chunk.h"
 
+#include "geometry.h"
+#include "mesh.h"
+
 /**
- * \file chunk_geometry.h
+ * \file chunk_meshing.h
  * \brief Gère la génération des données géométrique d'un chunk
  */
 
@@ -16,4 +18,6 @@
  */
 Geometry* chunk_geometry_create(const Chunk* chunk);
 
-#endif // CHUNK_GEOMETRY_H
+Mesh* chunk_mesh_create(const Chunk* chunk);
+
+#endif // CHUNK_MESHING_H

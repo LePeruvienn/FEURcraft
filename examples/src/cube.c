@@ -45,7 +45,7 @@ int main()
 
 	shader_program_link(program);
 
-	Mesh* mesh = create_cube_mesh();
+	Mesh* mesh = mesh_create_cube();
 
 	float rotation = 0.f;
 
@@ -73,14 +73,14 @@ int main()
 		shader_program_set_mat4(program, "uProjMatrix", proj);
 		shader_program_set_mat4(program, "uModelMatrix", model);
 
-		bind_mesh(mesh);
+		mesh_bind(mesh);
 
-		draw_mesh(mesh, DRAW_LINES_STRIP);
+		mesh_draw(mesh, DRAW_LINES_STRIP);
 
 		window_swap_buffers(window);
 	}
 
-	free_mesh(mesh);
+	mesh_free(mesh);
 
 	shader_program_free(program);
 	

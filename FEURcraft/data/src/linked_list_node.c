@@ -1,53 +1,49 @@
 #include "linked_list_node.h"
 
 #include "error_checker.h"
+#include "logger.h"
 #include "ptr_helper.h"
 
 #include <stdlib.h>
 #include <string.h>
 
-LinkedListNode* linked_list_node_create(size_t item_size)
+LinkedListNode* linked_list_node_create(void* data, size_t size)
 {
-    LinkedListNode* node = malloc(sizeof(struct LinkedListNode)) ;
+	CHECK_IS_NULL_RET(data, "Cannot create LinkedListNode with NULL data", NULL);
 
-    CHECK_IS_NULL_RET(node, "Faile to malloc LinkedListNode", NULL);
+	LinkedListNode* node = malloc(sizeof(struct LinkedListNode));
 
-    node->item_size = item_size;
-    node->data = NULL;
-    node->next = NULL;
+	CHECK_IS_NULL_RET(node, "Failed to malloc LinkedListNode.", NULL);
 
-    return node;
+	node->previous = NULL;
+	node->next = NULL;
+
+	node->data = malloc(size);
+	node->size = size;
+
+	if(node->data == NULL)
+	{
+		LOG_ERROR("Failed to malloc LinkedListNode data.");
+		free(node);
+		return NULL;
+	}
+
+	memcpy(node->data, data, size);
+
+	return node;
 }
 
 void linked_list_node_free(LinkedListNode* node)
 {
-    FREE_PTR_NOT_NULL(node->data, free);
-    free(node);
-}
-
-void* linked_list_node_get_data(LinkedListNode* node)
-{
-    return node->data;
-}
-
-LinkedListNode* linked_list_node_get_next(LinkedListNode* node)
-{
-    return node->next;
+	CHECK_IS_NULL_RET(node, "Cannot free NULL LinkedListNode.", );
+	FREE_PTR_NOT_NULL(node->data, free);
+	free(node);
 }
 
 void linked_list_node_set_data(LinkedListNode* node, void* data)
 {
-    if (node->data == NULL)
-    {
-        void* data = malloc(node->item_size);
-        CHECK_IS_NULL_RET(data, "Failed to malloc LinkedListNode data", );
-        node->data = data;
-    }
+	CHECK_IS_NULL_RET(node, "Cannot set data of a NULL LinkedListNode.", );
+	CHECK_IS_NULL_RET(data, "Cannot set NULL data to a  LinkedListNode", );
 
-    memcpy(node->data, data, node->item_size);
-}
-
-void linked_list_node_set_next(LinkedListNode* node, LinkedListNode* next)
-{
-    node->next = next;
+	memcpy(node->data, data, node->size);
 }

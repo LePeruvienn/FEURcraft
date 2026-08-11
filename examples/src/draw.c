@@ -24,7 +24,7 @@ int main()
 
 	shader_program_link(program);
 
-	Mesh* mesh = create_cube_mesh();
+	Mesh* mesh = mesh_create_cube();
 
 	while(!window_should_close(window))
 	{
@@ -33,14 +33,14 @@ int main()
 		renderer_clear();
 
 		shader_program_use(program);
-		bind_mesh(mesh);
+		mesh_bind(mesh);
 
-		draw_mesh(mesh, DRAW_TRIANGLES);
+		mesh_draw(mesh, DRAW_TRIANGLES);
 
 		window_swap_buffers(window);
 	}
 
-	free_mesh(mesh);
+	mesh_free(mesh);
 
 	shader_program_free(program);
 	

@@ -28,7 +28,7 @@ int main()
 
 	shader_program_link(program);
 
-	Mesh* mesh = create_block_mesh();
+	Mesh* mesh = mesh_create_block();
 
 	Image* block_images[BLOCK_FACE_COUNT];
 	block_images[BLOCK_FACE_FRONT] = image_create_and_load("assets/textures/pumpkin_face_off.png");
@@ -79,16 +79,16 @@ int main()
 		texture_array_bind(tex_array, texture_unit);
 		shader_program_set_texture_unit(program, "uTextureArray", texture_unit);
 
-		bind_mesh(mesh);
+		mesh_bind(mesh);
 
-		draw_mesh(mesh, DRAW_TRIANGLES);
+		mesh_draw(mesh, DRAW_TRIANGLES);
 
 		window_swap_buffers(window);
 	}
 
 	texture_array_free(tex_array);
 
-	free_mesh(mesh);
+	mesh_free(mesh);
 
 	shader_program_free(program);
 	

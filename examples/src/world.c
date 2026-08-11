@@ -57,31 +57,20 @@ int main()
 	Shader* vert = shader_create("assets/shader/default_block.vert", SHADER_TYPE_VERT);
 	Shader* frag = shader_create("assets/shader/default_block.frag", SHADER_TYPE_FRAG);
 
-	Shader* frag_debug = shader_create("assets/shader/red.frag", SHADER_TYPE_FRAG);
-
 	shader_compile(vert);
 	shader_compile(frag);
-	shader_compile(frag_debug);
 
 	ShaderProgram* program = shader_program_create();
-	ShaderProgram* program_debug = shader_program_create();
 
 	shader_program_attach(program, vert);
 	shader_program_attach(program, frag);
 
-	shader_program_attach(program_debug, vert);
-	shader_program_attach(program_debug, frag_debug);
-
 	shader_program_link(program);
-	shader_program_link(program_debug);
 
 	Chunk chunk = CHUNK_EMPTY;
 
 	chunk_fill(&chunk, BLOCK_DIRT, (CHUNK_HEIGHT / 2) - 5);
 	Mesh* mesh_world = chunk_mesh_create(&chunk);
-
-	chunk_fill_all(&chunk, BLOCK_DIRT);
-	Mesh* mesh_debug = chunk_mesh_create(&chunk);
 
 	TextureArray* tex_array = create_block_texture_array();
 
@@ -111,18 +100,17 @@ int main()
 
 		renderer.camera.pos.z += camera_sign * CHUNK_LENGTH * dt;
 
-
 		// Draw Chunk
-
+		
 		shader_program_use(program);
 
 		rotation += 0.5f * dt;
 
 		// Center chunk
 		Vec3 center = VEC3(
-			- (CHUNK_LENGTH / 2),
-			- (CHUNK_HEIGHT / 2),
-			- (CHUNK_LENGTH / 2)
+			- (CHUNK_LENGTH / 2.f),
+			- (CHUNK_HEIGHT / 2.f),
+			- (CHUNK_LENGTH / 2.f)
 		);
 
 		Mat4 view = camera_compute_view(&renderer.camera);
@@ -140,24 +128,12 @@ int main()
 		mesh_bind(mesh_world);
 		mesh_draw(mesh_world, DRAW_TRIANGLES);
 
-		// Draw debug lines
-
-		shader_program_use(program_debug);
-
-		shader_program_set_mat4(program_debug, "uViewMatrix", view);
-		shader_program_set_mat4(program_debug, "uProjMatrix", proj);
-		shader_program_set_mat4(program_debug, "uModelMatrix", model);
-
-		mesh_bind(mesh_debug);
-		mesh_draw(mesh_debug, DRAW_LINES);
-
 		window_swap_buffers(window);
 	}
 
 	texture_array_free(tex_array);
 
 	mesh_free(mesh_world);
-	mesh_free(mesh_debug);
 
 	shader_program_free(program);
 	

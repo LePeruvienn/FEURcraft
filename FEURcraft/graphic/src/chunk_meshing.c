@@ -1,7 +1,8 @@
-#include "chunk_geometry.h"
+#include "chunk_meshing.h"
 
 #include "geometry.h"
 #include "geometry_data.h"
+#include "mesh.h"
 #include "vertex.h"
 #include "vertex_layout.h"
 
@@ -110,3 +111,19 @@ Geometry* chunk_geometry_create(const Chunk* chunk)
 	return chunk_geometry;
 }
 
+
+Mesh* chunk_mesh_create(const Chunk* chunk)
+{
+	Geometry* chunk_geometry = chunk_geometry_create(chunk);
+
+	CHECK_IS_NULL_RET(chunk_geometry,
+		"Failed to create chunk geometry", NULL);
+
+	Mesh* chunk_mesh = mesh_create(chunk_geometry);
+
+	geometry_free(chunk_geometry);
+
+	CHECK_IS_NULL(chunk_mesh, "Failed to create chunk mesh");
+
+	return chunk_mesh;
+}

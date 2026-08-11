@@ -38,7 +38,7 @@ target_sources(${LIB_NAME}
 		src/atlas.c
 		src/image_array.c
 		src/texture_array.c
-		src/chunk_geometry.c
+		src/chunk_meshing.c
 		src/geometry_data.c
 )
 

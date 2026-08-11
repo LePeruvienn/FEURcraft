@@ -26,7 +26,7 @@ int main()
 
 	shader_program_link(program);
 
-	Mesh* mesh = create_cube_uv_mesh();
+	Mesh* mesh = mesh_create_cube_uv();
 
 	Texture* texture = create_texture_from_file("assets/textures/log_oak.png");
 
@@ -58,16 +58,16 @@ int main()
 		bind_texture(texture, texture_unit);
 		shader_program_set_texture_unit(program, "uTexture", texture_unit);
 
-		bind_mesh(mesh);
+		mesh_bind(mesh);
 
-		draw_mesh(mesh, DRAW_TRIANGLES);
+		mesh_draw(mesh, DRAW_TRIANGLES);
 
 		window_swap_buffers(window);
 	}
 
 	free_texture(texture);
 
-	free_mesh(mesh);
+	mesh_free(mesh);
 
 	shader_program_free(program);
 	

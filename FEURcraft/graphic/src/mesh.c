@@ -8,7 +8,7 @@
 #include <stdlib.h>
 #include <stddef.h>
 
-Mesh* create_mesh(Geometry* g)
+Mesh* mesh_create(Geometry* g)
 {
 	Mesh* m = malloc(sizeof(struct Mesh));
 
@@ -35,47 +35,47 @@ Mesh* create_mesh(Geometry* g)
 	return m;
 }
 
-Mesh* create_cube_mesh()
+Mesh* mesh_create_cube()
 {
 	Geometry* g = geometry_create_cube();
-	Mesh* m = create_mesh(g);
+	Mesh* m = mesh_create(g);
 
 	geometry_free(g);
 
 	return m;
 }
 
-Mesh* create_cube_uv_mesh()
+Mesh* mesh_create_cube_uv()
 {
 	Geometry* g = geometry_create_cube_UV();
-	Mesh* m = create_mesh(g);
+	Mesh* m = mesh_create(g);
 
 	geometry_free(g);
 
 	return m;
 }
 
-Mesh* create_block_mesh()
+Mesh* mesh_create_block()
 {
 	Geometry* g = geometry_create_block();
-	Mesh* m = create_mesh(g);
+	Mesh* m = mesh_create(g);
 
 	geometry_free(g);
 
 	return m;
 }
 
-Mesh* create_sphere_mesh(float R, unsigned int lat_amount, unsigned int long_amount)
+Mesh* mesh_create_sphere(float R, unsigned int lat_amount, unsigned int long_amount)
 {
 	Geometry* g = geometry_create_sphere(R, lat_amount, long_amount);
-	Mesh* m = create_mesh(g);
+	Mesh* m = mesh_create(g);
 
 	geometry_free(g);
 
 	return m;
 }
 
-void free_mesh(Mesh* m)
+void mesh_free(Mesh* m)
 {
 	if (m == NULL)
 	{
@@ -90,7 +90,7 @@ void free_mesh(Mesh* m)
 	free(m);
 }
 
-void bind_mesh(Mesh* m)
+void mesh_bind(Mesh* m)
 {
 	if (m == NULL)
 	{
@@ -102,7 +102,7 @@ void bind_mesh(Mesh* m)
 	GL_CALL(glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m->EBO));
 }
 
-void unbind_mesh(Mesh* m)
+void mesh_unbind(Mesh* m)
 {
 	if (m == NULL)
 	{
@@ -133,7 +133,7 @@ static GLenum draw_mode_to_gl(DrawMode mode)
 	return GL_TRIANGLES;
 }
 
-void draw_mesh(Mesh* m, DrawMode mode)
+void mesh_draw(Mesh* m, DrawMode mode)
 {
 	if (m == NULL)
 	{
@@ -149,7 +149,7 @@ void draw_mesh(Mesh* m, DrawMode mode)
 	));
 }
 
-void draw_mesh_instanced(Mesh* m, DrawMode mode, unsigned int amount)
+void mesh_draw_instanced(Mesh* m, DrawMode mode, unsigned int amount)
 {
 	if (m == NULL)
 	{

@@ -41,25 +41,25 @@ struct Mesh
 * \param m mesh du modèle
 * \return nouvelle géométrie alloué
 */
-Mesh* create_mesh(Geometry* g);
+Mesh* mesh_create(Geometry* g);
 
 /**
 * \brief Créer une nouvelle géométrie de cube
 * \return nouvelle géométrie alloué
 */
-Mesh* create_cube_mesh();
+Mesh* mesh_create_cube();
 
 /**
 * \brief Créer une nouvelle géométrie de cube avec UV
 * \return nouvelle géométrie alloué
 */
-Mesh* create_cube_uv_mesh();
+Mesh* mesh_create_cube_uv();
 
 /**
 * \brief Créer une nouvelle géométrie de block
 * \return nouvelle géométrie alloué
 */
-Mesh* create_block_mesh();
+Mesh* mesh_create_block();
 
 /**
 * \brief Créer une nouvelle géométrie de sphère
@@ -68,32 +68,32 @@ Mesh* create_block_mesh();
 * \param long_amount nombre de sommet en longitude
 * \return nouvelle géométrie alloué
 */
-Mesh* create_sphere_mesh(float R, unsigned int lat_amount, unsigned int long_amount);
+Mesh* mesh_create_sphere(float R, unsigned int lat_amount, unsigned int long_amount);
 
 /**
 * \brief libère la mémoire de la géométrie en passer en paramêtre
 * \param g géométrie à libérer
 */
-void free_mesh(Mesh* m);
+void mesh_free(Mesh* m);
 
 /**
 * \brief Lie les données de la géométrie au GPU
 * \param g géométrie à lié
 */
-void bind_mesh(Mesh* m);
+void mesh_bind(Mesh* m);
 
 /**
 * \brief dé lie les données de la géométrie du GPU
 * \param g géométrie à dé-lié
 */
-void unbind_mesh(Mesh* m);
+void mesh_unbind(Mesh* m);
 
 /**
 * \brief Déssine la géométrie actuelle en faisant un appel GPU
 * \param g géométrie à déssiner
 * \param mode mode de déssin
 */
-void draw_mesh(Mesh* m, DrawMode mode);
+void mesh_draw(Mesh* m, DrawMode mode);
 
 /**
 * \brief fait un appel GPU pour déssiner plusieurs instance la géométrie
@@ -104,6 +104,6 @@ void draw_mesh(Mesh* m, DrawMode mode);
 * \param mode mode de déssin
 * \param amount nombre d'instance à déssiner
 */
-void draw_mesh_instanced(Mesh* m, DrawMode mode, unsigned int amount);
+void mesh_draw_instanced(Mesh* m, DrawMode mode, unsigned int amount);
 
 #endif // MESH_H
