@@ -174,10 +174,7 @@ void* linked_list_get_data(LinkedList* list, size_t index)
 	LinkedListIterator iterator;
 	linked_list_iterator_init(&iterator, list);
 
-	size_t offset = list->length - index;
-	size_t mid = list->length / 2;
-
-	if (offset > mid)
+	if (index < list->length / 2)
 	{
 		linked_list_iterator_go_begin(&iterator);
 	}

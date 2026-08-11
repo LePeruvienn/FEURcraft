@@ -82,6 +82,12 @@ void linked_list_iterator_go_end(LinkedListIterator* iterator)
 	CHECK_IS_NULL_RET(iterator, "Cannot use go begin with a NULL LinkedListIterator", );
 	CHECK_IS_NULL_RET(iterator->list, "LinkedList of Iterator is NULL", );
 
+	if (iterator->list->length == 0)
+	{
+		LOG_WARNING("Going at the end of a empty LinkedList");
+		return;
+	}
+
 	iterator->current_node = iterator->list->tail_node;
 	iterator->current_index = iterator->list->length - 1;
 }
@@ -102,7 +108,7 @@ void linked_list_iterator_go_to(LinkedListIterator* iterator, size_t index)
 	{
 		if (index > iterator->current_index)
 		{
-			if(linked_list_iterator_go_next(iterator))
+			if(linked_list_iterator_go_next(iterator) == false)
 			{
 				LOG_ERROR("Failed to go to the location desired");
 				break;
