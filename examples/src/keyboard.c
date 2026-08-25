@@ -1,4 +1,5 @@
 #include "window.h"
+#include "renderer.h"
 #include "keyboard.h"
 #include "keyboard_key.h"
 
@@ -7,6 +8,9 @@
 int main()
 {
 	Window* window = create_window(960, 800, "Keyboard test");
+
+	Renderer renderer;
+	renderer_init(&renderer, window);
 
 	Keyboard keyboard;
 	keyboard_init(&keyboard, window);
@@ -18,6 +22,10 @@ int main()
 	while(!window_should_close(window))
 	{
 		window_pool_events();
+
+		renderer_update_viewport(&renderer);
+		renderer_clear();
+
 		keyboard_update(&keyboard);
 
 		for (int key = 0; key < KEYBOARD_KEY_COUNT; ++key)
@@ -32,6 +40,8 @@ int main()
 				last_key = key;
 			}
 		}
+
+		window_swap_buffers(window);
 	}
 
 	free_window(window);
