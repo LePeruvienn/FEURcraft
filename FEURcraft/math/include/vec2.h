@@ -1,6 +1,8 @@
 #ifndef VEC2_H
 #define VEC2_H
 
+#include <stdbool.h>
+
 #define VEC2(_x, _y) ((Vec2) {.x = _x, .y = _y})
 
 #define VEC2_ZERO VEC2(0.f, 0.f)
@@ -43,5 +45,7 @@ float vec2_len2(Vec2 u);
 
 float vec2_dist (Vec2 u, Vec2 v);
 float vec2_dist2(Vec2 u, Vec2 v);
+
+bool vec2_equal(Vec2 u, Vec2 v);
 
 #endif // VEC2_H

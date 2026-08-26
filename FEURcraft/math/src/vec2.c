@@ -125,3 +125,8 @@ float vec2_dist2(Vec2 u, Vec2 v)
 {
 	return vec2_len2(VEC2(u.x - v.x, u.y - v.y));
 }
+
+bool vec2_equal(Vec2 u, Vec2 v)
+{
+	return (u.x == v.x && u.y == v.y);
+}

@@ -72,4 +72,6 @@ MouseButtonState mouse_input_right_click_state(MouseInput* mouse);
 
 void mouse_input_set_cursor_mode(MouseInput* mouse, MouseCursorMode cursor_mode);
 
+const char* mouse_button_state_to_str(MouseButtonState state);
+
 #endif // MOUSE_H

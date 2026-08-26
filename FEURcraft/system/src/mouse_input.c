@@ -87,20 +87,38 @@ void mouse_input_update(MouseInput* mouse)
 	                                  mouse->old_screen_pos);
 
 	mouse->scroll_input = global_scroll;
+	global_scroll = VEC2_ZERO; // WARNING : global_scroll can create bugs with multiple instances
+
 
 	for (unsigned int i = 0; i < MOUSE_BUTTON_COUNT; ++i)
 	{
-		unsigned int glfw_button =  glfw_get_mouse_button_id(i);
+		unsigned int glfw_button = glfw_get_mouse_button_id(i);
 
 		int state = glfwGetMouseButton(handle, glfw_button);
 
+		MouseButtonState old_state = mouse->buttons[i];
+
 		if(state == GLFW_PRESS)
 		{
-			mouse->buttons[i] = MOUSE_BUTTON_DOWN;
+			if (old_state == MOUSE_BUTTON_UP || old_state == MOUSE_BUTTON_RELEASED)
+			{
+				mouse->buttons[i] = MOUSE_BUTTON_PRESSED;
+			}
+			else
+			{
+				mouse->buttons[i] = MOUSE_BUTTON_DOWN;
+			}
 		}
 		else
 		{
-			mouse->buttons[i] = MOUSE_BUTTON_UP;
+			if (old_state == MOUSE_BUTTON_DOWN || old_state == MOUSE_BUTTON_PRESSED)
+			{
+				mouse->buttons[i] = MOUSE_BUTTON_RELEASED;
+			}
+			else
+			{
+				mouse->buttons[i] = MOUSE_BUTTON_UP;
+			}
 		}
 	}
 }
@@ -148,4 +166,24 @@ void mouse_input_set_cursor_mode(MouseInput* mouse, MouseCursorMode cursor_mode)
 
 	unsigned int glfw_cursor_mode = glfw_get_cursor_mode(cursor_mode);
 	glfwSetInputMode(mouse->window->handle, GLFW_CURSOR, glfw_cursor_mode);
+}
+
+const char* mouse_button_state_to_str(MouseButtonState state)
+{
+	switch (state)
+	{
+		case MOUSE_BUTTON_PRESSED: 
+			return "MOUSE_BUTTON_PRESSED";
+
+		case MOUSE_BUTTON_DOWN:
+			return "MOUSE_BUTTON_DOWN";
+
+		case MOUSE_BUTTON_RELEASED:
+			return "MOUSE_BUTTON_RELEASED";
+
+		case MOUSE_BUTTON_UP:
+			return "MOUSE_BUTTON_UP";
+	}
+
+	return "MOUSE_BUTTON_STATE_UNKOWN";
 }
