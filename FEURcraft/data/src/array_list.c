@@ -30,7 +30,7 @@ ArrayList* array_list_create(size_t item_size, size_t capacity)
 		return list;
 	}
 
-	array_list_resize(list, capacity);
+	array_list_set_capacity(list, capacity);
 
 	if (list->data == NULL)
 	{
@@ -94,13 +94,13 @@ bool array_list_is_empty(ArrayList* list)
 	return (list->length == 0);
 }
 
-bool array_list_resize(ArrayList* list, size_t new_capacity)
+bool array_list_set_capacity(ArrayList* list, size_t new_capacity)
 {
-	CHECK_IS_NULL_RET(list, "Cannot resize a NULL ArrayList.", false);
-	CHECK_COND_RET(list->is_static == false, "Cannot resize a static ArrayList.", false);
+	CHECK_IS_NULL_RET(list, "Cannot reserve exact a NULL ArrayList.", false);
+	CHECK_COND_RET(list->is_static == false, "Cannot reserve exact a static ArrayList.", false);
 
 	CHECK_COND_RET(list->length <= new_capacity,
-		"Cannot resize less than actual ArrayList count.", false);
+		"Cannot reserve exactly less than actual ArrayList count.", false);
 
 	size_t new_data_size = list->item_size * new_capacity;
 
@@ -146,7 +146,38 @@ bool array_list_reserve(ArrayList* list, size_t size)
 		optimized_capacity *= 2;
 	}
 
-	return array_list_resize(list, optimized_capacity);
+	return array_list_set_capacity(list, optimized_capacity);
+}
+
+bool array_list_resize(ArrayList* list, size_t size)
+{
+	CHECK_IS_NULL_RET(list, "Cannot resize a NULL ArrayList", false);
+
+	CHECK_COND_RET(list->length <= size,
+		"Cannot resize less than actual ArrayList count.", false);
+
+	if (list->capacity < size)
+	{
+		// to match reserve implementation
+		size_t capacity_needed = size - list->length;
+
+		if (array_list_reserve(list, capacity_needed) == false)
+		{
+			return false;
+		}
+	}
+
+	CHECK_COND_RET(list->capacity >= size,
+		"Failed to allocate the enought space for ArrayList resize", false);
+
+	void* start_data = list->data + (list->length * list->item_size);
+	size_t byte_size = (size - list->length) * list->item_size;
+
+	memset(start_data, 0, byte_size);
+
+	list->length = size;
+
+	return true;
 }
 
 static void* array_list_get_unsafe(const ArrayList* list, size_t index)
@@ -265,6 +296,32 @@ bool array_list_push_array(ArrayList* list, const ArrayList* list_to_add)
 	return array_list_push_buffer(list, list_to_add->data, list_to_add->length);
 }
 
+bool array_list_fill(ArrayList* list, void* item)
+{
+	CHECK_IS_NULL_RET(list, "Cannot fill a NULL ArrayList", false);
+	CHECK_IS_NULL_RET(item, "Cannot fill a ArrayList with a NULL item", false);
+
+	return array_list_fill_at(list, item, 0, list->length - 1);
+}
+
+bool array_list_fill_at(ArrayList* list, void* item, size_t start, size_t end)
+{
+	CHECK_IS_NULL_RET(list, "Cannot fill a NULL ArrayList", false);
+	CHECK_IS_NULL_RET(item, "Cannot fill a ArrayList with a NULL item", false);
+
+	CHECK_COND_RET(start <= end, "start must be less or equal than end", false);
+	CHECK_COND_RET(start < list->length, "end must be less than ArrayList length", false);
+
+	unsigned char* data = list->data;
+
+	for(size_t i = start; i <= end; ++i)
+	{
+		memcpy(data + (i * list->item_size), item, list->item_size);
+	}
+
+	return true;
+}
+
 void array_list_clear(ArrayList* list)
 {
 	CHECK_IS_NULL_RET(list, "Cannot clear a NULL ArrayList.", );
@@ -276,7 +333,9 @@ bool array_list_get_int(const ArrayList* list, size_t index, int* out)
 {
 	CHECK_IS_NULL_RET(list, "Cannot get from a NULL ArrayList.", false);
 	CHECK_IS_NULL_RET(out, "Cannot get from ArrayList to a null ptr.", false);
+
 	CHECK_COND_RET(index < list->length, "Invalid Array List Index.", false);
+	CHECK_COND_RET(list->item_size == sizeof(int), "ArrayList does not match int size", false);
 
 	int* in = (int*) array_list_get_unsafe(list, index);
 
@@ -289,7 +348,9 @@ bool array_list_get_uint(const ArrayList* list, size_t index, uint* out)
 {
 	CHECK_IS_NULL_RET(list, "Cannot get from a NULL ArrayList.", false);
 	CHECK_IS_NULL_RET(out, "Cannot get from ArrayList to a null ptr.", false);
+
 	CHECK_COND_RET(index < list->length, "Invalid Array List Index.", false);
+	CHECK_COND_RET(list->item_size == sizeof(uint), "ArrayList does not match int size", false);
 
 	uint* in = (uint*) array_list_get_unsafe(list, index);
 

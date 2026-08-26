@@ -44,9 +44,11 @@ void array_list_free(ArrayList* list);
 
 bool array_list_is_empty(ArrayList* list);
 
-bool array_list_resize(ArrayList* list, size_t capacity);
-
 bool array_list_reserve(ArrayList* list, size_t size);
+
+bool array_list_set_capacity(ArrayList* list, size_t capacity);
+
+bool array_list_resize(ArrayList* list, size_t size);
 
 void* array_list_get(ArrayList* list, size_t index);
 
@@ -59,6 +61,10 @@ bool array_list_push_new(ArrayList* list);
 bool array_list_push_buffer(ArrayList* list, const void* items, size_t items_len);
 
 bool array_list_push_array(ArrayList* list, const ArrayList* list_to_add);
+
+bool array_list_fill(ArrayList* list, void* item);
+
+bool array_list_fill_at(ArrayList* list, void* item, size_t start, size_t end);
 
 void array_list_clear(ArrayList* list);
 

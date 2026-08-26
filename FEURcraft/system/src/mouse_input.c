@@ -12,8 +12,9 @@
 MouseButton MOUSE_BUTTON_LEFT  = MOUSE_BUTTON_1;
 MouseButton MOUSE_BUTTON_RIGHT = MOUSE_BUTTON_2;
 
-#define CHECK_MOUSE_INPUT_OK(mouse_ptr, ret) CHECK_IS_NULL_RET((mouse_ptr), "MouseInput is NULL", ret); \
-                                             CHECK_IS_NULL_RET((mouse_ptr)->window, "MouseInput Window is NULL", ret);
+#define CHECK_MOUSE_INPUT_OK(mouse_ptr, ret) \
+	CHECK_IS_NULL_RET((mouse_ptr), "MouseInput is NULL", ret); \
+	CHECK_IS_NULL_RET((mouse_ptr)->window, "MouseInput Window is NULL", ret);
 
 
 static Vec2 global_scroll = {{{ 0.f, 0.f }}};

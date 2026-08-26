@@ -139,11 +139,11 @@ FEUR_Test_Result Test_ArrayList_Push_Array()
 	return FEUR_Test_Success;
 }
 
-FEUR_Test_Result Test_ArrayList_Resize_Reserve()
+FEUR_Test_Result Test_ArrayList_Reserve()
 {
 	ArrayList* list = array_list_create(sizeof(int), 2);
 	
-	array_list_resize(list, 5);
+	array_list_set_capacity(list, 5);
 	FEUR_TEST_ASSERT_EQUAL(list->capacity, 5);
 
 	int items[5] = { 1, 2, 3, 4, 5 };
@@ -155,6 +155,67 @@ FEUR_Test_Result Test_ArrayList_Resize_Reserve()
 	FEUR_TEST_ASSERT_EQUAL(list->capacity >= 10, true);
 
 	array_list_free(list);
+
+	return FEUR_Test_Success;
+}
+
+FEUR_Test_Result Test_ArrayList_Resize()
+{
+	ArrayList* list = array_list_create(sizeof(int), 2);
+
+	FEUR_TEST_ASSERT(list->capacity >= 2);
+
+	size_t size = 10;
+
+	array_list_resize(list, size);
+
+	FEUR_TEST_ASSERT(list->capacity >= size);
+	FEUR_TEST_ASSERT_EQUAL(list->length, size);
+
+	for (size_t i = 0; i < size; ++i)
+	{
+		int n = -1;
+		array_list_get_int(list,i, &n);
+
+		FEUR_TEST_ASSERT_EQUAL(n, 0);
+	}
+
+	array_list_free(list);
+
+	return FEUR_Test_Success;
+}
+
+FEUR_Test_Result Test_ArrayList_Fill()
+{
+	ArrayList* list = array_list_create(sizeof(int), 2);
+
+	size_t size = 27;
+	array_list_resize(list, size);
+
+	FEUR_TEST_ASSERT(list->capacity >= size);
+	FEUR_TEST_ASSERT_EQUAL(list->length, size);
+
+	int a = 4;
+	array_list_fill(list, &a);
+
+	for (size_t i = 0; i < list->length; ++i)
+	{
+		int n = -1;
+		array_list_get_int(list, i, &n);
+		FEUR_TEST_ASSERT_EQUAL(n, a);
+	}
+
+	int b = 8;
+	size_t start = 10;
+	size_t end = 20;
+	array_list_fill_at(list, &b, start, end);
+
+	for (size_t i = start; i < end; ++i)
+	{
+		int n = -1;
+		array_list_get_int(list, i, &n);
+		FEUR_TEST_ASSERT_EQUAL(n, b);
+	}
 
 	return FEUR_Test_Success;
 }
@@ -171,7 +232,9 @@ int main()
 	FEUR_Test_Add_Test("Push Pop Int", Test_ArrayList_Push_Pop_Int);
 	FEUR_Test_Add_Test("Push Buffer", Test_ArrayList_Push_Buffer);
 	FEUR_Test_Add_Test("Push Array", Test_ArrayList_Push_Array);
-	FEUR_Test_Add_Test("Resize Reserve", Test_ArrayList_Resize_Reserve);
+	FEUR_Test_Add_Test("Reserve", Test_ArrayList_Reserve);
+	FEUR_Test_Add_Test("Resize", Test_ArrayList_Resize);
+	FEUR_Test_Add_Test("Fill", Test_ArrayList_Fill);
 
 	FEUR_Test_Add_Group("Accessors");
 	FEUR_Test_Add_Test("Get Int", Test_ArrayList_Get_Int);
