@@ -13,6 +13,8 @@ var annotated_dup =
     [ "FeurFile", "structFeurFile.html", null ],
     [ "FeurString", "structFeurString.html", null ],
     [ "Geometry", "structGeometry.html", null ],
+    [ "HashMap", "structHashMap.html", null ],
+    [ "HashMapEntry", "structHashMapEntry.html", null ],
     [ "Image", "structImage.html", null ],
     [ "ImageArray", "structImageArray.html", null ],
     [ "Keyboard", "structKeyboard.html", null ],

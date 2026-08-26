@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['image_0',['Image',['../structImage.html',1,'']]],
-  ['imagearray_1',['ImageArray',['../structImageArray.html',1,'']]]
+  ['hashmap_0',['HashMap',['../structHashMap.html',1,'']]],
+  ['hashmapentry_1',['HashMapEntry',['../structHashMapEntry.html',1,'']]]
 ];
