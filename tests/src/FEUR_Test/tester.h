@@ -154,9 +154,10 @@ static void FEUR_PrintHeader()
 	FEUR_PrintBar();
 
 	printf(ANSI_COLOR_BOLD 
-		"     ▄▖▄▖▖▖▄▖  ▄▖    ▗ \n"
-		"     ▙▖▙▖▌▌▙▘  ▐ █▌▛▘▜▘\n"
-		"     ▌ ▙▖▙▌▌▌  ▐ ▙▖▄▌▐▖\n"
+	" _____ _____ _____ _____    _____     _   \n"
+	"|   __|   __|  |  | __  |  |_   _|___| |_ \n"
+	"|   __|   __|  |  |    -|    | | |_ -|  _|\n"
+	"|__|  |_____|_____|__|__|    |_| |___|_|  \n"
 	ANSI_COLOR_RESET);
 
 	FEUR_PrintBar();

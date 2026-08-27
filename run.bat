@@ -69,14 +69,29 @@ if "%~1"=="" (
 
 set "PROGRAM=%~1"
 
-if /I not "%PROGRAM:~-4%"==".exe" (
-    set "PROGRAM=%PROGRAM%.exe"
-)
-
 echo Searching for "%PROGRAM%" in "%BIN_DIR%"...
 
 for /R "%BIN_DIR%" %%F in (*) do (
-    if /I "%%~nxF"=="%PROGRAM%" (
+
+    if /I "%%~nxF"=="%PROGRAM%.exe" (
+        echo Found: %%F
+        echo Running...
+
+        shift
+        "%%F" %*
+
+        exit /b %errorlevel%
+    )
+    if /I "%%~nxF"=="%PROGRAM%.ex.exe" (
+        echo Found: %%F
+        echo Running...
+
+        shift
+        "%%F" %*
+
+        exit /b %errorlevel%
+    )
+    if /I "%%~nxF"=="%PROGRAM%.tst.exe" (
         echo Found: %%F
         echo Running...
 

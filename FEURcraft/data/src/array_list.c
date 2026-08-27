@@ -170,7 +170,7 @@ bool array_list_resize(ArrayList* list, size_t size)
 	CHECK_COND_RET(list->capacity >= size,
 		"Failed to allocate the enought space for ArrayList resize", false);
 
-	void* start_data = list->data + (list->length * list->item_size);
+	void* start_data = (unsigned char*) list->data + (list->length * list->item_size);
 	size_t byte_size = (size - list->length) * list->item_size;
 
 	memset(start_data, 0, byte_size);
