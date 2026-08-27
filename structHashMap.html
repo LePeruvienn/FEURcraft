@@ -109,12 +109,15 @@ Graphe de collaboration de HashMap:</div>
 <tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Champs de données</h2></td></tr>
 <tr class="memitem:ac22487829d69a8e03ec153aaa9668df1" id="r_ac22487829d69a8e03ec153aaa9668df1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structArrayList.html">ArrayList</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac22487829d69a8e03ec153aaa9668df1">buckets</a></td></tr>
+<tr class="memitem:a8919a623211ea93c204f5ac538563b8d" id="r_a8919a623211ea93c204f5ac538563b8d"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8919a623211ea93c204f5ac538563b8d">key_size</a></td></tr>
 <tr class="memitem:a6a1fe47784c9f5d767e559099bd63b18" id="r_a6a1fe47784c9f5d767e559099bd63b18"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6a1fe47784c9f5d767e559099bd63b18">item_size</a></td></tr>
 <tr class="memitem:a3aaf76182b0955602eb6cce9d782971a" id="r_a3aaf76182b0955602eb6cce9d782971a"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3aaf76182b0955602eb6cce9d782971a">length</a></td></tr>
+<tr class="memitem:aa6e5d0f5f042a261050301e892176d39" id="r_aa6e5d0f5f042a261050301e892176d39"><td class="memItemLeft" align="right" valign="top">HashMapHashFunction&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa6e5d0f5f042a261050301e892176d39">hash</a></td></tr>
+<tr class="memitem:aa5ea6d21fe757b85932c25b4ea74ead8" id="r_aa5ea6d21fe757b85932c25b4ea74ead8"><td class="memItemLeft" align="right" valign="top">HashMapCompareFunction&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa5ea6d21fe757b85932c25b4ea74ead8">compare</a></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Description détaillée</h2>
 <div class="textblock">
-<p class="definition">Définition à la ligne <a class="el" href="hash__map_8h_source.html#l00020">20</a> du fichier <a class="el" href="hash__map_8h_source.html">hash_map.h</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="hash__map_8h_source.html#l00014">14</a> du fichier <a class="el" href="hash__map_8h_source.html">hash_map.h</a>.</p>
 </div><a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Documentation des champs</h2>
 <a id="ac22487829d69a8e03ec153aaa9668df1" name="ac22487829d69a8e03ec153aaa9668df1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac22487829d69a8e03ec153aaa9668df1">&#9670;&#160;</a></span>buckets</h2>
@@ -128,7 +131,39 @@ Champs de données</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="hash__map_8h_source.html#l00022">22</a> du fichier <a class="el" href="hash__map_8h_source.html">hash_map.h</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="hash__map_8h_source.html#l00016">16</a> du fichier <a class="el" href="hash__map_8h_source.html">hash_map.h</a>.</p>
+
+</div>
+</div>
+<a id="aa5ea6d21fe757b85932c25b4ea74ead8" name="aa5ea6d21fe757b85932c25b4ea74ead8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa5ea6d21fe757b85932c25b4ea74ead8">&#9670;&#160;</a></span>compare</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">HashMapCompareFunction HashMap::compare</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="hash__map_8h_source.html#l00024">24</a> du fichier <a class="el" href="hash__map_8h_source.html">hash_map.h</a>.</p>
+
+</div>
+</div>
+<a id="aa6e5d0f5f042a261050301e892176d39" name="aa6e5d0f5f042a261050301e892176d39"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa6e5d0f5f042a261050301e892176d39">&#9670;&#160;</a></span>hash</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">HashMapHashFunction HashMap::hash</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="hash__map_8h_source.html#l00023">23</a> du fichier <a class="el" href="hash__map_8h_source.html">hash_map.h</a>.</p>
 
 </div>
 </div>
@@ -144,7 +179,23 @@ Champs de données</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="hash__map_8h_source.html#l00024">24</a> du fichier <a class="el" href="hash__map_8h_source.html">hash_map.h</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="hash__map_8h_source.html#l00019">19</a> du fichier <a class="el" href="hash__map_8h_source.html">hash_map.h</a>.</p>
+
+</div>
+</div>
+<a id="a8919a623211ea93c204f5ac538563b8d" name="a8919a623211ea93c204f5ac538563b8d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8919a623211ea93c204f5ac538563b8d">&#9670;&#160;</a></span>key_size</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t HashMap::key_size</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="hash__map_8h_source.html#l00018">18</a> du fichier <a class="el" href="hash__map_8h_source.html">hash_map.h</a>.</p>
 
 </div>
 </div>
@@ -160,7 +211,7 @@ Champs de données</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="hash__map_8h_source.html#l00025">25</a> du fichier <a class="el" href="hash__map_8h_source.html">hash_map.h</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="hash__map_8h_source.html#l00021">21</a> du fichier <a class="el" href="hash__map_8h_source.html">hash_map.h</a>.</p>
 
 </div>
 </div>

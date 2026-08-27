@@ -1,5 +1,6 @@
 <map id="FEURcraft/data" name="FEURcraft/data">
 <area shape="rect" id="node2" href="dir_469acc7c1e724c49faecb702f275eda8.html" title="include" alt="" coords="108,62,170,87"/>
-<area shape="rect" id="clust2" href="dir_c5cd876b6a57c3637930715ae1537019.html" alt="" coords="27,51,180,97"/>
-<area shape="rect" id="clust1" href="dir_758d8e9166e39e682af4fe71d4574a53.html" title="FEURcraft" alt="" coords="16,16,191,108"/>
+<area shape="rect" id="node3" href="dir_feb75a0408b27c04b9793a71a0207c96.html" title="private" alt="" coords="194,62,254,87"/>
+<area shape="rect" id="clust2" href="dir_c5cd876b6a57c3637930715ae1537019.html" alt="" coords="27,51,264,97"/>
+<area shape="rect" id="clust1" href="dir_758d8e9166e39e682af4fe71d4574a53.html" title="FEURcraft" alt="" coords="16,16,275,108"/>
 </map>

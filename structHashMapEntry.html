@@ -95,67 +95,77 @@ $(function(){initNavTree('structHashMapEntry.html','',''); });
   <div class="headertitle"><div class="title">Référence de la structure HashMapEntry</div></div>
 </div><!--header-->
 <div class="contents">
+<div class="dynheader">
+Graphe de collaboration de HashMapEntry:</div>
+<div class="dyncontent">
+<div class="center"><img src="structHashMapEntry__coll__graph.png" border="0" usemap="#aHashMapEntry_coll__map" loading="lazy" alt="Collaboration graph"/></div>
+<map name="aHashMapEntry_coll__map" id="aHashMapEntry_coll__map">
+<area shape="rect" title=" " alt="" coords="28,100,137,125"/>
+<area shape="rect" href="structHashMapEntryStorage.html" title=" " alt="" coords="5,5,160,30"/>
+<area shape="poly" title=" " alt="" coords="85,46,85,100,80,100,80,46"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">légende</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Champs de données</h2></td></tr>
-<tr class="memitem:aa397ce04a84313df1c320264a4d1c19f" id="r_aa397ce04a84313df1c320264a4d1c19f"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa397ce04a84313df1c320264a4d1c19f">key</a></td></tr>
-<tr class="memitem:a9cb0b31c1fff4fe74230c97e2e90cc2d" id="r_a9cb0b31c1fff4fe74230c97e2e90cc2d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9cb0b31c1fff4fe74230c97e2e90cc2d">is_empty</a></td></tr>
-<tr class="memitem:a636561c08ccccfde9ba9c5a973f9b9da" id="r_a636561c08ccccfde9ba9c5a973f9b9da"><td class="memItemLeft" align="right" valign="top">unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a636561c08ccccfde9ba9c5a973f9b9da">data</a> []</td></tr>
+<tr class="memitem:ac70c221a4d43207a3fa77399ae332831" id="r_ac70c221a4d43207a3fa77399ae332831"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac70c221a4d43207a3fa77399ae332831">key</a></td></tr>
+<tr class="memitem:a53fb561d3f430082cf4e9d3cc9b835e5" id="r_a53fb561d3f430082cf4e9d3cc9b835e5"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a53fb561d3f430082cf4e9d3cc9b835e5">value</a></td></tr>
+<tr class="memitem:a07c8997fcc0d2b1c8984a174a75d7bdb" id="r_a07c8997fcc0d2b1c8984a174a75d7bdb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structHashMapEntryStorage.html">HashMapEntryStorage</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a07c8997fcc0d2b1c8984a174a75d7bdb">storage</a></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Description détaillée</h2>
 <div class="textblock">
-<p class="definition">Définition à la ligne <a class="el" href="hash__map_8h_source.html#l00013">13</a> du fichier <a class="el" href="hash__map_8h_source.html">hash_map.h</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="hash__map__entry_8h_source.html#l00024">24</a> du fichier <a class="el" href="hash__map__entry_8h_source.html">hash_map_entry.h</a>.</p>
 </div><a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Documentation des champs</h2>
-<a id="a636561c08ccccfde9ba9c5a973f9b9da" name="a636561c08ccccfde9ba9c5a973f9b9da"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a636561c08ccccfde9ba9c5a973f9b9da">&#9670;&#160;</a></span>data</h2>
+<a id="ac70c221a4d43207a3fa77399ae332831" name="ac70c221a4d43207a3fa77399ae332831"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac70c221a4d43207a3fa77399ae332831">&#9670;&#160;</a></span>key</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">unsigned char HashMapEntry::data[]</td>
+          <td class="memname">void* HashMapEntry::key</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="hash__map_8h_source.html#l00017">17</a> du fichier <a class="el" href="hash__map_8h_source.html">hash_map.h</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="hash__map__entry_8h_source.html#l00026">26</a> du fichier <a class="el" href="hash__map__entry_8h_source.html">hash_map_entry.h</a>.</p>
 
 </div>
 </div>
-<a id="a9cb0b31c1fff4fe74230c97e2e90cc2d" name="a9cb0b31c1fff4fe74230c97e2e90cc2d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9cb0b31c1fff4fe74230c97e2e90cc2d">&#9670;&#160;</a></span>is_empty</h2>
+<a id="a07c8997fcc0d2b1c8984a174a75d7bdb" name="a07c8997fcc0d2b1c8984a174a75d7bdb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07c8997fcc0d2b1c8984a174a75d7bdb">&#9670;&#160;</a></span>storage</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool HashMapEntry::is_empty</td>
+          <td class="memname"><a class="el" href="structHashMapEntryStorage.html">HashMapEntryStorage</a>* HashMapEntry::storage</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="hash__map_8h_source.html#l00016">16</a> du fichier <a class="el" href="hash__map_8h_source.html">hash_map.h</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="hash__map__entry_8h_source.html#l00029">29</a> du fichier <a class="el" href="hash__map__entry_8h_source.html">hash_map_entry.h</a>.</p>
 
 </div>
 </div>
-<a id="aa397ce04a84313df1c320264a4d1c19f" name="aa397ce04a84313df1c320264a4d1c19f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa397ce04a84313df1c320264a4d1c19f">&#9670;&#160;</a></span>key</h2>
+<a id="a53fb561d3f430082cf4e9d3cc9b835e5" name="a53fb561d3f430082cf4e9d3cc9b835e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a53fb561d3f430082cf4e9d3cc9b835e5">&#9670;&#160;</a></span>value</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">size_t HashMapEntry::key</td>
+          <td class="memname">void* HashMapEntry::value</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="hash__map_8h_source.html#l00015">15</a> du fichier <a class="el" href="hash__map_8h_source.html">hash_map.h</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="hash__map__entry_8h_source.html#l00027">27</a> du fichier <a class="el" href="hash__map__entry_8h_source.html">hash_map_entry.h</a>.</p>
 
 </div>
 </div>
 <hr/>La documentation de cette structure a été générée à partir du fichier suivant :<ul>
-<li>FEURcraft/data/include/<a class="el" href="hash__map_8h_source.html">hash_map.h</a></li>
+<li>FEURcraft/data/private/<a class="el" href="hash__map__entry_8h_source.html">hash_map_entry.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

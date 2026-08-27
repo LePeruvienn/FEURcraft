@@ -1,5 +1,8 @@
 var NAVTREEINDEX1 =
 {
+"texture_8h.html#a9862149b4afb78441c9ac01b07535975":[7,0,0,2,0,13,1],
+"texture_8h.html#a9930de07a8f8eb02aeb1bbbdc3daa871":[7,0,0,2,0,13,5],
+"texture_8h.html#ab9054d91a4a2d902554354dfa636fdda":[7,0,0,2,0,13,4],
 "texture_8h_source.html":[7,0,0,2,0,13],
 "texture__array_8h.html":[7,0,0,2,0,14],
 "texture__array_8h.html#a025f1ad8f3688a49305422e9cbda51f8":[7,0,0,2,0,14,3],
@@ -11,7 +14,7 @@ var NAVTREEINDEX1 =
 "texture__array_8h_source.html":[7,0,0,2,0,14],
 "texture__coord_8h_source.html":[7,0,0,2,0,15],
 "transform_8h_source.html":[7,0,0,6,0,3],
-"unionMaterialParameterValue.html":[6,0,24],
+"unionMaterialParameterValue.html":[6,0,25],
 "vec2_8h_source.html":[7,0,0,3,0,1],
 "vec3_8h_source.html":[7,0,0,3,0,2],
 "vec3i_8h_source.html":[7,0,0,3,0,3],

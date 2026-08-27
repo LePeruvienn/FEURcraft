@@ -15,6 +15,7 @@ var annotated_dup =
     [ "Geometry", "structGeometry.html", null ],
     [ "HashMap", "structHashMap.html", null ],
     [ "HashMapEntry", "structHashMapEntry.html", null ],
+    [ "HashMapEntryStorage", "structHashMapEntryStorage.html", null ],
     [ "Image", "structImage.html", null ],
     [ "ImageArray", "structImageArray.html", null ],
     [ "Keyboard", "structKeyboard.html", null ],
