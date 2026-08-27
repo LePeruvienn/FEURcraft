@@ -1,9 +1,8 @@
 #include "hash_map.h"
+#include "hash_map_entry.h"
 #include "array_list.h"
 #include "linked_list.h"
 #include "linked_list_iterator.h"
-
-#include "ptr_helper.h"
 
 #include "logger.h"
 #include "error_checker.h"
@@ -13,26 +12,16 @@
 #include <stdint.h>
 #include <string.h>
 
-#define PRIME_NUMBER 193
+#define HASH_MAP_MAX_INDEX 193
 
-typedef struct HashMapEntry HashMapEntry;
-
-struct HashMapEntry
-{
-	size_t key;
-	bool is_empty;
-	unsigned char data[]; // flexible array membres 'type[]' dont take any space in C !  
-};                        // so struct global size is variable : sizeof(HashMap) + item_size
-
-HashMap* hash_map_create(size_t item_size)
+HashMap* hash_map_create(size_t key_size, size_t item_size,
+                         HashMapHashFunction hash, HashMapCompareFunction compare)
 {
 	HashMap* hash_map = malloc(sizeof(struct HashMap));
 
 	CHECK_IS_NULL_RET(hash_map, "Failed to allocate hashmap.", NULL);
 
-	hash_map->item_size = item_size;
-
-	hash_map->buckets = array_list_create(sizeof(LinkedList*), PRIME_NUMBER);
+	hash_map->buckets = array_list_create(sizeof(LinkedList*), 64);
 
 	if (hash_map->buckets == NULL)
 	{
@@ -40,6 +29,14 @@ HashMap* hash_map_create(size_t item_size)
 		free(hash_map);
 		return NULL;
 	}
+
+	hash_map->key_size = key_size;
+	hash_map->item_size = item_size;
+
+	hash_map->length = 0;
+
+	hash_map->hash = hash;
+	hash_map->compare = compare;
 
 	return hash_map;
 }
@@ -73,44 +70,48 @@ void hash_map_free(HashMap* hash_map)
 	free(hash_map);
 }
 
-static size_t hash_map_hash(size_t key)
+static size_t hash_map_hash(HashMap* map, void* key)
 {
-	return key * (key + 3) % PRIME_NUMBER;
+	return map->hash(key) % HASH_MAP_MAX_INDEX;
 };
 
-static HashMapEntry* hash_map_find_entry(LinkedList* entries, size_t key)
+static HashMapEntry hash_map_get_entry_from(HashMap* map, LinkedList* entries, void* key)
 {
 	LinkedListIterator iterator;
 	linked_list_iterator_init(&iterator, entries);
 
 	do {
-		HashMapEntry* entry = linked_list_iterator_get_data(&iterator);
+		HashMapEntryStorage* storage = linked_list_iterator_get_data(&iterator);
 
-		if (entry == NULL)
+		if (storage == NULL)
 			continue;
 
-		if (entry->key != key)
+		HashMapEntry entry = hash_map_entry_storage_get_entry(storage, map->key_size);
+
+		bool is_same_key = map->compare(entry.key, key);
+
+		if (is_same_key == false)
 			continue;
 
 		return entry;
 
 	} while(linked_list_iterator_go_next(&iterator));
 
-	return NULL;
+	return HASH_MAP_ENTRY_EMPTY;
 }
 
-void* hash_map_get(HashMap* hash_map, size_t key)
+void* hash_map_get(HashMap* map, void* key)
 {
-	CHECK_IS_NULL_RET(hash_map, "Cannot get from a NULL HashMap", NULL);
+	CHECK_IS_NULL_RET(map, "Cannot get from a NULL HashMap", NULL);
 
-	size_t i = hash_map_hash(key);
+	size_t i = hash_map_hash(map, key);
 
-	if (i >= hash_map->buckets->length)
+	if (i >= map->buckets->length)
 	{
 		return NULL;
 	}
 
-	LinkedList** entries_ptr = array_list_get(hash_map->buckets, i);
+	LinkedList** entries_ptr = array_list_get(map->buckets, i);
 
 	CHECK_IS_NULL_RET(entries_ptr, "ArrayList get is NULL bad index.", NULL);
 
@@ -121,73 +122,71 @@ void* hash_map_get(HashMap* hash_map, size_t key)
 		return NULL;
 	}
 
-	HashMapEntry* entry = hash_map_find_entry(entries, key);
+	HashMapEntry entry = hash_map_get_entry_from(map, entries, key);
 
-	if (entry != NULL)
+	if (hash_map_entry_is_empty(entry) == false)
 	{
-		return (entry->is_empty) ? NULL : entry->data;
+		return (entry.storage->is_empty) ? NULL : entry.value;
 	}
 	
 	return NULL;
 }
 
-void hash_map_set(HashMap* hash_map, size_t key, void* item)
+void hash_map_set(HashMap* map, void* key, void* value)
 {
-	CHECK_IS_NULL_RET(hash_map, "Cannot set to a NULL HashMap", );
+	CHECK_IS_NULL_RET(map, "Cannot set to a NULL HashMap", );
 
-	size_t i = hash_map_hash(key);
+	size_t i = hash_map_hash(map, key);
 
-	if (i >= hash_map->buckets->length)
+	if (i >= map->buckets->length)
 	{
-		size_t old_length = hash_map->buckets->length;
+		size_t old_length = map->buckets->length;
 
-		array_list_resize(hash_map->buckets, i + 1);
+		array_list_resize(map->buckets, i + 1);
 
 		// by default all the values are set to 0 but in case ....
 		void* empty_ptr = NULL;
-		array_list_fill_at(hash_map->buckets, &empty_ptr, old_length, hash_map->buckets->length - 1);
+		array_list_fill_at(map->buckets, &empty_ptr, old_length, map->buckets->length - 1);
 	}
 
-	CHECK_COND_RET(hash_map->buckets->length > i,
+	CHECK_COND_RET(map->buckets->length > i,
 		"HashMap bucket is too small for current index", );
 
-	LinkedList** entries_ptr = array_list_get(hash_map->buckets, i);
+	LinkedList** entries_ptr = array_list_get(map->buckets, i);
 
 	CHECK_IS_NULL_RET(entries_ptr, "ArrayList get is NULL bad index.", );
 
 	if (*entries_ptr == NULL)
 	{
-		*entries_ptr = linked_list_create(sizeof(struct HashMapEntry) + hash_map->item_size);
+		size_t storage_size = sizeof(struct HashMapEntryStorage) + map->key_size + map->item_size;
+		*entries_ptr = linked_list_create(storage_size);
 	}
 
 	LinkedList* entries = *entries_ptr;
 
-	HashMapEntry* entry = hash_map_find_entry(entries, key);
+	HashMapEntry entry = hash_map_get_entry_from(map, entries, key);
 
-	if (entry == NULL)
+	if (entry.storage == NULL)
 	{
-		entry = linked_list_push_back(entries);
-
-		CHECK_IS_NULL_RET(entry, "Failed to add a new enry to HashMap", );
-
-		entry->key = key;
-		entry->is_empty = true;
+		entry.storage = linked_list_push_back(entries);
 	}
 
-	memcpy(entry->data, item, hash_map->item_size);
-	entry->is_empty = false;
+	hash_map_entry_storage_set(entry.storage, key, value, map->key_size, map->item_size);
 }
 
-void hash_map_del(HashMap* hash_map, size_t key)
+
+// NOTE: Ici je free pas les noeuds mort pour les réutiliser mais peut être que c'est guez ?
+//       jsp en vrai perso je kiff 😎🤙
+void hash_map_del(HashMap* map, void* key)
 {
-	CHECK_IS_NULL_RET(hash_map, "Cannot del a value of a NULL HashMap", );
+	CHECK_IS_NULL_RET(map, "Cannot del a value of a NULL HashMap", );
 
-	size_t i = hash_map_hash(key);
+	size_t i = map->hash(key);
 
-	if (i >= hash_map->buckets->length)
+	if (i >= map->buckets->length)
 		return;
 
-	LinkedList** entries_ptr = array_list_get(hash_map->buckets, i);
+	LinkedList** entries_ptr = array_list_get(map->buckets, i);
 
 	CHECK_IS_NULL_RET(entries_ptr, "ArrayList get is NULL bad index.", );
 
@@ -196,14 +195,14 @@ void hash_map_del(HashMap* hash_map, size_t key)
 	if (entries == NULL)
 		return;
 
-	HashMapEntry* entry = hash_map_find_entry(entries, key);
+	HashMapEntry entry = hash_map_get_entry_from(map, entries, key);
 
-	if (entry == NULL)
+	if (hash_map_entry_is_empty(entry))
 		return;
 
-	if(entry->is_empty == true)
+	if(entry.storage->is_empty == true)
 		return;
 	
-	entry->is_empty = true;
+	entry.storage->is_empty = true;
 }
 
