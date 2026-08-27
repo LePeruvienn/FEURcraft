@@ -6,7 +6,7 @@ FEUR_Test_Result Test_Iterator_Init()
 {
 	LinkedList* list = linked_list_create(sizeof(int));
 	int v = 5;
-	linked_list_push_back(list, &v);
+	linked_list_push_back_copy(list, &v);
 
 	LinkedListIterator it;
 	linked_list_iterator_init(&it, list);
@@ -24,9 +24,9 @@ FEUR_Test_Result Test_Iterator_Navigation()
 {
 	LinkedList* list = linked_list_create(sizeof(int));
 	int v1 = 1, v2 = 2, v3 = 3;
-	linked_list_push_back(list, &v1);
-	linked_list_push_back(list, &v2);
-	linked_list_push_back(list, &v3);
+	linked_list_push_back_copy(list, &v1);
+	linked_list_push_back_copy(list, &v2);
+	linked_list_push_back_copy(list, &v3);
 
 	LinkedListIterator it;
 	linked_list_iterator_init(&it, list);
@@ -54,9 +54,9 @@ FEUR_Test_Result Test_Iterator_GoTo()
 {
 	LinkedList* list = linked_list_create(sizeof(int));
 	int v1 = 10, v2 = 20, v3 = 30;
-	linked_list_push_back(list, &v1);
-	linked_list_push_back(list, &v2);
-	linked_list_push_back(list, &v3);
+	linked_list_push_back_copy(list, &v1);
+	linked_list_push_back_copy(list, &v2);
+	linked_list_push_back_copy(list, &v3);
 
 	LinkedListIterator it;
 	linked_list_iterator_init(&it, list);

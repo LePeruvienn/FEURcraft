@@ -32,7 +32,7 @@ bool linked_list_iterator_go_next(LinkedListIterator* iterator)
 
 	if (iterator->current_node == NULL)
 	{
-		LOG_WARNING("LinkedListIterator current node is NULL");
+		// LOG_WARNING("LinkedListIterator current node is NULL");
 		return false;
 	}
 
@@ -53,7 +53,7 @@ bool linked_list_iterator_go_previous(LinkedListIterator* iterator)
 
 	if (iterator->current_node == NULL)
 	{
-		LOG_WARNING("LinkedListIterator current node is NULL");
+		// LOG_WARNING("LinkedListIterator current node is NULL");
 		return false;
 	}
 

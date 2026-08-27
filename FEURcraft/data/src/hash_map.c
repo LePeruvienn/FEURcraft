@@ -11,8 +11,18 @@
 #include <limits.h>
 #include <stddef.h>
 #include <stdint.h>
+#include <string.h>
 
 #define PRIME_NUMBER 193
+
+typedef struct HashMapEntry HashMapEntry;
+
+struct HashMapEntry
+{
+	size_t key;
+	bool is_empty;
+	unsigned char data[]; // flexible array membres 'type[]' dont take any space in C !  
+};                        // so struct global size is variable : sizeof(HashMap) + item_size
 
 HashMap* hash_map_create(size_t item_size)
 {
@@ -22,7 +32,7 @@ HashMap* hash_map_create(size_t item_size)
 
 	hash_map->item_size = item_size;
 
-	hash_map->buckets = array_list_create(sizeof(LinkedList*), 64);
+	hash_map->buckets = array_list_create(sizeof(LinkedList*), PRIME_NUMBER);
 
 	if (hash_map->buckets == NULL)
 	{
@@ -38,14 +48,56 @@ void hash_map_free(HashMap* hash_map)
 {
 	CHECK_IS_NULL_RET(hash_map, "Cannot free a NULL HashMap", );
 
-	FREE_PTR_NOT_NULL(hash_map->buckets, array_list_free);
+	ArrayList* buckets = hash_map->buckets;
+
+	if (buckets != NULL)
+	{
+		for (size_t i = 0; i < buckets->length; ++i)
+		{
+			LinkedList** entries_ptr = array_list_get(buckets, i);
+
+			if (entries_ptr == NULL)
+				continue;
+			
+			LinkedList* entries = *entries_ptr;
+
+			if (entries == NULL)
+				continue;
+
+			linked_list_free(entries);
+		}
+
+		array_list_free(buckets);
+	}
+
 	free(hash_map);
 }
 
 static size_t hash_map_hash(size_t key)
 {
-	return key * (key + 3) % PRIME_NUMBER; 
+	return key * (key + 3) % PRIME_NUMBER;
 };
+
+static HashMapEntry* hash_map_find_entry(LinkedList* entries, size_t key)
+{
+	LinkedListIterator iterator;
+	linked_list_iterator_init(&iterator, entries);
+
+	do {
+		HashMapEntry* entry = linked_list_iterator_get_data(&iterator);
+
+		if (entry == NULL)
+			continue;
+
+		if (entry->key != key)
+			continue;
+
+		return entry;
+
+	} while(linked_list_iterator_go_next(&iterator));
+
+	return NULL;
+}
 
 void* hash_map_get(HashMap* hash_map, size_t key)
 {
@@ -69,21 +121,12 @@ void* hash_map_get(HashMap* hash_map, size_t key)
 		return NULL;
 	}
 
-	LinkedListIterator iterator;
-	linked_list_iterator_init(&iterator, entries);
+	HashMapEntry* entry = hash_map_find_entry(entries, key);
 
-	do {
-		HashMapEntry* entry = linked_list_iterator_get_data(&iterator);
-
-		if (entry == NULL)
-			continue;
-
-		if (entry->key != key)
-			continue;
-
-		return entry->data;
-
-	} while(linked_list_iterator_go_next(&iterator));
+	if (entry != NULL)
+	{
+		return (entry->is_empty) ? NULL : entry->data;
+	}
 	
 	return NULL;
 }
@@ -114,17 +157,53 @@ void hash_map_set(HashMap* hash_map, size_t key, void* item)
 
 	if (*entries_ptr == NULL)
 	{
-		// struct HashMapEntry size is : sizeof(key) + item_size
-		*entries_ptr = linked_list_create(sizeof(HashMapEntry) + hash_map->item_size);
+		*entries_ptr = linked_list_create(sizeof(struct HashMapEntry) + hash_map->item_size);
 	}
 
 	LinkedList* entries = *entries_ptr;
 
-	HashMapEntry* entry = malloc(sizeof(HashMapEntry) + hash_map->item_size);
+	HashMapEntry* entry = hash_map_find_entry(entries, key);
 
-	entry->key = key;
-	entry->is_empty = false;
+	if (entry == NULL)
+	{
+		entry = linked_list_push_back(entries);
+
+		CHECK_IS_NULL_RET(entry, "Failed to add a new enry to HashMap", );
+
+		entry->key = key;
+		entry->is_empty = true;
+	}
+
 	memcpy(entry->data, item, hash_map->item_size);
-
-	linked_list_push_back(entries, entry);
+	entry->is_empty = false;
 }
+
+void hash_map_del(HashMap* hash_map, size_t key)
+{
+	CHECK_IS_NULL_RET(hash_map, "Cannot del a value of a NULL HashMap", );
+
+	size_t i = hash_map_hash(key);
+
+	if (i >= hash_map->buckets->length)
+		return;
+
+	LinkedList** entries_ptr = array_list_get(hash_map->buckets, i);
+
+	CHECK_IS_NULL_RET(entries_ptr, "ArrayList get is NULL bad index.", );
+
+	LinkedList* entries = *entries_ptr;
+
+	if (entries == NULL)
+		return;
+
+	HashMapEntry* entry = hash_map_find_entry(entries, key);
+
+	if (entry == NULL)
+		return;
+
+	if(entry->is_empty == true)
+		return;
+	
+	entry->is_empty = true;
+}
+

@@ -8,15 +8,6 @@
 
 typedef struct HashMap HashMap;
 
-typedef struct HashMapEntry HashMapEntry;
-
-struct HashMapEntry
-{
-	size_t key;
-	bool is_empty;
-	unsigned char data[]; // flexible array membres 'type[]' dont take any space in C !  
-};                        // so struct global size is variable : sizeof(HashMap) + item_size
-
 struct HashMap
 {
 	ArrayList* buckets;
@@ -32,5 +23,7 @@ void hash_map_free(HashMap* hash_map);
 void* hash_map_get(HashMap* hash_map, size_t key);
 
 void hash_map_set(HashMap* hash_map, size_t key, void* item);
+
+void hash_map_del(HashMap* hash_map, size_t key);
 
 #endif // HASH_MAP_H

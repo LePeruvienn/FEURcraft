@@ -16,6 +16,8 @@ struct LinkedListNode
 
 LinkedListNode* linked_list_node_create(void* data, size_t size);
 
+LinkedListNode* linked_list_node_create_empty(size_t size);
+
 void linked_list_node_free(LinkedListNode* node);
 
 void linked_list_node_set_data(LinkedListNode* node, void* data);

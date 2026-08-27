@@ -42,13 +42,12 @@ void linked_list_free(LinkedList* list)
 	free(list);
 }
 
-bool linked_list_push_back(LinkedList* list, void* item)
+void* linked_list_push_back(LinkedList* list)
 {
-	CHECK_IS_NULL_RET(list, "Cannot push to a NULL LinkedList", false);
-	CHECK_IS_NULL_RET(item, "Cannot push a NULL item to LinkedList", false);
+	CHECK_IS_NULL_RET(list, "Cannot push to a NULL LinkedList", NULL);
 
-	LinkedListNode* new_node = linked_list_node_create(item, list->item_size);
-	CHECK_IS_NULL_RET(new_node, "Failed to create new LinkedListNode", false);
+	LinkedListNode* new_node = linked_list_node_create_empty(list->item_size);
+	CHECK_IS_NULL_RET(new_node, "Failed to create new LinkedListNode", NULL);
 
 	++list->length;
 
@@ -56,23 +55,22 @@ bool linked_list_push_back(LinkedList* list, void* item)
 	{
 		list->root_node = new_node;
 		list->tail_node = new_node;
-		return true;
+		return new_node->data;
 	}
 
 	list->tail_node->next = new_node;
 	new_node->previous = list->tail_node;
 	list->tail_node = new_node;
 
-	return true;
+	return new_node->data;
 }
 
-bool linked_list_push_front(LinkedList* list, void* item)
+void* linked_list_push_front(LinkedList* list)
 {
-	CHECK_IS_NULL_RET(list, "Cannot push to a NULL LinkedList", false);
-	CHECK_IS_NULL_RET(item, "Cannot push a NULL item to LinkedList", false);
+	CHECK_IS_NULL_RET(list, "Cannot push to a NULL LinkedList", NULL);
 
-	LinkedListNode* new_node = linked_list_node_create(item, list->item_size);
-	CHECK_IS_NULL_RET(new_node, "Failed to create new LinkedListNode", false);
+	LinkedListNode* new_node = linked_list_node_create_empty(list->item_size);
+	CHECK_IS_NULL_RET(new_node, "Failed to create new LinkedListNode", NULL);
 
 	++list->length;
 
@@ -80,12 +78,34 @@ bool linked_list_push_front(LinkedList* list, void* item)
 	{
 		list->root_node = new_node;
 		list->tail_node = new_node;
-		return true;
+		return new_node->data;
 	}
 
 	list->root_node->previous = new_node;
 	new_node->next = list->root_node;
 	list->root_node = new_node;
+
+	return new_node->data;
+}
+
+bool linked_list_push_back_copy(LinkedList* list, void* item)
+{
+	void* new_item = linked_list_push_back(list);
+
+	CHECK_IS_NULL_RET(new_item, "Failed to push new node into LinkedList", false);
+
+	memcpy(new_item, item, list->item_size);
+
+	return true;
+}
+
+bool linked_list_push_front_copy(LinkedList* list, void* item)
+{
+	void* new_item = linked_list_push_front(list);
+
+	CHECK_IS_NULL_RET(new_item, "Failed to push new node into LinkedList", false);
+
+	memcpy(new_item, item, list->item_size);
 
 	return true;
 }
@@ -164,7 +184,7 @@ bool linked_list_shift(LinkedList* list, void* out)
 	return true;
 }
 
-void* linked_list_get_data(LinkedList* list, size_t index)
+void* linked_list_get(LinkedList* list, size_t index)
 {
 	CHECK_IS_NULL_RET(list, "Cannot get data from a NULL LinkedList", NULL);
 
@@ -186,5 +206,29 @@ void* linked_list_get_data(LinkedList* list, size_t index)
 	linked_list_iterator_go_to(&iterator, index);
 
 	return linked_list_iterator_get_data(&iterator);
+}
+
+void* linked_list_get_first(LinkedList* list)
+{
+	CHECK_IS_NULL_RET(list, "Cannot get data from a NULL LinkedList", NULL);
+
+	if(list->root_node == NULL)
+	{
+		return NULL;
+	}
+
+	return list->root_node->data;
+}
+
+void* linked_list_get_last(LinkedList* list)
+{
+	CHECK_IS_NULL_RET(list, "Cannot get data from a NULL LinkedList", NULL);
+
+	if(list->tail_node == NULL)
+	{
+		return NULL;
+	}
+
+	return list->tail_node->data;
 }
 

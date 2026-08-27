@@ -7,10 +7,8 @@
 #include <stdlib.h>
 #include <string.h>
 
-LinkedListNode* linked_list_node_create(void* data, size_t size)
+static LinkedListNode*  linked_list_node_create_default(size_t size)
 {
-	CHECK_IS_NULL_RET(data, "Cannot create LinkedListNode with NULL data", NULL);
-
 	LinkedListNode* node = malloc(sizeof(struct LinkedListNode));
 
 	CHECK_IS_NULL_RET(node, "Failed to malloc LinkedListNode.", NULL);
@@ -28,7 +26,31 @@ LinkedListNode* linked_list_node_create(void* data, size_t size)
 		return NULL;
 	}
 
+	return node;
+}
+
+LinkedListNode* linked_list_node_create(void* data, size_t size)
+{
+	CHECK_IS_NULL_RET(data, "Cannot create LinkedListNode with NULL data", NULL);
+
+	LinkedListNode* node = linked_list_node_create_default(size);
+
+	CHECK_IS_NULL_RET(node, "Failed to create LinkedListNode", NULL);
+
+	// copy the data to the node
 	memcpy(node->data, data, size);
+
+	return node;
+}
+
+LinkedListNode* linked_list_node_create_empty(size_t size)
+{
+	LinkedListNode* node = linked_list_node_create_default(size);
+
+	CHECK_IS_NULL_RET(node, "Failed to create LinkedListNode", NULL);
+
+	// setting the data to 0
+	memset(node->data, 0, size);
 
 	return node;
 }

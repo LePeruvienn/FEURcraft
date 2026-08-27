@@ -22,12 +22,12 @@ FEUR_Test_Result Test_LinkedList_Push()
 	int v1 = 1, v2 = 2, v3 = 3;
 
 	// Push Back sur liste vide
-	FEUR_TEST_ASSERT(linked_list_push_back(list, &v1) == true);
+	FEUR_TEST_ASSERT(linked_list_push_back_copy(list, &v1) == true);
 	FEUR_TEST_ASSERT(list->length == 1);
 	FEUR_TEST_ASSERT(list->root_node == list->tail_node);
 
 	// Push Front
-	FEUR_TEST_ASSERT(linked_list_push_front(list, &v2) == true);
+	FEUR_TEST_ASSERT(linked_list_push_front_copy(list, &v2) == true);
 	FEUR_TEST_ASSERT(list->length == 2);
 	FEUR_TEST_ASSERT(*(int*)list->root_node->data == 2);
 
@@ -40,8 +40,8 @@ FEUR_Test_Result Test_LinkedList_PopAndShift()
 {
 	LinkedList* list = linked_list_create(sizeof(int));
 	int v1 = 10, v2 = 20;
-	linked_list_push_back(list, &v1);
-	linked_list_push_back(list, &v2);
+	linked_list_push_back_copy(list, &v1);
+	linked_list_push_back_copy(list, &v2);
 
 	int out;
 	
@@ -71,13 +71,13 @@ FEUR_Test_Result Test_LinkedList_GetData()
 
 	int v1 = 100, v2 = 200, v3 = 300;
 
-	linked_list_push_back(list, &v1);
-	linked_list_push_back(list, &v2);
-	linked_list_push_back(list, &v3);
+	linked_list_push_back_copy(list, &v1);
+	linked_list_push_back_copy(list, &v2);
+	linked_list_push_back_copy(list, &v3);
 
-	FEUR_TEST_ASSERT(* (int*) linked_list_get_data(list, 0) == 100);
-	FEUR_TEST_ASSERT(* (int*) linked_list_get_data(list, 1) == 200);
-	FEUR_TEST_ASSERT(* (int*) linked_list_get_data(list, 2) == 300);
+	FEUR_TEST_ASSERT(* (int*) linked_list_get(list, 0) == 100);
+	FEUR_TEST_ASSERT(* (int*) linked_list_get(list, 1) == 200);
+	FEUR_TEST_ASSERT(* (int*) linked_list_get(list, 2) == 300);
 
 	linked_list_free(list);
 
