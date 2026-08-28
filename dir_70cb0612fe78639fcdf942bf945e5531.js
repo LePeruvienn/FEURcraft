@@ -6,8 +6,6 @@ var dir_70cb0612fe78639fcdf942bf945e5531 =
     [ "draw_mode.h", "draw__mode_8h_source.html", null ],
     [ "geometry.h", "geometry_8h.html", "geometry_8h" ],
     [ "image_array.h", "image__array_8h.html", "image__array_8h" ],
-    [ "material.h", "material_8h_source.html", null ],
-    [ "material_parameter.h", "material__parameter_8h_source.html", null ],
     [ "mesh.h", "mesh_8h.html", "mesh_8h" ],
     [ "render_object.h", "render__object_8h_source.html", null ],
     [ "renderer.h", "renderer_8h.html", "renderer_8h" ],
