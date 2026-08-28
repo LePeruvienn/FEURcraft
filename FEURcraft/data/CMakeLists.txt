@@ -35,6 +35,7 @@ target_sources(${LIB_NAME}
 		src/linked_list_node.c
 		src/hash_map.c
 		src/hash_map_entry.c
+		src/string_hash_map.c
 )
 
 # On link les librarie nécessaire à la compilation de la lib

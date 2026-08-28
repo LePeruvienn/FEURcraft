@@ -70,12 +70,12 @@ void hash_map_free(HashMap* hash_map)
 	free(hash_map);
 }
 
-static size_t hash_map_hash(HashMap* map, void* key)
+static size_t hash_map_hash(HashMap* map, const void* key)
 {
 	return map->hash(key) % HASH_MAP_MAX_INDEX;
 };
 
-static HashMapEntry hash_map_get_entry_from(HashMap* map, LinkedList* entries, void* key)
+static HashMapEntry hash_map_get_entry_from(HashMap* map, LinkedList* entries, const void* key)
 {
 	LinkedListIterator iterator;
 	linked_list_iterator_init(&iterator, entries);
@@ -100,7 +100,7 @@ static HashMapEntry hash_map_get_entry_from(HashMap* map, LinkedList* entries, v
 	return HASH_MAP_ENTRY_EMPTY;
 }
 
-void* hash_map_get(HashMap* map, void* key)
+void* hash_map_get(HashMap* map, const void* key)
 {
 	CHECK_IS_NULL_RET(map, "Cannot get from a NULL HashMap", NULL);
 
@@ -132,7 +132,7 @@ void* hash_map_get(HashMap* map, void* key)
 	return NULL;
 }
 
-void hash_map_set(HashMap* map, void* key, void* value)
+void hash_map_set(HashMap* map, const void* key, const void* value)
 {
 	CHECK_IS_NULL_RET(map, "Cannot set to a NULL HashMap", );
 
@@ -177,11 +177,11 @@ void hash_map_set(HashMap* map, void* key, void* value)
 
 // NOTE: Ici je free pas les noeuds mort pour les réutiliser mais peut être que c'est guez ?
 //       jsp en vrai perso je kiff 😎🤙
-void hash_map_del(HashMap* map, void* key)
+void hash_map_del(HashMap* map, const void* key)
 {
 	CHECK_IS_NULL_RET(map, "Cannot del a value of a NULL HashMap", );
 
-	size_t i = map->hash(key);
+	size_t i = hash_map_hash(map, key);
 
 	if (i >= map->buckets->length)
 		return;

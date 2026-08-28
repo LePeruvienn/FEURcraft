@@ -32,7 +32,7 @@ struct HashMapEntry
 HashMapEntry hash_map_entry_storage_get_entry(HashMapEntryStorage* storage, size_t key_size);
 
 void hash_map_entry_storage_set(HashMapEntryStorage* storage,
-                                void* key, void* value,
+                                const void* key, const void* value,
                                 size_t key_size, size_t value_size);
 
 bool hash_map_entry_is_empty(HashMapEntry entry);
