@@ -3,6 +3,8 @@
 
 #include "shader.h"
 
+#include "string_hash_map.h"
+
 #include "vec2.h"
 #include "vec3.h"
 #include "vec4.h"
@@ -41,6 +43,8 @@ struct ShaderProgram
 	ProgramStatus status;
 
 	Shader* shaders[SHADER_TYPE_COUNT];
+
+	StringHashMap* locations;
 };
 
 /**

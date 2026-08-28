@@ -4,9 +4,13 @@
 #include "glad/glad.h"
 
 #include "gl_debug.h"
+
 #include "logger.h"
 #include "error_checker.h"
 #include "call_once.h"
+#include "ptr_helper.h"
+
+#define MAX_UNIFORM_NAME_SIZE 32
 
 static int get_program_status(GLuint program, GLenum pname)
 {
@@ -50,6 +54,15 @@ ShaderProgram* shader_program_create()
 	{
 		program->shaders[i] = NULL;
 	}
+
+	program->locations = string_hash_map_create(MAX_UNIFORM_NAME_SIZE, sizeof(GLint));
+
+	if (program->locations == NULL)
+	{
+		LOG_ERROR("Failed to create ShaderProgram location StringHashMap");
+		shader_program_free(program);
+		return NULL;
+	}
 	
 	return program;
 }
@@ -68,6 +81,8 @@ void shader_program_free(ShaderProgram* program)
 	{
 		LOG_WARNING("Freed a ShaderProgrom with an id of 0");
 	}
+
+	FREE_PTR_NOT_NULL(program->locations, string_hash_map_free);
 
 	free(program);
 }
@@ -191,12 +206,28 @@ static bool shader_program_is_loc_valid(GLint loc)
 	return loc_valid;
 }
 
+static GLint shader_program_get_location(ShaderProgram* program, const char* uniform)
+{
+	GLint* location_ptr = string_hash_map_get(program->locations, uniform);
+
+	if (location_ptr != NULL)
+	{
+		return *location_ptr;
+	}
+
+	GLint location = glGetUniformLocation(program->id, uniform);
+
+	string_hash_map_set(program->locations, uniform, &location);
+
+	return location;
+}
+
 void shader_program_set_bool(ShaderProgram* program, const char* uniform, bool value)
 {
 	CHECK_COND_RET(program->status == PROGRAM_STATUS_LINKED,
 	               "Cannot set a uniform of a not linked shader", );
 
-	GLint location = glGetUniformLocation(program->id, uniform);
+	GLint location = shader_program_get_location(program, uniform);
 
 	if (shader_program_is_loc_valid(location) == false)
 	{
@@ -214,7 +245,7 @@ void shader_program_set_float(ShaderProgram* program, const char* uniform, float
 	CHECK_COND_RET(program->status == PROGRAM_STATUS_LINKED,
 	               "Cannot set a uniform of a not linked shader", );
 
-	GLint location = glGetUniformLocation(program->id, uniform);
+	GLint location = shader_program_get_location(program, uniform);
 
 	if (shader_program_is_loc_valid(location) == false)
 	{
@@ -232,7 +263,7 @@ void shader_program_set_vec2(ShaderProgram* program, const char* uniform, Vec2 v
 	CHECK_COND_RET(program->status == PROGRAM_STATUS_LINKED,
 	               "Cannot set a uniform of a not linked shader", );
 
-	GLint location = glGetUniformLocation(program->id, uniform);
+	GLint location = shader_program_get_location(program, uniform);
 
 	if (shader_program_is_loc_valid(location) == false)
 	{
@@ -250,7 +281,7 @@ void shader_program_set_vec3(ShaderProgram* program, const char* uniform, Vec3 v
 	CHECK_COND_RET(program->status == PROGRAM_STATUS_LINKED,
 	               "Cannot set a uniform of a not linked shader", );
 
-	GLint location = glGetUniformLocation(program->id, uniform);
+	GLint location = shader_program_get_location(program, uniform);
 
 	if (shader_program_is_loc_valid(location) == false)
 	{
@@ -268,7 +299,7 @@ void shader_program_set_vec4(ShaderProgram* program, const char* uniform, Vec4 v
 	CHECK_COND_RET(program->status == PROGRAM_STATUS_LINKED,
 	               "Cannot set a uniform of a not linked shader", );
 
-	GLint location = glGetUniformLocation(program->id, uniform);
+	GLint location = shader_program_get_location(program, uniform);
 
 	if (shader_program_is_loc_valid(location) == false)
 	{
@@ -286,7 +317,7 @@ void shader_program_set_mat4(ShaderProgram* program, const char* uniform, Mat4 m
 	CHECK_COND_RET(program->status == PROGRAM_STATUS_LINKED,
 	               "Cannot set a uniform of a not linked shader", );
 
-	GLint location = glGetUniformLocation(program->id, uniform);
+	GLint location = shader_program_get_location(program, uniform);
 
 	if (shader_program_is_loc_valid(location) == false)
 	{
@@ -304,7 +335,7 @@ void shader_program_set_texture_unit(ShaderProgram* program, const char* uniform
 	CHECK_COND_RET(program->status == PROGRAM_STATUS_LINKED,
 	               "Cannot set a uniform of a not linked shader", );
 
-	GLint location = glGetUniformLocation(program->id, uniform);
+	GLint location = shader_program_get_location(program, uniform);
 
 	if (shader_program_is_loc_valid(location) == false)
 	{
