@@ -8,5 +8,6 @@ var dir_469acc7c1e724c49faecb702f275eda8 =
     [ "hash_map.h", "hash__map_8h_source.html", null ],
     [ "linked_list.h", "linked__list_8h_source.html", null ],
     [ "linked_list_iterator.h", "linked__list__iterator_8h_source.html", null ],
-    [ "linked_list_node.h", "linked__list__node_8h_source.html", null ]
+    [ "linked_list_node.h", "linked__list__node_8h_source.html", null ],
+    [ "string_hash_map.h", "string__hash__map_8h_source.html", null ]
 ];

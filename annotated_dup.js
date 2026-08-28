@@ -32,6 +32,7 @@ var annotated_dup =
     [ "RenderObject", "structRenderObject.html", null ],
     [ "Shader", "structShader.html", null ],
     [ "ShaderProgram", "structShaderProgram.html", null ],
+    [ "StringHashMap", "structStringHashMap.html", null ],
     [ "Texture", "structTexture.html", null ],
     [ "TextureArray", "structTextureArray.html", null ],
     [ "TextureCoord", "structTextureCoord.html", null ],
