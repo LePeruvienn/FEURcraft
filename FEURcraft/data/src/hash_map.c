@@ -103,6 +103,7 @@ static HashMapEntry hash_map_get_entry_from(HashMap* map, LinkedList* entries, c
 void* hash_map_get(HashMap* map, const void* key)
 {
 	CHECK_IS_NULL_RET(map, "Cannot get from a NULL HashMap", NULL);
+	CHECK_IS_NULL_RET(map, "Canoot get HashMap with a NULL key", NULL);
 
 	size_t i = hash_map_hash(map, key);
 
@@ -132,9 +133,19 @@ void* hash_map_get(HashMap* map, const void* key)
 	return NULL;
 }
 
+bool hash_map_exists(HashMap* map, const void* key)
+{
+	CHECK_IS_NULL_RET(map, "Cannot check exists from a NULL HashMap", false);
+	CHECK_IS_NULL_RET(map, "Canoot check exists with a NULL key", NULL);
+
+	return (hash_map_get(map, key) != NULL);
+}
+
 void hash_map_set(HashMap* map, const void* key, const void* value)
 {
 	CHECK_IS_NULL_RET(map, "Cannot set to a NULL HashMap", );
+	CHECK_IS_NULL_RET(key, "Cannot set HashMap value with a NULL key", );
+	CHECK_IS_NULL_RET(value, "Cannot set HashMap key with a NULL value", );
 
 	size_t i = hash_map_hash(map, key);
 
@@ -180,6 +191,7 @@ void hash_map_set(HashMap* map, const void* key, const void* value)
 void hash_map_del(HashMap* map, const void* key)
 {
 	CHECK_IS_NULL_RET(map, "Cannot del a value of a NULL HashMap", );
+	CHECK_IS_NULL_RET(key, "Canot deleted from HashMap with a NULL key",);
 
 	size_t i = hash_map_hash(map, key);
 

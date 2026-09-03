@@ -1,6 +1,8 @@
 #ifndef VEC4_H
 #define VEC4_H
 
+#include <stdbool.h>
+
 #define VEC4(_x, _y, _z, _w) ((Vec4) {.x = _x, .y = _y, .z = _z, .w = _w})
 
 #define VEC4_ZERO VEC4(0.f, 0.f, 0.f, 0.f)
@@ -45,5 +47,7 @@ float vec4_len2(Vec4 u);
 
 float vec4_dist (Vec4 u, Vec4 v);
 float vec4_dist2(Vec4 u, Vec4 v);
+
+bool vec4_equal(Vec4 u, Vec4 v);
 
 #endif // VEC4_H

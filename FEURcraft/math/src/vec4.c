@@ -154,3 +154,11 @@ float vec4_dist2(Vec4 u, Vec4 v)
 	return vec4_len2(VEC4(u.x - v.x, u.y - v.y, u.z - v.z, u.w - v.w));
 }
 
+bool vec4_equal(Vec4 u, Vec4 v)
+{
+	return (u.x == v.x &&
+	        u.y == v.y &&
+	        u.z == v.z &&
+	        u.w == v.w );
+}
+

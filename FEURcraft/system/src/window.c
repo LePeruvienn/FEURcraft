@@ -60,6 +60,7 @@ Window* create_window(unsigned int width, unsigned int height, const char* title
 	glfwMakeContextCurrent(w->handle);
 	glfwSetWindowUserPointer(w->handle, w);
 
+
 	// On désactive le V-Sync
 	glfwSwapInterval(0);
 

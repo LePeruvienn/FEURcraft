@@ -40,6 +40,7 @@ target_sources(${LIB_NAME}
 		src/texture_array.c
 		src/chunk_meshing.c
 		src/geometry_data.c
+		src/material.c
 )
 
 

@@ -73,12 +73,45 @@ FEUR_Test_Result Test_StringHashMap_Del()
 	return FEUR_Test_Success;
 }
 
+FEUR_Test_Result Test_StringHashMap_Exists()
+{
+	StringHashMap* map = string_hash_map_create(STR_MAX_SIZE, sizeof(float));
+
+	FEUR_TEST_ASSERT_NOT_NULL_MSG(map, "Failed to create StringHashMap");
+
+	const char* key = "world";
+	float value = 3.14f;
+
+	string_hash_map_set(map, key, &value);
+
+	bool value_exists = string_hash_map_exists(map, key);
+
+	FEUR_TEST_ASSERT(value_exists);
+
+	string_hash_map_del(map, key);
+
+	bool del_value_exists = string_hash_map_exists(map, key);
+	FEUR_TEST_ASSERT_EQUAL(del_value_exists, false);
+
+	float new_value = 28;
+	string_hash_map_set(map, key, &new_value);
+
+	bool new_value_exists = string_hash_map_exists(map, key);
+
+	FEUR_TEST_ASSERT(new_value_exists);
+
+	string_hash_map_free(map);
+
+	return FEUR_Test_Success;
+}
+
 int main()
 {
 	FEUR_Test_Init();
 
 	FEUR_Test_Add_Test("StringHashMap Set and Get", Test_StringHashMap_SetGet);
 	FEUR_Test_Add_Test("StringHashMap Delete", Test_StringHashMap_Del);
+	FEUR_Test_Add_Test("StringHashMap exists", Test_StringHashMap_Exists);
 
 	FEUR_Test_Run();
 	FEUR_Test_End();

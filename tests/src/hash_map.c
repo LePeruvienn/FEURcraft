@@ -84,12 +84,45 @@ FEUR_Test_Result Test_HashMap_Del()
 	return FEUR_Test_Success;
 }
 
+FEUR_Test_Result Test_HashMap_Exists()
+{
+	HashMap* map = hash_map_create(sizeof(int), sizeof(float), hash_int, compare_int);
+
+	FEUR_TEST_ASSERT_NOT_NULL_MSG(map, "Failed to create HashMap");
+
+	int key = 5;
+	float value = 3.14f;
+
+	hash_map_set(map, &key, &value);
+
+	bool value_exists = hash_map_exists(map, &key);
+
+	FEUR_TEST_ASSERT(value_exists);
+
+	hash_map_del(map, &key);
+
+	bool del_value_exists = hash_map_exists(map, &key);
+	FEUR_TEST_ASSERT_EQUAL(del_value_exists, false);
+
+	float new_value = 28;
+	hash_map_set(map, &key, &new_value);
+
+	bool new_value_exists = hash_map_exists(map, &key);
+
+	FEUR_TEST_ASSERT(new_value_exists);
+
+	hash_map_free(map);
+
+	return FEUR_Test_Success;
+}
+
 int main()
 {
 	FEUR_Test_Init();
 
 	FEUR_Test_Add_Test("HashMap Set and Get", Test_HashMap_SetGet);
 	FEUR_Test_Add_Test("HashMap Delete", Test_HashMap_Del);
+	FEUR_Test_Add_Test("HashMap Exists", Test_HashMap_Exists);
 
 	FEUR_Test_Run();
 	FEUR_Test_End();

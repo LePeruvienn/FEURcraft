@@ -3,6 +3,8 @@
 
 #include "hash_map.h"
 
+#include <stdbool.h>
+
 typedef struct StringHashMap StringHashMap;
 
 struct StringHashMap
@@ -17,6 +19,8 @@ StringHashMap* string_hash_map_create(size_t max_string_size, size_t item_size);
 void string_hash_map_free(StringHashMap* str_map);
 
 void* string_hash_map_get(StringHashMap* str_map, const char* key);
+
+bool string_hash_map_exists(StringHashMap* str_map, const char* key);
 
 void string_hash_map_set(StringHashMap* str_map, const char* key, const void* value);
 

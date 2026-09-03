@@ -31,6 +31,8 @@ void hash_map_free(HashMap* map);
 
 void* hash_map_get(HashMap* map, const void* key);
 
+bool hash_map_exists(HashMap* map, const void* key);
+
 void hash_map_set(HashMap* map, const void* key, const void* item);
 
 void hash_map_del(HashMap* map, const void* key);
