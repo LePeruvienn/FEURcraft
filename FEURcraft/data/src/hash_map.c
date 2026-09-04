@@ -70,12 +70,12 @@ void hash_map_free(HashMap* hash_map)
 	free(hash_map);
 }
 
-static size_t hash_map_hash(HashMap* map, const void* key)
+static size_t hash_map_hash(const HashMap* map, const void* key)
 {
 	return map->hash(key) % HASH_MAP_MAX_INDEX;
 };
 
-static HashMapEntry hash_map_get_entry_from(HashMap* map, LinkedList* entries, const void* key)
+static HashMapEntry hash_map_get_entry_from(const HashMap* map, LinkedList* entries, const void* key)
 {
 	LinkedListIterator iterator;
 	linked_list_iterator_init(&iterator, entries);
@@ -100,10 +100,57 @@ static HashMapEntry hash_map_get_entry_from(HashMap* map, LinkedList* entries, c
 	return HASH_MAP_ENTRY_EMPTY;
 }
 
-void* hash_map_get(HashMap* map, const void* key)
+/*
+ * NOTE: Salut la team euh ya pas mal de code dupliquer ici en vrai 
+ * faudrais refacto mais j'avais un peu la flemme sur le moment.
+ * C'est le get, get_modify et exist qui ont une parti commune de recherche
+ */
+
+bool hash_map_get(const HashMap* map, const void* key, void* out)
+{
+	CHECK_IS_NULL_RET(map, "Cannot get from a NULL HashMap", false);
+	CHECK_IS_NULL_RET(key, "Cannot get HashMap with a NULL key", false);
+	CHECK_IS_NULL_RET(out, "Cannot get HashMap with a NULL out", false);
+
+	size_t i = hash_map_hash(map, key);
+
+	if (i >= map->buckets->length)
+	{
+		return false;
+	}
+
+	LinkedList** entries_ptr = array_list_get(map->buckets, i);
+
+	CHECK_IS_NULL_RET(entries_ptr, "ArrayList get is NULL bad index.", NULL);
+
+	LinkedList* entries = *entries_ptr;
+
+	if (entries == NULL)
+	{
+		return false;
+	}
+
+	HashMapEntry entry = hash_map_get_entry_from(map, entries, key);
+
+	if (hash_map_entry_is_empty(entry) || entry.storage == NULL)
+	{
+		return false;
+	}
+
+	if (entry.storage->is_empty == true)
+	{
+		return false;
+	}
+
+	memcpy(out, entry.value, map->item_size);
+
+	return true;
+}
+
+void* hash_map_get_modify(HashMap* map, const void* key)
 {
 	CHECK_IS_NULL_RET(map, "Cannot get from a NULL HashMap", NULL);
-	CHECK_IS_NULL_RET(map, "Canoot get HashMap with a NULL key", NULL);
+	CHECK_IS_NULL_RET(key, "Canoot get HashMap with a NULL key", NULL);
 
 	size_t i = hash_map_hash(map, key);
 
@@ -133,12 +180,42 @@ void* hash_map_get(HashMap* map, const void* key)
 	return NULL;
 }
 
-bool hash_map_exists(HashMap* map, const void* key)
+bool hash_map_exists(const HashMap* map, const void* key)
 {
 	CHECK_IS_NULL_RET(map, "Cannot check exists from a NULL HashMap", false);
-	CHECK_IS_NULL_RET(map, "Canoot check exists with a NULL key", NULL);
+	CHECK_IS_NULL_RET(key, "Cannot check exists HashMap with a NULL key", false);
 
-	return (hash_map_get(map, key) != NULL);
+	size_t i = hash_map_hash(map, key);
+
+	if (i >= map->buckets->length)
+	{
+		return false;
+	}
+
+	LinkedList** entries_ptr = array_list_get(map->buckets, i);
+
+	CHECK_IS_NULL_RET(entries_ptr, "ArrayList get is NULL bad index.", NULL);
+
+	LinkedList* entries = *entries_ptr;
+
+	if (entries == NULL)
+	{
+		return false;
+	}
+
+	HashMapEntry entry = hash_map_get_entry_from(map, entries, key);
+
+	if (hash_map_entry_is_empty(entry) || entry.storage == NULL)
+	{
+		return false;
+	}
+
+	if (entry.storage->is_empty == true)
+	{
+		return false;
+	}
+
+	return true;
 }
 
 void hash_map_set(HashMap* map, const void* key, const void* value)

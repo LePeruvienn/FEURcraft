@@ -18,7 +18,7 @@ FEUR_Test_Result Test_StringHashMap_SetGet()
 
 	string_hash_map_set(map, key, &value);
 
-	float* value_ptr = string_hash_map_get(map, key);
+	float* value_ptr = string_hash_map_get_modify(map, key);
 
 	FEUR_TEST_ASSERT_NOT_NULL(value_ptr);
 	FEUR_TEST_ASSERT_EQUAL(value, *value_ptr);
@@ -27,7 +27,7 @@ FEUR_Test_Result Test_StringHashMap_SetGet()
 
 	string_hash_map_set(map, key, &new_value);
 
-	float* new_value_ptr = string_hash_map_get(map, key);
+	float* new_value_ptr = string_hash_map_get_modify(map, key);
 
 	FEUR_TEST_ASSERT_NOT_NULL(new_value_ptr);
 	FEUR_TEST_ASSERT_EQUAL(new_value, *new_value_ptr);
@@ -48,20 +48,20 @@ FEUR_Test_Result Test_StringHashMap_Del()
 
 	string_hash_map_set(map, key, &value);
 
-	float* value_ptr = string_hash_map_get(map, key);
+	float* value_ptr = string_hash_map_get_modify(map, key);
 
 	FEUR_TEST_ASSERT_NOT_NULL(value_ptr);
 	FEUR_TEST_ASSERT_EQUAL(value, *value_ptr);
 
 	string_hash_map_del(map, key);
 
-	float* del_value_ptr = string_hash_map_get(map, key);
+	float* del_value_ptr = string_hash_map_get_modify(map, key);
 	FEUR_TEST_ASSERT_EQUAL(del_value_ptr, NULL);
 
 	float new_value = 28;
 	string_hash_map_set(map, key, &new_value);
 
-	float* new_value_ptr = string_hash_map_get(map, key);
+	float* new_value_ptr = string_hash_map_get_modify(map, key);
 
 	FEUR_TEST_ASSERT_NOT_NULL(value_ptr);
 	FEUR_TEST_ASSERT_EQUAL_MSG(new_value_ptr, value_ptr,

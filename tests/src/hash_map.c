@@ -29,19 +29,27 @@ FEUR_Test_Result Test_HashMap_SetGet()
 
 	hash_map_set(map, &key, &value);
 
-	float* value_ptr = hash_map_get(map, &key);
+	float* value_ptr = hash_map_get_modify(map, &key);
 
 	FEUR_TEST_ASSERT_NOT_NULL(value_ptr);
 	FEUR_TEST_ASSERT_EQUAL(value, *value_ptr);
+
+	float copied_value;
+	FEUR_TEST_ASSERT(hash_map_get(map, &key, &copied_value));
+	FEUR_TEST_ASSERT_EQUAL(value, copied_value);
 
 	float new_value = 28;
 
 	hash_map_set(map, &key, &new_value);
 
-	float* new_value_ptr = hash_map_get(map, &key);
+	float* new_value_ptr = hash_map_get_modify(map, &key);
 
 	FEUR_TEST_ASSERT_NOT_NULL(new_value_ptr);
 	FEUR_TEST_ASSERT_EQUAL(new_value, *new_value_ptr);
+
+	float new_copied_value;
+	FEUR_TEST_ASSERT(hash_map_get(map, &key, &new_copied_value));
+	FEUR_TEST_ASSERT_EQUAL(new_value, new_copied_value);
 
 	hash_map_free(map);
 
@@ -59,20 +67,20 @@ FEUR_Test_Result Test_HashMap_Del()
 
 	hash_map_set(map, &key, &value);
 
-	float* value_ptr = hash_map_get(map, &key);
+	float* value_ptr = hash_map_get_modify(map, &key);
 
 	FEUR_TEST_ASSERT_NOT_NULL(value_ptr);
 	FEUR_TEST_ASSERT_EQUAL(value, *value_ptr);
 
 	hash_map_del(map, &key);
 
-	float* del_value_ptr = hash_map_get(map, &key);
+	float* del_value_ptr = hash_map_get_modify(map, &key);
 	FEUR_TEST_ASSERT_EQUAL(del_value_ptr, NULL);
 
 	float new_value = 28;
 	hash_map_set(map, &key, &new_value);
 
-	float* new_value_ptr = hash_map_get(map, &key);
+	float* new_value_ptr = hash_map_get_modify(map, &key);
 
 	FEUR_TEST_ASSERT_NOT_NULL(value_ptr);
 	FEUR_TEST_ASSERT_EQUAL_MSG(new_value_ptr, value_ptr,

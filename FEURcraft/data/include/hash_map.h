@@ -29,9 +29,11 @@ HashMap* hash_map_create(size_t key_size, size_t item_size,
 
 void hash_map_free(HashMap* map);
 
-void* hash_map_get(HashMap* map, const void* key);
+bool hash_map_get(const HashMap* map, const void* key, void* out);
 
-bool hash_map_exists(HashMap* map, const void* key);
+void* hash_map_get_modify(HashMap* map, const void* key);
+
+bool hash_map_exists(const HashMap* map, const void* key);
 
 void hash_map_set(HashMap* map, const void* key, const void* item);
 

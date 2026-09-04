@@ -1,5 +1,13 @@
 #include "material.h"
 
+#include "feur_types.h"
+
+#include "vec2.h"
+#include "vec3.h"
+#include "vec3.h"
+#include "vec4.h"
+#include "mat4.h"
+
 #include "ptr_helper.h"
 #include "error_checker.h"
 
@@ -7,7 +15,7 @@
 #include <stddef.h>
 #include <string.h>
 
-static MaterialProperty MAT_PROPERTY_EMPTY = { 0 };
+static const MaterialProperty MAT_PROPERTY_EMPTY = { 0 };
 
 Material* material_create(const char* name)
 {
@@ -63,7 +71,7 @@ bool material_add_property(Material* material, const char* name, MaterialPropert
 	return true;
 };
 
-bool material_exists_property(Material* material, const char* name)
+bool material_exists_property(const Material* material, const char* name)
 {
 	CHECK_IS_NULL_RET(material, "Cannot check exists property of a NULL Material", false);
 	CHECK_IS_NULL_RET(name, "Cannot check exists property to Material with NULL name", false);
@@ -115,6 +123,9 @@ static size_t material_property_type_size(MaterialPropertyType type)
 
 		case MAT_PROPERTY_TYPE_VEC4:
 			return sizeof(Vec4);
+
+		case MAT_PROPERTY_TYPE_MAT4:
+			return sizeof(Mat4);
 	}
 
 	LOG_ERROR("Unkown MaterialPropertyType, returned 0");
@@ -146,13 +157,21 @@ bool material_set_property(Material* material, const char* name, MaterialPropert
 	return true;
 }
 
-MaterialProperty material_get_property(Material* material, const char* name)
+MaterialProperty material_get_property(const Material* material, const char* name)
 {
-	const MaterialProperty* property_ptr = material_get_property_modify(material, name);
+	CHECK_IS_NULL_RET(material, "Cannot get a property of a NULL Material", MAT_PROPERTY_EMPTY);
+	CHECK_IS_NULL_RET(name, "Cannot get a property to Material with NULL name", MAT_PROPERTY_EMPTY);
 
-	CHECK_IS_NULL_RET(property_ptr, "Failed to get MaterialProperty", MAT_PROPERTY_EMPTY);
+	CHECK_IS_NULL_RET(material->properties,
+		"Material properties is NULL, corruption detected", MAT_PROPERTY_EMPTY);
 
-	return *property_ptr;
+
+	MaterialProperty property = MAT_PROPERTY_EMPTY;
+	bool found = string_hash_map_get(material->properties, name, &property);
+
+	CHECK_COND_RET(found == true, "Material Property dont exists.", MAT_PROPERTY_EMPTY);
+
+	return property;
 }
 
 MaterialProperty* material_get_property_modify(Material* material, const char* name)
@@ -166,11 +185,116 @@ MaterialProperty* material_get_property_modify(Material* material, const char* n
 	CHECK_COND_RET(material_exists_property(material, name) == true,
 		"Cannot get a Material Property that dont exists", NULL);
 
-	MaterialProperty* property = string_hash_map_get(material->properties, name);
+	MaterialProperty* property = string_hash_map_get_modify(material->properties, name);
 
 	CHECK_IS_NULL(property, "Failed to get Material Property");
 
 	return property;
+}
+
+int material_get_property_int(const Material* material, const char* name, int default_value)
+{
+	CHECK_IS_NULL_RET(material, "Cannot get property from a NULL Material", default_value);
+	CHECK_IS_NULL_RET(name, "Cannot get property from a NULL name", default_value);
+
+	MaterialProperty property = material_get_property(material, name);
+
+	if (property.type != MAT_PROPERTY_TYPE_INT)
+	{
+		return default_value;
+	}
+
+	return property.int_value;
+}
+
+uint material_get_property_uint(const Material* material, const char* name, uint default_value)
+{
+	CHECK_IS_NULL_RET(material, "Cannot get property from a NULL Material", default_value);
+	CHECK_IS_NULL_RET(name, "Cannot get property from a NULL name", default_value);
+
+	MaterialProperty property = material_get_property(material, name);
+
+	if (property.type == MAT_PROPERTY_TYPE_UINT)
+	{
+		return default_value;
+	}
+
+	return property.uint_value;
+}
+
+float material_get_property_float(const Material* material, const char* name, float default_value)
+{
+	CHECK_IS_NULL_RET(material, "Cannot get property from a NULL Material", default_value);
+	CHECK_IS_NULL_RET(name, "Cannot get property from a NULL name", default_value);
+
+	MaterialProperty property = material_get_property(material, name);
+
+	if (property.type == MAT_PROPERTY_TYPE_FLOAT)
+	{
+		return default_value;
+	}
+
+	return property.float_value;
+}
+
+Vec2 material_get_property_vec2(const Material* material, const char* name, Vec2 default_value)
+{
+	CHECK_IS_NULL_RET(material, "Cannot get property from a NULL Material", default_value);
+	CHECK_IS_NULL_RET(name, "Cannot get property from a NULL name", default_value);
+
+	MaterialProperty property = material_get_property(material, name);
+
+	if (property.type == MAT_PROPERTY_TYPE_VEC2)
+	{
+		return default_value;
+	}
+
+	return property.vec2_value;
+}
+
+Vec3 material_get_property_vec3(const Material* material, const char* name, Vec3 default_value)
+{
+	CHECK_IS_NULL_RET(material, "Cannot get property from a NULL Material", default_value);
+	CHECK_IS_NULL_RET(name, "Cannot get property from a NULL name", default_value);
+
+	MaterialProperty property = material_get_property(material, name);
+
+	if (property.type == MAT_PROPERTY_TYPE_VEC3)
+	{
+		return default_value;
+	}
+
+	return property.vec3_value;
+}
+
+Vec4 material_get_property_vec4(const Material* material, const char* name, Vec4 default_value)
+{
+	CHECK_IS_NULL_RET(material, "Cannot get property from a NULL Material", default_value);
+	CHECK_IS_NULL_RET(name, "Cannot get property from a NULL name", default_value);
+
+	MaterialProperty property = material_get_property(material, name);
+
+	if (property.type == MAT_PROPERTY_TYPE_VEC4)
+	{
+		return default_value;
+	}
+
+	return property.vec4_value;
+}
+
+Mat4 material_get_property_mat4(const Material* material, const char* name, Mat4 default_value)
+{
+	CHECK_IS_NULL_RET(material, "Cannot get property from a NULL Material", default_value);
+	CHECK_IS_NULL_RET(name, "Cannot get property from a NULL name", default_value);
+
+	MaterialProperty property = material_get_property(material, name);
+
+	if (property.type == MAT_PROPERTY_TYPE_MAT4)
+	{
+		return default_value;
+	}
+
+	return property.mat4_value;
 }
 
 bool material_set_property_int(Material* material, const char* name, int value)
@@ -192,6 +316,7 @@ bool material_set_property_vec2(Material* material, const char* name, Vec2 value
 {
 	return material_set_property(material, name, MAT_PROPERTY_TYPE_VEC2, &value);
 }
+
 bool material_set_property_vec3(Material* material, const char* name, Vec3 value)
 {
 	return material_set_property(material, name, MAT_PROPERTY_TYPE_VEC3, &value);
@@ -200,4 +325,9 @@ bool material_set_property_vec3(Material* material, const char* name, Vec3 value
 bool material_set_property_vec4(Material* material, const char* name, Vec4 value)
 {
 	return material_set_property(material, name, MAT_PROPERTY_TYPE_VEC4, &value);
+}
+
+bool material_set_property_mat4(Material* material, const char* name, Mat4 value)
+{
+	return material_set_property(material, name, MAT_PROPERTY_TYPE_MAT4, &value);
 }

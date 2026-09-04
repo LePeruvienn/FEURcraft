@@ -208,7 +208,7 @@ static bool shader_program_is_loc_valid(GLint loc)
 
 static GLint shader_program_get_location(ShaderProgram* program, const char* uniform)
 {
-	GLint* location_ptr = string_hash_map_get(program->locations, uniform);
+	GLint* location_ptr = string_hash_map_get_modify(program->locations, uniform);
 
 	if (location_ptr != NULL)
 	{

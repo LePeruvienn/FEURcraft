@@ -67,7 +67,7 @@ void string_hash_map_free(StringHashMap* str_map)
 	free(str_map);
 }
 
-void* string_hash_map_get(StringHashMap* str_map, const char* key)
+bool string_hash_map_get(StringHashMap* str_map, const char* key, void* out)
 {
 	CHECK_IS_NULL_RET(str_map, "Cannot get from a NULL StringHashMap.", NULL);
 	CHECK_IS_NULL_RET(key, "Cannot get from a StringHashMap with a NULL key", NULL);
@@ -75,7 +75,18 @@ void* string_hash_map_get(StringHashMap* str_map, const char* key)
 	CHECK_COND_RET(strlen(key) <= str_map->max_string_size,
 		"Cannot get Key of StringHashMap that have a length greater than max size.", NULL);
 
-	return hash_map_get(str_map->map, key);
+	return hash_map_get(str_map->map, key, out);
+}
+
+void* string_hash_map_get_modify(StringHashMap* str_map, const char* key)
+{
+	CHECK_IS_NULL_RET(str_map, "Cannot get from a NULL StringHashMap.", NULL);
+	CHECK_IS_NULL_RET(key, "Cannot get from a StringHashMap with a NULL key", NULL);
+
+	CHECK_COND_RET(strlen(key) <= str_map->max_string_size,
+		"Cannot get Key of StringHashMap that have a length greater than max size.", NULL);
+
+	return hash_map_get_modify(str_map->map, key);
 }
 
 bool string_hash_map_exists(StringHashMap* str_map, const char* key)

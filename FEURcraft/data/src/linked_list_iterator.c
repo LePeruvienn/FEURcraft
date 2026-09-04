@@ -6,7 +6,7 @@
 
 #include <stdbool.h>
 
-void linked_list_iterator_init(LinkedListIterator* iterator, LinkedList* list)
+void linked_list_iterator_init( LinkedListIterator* iterator, LinkedList* list)
 {
 	CHECK_IS_NULL_RET(iterator, "Cannot init a NULL LinkedListIterator", );
 	CHECK_IS_NULL_RET(list, "Cannot init a LinkedListIterator with a NULL LinkedList", );

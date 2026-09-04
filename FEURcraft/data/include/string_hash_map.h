@@ -18,7 +18,9 @@ StringHashMap* string_hash_map_create(size_t max_string_size, size_t item_size);
 
 void string_hash_map_free(StringHashMap* str_map);
 
-void* string_hash_map_get(StringHashMap* str_map, const char* key);
+bool string_hash_map_get(StringHashMap* str_map, const char* key, void* out);
+
+void* string_hash_map_get_modify(StringHashMap* str_map, const char* key);
 
 bool string_hash_map_exists(StringHashMap* str_map, const char* key);
 
