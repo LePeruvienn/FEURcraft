@@ -1,6 +1,8 @@
 var annotated_dup =
 [
     [ "ArrayList", "structArrayList.html", null ],
+    [ "AssetHandle", "structAssetHandle.html", null ],
+    [ "Assets", "structAssets.html", null ],
     [ "Atlas", "structAtlas.html", null ],
     [ "Camera", "structCamera.html", null ],
     [ "Chunk", "structChunk.html", null ],
@@ -23,6 +25,8 @@ var annotated_dup =
     [ "LinkedListIterator", "structLinkedListIterator.html", null ],
     [ "LinkedListNode", "structLinkedListNode.html", null ],
     [ "Mat4", "structMat4.html", null ],
+    [ "Material", "structMaterial.html", null ],
+    [ "MaterialProperty", "structMaterialProperty.html", null ],
     [ "Mesh", "structMesh.html", null ],
     [ "MouseInput", "structMouseInput.html", null ],
     [ "Renderer", "structRenderer.html", null ],

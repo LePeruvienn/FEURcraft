@@ -1,5 +1,7 @@
 <map id="FEURcraft/graphic/include/image_array.h" name="FEURcraft/graphic/include/image_array.h">
-<area shape="rect" id="Node000001" title="Permet de stocker une liste d&#39;image de même taille et cannaux." alt="" coords="5,5,181,44"/>
-<area shape="rect" id="Node000002" href="$texture__array_8h.html" title="Structure représentant les données d&#39;une list ed texture charger dans le GPU." alt="" coords="5,92,181,131"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="96,60,96,91,90,91,90,60"/>
+<area shape="rect" id="Node000001" title="Permet de stocker une liste d&#39;image de même taille et cannaux." alt="" coords="102,5,277,44"/>
+<area shape="rect" id="Node000002" href="$asset__loader_8h_source.html" title=" " alt="" coords="5,92,177,131"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="158,56,115,93,111,89,155,52"/>
+<area shape="rect" id="Node000003" href="$texture__array_8h.html" title="Structure représentant les données d&#39;une list ed texture charger dans le GPU." alt="" coords="201,92,376,131"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="225,52,268,89,265,93,221,56"/>
 </map>
