@@ -28,6 +28,7 @@ foreach(SOURCE_FILE ${TEST_SOURCES})
 		utils
 		system
 		data
+		engine
 	)
 
 endforeach()

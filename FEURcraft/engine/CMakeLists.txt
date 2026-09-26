@@ -1,6 +1,6 @@
-# -------------------------- #
-# CMAKE FILE FOR GAME MODULE #
-# -------------------------- #
+# ---------------------------- #
+# CMAKE FILE FOR ENGINE MODULE #
+# ---------------------------- #
 
 # Get current dir name that is gonna be used as the current lib name
 get_filename_component(DIR_NAME ${CMAKE_CURRENT_SOURCE_DIR} NAME)
@@ -27,7 +27,8 @@ target_include_directories(${LIB_NAME}
 # Fichiers sources de la librairie
 target_sources(${LIB_NAME}
 	PRIVATE
-		src/component_pool.c
+		src/assets.c
+		src/asset_loader.c
 )
 
 # On link les librarie nécessaire à la compilation de la lib

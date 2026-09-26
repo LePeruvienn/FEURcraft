@@ -22,6 +22,10 @@ Window* create_window(unsigned int width, unsigned int height, const char* title
 
 	if (is_glfw_init == 0) 
 	{
+		#if RENDER_DOC_DEBUG
+			glfwInitHint(GLFW_PLATFORM, GLFW_PLATFORM_X11);
+		#endif
+
 		is_glfw_init = glfwInit();
 	}	
 
@@ -33,6 +37,7 @@ Window* create_window(unsigned int width, unsigned int height, const char* title
 		glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 		// glfwWindowHint(GLFW_SAMPLES, 4); 
 	);
+
 
 	Window* w = malloc(sizeof(struct Window));
 

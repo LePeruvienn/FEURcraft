@@ -1,5 +1,6 @@
 #include "image.h"
 
+#include "file_helper.h"
 #include "error_checker.h"
 
 #define STB_IMAGE_IMPLEMENTATION
@@ -17,7 +18,7 @@ Image* image_create(const char* filepath)
 
 	CHECK_IS_NULL_RET(img, "Failed to malloc Image", NULL);
 
-	img->filepath = filepath;
+	img->file_path = feur_string_create_c_str(filepath);
 	img->data = NULL;
 	img->channels = 0;
 	img->width = 0;
@@ -47,7 +48,7 @@ Image* image_create_and_load(const char* filepath)
 void image_load(Image* img)
 {
 	CHECK_IS_NULL_RET(img, "Cannot load an image that is NULL.", );
-	CHECK_IS_NULL_RET(img->filepath, "Cannot load an image with NULL filepath", );
+	CHECK_IS_NULL_RET(img->file_path, "Cannot load an image with NULL filepath", );
 
 	CHECK_COND_RET(image_is_loaded(img) == false,
 		"Cannot load an image that is already loaded", );
@@ -62,7 +63,7 @@ void image_load(Image* img)
 	img->data = NULL;
 
 	// If force 4 channels to have RBGA
-	img->data = stbi_load(img->filepath, &width, &height, &channels, STBI_rgb_alpha);
+	img->data = stbi_load(img->file_path->c_str, &width, &height, &channels, STBI_rgb_alpha);
 
 	CHECK_IS_NULL_RET(img->data, "Failed to load Image from file", );
 
@@ -95,11 +96,28 @@ bool image_is_loaded(Image* img)
 	return img->data != NULL;
 }
 
+bool image_change_file_path(Image* img, const char* file_path)
+{
+	CHECK_IS_NULL_RET(img, "Cannot change file path of a NULL image", false);
+	CHECK_IS_NULL_RET(file_path, "Cannot change Image file path to NULL", false);
+
+	feur_string_set_c_str(img->file_path, file_path, 0);
+
+	if (image_is_loaded(img))
+	{
+		image_unload(img);
+		image_load(img);
+	}
+
+	return true;
+}
+
 void image_free(Image* img)
 {
 	CHECK_IS_NULL_RET(img, "Cannot free a NULL Image.", );
 
 	image_unload(img);
+	feur_string_free(img->file_path);
 	free(img);
 }
 
