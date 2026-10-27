@@ -8,10 +8,13 @@
 #include "ptr_helper.h"
 #include "c_str_helper.h"
 
+#include "file_helper.h"
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <stddef.h>
 #include <stdbool.h>
+#include <string.h>
 
 static bool is_line_readable(char* buffer, size_t len)
 {
@@ -68,23 +71,67 @@ static FILE* asset_open_fd(const char* file_path)
 
 ImageArray* asset_load_image_array(const char* file_path)
 {
+	CHECK_IS_NULL_RET(file_path,
+		"Cannot load an ImageArray from an empty file path.", NULL);
+
 	FILE* fd = asset_open_fd(file_path);
 
 	CHECK_IS_NULL_RET(fd, "Failed to open file", NULL);
 
 	ImageArray* img_array = NULL;
 
-	char* buffer = NULL;
+	const size_t file_path_len = strlen(file_path);
 
-	while(asset_read_line(fd, &buffer) != 0)
+	char* dir_path = NULL;
+	dir_path = malloc(sizeof(char) * (file_path_len + 1));
+	dir_path[file_path_len] = '\0';
+
+	CHECK_COND_RET(file_get_directory_path(file_path, dir_path),
+		"Failed to get directory path", NULL);
+
+	size_t path_buffer_len = file_path_len * 2;
+	char* path_buffer = malloc(sizeof(char) * path_buffer_len + 1);
+
+	memcpy(path_buffer, file_path, file_path_len);
+	path_buffer[path_buffer_len] = '\0';
+
+	char* line_buffer = NULL;
+
+	while(asset_read_line(fd, &line_buffer) != 0)
 	{
-		CHECK_IS_NULL_RET(buffer, "Failed to read line correctly", NULL);
+		CHECK_IS_NULL_RET(line_buffer, "Failed to read line correctly", NULL);
 
-		c_str_trim(buffer);
+		c_str_trim(line_buffer);
 
-		LOG("Image : %s", buffer);
+		size_t line_len = strlen(line_buffer);
 
-		Image* img = assets_get_image(buffer);
+		if (line_len > path_buffer_len)
+		{
+			char* buf_tmp = realloc(path_buffer, file_path_len + line_len + 1);
+
+			if (buf_tmp == NULL)
+			{
+				LOG_ERROR("Failed to realloc path buffer, could not get asset path properly, skipping it.");
+				continue;
+			}
+
+			path_buffer = buf_tmp;
+		}
+
+		if(c_str_is_empty(line_buffer))
+		{
+			continue;
+		}
+
+		// LOG("Image : %s", line_buffer);
+
+		char* absolute_path = file_create_path_from_dir(dir_path, line_buffer);
+
+		// LOG("absolute_path: \"%s\"", absolute_path);
+
+		Image* img = assets_get_image(absolute_path);
+
+		free(absolute_path);
 
 		CHECK_IS_NULL_RET(img, "Failed to get Asset Image", NULL);
 
@@ -106,7 +153,8 @@ ImageArray* asset_load_image_array(const char* file_path)
 		}
 	}
 
-	FREE_PTR_NOT_NULL(buffer, free);
+	FREE_PTR_NOT_NULL(line_buffer, free);
+	FREE_PTR_NOT_NULL(dir_path, free);
 
 	return img_array;
 }

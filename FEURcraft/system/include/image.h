@@ -35,9 +35,9 @@ bool image_change_file_path(Image* img, const char* file_path);
 
 void image_free(Image* img);
 
-void image_write(Image* img, const char* file_path);
+bool image_write(Image* img, const char* file_path);
 
-void image_write_from_data(const char* file_path,
+bool image_write_from_data(const char* file_path,
                            unsigned char* data,
                            unsigned int width,
                            unsigned int height,

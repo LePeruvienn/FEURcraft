@@ -36,17 +36,12 @@ static Assets assets =
 	.meshes = NULL
 };
 
-void assets_init(const char* program_path)
+void assets_init()
 {
-	CHECK_IS_NULL_RET(program_path,
-		"Cannot init Assets with a NULL program path", )
-
-	CHECK_COND_RET(is_init == false, 
-		"Assets are already intialized", );
-
-	// size_t len = strlen(program_path);
-
-	// TODO!!
+	if (is_init)
+	{
+		return;
+	}
 
 	assets.images = string_hash_map_create(ASSETS_PATH_MAX_SIZE, sizeof(Image*));
 	assets.image_arrays = string_hash_map_create(ASSETS_PATH_MAX_SIZE, sizeof(ImageArray*));
@@ -55,6 +50,9 @@ void assets_init(const char* program_path)
 
 	is_init = true;
 }
+
+#define ASSETS_INIT_IF_NEEDED() \
+	if(is_init == false) { assets_init(); }
 
 /*static*/ bool assets_get_raw_file_path(const char* file_path, char* buffer, size_t size)
 {
@@ -78,6 +76,8 @@ void assets_init(const char* program_path)
 
 Image* assets_get_image(const char* image_path)
 {
+	ASSETS_INIT_IF_NEEDED();
+
 	Image* image = NULL;
 	bool exists = string_hash_map_get(assets.images, image_path, &image);
 

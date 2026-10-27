@@ -57,7 +57,7 @@ struct Assets
 	StringHashMap* meshes;
 };
 
-void assets_init(const char* program_path);
+void assets_init();
 
 Image* assets_get_image(const char* image_path);
 

@@ -1,6 +1,5 @@
 #include "image.h"
 
-#include "file_helper.h"
 #include "error_checker.h"
 
 #define STB_IMAGE_IMPLEMENTATION
@@ -121,16 +120,16 @@ void image_free(Image* img)
 	free(img);
 }
 
-void image_write(Image* img, const char* file_path)
+bool image_write(Image* img, const char* file_path)
 {
-	image_write_from_data(file_path,
-	                       img->data,
-	                       img->width,
-	                       img->height,
-	                       img->channels);
+	return image_write_from_data(file_path,
+	                             img->data,
+	                             img->width,
+	                             img->height,
+	                             img->channels);
 }
 
-void image_write_from_data(const char* file_path,
+bool image_write_from_data(const char* file_path,
                            unsigned char* data,
                            unsigned int width,
                            unsigned int height,
@@ -138,14 +137,12 @@ void image_write_from_data(const char* file_path,
 {
 	stbi_flip_vertically_on_write(1);
 
-	stbi_write_png(
-		file_path,
-		width,
-		height,
-		channels,
-		data,
-		width * channels
-	);
+	return stbi_write_png(file_path,
+	                      width,
+	                      height,
+	                      channels,
+	                      data,
+	                      width * channels) == 1;
 }
 
 bool image_are_equal(Image* img1, Image* img2)

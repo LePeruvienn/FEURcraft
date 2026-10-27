@@ -1,8 +1,10 @@
 #include "file_helper.h"
 #include "logger.h"
+#include "error_checker.h"
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 void* file_read_bin(const char* path, size_t* out_size)
 {
@@ -205,3 +207,77 @@ size_t file_get_size(const char* path)
 	return (size_t) size;
 }
 
+bool file_get_directory_path(const char* path, char* buffer)
+{
+	CHECK_IS_NULL_RET(path,
+		"Cannot get directory path from a NULL char*.", false);
+
+	CHECK_IS_NULL_RET(buffer,
+		"Cannot get directory path from a NULL char*.", false);
+
+	size_t len = strlen(path);
+
+	CHECK_COND_RET(len > 0,
+		"Cannot get directory from an empty string.", false);
+
+	// This should always work cause buffer should
+	// at least have the size of path.
+	memcpy(buffer, path, len);
+
+	const char slash = '/';
+
+	char* last_slash = strrchr(buffer, slash);
+
+	CHECK_IS_NULL_RET(last_slash,
+		"Given file path is not correct, cannot get directory path.", false);
+
+	char* str_end = strchr(buffer, '\0');
+
+	size_t slash_offset = str_end - last_slash;
+
+	// Then we set all after the char after the last '/' to '\0'.
+	// So we a get a string that have only the directory path.
+	// Also we want to keep the last '/' so +1 and -1.
+	memset(last_slash + 1, '\0', slash_offset - 1);
+
+	return true;
+}
+
+char* file_create_path_from_dir(const char* directory_path, const char* file_path)
+{
+	CHECK_IS_NULL_RET(directory_path,
+		"Cannot create file path from NULL directory path.", false);
+
+	CHECK_IS_NULL_RET(file_path,
+		"Cannot create file path from NULL file name.", NULL);
+
+	size_t dir_path_len = strlen(directory_path);
+	size_t file_path_len = strlen(file_path);
+
+	CHECK_COND_RET(dir_path_len > 0,
+		"Cannot create file path an empty directory path.", NULL);
+
+	CHECK_COND_RET(file_path_len > 0,
+		"Cannot create file path an empty file path.", NULL);
+
+	size_t buffer_len = dir_path_len + file_path_len + 2;
+	char* buffer = malloc(sizeof(char) * buffer_len);
+	buffer[buffer_len - 1] = '\0';
+
+	CHECK_IS_NULL_RET(buffer,
+		"Failed to malloc buffer for new file path.", NULL);
+
+	memcpy(buffer, directory_path, dir_path_len);
+
+	if(buffer[dir_path_len - 1] != '/')
+	{
+		buffer[dir_path_len] = '/';
+	}
+
+	const char slash = '/';
+	char* last_slash = strrchr(buffer, slash);
+
+	memcpy(last_slash + 1, file_path, file_path_len + 1);
+
+	return buffer;
+}

@@ -1,4 +1,5 @@
 #include "image_array.h"
+#include "image.h"
 
 #include "error_checker.h"
 
@@ -73,5 +74,19 @@ int image_array_add_image(ImageArray* img_array, Image* img)
 	memcpy(dest, img->data, img_size);
 
 	return img_array->img_count++;
+}
+
+bool image_array_write(ImageArray* img_array, const char* file_path)
+{
+	CHECK_IS_NULL_RET(img_array, "Cannnot write a NULL ImageArray.", false);
+	CHECK_IS_NULL_RET(file_path, "Cannnot write ImageArray to a NULL file path.", false);
+
+	CHECK_IS_NULL_RET(img_array->data, "Cannot write ImageArray with NULL data.", false);
+
+	return image_write_from_data(file_path,
+	                             img_array->data,
+	                             img_array->height,
+	                             img_array->width * img_array->img_count,
+	                             img_array->channels);
 }
 

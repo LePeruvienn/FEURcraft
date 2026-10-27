@@ -57,4 +57,11 @@ void image_array_free(ImageArray* tex_array);
 */
 int image_array_add_image(ImageArray* tex_array, Image* img);
 
+/**
+* \brief Ecrit sur le disque la texture.
+* \param tex_array \ref ImageArray cible
+* \param file_path fichier ou écrire l'image
+*/
+bool image_array_write(ImageArray* img_array, const char* file_path);
+
 #endif // IMAGE_ARRAY_H

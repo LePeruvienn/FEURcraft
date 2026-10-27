@@ -76,6 +76,55 @@ FEUR_Test_Result Test_FileHelper_ReadBin()
 	return FEUR_Test_Success;
 }
 
+FEUR_Test_Result Test_FileHelper_GetDirPath()
+{
+	const char* file_path = "quoi/home/feur/test/chat_mignon.png";
+
+	size_t len = strlen(file_path);
+
+	char* directory_path = malloc(sizeof(char) * (len + 1));
+
+	FEUR_TEST_ASSERT_NOT_NULL(directory_path);
+
+	FEUR_TEST_ASSERT(file_get_directory_path(file_path, directory_path));
+
+	FEUR_TEST_ASSERT(strcmp(directory_path, "quoi/home/feur/test/") == 0);
+
+	return FEUR_Test_Success;
+}
+
+
+FEUR_Test_Result Test_FileHelper_CreatePathFromDir()
+{
+	char* directory_path = "quoi/home/feur/";
+	char* file_name = "chat_mignon.png";
+	char* file_path = file_create_path_from_dir(directory_path, file_name);
+
+	FEUR_TEST_ASSERT_NOT_NULL(file_path);
+	FEUR_TEST_ASSERT(strcmp(file_path, "quoi/home/feur/chat_mignon.png") == 0);
+	free(file_path); file_path = NULL;
+
+	// With no '/' at the end for the filepath
+	directory_path = "quoi/home/feur";
+	file_name = "chat_mignon.png";
+	file_path = file_create_path_from_dir(directory_path, file_name);
+
+	FEUR_TEST_ASSERT_NOT_NULL(file_path);
+	FEUR_TEST_ASSERT(strcmp(file_path, "quoi/home/feur/chat_mignon.png") == 0);
+	free(file_path); file_path = NULL;
+
+	// With a file path for the file name
+	directory_path = "quoi";
+	file_name = "home/feur/chat_mignon.png";
+	file_path = file_create_path_from_dir(directory_path, file_name);
+
+	FEUR_TEST_ASSERT_NOT_NULL(file_path);
+	FEUR_TEST_ASSERT(strcmp(file_path, "quoi/home/feur/chat_mignon.png") == 0);
+	free(file_path); file_path = NULL;
+
+	return FEUR_Test_Success;
+}
+
 int main()
 {
 	FEUR_Test_Init();
@@ -87,6 +136,8 @@ int main()
 	FEUR_Test_Add_Test("Recuperation des tailles", Test_FileHelper_GetSize);
 	FEUR_Test_Add_Test("Relecture de fichier Texte", Test_FileHelper_ReadTxt);
 	FEUR_Test_Add_Test("Relecture de fichier Binaire", Test_FileHelper_ReadBin);
+	FEUR_Test_Add_Test("Get directoy path", Test_FileHelper_GetDirPath);
+	FEUR_Test_Add_Test("Create file path from dir", Test_FileHelper_CreatePathFromDir);
 
 	FEUR_Test_Run();
 	FEUR_Test_End();

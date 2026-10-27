@@ -46,5 +46,24 @@ bool file_exists(const char* path);
  */
 size_t file_get_size(const char* path);
 
+/**
+ * \brief Met dans le buffer le chemin vers le dossier
+ *        du chemin de fichier donné en paramêtre.
+ * \warning le buffer doit être alloué à au moins la taille du path
+ * \param path chemin vers le fichier dont on veut le dossier.
+ * \param buffer buffer on l'ont veut récupérer le chemin vers le dossier.
+ * \return `true` si tout c'est bien passé, `false` sinon.
+ */
+bool file_get_directory_path(const char* path, char* buffer);
+
+
+/**
+ * \brief Créer un nouveau string alloué qui est le chemin créer
+ *        par la composition du chemin du dossier et d'un autre chemin de fichier.
+ * \param directory_path chemin vers le dossier
+ * \param  file_path chemin ou non du fichier à rajouter à la fin.
+ * \return retourne un buffer alloué à libérer, qui est le chemin composé des deux.
+ */
+char* file_create_path_from_dir(const char* directory_path, const char* file_path);
 
 #endif // FILE_HELPER_H
