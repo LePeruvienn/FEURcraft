@@ -127,12 +127,47 @@ Fonctions</h2></td></tr>
 <tr class="memdesc:aba2db2f17a82cb9f949de86a2f783ce6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vérifie si le fichier existe.  <br /></td></tr>
 <tr class="memitem:a98e8017312f0e7ca05ea6eb995663dd1" id="r_a98e8017312f0e7ca05ea6eb995663dd1"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a98e8017312f0e7ca05ea6eb995663dd1">file_get_size</a> (const char *path)</td></tr>
 <tr class="memdesc:a98e8017312f0e7ca05ea6eb995663dd1"><td class="mdescLeft">&#160;</td><td class="mdescRight">récupère la taille du ficher en paramêtre  <br /></td></tr>
+<tr class="memitem:a261c2103a2577c741c56a74141400947" id="r_a261c2103a2577c741c56a74141400947"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a261c2103a2577c741c56a74141400947">file_get_directory_path</a> (const char *path, char *buffer)</td></tr>
+<tr class="memdesc:a261c2103a2577c741c56a74141400947"><td class="mdescLeft">&#160;</td><td class="mdescRight">Met dans le buffer le chemin vers le dossier du chemin de fichier donné en paramêtre.  <br /></td></tr>
+<tr class="memitem:af4f57982fa178c3239ec6ed1733babf3" id="r_af4f57982fa178c3239ec6ed1733babf3"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af4f57982fa178c3239ec6ed1733babf3">file_create_path_from_dir</a> (const char *directory_path, const char *file_path)</td></tr>
+<tr class="memdesc:af4f57982fa178c3239ec6ed1733babf3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Créer un nouveau string alloué qui est le chemin créer par la composition du chemin du dossier et d'un autre chemin de fichier.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Description détaillée</h2>
 <div class="textblock"><p>Fichier implémentant des fonction permettant de manipuler des fichiers du système facilement. </p>
 
 <p class="definition">Définition dans le fichier <a class="el" href="file__helper_8h_source.html">file_helper.h</a>.</p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentation des fonctions</h2>
+<a id="af4f57982fa178c3239ec6ed1733babf3" name="af4f57982fa178c3239ec6ed1733babf3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af4f57982fa178c3239ec6ed1733babf3">&#9670;&#160;</a></span>file_create_path_from_dir()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char * file_create_path_from_dir </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>directory_path</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>file_path</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Créer un nouveau string alloué qui est le chemin créer par la composition du chemin du dossier et d'un autre chemin de fichier. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">directory_path</td><td>chemin vers le dossier </td></tr>
+    <tr><td class="paramname">file_path</td><td>chemin ou non du fichier à rajouter à la fin. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>retourne un buffer alloué à libérer, qui est le chemin composé des deux. </dd></dl>
+
+</div>
+</div>
 <a id="aba2db2f17a82cb9f949de86a2f783ce6" name="aba2db2f17a82cb9f949de86a2f783ce6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aba2db2f17a82cb9f949de86a2f783ce6">&#9670;&#160;</a></span>file_exists()</h2>
 
@@ -156,6 +191,38 @@ Fonctions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd><code>true</code> si je fichier existe <code>false</code> sinon </dd></dl>
+
+</div>
+</div>
+<a id="a261c2103a2577c741c56a74141400947" name="a261c2103a2577c741c56a74141400947"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a261c2103a2577c741c56a74141400947">&#9670;&#160;</a></span>file_get_directory_path()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool file_get_directory_path </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>path</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *</td>          <td class="paramname"><span class="paramname"><em>buffer</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Met dans le buffer le chemin vers le dossier du chemin de fichier donné en paramêtre. </p>
+<dl class="section warning"><dt>Avertissement</dt><dd>le buffer doit être alloué à au moins la taille du path </dd></dl>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>chemin vers le fichier dont on veut le dossier. </td></tr>
+    <tr><td class="paramname">buffer</td><td>buffer on l'ont veut récupérer le chemin vers le dossier. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd><span class="tt">true</span> si tout c'est bien passé, <span class="tt">false</span> sinon. </dd></dl>
 
 </div>
 </div>

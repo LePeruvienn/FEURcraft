@@ -152,6 +152,8 @@ Fonctions</h2></td></tr>
 <tr class="memdesc:ac8b3d5204d7c25c14b5971919dfb2e4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Libère la mémoire de l' <a class="el" href="structImageArray.html">ImageArray</a> en paramêtre.  <br /></td></tr>
 <tr class="memitem:a32ca2f3a6ea75e50c0d8adb475132a0f" id="r_a32ca2f3a6ea75e50c0d8adb475132a0f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a32ca2f3a6ea75e50c0d8adb475132a0f">image_array_add_image</a> (<a class="el" href="structImageArray.html">ImageArray</a> *tex_array, <a class="el" href="structImage.html">Image</a> *img)</td></tr>
 <tr class="memdesc:a32ca2f3a6ea75e50c0d8adb475132a0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ajoute une image à l' <a class="el" href="structImageArray.html">ImageArray</a>.  <br /></td></tr>
+<tr class="memitem:afe1067945c40c36675024971db31207d" id="r_afe1067945c40c36675024971db31207d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afe1067945c40c36675024971db31207d">image_array_write</a> (<a class="el" href="structImageArray.html">ImageArray</a> *img_array, const char *file_path)</td></tr>
+<tr class="memdesc:afe1067945c40c36675024971db31207d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ecrit sur le disque la texture.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Description détaillée</h2>
 <div class="textblock"><p>Permet de stocker une liste d'image de même taille et cannaux. </p>
@@ -266,6 +268,36 @@ Fonctions</h2></td></tr>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">tex_array</td><td><a class="el" href="structImageArray.html">ImageArray</a> cible </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="afe1067945c40c36675024971db31207d" name="afe1067945c40c36675024971db31207d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe1067945c40c36675024971db31207d">&#9670;&#160;</a></span>image_array_write()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool image_array_write </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structImageArray.html">ImageArray</a> *</td>          <td class="paramname"><span class="paramname"><em>img_array</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>file_path</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ecrit sur le disque la texture. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tex_array</td><td><a class="el" href="structImageArray.html">ImageArray</a> cible </td></tr>
+    <tr><td class="paramname">file_path</td><td>fichier ou écrire l'image </td></tr>
   </table>
   </dd>
 </dl>
