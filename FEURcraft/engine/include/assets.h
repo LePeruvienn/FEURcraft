@@ -5,6 +5,7 @@
 #include "string_hash_map.h"
 
 #include "image.h"
+#include "shader.h"
 
 #include <stddef.h>
 #include <stdint.h>
@@ -60,6 +61,8 @@ struct Assets
 void assets_init();
 
 Image* assets_get_image(const char* image_path);
+
+Shader* assets_get_shader(const char* shader_path);
 
 void assets_deinit();
 

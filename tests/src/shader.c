@@ -129,15 +129,7 @@ FEUR_Test_Result Test_Shader_Free_Null()
 
 int main()
 {
-	FEUR_Test_Init();
-
-	Window* w = create_window(250, 250, "Shaders Tests");
-
-	if (!gladLoadGL())
-	{
-		LOG_ERROR("Failed to initialize glad.");
-		exit(EXIT_FAILURE);
-	}
+	FEUR_Test_Init_With_GL();
 
 	FEUR_Test_Add_Group("Shader");
 
@@ -185,8 +177,6 @@ int main()
 	FEUR_Test_Run();
 
 	FEUR_Test_End();
-
-	free_window(w);
 
 	return 0;
 }

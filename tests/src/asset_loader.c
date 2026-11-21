@@ -1,12 +1,13 @@
 #include "FEUR_Test/FEUR_Test.h"
 
+#include "window.h"
+
 #include "asset_loader.h"
 
 #include "image.h"
 #include "image_array.h"
 
 #include <stdlib.h>
-
 
 FEUR_Test_Result Test_ImageArray()
 {
@@ -34,11 +35,28 @@ FEUR_Test_Result Test_ImageArray()
 	return FEUR_Test_Success;
 }
 
+FEUR_Test_Result Test_ShaderProgram()
+{
+	const char* shader_path = "tests/assets/simple.fshader";
+
+	ShaderProgram* shader_program = asset_load_shader_program(shader_path);
+
+	FEUR_TEST_ASSERT_NOT_NULL(shader_program);
+
+	FEUR_TEST_ASSERT_MSG(shader_program->status == PROGRAM_STATUS_LINKED,
+		"ShaderProgram is not linked !");
+
+	shader_program_free(shader_program);
+	
+	return FEUR_Test_Success;
+}
+
 int main()
 {
-	FEUR_Test_Init();
+	FEUR_Test_Init_With_GL();
 
 	FEUR_Test_Add_Test("Load ImageArray", Test_ImageArray);
+	FEUR_Test_Add_Test("Load ShaderProgram", Test_ShaderProgram);
 
 	FEUR_Test_Run();
 

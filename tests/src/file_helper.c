@@ -1,5 +1,7 @@
 #include "FEUR_Test/FEUR_Test.h"
+
 #include "file_helper.h"
+#include "ptr_helper.h"
 
 #include <string.h>
 #include <stdlib.h>
@@ -93,6 +95,24 @@ FEUR_Test_Result Test_FileHelper_GetDirPath()
 	return FEUR_Test_Success;
 }
 
+FEUR_Test_Result Test_FileHelper_CreateDirPath()
+{
+	const char* file_path = "quoi/home/feur/test/chat_mignon.png";
+
+	char* directory_path = file_create_directory_path(file_path, 0);
+	FEUR_TEST_ASSERT_NOT_NULL(directory_path);
+	FEUR_TEST_ASSERT(strcmp(directory_path, "quoi/home/feur/test/") == 0);
+	FREE_PTR_NOT_NULL(directory_path, free);
+
+	file_path = "quoi/home/feur/";
+	directory_path = file_create_directory_path(file_path, 0);
+	FEUR_TEST_ASSERT_NOT_NULL(directory_path);
+	FEUR_TEST_ASSERT(strcmp(directory_path, "quoi/home/feur/") == 0);
+	FREE_PTR_NOT_NULL(directory_path, free);
+
+	return FEUR_Test_Success;
+}
+
 
 FEUR_Test_Result Test_FileHelper_CreatePathFromDir()
 {
@@ -138,6 +158,7 @@ int main()
 	FEUR_Test_Add_Test("Relecture de fichier Binaire", Test_FileHelper_ReadBin);
 	FEUR_Test_Add_Test("Get directoy path", Test_FileHelper_GetDirPath);
 	FEUR_Test_Add_Test("Create file path from dir", Test_FileHelper_CreatePathFromDir);
+	FEUR_Test_Add_Test("Create dir path from file path", Test_FileHelper_CreateDirPath);
 
 	FEUR_Test_Run();
 	FEUR_Test_End();

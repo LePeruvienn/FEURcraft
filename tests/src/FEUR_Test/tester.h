@@ -1,12 +1,15 @@
 #ifndef FEUR_TEST_TESTER_H
 #define FEUR_TEST_TESTER_H
 
+#include "window.h"
+
 #include "test_data.h"
 
 #include "logger.h"
 #include "ansi_colors.h"
 
 #include "env_helper.h"
+#include "ptr_helper.h"
 
 #include <stdint.h>
 #include <stdbool.h>
@@ -30,6 +33,8 @@ static FEUR_Tester g_FEUR_tester = { 0 };
 static bool g_FEUR_is_init = false;
 static bool g_FEUR_test_running = false;
 
+static Window* g_FEUR_Test_window = NULL;
+
 void FEUR_Test_Init()
 {
 	if(g_FEUR_is_init)
@@ -43,6 +48,30 @@ void FEUR_Test_Init()
 	g_FEUR_tester.group_failed_amount = 0;
 
 	g_FEUR_is_init = true;
+}
+
+void FEUR_Test_Init_With_GL()
+{
+	if(g_FEUR_is_init)
+	{
+		LOG_ERROR("FEUR Tests are already initialized");
+		return;
+	}
+
+	g_FEUR_Test_window = window_create_invisible(960, 680, "FEUR Test Window");
+
+	if (g_FEUR_Test_window == NULL)
+	{
+		LOG_ERROR("Failed to create FEUR test window.");
+	}
+
+	if (!gladLoadGL())
+	{
+		LOG_ERROR("Failed to initialize OpenGL (glad).");
+		exit(EXIT_FAILURE);
+	}
+
+	FEUR_Test_Init();
 }
 
 void FEUR_Test_Add_Group(const char* name)
@@ -231,6 +260,9 @@ void FEUR_Test_End()
 	{
 		printf("\n" ANSI_COLOR_BOLD ANSI_COLOR_GREEN "Juste le/la GOAT en fait B)" ANSI_COLOR_RESET "\n");
 	}
+
+	// Dont forget to clean winow before exit
+	FREE_PTR_NOT_NULL(g_FEUR_Test_window, free_window);
 
 	// We exit by the number of failed tests (0 == OK, else some FAILED !)
 	EXIT_PROGRAM(g_FEUR_tester.test_failed_amount);

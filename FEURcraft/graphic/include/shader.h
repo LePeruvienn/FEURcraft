@@ -1,6 +1,8 @@
 #ifndef SHADER_H
 #define SHADER_H
 
+#include "feur_string.h"
+
 #include "glad/glad.h"
 
 /**
@@ -47,7 +49,7 @@ struct Shader
 {
 	GLuint id;
 
-	const char* file_path;
+	FeurString* file_path;
 
 	ShaderType type;
 	ShaderStatus status;

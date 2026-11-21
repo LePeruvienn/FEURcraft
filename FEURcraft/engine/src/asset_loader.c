@@ -4,6 +4,9 @@
 #include "image.h"
 #include "image_array.h"
 
+#include "shader.h"
+#include "shader_program.h"
+
 #include "error_checker.h"
 #include "ptr_helper.h"
 #include "c_str_helper.h"
@@ -82,41 +85,24 @@ ImageArray* asset_load_image_array(const char* file_path)
 
 	const size_t file_path_len = strlen(file_path);
 
-	char* dir_path = NULL;
-	dir_path = malloc(sizeof(char) * (file_path_len + 1));
-	dir_path[file_path_len] = '\0';
+	char* dir_path = file_create_directory_path(file_path, file_path_len + 1);
 
-	CHECK_COND_RET(file_get_directory_path(file_path, dir_path),
-		"Failed to get directory path", NULL);
-
-	size_t path_buffer_len = file_path_len * 2;
-	char* path_buffer = malloc(sizeof(char) * path_buffer_len + 1);
-
-	memcpy(path_buffer, file_path, file_path_len);
-	path_buffer[path_buffer_len] = '\0';
+	CHECK_IS_NULL_RET(dir_path, "Failed to create directory path", NULL);
 
 	char* line_buffer = NULL;
 
+	bool sucess = true;
+
 	while(asset_read_line(fd, &line_buffer) != 0)
 	{
-		CHECK_IS_NULL_RET(line_buffer, "Failed to read line correctly", NULL);
+		if (line_buffer == NULL)
+		{
+			LOG_ERROR("Failed to read line correctly");
+			sucess = false;
+			break;
+		}
 
 		c_str_trim(line_buffer);
-
-		size_t line_len = strlen(line_buffer);
-
-		if (line_len > path_buffer_len)
-		{
-			char* buf_tmp = realloc(path_buffer, file_path_len + line_len + 1);
-
-			if (buf_tmp == NULL)
-			{
-				LOG_ERROR("Failed to realloc path buffer, could not get asset path properly, skipping it.");
-				continue;
-			}
-
-			path_buffer = buf_tmp;
-		}
 
 		if(c_str_is_empty(line_buffer))
 		{
@@ -131,31 +117,151 @@ ImageArray* asset_load_image_array(const char* file_path)
 
 		Image* img = assets_get_image(absolute_path);
 
+		if (img == NULL)
+		{
+			LOG_ERROR("Failed to get image \"%s\" from assets.", absolute_path);
+			free(absolute_path);
+			sucess = false;
+			continue;
+		}
+
 		free(absolute_path);
 
-		CHECK_IS_NULL_RET(img, "Failed to get Asset Image", NULL);
+		if (image_is_loaded(img) == false)
+		{
+			image_load(img);
+		}
 
 		if (image_is_loaded(img) == false)
-			image_load(img);
-
-		CHECK_COND_RET(image_is_loaded(img), "Failed to load Image", NULL);
+		{
+			LOG_ERROR("Failed to load Image \"%s\"", img->file_path->c_str);
+			sucess = false;
+			continue;
+		}
 
 		if (img_array == NULL)
 		{
 			img_array = image_array_create(img->width, img->height, img->channels);
-			CHECK_IS_NULL_RET(img_array, "Failed to create ImageArray", NULL);
+
+			if (img_array == NULL)
+			{
+				LOG_ERROR("Failed to create ImageArray");
+				sucess = false;
+				break;
+			}
 		}
 
 		if (image_array_add_image(img_array, img) == -1)
 		{
 			LOG_ERROR("Failed to add image %s to ImageArray",
 				img->file_path->c_str);
+			sucess = false;
 		}
 	}
 
 	FREE_PTR_NOT_NULL(line_buffer, free);
 	FREE_PTR_NOT_NULL(dir_path, free);
 
+	if (sucess == false)
+	{
+		FREE_PTR_NOT_NULL(img_array, image_array_free);
+	}
+
 	return img_array;
+}
+
+ShaderProgram* asset_load_shader_program(const char* file_path)
+{
+	CHECK_IS_NULL_RET(file_path, "Cannot load an Shader from an empty file path.", NULL);
+
+	FILE* fd = asset_open_fd(file_path);
+
+	CHECK_IS_NULL_RET(fd, "Failed to open file", NULL);
+
+	ShaderProgram* program = NULL;
+
+	const size_t file_path_len = strlen(file_path);
+
+	char* dir_path = file_create_directory_path(file_path, file_path_len + 1);
+
+	CHECK_IS_NULL_RET(dir_path, "Failed to create directory path", NULL);
+
+	char* line_buffer = NULL;
+
+	while(asset_read_line(fd, &line_buffer) != 0)
+	{
+		if (line_buffer == NULL)
+		{
+			LOG_ERROR("Failed to read line correctly");
+			break;
+		}
+
+		c_str_trim(line_buffer);
+
+		if(c_str_is_empty(line_buffer))
+		{
+			continue;
+		}
+
+		// LOG("Shader : %s", line_buffer);
+
+		char* absolute_path = file_create_path_from_dir(dir_path, line_buffer);
+
+		// LOG("absolute_path: \"%s\"", absolute_path);
+
+		Shader* shader = assets_get_shader(absolute_path);
+
+		if (shader == NULL)
+		{
+			LOG_ERROR("Failed to get shader \"%s\"", absolute_path);
+			free(absolute_path);
+			continue;
+		}
+
+		free(absolute_path);
+
+		if (shader->status != SHADER_STATUS_COMPILED)
+		{
+			shader_compile(shader);
+		}
+
+		if (shader->status != SHADER_STATUS_COMPILED)
+		{
+			LOG_ERROR("Failed to compile Shader : \"%s\"", shader->file_path->c_str);
+			continue;
+		}
+
+		if (program == NULL)
+		{
+			program = shader_program_create();
+
+			if (program == NULL)
+			{
+				LOG_ERROR("Failed to create ShaderProgram");
+				break;
+			}
+		}
+
+		if (shader_program_attach(program, shader) == false)
+		{
+			LOG_ERROR("Failed to attach shader \"%s\"to program.",
+				shader->file_path->c_str);
+		}
+	}
+
+	FREE_PTR_NOT_NULL(line_buffer, free);
+	FREE_PTR_NOT_NULL(dir_path, free);
+
+	if (program == NULL)
+		return NULL;
+
+	bool sucess = shader_program_link(program);
+
+	if (sucess == false)
+	{
+		FREE_PTR_NOT_NULL(program, shader_program_free);
+	}
+
+	return program;
 }
 

@@ -16,7 +16,10 @@
 
 #define _10e9 1000000000.0
 
-Window* create_window(unsigned int width, unsigned int height, const char* title)
+static Window* window_create_internal(unsigned int width,
+                                      unsigned int height,
+                                      const char* title,
+                                      bool is_visible)
 {
 	static int is_glfw_init = 0;
 
@@ -36,8 +39,8 @@ Window* create_window(unsigned int width, unsigned int height, const char* title
 		glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
 		glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 		// glfwWindowHint(GLFW_SAMPLES, 4); 
+		if(is_visible == false) glfwWindowHint(GLFW_VISIBLE, GLFW_FALSE);
 	);
-
 
 	Window* w = malloc(sizeof(struct Window));
 
@@ -70,6 +73,16 @@ Window* create_window(unsigned int width, unsigned int height, const char* title
 	glfwSwapInterval(0);
 
 	return w;
+}
+
+Window* create_window(unsigned int width, unsigned int height, const char* title)
+{
+	return window_create_internal(width, height, title, true);
+}
+
+Window* window_create_invisible(unsigned int width, unsigned int height, const char* title)
+{
+	return window_create_internal(width, height, title, false);
 }
 
 void free_window(Window* w)

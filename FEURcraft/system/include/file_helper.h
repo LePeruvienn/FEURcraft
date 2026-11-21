@@ -56,6 +56,13 @@ size_t file_get_size(const char* path);
  */
 bool file_get_directory_path(const char* path, char* buffer);
 
+/**
+ * \brief Créer un nouveau buffer contenant le chemin du dossier
+ * \param path chemin vers le fichier dont on veut le dossier.
+ * \param len taille du chaine de caractère, si 0 alors on la calcul avec strlen
+ * \return retourn NULL si impossible, ou un buffer alloué qui doit être libérer
+ */
+char* file_create_directory_path(const char* file_path, size_t len);
 
 /**
  * \brief Créer un nouveau string alloué qui est le chemin créer

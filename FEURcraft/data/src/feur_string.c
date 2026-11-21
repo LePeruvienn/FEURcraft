@@ -170,6 +170,20 @@ void feur_string_set_c_str_size(FeurString* string, const char* c_str, size_t si
 	string->c_str[string->length] = '\0';
 }
 
+void feur_string_clear(FeurString* string)
+{
+	CHECK_IS_NULL_RET(string, "Cannot clear a NULL FeurString.", );
+
+	string->length = 0;
+
+	if (string->c_str == NULL)
+	{
+		return;
+	}
+
+	string->c_str[0] = '\0';
+}
+
 void feur_string_append(FeurString* dest, const FeurString* src)
 {
 	CHECK_IS_NULL_RET(dest, "Cannot append to a NULL FeurString.", );
@@ -214,4 +228,11 @@ bool feur_string_equal(const FeurString* s1, const FeurString* s2)
 	}
 
 	return memcmp(s1->c_str, s2->c_str, s1->length) == 0;
+}
+
+bool feur_string_is_empty(const FeurString* string)
+{
+	CHECK_IS_NULL_RET(string, "Cannot check empty of a NULL string.", false);
+
+	return (string->c_str == NULL || string->c_str[0] == '\0' || string->length == 0);
 }

@@ -10,6 +10,8 @@
 #include "call_once.h"
 #include "ptr_helper.h"
 
+#include <stdbool.h>
+
 #define MAX_UNIFORM_NAME_SIZE 32
 
 static int get_program_status(GLuint program, GLenum pname)
@@ -87,21 +89,21 @@ void shader_program_free(ShaderProgram* program)
 	free(program);
 }
 
-void shader_program_attach(ShaderProgram* program, Shader* shader)
+bool shader_program_attach(ShaderProgram* program, Shader* shader)
 {
-	CHECK_IS_NULL_RET(program, "Tried to attach a Shader to a NULL ShaderProgram.", );
-	CHECK_IS_NULL_RET(shader, "Tried to attach a NULL Shader to a ShaderProgram.", );
+	CHECK_IS_NULL_RET(program, "Tried to attach a Shader to a NULL ShaderProgram.", false);
+	CHECK_IS_NULL_RET(shader, "Tried to attach a NULL Shader to a ShaderProgram.", false);
 
 	if (shader->type == SHADER_TYPE_COUNT)
 	{
 		LOG_ERROR("Shader type is COUNT this should never happen wtf.");
-		return;
+		return false;
 	}
 
 	if (shader->status != SHADER_STATUS_COMPILED)
 	{
 		LOG_ERROR("You must compile your shader first before attaching it");
-		return;
+		return false;
 	}
 
 	Shader* current_shader = program->shaders[shader->type];
@@ -110,23 +112,25 @@ void shader_program_attach(ShaderProgram* program, Shader* shader)
 	{
 		const char* shader_type_name = shader_type_get_name(shader->type);
 		LOG_ERROR("Add shader of type %s already exist in this program.", shader_type_name);
-		return;
+		return false;
 	}
 
 	GL_CALL(glAttachShader(program->id, shader->id));
 
 	program->shaders[shader->type] = shader;
+
+	return true;
 }
 
-void shader_program_detach(ShaderProgram* program, Shader* shader)
+bool shader_program_detach(ShaderProgram* program, Shader* shader)
 {
-	CHECK_IS_NULL_RET(program, "Tried to detach a Shader to a NULL ShaderProgram.", );
-	CHECK_IS_NULL_RET(shader, "Tried to detach a NULL Shader to a ShaderProgram.", );
+	CHECK_IS_NULL_RET(program, "Tried to detach a Shader to a NULL ShaderProgram.", false);
+	CHECK_IS_NULL_RET(shader, "Tried to detach a NULL Shader to a ShaderProgram.", false);
 
 	if (shader->type == SHADER_TYPE_COUNT)
 	{
 		LOG_ERROR("Shader type is COUNT this should never happen wtf.");
-		return;
+		return false;
 	}
 
 	Shader* current_shader = program->shaders[shader->type];
@@ -134,12 +138,14 @@ void shader_program_detach(ShaderProgram* program, Shader* shader)
 	if (current_shader != shader)
 	{
 		LOG_ERROR("Could not find the shader you are trying to remove.");
-		return;
+		return false;
 	}
 
 	GL_CALL(glDetachShader(program->id, shader->id));
 
 	program->shaders[shader->type] = NULL;
+
+	return true;
 }
 
 void shader_program_detach_all(ShaderProgram* program)
@@ -156,15 +162,15 @@ void shader_program_detach_all(ShaderProgram* program)
 	}
 }
 
-void shader_program_link(ShaderProgram* program)
+bool shader_program_link(ShaderProgram* program)
 {
-	CHECK_IS_NULL_RET(program, "Tried to link a NULL ShaderProgram.", );
+	CHECK_IS_NULL_RET(program, "Tried to link a NULL ShaderProgram.", false);
 
 	if(program->shaders[SHADER_TYPE_VERT] == NULL ||
 	   program->shaders[SHADER_TYPE_FRAG] == NULL )
 	{
 		LOG_ERROR("Cannot link a program without a Vertex and a Fragment Shader.");
-		return;
+		return false;
 	}
 
 	if (program->status == PROGRAM_STATUS_LINKED)
@@ -177,6 +183,8 @@ void shader_program_link(ShaderProgram* program)
 	int success = get_program_status(program->id, GL_LINK_STATUS);
 	program->status = (success == 0) ?
 		PROGRAM_STATUS_LINK_FAILED : PROGRAM_STATUS_LINKED;
+
+	return (program->status == PROGRAM_STATUS_LINKED);
 }
 
 void shader_program_use(ShaderProgram* program)

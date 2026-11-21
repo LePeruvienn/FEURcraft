@@ -64,14 +64,14 @@ void shader_program_free(ShaderProgram* program);
  * \param program \ref ShaderProgram cible
  * \param shader \ref Shader qu'on veut lui attacher
  */
-void shader_program_attach(ShaderProgram* program, Shader* shader);
+bool shader_program_attach(ShaderProgram* program, Shader* shader);
 
 /**
  * \brief Détache du programme le \ref Shader en paramêtre 
  * \param program \ref ShaderProgram cible
  * \param shader \ref Shader qu'on veut lui détacher
  */
-void shader_program_detach(ShaderProgram* program, Shader* shader);
+bool shader_program_detach(ShaderProgram* program, Shader* shader);
 
 /**
  * \brief Détache du programme tout les \ref Shader qui lui sont attaché
@@ -84,7 +84,7 @@ void shader_program_detach_all(ShaderProgram* program);
  * \note Après la liason des shaders on peut consulter le status du programme dans son attribut \b status
  * \param program \ref ShaderProgram cible
  */
-void shader_program_link(ShaderProgram* program);
+bool shader_program_link(ShaderProgram* program);
 
 /**
  * \brief Affecte le programme en paramêtre comme celui actuellement utilisé pour le rendu

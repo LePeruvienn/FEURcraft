@@ -1,6 +1,7 @@
 #include "shader.h"
 
 #include "file_helper.h"
+#include "ptr_helper.h"
 
 #include "error_checker.h"
 
@@ -47,18 +48,23 @@ Shader* shader_create(const char* file_path, ShaderType type)
 		return NULL;
 	}
 
+	FeurString* path_str = feur_string_create_c_str(file_path);
+
+	CHECK_IS_NULL_RET(path_str, "Failed to malloc string for shader filepath", NULL);
+
 	Shader* shader = malloc(sizeof(Shader));
 
 	if (shader == NULL)
 	{
 		LOG_ERROR("malloc Shader failed.");
+		FREE_PTR_NOT_NULL(path_str, feur_string_free);
 		glDeleteShader(id);
 		return NULL;
 	}
 
 	shader->id = id;
 	shader->type = type;
-	shader->file_path = file_path;
+	shader->file_path = path_str;
 	shader->status = SHADER_STATUS_NOT_COMPILED;
 
 	return shader;
@@ -76,6 +82,8 @@ void shader_free(Shader* shader)
 	{
 		LOG_WARNING("Freed a shader that shader id is 0.");
 	}
+
+	FREE_PTR_NOT_NULL(shader->file_path, feur_string_free);
 
 	free(shader);
 }
@@ -95,7 +103,13 @@ void shader_compile(Shader* shader)
 		LOG_WARNING("Shader already compiled, recompiling shader.");
 	}
 
-	const char* source = file_read_txt(shader->file_path);
+	if (shader->file_path == NULL)
+	{
+		LOG_ERROR("Cannot compile shader with NULL file_path");
+		return;
+	}
+
+	const char* source = file_read_txt(shader->file_path->c_str);
 
 	CHECK_IS_NULL_RET(source, "Failed to read shader source", );
 
@@ -104,7 +118,7 @@ void shader_compile(Shader* shader)
 
 	free((void*) source);
 
-	int success = shader_get_status(shader->id, GL_COMPILE_STATUS, shader->file_path);
+	int success = shader_get_status(shader->id, GL_COMPILE_STATUS, shader->file_path->c_str);
 
 	shader->status = (success != 0) ?
 		SHADER_STATUS_COMPILED : SHADER_STATUS_COMPILE_FAILED;

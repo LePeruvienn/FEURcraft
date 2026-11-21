@@ -48,9 +48,13 @@ void feur_string_reserve(FeurString* string, size_t capacity);
 void feur_string_set_c_str(FeurString* string, const char* c_str, size_t beg);
 void feur_string_set_c_str_size(FeurString* string, const char* c_str, size_t size, size_t beg);
 
+void feur_string_clear(FeurString* string);
+
 void feur_string_append(FeurString* dest, const FeurString* string);
 void feur_string_append_str(FeurString* dest, const char* c_str);
 
 bool feur_string_equal(const FeurString* s1, const FeurString* s2);
+
+bool feur_string_is_empty(const FeurString* string);
 
 #endif // FEUR_STRING_H

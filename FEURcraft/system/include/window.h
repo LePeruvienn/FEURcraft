@@ -47,6 +47,22 @@ struct Window
 Window* create_window(unsigned int width, unsigned int height, const char* title);
 
 /**
+ * \brief Crée et initialise une nouvelle fenêtre invisible
+ *
+ * Elle est surtout utilisé lors de tests unitaire.
+ * En fait on peut pas utilser des fonction OpenGL sans context,
+ * Donc on est obligé de créer une fenêtre et du coup bas c'est chiant.
+ *
+ * Donc on met la fenêtre invisible.
+ *
+ * \param width Largeur logique initiale de la fenêtre en pixels.
+ * \param height Hauteur logique initiale de la fenêtre en pixels.
+ * \param title Chaîne de caractères affichée comme titre de la fenêtre.
+ * \return Un pointeur \a window vers la fenêtre créée, ou NULL en cas d'échec.
+ */
+Window* window_create_invisible(unsigned int width, unsigned int height, const char* title);
+
+/**
  * \brief Détruit la fenêtre et libère la mémoire associée.
  *
  * Ferme proprement la fenêtre et détruit le contexte OpenGL pour 

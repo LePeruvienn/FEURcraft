@@ -2,6 +2,8 @@
 #include "logger.h"
 #include "error_checker.h"
 
+#include "ptr_helper.h"
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -241,6 +243,33 @@ bool file_get_directory_path(const char* path, char* buffer)
 	memset(last_slash + 1, '\0', slash_offset - 1);
 
 	return true;
+}
+
+char* file_create_directory_path(const char* file_path, size_t len)
+{
+	CHECK_IS_NULL_RET(file_path,
+		"Cannot create directory path from NULL file path", NULL);
+
+	if (len == 0)
+	{
+		len = strlen(file_path);
+	}
+
+	CHECK_COND_RET(len > 0,
+		"Cannot create directory path from an empty filepath", NULL)
+
+	char* directory_path = NULL;
+	directory_path = malloc(sizeof(char) * (len + 1));
+	directory_path[len] = '\0';
+
+	if(file_get_directory_path(file_path, directory_path) == false)
+	{
+		LOG_ERROR("Failed to get directory path");
+		FREE_PTR_NOT_NULL(directory_path, free);
+		return NULL;
+	}
+	
+	return directory_path;
 }
 
 char* file_create_path_from_dir(const char* directory_path, const char* file_path)
