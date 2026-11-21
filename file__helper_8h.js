@@ -1,5 +1,6 @@
 var file__helper_8h =
 [
+    [ "file_create_directory_path", "file__helper_8h.html#ae5bf3aaa662b58335607aba0ee10e265", null ],
     [ "file_create_path_from_dir", "file__helper_8h.html#af4f57982fa178c3239ec6ed1733babf3", null ],
     [ "file_exists", "file__helper_8h.html#aba2db2f17a82cb9f949de86a2f783ce6", null ],
     [ "file_get_directory_path", "file__helper_8h.html#a261c2103a2577c741c56a74141400947", null ],

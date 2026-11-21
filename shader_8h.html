@@ -98,15 +98,22 @@ $(function(){initNavTree('shader_8h.html','',''); });
 
 <p>Gestion et compilation des shaders.  
 <a href="#details">Plus de détails...</a></p>
-<div class="textblock"><code>#include &quot;glad/glad.h&quot;</code><br />
+<div class="textblock"><code>#include &quot;feur_string.h&quot;</code><br />
+<code>#include &quot;glad/glad.h&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Graphe des dépendances par inclusion de shader.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="shader_8h__incl.png" border="0" usemap="#aFEURcraft_2graphic_2include_2shader_8h" loading="lazy" alt=""/></div>
 <map name="aFEURcraft_2graphic_2include_2shader_8h" id="aFEURcraft_2graphic_2include_2shader_8h">
-<area shape="rect" title="Gestion et compilation des shaders." alt="" coords="5,5,181,44"/>
-<area shape="rect" title=" " alt="" coords="51,92,135,117"/>
-<area shape="poly" title=" " alt="" coords="96,45,96,76,90,76,90,45"/>
+<area shape="rect" title="Gestion et compilation des shaders." alt="" coords="54,5,229,44"/>
+<area shape="rect" href="feur__string_8h_source.html" title=" " alt="" coords="39,92,132,117"/>
+<area shape="poly" title=" " alt="" coords="130,46,105,81,101,78,126,43"/>
+<area shape="rect" title=" " alt="" coords="157,92,241,117"/>
+<area shape="poly" title=" " alt="" coords="158,43,183,78,179,81,153,46"/>
+<area shape="rect" title=" " alt="" coords="5,165,73,189"/>
+<area shape="poly" title=" " alt="" coords="80,119,57,153,53,150,76,116"/>
+<area shape="rect" title=" " alt="" coords="96,165,171,189"/>
+<area shape="poly" title=" " alt="" coords="96,116,120,150,115,153,91,119"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -114,9 +121,13 @@ Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier
 <div class="dyncontent">
 <div class="center"><img src="shader_8h__dep__incl.png" border="0" usemap="#aFEURcraft_2graphic_2include_2shader_8hdep" loading="lazy" alt=""/></div>
 <map name="aFEURcraft_2graphic_2include_2shader_8hdep" id="aFEURcraft_2graphic_2include_2shader_8hdep">
-<area shape="rect" title="Gestion et compilation des shaders." alt="" coords="5,5,181,44"/>
-<area shape="rect" href="shader__program_8h_source.html" title=" " alt="" coords="5,92,181,131"/>
-<area shape="poly" title=" " alt="" coords="96,60,96,91,90,91,90,60"/>
+<area shape="rect" title="Gestion et compilation des shaders." alt="" coords="102,5,277,44"/>
+<area shape="rect" href="assets_8h_source.html" title=" " alt="" coords="5,92,177,131"/>
+<area shape="poly" title=" " alt="" coords="158,56,115,93,111,89,155,52"/>
+<area shape="rect" href="shader__program_8h_source.html" title=" " alt="" coords="201,92,376,131"/>
+<area shape="poly" title=" " alt="" coords="225,52,268,89,265,93,221,56"/>
+<area shape="rect" href="asset__loader_8h_source.html" title=" " alt="" coords="203,179,374,217"/>
+<area shape="poly" title=" " alt="" coords="291,147,291,178,286,178,286,147"/>
 </map>
 </div>
 </div>
@@ -179,7 +190,7 @@ GLenum&#160;</td><td class="memItemRight" valign="bottom"><b>shader_type_to_gl_e
 
 <p>Structure représentant un <a class="el" href="structShader.html">Shader</a> glsl. </p>
 
-<p class="definition">Définition à la ligne <a class="el" href="shader_8h_source.html#l00044">44</a> du fichier <a class="el" href="shader_8h_source.html">shader.h</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="shader_8h_source.html#l00046">46</a> du fichier <a class="el" href="shader_8h_source.html">shader.h</a>.</p>
 
 </div>
 </div>
@@ -197,7 +208,7 @@ GLenum&#160;</td><td class="memItemRight" valign="bottom"><b>shader_type_to_gl_e
 
 <p>Enum qui représente le status du shader actuelle (complié, erreur, non compilé) </p>
 
-<p class="definition">Définition à la ligne <a class="el" href="shader_8h_source.html#l00023">23</a> du fichier <a class="el" href="shader_8h_source.html">shader.h</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="shader_8h_source.html#l00025">25</a> du fichier <a class="el" href="shader_8h_source.html">shader.h</a>.</p>
 
 </div>
 </div>
@@ -215,7 +226,7 @@ GLenum&#160;</td><td class="memItemRight" valign="bottom"><b>shader_type_to_gl_e
 
 <p>Enum qui représente le un type de shader (<a class="el" href="structVertex.html">Vertex</a>, Fragment, ...) </p>
 
-<p class="definition">Définition à la ligne <a class="el" href="shader_8h_source.html#l00018">18</a> du fichier <a class="el" href="shader_8h_source.html">shader.h</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="shader_8h_source.html#l00020">20</a> du fichier <a class="el" href="shader_8h_source.html">shader.h</a>.</p>
 
 </div>
 </div>
@@ -232,7 +243,7 @@ GLenum&#160;</td><td class="memItemRight" valign="bottom"><b>shader_type_to_gl_e
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="shader_8h_source.html#l00033">33</a> du fichier <a class="el" href="shader_8h_source.html">shader.h</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="shader_8h_source.html#l00035">35</a> du fichier <a class="el" href="shader_8h_source.html">shader.h</a>.</p>
 
 </div>
 </div>
@@ -248,7 +259,7 @@ GLenum&#160;</td><td class="memItemRight" valign="bottom"><b>shader_type_to_gl_e
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="shader_8h_source.html#l00025">25</a> du fichier <a class="el" href="shader_8h_source.html">shader.h</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="shader_8h_source.html#l00027">27</a> du fichier <a class="el" href="shader_8h_source.html">shader.h</a>.</p>
 
 </div>
 </div>

@@ -120,16 +120,22 @@ Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier
 <div class="dyncontent">
 <div class="center"><img src="window_8h__dep__incl.png" border="0" usemap="#aFEURcraft_2system_2include_2window_8hdep" loading="lazy" alt=""/></div>
 <map name="aFEURcraft_2system_2include_2window_8hdep" id="aFEURcraft_2system_2include_2window_8hdep">
-<area shape="rect" title="Abstraction de la gestion de la fenêtre et du contexte OpenGL." alt="" coords="192,5,367,44"/>
+<area shape="rect" title="Abstraction de la gestion de la fenêtre et du contexte OpenGL." alt="" coords="255,5,430,44"/>
 <area shape="rect" href="camera_8h.html" title="Structure et fonctions pour la caméra 3D." alt="" coords="5,92,181,131"/>
-<area shape="poly" title=" " alt="" coords="226,53,135,94,133,89,223,48"/>
+<area shape="poly" title=" " alt="" coords="274,52,149,94,147,89,272,47"/>
 <area shape="rect" href="renderer_8h.html" title="Intiliase le moteur de rendu et son contexte." alt="" coords="68,179,243,217"/>
-<area shape="poly" title=" " alt="" coords="260,58,171,180,167,176,255,55"/>
+<area shape="poly" title=" " alt="" coords="299,55,245,94,203,139,171,180,167,177,199,135,242,90,296,50"/>
 <area shape="rect" href="keyboard_8h_source.html" title=" " alt="" coords="255,92,430,131"/>
-<area shape="poly" title=" " alt="" coords="305,55,331,90,326,93,300,58"/>
+<area shape="poly" title=" " alt="" coords="345,60,345,91,340,91,340,60"/>
 <area shape="rect" href="mouse__input_8h_source.html" title=" " alt="" coords="454,92,628,131"/>
-<area shape="poly" title=" " alt="" coords="353,47,484,89,482,94,351,52"/>
+<area shape="poly" title=" " alt="" coords="402,48,498,89,496,94,399,53"/>
+<area shape="rect" href="tester_8h_source.html" title=" " alt="" coords="652,92,798,131"/>
+<area shape="poly" title=" " alt="" coords="443,45,652,91,651,97,442,51"/>
 <area shape="poly" title=" " alt="" coords="118,142,144,176,140,180,114,145"/>
+<area shape="rect" href="FEUR__Test_8h_source.html" title=" " alt="" coords="652,179,798,217"/>
+<area shape="poly" title=" " alt="" coords="728,147,728,178,722,178,722,147"/>
+<area shape="rect" href="template_8c_source.html" title=" " alt="" coords="656,265,794,290"/>
+<area shape="poly" title=" " alt="" coords="728,233,728,265,722,265,722,233"/>
 </map>
 </div>
 </div>
@@ -148,6 +154,8 @@ Définitions de type</h2></td></tr>
 Fonctions</h2></td></tr>
 <tr class="memitem:a3eec75dc36557ea34fb768a6582a9fb9" id="r_a3eec75dc36557ea34fb768a6582a9fb9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structWindow.html">Window</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3eec75dc36557ea34fb768a6582a9fb9">create_window</a> (unsigned int width, unsigned int height, const char *title)</td></tr>
 <tr class="memdesc:a3eec75dc36557ea34fb768a6582a9fb9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Crée et initialise une nouvelle fenêtre d'affichage.  <br /></td></tr>
+<tr class="memitem:a395fbbe184d39ac948dce9a5542be6ba" id="r_a395fbbe184d39ac948dce9a5542be6ba"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structWindow.html">Window</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a395fbbe184d39ac948dce9a5542be6ba">window_create_invisible</a> (unsigned int width, unsigned int height, const char *title)</td></tr>
+<tr class="memdesc:a395fbbe184d39ac948dce9a5542be6ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Crée et initialise une nouvelle fenêtre invisible.  <br /></td></tr>
 <tr class="memitem:ac270e1dd9265fc2316b3cba0d7b55476" id="r_ac270e1dd9265fc2316b3cba0d7b55476"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac270e1dd9265fc2316b3cba0d7b55476">free_window</a> (<a class="el" href="structWindow.html">Window</a> *w)</td></tr>
 <tr class="memdesc:ac270e1dd9265fc2316b3cba0d7b55476"><td class="mdescLeft">&#160;</td><td class="mdescRight">Détruit la fenêtre et libère la mémoire associée.  <br /></td></tr>
 <tr class="memitem:a4e444447c3ba0bcebc8f0d79f6a384d9" id="r_a4e444447c3ba0bcebc8f0d79f6a384d9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4e444447c3ba0bcebc8f0d79f6a384d9">window_should_close</a> (<a class="el" href="structWindow.html">Window</a> *w)</td></tr>
@@ -247,6 +255,45 @@ Fonctions</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a395fbbe184d39ac948dce9a5542be6ba" name="a395fbbe184d39ac948dce9a5542be6ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a395fbbe184d39ac948dce9a5542be6ba">&#9670;&#160;</a></span>window_create_invisible()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structWindow.html">Window</a> * window_create_invisible </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int</td>          <td class="paramname"><span class="paramname"><em>width</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int</td>          <td class="paramname"><span class="paramname"><em>height</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>title</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Crée et initialise une nouvelle fenêtre invisible. </p>
+<p>Elle est surtout utilisé lors de tests unitaire. En fait on peut pas utilser des fonction OpenGL sans context, Donc on est obligé de créer une fenêtre et du coup bas c'est chiant.</p>
+<p>Donc on met la fenêtre invisible.</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">width</td><td>Largeur logique initiale de la fenêtre en pixels. </td></tr>
+    <tr><td class="paramname">height</td><td>Hauteur logique initiale de la fenêtre en pixels. </td></tr>
+    <tr><td class="paramname">title</td><td>Chaîne de caractères affichée comme titre de la fenêtre. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Un pointeur <em class="arg">window</em> vers la fenêtre créée, ou NULL en cas d'échec. </dd></dl>
 
 </div>
 </div>

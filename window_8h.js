@@ -4,6 +4,7 @@ var window_8h =
     [ "Window", "window_8h.html#adb2a551453af16dd3214a23b16e67544", null ],
     [ "create_window", "window_8h.html#a3eec75dc36557ea34fb768a6582a9fb9", null ],
     [ "free_window", "window_8h.html#ac270e1dd9265fc2316b3cba0d7b55476", null ],
+    [ "window_create_invisible", "window_8h.html#a395fbbe184d39ac948dce9a5542be6ba", null ],
     [ "window_get_delta_time", "window_8h.html#a8320d84ff6f8f4584f0e343c0bfdf55f", null ],
     [ "window_has_resized", "window_8h.html#acc1318872fe875e2f57ac87ea0e8fe95", null ],
     [ "window_pool_events", "window_8h.html#a1249ae5b9572b012ef86427de03adc5a", null ],

@@ -5,22 +5,24 @@
 <area shape="rect" id="Node000003" href="$hash__map_8h_source.html" title=" " alt="" coords="237,92,396,131"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="282,55,306,90,301,93,277,59"/>
 <area shape="rect" id="Node000005" href="$assets_8h_source.html" title=" " alt="" coords="34,265,205,304"/>
-<area shape="poly" id="edge8_Node000001_Node000005" title=" " alt="" coords="243,59,131,266,127,264,238,56"/>
-<area shape="rect" id="Node000009" href="$geometry_8h.html" title="Structure représentant les données d&#39;un modèle 3D." alt="" coords="566,92,742,131"/>
-<area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="353,43,567,89,565,94,352,49"/>
+<area shape="poly" id="edge9_Node000001_Node000005" title=" " alt="" coords="243,59,131,266,127,264,238,56"/>
+<area shape="rect" id="Node000010" href="$geometry_8h.html" title="Structure représentant les données d&#39;un modèle 3D." alt="" coords="566,92,742,131"/>
+<area shape="poly" id="edge10_Node000001_Node000010" title=" " alt="" coords="353,43,567,89,565,94,352,49"/>
 <area shape="rect" id="Node000004" href="$string__hash__map_8h_source.html" title=" " alt="" coords="237,179,396,217"/>
 <area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="319,147,319,178,314,178,314,147"/>
 <area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="260,226,164,267,162,262,258,221"/>
-<area shape="rect" id="Node000006" href="$material_8h_source.html" title=" " alt="" coords="229,265,404,304"/>
-<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="319,233,319,265,314,265,314,233"/>
-<area shape="rect" id="Node000008" href="$shader__program_8h_source.html" title=" " alt="" coords="429,265,604,304"/>
-<area shape="poly" id="edge7_Node000004_Node000008" title=" " alt="" coords="376,221,473,262,471,267,374,226"/>
-<area shape="rect" id="Node000007" href="$render__object_8h_source.html" title=" " alt="" coords="492,352,667,391"/>
-<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="390,307,522,349,520,354,388,312"/>
-<area shape="rect" id="Node000010" href="$chunk__meshing_8h.html" title="Gère la génération des données géométrique d&#39;un chunk." alt="" coords="629,265,804,304"/>
-<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="662,145,682,216,707,264,702,266,677,218,657,147"/>
-<area shape="rect" id="Node000011" href="$mesh_8h.html" title="Structure représentant les données d&#39;un modèle 3D charger dans le GPU." alt="" coords="692,179,867,217"/>
-<area shape="poly" id="edge11_Node000009_Node000011" title=" " alt="" coords="696,137,753,176,750,180,693,142"/>
-<area shape="poly" id="edge13_Node000011_Node000007" title=" " alt="" coords="807,229,818,247,825,267,826,287,819,306,795,323,758,338,668,359,666,354,756,333,792,319,814,302,821,286,820,268,813,249,802,231"/>
-<area shape="poly" id="edge12_Node000011_Node000010" title=" " alt="" coords="758,232,733,266,728,263,754,228"/>
+<area shape="rect" id="Node000006" href="$material_8h_source.html" title=" " alt="" coords="429,265,604,304"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="376,221,473,262,471,267,374,226"/>
+<area shape="rect" id="Node000008" href="$shader__program_8h_source.html" title=" " alt="" coords="229,265,404,304"/>
+<area shape="poly" id="edge7_Node000004_Node000008" title=" " alt="" coords="319,233,319,265,314,265,314,233"/>
+<area shape="rect" id="Node000007" href="$render__object_8h_source.html" title=" " alt="" coords="592,352,767,391"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="567,309,644,349,642,354,565,314"/>
+<area shape="rect" id="Node000009" href="$asset__loader_8h_source.html" title=" " alt="" coords="231,352,402,391"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="319,320,319,351,314,351,314,320"/>
+<area shape="rect" id="Node000011" href="$chunk__meshing_8h.html" title="Gère la génération des données géométrique d&#39;un chunk." alt="" coords="629,265,804,304"/>
+<area shape="poly" id="edge11_Node000010_Node000011" title=" " alt="" coords="662,145,682,216,707,264,702,266,677,218,657,147"/>
+<area shape="rect" id="Node000012" href="$mesh_8h.html" title="Structure représentant les données d&#39;un modèle 3D charger dans le GPU." alt="" coords="692,179,867,217"/>
+<area shape="poly" id="edge12_Node000010_Node000012" title=" " alt="" coords="696,137,753,176,750,180,693,142"/>
+<area shape="poly" id="edge14_Node000012_Node000007" title=" " alt="" coords="807,229,824,266,825,286,819,305,806,321,790,335,755,354,753,349,787,330,802,318,814,303,820,286,818,267,802,231"/>
+<area shape="poly" id="edge13_Node000012_Node000011" title=" " alt="" coords="758,232,733,266,728,263,754,228"/>
 </map>
