@@ -16,6 +16,11 @@
 
 #define _10e9 1000000000.0
 
+static void glfw_error_callback(int code, const char* description)
+{
+	LOG_HEADER(stderr, "GLFW ERROR", "(%d) %s", code, description);
+}
+
 static Window* window_create_internal(unsigned int width,
                                       unsigned int height,
                                       const char* title,
@@ -25,12 +30,19 @@ static Window* window_create_internal(unsigned int width,
 
 	if (is_glfw_init == 0) 
 	{
+		glfwSetErrorCallback(glfw_error_callback);
+
 		#if RENDER_DOC_DEBUG
 			glfwInitHint(GLFW_PLATFORM, GLFW_PLATFORM_X11);
 		#endif
 
 		is_glfw_init = glfwInit();
-	}	
+
+		int major, minor, revision;
+		glfwGetVersion(&major, &minor, &revision);
+		LOG_INFO("Running against GLFW %i.%i.%i", major, minor, revision);
+		LOG_INFO("%s", glfwGetVersionString());
+	}
 
 	CHECK_COND_RET(is_glfw_init != 0, "Failed to initialize GLFW", NULL);
 
